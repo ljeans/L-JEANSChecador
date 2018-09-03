@@ -1,0 +1,12 @@
+C:\adrian_root\L-JEANS\Checador\Checador\bin\Debug\Checador.exe.config
+C:\adrian_root\L-JEANS\Checador\Checador\bin\Debug\Checador.exe
+C:\adrian_root\L-JEANS\Checador\Checador\bin\Debug\Checador.pdb
+C:\adrian_root\L-JEANS\Checador\Checador\obj\Debug\Checador.csprojResolveAssemblyReference.cache
+C:\adrian_root\L-JEANS\Checador\Checador\obj\Debug\Interop.zkemkeeper.dll
+C:\adrian_root\L-JEANS\Checador\Checador\obj\Debug\Checador.csproj.ResolveComReference.cache
+C:\adrian_root\L-JEANS\Checador\Checador\obj\Debug\Checador.Form1.resources
+C:\adrian_root\L-JEANS\Checador\Checador\obj\Debug\Checador.Properties.Resources.resources
+C:\adrian_root\L-JEANS\Checador\Checador\obj\Debug\Checador.csproj.GenerateResource.Cache
+C:\adrian_root\L-JEANS\Checador\Checador\obj\Debug\Checador.exe
+C:\adrian_root\L-JEANS\Checador\Checador\obj\Debug\Checador.pdb
+C:\adrian_root\L-JEANS\Checador\Checador\obj\Debug\Interop.ZKFPEngXControl.dll
