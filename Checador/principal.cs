@@ -10,8 +10,21 @@ using System.Windows.Forms;
 
 namespace Checador
 {
-    public partial class Form1 : Form
+    public partial class principal : Form
     {
+        
+        empleados.empleados modulo_empleados = new empleados.empleados();
+        Checador.cheacador modulo_checador = new Checador.cheacador();
+
+
+        private void Desbloquear_Principal(object sender, EventArgs e)
+        {
+            if (modulo_empleados != null) { modulo_empleados = null; }
+            else if (modulo_checador != null) { modulo_checador = null; }
+            Enabled = true;
+        }
+
+
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
         
@@ -20,14 +33,14 @@ namespace Checador
         public int Privilegio = 0;
         public bool Estado = false;
 
-        public Form1()
+        public principal()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void principal_Load(object sender, EventArgs e)
         {
-            try
+           /* try
             {
                 //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
                 //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
@@ -59,7 +72,9 @@ namespace Checador
             {
                 MessageBox.Show("Se murio el programa.");
             }
+            */
         }
+
 
         //FUNCION QUE SE EJECUTA EN EL EVENTO DE TRANSACCION. CACHA LOS PARAMETROS QUE ESTAN EN LOS ARGUMENTOS
         private void Checador_OnAttTransactionEx(string EnrollNumber, int IsInValid, int AttState, int VerifyMethod, int Year, int Month, int Day, int Hour, int Minute, int Second, int WorkCode)
@@ -84,6 +99,25 @@ namespace Checador
             } 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void panel_menu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_empleados_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            modulo_empleados = new empleados.empleados();
+            modulo_empleados.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            modulo_empleados.Show();
+         
+        }
+
         private void Checador_OnFinger()
         {
             
@@ -102,6 +136,7 @@ namespace Checador
 
             }
             Checador.ClearGLog(1);*/
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

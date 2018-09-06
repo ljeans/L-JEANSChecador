@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Checador
 {
-    public class Empleado
+    public class ClaseEmpleado
     {
         public int id { get; set; }
         public string nombre { get; set; }

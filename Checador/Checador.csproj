@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,19 +47,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Empleado.cs" />
-    <Compile Include="Conexion.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="checador\cheacador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="checador\cheacador.Designer.cs">
+      <DependentUpon>cheacador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="empleados\ClaseEmpleado.cs" />
+    <Compile Include="Conexion.cs" />
+    <Compile Include="empleados\empleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="empleados\empleados.Designer.cs">
+      <DependentUpon>empleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="principal.Designer.cs">
+      <DependentUpon>principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formularios padres\formpadre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios padres\formpadre.Designer.cs">
+      <DependentUpon>formpadre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="horarios\horarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="horarios\horarios.Designer.cs">
+      <DependentUpon>horarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sucursal.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="reportes\reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reportes\reportes.Designer.cs">
+      <DependentUpon>reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sucursales\Sucursal.cs" />
+    <Compile Include="sucursales\sucursales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sucursales\sucursales.Designer.cs">
+      <DependentUpon>sucursales.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="checador\cheacador.resx">
+      <DependentUpon>cheacador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empleados\empleados.resx">
+      <DependentUpon>empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="principal.resx">
+      <DependentUpon>principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios padres\formpadre.resx">
+      <DependentUpon>formpadre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="horarios\horarios.resx">
+      <DependentUpon>horarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -68,7 +117,14 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="reportes\reportes.resx">
+      <DependentUpon>reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sucursales\sucursales.resx">
+      <DependentUpon>sucursales.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,6 +170,190 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iniciar_sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_gray_center.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar_sesion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cliente_baja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cliente_buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cliente_modif.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cliente_registrar_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes_mediano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clientes_ver_todos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Compras_registrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Compras_servicios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_user_st.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\conf_user_t_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_user_st.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_user_t_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empleados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Empleados_mediano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondo_panel_vert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homo_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading-bar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ocultar_pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prod_baja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prod_buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prod_inventario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prod_modificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prod_registrar_nuevo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Productos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Productos_baja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productos_buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Productos_mediano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Productos_modificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Productos_registrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productos_ver_todos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prov_Baja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prov_Buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prov_Modificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prov_Registrar_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Prov_Ver_todos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedore_mediano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Repertes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_user_st.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_user_t_h.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sombra_boton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ventas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ventas_caja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ventas_cambio_mediano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ventas_mediano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ventas_nueva_v.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ver_pass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logos nuevos 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logos nuevos 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logos nuevos 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logos nuevos.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
