@@ -15,7 +15,11 @@ namespace Checador
             InitializeComponent();
         }
 
+<<<<<<< HEAD
         private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
+=======
+        private void sucursales_Load(object sender, EventArgs e)
+>>>>>>> bf92a08163201d10de29f9620453742960421144
         {
 
         }

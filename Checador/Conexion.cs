@@ -8,6 +8,6 @@ namespace Checador
 {
     class Conexion
     {
-        public string cadenaConexion = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=BD_Checador; Integrated Security=SSPI";
+        public string cadenaConexion = "Data Source=(local)\\SQLEXPRESS; Initial Catalog=sistema_checador; Integrated Security=SSPI";
     }
 }

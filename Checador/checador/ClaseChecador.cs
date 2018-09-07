@@ -1,0 +1,156 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Windows.Forms;
+
+namespace Checador.checador
+{
+    class ClaseChecador
+    {
+        public int id { get; set; }
+        public string ip { get; set; }
+        public string puerto { get; set; }
+        public int id_sucursal { get; set; }
+        public string estatus { get; set; }
+
+        //FUNCION PARA OBTENER EL ID MAXIMO DEL CHECADOR POR SI ES AUTOINCREMENTABLE EL ID
+        public int obtenerIdMaximo()
+        {
+            string consulta = "Select Max(id_checador) From checador";
+            Conexion con = new Conexion();
+            SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+            SqlCommand comand = new SqlCommand(consulta, conexion);
+            conexion.Open();
+            int idMaximo = Convert.ToInt32(comand.ExecuteScalar());
+            conexion.Close();
+            return idMaximo;
+        }
+
+        //FUNCION PARA REGISTRAR UN DISPOSITIVO CHECADOR
+        public void guardarChecador()
+        {
+            try
+            {
+                //Registrar SUCURSAL
+                string consulta = "INSERT INTO checador  VALUES (@id,@ip, @puerto,@id_sucursal,@estatus)";
+                Conexion con = new Conexion();
+                SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+                conexion.Open();
+                SqlCommand comand = new SqlCommand(consulta, conexion);
+                comand.Parameters.AddWithValue("@id", id);
+                comand.Parameters.AddWithValue("@ip", ip);
+                comand.Parameters.AddWithValue("@puerto", puerto);
+                comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                comand.Parameters.AddWithValue("@estatus", estatus);
+
+                comand.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Checador registrado con éxito. ID= " + id.ToString());
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+            }
+        }
+
+        //FUNCION PARA ACTUALIZAR LOS DATOS DE UN DISPOSITIVO CHECADOR
+        public void Modificar_Checador()
+        {
+            try
+            {
+                string consulta = "UPDATE checador SET ip = @ip, puerto = @puerto, id_sucursal = @id_sucursal WHERE id_sucursal = @id";
+                Conexion con = new Conexion();
+                SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+                conexion.Open();
+                SqlCommand comand = new SqlCommand(consulta, conexion);
+                comand.Parameters.AddWithValue("@ip", ip);
+                comand.Parameters.AddWithValue("@puerto", puerto);
+                comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                comand.Parameters.AddWithValue("@estatus", estatus);
+                comand.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Checador modificado con éxito. ID= " + id.ToString());
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+            }
+        }
+
+        //FUNCION PARA DAR DE BAJA UN DISPOSITIVO CHECADOR CAMBIANDO EL ESTATUS
+        public void Eliminar_Checador()
+        {
+            try
+            {
+                string eliminar = "Update checador SET estatus=@estatus where id_checador=@id";
+
+                Conexion con = new Conexion();
+                SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+                conexion.Open();
+                SqlCommand comand = new SqlCommand(eliminar, conexion);
+                comand.Parameters.AddWithValue("@estatus", estatus);
+                comand.Parameters.AddWithValue("@id", id);
+                comand.ExecuteNonQuery();
+
+                conexion.Close();
+                MessageBox.Show("Checador dado de baja con éxito. ID= " + id.ToString());
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+            }
+        }
+
+        //FUNCION PARA VERIFICAR SI EL DISPOSITIVO CHECADOR YA EXISTE PREVIAMENTE EN LA BASE DE DATOS
+        //RETORNA UN VALOR BOOL DEPENDIENDO SI ES V O F
+        //ADEMAS CARGA LOS ATRIBUTOS DE LA CLASE CON LOS DATOS GUARDADOS DEL DISPOSITIVO CHECADOR
+        //REFERENTE AL ID RECIBIDO COMO PARAMETRO
+        public bool verificar_existencia(int id)//Funcion que hace el select retorna false si no hay resultados
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                //SqlConnection con = new SqlConnection(conexion.cadenaConexion);
+                using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
+                {
+                    string select = "SELECT * FROM checador WHERE id_checador=@id";//Consulta
+                    SqlCommand comando = new SqlCommand(select, con);//Nuevo objeto sqlcommand
+                    comando.Parameters.AddWithValue("@id", id);//Agregamos parametros a la consulta
+                    con.Open();//abre la conexion
+                    SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
+                    if (lector.HasRows)//Revisa si hay resultados
+                    {
+                        lector.Read();//Lee una linea de los resultados
+                        //this.id = ;//Asignacion a atributos
+                        //get ordinal regresa el indice de la fila
+                        //el Nombre especificado en el parametro 
+                        id = lector.GetInt32(lector.GetOrdinal("id_sucursal"));
+                        ip = lector.GetString(lector.GetOrdinal("ip"));
+                        puerto = lector.GetString(lector.GetOrdinal("puerto"));
+                        id_sucursal = lector.GetInt32(lector.GetOrdinal("id_sucursal"));
+                        estatus = lector.GetString(lector.GetOrdinal("estatus"));
+                        con.Close();
+                        return true;
+                    }
+                    else
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                return false;
+            }
+        }
+
+
+    }
+}
