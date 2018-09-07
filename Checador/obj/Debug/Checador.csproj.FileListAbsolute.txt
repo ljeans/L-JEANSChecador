@@ -51,3 +51,4 @@ C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.reportes.reso
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.sucursales.resources
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.GenerateResource.Cache
 >>>>>>> bf92a08163201d10de29f9620453742960421144
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.empleados.huella.resources

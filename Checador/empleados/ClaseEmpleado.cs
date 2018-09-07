@@ -55,14 +55,14 @@ namespace Checador
         //FUNCION PARA OBTENER EL ID MAXIMO DEL EMPLEADO POR SI ES AUTOINCREMENTABLE EL ID
         public int obtenerIdMaximo()
         {
-            string consulta = "Select Max(id_empleado) From empleado";
+            string consulta = "Select * From empleado";
             Conexion con = new Conexion();
             SqlConnection conexion = new SqlConnection(con.cadenaConexion);
             SqlCommand comand = new SqlCommand(consulta, conexion);
             conexion.Open();
-            int idMaximo = Convert.ToInt32(comand.ExecuteScalar());
+            //int idMaximo = Convert.ToInt32(comand.ExecuteScalar());
             conexion.Close();
-            return idMaximo;
+            return 1;
         }
 
         //FUNCION PARA REGISTRAR UN EMPLEADO

@@ -26,43 +26,43 @@ namespace Checador.empleados
         {
             if (cbx_huella.Text == "1")
             {
-                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\manue\Desktop\L-JEANSChecador\Checador\Resources\huella1.png");
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella1.png");
             }
             else if (cbx_huella.Text == "0")
             {
-                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\manue\Desktop\L-JEANSChecador\Checador\Resources\huella0.png");
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella0.png");
             }
             else if (cbx_huella.Text == "2")
             {
-                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\manue\Desktop\L-JEANSChecador\Checador\Resources\huella2.png");
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella2.png");
             }
             else if (cbx_huella.Text == "3")
             {
-                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\manue\Desktop\L-JEANSChecador\Checador\Resources\huella3.png");
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella3.png");
             }
             else if (cbx_huella.Text == "4")
             {
-                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\manue\Desktop\L-JEANSChecador\Checador\Resources\huella4.png");
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella4.png");
             }
             else if (cbx_huella.Text == "5")
             {
-                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\manue\Desktop\L-JEANSChecador\Checador\Resources\huella5.png");
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella5.png");
             }
             else if (cbx_huella.Text == "6")
             {
-                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\manue\Desktop\L-JEANSChecador\Checador\Resources\huella6.png");
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella6.png");
             }
             else if (cbx_huella.Text == "7")
             {
-                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\manue\Desktop\L-JEANSChecador\Checador\Resources\huella7.png");
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella7.png");
             }
             else if (cbx_huella.Text == "8")
             {
-                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\manue\Desktop\L-JEANSChecador\Checador\Resources\huella8.png");
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella8.png");
             }
             else if (cbx_huella.Text == "9")
             {
-                pictureBox1.Image = new System.Drawing.Bitmap(@"C:\Users\manue\Desktop\L-JEANSChecador\Checador\Resources\huella9.png");
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella9.png");
             }
 
 

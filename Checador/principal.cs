@@ -40,6 +40,16 @@ namespace Checador
 
         private void principal_Load(object sender, EventArgs e)
         {
+            try
+            {
+                ClaseEmpleado Empleado = new ClaseEmpleado();
+                Empleado.obtenerIdMaximo();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
            /* try
             {
                 //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
