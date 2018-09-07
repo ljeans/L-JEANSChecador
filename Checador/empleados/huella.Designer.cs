@@ -40,16 +40,16 @@
             this.cbx_huella.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_huella.FormattingEnabled = true;
             this.cbx_huella.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9"});
+            "0 (meñique izquierdo)",
+            "1 (anular izquierdo)",
+            "2 (medio izquierdo)",
+            "3 (indice izquierdo)",
+            "4 (pulgar izquierdo)",
+            "5 (pulgar derecho)",
+            "6 (indice  derecho)",
+            "7 (medio derecho)",
+            "8 (anular derecho)",
+            "9 (meñique derecho)"});
             this.cbx_huella.Location = new System.Drawing.Point(78, 305);
             this.cbx_huella.Name = "cbx_huella";
             this.cbx_huella.Size = new System.Drawing.Size(121, 21);
@@ -106,7 +106,9 @@
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "huella";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "huella";
+            this.TopMost = true;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

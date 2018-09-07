@@ -15,13 +15,25 @@ namespace Checador
             InitializeComponent();
         }
 
-<<<<<<< HEAD
+
         private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
-=======
-        private void sucursales_Load(object sender, EventArgs e)
->>>>>>> bf92a08163201d10de29f9620453742960421144
         {
 
+        }
+        private void sucursales_Load(object sender, EventArgs e)
+
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

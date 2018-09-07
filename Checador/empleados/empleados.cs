@@ -12,6 +12,7 @@ namespace Checador.empleados
     {
         //SE CREA LA INSTANCIA AL OBJETO DE LA CLASE EMPLEADO
         ClaseEmpleado Empleado = new ClaseEmpleado();
+        huella huella = new huella();
 
         public empleados()
         {
@@ -129,6 +130,32 @@ namespace Checador.empleados
             Empleado.tipo_contrato = txt_tipo_contrato.Text;
             Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
             Empleado.tipo_salario = txt_tipo_salario.Text;
+        }
+        private void Desbloquear_empleados(object sender, EventArgs e)
+        {
+           
+            Enabled = true;
+        }
+
+        private void btn_capturar_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            huella = new huella();
+            huella.FormClosed += new FormClosedEventHandler(Desbloquear_empleados);
+            huella.Show();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_capturar_mod_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            huella = new huella();
+            huella.FormClosed += new FormClosedEventHandler(Desbloquear_empleados);
+            huella.Show();
         }
     }
 }
