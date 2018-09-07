@@ -337,6 +337,7 @@
             this.btn_sucursal.Text = "Sucursal";
             this.btn_sucursal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_sucursal.UseVisualStyleBackColor = false;
+            this.btn_sucursal.Click += new System.EventHandler(this.btn_sucursal_Click);
             // 
             // btn_horarios
             // 

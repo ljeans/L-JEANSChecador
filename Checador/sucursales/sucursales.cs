@@ -20,10 +20,25 @@ namespace Checador
         {
 
         }
+<<<<<<< HEAD
 
         private void sucursales_Load(object sender, EventArgs e)
+=======
+        private void sucursales_Load(object sender, EventArgs e)
+
         {
 
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+>>>>>>> 5a11a025ad7d42474ffe44011ab0a9569db070f4
+        {
+
+        }
+
+        private void btn_home_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

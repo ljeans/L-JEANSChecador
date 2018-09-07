@@ -15,6 +15,8 @@ namespace Checador
         
         empleados.empleados modulo_empleados = new empleados.empleados();
         Checador.cheacador modulo_checador = new Checador.cheacador();
+        sucursales modulo_sucursal = new sucursales();
+        
 
 
         private void Desbloquear_Principal(object sender, EventArgs e)
@@ -126,6 +128,14 @@ namespace Checador
             modulo_empleados.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
             modulo_empleados.Show();
          
+        }
+
+        private void btn_sucursal_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            modulo_sucursal = new sucursales();
+            modulo_sucursal.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            modulo_sucursal.Show();
         }
 
         private void Checador_OnFinger()

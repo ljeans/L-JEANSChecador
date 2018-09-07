@@ -239,10 +239,7 @@
             this.txt_mod_nombre = new System.Windows.Forms.TextBox();
             this.txt_mod_primerape = new System.Windows.Forms.TextBox();
             this.txt_mod_segape = new System.Windows.Forms.TextBox();
-            this.txt_mod_sucursal = new System.Windows.Forms.TextBox();
-            this.txt_dod_fecalta = new System.Windows.Forms.TextBox();
             this.txt_mod_contra = new System.Windows.Forms.TextBox();
-            this.txt_mod_privilegio = new System.Windows.Forms.TextBox();
             this.btn_mod_siguiente = new System.Windows.Forms.Button();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.btn_modificar = new System.Windows.Forms.Button();
@@ -257,6 +254,9 @@
             this.txt_domicilio_municipio = new System.Windows.Forms.TextBox();
             this.label86 = new System.Windows.Forms.Label();
             this.txt_telefono = new System.Windows.Forms.TextBox();
+            this.cbx_mod_sucursal = new System.Windows.Forms.ComboBox();
+            this.dtp_mod_fech_alta = new System.Windows.Forms.DateTimePicker();
+            this.cbx_mod_privilegio = new System.Windows.Forms.ComboBox();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -435,13 +435,13 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.cbx_mod_privilegio);
+            this.tabPage5.Controls.Add(this.dtp_mod_fech_alta);
+            this.tabPage5.Controls.Add(this.cbx_mod_sucursal);
             this.tabPage5.Controls.Add(this.cmb_mod_horario);
             this.tabPage5.Controls.Add(this.label74);
             this.tabPage5.Controls.Add(this.btn_mod_siguiente);
-            this.tabPage5.Controls.Add(this.txt_mod_privilegio);
             this.tabPage5.Controls.Add(this.txt_mod_contra);
-            this.tabPage5.Controls.Add(this.txt_dod_fecalta);
-            this.tabPage5.Controls.Add(this.txt_mod_sucursal);
             this.tabPage5.Controls.Add(this.txt_mod_segape);
             this.tabPage5.Controls.Add(this.txt_mod_primerape);
             this.tabPage5.Controls.Add(this.txt_mod_nombre);
@@ -461,19 +461,21 @@
             // btn_home
             // 
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
+     
             // 
             // lbl_titulo
             // 
             this.lbl_titulo.Size = new System.Drawing.Size(177, 37);
+
             this.lbl_titulo.Text = "Empleados";
             this.lbl_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // rb_vertodos
             // 
             this.rb_vertodos.FlatAppearance.BorderSize = 0;
-            this.rb_vertodos.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
-            this.rb_vertodos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
-            this.rb_vertodos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_vertodos.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.rb_vertodos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.rb_vertodos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_vertodos.Location = new System.Drawing.Point(1, 214);
             this.rb_vertodos.Text = "Buscar";
             this.rb_vertodos.CheckedChanged += new System.EventHandler(this.rb_vertodos_CheckedChanged);
@@ -481,16 +483,16 @@
             // rb_buscar
             // 
             this.rb_buscar.FlatAppearance.BorderSize = 0;
-            this.rb_buscar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
-            this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
+            this.rb_buscar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.rb_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             // 
             // rb_modificar
             // 
             this.rb_modificar.FlatAppearance.BorderSize = 0;
-            this.rb_modificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
-            this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
-            this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_modificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_modificar.CheckedChanged += new System.EventHandler(this.rb_modificar_CheckedChanged);
             // 
             // rb_registrar
@@ -690,6 +692,7 @@
             this.groupBox1.TabIndex = 1052;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro Huella";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // pic_huella
             // 
@@ -703,9 +706,10 @@
             // btn_capturar
             // 
             this.btn_capturar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+
             this.btn_capturar.FlatAppearance.BorderSize = 0;
-            this.btn_capturar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_capturar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_capturar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_capturar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_capturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_capturar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_capturar.ForeColor = System.Drawing.Color.White;
@@ -715,6 +719,7 @@
             this.btn_capturar.TabIndex = 11;
             this.btn_capturar.Text = "Capturar";
             this.btn_capturar.UseVisualStyleBackColor = false;
+            this.btn_capturar.Click += new System.EventHandler(this.btn_capturar_Click);
             // 
             // groupBox2
             // 
@@ -754,8 +759,10 @@
             // 
             this.btn_siguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_siguiente.FlatAppearance.BorderSize = 0;
-            this.btn_siguiente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_siguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+          
+            this.btn_siguiente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_siguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+
             this.btn_siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_siguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_siguiente.ForeColor = System.Drawing.Color.White;
@@ -1117,8 +1124,8 @@
             // 
             this.btn_siguiente2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_siguiente2.FlatAppearance.BorderSize = 0;
-            this.btn_siguiente2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_siguiente2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_siguiente2.FlatAppearance.MouseDownBackColor =  System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_siguiente2.FlatAppearance.MouseOverBackColor =  System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_siguiente2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_siguiente2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_siguiente2.ForeColor = System.Drawing.Color.White;
@@ -1419,8 +1426,8 @@
             // 
             this.btn_registrar_emp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_registrar_emp.FlatAppearance.BorderSize = 0;
-            this.btn_registrar_emp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_registrar_emp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_registrar_emp.FlatAppearance.MouseDownBackColor =  System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_registrar_emp.FlatAppearance.MouseOverBackColor =  System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_registrar_emp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrar_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrar_emp.ForeColor = System.Drawing.Color.White;
@@ -1436,8 +1443,8 @@
             // 
             this.btn_atras2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_atras2.FlatAppearance.BorderSize = 0;
-            this.btn_atras2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_atras2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_atras2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_atras2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_atras2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_atras2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_atras2.ForeColor = System.Drawing.Color.White;
@@ -1453,8 +1460,8 @@
             // 
             this.btn_atras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_atras.FlatAppearance.BorderSize = 0;
-            this.btn_atras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_atras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_atras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_atras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_atras.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_atras.ForeColor = System.Drawing.Color.White;
@@ -1880,8 +1887,8 @@
             // 
             this.btn_mod_atras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_mod_atras.FlatAppearance.BorderSize = 0;
-            this.btn_mod_atras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_mod_atras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_mod_atras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_mod_atras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_mod_atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_mod_atras.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mod_atras.ForeColor = System.Drawing.Color.White;
@@ -1897,8 +1904,8 @@
             // 
             this.btn_mod_siguiente2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_mod_siguiente2.FlatAppearance.BorderSize = 0;
-            this.btn_mod_siguiente2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_mod_siguiente2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_mod_siguiente2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_mod_siguiente2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_mod_siguiente2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_mod_siguiente2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mod_siguiente2.ForeColor = System.Drawing.Color.White;
@@ -2258,8 +2265,8 @@
             // 
             this.btn_mod_atras2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_mod_atras2.FlatAppearance.BorderSize = 0;
-            this.btn_mod_atras2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_mod_atras2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_mod_atras2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_mod_atras2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_mod_atras2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_mod_atras2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mod_atras2.ForeColor = System.Drawing.Color.White;
@@ -2275,8 +2282,8 @@
             // 
             this.btn_guardar_mod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_guardar_mod.FlatAppearance.BorderSize = 0;
-            this.btn_guardar_mod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_guardar_mod.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_guardar_mod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_guardar_mod.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_guardar_mod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_guardar_mod.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar_mod.ForeColor = System.Drawing.Color.White;
@@ -2695,8 +2702,8 @@
             // 
             this.btn_capturar_mod.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_capturar_mod.FlatAppearance.BorderSize = 0;
-            this.btn_capturar_mod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_capturar_mod.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_capturar_mod.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_capturar_mod.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_capturar_mod.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_capturar_mod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_capturar_mod.ForeColor = System.Drawing.Color.White;
@@ -2706,6 +2713,7 @@
             this.btn_capturar_mod.TabIndex = 57;
             this.btn_capturar_mod.Text = "Registrar huella";
             this.btn_capturar_mod.UseVisualStyleBackColor = false;
+            this.btn_capturar_mod.Click += new System.EventHandler(this.btn_capturar_mod_Click);
             // 
             // rb_mod_inactivo
             // 
@@ -2773,22 +2781,6 @@
             this.txt_mod_segape.Size = new System.Drawing.Size(248, 29);
             this.txt_mod_segape.TabIndex = 49;
             // 
-            // txt_mod_sucursal
-            // 
-            this.txt_mod_sucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_sucursal.Location = new System.Drawing.Point(199, 245);
-            this.txt_mod_sucursal.Name = "txt_mod_sucursal";
-            this.txt_mod_sucursal.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_sucursal.TabIndex = 50;
-            // 
-            // txt_dod_fecalta
-            // 
-            this.txt_dod_fecalta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dod_fecalta.Location = new System.Drawing.Point(200, 290);
-            this.txt_dod_fecalta.Name = "txt_dod_fecalta";
-            this.txt_dod_fecalta.Size = new System.Drawing.Size(248, 29);
-            this.txt_dod_fecalta.TabIndex = 51;
-            // 
             // txt_mod_contra
             // 
             this.txt_mod_contra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2797,20 +2789,12 @@
             this.txt_mod_contra.Size = new System.Drawing.Size(248, 29);
             this.txt_mod_contra.TabIndex = 52;
             // 
-            // txt_mod_privilegio
-            // 
-            this.txt_mod_privilegio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_privilegio.Location = new System.Drawing.Point(199, 380);
-            this.txt_mod_privilegio.Name = "txt_mod_privilegio";
-            this.txt_mod_privilegio.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_privilegio.TabIndex = 53;
-            // 
             // btn_mod_siguiente
             // 
             this.btn_mod_siguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_mod_siguiente.FlatAppearance.BorderSize = 0;
-            this.btn_mod_siguiente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_mod_siguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_mod_siguiente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_mod_siguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_mod_siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_mod_siguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mod_siguiente.ForeColor = System.Drawing.Color.White;
@@ -2839,8 +2823,8 @@
             // 
             this.btn_modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_modificar.FlatAppearance.BorderSize = 0;
-            this.btn_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Indigo;
-            this.btn_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.ForeColor = System.Drawing.Color.White;
@@ -2963,6 +2947,43 @@
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(248, 29);
             this.txt_telefono.TabIndex = 1044;
+            // 
+            // cbx_mod_sucursal
+            // 
+            this.cbx_mod_sucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.cbx_mod_sucursal.FormattingEnabled = true;
+            this.cbx_mod_sucursal.Items.AddRange(new object[] {
+            "FEMENINO",
+            "MASCULINO"});
+            this.cbx_mod_sucursal.Location = new System.Drawing.Point(200, 243);
+            this.cbx_mod_sucursal.Name = "cbx_mod_sucursal";
+            this.cbx_mod_sucursal.Size = new System.Drawing.Size(248, 32);
+            this.cbx_mod_sucursal.TabIndex = 1072;
+            // 
+            // dtp_mod_fech_alta
+            // 
+            this.dtp_mod_fech_alta.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_mod_fech_alta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_mod_fech_alta.Location = new System.Drawing.Point(200, 290);
+            this.dtp_mod_fech_alta.Name = "dtp_mod_fech_alta";
+            this.dtp_mod_fech_alta.Size = new System.Drawing.Size(248, 29);
+            this.dtp_mod_fech_alta.TabIndex = 1073;
+            // 
+            // cbx_mod_privilegio
+            // 
+            this.cbx_mod_privilegio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_mod_privilegio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.cbx_mod_privilegio.FormattingEnabled = true;
+            this.cbx_mod_privilegio.Items.AddRange(new object[] {
+            "SOLTERO (A)",
+            "CASADO (A)",
+            "VIUDO (A)",
+            "DIVORSIADO (A)",
+            "UNION LIBRE"});
+            this.cbx_mod_privilegio.Location = new System.Drawing.Point(200, 380);
+            this.cbx_mod_privilegio.Name = "cbx_mod_privilegio";
+            this.cbx_mod_privilegio.Size = new System.Drawing.Size(248, 32);
+            this.cbx_mod_privilegio.TabIndex = 1074;
             // 
             // empleados
             // 
@@ -3121,10 +3142,7 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton rb_mod_inactivo;
         private System.Windows.Forms.RadioButton rb_mod_activo;
-        private System.Windows.Forms.TextBox txt_mod_privilegio;
         private System.Windows.Forms.TextBox txt_mod_contra;
-        private System.Windows.Forms.TextBox txt_dod_fecalta;
-        private System.Windows.Forms.TextBox txt_mod_sucursal;
         private System.Windows.Forms.TextBox txt_mod_segape;
         private System.Windows.Forms.TextBox txt_mod_primerape;
         private System.Windows.Forms.TextBox txt_mod_nombre;
@@ -3240,5 +3258,8 @@
         private System.Windows.Forms.TextBox txt_mod_telefono;
         private System.Windows.Forms.TextBox txt_mod_departamento;
         private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.ComboBox cbx_mod_privilegio;
+        private System.Windows.Forms.DateTimePicker dtp_mod_fech_alta;
+        private System.Windows.Forms.ComboBox cbx_mod_sucursal;
     }
 }

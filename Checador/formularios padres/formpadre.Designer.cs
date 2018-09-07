@@ -46,10 +46,12 @@
             this.rb_buscar = new System.Windows.Forms.RadioButton();
             this.rb_modificar = new System.Windows.Forms.RadioButton();
             this.rb_registrar = new System.Windows.Forms.RadioButton();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControlBase.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // rb_4
@@ -210,6 +212,7 @@
             // panel_barra_sup
             // 
             this.panel_barra_sup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel_barra_sup.Controls.Add(this.pictureBox2);
             this.panel_barra_sup.Controls.Add(this.btn_home);
             this.panel_barra_sup.Controls.Add(this.lbl_titulo);
             this.panel_barra_sup.Dock = System.Windows.Forms.DockStyle.Top;
@@ -345,6 +348,16 @@
             this.rb_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.rb_registrar.UseVisualStyleBackColor = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Checador.Properties.Resources.logos_nuevos_1;
+            this.pictureBox2.Location = new System.Drawing.Point(1212, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(128, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
             // formpadre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,6 +380,7 @@
             this.panel_barra_sup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             this.panel_menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -390,5 +404,6 @@
         public System.Windows.Forms.RadioButton rb_buscar;
         public System.Windows.Forms.RadioButton rb_modificar;
         public System.Windows.Forms.RadioButton rb_registrar;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
