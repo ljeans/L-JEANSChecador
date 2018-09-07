@@ -10,7 +10,8 @@ namespace Checador.empleados
 {
     public partial class empleados : Checador.formularios_padres.formpadre
     {
-      
+        //SE CREA LA INSTANCIA AL OBJETO DE LA CLASE EMPLEADO
+        ClaseEmpleado Empleado = new ClaseEmpleado();
 
         public empleados()
         {
@@ -20,11 +21,6 @@ namespace Checador.empleados
         private void empleados_Load(object sender, EventArgs e)
         {
             
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
         }
 
     
@@ -38,49 +34,9 @@ namespace Checador.empleados
             tabControlBase.SelectedTab = tabPage1;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            tabControlBase.SelectedTab = tabPage2;
-        }
-
-        private void btn_registrar_Click(object sender, EventArgs e)
-        {
-            tabControlBase.SelectedTab = tabPage3;
-        }
-
         private void btn_home_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            tabControlBase.SelectedTab = tabPage1;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            tabControlBase.SelectedTab = tabPage2;
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox27_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_mod_siguiente_Click(object sender, EventArgs e)
@@ -113,9 +69,66 @@ namespace Checador.empleados
             tabControlBase.SelectedTab = tabPage5;
         }
 
-        private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
+        private void btn_siguiente_Click(object sender, EventArgs e)
         {
+            tabControlBase.SelectedTab = tabPage2;
+        }
 
+        private void btn_siguiente2_Click(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage3;
+        }
+
+        private void btn_atras_Click(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage1;
+        }
+
+        private void btn_atras2_Click(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage2;
+        }
+
+        //CLICK AL BOTON REGISTRAR
+        private void btn_registrar_emp_Click(object sender, EventArgs e)
+        {
+            Empleado.apellido_mat = txt_apellido_materno.Text;
+            Empleado.apellido_pat = txt_apellido_paterno.Text;
+            Empleado.banco = txt_banco.Text;
+            Empleado.calle = txt_domicilio_calle.Text;
+            Empleado.clave_edenred = txt_edenred.Text;
+            Empleado.codigo_postal = txt_domicilio_cp.Text;
+            Empleado.colonia = txt_domicilio_colonia.Text;
+            Empleado.cuenta_bancaria = txt_cuenta.Text;
+            Empleado.CURP = txt_curp.Text;
+            Empleado.departamento = txt_departamento.Text;
+            Empleado.dias_aguinaldo = Convert.ToInt32(txt_dias_aguinaldo.Text);
+            Empleado.dias_vacaciones = Convert.ToInt32(txt_dias_vacaciones.Text);
+            Empleado.email = txt_email.Text;
+            Empleado.estado = txt_domicilio_estado.Text;
+            Empleado.estatus = "Activo";
+            Empleado.fecha_alta = dtp_fec_alt.Value;
+            Empleado.id_privilegio = cbx_privilegio.SelectedValue.ToString();
+            Empleado.municipio = txt_domicilio_municipio.Text;
+            Empleado.nombre = txt_nombre.Text;
+            Empleado.NSS = txt_nss.Text;
+            Empleado.num_ext = txt_domicilio_num_ext.Text;
+            Empleado.num_int = txt_domicilio_num_int.Text;
+            Empleado.observaciones = txt_observaciones.Text;
+            Empleado.pais = txt_domicilio_pais.Text;
+            Empleado.periodicidad_pago = txt_periodicidad_pago.Text;
+            Empleado.poblacion = txt_domicilio_pob.Text;
+            Empleado.puesto = txt_puesto.Text;
+            Empleado.RFC = txt_rfc.Text;
+            Empleado.riesgo_puesto = txt_riesgo_puesto.Text;
+            Empleado.sueldo_base_quincenal = Convert.ToDouble( txt_sueldo_quincenal.Text);
+            Empleado.sueldo_diario = Convert.ToDouble(txt_sueldo_diario.Text);
+            Empleado.sueldo_diario_integrado = Convert.ToDouble(txt_sueldo_integrado.Text);
+            Empleado.tarjeta_despensa= txt_despensa.Text;
+            Empleado.telefono = txt_telefono.Text;
+            Empleado.tipo_contrato = txt_tipo_contrato.Text;
+            Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
+            Empleado.tipo_salario = txt_tipo_salario.Text;
         }
     }
 }

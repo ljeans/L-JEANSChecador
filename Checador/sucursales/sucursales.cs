@@ -14,5 +14,10 @@ namespace Checador
         {
             InitializeComponent();
         }
+
+        private void sucursales_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

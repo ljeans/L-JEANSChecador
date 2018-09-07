@@ -53,6 +53,15 @@
     <Compile Include="checador\cheacador.Designer.cs">
       <DependentUpon>cheacador.cs</DependentUpon>
     </Compile>
+    <Compile Include="checador\ClaseChecador.cs" />
+    <Compile Include="DataSet_checador.cs">
+      <DependentUpon>DataSet_checador.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet_checador.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet_checador.xsd</DependentUpon>
+    </Compile>
     <Compile Include="empleados\ClaseEmpleado.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="empleados\empleados.cs">
@@ -87,7 +96,7 @@
     <Compile Include="reportes\reportes.Designer.cs">
       <DependentUpon>reportes.cs</DependentUpon>
     </Compile>
-    <Compile Include="sucursales\Sucursal.cs" />
+    <Compile Include="sucursales\ClaseSucursal.cs" />
     <Compile Include="sucursales\sucursales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +134,17 @@
     <EmbeddedResource Include="sucursales\sucursales.resx">
       <DependentUpon>sucursales.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSet_checador.xsc">
+      <DependentUpon>DataSet_checador.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet_checador.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet_checador.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet_checador.xss">
+      <DependentUpon>DataSet_checador.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
