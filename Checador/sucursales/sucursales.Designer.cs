@@ -28,15 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.tabControlBase.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
-            this.tabControlBase.SuspendLayout();
+            this.panel_menu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lbl_titulo
-            // 
-            this.lbl_titulo.Size = new System.Drawing.Size(175, 37);
-            this.lbl_titulo.Text = "Sucursales";
             // 
             // rb_4
             // 
@@ -66,21 +62,42 @@
             this.rb_1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             // 
-            // tabPage2
+            // panel_barra_sup
             // 
-            this.tabPage2.Size = new System.Drawing.Size(-8, -26);
+            this.panel_barra_sup.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barra_sup_Paint);
             // 
-            // tabPage3
+            // lbl_titulo
             // 
-            this.tabPage3.Size = new System.Drawing.Size(-8, -26);
+            this.lbl_titulo.Size = new System.Drawing.Size(175, 37);
+            this.lbl_titulo.Text = "Sucursales";
             // 
-            // tabPage4
+            // rb_vertodos
             // 
-            this.tabPage4.Size = new System.Drawing.Size(-8, -26);
+            this.rb_vertodos.FlatAppearance.BorderSize = 0;
+            this.rb_vertodos.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
+            this.rb_vertodos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
+            this.rb_vertodos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             // 
-            // tabPage5
+            // rb_buscar
             // 
-            this.tabPage5.Size = new System.Drawing.Size(-8, -26);
+            this.rb_buscar.FlatAppearance.BorderSize = 0;
+            this.rb_buscar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
+            this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
+            this.rb_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            // 
+            // rb_modificar
+            // 
+            this.rb_modificar.FlatAppearance.BorderSize = 0;
+            this.rb_modificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
+            this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
+            this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            // 
+            // rb_registrar
+            // 
+            this.rb_registrar.FlatAppearance.BorderSize = 0;
+            this.rb_registrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.rb_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.rb_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             // 
             // sucursales
             // 
@@ -88,10 +105,11 @@
             this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "sucursales";
+            this.tabControlBase.ResumeLayout(false);
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
-            this.tabControlBase.ResumeLayout(false);
+            this.panel_menu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

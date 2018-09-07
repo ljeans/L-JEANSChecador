@@ -14,5 +14,10 @@ namespace Checador
         {
             InitializeComponent();
         }
+
+        private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -61,6 +61,12 @@
     <Compile Include="empleados\empleados.Designer.cs">
       <DependentUpon>empleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="empleados\huella.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="empleados\huella.Designer.cs">
+      <DependentUpon>huella.cs</DependentUpon>
+    </Compile>
     <Compile Include="principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="empleados\empleados.resx">
       <DependentUpon>empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="empleados\huella.resx">
+      <DependentUpon>huella.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="principal.resx">
       <DependentUpon>principal.cs</DependentUpon>
@@ -353,7 +362,39 @@
   <ItemGroup>
     <None Include="Resources\logos nuevos.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\huella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\huella9.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

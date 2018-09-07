@@ -29,3 +29,4 @@ C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.cheacador.res
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.horarios.resources
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.reportes.resources
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.sucursales.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.empleados.huella.resources
