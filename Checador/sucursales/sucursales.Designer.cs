@@ -108,10 +108,13 @@
             this.rb_1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             // 
+<<<<<<< HEAD
             // tabControlBase
             // 
             this.tabControlBase.Location = new System.Drawing.Point(309, 78);
             // 
+=======
+>>>>>>> a359c7c16a1d4065c21c6e2fade34448742425d8
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.txt_domicilio_num_ext);
@@ -144,6 +147,7 @@
             this.tabPage1.Controls.Add(this.label23);
             this.tabPage1.Text = "Registrar";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+<<<<<<< HEAD
             // 
             // tabPage2
             // 
@@ -154,6 +158,9 @@
             this.tabPage2.Controls.Add(this.txt_nombrebuscar);
             this.tabPage2.Controls.Add(this.pictureBox6);
             // 
+=======
+            //
+>>>>>>> a359c7c16a1d4065c21c6e2fade34448742425d8
             // panel_barra_sup
             // 
             this.panel_barra_sup.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barra_sup_Paint);
@@ -183,6 +190,10 @@
             this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.rb_modificar.CheckedChanged += new System.EventHandler(this.rb_modificar_CheckedChanged);
             // 
+<<<<<<< HEAD
+=======
+            // lbl_titulo
+>>>>>>> a359c7c16a1d4065c21c6e2fade34448742425d8
             // rb_registrar
             // 
             this.rb_registrar.FlatAppearance.BorderSize = 0;
@@ -222,6 +233,10 @@
             this.txt_domicilio_cp.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_cp.TabIndex = 1047;
             // 
+<<<<<<< HEAD
+=======
+            // rb_registrar
+>>>>>>> a359c7c16a1d4065c21c6e2fade34448742425d8
             // txt_domicilio_pais
             // 
             this.txt_domicilio_pais.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;

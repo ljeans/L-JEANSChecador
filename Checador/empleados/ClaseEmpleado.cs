@@ -16,7 +16,7 @@ namespace Checador
         public string apellido_mat { get; set; }
         public string departamento { get; set; }
         //public int id_privilegio { get; set; }
-        public string id_privilegio { get; set; }
+        public int id_privilegio { get; set; }
         public string telefono { get; set; }
         public string calle { get; set; }
         public string num_ext { get; set; }
@@ -42,7 +42,7 @@ namespace Checador
         public int dias_vacaciones { get; set; }
         public string observaciones { get; set; }
         //public int id_horario { get; set; }
-        public string tipo_horario { get; set; }
+        public int id_horario { get; set; }
         public string tipo_contrato { get; set; }
         public string riesgo_puesto { get; set; }
         public string periodicidad_pago { get; set; }
@@ -55,14 +55,14 @@ namespace Checador
         //FUNCION PARA OBTENER EL ID MAXIMO DEL EMPLEADO POR SI ES AUTOINCREMENTABLE EL ID
         public int obtenerIdMaximo()
         {
-            string consulta = "Select * From empleado";
+            string consulta = "Select Max(id_empleado) From empleado";
             Conexion con = new Conexion();
             SqlConnection conexion = new SqlConnection(con.cadenaConexion);
             SqlCommand comand = new SqlCommand(consulta, conexion);
             conexion.Open();
-            //int idMaximo = Convert.ToInt32(comand.ExecuteScalar());
+            int idMaximo = Convert.ToInt32(comand.ExecuteScalar());
             conexion.Close();
-            return 1;
+            return idMaximo;
         }
 
         //FUNCION PARA REGISTRAR UN EMPLEADO
@@ -81,7 +81,7 @@ namespace Checador
                     //MessageBox.Show(e.Message);
                     id = 1;
                 }
-                string consulta = "INSERT INTO sucursal  VALUES (@id,@nombre, @apellido_pat,@apellido_mat, @departamento,@id_privilegio, @telefono, @calle,@colonia, @num_ext,@num_int, @codigo_postal,@poblacion,@municipio, @estado, @pais,@puesto,@NSS, @RFC, @CURP, @estatus, @fecha_alta, @fecha_baja, @sueldo_diario, @sueldo_diario_integrado, @sueldo_base_quincenal, @tipo_salario, @dias_aguinaldo, @dias_vacaciones, @observaciones,@tipo_jornada, @tipo_contrato, @riesgo_puesto, @periodicidad_pago, @banco, @cuenta_bancaria, @email, @tarjeta_despensa, @clave_edenred)";
+                string consulta = "INSERT INTO empleado  VALUES (@id,@nombre, @apellido_pat,@apellido_mat, @departamento,@id_privilegio, @telefono, @calle, @num_ext,@num_int, @colonia, @codigo_postal,@poblacion,@municipio, @estado, @pais,@puesto, @RFC, @CURP, @estatus, @fecha_alta,@observaciones, @email, @fecha_baja, @NSS, @tipo_contrato, @sueldo_diario, @sueldo_diario_integrado, @sueldo_base_quincenal, @tipo_salario, @dias_aguinaldo, @dias_vacaciones, @id_horario, @riesgo_puesto, @periodicidad_pago, @banco, @cuenta_bancaria, @tarjeta_despensa, @clave_edenred)";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -94,35 +94,35 @@ namespace Checador
                 comand.Parameters.AddWithValue("@id_privilegio", id_privilegio);
                 comand.Parameters.AddWithValue("@telefono", telefono);
                 comand.Parameters.AddWithValue("@calle", calle);
-                comand.Parameters.AddWithValue("@colonia", colonia);
                 comand.Parameters.AddWithValue("@num_ext", num_ext);
                 comand.Parameters.AddWithValue("@num_int", num_int);
+                comand.Parameters.AddWithValue("@colonia", colonia);             
                 comand.Parameters.AddWithValue("@codigo_postal", codigo_postal);
                 comand.Parameters.AddWithValue("@poblacion", poblacion);
                 comand.Parameters.AddWithValue("@municipio", municipio);
                 comand.Parameters.AddWithValue("@estado", estado);
                 comand.Parameters.AddWithValue("@pais", pais);
                 comand.Parameters.AddWithValue("@puesto", puesto);
-                comand.Parameters.AddWithValue("@NSS", NSS);
                 comand.Parameters.AddWithValue("@RFC", RFC);
                 comand.Parameters.AddWithValue("@CURP", CURP);
                 comand.Parameters.AddWithValue("@estatus", estatus);
                 comand.Parameters.AddWithValue("@fecha_alta", fecha_alta);
-                comand.Parameters.AddWithValue("@fecha_baja", fecha_baja);
+                comand.Parameters.AddWithValue("@observaciones", observaciones);
+                comand.Parameters.AddWithValue("@email", email);
+                comand.Parameters.AddWithValue("@fecha_baja", DBNull.Value);
+                comand.Parameters.AddWithValue("@NSS", NSS);
+                comand.Parameters.AddWithValue("@tipo_contrato", tipo_contrato);
                 comand.Parameters.AddWithValue("@sueldo_diario", sueldo_diario);
                 comand.Parameters.AddWithValue("@sueldo_diario_integrado", sueldo_diario_integrado);
                 comand.Parameters.AddWithValue("@sueldo_base_quincenal", sueldo_base_quincenal);
                 comand.Parameters.AddWithValue("@tipo_salario", tipo_salario);
                 comand.Parameters.AddWithValue("@dias_aguinaldo", dias_aguinaldo);
                 comand.Parameters.AddWithValue("@dias_vacaciones", dias_vacaciones);
-                comand.Parameters.AddWithValue("@observaciones", observaciones);
-                comand.Parameters.AddWithValue("@tipo_jornada", tipo_horario);
-                comand.Parameters.AddWithValue("@tipo_contrato", tipo_contrato);
+                comand.Parameters.AddWithValue("@id_horario", id_horario);
                 comand.Parameters.AddWithValue("@riesgo_puesto", riesgo_puesto);
                 comand.Parameters.AddWithValue("@periodicidad_pago", periodicidad_pago);
                 comand.Parameters.AddWithValue("@banco", banco);
                 comand.Parameters.AddWithValue("@cuenta_bancaria", cuenta_bancaria);
-                comand.Parameters.AddWithValue("@email", email);
                 comand.Parameters.AddWithValue("@tarjeta_despensa", tarjeta_despensa);
                 comand.Parameters.AddWithValue("@clave_edenred", clave_edenred);
 
@@ -133,7 +133,8 @@ namespace Checador
             }
             catch (Exception e)
             {
-                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                MessageBox.Show(e.ToString());
+                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
             }
         }
 
@@ -142,7 +143,7 @@ namespace Checador
         {
             try
             {
-                string consulta = "UPDATE empleado SET nombre = @nombre, apellido_pat = @apellido_pat, apellido_mat=@apellido_mat, departamento=@departamento,id_privilegio=@id_privilegio, telefono=@telefono, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, puesto=@puesto, NSS=@NSS, RFC=@RFC, CURP=@CURP, estatus=@estatus, fecha_alta=@fecha_alta, fecha_baja=@fecha_baja, sueldo_diario=@sueldo_diario, sueldo_diario_integrado=@sueldo_diario_integrado, sueldo_base_quincenal=@sueldo_base_quincenal, tipo_salario=@tipo_salario, dias_aguinaldo=@dias_aguinaldo, dias_vacaciones=@dias_vacaciones, observaciones=@observaciones,tipo_jornada=@tipo_jornada, tipo_contrato=@tipo_contrato, riesgo_puesto=@riesgo_puesto, periodicidad_pago=@periodicidad_pago, banco=@banco, cuenta_bancaria=@cuenta_bancaria, email=@email, tarjeta_despensa=@tarjeta_despensa, clave_edenred=@clave_edenred WHERE id_empleado = @id";
+                string consulta = "UPDATE empleado SET nombre = @nombre, apellido_pat = @apellido_pat, apellido_mat=@apellido_mat, departamento=@departamento,id_privilegio=@id_privilegio, telefono=@telefono, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, puesto=@puesto, NSS=@NSS, RFC=@RFC, CURP=@CURP, estatus=@estatus, fecha_alta=@fecha_alta, fecha_baja=@fecha_baja, sueldo_diario=@sueldo_diario, sueldo_diario_integrado=@sueldo_diario_integrado, sueldo_base_quincenal=@sueldo_base_quincenal, tipo_salario=@tipo_salario, dias_aguinaldo=@dias_aguinaldo, dias_vacaciones=@dias_vacaciones, observaciones=@observaciones,id_horario=@id_horario, tipo_contrato=@tipo_contrato, riesgo_puesto=@riesgo_puesto, periodicidad_pago=@periodicidad_pago, banco=@banco, cuenta_bancaria=@cuenta_bancaria, email=@email, tarjeta_despensa=@tarjeta_despensa, clave_edenred=@clave_edenred WHERE id_empleado = @id";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -176,7 +177,7 @@ namespace Checador
                 comand.Parameters.AddWithValue("@dias_aguinaldo", dias_aguinaldo);
                 comand.Parameters.AddWithValue("@dias_vacaciones", dias_vacaciones);
                 comand.Parameters.AddWithValue("@observaciones", observaciones);
-                comand.Parameters.AddWithValue("@tipo_jornada", tipo_horario);
+                comand.Parameters.AddWithValue("@id_horario", id_horario);
                 comand.Parameters.AddWithValue("@tipo_contrato", tipo_contrato);
                 comand.Parameters.AddWithValue("@riesgo_puesto", riesgo_puesto);
                 comand.Parameters.AddWithValue("@periodicidad_pago", periodicidad_pago);
@@ -248,8 +249,8 @@ namespace Checador
                         apellido_pat = lector.GetString(lector.GetOrdinal("apellido_pat"));
                         apellido_mat = lector.GetString(lector.GetOrdinal("apelldio_mat"));
                         departamento = lector.GetString(lector.GetOrdinal("departamento"));
-                        //id_privilegio = lector.GetInt32(lector.GetOrdinal("id_privilegio"));
-                        id_privilegio = lector.GetString(lector.GetOrdinal("id_privilegio"));
+                        id_privilegio = lector.GetInt32(lector.GetOrdinal("id_privilegio"));
+                        //id_privilegio = lector.GetString(lector.GetOrdinal("id_privilegio"));
                         telefono = lector.GetString(lector.GetOrdinal("telefono"));
                         calle = lector.GetString(lector.GetOrdinal("calle"));
                         colonia = lector.GetString(lector.GetOrdinal("colonia"));
@@ -274,7 +275,7 @@ namespace Checador
                         dias_aguinaldo = lector.GetInt32(lector.GetOrdinal("dias_aguinaldo"));
                         dias_vacaciones = lector.GetInt32(lector.GetOrdinal("dias_vacaciones"));
                         observaciones = lector.GetString(lector.GetOrdinal("observaciones"));
-                        tipo_horario = lector.GetString(lector.GetOrdinal("tipo_jornada"));
+                        id_horario = lector.GetInt32(lector.GetOrdinal("id_horario"));
                         tipo_contrato = lector.GetString(lector.GetOrdinal("tipo_contrato"));
                         riesgo_puesto = lector.GetString(lector.GetOrdinal("riesgo_puesto"));
                         periodicidad_pago = lector.GetString(lector.GetOrdinal("periodicidad_pago"));

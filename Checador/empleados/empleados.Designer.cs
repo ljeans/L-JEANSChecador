@@ -510,7 +510,11 @@
             this.cbx_privilegio.FormattingEnabled = true;
             this.cbx_privilegio.Items.AddRange(new object[] {
             "Usuario",
+<<<<<<< HEAD
             "Adminisrtrador"});
+=======
+            "Administrador"});
+>>>>>>> a359c7c16a1d4065c21c6e2fade34448742425d8
             this.cbx_privilegio.Location = new System.Drawing.Point(199, 380);
             this.cbx_privilegio.Name = "cbx_privilegio";
             this.cbx_privilegio.Size = new System.Drawing.Size(248, 32);
@@ -534,6 +538,7 @@
             this.cbx_sucursal.Name = "cbx_sucursal";
             this.cbx_sucursal.Size = new System.Drawing.Size(248, 32);
             this.cbx_sucursal.TabIndex = 4;
+            this.cbx_sucursal.Text = "SUCURSAL 13";
             // 
             // label29
             // 

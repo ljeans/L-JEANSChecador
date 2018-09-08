@@ -21,7 +21,10 @@ namespace Checador
 
         }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a359c7c16a1d4065c21c6e2fade34448742425d8
         private void sucursales_Load(object sender, EventArgs e)
         {
 
@@ -29,7 +32,10 @@ namespace Checador
     
 
         private void tabPage1_Click(object sender, EventArgs e)
+<<<<<<< HEAD
 
+=======
+>>>>>>> a359c7c16a1d4065c21c6e2fade34448742425d8
         {
 
         }
