@@ -47,7 +47,14 @@ namespace Checador.empleados
 
         private void btn_mod_siguiente2_Click(object sender, EventArgs e)
         {
-            tabControlBase.SelectedTab = tabPage7;
+            if
+            (MessageBox.Show("Desea registrar huella al empleado?", "registrar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                tabControlBase.SelectedTab = tabPage9;
+                cbx_huella.SelectedIndex = 6;
+            }
+
+
         }
 
         private void btn_mod_atras_Click(object sender, EventArgs e)
@@ -93,7 +100,7 @@ namespace Checador.empleados
         //CLICK AL BOTON REGISTRAR
         private void btn_registrar_emp_Click(object sender, EventArgs e)
         {
-            Empleado.apellido_mat = txt_apellido_materno.Text;
+            /*Empleado.apellido_mat = txt_apellido_materno.Text;
             Empleado.apellido_pat = txt_apellido_paterno.Text;
             Empleado.banco = txt_banco.Text;
             Empleado.calle = txt_domicilio_calle.Text;
@@ -130,6 +137,7 @@ namespace Checador.empleados
             Empleado.tipo_contrato = txt_tipo_contrato.Text;
             Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
             Empleado.tipo_salario = txt_tipo_salario.Text;
+            */
         }
         private void Desbloquear_empleados(object sender, EventArgs e)
         {
@@ -156,6 +164,70 @@ namespace Checador.empleados
             huella = new huella();
             huella.FormClosed += new FormClosedEventHandler(Desbloquear_empleados);
             huella.Show();
+        }
+
+        private void rb_buscar_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage4;
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_capturar_mod_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbx_huella_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbx_huella_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbx_huella.Text == "1 (anular izquierdo)")
+            {
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella1.png");
+            }
+            else if (cbx_huella.Text == "0 (meñique izquierdo)")
+            {
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella0.png");
+            }
+            else if (cbx_huella.Text == "2 (medio izquierdo)")
+            {
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella2.png");
+            }
+            else if (cbx_huella.Text == "3 (indice izquierdo)")
+            {
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella3.png");
+            }
+            else if (cbx_huella.Text == "4 (pulgar izquierdo)")
+            {
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella4.png");
+            }
+            else if (cbx_huella.Text == "5 (pulgar derecho)")
+            {
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella5.png");
+            }
+            else if (cbx_huella.Text == "6 (indice  derecho)")
+            {
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella6.png");
+            }
+            else if (cbx_huella.Text == "7 (medio derecho)")
+            {
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella7.png");
+            }
+            else if (cbx_huella.Text == "8 (anular derecho)")
+            {
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella8.png");
+            }
+            else if (cbx_huella.Text == "9 (meñique derecho)")
+            {
+                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella9.png");
+            }
         }
     }
 }

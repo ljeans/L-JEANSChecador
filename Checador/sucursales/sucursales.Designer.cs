@@ -36,7 +36,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.txt_domicilio_colonia = new System.Windows.Forms.TextBox();
-            this.txt_domicilio_num_ext = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.txt_domicilio_num_int = new System.Windows.Forms.TextBox();
             this.txt_domicilio_calle = new System.Windows.Forms.TextBox();
@@ -54,11 +53,31 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_domicilio_pob = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.btn_registrar = new System.Windows.Forms.Button();
+            this.dgv_empleadobuscar = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIRECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txt_idbuscar = new System.Windows.Forms.TextBox();
+            this.txt_nombrebuscar = new System.Windows.Forms.TextBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
+            this.rb_mod_activo = new System.Windows.Forms.RadioButton();
+            this.txt_domicilio_num_ext = new System.Windows.Forms.TextBox();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // rb_4
@@ -89,10 +108,15 @@
             this.rb_1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             // 
-<<<<<<< HEAD
-=======
+            // tabControlBase
+            // 
+            this.tabControlBase.Location = new System.Drawing.Point(309, 78);
+            // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.txt_domicilio_num_ext);
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Controls.Add(this.btn_registrar);
             this.tabPage1.Controls.Add(this.txt_domicilio_pob);
             this.tabPage1.Controls.Add(this.label18);
             this.tabPage1.Controls.Add(this.label4);
@@ -110,7 +134,6 @@
             this.tabPage1.Controls.Add(this.label25);
             this.tabPage1.Controls.Add(this.label24);
             this.tabPage1.Controls.Add(this.txt_domicilio_colonia);
-            this.tabPage1.Controls.Add(this.txt_domicilio_num_ext);
             this.tabPage1.Controls.Add(this.label19);
             this.tabPage1.Controls.Add(this.txt_domicilio_num_int);
             this.tabPage1.Controls.Add(this.txt_domicilio_calle);
@@ -119,9 +142,18 @@
             this.tabPage1.Controls.Add(this.label21);
             this.tabPage1.Controls.Add(this.label22);
             this.tabPage1.Controls.Add(this.label23);
+            this.tabPage1.Text = "Registrar";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
->>>>>>> 5a11a025ad7d42474ffe44011ab0a9569db070f4
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.dgv_empleadobuscar);
+            this.tabPage2.Controls.Add(this.label42);
+            this.tabPage2.Controls.Add(this.label43);
+            this.tabPage2.Controls.Add(this.txt_idbuscar);
+            this.tabPage2.Controls.Add(this.txt_nombrebuscar);
+            this.tabPage2.Controls.Add(this.pictureBox6);
+            // 
             // panel_barra_sup
             // 
             this.panel_barra_sup.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barra_sup_Paint);
@@ -135,19 +167,13 @@
             this.lbl_titulo.Size = new System.Drawing.Size(175, 37);
             this.lbl_titulo.Text = "Sucursales";
             // 
-            // rb_vertodos
-            // 
-            this.rb_vertodos.FlatAppearance.BorderSize = 0;
-            this.rb_vertodos.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
-            this.rb_vertodos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
-            this.rb_vertodos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            // 
             // rb_buscar
             // 
             this.rb_buscar.FlatAppearance.BorderSize = 0;
             this.rb_buscar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_buscar.CheckedChanged += new System.EventHandler(this.rb_buscar_CheckedChanged);
             // 
             // rb_modificar
             // 
@@ -155,17 +181,15 @@
             this.rb_modificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_modificar.CheckedChanged += new System.EventHandler(this.rb_modificar_CheckedChanged);
             // 
-<<<<<<< HEAD
-            // lbl_titulo
-=======
             // rb_registrar
->>>>>>> 5a11a025ad7d42474ffe44011ab0a9569db070f4
             // 
             this.rb_registrar.FlatAppearance.BorderSize = 0;
             this.rb_registrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.rb_registrar.CheckedChanged += new System.EventHandler(this.rb_registrar_CheckedChanged);
             // 
             // txt_domicilio_municipio
             // 
@@ -198,11 +222,7 @@
             this.txt_domicilio_cp.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_cp.TabIndex = 1047;
             // 
-<<<<<<< HEAD
-            // rb_registrar
-=======
             // txt_domicilio_pais
->>>>>>> 5a11a025ad7d42474ffe44011ab0a9569db070f4
             // 
             this.txt_domicilio_pais.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_domicilio_pais.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -253,16 +273,6 @@
             this.txt_domicilio_colonia.Name = "txt_domicilio_colonia";
             this.txt_domicilio_colonia.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_colonia.TabIndex = 1046;
-            // 
-            // txt_domicilio_num_ext
-            // 
-            this.txt_domicilio_num_ext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_domicilio_num_ext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_domicilio_num_ext.Location = new System.Drawing.Point(228, 255);
-            this.txt_domicilio_num_ext.MaxLength = 5;
-            this.txt_domicilio_num_ext.Name = "txt_domicilio_num_ext";
-            this.txt_domicilio_num_ext.Size = new System.Drawing.Size(218, 29);
-            this.txt_domicilio_num_ext.TabIndex = 1045;
             // 
             // label19
             // 
@@ -448,6 +458,175 @@
             this.label18.TabIndex = 1071;
             this.label18.Text = "Población:";
             // 
+            // btn_registrar
+            // 
+            this.btn_registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_registrar.FlatAppearance.BorderSize = 0;
+            this.btn_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_registrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_registrar.ForeColor = System.Drawing.Color.White;
+            this.btn_registrar.Location = new System.Drawing.Point(667, 515);
+            this.btn_registrar.Name = "btn_registrar";
+            this.btn_registrar.Size = new System.Drawing.Size(250, 70);
+            this.btn_registrar.TabIndex = 1072;
+            this.btn_registrar.Text = "Registrar";
+            this.btn_registrar.UseVisualStyleBackColor = false;
+            // 
+            // dgv_empleadobuscar
+            // 
+            this.dgv_empleadobuscar.AllowUserToAddRows = false;
+            this.dgv_empleadobuscar.AllowUserToDeleteRows = false;
+            this.dgv_empleadobuscar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_empleadobuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_empleadobuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_empleadobuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.DIRECCION,
+            this.TELEFONO,
+            this.estatus});
+            this.dgv_empleadobuscar.Location = new System.Drawing.Point(12, 127);
+            this.dgv_empleadobuscar.MultiSelect = false;
+            this.dgv_empleadobuscar.Name = "dgv_empleadobuscar";
+            this.dgv_empleadobuscar.ReadOnly = true;
+            this.dgv_empleadobuscar.Size = new System.Drawing.Size(966, 407);
+            this.dgv_empleadobuscar.TabIndex = 80;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_empleado";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "nombre";
+            this.dataGridViewTextBoxColumn3.HeaderText = "NOMBRE";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // DIRECCION
+            // 
+            this.DIRECCION.HeaderText = "DIRECCION";
+            this.DIRECCION.Name = "DIRECCION";
+            this.DIRECCION.ReadOnly = true;
+            this.DIRECCION.Width = 350;
+            // 
+            // TELEFONO
+            // 
+            this.TELEFONO.HeaderText = "TELEFONO";
+            this.TELEFONO.Name = "TELEFONO";
+            this.TELEFONO.ReadOnly = true;
+            this.TELEFONO.Width = 200;
+            // 
+            // estatus
+            // 
+            this.estatus.HeaderText = "ESTATUS";
+            this.estatus.Name = "estatus";
+            this.estatus.ReadOnly = true;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.BackColor = System.Drawing.Color.Transparent;
+            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(56, 80);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(84, 24);
+            this.label42.TabIndex = 81;
+            this.label42.Text = "Nombre:";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.BackColor = System.Drawing.Color.Transparent;
+            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(108, 47);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(32, 24);
+            this.label43.TabIndex = 82;
+            this.label43.Text = "ID:";
+            // 
+            // txt_idbuscar
+            // 
+            this.txt_idbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_idbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_idbuscar.Location = new System.Drawing.Point(146, 42);
+            this.txt_idbuscar.Name = "txt_idbuscar";
+            this.txt_idbuscar.Size = new System.Drawing.Size(248, 29);
+            this.txt_idbuscar.TabIndex = 78;
+            // 
+            // txt_nombrebuscar
+            // 
+            this.txt_nombrebuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_nombrebuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombrebuscar.Location = new System.Drawing.Point(146, 75);
+            this.txt_nombrebuscar.Name = "txt_nombrebuscar";
+            this.txt_nombrebuscar.Size = new System.Drawing.Size(248, 29);
+            this.txt_nombrebuscar.TabIndex = 79;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox6.Location = new System.Drawing.Point(-51, 92);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(1095, 490);
+            this.pictureBox6.TabIndex = 83;
+            this.pictureBox6.TabStop = false;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.rb_mod_inactivo);
+            this.groupBox4.Controls.Add(this.rb_mod_activo);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(599, 385);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(320, 75);
+            this.groupBox4.TabIndex = 1073;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Estatus:";
+            this.groupBox4.Visible = false;
+            // 
+            // rb_mod_inactivo
+            // 
+            this.rb_mod_inactivo.AutoSize = true;
+            this.rb_mod_inactivo.Location = new System.Drawing.Point(180, 28);
+            this.rb_mod_inactivo.Name = "rb_mod_inactivo";
+            this.rb_mod_inactivo.Size = new System.Drawing.Size(91, 28);
+            this.rb_mod_inactivo.TabIndex = 56;
+            this.rb_mod_inactivo.Text = "Inactivo";
+            this.rb_mod_inactivo.UseVisualStyleBackColor = true;
+            // 
+            // rb_mod_activo
+            // 
+            this.rb_mod_activo.AutoSize = true;
+            this.rb_mod_activo.Checked = true;
+            this.rb_mod_activo.Location = new System.Drawing.Point(22, 28);
+            this.rb_mod_activo.Name = "rb_mod_activo";
+            this.rb_mod_activo.Size = new System.Drawing.Size(79, 28);
+            this.rb_mod_activo.TabIndex = 55;
+            this.rb_mod_activo.TabStop = true;
+            this.rb_mod_activo.Text = "Activo";
+            this.rb_mod_activo.UseVisualStyleBackColor = true;
+            // 
+            // txt_domicilio_num_ext
+            // 
+            this.txt_domicilio_num_ext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_domicilio_num_ext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_domicilio_num_ext.Location = new System.Drawing.Point(228, 256);
+            this.txt_domicilio_num_ext.MaxLength = 5;
+            this.txt_domicilio_num_ext.Name = "txt_domicilio_num_ext";
+            this.txt_domicilio_num_ext.Size = new System.Drawing.Size(218, 29);
+            this.txt_domicilio_num_ext.TabIndex = 1074;
+            // 
             // sucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,10 +637,16 @@
             this.tabControlBase.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             this.panel_menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -480,7 +665,6 @@
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txt_domicilio_colonia;
-        private System.Windows.Forms.TextBox txt_domicilio_num_ext;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txt_domicilio_num_int;
         private System.Windows.Forms.TextBox txt_domicilio_calle;
@@ -494,5 +678,21 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_registrar;
+        private System.Windows.Forms.DataGridView dgv_empleadobuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIRECCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txt_idbuscar;
+        private System.Windows.Forms.TextBox txt_nombrebuscar;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.TextBox txt_domicilio_num_ext;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.RadioButton rb_mod_inactivo;
+        private System.Windows.Forms.RadioButton rb_mod_activo;
     }
 }

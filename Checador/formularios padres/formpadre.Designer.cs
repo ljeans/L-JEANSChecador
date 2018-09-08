@@ -39,19 +39,18 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel_barra_sup = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_home = new System.Windows.Forms.PictureBox();
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.panel_menu = new System.Windows.Forms.Panel();
-            this.rb_vertodos = new System.Windows.Forms.RadioButton();
             this.rb_buscar = new System.Windows.Forms.RadioButton();
             this.rb_modificar = new System.Windows.Forms.RadioButton();
             this.rb_registrar = new System.Windows.Forms.RadioButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControlBase.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // rb_4
@@ -221,6 +220,16 @@
             this.panel_barra_sup.Size = new System.Drawing.Size(1362, 79);
             this.panel_barra_sup.TabIndex = 12;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Checador.Properties.Resources.logos_nuevos_1;
+            this.pictureBox2.Location = new System.Drawing.Point(1212, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(135, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
             // btn_home
             // 
             this.btn_home.BackColor = System.Drawing.Color.Transparent;
@@ -248,7 +257,6 @@
             // 
             this.panel_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panel_menu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel_menu.Controls.Add(this.rb_vertodos);
             this.panel_menu.Controls.Add(this.rb_buscar);
             this.panel_menu.Controls.Add(this.rb_modificar);
             this.panel_menu.Controls.Add(this.rb_registrar);
@@ -257,28 +265,6 @@
             this.panel_menu.Name = "panel_menu";
             this.panel_menu.Size = new System.Drawing.Size(299, 662);
             this.panel_menu.TabIndex = 13;
-            // 
-            // rb_vertodos
-            // 
-            this.rb_vertodos.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rb_vertodos.BackColor = System.Drawing.Color.Transparent;
-            this.rb_vertodos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.rb_vertodos.FlatAppearance.BorderSize = 0;
-            this.rb_vertodos.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
-            this.rb_vertodos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
-            this.rb_vertodos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.rb_vertodos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rb_vertodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_vertodos.ForeColor = System.Drawing.Color.White;
-            this.rb_vertodos.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.rb_vertodos.Location = new System.Drawing.Point(0, 312);
-            this.rb_vertodos.Name = "rb_vertodos";
-            this.rb_vertodos.Size = new System.Drawing.Size(299, 104);
-            this.rb_vertodos.TabIndex = 4;
-            this.rb_vertodos.Text = "Ver todos";
-            this.rb_vertodos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.rb_vertodos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.rb_vertodos.UseVisualStyleBackColor = false;
             // 
             // rb_buscar
             // 
@@ -348,16 +334,6 @@
             this.rb_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.rb_registrar.UseVisualStyleBackColor = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Checador.Properties.Resources.logos_nuevos_1;
-            this.pictureBox2.Location = new System.Drawing.Point(1212, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(128, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
             // formpadre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -378,9 +354,9 @@
             this.tabControlBase.ResumeLayout(false);
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             this.panel_menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,7 +376,6 @@
         public System.Windows.Forms.PictureBox btn_home;
         public System.Windows.Forms.Label lbl_titulo;
         public System.Windows.Forms.Panel panel_menu;
-        public System.Windows.Forms.RadioButton rb_vertodos;
         public System.Windows.Forms.RadioButton rb_buscar;
         public System.Windows.Forms.RadioButton rb_modificar;
         public System.Windows.Forms.RadioButton rb_registrar;

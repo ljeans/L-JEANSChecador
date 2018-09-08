@@ -20,18 +20,16 @@ namespace Checador
         {
 
         }
-<<<<<<< HEAD
+
 
         private void sucursales_Load(object sender, EventArgs e)
-=======
-        private void sucursales_Load(object sender, EventArgs e)
-
         {
 
         }
+    
 
         private void tabPage1_Click(object sender, EventArgs e)
->>>>>>> 5a11a025ad7d42474ffe44011ab0a9569db070f4
+
         {
 
         }
@@ -39,6 +37,25 @@ namespace Checador
         private void btn_home_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void rb_registrar_CheckedChanged(object sender, EventArgs e)
+        {
+            rb_mod_activo.Checked = true;
+            groupBox4.Visible = false;
+            tabControlBase.SelectedTab = tabPage1;
+        }
+
+        private void rb_modificar_CheckedChanged(object sender, EventArgs e)
+        {
+            rb_mod_activo.Checked = true;
+            groupBox4.Visible = true;
+            tabControlBase.SelectedTab = tabPage1;
+        }
+
+        private void rb_buscar_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage2;
         }
     }
 }
