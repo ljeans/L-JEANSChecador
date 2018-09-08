@@ -22,9 +22,21 @@ namespace Checador.empleados
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+      
+
+
+        private void btn_siguiente2_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
+        }
+
+        private void huella_Load(object sender, EventArgs e)
+        {
+            cbx_huella.SelectedIndex = 6;
+        }
+
+        private void cbx_huella_SelectedIndexChanged(object sender, EventArgs e)
+        {
             if (cbx_huella.Text == "1 (anular izquierdo)")
             {
                 pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella1.png");
@@ -65,12 +77,6 @@ namespace Checador.empleados
             {
                 pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella9.png");
             }
-
-        }
-
-        private void btn_siguiente2_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
