@@ -10,6 +10,9 @@ namespace Checador
 {
     public partial class sucursales : Checador.formularios_padres.formpadre
     {
+        //SE CREA LA INSTANCIA AL OBJETO DE LA CLASE SUCURSAL
+        ClaseSucursal Empleado = new ClaseSucursal();
+
         public sucursales()
         {
             InitializeComponent();

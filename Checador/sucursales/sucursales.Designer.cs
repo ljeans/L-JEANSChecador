@@ -89,6 +89,10 @@
             this.rb_1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             // 
+            // tabControlBase
+            // 
+            this.tabControlBase.Location = new System.Drawing.Point(309, 75);
+            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.txt_domicilio_pob);
@@ -118,7 +122,7 @@
             this.tabPage1.Controls.Add(this.label22);
             this.tabPage1.Controls.Add(this.label23);
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            //
+            // 
             // panel_barra_sup
             // 
             this.panel_barra_sup.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barra_sup_Paint);
@@ -153,7 +157,6 @@
             this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             // 
-            // lbl_titulo
             // rb_registrar
             // 
             this.rb_registrar.FlatAppearance.BorderSize = 0;
@@ -192,7 +195,6 @@
             this.txt_domicilio_cp.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_cp.TabIndex = 1047;
             // 
-            // rb_registrar
             // txt_domicilio_pais
             // 
             this.txt_domicilio_pais.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -345,7 +347,6 @@
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(228, 72);
             this.textBox1.MaxLength = 32;
