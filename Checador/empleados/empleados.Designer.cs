@@ -461,12 +461,10 @@
             // btn_home
             // 
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
-     
             // 
             // lbl_titulo
             // 
             this.lbl_titulo.Size = new System.Drawing.Size(177, 37);
-
             this.lbl_titulo.Text = "Empleados";
             this.lbl_titulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -509,11 +507,8 @@
             this.cbx_privilegio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.cbx_privilegio.FormattingEnabled = true;
             this.cbx_privilegio.Items.AddRange(new object[] {
-            "SOLTERO (A)",
-            "CASADO (A)",
-            "VIUDO (A)",
-            "DIVORSIADO (A)",
-            "UNION LIBRE"});
+            "Usuario",
+            "Administrador"});
             this.cbx_privilegio.Location = new System.Drawing.Point(199, 380);
             this.cbx_privilegio.Name = "cbx_privilegio";
             this.cbx_privilegio.Size = new System.Drawing.Size(248, 32);
@@ -540,6 +535,7 @@
             this.cbx_sucursal.Name = "cbx_sucursal";
             this.cbx_sucursal.Size = new System.Drawing.Size(248, 32);
             this.cbx_sucursal.TabIndex = 4;
+            this.cbx_sucursal.Text = "SUCURSAL 13";
             // 
             // label29
             // 
@@ -706,7 +702,6 @@
             // btn_capturar
             // 
             this.btn_capturar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-
             this.btn_capturar.FlatAppearance.BorderSize = 0;
             this.btn_capturar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_capturar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
@@ -759,10 +754,8 @@
             // 
             this.btn_siguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_siguiente.FlatAppearance.BorderSize = 0;
-          
             this.btn_siguiente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_siguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-
             this.btn_siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_siguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_siguiente.ForeColor = System.Drawing.Color.White;
@@ -1124,8 +1117,8 @@
             // 
             this.btn_siguiente2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_siguiente2.FlatAppearance.BorderSize = 0;
-            this.btn_siguiente2.FlatAppearance.MouseDownBackColor =  System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_siguiente2.FlatAppearance.MouseOverBackColor =  System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_siguiente2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_siguiente2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_siguiente2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_siguiente2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_siguiente2.ForeColor = System.Drawing.Color.White;
@@ -1426,8 +1419,8 @@
             // 
             this.btn_registrar_emp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_registrar_emp.FlatAppearance.BorderSize = 0;
-            this.btn_registrar_emp.FlatAppearance.MouseDownBackColor =  System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_registrar_emp.FlatAppearance.MouseOverBackColor =  System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_registrar_emp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_registrar_emp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_registrar_emp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrar_emp.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrar_emp.ForeColor = System.Drawing.Color.White;

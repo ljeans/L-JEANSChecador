@@ -21,6 +21,15 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
+            //MOSTRAR EL ID DEL EMPLEADO AL CARGAR LA PAGINA
+            try
+            {
+                txt_id.Text = (Empleado.obtenerIdMaximo()+1).ToString();
+            }
+            catch (Exception ex)
+            {
+                txt_id.Text ="1";
+            }
             
         }
 
@@ -107,9 +116,11 @@ namespace Checador.empleados
             Empleado.dias_vacaciones = Convert.ToInt32(txt_dias_vacaciones.Text);
             Empleado.email = txt_email.Text;
             Empleado.estado = txt_domicilio_estado.Text;
-            Empleado.estatus = "Activo";
-            Empleado.fecha_alta = dtp_fec_alt.Value;
-            Empleado.id_privilegio = cbx_privilegio.SelectedValue.ToString();
+            Empleado.estatus = "A";
+            //Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.Year.ToString() + "-" + dtp_fec_alt.Value.Month.ToString() + "-" + dtp_fec_alt.Value.Day.ToString());
+            Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+            //Empleado.id_privilegio = cbx_privilegio.SelectedValue.ToString();
+            Empleado.id_privilegio = 0;
             Empleado.municipio = txt_domicilio_municipio.Text;
             Empleado.nombre = txt_nombre.Text;
             Empleado.NSS = txt_nss.Text;
@@ -128,8 +139,10 @@ namespace Checador.empleados
             Empleado.tarjeta_despensa= txt_despensa.Text;
             Empleado.telefono = txt_telefono.Text;
             Empleado.tipo_contrato = txt_tipo_contrato.Text;
-            Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
+            //Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
+            Empleado.id_horario = 1;
             Empleado.tipo_salario = txt_tipo_salario.Text;
+            Empleado.guardarEmpleado();
         }
         private void Desbloquear_empleados(object sender, EventArgs e)
         {
