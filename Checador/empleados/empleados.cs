@@ -127,6 +127,51 @@ namespace Checador.empleados
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
         private void btn_registrar_emp_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+            Empleado.apellido_mat = txt_apellido_materno.Text;
+            Empleado.apellido_pat = txt_apellido_paterno.Text;
+            Empleado.banco = txt_banco.Text;
+            Empleado.calle = txt_domicilio_calle.Text;
+            Empleado.clave_edenred = txt_edenred.Text;
+            Empleado.codigo_postal = txt_domicilio_cp.Text;
+            Empleado.colonia = txt_domicilio_colonia.Text;
+            Empleado.cuenta_bancaria = txt_cuenta.Text;
+            Empleado.CURP = txt_curp.Text;
+            Empleado.departamento = txt_departamento.Text;
+            Empleado.dias_aguinaldo = Convert.ToInt32(txt_dias_aguinaldo.Text);
+            Empleado.dias_vacaciones = Convert.ToInt32(txt_dias_vacaciones.Text);
+            Empleado.email = txt_email.Text;
+            Empleado.estado = txt_domicilio_estado.Text;
+            Empleado.estatus = "A";
+            //Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.Year.ToString() + "-" + dtp_fec_alt.Value.Month.ToString() + "-" + dtp_fec_alt.Value.Day.ToString());
+            Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+            //Empleado.id_privilegio = cbx_privilegio.SelectedValue.ToString();
+            Empleado.id_privilegio = 0;
+            Empleado.municipio = txt_domicilio_municipio.Text;
+            Empleado.nombre = txt_nombre.Text;
+            Empleado.NSS = txt_nss.Text;
+            Empleado.num_ext = txt_domicilio_num_ext.Text;
+            Empleado.num_int = txt_domicilio_num_int.Text;
+            Empleado.observaciones = txt_observaciones.Text;
+            Empleado.pais = txt_domicilio_pais.Text;
+            Empleado.periodicidad_pago = txt_periodicidad_pago.Text;
+            Empleado.poblacion = txt_domicilio_pob.Text;
+            Empleado.puesto = txt_puesto.Text;
+            Empleado.RFC = txt_rfc.Text;
+            Empleado.riesgo_puesto = txt_riesgo_puesto.Text;
+            Empleado.sueldo_base_quincenal = Convert.ToDouble( txt_sueldo_quincenal.Text);
+            Empleado.sueldo_diario = Convert.ToDouble(txt_sueldo_diario.Text);
+            Empleado.sueldo_diario_integrado = Convert.ToDouble(txt_sueldo_integrado.Text);
+            Empleado.tarjeta_despensa= txt_despensa.Text;
+            Empleado.telefono = txt_telefono.Text;
+            Empleado.tipo_contrato = txt_tipo_contrato.Text;
+            //Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
+            Empleado.id_horario = 1;
+            Empleado.tipo_salario = txt_tipo_salario.Text;
+
+            Empleado.guardarEmpleado();
+
+=======
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;
@@ -271,6 +316,7 @@ namespace Checador.empleados
                 Checador.GetLastError(ref error);
                 MessageBox.Show(error.ToString());
             }
+>>>>>>> 432aac99eda40228249dec45f0f74c3e44a41f5e
         }
 
         public void Conectar_Checador()

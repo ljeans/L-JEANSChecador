@@ -514,8 +514,17 @@
             this.cbx_privilegio.FormattingEnabled = true;
             this.cbx_privilegio.Items.AddRange(new object[] {
             "Usuario",
+<<<<<<< HEAD
+
+            "Adminisrtrador"});
+
+         
+
+            this.cbx_privilegio.Location = new System.Drawing.Point(199, 380);
+=======
             "Adminisrtrador"});
             this.cbx_privilegio.Location = new System.Drawing.Point(200, 419);
+>>>>>>> 432aac99eda40228249dec45f0f74c3e44a41f5e
             this.cbx_privilegio.Name = "cbx_privilegio";
             this.cbx_privilegio.Size = new System.Drawing.Size(248, 32);
             this.cbx_privilegio.TabIndex = 7;

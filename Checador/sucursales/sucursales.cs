@@ -23,6 +23,11 @@ namespace Checador
         {
 
         }
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 432aac99eda40228249dec45f0f74c3e44a41f5e
         private void sucursales_Load(object sender, EventArgs e)
         {
 
@@ -30,6 +35,10 @@ namespace Checador
     
 
         private void tabPage1_Click(object sender, EventArgs e)
+<<<<<<< HEAD
+
+=======
+>>>>>>> 432aac99eda40228249dec45f0f74c3e44a41f5e
         {
 
         }
@@ -58,6 +67,9 @@ namespace Checador
             tabControlBase.SelectedTab = tabPage2;
         }
 
+<<<<<<< HEAD
+  
+=======
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
         private void btn_registrar_Click(object sender, EventArgs e)
@@ -141,5 +153,6 @@ namespace Checador
         }
 
 
+>>>>>>> 432aac99eda40228249dec45f0f74c3e44a41f5e
     }
 }
