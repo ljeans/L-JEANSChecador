@@ -10,6 +10,6 @@ namespace Checador
 {
     class Conexion
     {
-        public string cadenaConexion = "Data Source = 20.20.0.119,1433; Initial Catalog =sistema_checador; user= SA; password=123456;";
+        public string cadenaConexion = "Data Source = 20.20.0.189,1433; Initial Catalog =sistema_checador; user= SA; password=123456;";
     }
 }

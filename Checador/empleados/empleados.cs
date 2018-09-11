@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
+//LIBRERIA PARA HILOS
+using System.Threading;
+
 namespace Checador.empleados
 {
     public partial class empleados : Checador.formularios_padres.formpadre
@@ -14,6 +17,9 @@ namespace Checador.empleados
         ClaseEmpleado Empleado = new ClaseEmpleado();
         huella huella = new huella();
 
+        //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
+        public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
+
         public empleados()
         {
             InitializeComponent();
@@ -21,16 +27,25 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
+
+            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+            Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
+            hilo_secundario.IsBackground = true;
+            hilo_secundario.Start();
+            //cargarID();
+        }
+
+        public void cargarID()
+        {
             //MOSTRAR EL ID DEL EMPLEADO AL CARGAR LA PAGINA
             try
             {
-                txt_id.Text = (Empleado.obtenerIdMaximo()+1).ToString();
+                txt_id.Text = (Empleado.obtenerIdMaximo() + 1).ToString();
             }
             catch (Exception ex)
             {
-                txt_id.Text ="1";
+                txt_id.Text = "1";
             }
-            
         }
 
     
@@ -62,8 +77,6 @@ namespace Checador.empleados
                 tabControlBase.SelectedTab = tabPage9;
                 cbx_huella.SelectedIndex = 6;
             }
-
-
         }
 
         private void btn_mod_atras_Click(object sender, EventArgs e)
@@ -107,57 +120,149 @@ namespace Checador.empleados
         }
 
         //CLICK AL BOTON REGISTRAR
+        //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
         private void btn_registrar_emp_Click(object sender, EventArgs e)
         {
-            /*Empleado.apellido_mat = txt_apellido_materno.Text;
-            Empleado.apellido_pat = txt_apellido_paterno.Text;
-            Empleado.banco = txt_banco.Text;
-            Empleado.calle = txt_domicilio_calle.Text;
-            Empleado.clave_edenred = txt_edenred.Text;
-            Empleado.codigo_postal = txt_domicilio_cp.Text;
-            Empleado.colonia = txt_domicilio_colonia.Text;
-            Empleado.cuenta_bancaria = txt_cuenta.Text;
-            Empleado.CURP = txt_curp.Text;
-            Empleado.departamento = txt_departamento.Text;
-            Empleado.dias_aguinaldo = Convert.ToInt32(txt_dias_aguinaldo.Text);
-            Empleado.dias_vacaciones = Convert.ToInt32(txt_dias_vacaciones.Text);
-            Empleado.email = txt_email.Text;
-            Empleado.estado = txt_domicilio_estado.Text;
-            Empleado.estatus = "A";
-            //Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.Year.ToString() + "-" + dtp_fec_alt.Value.Month.ToString() + "-" + dtp_fec_alt.Value.Day.ToString());
-            Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.ToString("yyyy-MM-dd HH:mm:ss"));
-            //Empleado.id_privilegio = cbx_privilegio.SelectedValue.ToString();
-            Empleado.id_privilegio = 0;
-            Empleado.municipio = txt_domicilio_municipio.Text;
-            Empleado.nombre = txt_nombre.Text;
-            Empleado.NSS = txt_nss.Text;
-            Empleado.num_ext = txt_domicilio_num_ext.Text;
-            Empleado.num_int = txt_domicilio_num_int.Text;
-            Empleado.observaciones = txt_observaciones.Text;
-            Empleado.pais = txt_domicilio_pais.Text;
-            Empleado.periodicidad_pago = txt_periodicidad_pago.Text;
-            Empleado.poblacion = txt_domicilio_pob.Text;
-            Empleado.puesto = txt_puesto.Text;
-            Empleado.RFC = txt_rfc.Text;
-            Empleado.riesgo_puesto = txt_riesgo_puesto.Text;
-            Empleado.sueldo_base_quincenal = Convert.ToDouble( txt_sueldo_quincenal.Text);
-            Empleado.sueldo_diario = Convert.ToDouble(txt_sueldo_diario.Text);
-            Empleado.sueldo_diario_integrado = Convert.ToDouble(txt_sueldo_integrado.Text);
-            Empleado.tarjeta_despensa= txt_despensa.Text;
-            Empleado.telefono = txt_telefono.Text;
-            Empleado.tipo_contrato = txt_tipo_contrato.Text;
-            //Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
-            Empleado.id_horario = 1;
-            Empleado.tipo_salario = txt_tipo_salario.Text;
-<<<<<<< HEAD
-            */
-=======
-            Empleado.guardarEmpleado();
->>>>>>> a359c7c16a1d4065c21c6e2fade34448742425d8
+            try
+            {
+                Empleado.apellido_mat = txt_apellido_materno.Text;
+                Empleado.apellido_pat = txt_apellido_paterno.Text;
+                Empleado.banco = txt_banco.Text;
+                Empleado.calle = txt_domicilio_calle.Text;
+                Empleado.clave_edenred = txt_edenred.Text;
+                Empleado.codigo_postal = txt_domicilio_cp.Text;
+                Empleado.colonia = txt_domicilio_colonia.Text;
+                Empleado.cuenta_bancaria = txt_cuenta.Text;
+                Empleado.CURP = txt_curp.Text;
+                Empleado.departamento = txt_departamento.Text;
+                Empleado.dias_aguinaldo = Convert.ToInt32(txt_dias_aguinaldo.Text);
+                Empleado.dias_vacaciones = Convert.ToInt32(txt_dias_vacaciones.Text);
+                Empleado.email = txt_email.Text;
+                Empleado.estado = txt_domicilio_estado.Text;
+                Empleado.estatus = "A";
+                //Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.Year.ToString() + "-" + dtp_fec_alt.Value.Month.ToString() + "-" + dtp_fec_alt.Value.Day.ToString());
+                Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+                //Empleado.id_privilegio = cbx_privilegio.SelectedValue.ToString();
+                Empleado.id_privilegio = 0;
+                Empleado.municipio = txt_domicilio_municipio.Text;
+                Empleado.nombre = txt_nombre.Text;
+                Empleado.NSS = txt_nss.Text;
+                Empleado.num_ext = txt_domicilio_num_ext.Text;
+                Empleado.num_int = txt_domicilio_num_int.Text;
+                Empleado.observaciones = txt_observaciones.Text;
+                Empleado.pais = txt_domicilio_pais.Text;
+                Empleado.periodicidad_pago = txt_periodicidad_pago.Text;
+                Empleado.poblacion = txt_domicilio_pob.Text;
+                Empleado.puesto = txt_puesto.Text;
+                Empleado.RFC = txt_rfc.Text;
+                Empleado.riesgo_puesto = txt_riesgo_puesto.Text;
+                Empleado.sueldo_base_quincenal = Convert.ToDouble(txt_sueldo_quincenal.Text);
+                Empleado.sueldo_diario = Convert.ToDouble(txt_sueldo_diario.Text);
+                Empleado.sueldo_diario_integrado = Convert.ToDouble(txt_sueldo_integrado.Text);
+                Empleado.tarjeta_despensa = txt_despensa.Text;
+                Empleado.telefono = txt_telefono.Text;
+                Empleado.tipo_contrato = txt_tipo_contrato.Text;
+                //Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
+                Empleado.id_horario = 1;
+                Empleado.tipo_salario = txt_tipo_salario.Text;
+                Empleado.password = txt_contra.Text;
+                Empleado.guardarEmpleado();
+                //Crear_Usuario_Checador(Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
+                //Limpiar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
+
+        //FUNCION PARA LIMPIAR LOS COMPONENTES DEL FORMULARIO DESPUES DE HACER UN REGISTRO
+        private void Limpiar() 
+        {
+            txt_apellido_materno.Text = "";
+            txt_apellido_paterno.Text = "";
+            txt_banco.Text = "";
+            txt_contra.Text = "";
+            txt_cuenta.Text = "";
+            txt_curp.Text = "";
+            txt_departamento.Text = "";
+            txt_despensa.Text = "";
+            txt_dias_aguinaldo.Text = "";
+            txt_dias_vacaciones.Text = "";
+            txt_domicilio_calle.Text = "";
+            txt_domicilio_colonia.Text = "";
+            txt_domicilio_cp.Text = "";
+            txt_domicilio_estado.Text = "";
+            txt_domicilio_municipio.Text = "";
+            txt_domicilio_num_ext.Text = "";
+            txt_domicilio_num_int.Text = "";
+            txt_domicilio_pais.Text = "";
+            txt_domicilio_pob.Text = "";
+            txt_edenred.Text = "";
+            txt_email.Text = "";
+            txt_nombre.Text = "";
+            txt_nss.Text = "";
+            txt_observaciones.Text = "";
+            txt_periodicidad_pago.Text = "";
+            txt_puesto.Text = "";
+            txt_rfc.Text = "";
+            txt_riesgo_puesto.Text = "";
+            txt_sueldo_diario.Text = "";
+            txt_sueldo_integrado.Text = "";
+            txt_sueldo_quincenal.Text = "";
+            txt_telefono.Text = "";
+            txt_tipo_contrato.Text = "";
+            txt_tipo_salario.Text = "";
+            cargarID();
+            //Deshabilitar_Componentes();
+        }
+
+        //FUNCION PARA DESHABILITAR LOS COMPONENTES DEL FORMULARIO
+        public void Deshabilitar_Componentes()
+        {
+            txt_apellido_materno.Enabled = false;
+            txt_apellido_paterno.Enabled = false;
+            txt_nombre.Enabled = false;
+            cbx_sucursal.Enabled = false;
+            dtp_fec_alt.Enabled = false;
+            txt_contra.Enabled = false;
+            cbx_privilegio.Enabled = false;
+            cbx_horario.Enabled = false;
+            btn_siguiente.Enabled = false;
+        }
+
+        //FUNCION PARA HABILITAR LOS COMPONENTES DEL FORMULARIO
+        public void Habilitar_Componentes()
+        {
+            txt_apellido_materno.Enabled = true;
+            txt_apellido_paterno.Enabled = true;
+            txt_nombre.Enabled = true;
+            cbx_sucursal.Enabled = true;
+            dtp_fec_alt.Enabled = true;
+            txt_contra.Enabled = true;
+            cbx_privilegio.Enabled = true;
+            cbx_horario.Enabled = true;
+            btn_siguiente.Enabled = true;
+        }
+
+        //FUNCION PARA REGISTRAR NUEVO USUARIO
+        public void Crear_Usuario_Checador(string id_empleado, string nombre, string contra, int privilegio)
+        {
+            int error = 0;
+            //ATENCION SE NECESITA MODIFICAR EL PRIMER PARAMETRO DE LA FUNCION POR EL ID DEL CHECADOR CORRESPONDIENTE
+            if (Checador.SSR_SetUserInfo(1, id_empleado, nombre, contra, privilegio, true))
+            {
+                MessageBox.Show("Registrado en el checador");
+            }
+            else
+            {
+                Checador.GetLastError(ref error);
+                MessageBox.Show(error.ToString());
+            }
+        }
+
         private void Desbloquear_empleados(object sender, EventArgs e)
         {
-           
             Enabled = true;
         }
 
@@ -245,5 +350,6 @@ namespace Checador.empleados
                 pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella9.png");
             }
         }
+
     }
 }

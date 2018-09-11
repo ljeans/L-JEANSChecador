@@ -51,6 +51,8 @@ namespace Checador
         public string email { get; set; }
         public string tarjeta_despensa { get; set; }
         public string clave_edenred { get; set; }
+        public string password { get; set; }
+        public int horas_extra { get; set; }
 
         //FUNCION PARA OBTENER EL ID MAXIMO DEL EMPLEADO POR SI ES AUTOINCREMENTABLE EL ID
         public int obtenerIdMaximo()
@@ -81,7 +83,7 @@ namespace Checador
                     //MessageBox.Show(e.Message);
                     id = 1;
                 }
-                string consulta = "INSERT INTO empleado  VALUES (@id,@nombre, @apellido_pat,@apellido_mat, @departamento,@id_privilegio, @telefono, @calle, @num_ext,@num_int, @colonia, @codigo_postal,@poblacion,@municipio, @estado, @pais,@puesto, @RFC, @CURP, @estatus, @fecha_alta,@observaciones, @email, @fecha_baja, @NSS, @tipo_contrato, @sueldo_diario, @sueldo_diario_integrado, @sueldo_base_quincenal, @tipo_salario, @dias_aguinaldo, @dias_vacaciones, @id_horario, @riesgo_puesto, @periodicidad_pago, @banco, @cuenta_bancaria, @tarjeta_despensa, @clave_edenred)";
+                string consulta = "INSERT INTO empleado  VALUES (@id,@nombre, @apellido_pat,@apellido_mat, @departamento,@id_privilegio, @telefono, @calle, @num_ext,@num_int, @colonia, @codigo_postal,@poblacion,@municipio, @estado, @pais,@puesto, @RFC, @CURP, @estatus, @fecha_alta,@observaciones, @email, @fecha_baja, @NSS, @tipo_contrato, @sueldo_diario, @sueldo_diario_integrado, @sueldo_base_quincenal, @tipo_salario, @dias_aguinaldo, @dias_vacaciones, @id_horario, @riesgo_puesto, @periodicidad_pago, @banco, @cuenta_bancaria, @tarjeta_despensa, @clave_edenred, @password, @horas_extra)";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -125,6 +127,8 @@ namespace Checador
                 comand.Parameters.AddWithValue("@cuenta_bancaria", cuenta_bancaria);
                 comand.Parameters.AddWithValue("@tarjeta_despensa", tarjeta_despensa);
                 comand.Parameters.AddWithValue("@clave_edenred", clave_edenred);
+                comand.Parameters.AddWithValue("@password", password);
+                comand.Parameters.AddWithValue("@horas_extra", 0);
 
                 comand.ExecuteNonQuery();
                 conexion.Close();
@@ -143,7 +147,7 @@ namespace Checador
         {
             try
             {
-                string consulta = "UPDATE empleado SET nombre = @nombre, apellido_pat = @apellido_pat, apellido_mat=@apellido_mat, departamento=@departamento,id_privilegio=@id_privilegio, telefono=@telefono, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, puesto=@puesto, NSS=@NSS, RFC=@RFC, CURP=@CURP, estatus=@estatus, fecha_alta=@fecha_alta, fecha_baja=@fecha_baja, sueldo_diario=@sueldo_diario, sueldo_diario_integrado=@sueldo_diario_integrado, sueldo_base_quincenal=@sueldo_base_quincenal, tipo_salario=@tipo_salario, dias_aguinaldo=@dias_aguinaldo, dias_vacaciones=@dias_vacaciones, observaciones=@observaciones,id_horario=@id_horario, tipo_contrato=@tipo_contrato, riesgo_puesto=@riesgo_puesto, periodicidad_pago=@periodicidad_pago, banco=@banco, cuenta_bancaria=@cuenta_bancaria, email=@email, tarjeta_despensa=@tarjeta_despensa, clave_edenred=@clave_edenred WHERE id_empleado = @id";
+                string consulta = "UPDATE empleado SET nombre = @nombre, apellido_pat = @apellido_pat, apellido_mat=@apellido_mat, departamento=@departamento,id_privilegio=@id_privilegio, telefono=@telefono, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, puesto=@puesto, NSS=@NSS, RFC=@RFC, CURP=@CURP, estatus=@estatus, fecha_alta=@fecha_alta, fecha_baja=@fecha_baja, sueldo_diario=@sueldo_diario, sueldo_diario_integrado=@sueldo_diario_integrado, sueldo_base_quincenal=@sueldo_base_quincenal, tipo_salario=@tipo_salario, dias_aguinaldo=@dias_aguinaldo, dias_vacaciones=@dias_vacaciones, observaciones=@observaciones,id_horario=@id_horario, tipo_contrato=@tipo_contrato, riesgo_puesto=@riesgo_puesto, periodicidad_pago=@periodicidad_pago, banco=@banco, cuenta_bancaria=@cuenta_bancaria, email=@email, tarjeta_despensa=@tarjeta_despensa, clave_edenred=@clave_edenred WHERE, password = @password id_empleado = @id";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -186,6 +190,7 @@ namespace Checador
                 comand.Parameters.AddWithValue("@email", email);
                 comand.Parameters.AddWithValue("@tarjeta_despensa", tarjeta_despensa);
                 comand.Parameters.AddWithValue("@clave_edenred", clave_edenred);
+                comand.Parameters.AddWithValue("@password", password);
                 comand.ExecuteNonQuery();
                 conexion.Close();
                 MessageBox.Show("Empleado modificado con éxito. ID= " + id.ToString());
