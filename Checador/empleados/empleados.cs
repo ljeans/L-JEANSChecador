@@ -27,12 +27,16 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
 
             //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
             Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
             hilo_secundario.IsBackground = true;
             hilo_secundario.Start();
             //cargarID();
+            groupBox4.Visible = false;
+            groupBox4.Enabled = false;
+
         }
 
         public void cargarID()
@@ -51,12 +55,19 @@ namespace Checador.empleados
     
         private void rb_modificar_CheckedChanged(object sender, EventArgs e)
         {
-            tabControlBase.SelectedTab = tabPage8;
+            
         }
 
         private void rb_registrar_CheckedChanged(object sender, EventArgs e)
         {
             tabControlBase.SelectedTab = tabPage1;
+            groupBox4.Visible = false;
+            groupBox4.Enabled = false;
+            btn_modificar.Enabled = false;
+            btn_modificar.Visible = false;
+            btn_registrar.Visible = true;
+            btn_registrar.Enabled = true;
+
         }
 
         private void btn_home_Click(object sender, EventArgs e)
@@ -64,30 +75,7 @@ namespace Checador.empleados
             this.Close();
         }
 
-        private void btn_mod_siguiente_Click(object sender, EventArgs e)
-        {
-            tabControlBase.SelectedTab = tabPage6;
-        }
-
-        private void btn_mod_siguiente2_Click(object sender, EventArgs e)
-        {
-            if
-            (MessageBox.Show("Desea registrar huella al empleado?", "registrar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                tabControlBase.SelectedTab = tabPage9;
-                cbx_huella.SelectedIndex = 6;
-            }
-        }
-
-        private void btn_mod_atras_Click(object sender, EventArgs e)
-        {
-            tabControlBase.SelectedTab = tabPage5;
-        }
-
-        private void btn_mod_atras2_Click(object sender, EventArgs e)
-        {
-            tabControlBase.SelectedTab = tabPage6;
-        }
+      
 
         private void rb_vertodos_CheckedChanged(object sender, EventArgs e)
         {
@@ -106,7 +94,12 @@ namespace Checador.empleados
 
         private void btn_siguiente2_Click(object sender, EventArgs e)
         {
-            tabControlBase.SelectedTab = tabPage3;
+            if
+           (MessageBox.Show("Desea registrar huella al empleado?", "registrar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                tabControlBase.SelectedTab = tabPage3;
+                cbx_huella.SelectedIndex = 6;
+            }
         }
 
         private void btn_atras_Click(object sender, EventArgs e)
@@ -123,7 +116,7 @@ namespace Checador.empleados
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
         private void btn_registrar_emp_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
+
             Empleado.apellido_mat = txt_apellido_materno.Text;
             Empleado.apellido_pat = txt_apellido_paterno.Text;
             Empleado.banco = txt_banco.Text;
@@ -167,7 +160,7 @@ namespace Checador.empleados
 
             Empleado.guardarEmpleado();
 
-=======
+
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;
@@ -304,7 +297,6 @@ namespace Checador.empleados
                 Checador.GetLastError(ref error);
                 MessageBox.Show(error.ToString());
             }
->>>>>>> 432aac99eda40228249dec45f0f74c3e44a41f5e
         }
 
         private void Desbloquear_empleados(object sender, EventArgs e)
@@ -397,5 +389,46 @@ namespace Checador.empleados
             }
         }
 
+        private void txt_mod_departamento_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label88_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_mod_puesto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label57_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbx_horario_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rb_modificar_CheckedChanged_1(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage5;
+            groupBox4.Visible = true;
+            groupBox4.Enabled = true;
+            
+        }
+
+        private void btn_modificar_Click_1(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage1;
+            btn_modificar.Enabled = true;
+            btn_modificar.Visible = true;
+            btn_registrar.Visible = false;
+            btn_registrar.Enabled = false;
+        }
     }
 }

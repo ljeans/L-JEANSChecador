@@ -23,11 +23,8 @@ namespace Checador
         {
 
         }
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 432aac99eda40228249dec45f0f74c3e44a41f5e
         private void sucursales_Load(object sender, EventArgs e)
         {
 
@@ -35,10 +32,6 @@ namespace Checador
     
 
         private void tabPage1_Click(object sender, EventArgs e)
-<<<<<<< HEAD
-
-=======
->>>>>>> 432aac99eda40228249dec45f0f74c3e44a41f5e
         {
 
         }
@@ -53,13 +46,20 @@ namespace Checador
             rb_mod_activo.Checked = true;
             groupBox4.Visible = false;
             tabControlBase.SelectedTab = tabPage1;
+            btn_modificar.Enabled = false;
+            btn_modificar.Visible = false;
+            btn_registrar.Visible = true;
         }
 
         private void rb_modificar_CheckedChanged(object sender, EventArgs e)
         {
             rb_mod_activo.Checked = true;
             groupBox4.Visible = true;
-            tabControlBase.SelectedTab = tabPage1;
+            btn_modificar.Enabled = true;
+            btn_modificar.Visible = true;
+            btn_registrar.Visible = false;
+            
+            tabControlBase.SelectedTab = tabPage3;
         }
 
         private void rb_buscar_CheckedChanged(object sender, EventArgs e)
@@ -67,9 +67,6 @@ namespace Checador
             tabControlBase.SelectedTab = tabPage2;
         }
 
-<<<<<<< HEAD
-  
-=======
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
         private void btn_registrar_Click(object sender, EventArgs e)
@@ -152,7 +149,14 @@ namespace Checador
             btn_registrar.Enabled = true;
         }
 
+        private void btn_modificar_Click(object sender, EventArgs e)
+        {
 
->>>>>>> 432aac99eda40228249dec45f0f74c3e44a41f5e
+        }
+
+        private void btn_mod_Click(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage1;
+        }
     }
 }

@@ -69,9 +69,14 @@
             this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
             this.rb_mod_activo = new System.Windows.Forms.RadioButton();
             this.txt_domicilio_num_ext = new System.Windows.Forms.TextBox();
+            this.btn_modificar = new System.Windows.Forms.Button();
+            this.btn_ir_modificar = new System.Windows.Forms.Button();
+            this.label84 = new System.Windows.Forms.Label();
+            this.txt_id_mod = new System.Windows.Forms.TextBox();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
@@ -110,10 +115,11 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(309, 78);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 58);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btn_modificar);
             this.tabPage1.Controls.Add(this.txt_domicilio_num_ext);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.btn_registrar);
@@ -153,6 +159,12 @@
             this.tabPage2.Controls.Add(this.txt_idbuscar);
             this.tabPage2.Controls.Add(this.txt_nombrebuscar);
             this.tabPage2.Controls.Add(this.pictureBox6);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.btn_ir_modificar);
+            this.tabPage3.Controls.Add(this.label84);
+            this.tabPage3.Controls.Add(this.txt_id_mod);
             // 
             // panel_barra_sup
             // 
@@ -363,17 +375,6 @@
             // 
             // txt_id
             // 
-<<<<<<< HEAD
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(228, 72);
-            this.textBox1.MaxLength = 32;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 29);
-            this.textBox1.TabIndex = 1063;
-           
-=======
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Location = new System.Drawing.Point(228, 72);
@@ -381,7 +382,6 @@
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(100, 29);
             this.txt_id.TabIndex = 1063;
->>>>>>> 432aac99eda40228249dec45f0f74c3e44a41f5e
             // 
             // label1
             // 
@@ -639,6 +639,60 @@
             this.txt_domicilio_num_ext.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_num_ext.TabIndex = 1074;
             // 
+            // btn_modificar
+            // 
+            this.btn_modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_modificar.Enabled = false;
+            this.btn_modificar.FlatAppearance.BorderSize = 0;
+            this.btn_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_modificar.ForeColor = System.Drawing.Color.White;
+            this.btn_modificar.Location = new System.Drawing.Point(667, 515);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(250, 70);
+            this.btn_modificar.TabIndex = 1075;
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.UseVisualStyleBackColor = false;
+            this.btn_modificar.Visible = false;
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
+            // 
+            // btn_ir_modificar
+            // 
+            this.btn_ir_modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_ir_modificar.FlatAppearance.BorderSize = 0;
+            this.btn_ir_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_ir_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_ir_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ir_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ir_modificar.ForeColor = System.Drawing.Color.White;
+            this.btn_ir_modificar.Location = new System.Drawing.Point(340, 308);
+            this.btn_ir_modificar.Name = "btn_ir_modificar";
+            this.btn_ir_modificar.Size = new System.Drawing.Size(270, 70);
+            this.btn_ir_modificar.TabIndex = 99;
+            this.btn_ir_modificar.Text = "Modificar";
+            this.btn_ir_modificar.UseVisualStyleBackColor = false;
+            this.btn_ir_modificar.Click += new System.EventHandler(this.btn_mod_Click);
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label84.Location = new System.Drawing.Point(314, 246);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(110, 24);
+            this.label84.TabIndex = 97;
+            this.label84.Text = "ID Sucursal:";
+            // 
+            // txt_id_mod
+            // 
+            this.txt_id_mod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id_mod.Location = new System.Drawing.Point(430, 243);
+            this.txt_id_mod.Name = "txt_id_mod";
+            this.txt_id_mod.Size = new System.Drawing.Size(200, 29);
+            this.txt_id_mod.TabIndex = 98;
+            // 
             // sucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -651,6 +705,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
@@ -706,5 +762,9 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton rb_mod_inactivo;
         private System.Windows.Forms.RadioButton rb_mod_activo;
+        private System.Windows.Forms.Button btn_modificar;
+        private System.Windows.Forms.Button btn_ir_modificar;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.TextBox txt_id_mod;
     }
 }

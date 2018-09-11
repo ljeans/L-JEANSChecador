@@ -374,6 +374,7 @@
             this.btn_checador.Text = "Checador";
             this.btn_checador.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_checador.UseVisualStyleBackColor = false;
+            this.btn_checador.Click += new System.EventHandler(this.btn_checador_Click);
             // 
             // principal
             // 

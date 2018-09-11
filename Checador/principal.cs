@@ -128,6 +128,14 @@ namespace Checador
             modulo_sucursal.Show();
         }
 
+        private void btn_checador_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            modulo_checador = new Checador.cheacador();
+            modulo_checador.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            modulo_checador.Show();
+        }
+
         private void Checador_OnFinger()
         {
             
