@@ -44,11 +44,11 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_id = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_telefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_domicilio_pob = new System.Windows.Forms.TextBox();
@@ -120,11 +120,11 @@
             this.tabPage1.Controls.Add(this.txt_domicilio_pob);
             this.tabPage1.Controls.Add(this.label18);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox3);
+            this.tabPage1.Controls.Add(this.txt_telefono);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.txt_nombre);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.txt_id);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.txt_domicilio_municipio);
             this.tabPage1.Controls.Add(this.label33);
@@ -361,8 +361,9 @@
             this.label23.TabIndex = 1051;
             this.label23.Text = "Calle:";
             // 
-            // textBox1
+            // txt_id
             // 
+<<<<<<< HEAD
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -372,6 +373,15 @@
             this.textBox1.Size = new System.Drawing.Size(100, 29);
             this.textBox1.TabIndex = 1063;
            
+=======
+            this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id.Location = new System.Drawing.Point(228, 72);
+            this.txt_id.MaxLength = 32;
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(100, 29);
+            this.txt_id.TabIndex = 1063;
+>>>>>>> 432aac99eda40228249dec45f0f74c3e44a41f5e
             // 
             // label1
             // 
@@ -384,15 +394,15 @@
             this.label1.TabIndex = 1064;
             this.label1.Text = "ID:";
             // 
-            // textBox2
+            // txt_nombre
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(228, 122);
-            this.textBox2.MaxLength = 32;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(218, 29);
-            this.textBox2.TabIndex = 1065;
+            this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombre.Location = new System.Drawing.Point(228, 122);
+            this.txt_nombre.MaxLength = 32;
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(218, 29);
+            this.txt_nombre.TabIndex = 1065;
             // 
             // label2
             // 
@@ -405,15 +415,15 @@
             this.label2.TabIndex = 1066;
             this.label2.Text = "Nombre:";
             // 
-            // textBox3
+            // txt_telefono
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(699, 122);
-            this.textBox3.MaxLength = 32;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(218, 29);
-            this.textBox3.TabIndex = 1067;
+            this.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefono.Location = new System.Drawing.Point(699, 122);
+            this.txt_telefono.MaxLength = 32;
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(218, 29);
+            this.txt_telefono.TabIndex = 1067;
             // 
             // label3
             // 
@@ -474,6 +484,7 @@
             this.btn_registrar.TabIndex = 1072;
             this.btn_registrar.Text = "Registrar";
             this.btn_registrar.UseVisualStyleBackColor = false;
+            this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
             // 
             // dgv_empleadobuscar
             // 
@@ -654,9 +665,9 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_domicilio_municipio;
         private System.Windows.Forms.Label label33;
@@ -677,7 +688,7 @@
         private System.Windows.Forms.TextBox txt_domicilio_pob;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_registrar;
         private System.Windows.Forms.DataGridView dgv_empleadobuscar;
