@@ -109,7 +109,7 @@ namespace Checador.empleados
         //CLICK AL BOTON REGISTRAR
         private void btn_registrar_emp_Click(object sender, EventArgs e)
         {
-            /*Empleado.apellido_mat = txt_apellido_materno.Text;
+            Empleado.apellido_mat = txt_apellido_materno.Text;
             Empleado.apellido_pat = txt_apellido_paterno.Text;
             Empleado.banco = txt_banco.Text;
             Empleado.calle = txt_domicilio_calle.Text;
@@ -149,11 +149,9 @@ namespace Checador.empleados
             //Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
             Empleado.id_horario = 1;
             Empleado.tipo_salario = txt_tipo_salario.Text;
-<<<<<<< HEAD
-            */
-=======
+
             Empleado.guardarEmpleado();
->>>>>>> a359c7c16a1d4065c21c6e2fade34448742425d8
+
         }
         private void Desbloquear_empleados(object sender, EventArgs e)
         {
