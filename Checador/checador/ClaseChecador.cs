@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace Checador.checador
+namespace Checador
 {
     class ClaseChecador
     {
@@ -103,6 +103,47 @@ namespace Checador.checador
             catch (Exception e)
             {
                 MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+            }
+        }
+
+        //OBTIENE LOS DATOS DE UN CHECADOR POR SUCURSAL
+        public void getChecador_Sucursal(int id_sucursal)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
+                {
+                    string get = "Select * FROM checador WHERE id_sucursal = @id_sucursal";
+                    SqlCommand comando = new SqlCommand(get, con);
+                    comando.Parameters.AddWithValue("@id_sucursal", id_sucursal);//Agregamos parametros a la consulta
+                    con.Open();//abre la conexion
+                    SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
+                    if (lector.HasRows)//Revisa si hay resultados
+                    {
+                        lector.Read();//Lee una linea de los resultados
+                        //this.id = ;//Asignacion a atributos
+                        //get ordinal regresa el indice de la fila
+                        //el Nombre especificado en el parametro 
+                        id = lector.GetInt32(lector.GetOrdinal("id_checador"));
+                        ip = lector.GetString(lector.GetOrdinal("ip"));
+                        puerto = lector.GetString(lector.GetOrdinal("puerto"));
+                        estatus = lector.GetString(lector.GetOrdinal("estatus"));
+                        con.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Checador inactivo o no existe");
+                        con.Close();
+                    }
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                MessageBox.Show(e.ToString());
             }
         }
 

@@ -17,6 +17,9 @@ namespace Checador.empleados
         ClaseEmpleado Empleado = new ClaseEmpleado();
         huella huella = new huella();
 
+        //SE CREA LA INSTANCIA DE LA CLASE CHECADOR
+        ClaseChecador clase_checador = new ClaseChecador();
+
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
 
@@ -27,8 +30,13 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             CheckForIllegalCrossThreadCalls = false;
 
+=======
+            //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
+            CheckForIllegalCrossThreadCalls = false;
+>>>>>>> e7b944efbc099244991f1badc99632332f7fc722
             //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
             Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
             hilo_secundario.IsBackground = true;
@@ -182,6 +190,8 @@ namespace Checador.empleados
                 Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.ToString("yyyy-MM-dd HH:mm:ss"));
                 //Empleado.id_privilegio = cbx_privilegio.SelectedValue.ToString();
                 Empleado.id_privilegio = 0;
+                //Empleado.id_sucursal = cbx_sucursal.SelectedValue.ToString();
+                Empleado.id_sucursal = 13;
                 Empleado.municipio = txt_domicilio_municipio.Text;
                 Empleado.nombre = txt_nombre.Text;
                 Empleado.NSS = txt_nss.Text;
@@ -205,8 +215,13 @@ namespace Checador.empleados
                 Empleado.tipo_salario = txt_tipo_salario.Text;
                 Empleado.password = txt_contra.Text;
                 Empleado.guardarEmpleado();
-                //Crear_Usuario_Checador(Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
-                //Limpiar();
+
+                //SE OBTIENEN LOS DATOS DEL CHECADOR
+                clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
+                Conectar_Checador();
+
+                Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
+                Limpiar();
             }
             catch (Exception ex)
             {
@@ -283,12 +298,13 @@ namespace Checador.empleados
             btn_siguiente.Enabled = true;
         }
 
-        //FUNCION PARA REGISTRAR NUEVO USUARIO
-        public void Crear_Usuario_Checador(string id_empleado, string nombre, string contra, int privilegio)
+        //FUNCION PARA REGISTRAR NUEVO USUARIO EN EL CHECADOR
+        public void Crear_Usuario_Checador(int id_checador, string id_empleado, string nombre, string contra, int privilegio)
         {
             int error = 0;
+
             //ATENCION SE NECESITA MODIFICAR EL PRIMER PARAMETRO DE LA FUNCION POR EL ID DEL CHECADOR CORRESPONDIENTE
-            if (Checador.SSR_SetUserInfo(1, id_empleado, nombre, contra, privilegio, true))
+            if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
             {
                 MessageBox.Show("Registrado en el checador");
             }
@@ -296,6 +312,32 @@ namespace Checador.empleados
             {
                 Checador.GetLastError(ref error);
                 MessageBox.Show(error.ToString());
+            }
+        }
+
+        public void Conectar_Checador()
+        {
+            try
+            {
+                //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
+                //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
+                bool bConn = Checador.Connect_Net(clase_checador.ip, Convert.ToInt32(clase_checador.puerto));
+
+                if (bConn == true)
+                {
+                    //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
+                    Checador.EnableDevice(clase_checador.id, true);
+                }
+                else
+                {
+                    //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
+                    MessageBox.Show("Dispositivo no conectado");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 

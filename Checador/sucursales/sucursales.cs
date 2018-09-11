@@ -87,7 +87,7 @@ namespace Checador
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
                 Sucursal.guardarSucursal();
-                //Limpiar();
+                Limpiar();
             }
             catch (Exception ex)
             {

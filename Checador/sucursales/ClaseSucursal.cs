@@ -71,6 +71,7 @@ namespace Checador
             catch (Exception e)
             {
                 MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                //MessageBox.Show(e.ToString());
             }
         }
 
