@@ -2036,7 +2036,7 @@
             // txt_mod_rfc
             // 
             this.txt_mod_rfc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txt_mod_rfc.Location = new System.Drawing.Point(240, 177);
+            this.txt_mod_rfc.Location = new System.Drawing.Point(242, 99);
             this.txt_mod_rfc.Mask = "LLLL000000AAA";
             this.txt_mod_rfc.Name = "txt_mod_rfc";
             this.txt_mod_rfc.Size = new System.Drawing.Size(248, 29);
@@ -2046,7 +2046,7 @@
             // 
             this.txt_mod_nss.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_mod_nss.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_nss.Location = new System.Drawing.Point(240, 217);
+            this.txt_mod_nss.Location = new System.Drawing.Point(242, 139);
             this.txt_mod_nss.MaxLength = 11;
             this.txt_mod_nss.Name = "txt_mod_nss";
             this.txt_mod_nss.Size = new System.Drawing.Size(248, 29);
@@ -2057,7 +2057,7 @@
             this.label59.AutoSize = true;
             this.label59.BackColor = System.Drawing.Color.Transparent;
             this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(155, 224);
+            this.label59.Location = new System.Drawing.Point(157, 146);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(63, 24);
             this.label59.TabIndex = 1123;
@@ -2068,7 +2068,7 @@
             this.label60.AutoSize = true;
             this.label60.BackColor = System.Drawing.Color.Transparent;
             this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(155, 184);
+            this.label60.Location = new System.Drawing.Point(157, 106);
             this.label60.Name = "label60";
             this.label60.Size = new System.Drawing.Size(63, 24);
             this.label60.TabIndex = 1124;
@@ -2237,7 +2237,7 @@
             this.label61.AutoSize = true;
             this.label61.BackColor = System.Drawing.Color.Transparent;
             this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(634, 137);
+            this.label61.Location = new System.Drawing.Point(159, 189);
             this.label61.Name = "label61";
             this.label61.Size = new System.Drawing.Size(62, 24);
             this.label61.TabIndex = 1084;
@@ -2247,7 +2247,7 @@
             // 
             this.txt_mod_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_mod_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_email.Location = new System.Drawing.Point(717, 132);
+            this.txt_mod_email.Location = new System.Drawing.Point(242, 184);
             this.txt_mod_email.MaxLength = 32;
             this.txt_mod_email.Name = "txt_mod_email";
             this.txt_mod_email.Size = new System.Drawing.Size(248, 29);

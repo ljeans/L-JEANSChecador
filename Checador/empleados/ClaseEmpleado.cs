@@ -11,6 +11,7 @@ namespace Checador
     public class ClaseEmpleado
     {
         public int id { get; set; }
+        public int id_sucursal { get; set; }
         public string nombre { get; set; }
         public string apellido_pat { get; set; }
         public string apellido_mat { get; set; }

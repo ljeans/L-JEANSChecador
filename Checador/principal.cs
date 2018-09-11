@@ -42,39 +42,42 @@ namespace Checador
 
         private void principal_Load(object sender, EventArgs e)
         {
-           /* try
+            string ipChecador = "20.20.0.66";
+            int id_checador = 1;
+            int puerto = 4370;
+
+            try
             {
                 //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
                 //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
-                bool bConn = Checador.Connect_Net("20.20.1.50", 4370);
+                bool bConn = Checador.Connect_Net(ipChecador, puerto);
                 
                 //
                 if (bConn == true)
                 {
                     //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
-                    Checador.EnableDevice(1, true);
-                    MessageBox.Show("Si conecta esta madre");
+                    Checador.EnableDevice(id_checador, true);
+                    MessageBox.Show("Dispositivo conectado");
 
                     //FUNCION PARA REGISTRAR TODOS LOS EVENTOS DEL CHECADOR EN TIEMPO REAL
-                    if (Checador.RegEvent(1, 65535))
+                    /*if (Checador.RegEvent(1, 65535))
                     {
                         //Checador.OnEnrollFingerEx += new zkemkeeper._IZKEMEvents_OnEnrollFingerExEventHandler(Checador_OnEnroll);
                         Checador.OnAttTransactionEx += new zkemkeeper._IZKEMEvents_OnAttTransactionExEventHandler(Checador_OnAttTransactionEx);
                         Checador.OnNewUser += new zkemkeeper._IZKEMEvents_OnNewUserEventHandler(Checador_OnNewUser);
                         //Checador.OnFinger += new zkemkeeper._IZKEMEvents_OnFingerEventHandler(Checador_OnFinger);
-                    }
+                    }*/
                 }
                 else
                 {
-                    MessageBox.Show("No conecta esta madre");
+                    MessageBox.Show("Dispositivo no conectado");
                 }
                 
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Se murio el programa.");
+                MessageBox.Show(ex.ToString());
             }
-            */
         }
 
 
