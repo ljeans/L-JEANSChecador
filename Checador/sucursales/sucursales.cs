@@ -43,6 +43,7 @@ namespace Checador
 
         private void rb_registrar_CheckedChanged(object sender, EventArgs e)
         {
+            txt_id.Enabled = true;
             rb_mod_activo.Checked = true;
             groupBox4.Visible = false;
             tabControlBase.SelectedTab = tabPage1;
@@ -151,12 +152,65 @@ namespace Checador
 
         private void btn_modificar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
+                Sucursal.calle = txt_domicilio_calle.Text;
+                Sucursal.codigo_postal = txt_domicilio_cp.Text;
+                Sucursal.colonia = txt_domicilio_colonia.Text;
+                Sucursal.estado = txt_domicilio_estado.Text;
+                if (rb_mod_activo.Checked==true)
+                {
+                    Sucursal.estatus = "A";
+                }
+                else
+                {
+                    Sucursal.estatus = "I";
+                }
+                Sucursal.municipio = txt_domicilio_municipio.Text;
+                Sucursal.nombre = txt_nombre.Text;
+                Sucursal.num_ext = txt_domicilio_num_ext.Text;
+                Sucursal.num_int = txt_domicilio_num_int.Text;
+                Sucursal.pais = txt_domicilio_pais.Text;
+                Sucursal.poblacion = txt_domicilio_pob.Text;
+                Sucursal.telefono = txt_telefono.Text;
+                Sucursal.Modificar_Sucursal();
+                Limpiar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btn_mod_Click(object sender, EventArgs e)
         {
+            txt_id.Enabled = false;
+            Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
+            Sucursal.verificar_existencia(Sucursal.id);
+            MessageBox.Show(Sucursal.id.ToString());
             tabControlBase.SelectedTab = tabPage1;
+            txt_id.Text = Sucursal.id.ToString();
+            txt_nombre.Text = Sucursal.nombre;
+            txt_domicilio_calle.Text = Sucursal.calle;
+            txt_domicilio_num_ext.Text = Sucursal.num_ext;
+            txt_domicilio_num_int.Text = Sucursal.num_int;
+            txt_domicilio_colonia.Text = Sucursal.colonia;
+            txt_domicilio_cp.Text = Sucursal.codigo_postal;
+            txt_domicilio_pob.Text = Sucursal.poblacion;
+            txt_domicilio_municipio.Text = Sucursal.municipio;
+            txt_domicilio_estado.Text = Sucursal.estado;
+            txt_domicilio_pais.Text = Sucursal.pais;
+            txt_telefono.Text = Sucursal.telefono;
+            if (Sucursal.estatus.ToString() == "A")
+            {
+                rb_mod_activo.Checked = true;
+            }
+            else if(Sucursal.estatus.ToString()=="I")
+            {
+                rb_mod_inactivo.Checked = true;
+            }
+
         }
     }
 }

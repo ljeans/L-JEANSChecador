@@ -213,7 +213,11 @@
             // 
             // tabControlBase
             // 
+<<<<<<< HEAD
             this.tabControlBase.Location = new System.Drawing.Point(309, 80);
+=======
+            this.tabControlBase.Location = new System.Drawing.Point(309, 77);
+>>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
             // 
             // tabPage1
             // 
@@ -310,6 +314,7 @@
             this.tabPage2.Controls.Add(this.txt_email);
             this.tabPage2.Size = new System.Drawing.Size(1012, 624);
             this.tabPage2.Text = "25";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // tabPage3
             // 
@@ -1788,6 +1793,7 @@
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.UseVisualStyleBackColor = false;
             this.btn_modificar.Visible = false;
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click_2);
             // 
             // empleados
             // 

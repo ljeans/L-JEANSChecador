@@ -80,11 +80,13 @@ namespace Checador
         {
             try
             {
+       
                 string consulta = "UPDATE sucursal SET nombre = @nombre, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, telefono=@telefono, estatus=@estatus WHERE id_sucursal = @id";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
                 SqlCommand comand = new SqlCommand(consulta, conexion);
+                comand.Parameters.AddWithValue("@id", id);
                 comand.Parameters.AddWithValue("@nombre", nombre);
                 comand.Parameters.AddWithValue("@calle", calle);
                 comand.Parameters.AddWithValue("@colonia", colonia);
@@ -103,7 +105,8 @@ namespace Checador
             }
             catch (Exception e)
             {
-                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                MessageBox.Show(e.ToString());
+               // MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
             }
         }
 
@@ -162,7 +165,7 @@ namespace Checador
                         num_ext = lector.GetString(lector.GetOrdinal("num_ext"));
                         num_int = lector.GetString(lector.GetOrdinal("num_int"));
                         codigo_postal = lector.GetString(lector.GetOrdinal("codigo_postal"));
-                        poblacion = lector.GetString(lector.GetOrdinal("poblcion"));
+                        poblacion = lector.GetString(lector.GetOrdinal("poblacion"));
                         municipio = lector.GetString(lector.GetOrdinal("municipio"));
                         estado = lector.GetString(lector.GetOrdinal("estado"));
                         pais = lector.GetString(lector.GetOrdinal("pais"));
@@ -180,7 +183,8 @@ namespace Checador
             }
             catch (Exception e)
             {
-                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                MessageBox.Show(e.ToString());
                 return false;
             }
         }
