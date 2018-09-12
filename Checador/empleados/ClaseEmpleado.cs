@@ -308,6 +308,33 @@ namespace Checador
         }
 
 
+        //FUNCION PARA REGISTRAR EMPLEADO_SUCURSAL
+        public void guardarEmpleado_Sucursal()
+        {
+            try
+            {
+                //Registrar SUCURSAL
+                string consulta = "INSERT INTO empleado_sucursal VALUES (@id_empleado,@id_sucursal, @fecha_entrada,@fecha_salida)";
+                Conexion con = new Conexion();
+                SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+                conexion.Open();
+                SqlCommand comand = new SqlCommand(consulta, conexion);
+                comand.Parameters.AddWithValue("@id_empleado", id);
+                comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                comand.Parameters.AddWithValue("@fecha_entrada", fecha_alta);
+                comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
+
+                comand.ExecuteNonQuery();
+                conexion.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+            }
+        }
+
 
     }
 }

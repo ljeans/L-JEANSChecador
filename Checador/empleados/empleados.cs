@@ -30,13 +30,10 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             CheckForIllegalCrossThreadCalls = false;
 
-=======
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
             CheckForIllegalCrossThreadCalls = false;
->>>>>>> e7b944efbc099244991f1badc99632332f7fc722
             //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
             Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
             hilo_secundario.IsBackground = true;
@@ -99,16 +96,7 @@ namespace Checador.empleados
         {
             tabControlBase.SelectedTab = tabPage2;
         }
-
-        private void btn_siguiente2_Click(object sender, EventArgs e)
-        {
-            if
-           (MessageBox.Show("Desea registrar huella al empleado?", "registrar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                tabControlBase.SelectedTab = tabPage3;
-                cbx_huella.SelectedIndex = 6;
-            }
-        }
+        
 
         private void btn_atras_Click(object sender, EventArgs e)
         {
@@ -122,53 +110,8 @@ namespace Checador.empleados
 
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
-        private void btn_registrar_emp_Click(object sender, EventArgs e)
+        private void btn_registrar_Click(object sender, EventArgs e)
         {
-
-            Empleado.apellido_mat = txt_apellido_materno.Text;
-            Empleado.apellido_pat = txt_apellido_paterno.Text;
-            Empleado.banco = txt_banco.Text;
-            Empleado.calle = txt_domicilio_calle.Text;
-            Empleado.clave_edenred = txt_edenred.Text;
-            Empleado.codigo_postal = txt_domicilio_cp.Text;
-            Empleado.colonia = txt_domicilio_colonia.Text;
-            Empleado.cuenta_bancaria = txt_cuenta.Text;
-            Empleado.CURP = txt_curp.Text;
-            Empleado.departamento = txt_departamento.Text;
-            Empleado.dias_aguinaldo = Convert.ToInt32(txt_dias_aguinaldo.Text);
-            Empleado.dias_vacaciones = Convert.ToInt32(txt_dias_vacaciones.Text);
-            Empleado.email = txt_email.Text;
-            Empleado.estado = txt_domicilio_estado.Text;
-            Empleado.estatus = "A";
-            //Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.Year.ToString() + "-" + dtp_fec_alt.Value.Month.ToString() + "-" + dtp_fec_alt.Value.Day.ToString());
-            Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.ToString("yyyy-MM-dd HH:mm:ss"));
-            //Empleado.id_privilegio = cbx_privilegio.SelectedValue.ToString();
-            Empleado.id_privilegio = 0;
-            Empleado.municipio = txt_domicilio_municipio.Text;
-            Empleado.nombre = txt_nombre.Text;
-            Empleado.NSS = txt_nss.Text;
-            Empleado.num_ext = txt_domicilio_num_ext.Text;
-            Empleado.num_int = txt_domicilio_num_int.Text;
-            Empleado.observaciones = txt_observaciones.Text;
-            Empleado.pais = txt_domicilio_pais.Text;
-            Empleado.periodicidad_pago = txt_periodicidad_pago.Text;
-            Empleado.poblacion = txt_domicilio_pob.Text;
-            Empleado.puesto = txt_puesto.Text;
-            Empleado.RFC = txt_rfc.Text;
-            Empleado.riesgo_puesto = txt_riesgo_puesto.Text;
-            Empleado.sueldo_base_quincenal = Convert.ToDouble( txt_sueldo_quincenal.Text);
-            Empleado.sueldo_diario = Convert.ToDouble(txt_sueldo_diario.Text);
-            Empleado.sueldo_diario_integrado = Convert.ToDouble(txt_sueldo_integrado.Text);
-            Empleado.tarjeta_despensa= txt_despensa.Text;
-            Empleado.telefono = txt_telefono.Text;
-            Empleado.tipo_contrato = txt_tipo_contrato.Text;
-            //Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
-            Empleado.id_horario = 1;
-            Empleado.tipo_salario = txt_tipo_salario.Text;
-
-            Empleado.guardarEmpleado();
-
-
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;
@@ -215,18 +158,26 @@ namespace Checador.empleados
                 Empleado.tipo_salario = txt_tipo_salario.Text;
                 Empleado.password = txt_contra.Text;
                 Empleado.guardarEmpleado();
+                Empleado.guardarEmpleado_Sucursal();
 
                 //SE OBTIENEN LOS DATOS DEL CHECADOR
                 clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
                 Conectar_Checador();
 
                 Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
+
+                if (MessageBox.Show("Desea registrar huella al empleado?", "registrar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    tabControlBase.SelectedTab = tabPage3;
+                    cbx_huella.SelectedIndex = 6;
+                }
                 Limpiar();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+            
         }
 
         //FUNCION PARA LIMPIAR LOS COMPONENTES DEL FORMULARIO DESPUES DE HACER UN REGISTRO
@@ -354,11 +305,6 @@ namespace Checador.empleados
             huella.Show();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_capturar_mod_Click(object sender, EventArgs e)
         {
             Enabled = false;
@@ -372,22 +318,43 @@ namespace Checador.empleados
             tabControlBase.SelectedTab = tabPage4;
         }
 
-        private void groupBox3_Enter(object sender, EventArgs e)
+        private void rb_modificar_CheckedChanged_1(object sender, EventArgs e)
         {
-
+            tabControlBase.SelectedTab = tabPage5;
+            groupBox4.Visible = true;
+            groupBox4.Enabled = true;
+            
         }
 
-        private void btn_capturar_mod_Click_1(object sender, EventArgs e)
+        private void btn_modificar_Click_1(object sender, EventArgs e)
         {
-
+            tabControlBase.SelectedTab = tabPage1;
+            btn_modificar.Enabled = true;
+            btn_modificar.Visible = true;
+            btn_registrar.Visible = false;
+            btn_registrar.Enabled = false;
         }
 
-        private void cbx_huella_TextChanged(object sender, EventArgs e)
+        private void btn_capturar_Click_1(object sender, EventArgs e)
         {
-
+            int dedo = cbx_huella.SelectedIndex;
+            MessageBox.Show(dedo.ToString());
+            //CODIGO PARA LA INTERFAZ DE REGISTRO DE NUEVA HUELLA
+            int flag = 0;
+            Checador.StartEnrollEx(Empleado.id.ToString(),dedo,flag);
+            if (Checador.RegEvent(clase_checador.id, 65535))
+            {
+                Checador.OnEnrollFinger += new zkemkeeper._IZKEMEvents_OnEnrollFingerEventHandler(Checador_OnEnrollFinger);
+            }
         }
 
-        private void cbx_huella_SelectedIndexChanged(object sender, EventArgs e)
+        private void Checador_OnEnrollFinger(int EnrollNumber, int FingerIndex, int ActionResult, int TemplateLenght)
+        {
+            //pic_huella_mod.Image = Image.FromFile("..\\..\\Resources\\huella1.png");
+            MessageBox.Show("Huella registrada con exito");
+        }
+
+        private void cbx_huella_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cbx_huella.Text == "1 (anular izquierdo)")
             {
@@ -431,46 +398,6 @@ namespace Checador.empleados
             }
         }
 
-        private void txt_mod_departamento_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label88_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_mod_puesto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label57_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbx_horario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rb_modificar_CheckedChanged_1(object sender, EventArgs e)
-        {
-            tabControlBase.SelectedTab = tabPage5;
-            groupBox4.Visible = true;
-            groupBox4.Enabled = true;
-            
-        }
-
-        private void btn_modificar_Click_1(object sender, EventArgs e)
-        {
-            tabControlBase.SelectedTab = tabPage1;
-            btn_modificar.Enabled = true;
-            btn_modificar.Visible = true;
-            btn_registrar.Visible = false;
-            btn_registrar.Enabled = false;
-        }
+        
     }
 }
