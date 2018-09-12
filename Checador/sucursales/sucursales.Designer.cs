@@ -115,7 +115,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(309, 58);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 67);
             // 
             // tabPage1
             // 
@@ -159,12 +159,22 @@
             this.tabPage2.Controls.Add(this.txt_idbuscar);
             this.tabPage2.Controls.Add(this.txt_nombrebuscar);
             this.tabPage2.Controls.Add(this.pictureBox6);
+            this.tabPage2.Size = new System.Drawing.Size(1012, 624);
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.btn_ir_modificar);
             this.tabPage3.Controls.Add(this.label84);
             this.tabPage3.Controls.Add(this.txt_id_mod);
+            this.tabPage3.Size = new System.Drawing.Size(1012, 624);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Size = new System.Drawing.Size(1012, 624);
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Size = new System.Drawing.Size(1012, 624);
             // 
             // panel_barra_sup
             // 

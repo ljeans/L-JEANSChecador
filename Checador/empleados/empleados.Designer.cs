@@ -213,7 +213,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(309, 57);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 77);
             // 
             // tabPage1
             // 
@@ -308,7 +308,9 @@
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.txt_email);
+            this.tabPage2.Size = new System.Drawing.Size(1012, 624);
             this.tabPage2.Text = "25";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // tabPage3
             // 
@@ -318,6 +320,7 @@
             this.tabPage3.Controls.Add(this.label69);
             this.tabPage3.Controls.Add(this.cbx_huella);
             this.tabPage3.Controls.Add(this.btn_guardar_huella);
+            this.tabPage3.Size = new System.Drawing.Size(1012, 624);
             // 
             // tabPage4
             // 
@@ -327,12 +330,14 @@
             this.tabPage4.Controls.Add(this.txt_idbuscar);
             this.tabPage4.Controls.Add(this.txt_nombrebuscar);
             this.tabPage4.Controls.Add(this.pictureBox6);
+            this.tabPage4.Size = new System.Drawing.Size(1012, 624);
             // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.btn_ir_modificar);
             this.tabPage5.Controls.Add(this.label84);
             this.tabPage5.Controls.Add(this.txt_id_a_modificar);
+            this.tabPage5.Size = new System.Drawing.Size(1012, 624);
             // 
             // btn_home
             // 
@@ -1094,7 +1099,6 @@
             this.cbx_horario.Name = "cbx_horario";
             this.cbx_horario.Size = new System.Drawing.Size(248, 32);
             this.cbx_horario.TabIndex = 8;
-            this.cbx_horario.SelectedIndexChanged += new System.EventHandler(this.cbx_horario_SelectedIndexChanged);
             // 
             // txt_curp
             // 
@@ -1426,623 +1430,7 @@
             this.txt_cuenta.Size = new System.Drawing.Size(249, 29);
             this.txt_cuenta.TabIndex = 1084;
             // 
-<<<<<<< HEAD
             // txt_periodicidad_pago
-=======
-            // tabPage6
-            // 
-            this.tabPage6.Controls.Add(this.txt_mod_despensa);
-            this.tabPage6.Controls.Add(this.txt_mod_banco);
-            this.tabPage6.Controls.Add(this.txt_mod_cuenta_banc);
-            this.tabPage6.Controls.Add(this.txt_mod_periodicidad);
-            this.tabPage6.Controls.Add(this.txt_mod_riego_puesto);
-            this.tabPage6.Controls.Add(this.txt_mod_vacaciones);
-            this.tabPage6.Controls.Add(this.txt_mod_edenred);
-            this.tabPage6.Controls.Add(this.txt_mod_tipo_salario);
-            this.tabPage6.Controls.Add(this.txt_mod_dias_aguinaldo);
-            this.tabPage6.Controls.Add(this.txt_mod_sueldo_quincenal);
-            this.tabPage6.Controls.Add(this.txt_mod_sueldo_diario);
-            this.tabPage6.Controls.Add(this.txt_mod_sueldo_integrado);
-            this.tabPage6.Controls.Add(this.txt_mod_tipo_con);
-            this.tabPage6.Controls.Add(this.label91);
-            this.tabPage6.Controls.Add(this.label92);
-            this.tabPage6.Controls.Add(this.label93);
-            this.tabPage6.Controls.Add(this.label94);
-            this.tabPage6.Controls.Add(this.label95);
-            this.tabPage6.Controls.Add(this.label96);
-            this.tabPage6.Controls.Add(this.label97);
-            this.tabPage6.Controls.Add(this.label98);
-            this.tabPage6.Controls.Add(this.label99);
-            this.tabPage6.Controls.Add(this.label100);
-            this.tabPage6.Controls.Add(this.label101);
-            this.tabPage6.Controls.Add(this.label102);
-            this.tabPage6.Controls.Add(this.label103);
-            this.tabPage6.Controls.Add(this.txt_mod_rfc);
-            this.tabPage6.Controls.Add(this.txt_mod_nss);
-            this.tabPage6.Controls.Add(this.label59);
-            this.tabPage6.Controls.Add(this.label60);
-            this.tabPage6.Controls.Add(this.label90);
-            this.tabPage6.Controls.Add(this.txt_mod_nombre);
-            this.tabPage6.Controls.Add(this.label48);
-            this.tabPage6.Controls.Add(this.label87);
-            this.tabPage6.Controls.Add(this.txt_mod_telefono);
-            this.tabPage6.Controls.Add(this.txt_mod_departamento);
-            this.tabPage6.Controls.Add(this.label88);
-            this.tabPage6.Controls.Add(this.txt_mod_puesto);
-            this.tabPage6.Controls.Add(this.btn_mod_atras);
-            this.tabPage6.Controls.Add(this.btn_mod_siguiente2);
-            this.tabPage6.Controls.Add(this.txt_mod_observaciones);
-            this.tabPage6.Controls.Add(this.pictureBox4);
-            this.tabPage6.Controls.Add(this.label56);
-            this.tabPage6.Controls.Add(this.label57);
-            this.tabPage6.Controls.Add(this.label61);
-            this.tabPage6.Controls.Add(this.txt_mod_email);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(992, 624);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "tabPage6";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // txt_mod_despensa
-            // 
-            this.txt_mod_despensa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_despensa.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_despensa.Location = new System.Drawing.Point(717, 493);
-            this.txt_mod_despensa.MaxLength = 5;
-            this.txt_mod_despensa.Name = "txt_mod_despensa";
-            this.txt_mod_despensa.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_despensa.TabIndex = 1164;
-            // 
-            // txt_mod_banco
-            // 
-            this.txt_mod_banco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_banco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_banco.Location = new System.Drawing.Point(717, 408);
-            this.txt_mod_banco.MaxLength = 5;
-            this.txt_mod_banco.Name = "txt_mod_banco";
-            this.txt_mod_banco.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_banco.TabIndex = 1162;
-            // 
-            // txt_mod_cuenta_banc
-            // 
-            this.txt_mod_cuenta_banc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_cuenta_banc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_cuenta_banc.Location = new System.Drawing.Point(717, 449);
-            this.txt_mod_cuenta_banc.MaxLength = 32;
-            this.txt_mod_cuenta_banc.Name = "txt_mod_cuenta_banc";
-            this.txt_mod_cuenta_banc.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_cuenta_banc.TabIndex = 1163;
-            // 
-            // txt_mod_periodicidad
-            // 
-            this.txt_mod_periodicidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_periodicidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_periodicidad.Location = new System.Drawing.Point(717, 367);
-            this.txt_mod_periodicidad.MaxLength = 32;
-            this.txt_mod_periodicidad.Name = "txt_mod_periodicidad";
-            this.txt_mod_periodicidad.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_periodicidad.TabIndex = 1161;
-            // 
-            // txt_mod_riego_puesto
-            // 
-            this.txt_mod_riego_puesto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_riego_puesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_riego_puesto.Location = new System.Drawing.Point(717, 326);
-            this.txt_mod_riego_puesto.MaxLength = 5;
-            this.txt_mod_riego_puesto.Name = "txt_mod_riego_puesto";
-            this.txt_mod_riego_puesto.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_riego_puesto.TabIndex = 1160;
-            // 
-            // txt_mod_vacaciones
-            // 
-            this.txt_mod_vacaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_vacaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_vacaciones.Location = new System.Drawing.Point(717, 285);
-            this.txt_mod_vacaciones.MaxLength = 32;
-            this.txt_mod_vacaciones.Name = "txt_mod_vacaciones";
-            this.txt_mod_vacaciones.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_vacaciones.TabIndex = 1159;
-            // 
-            // txt_mod_edenred
-            // 
-            this.txt_mod_edenred.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_edenred.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_edenred.Location = new System.Drawing.Point(240, 531);
-            this.txt_mod_edenred.MaxLength = 32;
-            this.txt_mod_edenred.Name = "txt_mod_edenred";
-            this.txt_mod_edenred.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_edenred.TabIndex = 1158;
-            // 
-            // txt_mod_tipo_salario
-            // 
-            this.txt_mod_tipo_salario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_tipo_salario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_tipo_salario.Location = new System.Drawing.Point(242, 447);
-            this.txt_mod_tipo_salario.MaxLength = 5;
-            this.txt_mod_tipo_salario.Name = "txt_mod_tipo_salario";
-            this.txt_mod_tipo_salario.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_tipo_salario.TabIndex = 1156;
-            // 
-            // txt_mod_dias_aguinaldo
-            // 
-            this.txt_mod_dias_aguinaldo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_dias_aguinaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_dias_aguinaldo.Location = new System.Drawing.Point(240, 490);
-            this.txt_mod_dias_aguinaldo.MaxLength = 32;
-            this.txt_mod_dias_aguinaldo.Name = "txt_mod_dias_aguinaldo";
-            this.txt_mod_dias_aguinaldo.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_dias_aguinaldo.TabIndex = 1157;
-            // 
-            // txt_mod_sueldo_quincenal
-            // 
-            this.txt_mod_sueldo_quincenal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_sueldo_quincenal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_sueldo_quincenal.Location = new System.Drawing.Point(242, 404);
-            this.txt_mod_sueldo_quincenal.MaxLength = 32;
-            this.txt_mod_sueldo_quincenal.Name = "txt_mod_sueldo_quincenal";
-            this.txt_mod_sueldo_quincenal.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_sueldo_quincenal.TabIndex = 1155;
-            // 
-            // txt_mod_sueldo_diario
-            // 
-            this.txt_mod_sueldo_diario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_sueldo_diario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_sueldo_diario.Location = new System.Drawing.Point(240, 326);
-            this.txt_mod_sueldo_diario.MaxLength = 5;
-            this.txt_mod_sueldo_diario.Name = "txt_mod_sueldo_diario";
-            this.txt_mod_sueldo_diario.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_sueldo_diario.TabIndex = 1153;
-            // 
-            // txt_mod_sueldo_integrado
-            // 
-            this.txt_mod_sueldo_integrado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_sueldo_integrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_sueldo_integrado.Location = new System.Drawing.Point(240, 363);
-            this.txt_mod_sueldo_integrado.MaxLength = 5;
-            this.txt_mod_sueldo_integrado.Name = "txt_mod_sueldo_integrado";
-            this.txt_mod_sueldo_integrado.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_sueldo_integrado.TabIndex = 1154;
-            // 
-            // txt_mod_tipo_con
-            // 
-            this.txt_mod_tipo_con.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_tipo_con.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_tipo_con.Location = new System.Drawing.Point(240, 288);
-            this.txt_mod_tipo_con.MaxLength = 32;
-            this.txt_mod_tipo_con.Name = "txt_mod_tipo_con";
-            this.txt_mod_tipo_con.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_tipo_con.TabIndex = 1152;
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.BackColor = System.Drawing.Color.Transparent;
-            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label91.Location = new System.Drawing.Point(541, 498);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(162, 24);
-            this.label91.TabIndex = 1151;
-            this.label91.Text = "Tarjeta Despensa:";
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.BackColor = System.Drawing.Color.Transparent;
-            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label92.Location = new System.Drawing.Point(89, 536);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(141, 24);
-            this.label92.TabIndex = 1150;
-            this.label92.Text = "Clave Edenred:";
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.BackColor = System.Drawing.Color.Transparent;
-            this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label93.Location = new System.Drawing.Point(634, 416);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(69, 24);
-            this.label93.TabIndex = 1149;
-            this.label93.Text = "Banco:";
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.BackColor = System.Drawing.Color.Transparent;
-            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label94.Location = new System.Drawing.Point(550, 454);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(153, 24);
-            this.label94.TabIndex = 1147;
-            this.label94.Text = "Cuenta Bancaria:";
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.BackColor = System.Drawing.Color.Transparent;
-            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label95.Location = new System.Drawing.Point(566, 331);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(137, 24);
-            this.label95.TabIndex = 1148;
-            this.label95.Text = "Riesgo Puesto:";
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.BackColor = System.Drawing.Color.Transparent;
-            this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label96.Location = new System.Drawing.Point(505, 374);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(198, 24);
-            this.label96.TabIndex = 1146;
-            this.label96.Text = "Periodicidad De Pago:";
-            // 
-            // label97
-            // 
-            this.label97.AutoSize = true;
-            this.label97.BackColor = System.Drawing.Color.Transparent;
-            this.label97.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label97.Location = new System.Drawing.Point(548, 290);
-            this.label97.Name = "label97";
-            this.label97.Size = new System.Drawing.Size(155, 24);
-            this.label97.TabIndex = 1145;
-            this.label97.Text = "Dias Vacaciones:";
-            // 
-            // label98
-            // 
-            this.label98.AutoSize = true;
-            this.label98.BackColor = System.Drawing.Color.Transparent;
-            this.label98.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label98.Location = new System.Drawing.Point(115, 449);
-            this.label98.Name = "label98";
-            this.label98.Size = new System.Drawing.Size(115, 24);
-            this.label98.TabIndex = 1144;
-            this.label98.Text = "Tipo Salario:";
-            // 
-            // label99
-            // 
-            this.label99.AutoSize = true;
-            this.label99.BackColor = System.Drawing.Color.Transparent;
-            this.label99.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label99.Location = new System.Drawing.Point(88, 491);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(142, 24);
-            this.label99.TabIndex = 1142;
-            this.label99.Text = "Dias Aguinaldo:";
-            // 
-            // label100
-            // 
-            this.label100.AutoSize = true;
-            this.label100.BackColor = System.Drawing.Color.Transparent;
-            this.label100.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label100.Location = new System.Drawing.Point(18, 368);
-            this.label100.Name = "label100";
-            this.label100.Size = new System.Drawing.Size(212, 24);
-            this.label100.TabIndex = 1143;
-            this.label100.Text = "Sueldo Diario Integrado:";
-            // 
-            // label101
-            // 
-            this.label101.AutoSize = true;
-            this.label101.BackColor = System.Drawing.Color.Transparent;
-            this.label101.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label101.Location = new System.Drawing.Point(102, 331);
-            this.label101.Name = "label101";
-            this.label101.Size = new System.Drawing.Size(128, 24);
-            this.label101.TabIndex = 1141;
-            this.label101.Text = "Sueldo Diario:";
-            // 
-            // label102
-            // 
-            this.label102.AutoSize = true;
-            this.label102.BackColor = System.Drawing.Color.Transparent;
-            this.label102.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label102.Location = new System.Drawing.Point(11, 409);
-            this.label102.Name = "label102";
-            this.label102.Size = new System.Drawing.Size(219, 24);
-            this.label102.TabIndex = 1140;
-            this.label102.Text = "Sueldo Base  Quincenal:";
-            // 
-            // label103
-            // 
-            this.label103.AutoSize = true;
-            this.label103.BackColor = System.Drawing.Color.Transparent;
-            this.label103.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label103.Location = new System.Drawing.Point(102, 293);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(128, 24);
-            this.label103.TabIndex = 1139;
-            this.label103.Text = "Tipo Contrato:";
-            // 
-            // txt_mod_rfc
-            // 
-            this.txt_mod_rfc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txt_mod_rfc.Location = new System.Drawing.Point(242, 99);
-            this.txt_mod_rfc.Mask = "LLLL000000AAA";
-            this.txt_mod_rfc.Name = "txt_mod_rfc";
-            this.txt_mod_rfc.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_rfc.TabIndex = 1122;
-            // 
-            // txt_mod_nss
-            // 
-            this.txt_mod_nss.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_nss.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_nss.Location = new System.Drawing.Point(242, 139);
-            this.txt_mod_nss.MaxLength = 11;
-            this.txt_mod_nss.Name = "txt_mod_nss";
-            this.txt_mod_nss.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_nss.TabIndex = 1125;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.BackColor = System.Drawing.Color.Transparent;
-            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(157, 146);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(63, 24);
-            this.label59.TabIndex = 1123;
-            this.label59.Text = "N.S.S:";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.BackColor = System.Drawing.Color.Transparent;
-            this.label60.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(157, 106);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(63, 24);
-            this.label60.TabIndex = 1124;
-            this.label60.Text = "R.F.C:";
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.BackColor = System.Drawing.Color.Transparent;
-            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label90.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.label90.Location = new System.Drawing.Point(26, 18);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(156, 24);
-            this.label90.TabIndex = 1121;
-            this.label90.Text = "Datos Personales";
-            // 
-            // txt_mod_nombre
-            // 
-            this.txt_mod_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_nombre.Location = new System.Drawing.Point(241, 56);
-            this.txt_mod_nombre.Name = "txt_mod_nombre";
-            this.txt_mod_nombre.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_nombre.TabIndex = 1115;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.BackColor = System.Drawing.Color.Transparent;
-            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(119, 56);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(110, 24);
-            this.label48.TabIndex = 1118;
-            this.label48.Text = "Nombre (s):";
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.BackColor = System.Drawing.Color.Transparent;
-            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.Location = new System.Drawing.Point(606, 179);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(90, 24);
-            this.label87.TabIndex = 1114;
-            this.label87.Text = "Teléfono:";
-            // 
-            // txt_mod_telefono
-            // 
-            this.txt_mod_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_telefono.Location = new System.Drawing.Point(717, 174);
-            this.txt_mod_telefono.MaxLength = 32;
-            this.txt_mod_telefono.Name = "txt_mod_telefono";
-            this.txt_mod_telefono.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_telefono.TabIndex = 1113;
-            // 
-            // txt_mod_departamento
-            // 
-            this.txt_mod_departamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_departamento.Location = new System.Drawing.Point(717, 48);
-            this.txt_mod_departamento.MaxLength = 32;
-            this.txt_mod_departamento.Name = "txt_mod_departamento";
-            this.txt_mod_departamento.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_departamento.TabIndex = 1111;
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.BackColor = System.Drawing.Color.Transparent;
-            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label88.Location = new System.Drawing.Point(563, 53);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(133, 24);
-            this.label88.TabIndex = 1112;
-            this.label88.Text = "Departamento:";
-            // 
-            // txt_mod_puesto
-            // 
-            this.txt_mod_puesto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_puesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_puesto.Location = new System.Drawing.Point(717, 91);
-            this.txt_mod_puesto.MaxLength = 32;
-            this.txt_mod_puesto.Name = "txt_mod_puesto";
-            this.txt_mod_puesto.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_puesto.TabIndex = 1109;
-            // 
-            // btn_mod_atras
-            // 
-            this.btn_mod_atras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_mod_atras.FlatAppearance.BorderSize = 0;
-            this.btn_mod_atras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_mod_atras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_mod_atras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mod_atras.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mod_atras.ForeColor = System.Drawing.Color.White;
-            this.btn_mod_atras.Location = new System.Drawing.Point(623, 548);
-            this.btn_mod_atras.Name = "btn_mod_atras";
-            this.btn_mod_atras.Size = new System.Drawing.Size(80, 70);
-            this.btn_mod_atras.TabIndex = 76;
-            this.btn_mod_atras.Text = "Atras";
-            this.btn_mod_atras.UseVisualStyleBackColor = false;
-            this.btn_mod_atras.Click += new System.EventHandler(this.btn_mod_atras_Click);
-            // 
-            // btn_mod_siguiente2
-            // 
-            this.btn_mod_siguiente2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_mod_siguiente2.FlatAppearance.BorderSize = 0;
-            this.btn_mod_siguiente2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_mod_siguiente2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_mod_siguiente2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mod_siguiente2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mod_siguiente2.ForeColor = System.Drawing.Color.White;
-            this.btn_mod_siguiente2.Location = new System.Drawing.Point(715, 548);
-            this.btn_mod_siguiente2.Name = "btn_mod_siguiente2";
-            this.btn_mod_siguiente2.Size = new System.Drawing.Size(250, 70);
-            this.btn_mod_siguiente2.TabIndex = 75;
-            this.btn_mod_siguiente2.Text = "Registrar";
-            this.btn_mod_siguiente2.UseVisualStyleBackColor = false;
-            this.btn_mod_siguiente2.Click += new System.EventHandler(this.btn_mod_siguiente2_Click);
-            // 
-            // txt_mod_observaciones
-            // 
-            this.txt_mod_observaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_observaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txt_mod_observaciones.Location = new System.Drawing.Point(717, 217);
-            this.txt_mod_observaciones.MaxLength = 69;
-            this.txt_mod_observaciones.Multiline = true;
-            this.txt_mod_observaciones.Name = "txt_mod_observaciones";
-            this.txt_mod_observaciones.Size = new System.Drawing.Size(249, 50);
-            this.txt_mod_observaciones.TabIndex = 1105;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.pictureBox4.Location = new System.Drawing.Point(23, 277);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(964, 2);
-            this.pictureBox4.TabIndex = 1098;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(554, 219);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(142, 24);
-            this.label56.TabIndex = 1097;
-            this.label56.Text = "Observaciones:";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.BackColor = System.Drawing.Color.Transparent;
-            this.label57.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(623, 94);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(73, 24);
-            this.label57.TabIndex = 1076;
-            this.label57.Text = "Puesto:";
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.BackColor = System.Drawing.Color.Transparent;
-            this.label61.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(159, 189);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(62, 24);
-            this.label61.TabIndex = 1084;
-            this.label61.Text = "Email:";
-            // 
-            // txt_mod_email
-            // 
-            this.txt_mod_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_mod_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_mod_email.Location = new System.Drawing.Point(242, 184);
-            this.txt_mod_email.MaxLength = 32;
-            this.txt_mod_email.Name = "txt_mod_email";
-            this.txt_mod_email.Size = new System.Drawing.Size(248, 29);
-            this.txt_mod_email.TabIndex = 1079;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.BackColor = System.Drawing.Color.Transparent;
-            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(60, 65);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(124, 24);
-            this.label44.TabIndex = 1058;
-            this.label44.Text = "ID Empleado:";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(94, 246);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(88, 24);
-            this.label45.TabIndex = 1057;
-            this.label45.Text = "Sucursal:";
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(509, 160);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(91, 24);
-            this.label46.TabIndex = 1056;
-            this.label46.Text = "Privilegio:";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.BackColor = System.Drawing.Color.Transparent;
-            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.ForeColor = System.Drawing.Color.SlateBlue;
-            this.label47.Location = new System.Drawing.Point(7, 8);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(149, 24);
-            this.label47.TabIndex = 1055;
-            this.label47.Text = "Datos Generales";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.BackColor = System.Drawing.Color.Transparent;
-            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(489, 115);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(111, 24);
-            this.label49.TabIndex = 1051;
-            this.label49.Text = "Contraseña:";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.BackColor = System.Drawing.Color.Transparent;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(468, 70);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(132, 24);
-            this.label50.TabIndex = 1052;
-            this.label50.Text = "Fecha de Alta:";
->>>>>>> e7b944efbc099244991f1badc99632332f7fc722
             // 
             this.txt_periodicidad_pago.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_periodicidad_pago.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2330,6 +1718,7 @@
             this.cbx_huella.Name = "cbx_huella";
             this.cbx_huella.Size = new System.Drawing.Size(121, 21);
             this.cbx_huella.TabIndex = 1062;
+            this.cbx_huella.SelectedIndexChanged += new System.EventHandler(this.cbx_huella_SelectedIndexChanged_1);
             // 
             // btn_ir_modificar
             // 
@@ -2399,6 +1788,7 @@
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.UseVisualStyleBackColor = false;
             this.btn_modificar.Visible = false;
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click_2);
             // 
             // empleados
             // 
