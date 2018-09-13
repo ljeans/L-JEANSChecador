@@ -356,6 +356,7 @@
             this.btn_horarios.Text = "Horarios";
             this.btn_horarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_horarios.UseVisualStyleBackColor = false;
+            this.btn_horarios.Click += new System.EventHandler(this.btn_horarios_Click);
             // 
             // btn_checador
             // 

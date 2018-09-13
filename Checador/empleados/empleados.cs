@@ -30,10 +30,7 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-=======
 
->>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
             CheckForIllegalCrossThreadCalls = false;
 
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
@@ -59,12 +56,6 @@ namespace Checador.empleados
             {
                 txt_id.Text = "1";
             }
-        }
-
-    
-        private void rb_modificar_CheckedChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void rb_registrar_CheckedChanged(object sender, EventArgs e)
@@ -111,15 +102,11 @@ namespace Checador.empleados
         {
             tabControlBase.SelectedTab = tabPage2;
         }
-
+//***************************** REGISTRO EMPLEADOS EN BD Y CHECADOR *************************************
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
         private void btn_registrar_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-=======
-
->>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;
@@ -155,9 +142,9 @@ namespace Checador.empleados
                 Empleado.puesto = txt_puesto.Text;
                 Empleado.RFC = txt_rfc.Text;
                 Empleado.riesgo_puesto = txt_riesgo_puesto.Text;
-                Empleado.sueldo_base_quincenal = Convert.ToDouble(txt_sueldo_quincenal.Text);
-                Empleado.sueldo_diario = Convert.ToDouble(txt_sueldo_diario.Text);
-                Empleado.sueldo_diario_integrado = Convert.ToDouble(txt_sueldo_integrado.Text);
+                Empleado.sueldo_base_quincenal = Convert.ToDecimal(txt_sueldo_quincenal.Text);
+                Empleado.sueldo_diario = Convert.ToDecimal(txt_sueldo_diario.Text);
+                Empleado.sueldo_diario_integrado = Convert.ToDecimal(txt_sueldo_integrado.Text);
                 Empleado.tarjeta_despensa = txt_despensa.Text;
                 Empleado.telefono = txt_telefono.Text;
                 Empleado.tipo_contrato = txt_tipo_contrato.Text;
@@ -187,7 +174,60 @@ namespace Checador.empleados
             }
             
         }
+        //FUNCION PARA REGISTRAR NUEVO USUARIO EN EL CHECADOR
+        public void Crear_Usuario_Checador(int id_checador, string id_empleado, string nombre, string contra, int privilegio)
+        {
+            int error = 0;
 
+            //ATENCION SE NECESITA MODIFICAR EL PRIMER PARAMETRO DE LA FUNCION POR EL ID DEL CHECADOR CORRESPONDIENTE
+            if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
+            {
+                MessageBox.Show("Registrado en el checador");
+            }
+            else
+            {
+                Checador.GetLastError(ref error);
+                MessageBox.Show(error.ToString());
+            }
+        }
+        public void Conectar_Checador()
+        {
+            try
+            {
+                //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
+                //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
+                bool bConn = Checador.Connect_Net(clase_checador.ip, Convert.ToInt32(clase_checador.puerto));
+
+                if (bConn == true)
+                {
+                    //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
+                    Checador.EnableDevice(clase_checador.id, true);
+                }
+                else
+                {
+                    //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
+                    MessageBox.Show("Dispositivo no conectado");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        private void btn_capturar_Click_1(object sender, EventArgs e)
+        {
+            int dedo = cbx_huella.SelectedIndex;
+            MessageBox.Show(dedo.ToString());
+            //CODIGO PARA LA INTERFAZ DE REGISTRO DE NUEVA HUELLA
+            int flag = 0;
+            Checador.StartEnrollEx(Empleado.id.ToString(), dedo, flag);
+            if (Checador.RegEvent(clase_checador.id, 65535))
+            {
+                Checador.OnEnrollFinger += new zkemkeeper._IZKEMEvents_OnEnrollFingerEventHandler(Checador_OnEnrollFinger);
+            }
+        }
+        //************************************************************************************************************
         //FUNCION PARA LIMPIAR LOS COMPONENTES DEL FORMULARIO DESPUES DE HACER UN REGISTRO
         private void Limpiar() 
         {
@@ -256,132 +296,8 @@ namespace Checador.empleados
             cbx_horario.Enabled = true;
             btn_siguiente.Enabled = true;
         }
-
-        //FUNCION PARA REGISTRAR NUEVO USUARIO EN EL CHECADOR
-        public void Crear_Usuario_Checador(int id_checador, string id_empleado, string nombre, string contra, int privilegio)
-        {
-            int error = 0;
-
-            //ATENCION SE NECESITA MODIFICAR EL PRIMER PARAMETRO DE LA FUNCION POR EL ID DEL CHECADOR CORRESPONDIENTE
-            if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
-            {
-                MessageBox.Show("Registrado en el checador");
-            }
-            else
-            {
-                Checador.GetLastError(ref error);
-                MessageBox.Show(error.ToString());
-            }
-        }
-
-        public void Conectar_Checador()
-        {
-            try
-            {
-                //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
-                //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
-                bool bConn = Checador.Connect_Net(clase_checador.ip, Convert.ToInt32(clase_checador.puerto));
-
-                if (bConn == true)
-                {
-                    //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
-                    Checador.EnableDevice(clase_checador.id, true);
-                }
-                else
-                {
-                    //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
-                    MessageBox.Show("Dispositivo no conectado");
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
-        private void Desbloquear_empleados(object sender, EventArgs e)
-        {
-            Enabled = true;
-        }
-
-        private void btn_capturar_Click(object sender, EventArgs e)
-        {
-            Enabled = false;
-            huella = new huella();
-            huella.FormClosed += new FormClosedEventHandler(Desbloquear_empleados);
-            huella.Show();
-        }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
-        private void btn_capturar_mod_Click(object sender, EventArgs e)
-        {
-            Enabled = false;
-            huella = new huella();
-            huella.FormClosed += new FormClosedEventHandler(Desbloquear_empleados);
-            huella.Show();
-        }
-
-        private void rb_buscar_CheckedChanged(object sender, EventArgs e)
-        {
-            tabControlBase.SelectedTab = tabPage4;
-        }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
-        private void rb_modificar_CheckedChanged_1(object sender, EventArgs e)
-        {
-            tabControlBase.SelectedTab = tabPage5;
-            groupBox4.Visible = true;
-            groupBox4.Enabled = true;
-            
-        }
-
-        private void btn_modificar_Click_1(object sender, EventArgs e)
-        {
-            tabControlBase.SelectedTab = tabPage1;
-            btn_modificar.Enabled = true;
-            btn_modificar.Visible = true;
-            btn_registrar.Visible = false;
-            btn_registrar.Enabled = false;
-        }
-
-<<<<<<< HEAD
-        private void btn_capturar_Click_1(object sender, EventArgs e)
-        {
-            int dedo = cbx_huella.SelectedIndex;
-            MessageBox.Show(dedo.ToString());
-            //CODIGO PARA LA INTERFAZ DE REGISTRO DE NUEVA HUELLA
-            int flag = 0;
-            Checador.StartEnrollEx(Empleado.id.ToString(),dedo,flag);
-            if (Checador.RegEvent(clase_checador.id, 65535))
-            {
-                Checador.OnEnrollFinger += new zkemkeeper._IZKEMEvents_OnEnrollFingerEventHandler(Checador_OnEnrollFinger);
-            }
-        }
-
-        private void Checador_OnEnrollFinger(int EnrollNumber, int FingerIndex, int ActionResult, int TemplateLenght)
-        {
-            //pic_huella_mod.Image = Image.FromFile("..\\..\\Resources\\huella1.png");
-            MessageBox.Show("Huella registrada con exito");
-=======
-        private void btn_modificar_Click_2(object sender, EventArgs e)
-        {
-            if
-          (MessageBox.Show("Desea cambiar huella al empleado?", "cambiar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                tabControlBase.SelectedTab = tabPage3;
-                cbx_huella.SelectedIndex = 6;
-            }
->>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
-        }
-
-        private void cbx_huella_SelectedIndexChanged_1(object sender, EventArgs e)
+        //CARGA EL DEDO SELECCIONADO PARA REGISTRARLO EN EL CHECADOR
+        private void cbx_huella_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbx_huella.Text == "1 (anular izquierdo)")
             {
@@ -424,14 +340,204 @@ namespace Checador.empleados
                 pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella9.png");
             }
         }
-
-<<<<<<< HEAD
-        
-=======
-        private void tabPage2_Click(object sender, EventArgs e)
+       
+        private void Desbloquear_empleados(object sender, EventArgs e)
         {
+            Enabled = true;
+        }
+
+        private void btn_capturar_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            huella = new huella();
+            huella.FormClosed += new FormClosedEventHandler(Desbloquear_empleados);
+            huella.Show();
+        }
+
+
+        private void btn_capturar_mod_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            huella = new huella();
+            huella.FormClosed += new FormClosedEventHandler(Desbloquear_empleados);
+            huella.Show();
+        }
+
+        private void rb_buscar_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage4;
+        }
+
+        private void rb_modificar_CheckedChanged_1(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage5;
+            groupBox4.Visible = true;
+            groupBox4.Enabled = true;
+            
+        }
+//*************************** MODIFICAR EMPLEADOS ***********************************************
+        private void btn_modificar_Click_1(object sender, EventArgs e)
+        {
+            txt_id.Enabled = false;
+            Empleado.id = Convert.ToInt32(txt_id_a_modificar.Text);
+            Empleado.verificar_existencia(Empleado.id);
+
+            tabControlBase.SelectedTab = tabPage1;
+            btn_modificar.Enabled = true;
+            btn_modificar.Visible = true;
+            btn_registrar.Visible = false;
+            btn_registrar.Enabled = false;
+            txt_id.Text = Empleado.id.ToString();
+            txt_nombre.Text = Empleado.nombre;
+            txt_apellido_materno.Text = Empleado.apellido_mat;
+            txt_apellido_paterno.Text = Empleado.apellido_pat;
+            txt_banco.Text = Empleado.banco;
+            txt_contra.Text = Empleado.password;
+            txt_cuenta.Text = Empleado.cuenta_bancaria;
+            txt_curp.Text = Empleado.CURP;
+            txt_departamento.Text = Empleado.departamento;
+            txt_despensa.Text = Empleado.tarjeta_despensa;
+            txt_dias_aguinaldo.Text = Empleado.dias_aguinaldo.ToString();
+            txt_dias_vacaciones.Text = Empleado.dias_vacaciones.ToString();
+            txt_domicilio_calle.Text = Empleado.calle;
+            txt_domicilio_colonia.Text = Empleado.colonia;
+            txt_domicilio_cp.Text = Empleado.codigo_postal;
+            txt_domicilio_estado.Text = Empleado.estado;
+            txt_domicilio_municipio.Text = Empleado.municipio;
+            txt_domicilio_num_ext.Text = Empleado.num_ext;
+            txt_domicilio_num_int.Text = Empleado.num_int;
+            txt_domicilio_municipio.Text = Empleado.municipio;
+            txt_domicilio_pais.Text = Empleado.pais;
+            txt_domicilio_pob.Text = Empleado.poblacion;
+            txt_edenred.Text = Empleado.clave_edenred;
+            txt_email.Text = Empleado.email;
+            txt_nombre.Text = Empleado.nombre;
+            txt_nss.Text = Empleado.NSS;
+            txt_observaciones.Text = Empleado.observaciones;
+            txt_periodicidad_pago.Text = Empleado.periodicidad_pago;
+            txt_puesto.Text = Empleado.puesto;
+            txt_rfc.Text = Empleado.RFC;
+            txt_riesgo_puesto.Text = Empleado.riesgo_puesto;
+            txt_sueldo_diario.Text = Empleado.sueldo_diario.ToString();
+            txt_sueldo_integrado.Text = Empleado.sueldo_diario_integrado.ToString();
+            txt_sueldo_quincenal.Text = Empleado.sueldo_base_quincenal.ToString();
+            txt_telefono.Text = Empleado.telefono.ToString();
+            txt_tipo_contrato.Text = Empleado.tipo_contrato;
+            txt_tipo_salario.Text = Empleado.tipo_salario;
+            dtp_fec_alt.Text = Empleado.fecha_alta.ToString();
+            if (Empleado.id_privilegio==0)
+            {
+                cbx_privilegio.SelectedIndex = 0;
+            }
+            else if(Empleado.id_privilegio == 3){
+                cbx_privilegio.SelectedIndex = 1;
+            }
+
+            if (Empleado.estatus == "A")
+            {
+                rb_mod_activo.Checked = true;
+            }
+            else if (Empleado.estatus == "I")
+            {
+                rb_mod_inactivo.Checked = true;
+            }
 
         }
->>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
+
+        private void Checador_OnEnrollFinger(int EnrollNumber, int FingerIndex, int ActionResult, int TemplateLenght)
+        {
+            //pic_huella_mod.Image = Image.FromFile("..\\..\\Resources\\huella1.png");
+            MessageBox.Show("Huella registrada con exito");
+        }
+
+        //FUNCION PARA ACTUALIZAR LOS DATOS DE UN EMPLEADO
+        private void btn_modificar_Click_3(object sender, EventArgs e)
+        {
+            try
+            {
+                Empleado.apellido_mat = txt_apellido_materno.Text;
+                Empleado.apellido_pat = txt_apellido_paterno.Text;
+                Empleado.banco = txt_banco.Text;
+                Empleado.calle = txt_domicilio_calle.Text;
+                Empleado.clave_edenred = txt_edenred.Text;
+                Empleado.codigo_postal = txt_domicilio_cp.Text;
+                Empleado.colonia = txt_domicilio_colonia.Text;
+                Empleado.cuenta_bancaria = txt_cuenta.Text;
+                Empleado.CURP = txt_curp.Text;
+                Empleado.departamento = txt_departamento.Text;
+                Empleado.dias_aguinaldo = Convert.ToInt32(txt_dias_aguinaldo.Text);
+                Empleado.dias_vacaciones = Convert.ToInt32(txt_dias_vacaciones.Text);
+                Empleado.email = txt_email.Text;
+                Empleado.estado = txt_domicilio_estado.Text;
+                if (rb_mod_activo.Checked == true)
+                {
+                    Empleado.estatus = "A";
+                }
+                else
+                {
+                    Empleado.estatus = "I";
+                }
+                //Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.Year.ToString() + "-" + dtp_fec_alt.Value.Month.ToString() + "-" + dtp_fec_alt.Value.Day.ToString());
+                Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+                //Empleado.id_privilegio = cbx_privilegio.SelectedValue.ToString();
+                Empleado.id_privilegio = 0;
+                //Empleado.id_sucursal = cbx_sucursal.SelectedValue.ToString();
+                Empleado.id_sucursal = 13;
+         
+                Empleado.municipio = txt_domicilio_municipio.Text;
+                Empleado.nombre = txt_nombre.Text;
+                Empleado.NSS = txt_nss.Text;
+                Empleado.num_ext = txt_domicilio_num_ext.Text;
+                Empleado.num_int = txt_domicilio_num_int.Text;
+                Empleado.observaciones = txt_observaciones.Text;
+                Empleado.pais = txt_domicilio_pais.Text;
+                Empleado.periodicidad_pago = txt_periodicidad_pago.Text;
+                Empleado.poblacion = txt_domicilio_pob.Text;
+                Empleado.puesto = txt_puesto.Text;
+                Empleado.RFC = txt_rfc.Text;
+                Empleado.riesgo_puesto = txt_riesgo_puesto.Text;
+                Empleado.sueldo_base_quincenal = Convert.ToDecimal(txt_sueldo_quincenal.Text);
+                Empleado.sueldo_diario = Convert.ToDecimal(txt_sueldo_diario.Text);
+                Empleado.sueldo_diario_integrado = Convert.ToDecimal(txt_sueldo_integrado.Text);
+                Empleado.tarjeta_despensa = txt_despensa.Text;
+                Empleado.telefono = txt_telefono.Text;
+                Empleado.tipo_contrato = txt_tipo_contrato.Text;
+                //Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
+                Empleado.id_horario = 1;
+                Empleado.tipo_salario = txt_tipo_salario.Text;
+                Empleado.password = txt_contra.Text;
+                Empleado.Modificar_Empleado();
+                if
+                (MessageBox.Show("Desea cambiar huella al empleado?", "cambiar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    tabControlBase.SelectedTab = tabPage3;
+                    cbx_huella.SelectedIndex = 6;
+                }
+                else
+                {
+                    tabControlBase.SelectedTab = tabPage5;
+                    txt_id_a_modificar.Clear();
+                }
+
+                //SE OBTIENEN LOS DATOS DEL CHECADOR
+                /*   clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
+                   Conectar_Checador();
+
+                   Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
+
+                   if (MessageBox.Show("Desea registrar huella al empleado?", "registrar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                   {
+                       tabControlBase.SelectedTab = tabPage3;
+                       cbx_huella.SelectedIndex = 6;
+                   }
+                */
+                Limpiar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
     }
 }

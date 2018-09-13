@@ -35,9 +35,9 @@ namespace Checador
         public string estatus { get; set; }
         public DateTime fecha_alta { get; set; }
         public DateTime fecha_baja { get; set; }
-        public double sueldo_diario { get; set; }
-        public double sueldo_diario_integrado { get; set; }
-        public double sueldo_base_quincenal { get; set; }
+        public decimal sueldo_diario { get; set; }
+        public decimal sueldo_diario_integrado { get; set; }
+        public decimal sueldo_base_quincenal { get; set; }
         public string tipo_salario { get; set; }
         public int dias_aguinaldo { get; set; }
         public int dias_vacaciones { get; set; }
@@ -148,11 +148,12 @@ namespace Checador
         {
             try
             {
-                string consulta = "UPDATE empleado SET nombre = @nombre, apellido_pat = @apellido_pat, apellido_mat=@apellido_mat, departamento=@departamento,id_privilegio=@id_privilegio, telefono=@telefono, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, puesto=@puesto, NSS=@NSS, RFC=@RFC, CURP=@CURP, estatus=@estatus, fecha_alta=@fecha_alta, fecha_baja=@fecha_baja, sueldo_diario=@sueldo_diario, sueldo_diario_integrado=@sueldo_diario_integrado, sueldo_base_quincenal=@sueldo_base_quincenal, tipo_salario=@tipo_salario, dias_aguinaldo=@dias_aguinaldo, dias_vacaciones=@dias_vacaciones, observaciones=@observaciones,id_horario=@id_horario, tipo_contrato=@tipo_contrato, riesgo_puesto=@riesgo_puesto, periodicidad_pago=@periodicidad_pago, banco=@banco, cuenta_bancaria=@cuenta_bancaria, email=@email, tarjeta_despensa=@tarjeta_despensa, clave_edenred=@clave_edenred WHERE, password = @password id_empleado = @id";
+                string consulta = "UPDATE empleado SET nombre = @nombre, apellido_pat = @apellido_pat, apellido_mat=@apellido_mat, departamento=@departamento,id_privilegio=@id_privilegio, telefono=@telefono, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, puesto=@puesto, NSS=@NSS, RFC=@RFC, CURP=@CURP, estatus=@estatus, fecha_alta=@fecha_alta, fecha_baja=@fecha_baja, sueldo_diario=@sueldo_diario, sueldo_diario_integrado=@sueldo_diario_integrado, sueldo_base_quincenal=@sueldo_base_quincenal, tipo_salario=@tipo_salario, dias_aguinaldo=@dias_aguinaldo, dias_vacaciones=@dias_vacaciones, observaciones=@observaciones,id_horario=@id_horario, tipo_contrato=@tipo_contrato, riesgo_puesto=@riesgo_puesto, periodicidad_pago=@periodicidad_pago, banco=@banco, cuenta_bancaria=@cuenta_bancaria, email=@email, tarjeta_despensa=@tarjeta_despensa, clave_edenred=@clave_edenred, password = @password WHERE id_empleado = @id";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
                 SqlCommand comand = new SqlCommand(consulta, conexion);
+                comand.Parameters.AddWithValue("@id", id);
                 comand.Parameters.AddWithValue("@nombre", nombre);
                 comand.Parameters.AddWithValue("@apellido_pat", apellido_pat);
                 comand.Parameters.AddWithValue("@apellido_mat", apellido_mat);
@@ -174,7 +175,7 @@ namespace Checador
                 comand.Parameters.AddWithValue("@CURP", CURP);
                 comand.Parameters.AddWithValue("@estatus", estatus);
                 comand.Parameters.AddWithValue("@fecha_alta", fecha_alta);
-                comand.Parameters.AddWithValue("@fecha_baja", fecha_baja);
+                comand.Parameters.AddWithValue("@fecha_baja", DBNull.Value);
                 comand.Parameters.AddWithValue("@sueldo_diario", sueldo_diario);
                 comand.Parameters.AddWithValue("@sueldo_diario_integrado", sueldo_diario_integrado);
                 comand.Parameters.AddWithValue("@sueldo_base_quincenal", sueldo_base_quincenal);
@@ -198,7 +199,8 @@ namespace Checador
             }
             catch (Exception e)
             {
-                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+
+                MessageBox.Show(e.ToString());
             }
         }
 
@@ -253,7 +255,7 @@ namespace Checador
                         id = lector.GetInt32(lector.GetOrdinal("id_empleado"));
                         nombre = lector.GetString(lector.GetOrdinal("nombre"));
                         apellido_pat = lector.GetString(lector.GetOrdinal("apellido_pat"));
-                        apellido_mat = lector.GetString(lector.GetOrdinal("apelldio_mat"));
+                        apellido_mat = lector.GetString(lector.GetOrdinal("apellido_mat"));
                         departamento = lector.GetString(lector.GetOrdinal("departamento"));
                         id_privilegio = lector.GetInt32(lector.GetOrdinal("id_privilegio"));
                         //id_privilegio = lector.GetString(lector.GetOrdinal("id_privilegio"));
@@ -263,7 +265,7 @@ namespace Checador
                         num_ext = lector.GetString(lector.GetOrdinal("num_ext"));
                         num_int = lector.GetString(lector.GetOrdinal("num_int"));
                         codigo_postal = lector.GetString(lector.GetOrdinal("codigo_postal"));
-                        poblacion = lector.GetString(lector.GetOrdinal("poblcion"));
+                        poblacion = lector.GetString(lector.GetOrdinal("poblacion"));
                         municipio = lector.GetString(lector.GetOrdinal("municipio"));
                         estado = lector.GetString(lector.GetOrdinal("estado"));
                         pais = lector.GetString(lector.GetOrdinal("pais"));
@@ -273,10 +275,9 @@ namespace Checador
                         CURP = lector.GetString(lector.GetOrdinal("CURP"));
                         estatus = lector.GetString(lector.GetOrdinal("estatus"));
                         fecha_alta = lector.GetDateTime(lector.GetOrdinal("fecha_alta"));
-                        fecha_baja = lector.GetDateTime(lector.GetOrdinal("fecha_baja"));
-                        sueldo_diario = lector.GetDouble(lector.GetOrdinal("sueldo_diario"));
-                        sueldo_diario_integrado = lector.GetDouble(lector.GetOrdinal("sueldo_diario_integrado"));
-                        sueldo_base_quincenal = lector.GetDouble(lector.GetOrdinal("sueldo_base_quincenal"));
+                        sueldo_diario = lector.GetDecimal(lector.GetOrdinal("sueldo_diario"));
+                        sueldo_diario_integrado = lector.GetDecimal(lector.GetOrdinal("sueldo_diario_integrado"));
+                        sueldo_base_quincenal = lector.GetDecimal(lector.GetOrdinal("sueldo_base_quincenal"));
                         tipo_salario = lector.GetString(lector.GetOrdinal("tipo_salario"));
                         dias_aguinaldo = lector.GetInt32(lector.GetOrdinal("dias_aguinaldo"));
                         dias_vacaciones = lector.GetInt32(lector.GetOrdinal("dias_vacaciones"));
@@ -290,6 +291,7 @@ namespace Checador
                         email = lector.GetString(lector.GetOrdinal("email"));
                         tarjeta_despensa = lector.GetString(lector.GetOrdinal("tarjeta_despensa"));
                         clave_edenred = lector.GetString(lector.GetOrdinal("clave_edenred"));
+                        password = lector.GetString(lector.GetOrdinal("password"));
                         con.Close();
                         return true;
                     }
@@ -302,6 +304,7 @@ namespace Checador
             }
             catch (Exception e)
             {
+                MessageBox.Show(e.ToString());
                 MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
                 return false;
             }

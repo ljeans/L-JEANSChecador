@@ -16,6 +16,7 @@ namespace Checador
         empleados.empleados modulo_empleados = new empleados.empleados();
         Checador.cheacador modulo_checador = new Checador.cheacador();
         sucursales modulo_sucursal = new sucursales();
+        horarios modulo_horarios = new horarios();
         
 
 
@@ -137,6 +138,14 @@ namespace Checador
             modulo_checador = new Checador.cheacador();
             modulo_checador.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
             modulo_checador.Show();
+        }
+
+        private void btn_horarios_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            modulo_horarios = new horarios();
+            modulo_horarios.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            modulo_horarios.Show();
         }
 
         private void Checador_OnFinger()
