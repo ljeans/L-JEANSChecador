@@ -16,8 +16,12 @@ namespace Checador
         empleados.empleados modulo_empleados = new empleados.empleados();
         Checador.cheacador modulo_checador = new Checador.cheacador();
         sucursales modulo_sucursal = new sucursales();
-        
 
+        //VARIABLE PARA CARGAR LOS CHECADORES
+        DataTable dtChecadores = null;
+
+        //SE CREA LA INSTANCIA AL OBJETO DE LA CLASE CHECADOR
+        ClaseChecador Clase_Checador = new ClaseChecador();
 
         private void Desbloquear_Principal(object sender, EventArgs e)
         {
@@ -45,6 +49,21 @@ namespace Checador
             string ipChecador = "20.20.0.66";
             int id_checador = 1;
             int puerto = 4370;
+
+            //OBTIENE TODOS LOS CHECADORES ACTIVOS Y LOS CONECTA
+            dtChecadores = Clase_Checador.Obtener_Checadores_Activos();
+            //DataRow row = dtChecadores.Rows[0];
+            //MessageBox.Show(Convert.ToString(row["ip"]));
+
+            /*for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
+            {
+                DataRow row = dtChecadores.Rows[pos];
+                ipChecador = Convert.ToString(row["ip"]);
+                id_checador = Convert.ToInt32(row["id_checador"]);
+                puerto = Convert.ToInt32(row["puerto"]);
+            }*/
+
+            
 
             try
             {

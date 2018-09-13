@@ -30,10 +30,6 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-=======
-
->>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
             CheckForIllegalCrossThreadCalls = false;
 
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
@@ -116,10 +112,6 @@ namespace Checador.empleados
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
         private void btn_registrar_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-=======
-
->>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;
@@ -312,11 +304,7 @@ namespace Checador.empleados
             huella.FormClosed += new FormClosedEventHandler(Desbloquear_empleados);
             huella.Show();
         }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
+        
         private void btn_capturar_mod_Click(object sender, EventArgs e)
         {
             Enabled = false;
@@ -329,11 +317,7 @@ namespace Checador.empleados
         {
             tabControlBase.SelectedTab = tabPage4;
         }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
+        
         private void rb_modificar_CheckedChanged_1(object sender, EventArgs e)
         {
             tabControlBase.SelectedTab = tabPage5;
@@ -350,8 +334,7 @@ namespace Checador.empleados
             btn_registrar.Visible = false;
             btn_registrar.Enabled = false;
         }
-
-<<<<<<< HEAD
+        
         private void btn_capturar_Click_1(object sender, EventArgs e)
         {
             int dedo = cbx_huella.SelectedIndex;
@@ -369,7 +352,8 @@ namespace Checador.empleados
         {
             //pic_huella_mod.Image = Image.FromFile("..\\..\\Resources\\huella1.png");
             MessageBox.Show("Huella registrada con exito");
-=======
+        }
+
         private void btn_modificar_Click_2(object sender, EventArgs e)
         {
             if
@@ -378,7 +362,6 @@ namespace Checador.empleados
                 tabControlBase.SelectedTab = tabPage3;
                 cbx_huella.SelectedIndex = 6;
             }
->>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
         }
 
         private void cbx_huella_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -424,14 +407,10 @@ namespace Checador.empleados
                 pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella9.png");
             }
         }
-
-<<<<<<< HEAD
         
-=======
         private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }
->>>>>>> ce4d5b5d46eea79dba54b1b6fb8ab3b0931924ba
     }
 }

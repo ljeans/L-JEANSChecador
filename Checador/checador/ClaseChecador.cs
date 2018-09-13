@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Checador
 {
@@ -34,8 +35,8 @@ namespace Checador
         {
             try
             {
-                //Registrar SUCURSAL
-                string consulta = "INSERT INTO checador  VALUES (@id,@ip, @puerto,@id_sucursal,@estatus)";
+                //Registrar CHECADOR
+                string consulta = "INSERT INTO checador VALUES (@id,@ip, @puerto,@id_sucursal,@estatus)";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -53,7 +54,8 @@ namespace Checador
             }
             catch (Exception e)
             {
-                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                MessageBox.Show(e.ToString());
+                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
             }
         }
 
@@ -62,11 +64,12 @@ namespace Checador
         {
             try
             {
-                string consulta = "UPDATE checador SET ip = @ip, puerto = @puerto, id_sucursal = @id_sucursal WHERE id_sucursal = @id";
+                string consulta = "UPDATE checador SET ip = @ip, puerto = @puerto, id_sucursal = @id_sucursal, estatus=@estatus WHERE id_checador = @id";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
                 SqlCommand comand = new SqlCommand(consulta, conexion);
+                comand.Parameters.AddWithValue("@id", id);
                 comand.Parameters.AddWithValue("@ip", ip);
                 comand.Parameters.AddWithValue("@puerto", puerto);
                 comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
@@ -77,6 +80,7 @@ namespace Checador
             }
             catch (Exception e)
             {
+                //MessageBox.Show(e.ToString());
                 MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
             }
         }
@@ -145,6 +149,32 @@ namespace Checador
                 //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
                 MessageBox.Show(e.ToString());
             }
+        }
+
+        //FUNCION PARA OBTENER LOS CHECADORES ACTIVOS
+        public DataTable Obtener_Checadores_Activos()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                Conexion conexion = new Conexion();
+                using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
+                {
+                    string consulta = "SELECT * FROM checador WHERE estatus = 'A'";
+                    con.Open();//abre la conexion
+                    SqlDataAdapter da = new SqlDataAdapter(consulta, con);
+                    da.Fill(dt);
+                    con.Close();
+                }
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                MessageBox.Show(e.ToString());
+            }
+            return dt;
+
+
         }
 
         //FUNCION PARA VERIFICAR SI EL DISPOSITIVO CHECADOR YA EXISTE PREVIAMENTE EN LA BASE DE DATOS

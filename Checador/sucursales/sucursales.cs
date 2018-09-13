@@ -68,6 +68,8 @@ namespace Checador
             tabControlBase.SelectedTab = tabPage2;
         }
 
+
+//REGISTRAR///////////////////////////////////////////////////////////////////////////
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
         private void btn_registrar_Click(object sender, EventArgs e)
@@ -133,7 +135,7 @@ namespace Checador
             btn_registrar.Enabled = false;
         }
 
-        //FUNCION PARA DESHABILITAR LOS COMPONENTES DEL FORMULARIO
+        //FUNCION PARA HABILITAR LOS COMPONENTES DEL FORMULARIO
         public void Habilitar_Componentes()
         {
             txt_domicilio_calle.Enabled = true;
@@ -150,11 +152,12 @@ namespace Checador
             btn_registrar.Enabled = true;
         }
 
+//MODIFICAR/////////////////////////////////////////////////////////////////////////////////
         private void btn_modificar_Click(object sender, EventArgs e)
         {
             try
             {
-                Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
+                //Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
                 Sucursal.calle = txt_domicilio_calle.Text;
                 Sucursal.codigo_postal = txt_domicilio_cp.Text;
                 Sucursal.colonia = txt_domicilio_colonia.Text;
