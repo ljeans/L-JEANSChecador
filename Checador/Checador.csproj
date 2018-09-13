@@ -76,6 +76,7 @@
     <Compile Include="empleados\huella.Designer.cs">
       <DependentUpon>huella.cs</DependentUpon>
     </Compile>
+    <Compile Include="horarios\ClaseHorario.cs" />
     <Compile Include="principal.cs">
       <SubType>Form</SubType>
     </Compile>

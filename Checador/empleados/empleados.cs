@@ -30,7 +30,10 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4eb180ce06cf746b7847d33703da7c7b92d6a615
             CheckForIllegalCrossThreadCalls = false;
 
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
@@ -353,8 +356,12 @@ namespace Checador.empleados
             huella.FormClosed += new FormClosedEventHandler(Desbloquear_empleados);
             huella.Show();
         }
+<<<<<<< HEAD
 
 
+=======
+        
+>>>>>>> 4eb180ce06cf746b7847d33703da7c7b92d6a615
         private void btn_capturar_mod_Click(object sender, EventArgs e)
         {
             Enabled = false;
@@ -367,7 +374,11 @@ namespace Checador.empleados
         {
             tabControlBase.SelectedTab = tabPage4;
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 4eb180ce06cf746b7847d33703da7c7b92d6a615
         private void rb_modificar_CheckedChanged_1(object sender, EventArgs e)
         {
             tabControlBase.SelectedTab = tabPage5;
@@ -387,6 +398,7 @@ namespace Checador.empleados
             btn_modificar.Visible = true;
             btn_registrar.Visible = false;
             btn_registrar.Enabled = false;
+<<<<<<< HEAD
             txt_id.Text = Empleado.id.ToString();
             txt_nombre.Text = Empleado.nombre;
             txt_apellido_materno.Text = Empleado.apellido_mat;
@@ -434,6 +446,18 @@ namespace Checador.empleados
             }
 
             if (Empleado.estatus == "A")
+=======
+        }
+        
+        private void btn_capturar_Click_1(object sender, EventArgs e)
+        {
+            int dedo = cbx_huella.SelectedIndex;
+            MessageBox.Show(dedo.ToString());
+            //CODIGO PARA LA INTERFAZ DE REGISTRO DE NUEVA HUELLA
+            int flag = 0;
+            Checador.StartEnrollEx(Empleado.id.ToString(),dedo,flag);
+            if (Checador.RegEvent(clase_checador.id, 65535))
+>>>>>>> 4eb180ce06cf746b7847d33703da7c7b92d6a615
             {
                 rb_mod_activo.Checked = true;
             }
@@ -448,6 +472,19 @@ namespace Checador.empleados
         {
             //pic_huella_mod.Image = Image.FromFile("..\\..\\Resources\\huella1.png");
             MessageBox.Show("Huella registrada con exito");
+<<<<<<< HEAD
+=======
+        }
+
+        private void btn_modificar_Click_2(object sender, EventArgs e)
+        {
+            if
+          (MessageBox.Show("Desea cambiar huella al empleado?", "cambiar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                tabControlBase.SelectedTab = tabPage3;
+                cbx_huella.SelectedIndex = 6;
+            }
+>>>>>>> 4eb180ce06cf746b7847d33703da7c7b92d6a615
         }
 
         //FUNCION PARA ACTUALIZAR LOS DATOS DE UN EMPLEADO
@@ -538,6 +575,14 @@ namespace Checador.empleados
                 MessageBox.Show(ex.ToString());
             }
         }
+<<<<<<< HEAD
 
+=======
+        
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> 4eb180ce06cf746b7847d33703da7c7b92d6a615
     }
 }
