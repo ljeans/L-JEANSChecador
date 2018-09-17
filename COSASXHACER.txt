@@ -1,0 +1,6 @@
+-Cambiar horario de empledo a sucursal
+-Modificar horario
+-Checadores multiples
+-Modificar vista (empleados y sucursal)
+-Agregar retardo y contador de tiempo.
+		3		150

@@ -10,6 +10,7 @@ namespace Checador
 {
     public class ClaseEmpleado
     {
+        ClaseHorario horario = new ClaseHorario();
         public int id { get; set; }
         public int id_sucursal { get; set; }
         public string nombre { get; set; }
@@ -43,7 +44,6 @@ namespace Checador
         public int dias_vacaciones { get; set; }
         public string observaciones { get; set; }
         //public int id_horario { get; set; }
-        public int id_horario { get; set; }
         public string tipo_contrato { get; set; }
         public string riesgo_puesto { get; set; }
         public string periodicidad_pago { get; set; }
@@ -54,6 +54,11 @@ namespace Checador
         public string clave_edenred { get; set; }
         public string password { get; set; }
         public int horas_extra { get; set; }
+        public TimeSpan hora_entrada { get; set; }
+
+        //LUEGO VEMOS
+        public TimeSpan hr_entrada { get; set; }
+        public TimeSpan hr_salida { get; set; }
 
         //FUNCION PARA OBTENER EL ID MAXIMO DEL EMPLEADO POR SI ES AUTOINCREMENTABLE EL ID
         public int obtenerIdMaximo()
@@ -67,6 +72,8 @@ namespace Checador
             conexion.Close();
             return idMaximo;
         }
+        //FUNCION PARA MOSTRAR EL HORARIO DESDE EL ID
+        
 
         //FUNCION PARA REGISTRAR UN EMPLEADO
         public void guardarEmpleado()
@@ -84,7 +91,7 @@ namespace Checador
                     //MessageBox.Show(e.Message);
                     id = 1;
                 }
-                string consulta = "INSERT INTO empleado  VALUES (@id,@nombre, @apellido_pat,@apellido_mat, @departamento,@id_privilegio, @telefono, @calle, @num_ext,@num_int, @colonia, @codigo_postal,@poblacion,@municipio, @estado, @pais,@puesto, @RFC, @CURP, @estatus, @fecha_alta,@observaciones, @email, @fecha_baja, @NSS, @tipo_contrato, @sueldo_diario, @sueldo_diario_integrado, @sueldo_base_quincenal, @tipo_salario, @dias_aguinaldo, @dias_vacaciones, @id_horario, @riesgo_puesto, @periodicidad_pago, @banco, @cuenta_bancaria, @tarjeta_despensa, @clave_edenred, @password, @horas_extra)";
+                string consulta = "INSERT INTO empleado  VALUES (@id,@nombre, @apellido_pat,@apellido_mat, @departamento,@id_privilegio, @telefono, @calle, @num_ext,@num_int, @colonia, @codigo_postal,@poblacion,@municipio, @estado, @pais,@puesto, @RFC, @CURP, @estatus, @fecha_alta,@observaciones, @email, @fecha_baja, @NSS, @tipo_contrato, @sueldo_diario, @sueldo_diario_integrado, @sueldo_base_quincenal, @tipo_salario, @dias_aguinaldo, @dias_vacaciones, @riesgo_puesto, @periodicidad_pago, @banco, @cuenta_bancaria, @tarjeta_despensa, @clave_edenred, @password, @horas_extra)";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -121,7 +128,6 @@ namespace Checador
                 comand.Parameters.AddWithValue("@tipo_salario", tipo_salario);
                 comand.Parameters.AddWithValue("@dias_aguinaldo", dias_aguinaldo);
                 comand.Parameters.AddWithValue("@dias_vacaciones", dias_vacaciones);
-                comand.Parameters.AddWithValue("@id_horario", id_horario);
                 comand.Parameters.AddWithValue("@riesgo_puesto", riesgo_puesto);
                 comand.Parameters.AddWithValue("@periodicidad_pago", periodicidad_pago);
                 comand.Parameters.AddWithValue("@banco", banco);
@@ -148,7 +154,7 @@ namespace Checador
         {
             try
             {
-                string consulta = "UPDATE empleado SET nombre = @nombre, apellido_pat = @apellido_pat, apellido_mat=@apellido_mat, departamento=@departamento,id_privilegio=@id_privilegio, telefono=@telefono, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, puesto=@puesto, NSS=@NSS, RFC=@RFC, CURP=@CURP, estatus=@estatus, fecha_alta=@fecha_alta, fecha_baja=@fecha_baja, sueldo_diario=@sueldo_diario, sueldo_diario_integrado=@sueldo_diario_integrado, sueldo_base_quincenal=@sueldo_base_quincenal, tipo_salario=@tipo_salario, dias_aguinaldo=@dias_aguinaldo, dias_vacaciones=@dias_vacaciones, observaciones=@observaciones,id_horario=@id_horario, tipo_contrato=@tipo_contrato, riesgo_puesto=@riesgo_puesto, periodicidad_pago=@periodicidad_pago, banco=@banco, cuenta_bancaria=@cuenta_bancaria, email=@email, tarjeta_despensa=@tarjeta_despensa, clave_edenred=@clave_edenred, password = @password WHERE id_empleado = @id";
+                string consulta = "UPDATE empleado SET nombre = @nombre, apellido_pat = @apellido_pat, apellido_mat=@apellido_mat, departamento=@departamento,id_privilegio=@id_privilegio, telefono=@telefono, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, puesto=@puesto, NSS=@NSS, RFC=@RFC, CURP=@CURP, estatus=@estatus, fecha_alta=@fecha_alta, fecha_baja=@fecha_baja, sueldo_diario=@sueldo_diario, sueldo_diario_integrado=@sueldo_diario_integrado, sueldo_base_quincenal=@sueldo_base_quincenal, tipo_salario=@tipo_salario, dias_aguinaldo=@dias_aguinaldo, dias_vacaciones=@dias_vacaciones, observaciones=@observaciones, tipo_contrato=@tipo_contrato, riesgo_puesto=@riesgo_puesto, periodicidad_pago=@periodicidad_pago, banco=@banco, cuenta_bancaria=@cuenta_bancaria, email=@email, tarjeta_despensa=@tarjeta_despensa, clave_edenred=@clave_edenred, password = @password WHERE id_empleado = @id";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -183,7 +189,6 @@ namespace Checador
                 comand.Parameters.AddWithValue("@dias_aguinaldo", dias_aguinaldo);
                 comand.Parameters.AddWithValue("@dias_vacaciones", dias_vacaciones);
                 comand.Parameters.AddWithValue("@observaciones", observaciones);
-                comand.Parameters.AddWithValue("@id_horario", id_horario);
                 comand.Parameters.AddWithValue("@tipo_contrato", tipo_contrato);
                 comand.Parameters.AddWithValue("@riesgo_puesto", riesgo_puesto);
                 comand.Parameters.AddWithValue("@periodicidad_pago", periodicidad_pago);
@@ -282,7 +287,6 @@ namespace Checador
                         dias_aguinaldo = lector.GetInt32(lector.GetOrdinal("dias_aguinaldo"));
                         dias_vacaciones = lector.GetInt32(lector.GetOrdinal("dias_vacaciones"));
                         observaciones = lector.GetString(lector.GetOrdinal("observaciones"));
-                        id_horario = lector.GetInt32(lector.GetOrdinal("id_horario"));
                         tipo_contrato = lector.GetString(lector.GetOrdinal("tipo_contrato"));
                         riesgo_puesto = lector.GetString(lector.GetOrdinal("riesgo_puesto"));
                         periodicidad_pago = lector.GetString(lector.GetOrdinal("periodicidad_pago"));
@@ -309,7 +313,84 @@ namespace Checador
                 return false;
             }
         }
+        public bool ObtenerSucursal(string suc)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                //SqlConnection con = new SqlConnection(conexion.cadenaConexion);
+                using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
+                {
+                    string select = "SELECT id_sucursal FROM sucursal WHERE nombre=@suc";//Consulta
+                    SqlCommand comando = new SqlCommand(select, con);//Nuevo objeto sqlcommand
+                    comando.Parameters.AddWithValue("@suc", suc);//Agregamos parametros a la consulta
+                    con.Open();//abre la conexion
+                    SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
+                    if (lector.HasRows)//Revisa si hay resultados
+                    {
+                        lector.Read();//Lee una linea de los resultados
+                        //this.id = ;//Asignacion a atributos
+                        //get ordinal regresa el indice de la fila
+                        //el Nombre especificado en el parametro
+                        id_sucursal = lector.GetInt32(lector.GetOrdinal("id_sucursal"));
+                        MessageBox.Show(id_sucursal.ToString());
+                        con.Close();
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No hay sucursal");
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                return false;
+            }
+        }
 
+        public bool verificar_horario(string horario)//Funcion que hace el select retorna false si no hay resultados
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                //SqlConnection con = new SqlConnection(conexion.cadenaConexion);
+                using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
+                {
+                    string select = "SELECT hr_entrada, hr_salida FROM horarios WHERE horario=@horario";//Consulta
+                    SqlCommand comando = new SqlCommand(select, con);//Nuevo objeto sqlcommand
+                    comando.Parameters.AddWithValue("@horario", horario);//Agregamos parametros a la consulta
+                    con.Open();//abre la conexion
+                    SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
+                    if (lector.HasRows)//Revisa si hay resultados
+                    {
+                        lector.Read();//Lee una linea de los resultados
+                        //this.id = ;//Asignacion a atributos
+                        //get ordinal regresa el indice de la fila
+                        //el Nombre especificado en el parametro
+                        hr_entrada = lector.GetTimeSpan(lector.GetOrdinal("hr_entrada"));
+                        hr_salida = lector.GetTimeSpan(lector.GetOrdinal("hr_salida"));
+                        con.Close();
+                        return true;
+                    }
+                    else
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                return false;
+            }
+        }
 
         //FUNCION PARA REGISTRAR EMPLEADO_SUCURSAL
         public void guardarEmpleado_Sucursal()

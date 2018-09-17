@@ -5,14 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
+using System.Threading;
 namespace Checador
 {
     public partial class sucursales : Checador.formularios_padres.formpadre
     {
         //SE CREA LA INSTANCIA AL OBJETO DE LA CLASE SUCURSAL
         ClaseSucursal Sucursal = new ClaseSucursal();
-
+        ClaseHorario horario = new ClaseHorario();
+        int idhorario;
         public sucursales()
         {
             InitializeComponent();
@@ -27,9 +29,41 @@ namespace Checador
 
         private void sucursales_Load(object sender, EventArgs e)
         {
+            Conexion conexion = new Conexion();
+            //SqlConnection con = new SqlConnection(conexion.cadenaConexion);
+            using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))
+            {
+                string select = "SELECT horario FROM horarios";//Consulta
+                SqlCommand comando = new SqlCommand(select, con);//Nuevo objeto sqlcommand
+                con.Open();//abre la conexion
+                SqlDataReader lector = comando.ExecuteReader();
+                while (lector.Read() == true)
+                {
+                    cbx_horario.Items.Add(lector[0]);
+                }
+            }
 
+            CheckForIllegalCrossThreadCalls = false;
+            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+            Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
+            hilo_secundario.IsBackground = true;
+            hilo_secundario.Start();
+            cbx_horario.SelectedIndex = 0;
         }
-    
+
+        public void cargarID()
+        {
+            //MOSTRAR EL ID DEL EMPLEADO AL CARGAR LA PAGINA
+            try
+            {
+                txt_id.Text = (Sucursal.obtenerIdMaximo() + 1).ToString();
+            }
+            catch (Exception ex)
+            {
+                txt_id.Text = "1";
+            }
+        }
+
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -69,11 +103,27 @@ namespace Checador
         }
 
 
-//REGISTRAR///////////////////////////////////////////////////////////////////////////
+        //REGISTRAR///////////////////////////////////////////////////////////////////////////
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
+        public void cargarIDHorario()
+        {
+            //MOSTRAR EL ID DEL EMPLEADO AL CARGAR LA PAGINA
+            try
+            {
+                MessageBox.Show(horario.horario, "eso va");
+                idhorario = (Sucursal.obtenerId(horario.horario));
+            }
+            catch (Exception ex)
+            {
+                txt_id.Text = "1";
+            }
+        }
         private void btn_registrar_Click(object sender, EventArgs e)
         {
+            horario.horario = cbx_horario.Text;
+            idhorario= Sucursal.obtenerId(horario.horario);
+            
             try
             {
                 Sucursal.calle = txt_domicilio_calle.Text;
@@ -89,6 +139,7 @@ namespace Checador
                 Sucursal.pais = txt_domicilio_pais.Text;
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
+                Sucursal.id_horario = idhorario;
                 Sucursal.guardarSucursal();
                 Limpiar();
             }
@@ -114,6 +165,7 @@ namespace Checador
             txt_id.Text = "";
             txt_nombre.Text = "";
             txt_telefono.Text = "";
+            cbx_horario.SelectedIndex = 0;
             txt_id.Focus();
             //Deshabilitar_Componentes();
         }
@@ -157,6 +209,8 @@ namespace Checador
         {
             try
             {
+                horario.horario = cbx_horario.Text;
+                idhorario = Sucursal.obtenerId(horario.horario);
                 //Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
                 Sucursal.calle = txt_domicilio_calle.Text;
                 Sucursal.codigo_postal = txt_domicilio_cp.Text;
@@ -177,6 +231,7 @@ namespace Checador
                 Sucursal.pais = txt_domicilio_pais.Text;
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
+                Sucursal.id_horario = idhorario;
                 Sucursal.Modificar_Sucursal();
                 Limpiar();
             }
@@ -191,6 +246,7 @@ namespace Checador
             txt_id.Enabled = false;
             Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
             Sucursal.verificar_existencia(Sucursal.id);
+
             MessageBox.Show(Sucursal.id.ToString());
             tabControlBase.SelectedTab = tabPage1;
             txt_id.Text = Sucursal.id.ToString();
