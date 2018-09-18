@@ -11,6 +11,7 @@ namespace Checador
     class ClaseSucursal
     {
         public int id { get; set; }
+        public int id_horario { get; set; }
         public string nombre { get; set; }
         public string calle { get; set; }
         public string colonia { get; set; }
@@ -23,6 +24,7 @@ namespace Checador
         public string pais { get; set; }
         public string telefono { get; set; }
         public string estatus { get; set; }
+
 
         //FUNCION PARA OBTENER EL ID MAXIMO DE LA SUCURSAL POR SI ES AUTOINCREMENTABLE EL ID
         public int obtenerIdMaximo()
@@ -37,6 +39,23 @@ namespace Checador
             return idMaximo;
         }
 
+        //obtienes el id del combo box horarios
+        public int obtenerId(string horario)
+        {
+            string consulta = "Select id_horario From horarios where horario=@horario";
+            Conexion con = new Conexion();
+            SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+            SqlCommand comand = new SqlCommand(consulta, conexion);
+            comand.Parameters.AddWithValue("@horario", horario);
+            conexion.Open();
+            int id = Convert.ToInt32(comand.ExecuteScalar());
+            MessageBox.Show("este es el id", id.ToString());
+            conexion.Close();
+            return id;
+        }
+
+
+
         //FUNCION PARA REGISTRAR UNA SUCURSAL
         public void guardarSucursal()
         {
@@ -44,7 +63,7 @@ namespace Checador
             try
             {
                 //Registrar SUCURSAL
-                string consulta = "INSERT INTO sucursal  VALUES (@id,@nombre, @calle,@colonia, @num_ext,@num_int, @codigo_postal,@poblacion,@municipio, @estado, @pais, @telefono, @estatus)";
+                string consulta = "INSERT INTO sucursal  VALUES (@id,@nombre, @calle,@colonia, @num_ext,@num_int, @codigo_postal,@poblacion,@municipio, @estado, @pais, @telefono, @estatus, @id_horario)";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -62,6 +81,8 @@ namespace Checador
                 comand.Parameters.AddWithValue("@pais", pais);
                 comand.Parameters.AddWithValue("@telefono", telefono);
                 comand.Parameters.AddWithValue("@estatus", estatus);
+                comand.Parameters.AddWithValue("@id_horario", id_horario);
+
 
                 comand.ExecuteNonQuery();
                 conexion.Close();
@@ -81,7 +102,7 @@ namespace Checador
             try
             {
        
-                string consulta = "UPDATE sucursal SET nombre = @nombre, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, telefono=@telefono, estatus=@estatus WHERE id_sucursal = @id";
+                string consulta = "UPDATE sucursal SET nombre = @nombre, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, telefono=@telefono, estatus=@estatus, id_horario=@id_horario WHERE id_sucursal = @id";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -99,6 +120,8 @@ namespace Checador
                 comand.Parameters.AddWithValue("@pais", pais);
                 comand.Parameters.AddWithValue("@telefono", telefono);
                 comand.Parameters.AddWithValue("@estatus", estatus);
+                comand.Parameters.AddWithValue("@id_horario", id_horario);
+
                 comand.ExecuteNonQuery();
                 conexion.Close();
                 MessageBox.Show("Sucursal modificada con éxito. ID= " + id.ToString());
@@ -171,6 +194,7 @@ namespace Checador
                         pais = lector.GetString(lector.GetOrdinal("pais"));
                         telefono = lector.GetString(lector.GetOrdinal("telefono"));
                         estatus = lector.GetString(lector.GetOrdinal("estatus"));
+                        id_horario = lector.GetInt32(lector.GetOrdinal("@id_horario"));
                         con.Close();
                         return true;
                     }

@@ -16,7 +16,13 @@ namespace Checador
         empleados.empleados modulo_empleados = new empleados.empleados();
         Checador.cheacador modulo_checador = new Checador.cheacador();
         sucursales modulo_sucursal = new sucursales();
+<<<<<<< HEAD
         horarios modulo_horarios = new horarios();
+=======
+
+        horarios modulo_horarios = new horarios();
+       
+>>>>>>> ea0c00fff0ec9245c704a9ed222016cc77a98739
 
         //VARIABLE PARA CARGAR LOS CHECADORES
         DataTable dtChecadores = null;
@@ -47,7 +53,11 @@ namespace Checador
 
         private void principal_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             string ipChecador = "20.20.0.12";
+=======
+            string ipChecador = "20.20.0.15";
+>>>>>>> ea0c00fff0ec9245c704a9ed222016cc77a98739
             int id_checador = 1;
             int puerto = 4370;
 

@@ -63,6 +63,7 @@ namespace Checador
                 comand.Parameters.AddWithValue("@viernes", viernes);
                 comand.Parameters.AddWithValue("@sabado", sabado);
                 comand.Parameters.AddWithValue("@domingo", domingo);
+                comand.Parameters.AddWithValue("@horas_diarias", horas_diarias);
                 comand.Parameters.AddWithValue("@horas_totales_quincenales", horas_totales_quincenales);
                 comand.Parameters.AddWithValue("@hora_salida_descanso", hora_salida_descanso);
                 comand.Parameters.AddWithValue("@hora_entrada_descanso", hora_entrada_descanso);

@@ -73,6 +73,8 @@
             this.btn_ir_modificar = new System.Windows.Forms.Button();
             this.label84 = new System.Windows.Forms.Label();
             this.txt_id_mod = new System.Windows.Forms.TextBox();
+            this.cbx_horario = new System.Windows.Forms.ComboBox();
+            this.label37 = new System.Windows.Forms.Label();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -119,6 +121,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cbx_horario);
+            this.tabPage1.Controls.Add(this.label37);
             this.tabPage1.Controls.Add(this.btn_modificar);
             this.tabPage1.Controls.Add(this.txt_domicilio_num_ext);
             this.tabPage1.Controls.Add(this.groupBox4);
@@ -159,22 +163,12 @@
             this.tabPage2.Controls.Add(this.txt_idbuscar);
             this.tabPage2.Controls.Add(this.txt_nombrebuscar);
             this.tabPage2.Controls.Add(this.pictureBox6);
-            this.tabPage2.Size = new System.Drawing.Size(1012, 624);
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.btn_ir_modificar);
             this.tabPage3.Controls.Add(this.label84);
             this.tabPage3.Controls.Add(this.txt_id_mod);
-            this.tabPage3.Size = new System.Drawing.Size(1012, 624);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Size = new System.Drawing.Size(1012, 624);
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Size = new System.Drawing.Size(1012, 624);
             // 
             // panel_barra_sup
             // 
@@ -386,6 +380,7 @@
             // txt_id
             // 
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_id.Enabled = false;
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Location = new System.Drawing.Point(228, 72);
             this.txt_id.MaxLength = 32;
@@ -659,7 +654,7 @@
             this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.ForeColor = System.Drawing.Color.White;
-            this.btn_modificar.Location = new System.Drawing.Point(667, 515);
+            this.btn_modificar.Location = new System.Drawing.Point(667, 527);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(250, 70);
             this.btn_modificar.TabIndex = 1075;
@@ -702,6 +697,27 @@
             this.txt_id_mod.Name = "txt_id_mod";
             this.txt_id_mod.Size = new System.Drawing.Size(200, 29);
             this.txt_id_mod.TabIndex = 98;
+            // 
+            // cbx_horario
+            // 
+            this.cbx_horario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_horario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_horario.FormattingEnabled = true;
+            this.cbx_horario.Location = new System.Drawing.Point(699, 72);
+            this.cbx_horario.Name = "cbx_horario";
+            this.cbx_horario.Size = new System.Drawing.Size(219, 32);
+            this.cbx_horario.TabIndex = 1076;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.BackColor = System.Drawing.Color.Transparent;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(601, 75);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(77, 24);
+            this.label37.TabIndex = 1077;
+            this.label37.Text = "Horario:";
             // 
             // sucursales
             // 
@@ -776,5 +792,7 @@
         private System.Windows.Forms.Button btn_ir_modificar;
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.TextBox txt_id_mod;
+        private System.Windows.Forms.ComboBox cbx_horario;
+        private System.Windows.Forms.Label label37;
     }
 }

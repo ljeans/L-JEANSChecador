@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(principal));
             this.button1 = new System.Windows.Forms.Button();
-            this.btn_cerrar_sistema = new System.Windows.Forms.Button();
             this.btn_minimizar = new System.Windows.Forms.Button();
             this.btn_iniciar_sesion = new System.Windows.Forms.Button();
             this.btn_cerrar_sesion = new System.Windows.Forms.Button();
@@ -62,23 +61,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btn_cerrar_sistema
-            // 
-            this.btn_cerrar_sistema.BackColor = System.Drawing.Color.Transparent;
-            this.btn_cerrar_sistema.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_cerrar_sistema.FlatAppearance.BorderSize = 0;
-            this.btn_cerrar_sistema.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_cerrar_sistema.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_cerrar_sistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar_sistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cerrar_sistema.ForeColor = System.Drawing.Color.DarkGray;
-            this.btn_cerrar_sistema.Location = new System.Drawing.Point(1308, 12);
-            this.btn_cerrar_sistema.Name = "btn_cerrar_sistema";
-            this.btn_cerrar_sistema.Size = new System.Drawing.Size(50, 65);
-            this.btn_cerrar_sistema.TabIndex = 14;
-            this.btn_cerrar_sistema.Text = "X";
-            this.btn_cerrar_sistema.UseVisualStyleBackColor = false;
             // 
             // btn_minimizar
             // 
@@ -385,7 +367,6 @@
             this.ClientSize = new System.Drawing.Size(1370, 772);
             this.Controls.Add(this.panel_menu);
             this.Controls.Add(this.panel_barra_superior);
-            this.Controls.Add(this.btn_cerrar_sistema);
             this.Controls.Add(this.btn_minimizar);
             this.Controls.Add(this.btn_iniciar_sesion);
             this.Controls.Add(this.btn_cerrar_sesion);
@@ -406,7 +387,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btn_cerrar_sistema;
         private System.Windows.Forms.Button btn_minimizar;
         private System.Windows.Forms.Button btn_iniciar_sesion;
         private System.Windows.Forms.Button btn_cerrar_sesion;
