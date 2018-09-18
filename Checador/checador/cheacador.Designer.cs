@@ -60,12 +60,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-=======
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
             this.rb_mod_activo = new System.Windows.Forms.RadioButton();
->>>>>>> 4eb180ce06cf746b7847d33703da7c7b92d6a615
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -110,11 +107,8 @@
             // 
             // tabControlBase
             // 
-<<<<<<< HEAD
             this.tabControlBase.Location = new System.Drawing.Point(309, 57);
-=======
             this.tabControlBase.Location = new System.Drawing.Point(309, 77);
->>>>>>> 4eb180ce06cf746b7847d33703da7c7b92d6a615
             // 
             // tabPage1
             // 
@@ -576,8 +570,6 @@
             this.btn_siguiente.Text = "Sincronizar fecha y hora";
             this.btn_siguiente.UseVisualStyleBackColor = false;
             // 
-<<<<<<< HEAD
-=======
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.rb_mod_inactivo);
@@ -613,7 +605,6 @@
             this.rb_mod_activo.Text = "Activo";
             this.rb_mod_activo.UseVisualStyleBackColor = true;
             // 
->>>>>>> 4eb180ce06cf746b7847d33703da7c7b92d6a615
             // cheacador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

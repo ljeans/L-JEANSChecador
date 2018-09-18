@@ -213,10 +213,6 @@
             // 
             // tabControlBase
             // 
-<<<<<<< HEAD
-=======
-            this.tabControlBase.Location = new System.Drawing.Point(309, 80);
->>>>>>> 4eb180ce06cf746b7847d33703da7c7b92d6a615
             this.tabControlBase.Location = new System.Drawing.Point(309, 77);
             // 
             // tabPage1
@@ -1681,7 +1677,7 @@
             this.btn_capturar.TabIndex = 57;
             this.btn_capturar.Text = "Registrar huella";
             this.btn_capturar.UseVisualStyleBackColor = false;
-            this.btn_capturar.Click += new System.EventHandler(this.btn_capturar_Click_1);
+            this.btn_capturar.Click += new System.EventHandler(this.btn_capturar_Click);
             // 
             // pictureBox1
             // 

@@ -16,11 +16,7 @@ namespace Checador
         empleados.empleados modulo_empleados = new empleados.empleados();
         Checador.cheacador modulo_checador = new Checador.cheacador();
         sucursales modulo_sucursal = new sucursales();
-<<<<<<< HEAD
         horarios modulo_horarios = new horarios();
-        
-=======
->>>>>>> 4eb180ce06cf746b7847d33703da7c7b92d6a615
 
         //VARIABLE PARA CARGAR LOS CHECADORES
         DataTable dtChecadores = null;
@@ -51,7 +47,7 @@ namespace Checador
 
         private void principal_Load(object sender, EventArgs e)
         {
-            string ipChecador = "20.20.0.66";
+            string ipChecador = "20.20.0.12";
             int id_checador = 1;
             int puerto = 4370;
 
@@ -60,47 +56,46 @@ namespace Checador
             //DataRow row = dtChecadores.Rows[0];
             //MessageBox.Show(Convert.ToString(row["ip"]));
 
-            /*for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
+            for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
             {
                 DataRow row = dtChecadores.Rows[pos];
                 ipChecador = Convert.ToString(row["ip"]);
                 id_checador = Convert.ToInt32(row["id_checador"]);
                 puerto = Convert.ToInt32(row["puerto"]);
-            }*/
 
-            
-
-            try
-            {
-                //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
-                //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
-                bool bConn = Checador.Connect_Net(ipChecador, puerto);
-                
-                //
-                if (bConn == true)
+                try
                 {
-                    //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
-                    Checador.EnableDevice(id_checador, true);
-                    MessageBox.Show("Dispositivo conectado");
+                    zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
+                    //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
+                    //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
+                    bool bConn = Checador.Connect_Net(ipChecador, puerto);
 
-                    //FUNCION PARA REGISTRAR TODOS LOS EVENTOS DEL CHECADOR EN TIEMPO REAL
-                    /*if (Checador.RegEvent(1, 65535))
+                    //
+                    if (bConn == true)
                     {
-                        //Checador.OnEnrollFingerEx += new zkemkeeper._IZKEMEvents_OnEnrollFingerExEventHandler(Checador_OnEnroll);
-                        Checador.OnAttTransactionEx += new zkemkeeper._IZKEMEvents_OnAttTransactionExEventHandler(Checador_OnAttTransactionEx);
-                        Checador.OnNewUser += new zkemkeeper._IZKEMEvents_OnNewUserEventHandler(Checador_OnNewUser);
-                        //Checador.OnFinger += new zkemkeeper._IZKEMEvents_OnFingerEventHandler(Checador_OnFinger);
-                    }*/
+                        //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
+                        Checador.EnableDevice(id_checador, true);
+                        MessageBox.Show("Dispositivo conectado + ID: " + id_checador);
+
+                        //FUNCION PARA REGISTRAR TODOS LOS EVENTOS DEL CHECADOR EN TIEMPO REAL
+                        if (Checador.RegEvent(id_checador, 65535))
+                        {
+                            //Checador.OnEnrollFingerEx += new zkemkeeper._IZKEMEvents_OnEnrollFingerExEventHandler(Checador_OnEnroll);
+                            Checador.OnAttTransactionEx += new zkemkeeper._IZKEMEvents_OnAttTransactionExEventHandler(Checador_OnAttTransactionEx);
+                            Checador.OnNewUser += new zkemkeeper._IZKEMEvents_OnNewUserEventHandler(Checador_OnNewUser);
+                            //Checador.OnFinger += new zkemkeeper._IZKEMEvents_OnFingerEventHandler(Checador_OnFinger);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Dispositivo no conectado");
+                    }
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Dispositivo no conectado");
+                    MessageBox.Show(ex.ToString());
                 }
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -111,8 +106,8 @@ namespace Checador
             MessageBox.Show(EnrollNumber);
 
             //FUNCION PARA OBTENER LA INFO DE UN USUARIO MEDIANTE SU ID Y EL NUMERO DE CHECADOR
-            Checador.SSR_GetUserInfo(1, EnrollNumber,out Nombre,out Contra,out Privilegio, out Estado);
-            MessageBox.Show(Nombre);
+            //Checador.SSR_GetUserInfo(1, EnrollNumber,out Nombre,out Contra,out Privilegio, out Estado);
+            //MessageBox.Show(Nombre);
 
             //FUNCION PARA BORRAR EL CACHE
             Checador.ClearSLog(1);
@@ -194,13 +189,13 @@ namespace Checador
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int flag = 0;
+            /*int flag = 0;
             Checador.StartEnrollEx("22",4,flag);
             
             if (Checador.GetPhotoCount(1, out Privilegio, flag))
             {
                 MessageBox.Show(Privilegio.ToString());
-            }
+            }*/
         }
     }
 }
