@@ -16,13 +16,7 @@ namespace Checador
         empleados.empleados modulo_empleados = new empleados.empleados();
         Checador.cheacador modulo_checador = new Checador.cheacador();
         sucursales modulo_sucursal = new sucursales();
-<<<<<<< HEAD
         horarios modulo_horarios = new horarios();
-=======
-
-        horarios modulo_horarios = new horarios();
-       
->>>>>>> ea0c00fff0ec9245c704a9ed222016cc77a98739
 
         //VARIABLE PARA CARGAR LOS CHECADORES
         DataTable dtChecadores = null;
@@ -53,11 +47,7 @@ namespace Checador
 
         private void principal_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             string ipChecador = "20.20.0.12";
-=======
-            string ipChecador = "20.20.0.15";
->>>>>>> ea0c00fff0ec9245c704a9ed222016cc77a98739
             int id_checador = 1;
             int puerto = 4370;
 
@@ -114,6 +104,7 @@ namespace Checador
         private void Checador_OnAttTransactionEx(string EnrollNumber, int IsInValid, int AttState, int VerifyMethod, int Year, int Month, int Day, int Hour, int Minute, int Second, int WorkCode)
         {
             MessageBox.Show(EnrollNumber);
+            MessageBox.Show(Year + " - " + Month + " - " + Day + "  " + Hour + ":" + Minute + ":" +Second);
 
             //FUNCION PARA OBTENER LA INFO DE UN USUARIO MEDIANTE SU ID Y EL NUMERO DE CHECADOR
             //Checador.SSR_GetUserInfo(1, EnrollNumber,out Nombre,out Contra,out Privilegio, out Estado);
