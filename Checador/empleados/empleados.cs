@@ -32,7 +32,10 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
             CheckForIllegalCrossThreadCalls = false;
             //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
@@ -78,7 +81,10 @@ namespace Checador.empleados
             cbx_privilegio.SelectedIndex = 0;
             cbx_horario.SelectedIndex = 0;
             cbx_sucursal.SelectedIndex = 0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
         }
 
             
@@ -220,8 +226,8 @@ namespace Checador.empleados
             {
                 MessageBox.Show(ex.ToString());
             }
-
         }
+
         //FUNCION PARA REGISTRAR NUEVO USUARIO EN EL CHECADOR
         public void Crear_Usuario_Checador(int id_checador, string id_empleado, string nombre, string contra, int privilegio)
         {
@@ -238,6 +244,7 @@ namespace Checador.empleados
                 MessageBox.Show(error.ToString());
             }
         }
+
         public void Conectar_Checador()
         {
             try
@@ -416,7 +423,10 @@ namespace Checador.empleados
             btn_modificar.Visible = true;
             btn_registrar.Visible = false;
             btn_registrar.Enabled = false;
+<<<<<<< HEAD
 
+=======
+>>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
             txt_id.Text = Empleado.id.ToString();
             txt_nombre.Text = Empleado.nombre;
             txt_apellido_materno.Text = Empleado.apellido_mat;
@@ -492,6 +502,10 @@ namespace Checador.empleados
                 tabControlBase.SelectedTab = tabPage3;
                 cbx_huella.SelectedIndex = 6;
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
         }
 
         //FUNCION PARA ACTUALIZAR LOS DATOS DE UN EMPLEADO
@@ -553,6 +567,10 @@ namespace Checador.empleados
                 Empleado.tipo_salario = txt_tipo_salario.Text;
                 Empleado.password = txt_contra.Text;
                 Empleado.Modificar_Empleado();
+                //SE OBTIENEN LOS DATOS DEL CHECADOR
+                clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
+                Conectar_Checador();
+
                 if
                 (MessageBox.Show("Desea cambiar huella al empleado?", "cambiar", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
@@ -565,18 +583,6 @@ namespace Checador.empleados
                     txt_id_a_modificar.Clear();
                 }
 
-                //SE OBTIENEN LOS DATOS DEL CHECADOR
-                /*   clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
-                   Conectar_Checador();
-
-                   Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
-
-                   if (MessageBox.Show("Desea registrar huella al empleado?", "registrar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                   {
-                       tabControlBase.SelectedTab = tabPage3;
-                       cbx_huella.SelectedIndex = 6;
-                   }
-                */
                 Limpiar();
             }
             catch (Exception ex)
@@ -585,6 +591,7 @@ namespace Checador.empleados
             }
         }
 
+<<<<<<< HEAD
 
         private void tabPage2_Click(object sender, EventArgs e)
 
@@ -599,6 +606,8 @@ namespace Checador.empleados
                 Checador.OnEnrollFinger += new zkemkeeper._IZKEMEvents_OnEnrollFingerEventHandler(Checador_OnEnrollFinger);
             }
         }
+=======
+>>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
 
         private void btn_capturar_Click(object sender, EventArgs e)
         {

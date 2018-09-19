@@ -63,6 +63,12 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+=======
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
+            this.rb_mod_activo = new System.Windows.Forms.RadioButton();
+>>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -107,6 +113,11 @@
             // 
             // tabControlBase
             // 
+<<<<<<< HEAD
+=======
+            this.tabControlBase.Location = new System.Drawing.Point(309, 57);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 57);
+>>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
             this.tabControlBase.Location = new System.Drawing.Point(309, 77);
             // 
             // tabPage1

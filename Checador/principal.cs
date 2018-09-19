@@ -47,8 +47,12 @@ namespace Checador
 
         private void principal_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
 
             string ipChecador = "20.20.0.15";
+=======
+            string ipChecador = "20.20.0.12";
+>>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
             int id_checador = 1;
             int puerto = 4370;
 
@@ -105,6 +109,7 @@ namespace Checador
         private void Checador_OnAttTransactionEx(string EnrollNumber, int IsInValid, int AttState, int VerifyMethod, int Year, int Month, int Day, int Hour, int Minute, int Second, int WorkCode)
         {
             MessageBox.Show(EnrollNumber);
+            MessageBox.Show(Year + " - " + Month + " - " + Day + "  " + Hour + ":" + Minute + ":" +Second);
 
             //FUNCION PARA OBTENER LA INFO DE UN USUARIO MEDIANTE SU ID Y EL NUMERO DE CHECADOR
             //Checador.SSR_GetUserInfo(1, EnrollNumber,out Nombre,out Contra,out Privilegio, out Estado);

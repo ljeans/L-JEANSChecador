@@ -53,13 +53,14 @@
             this.dtp_hora_salida = new System.Windows.Forms.DateTimePicker();
             this.dtp_hora_salida_desc = new System.Windows.Forms.DateTimePicker();
             this.dtp_hora_entrada_desc = new System.Windows.Forms.DateTimePicker();
-            this.dtp_tolerancia = new System.Windows.Forms.NumericUpDown();
+            this.txt_tolerancia = new System.Windows.Forms.NumericUpDown();
             this.btn_modificar = new System.Windows.Forms.Button();
             this.btn_ir_modificar = new System.Windows.Forms.Button();
             this.label84 = new System.Windows.Forms.Label();
             this.txt_id_a_modificar = new System.Windows.Forms.TextBox();
             this.txt_horas_diarias = new System.Windows.Forms.NumericUpDown();
             this.txt_horas_totales = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -67,7 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtp_tolerancia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_tolerancia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_diarias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_totales)).BeginInit();
             this.SuspendLayout();
@@ -106,10 +107,11 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.txt_horas_totales);
             this.tabPage1.Controls.Add(this.txt_horas_diarias);
             this.tabPage1.Controls.Add(this.btn_modificar);
-            this.tabPage1.Controls.Add(this.dtp_tolerancia);
+            this.tabPage1.Controls.Add(this.txt_tolerancia);
             this.tabPage1.Controls.Add(this.dtp_hora_entrada_desc);
             this.tabPage1.Controls.Add(this.dtp_hora_salida_desc);
             this.tabPage1.Controls.Add(this.dtp_hora_salida);
@@ -458,19 +460,32 @@
             this.dtp_hora_entrada_desc.Size = new System.Drawing.Size(75, 29);
             this.dtp_hora_entrada_desc.TabIndex = 8;
             // 
-            // dtp_tolerancia
+            // txt_tolerancia
             // 
+<<<<<<< HEAD
             this.dtp_tolerancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_tolerancia.Location = new System.Drawing.Point(873, 241);
             this.dtp_tolerancia.Maximum = new decimal(new int[] {
+=======
+            this.txt_tolerancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_tolerancia.Location = new System.Drawing.Point(873, 241);
+            this.txt_tolerancia.Maximum = new decimal(new int[] {
+>>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
             60,
             0,
             0,
             0});
+<<<<<<< HEAD
             this.dtp_tolerancia.Name = "dtp_tolerancia";
             this.dtp_tolerancia.Size = new System.Drawing.Size(75, 29);
             this.dtp_tolerancia.TabIndex = 9;
             this.dtp_tolerancia.Value = new decimal(new int[] {
+=======
+            this.txt_tolerancia.Name = "txt_tolerancia";
+            this.txt_tolerancia.Size = new System.Drawing.Size(75, 29);
+            this.txt_tolerancia.TabIndex = 1110;
+            this.txt_tolerancia.Value = new decimal(new int[] {
+>>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
             10,
             0,
             0,
@@ -575,6 +590,18 @@
             0,
             0});
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label10.Location = new System.Drawing.Point(954, 246);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 24);
+            this.label10.TabIndex = 1116;
+            this.label10.Text = "Min.";
+            // 
             // horarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -593,7 +620,7 @@
             this.panel_menu.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtp_tolerancia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_tolerancia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_diarias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_totales)).EndInit();
             this.ResumeLayout(false);
@@ -627,12 +654,13 @@
         private System.Windows.Forms.DateTimePicker dtp_hora_salida_desc;
         private System.Windows.Forms.DateTimePicker dtp_hora_salida;
         private System.Windows.Forms.DateTimePicker dtp_hora_entrada;
-        private System.Windows.Forms.NumericUpDown dtp_tolerancia;
+        private System.Windows.Forms.NumericUpDown txt_tolerancia;
         private System.Windows.Forms.Button btn_modificar;
         private System.Windows.Forms.Button btn_ir_modificar;
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.TextBox txt_id_a_modificar;
         private System.Windows.Forms.NumericUpDown txt_horas_totales;
         private System.Windows.Forms.NumericUpDown txt_horas_diarias;
+        private System.Windows.Forms.Label label10;
     }
 }

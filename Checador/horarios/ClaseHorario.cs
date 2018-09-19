@@ -86,7 +86,7 @@ namespace Checador
         {
             try
             {
-                string consulta = "UPDATE horarios SET horario = @horario, hr_entrada =@hora_entrada, hr_salida =@hora_salida,horas_diarias= @horas_diarias,lunes=@lunes, martes=@martes, miercoles= @miercoles, jueves=@jueves, viernes=@viernes, sabado=@sabado, domingo=@domingo, horas_totales_quincenales=@horas_totales_quincenales, hora_salida_descanso= @hora_salida_descanso, hora_entrada_descanso= @hora_entrada_descanso, tolerancia=@tolerancia WHERE id_horario = @id";
+                string consulta = "UPDATE horarios SET horario = @horario, hr_entrada =@hora_entrada, hr_salida =@hora_salida,horas_diarias= @horas_diarias,lunes=@lunes, martes=@martes, miercoles= @miercoles, jueves=@jueves, viernes=@viernes, sabado=@sabado, domingo=@domingo, horas_totales_quincenales=@horas_totales_quincenales, hr_salida_descanso= @hora_salida_descanso, hr_entrada_descanso= @hora_entrada_descanso, tolerancia=@tolerancia WHERE id_horario = @id";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -102,6 +102,7 @@ namespace Checador
                 comand.Parameters.AddWithValue("@viernes", viernes);
                 comand.Parameters.AddWithValue("@sabado", sabado);
                 comand.Parameters.AddWithValue("@domingo", domingo);
+                comand.Parameters.AddWithValue("@horas_diarias", horas_diarias);
                 comand.Parameters.AddWithValue("@horas_totales_quincenales", horas_totales_quincenales);
                 comand.Parameters.AddWithValue("@hora_salida_descanso", hora_salida_descanso);
                 comand.Parameters.AddWithValue("@hora_entrada_descanso", hora_entrada_descanso);
@@ -112,8 +113,8 @@ namespace Checador
             }
             catch (Exception e)
             {
-                //MessageBox.Show(e.ToString());
-                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                MessageBox.Show(e.ToString());
+                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
             }
         }
 
@@ -140,7 +141,7 @@ namespace Checador
                         //this.id = ;//Asignacion a atributos
                         //get ordinal regresa el indice de la fila
                         //el Nombre especificado en el parametro 
-                        id = lector.GetInt32(lector.GetOrdinal("id_sucursal"));
+                        id = lector.GetInt32(lector.GetOrdinal("id_horario"));
                         horario = lector.GetString(lector.GetOrdinal("horario"));
                         hr_entrada = lector.GetTimeSpan(lector.GetOrdinal("hr_entrada"));
                         hr_salida = lector.GetTimeSpan(lector.GetOrdinal("hr_salida"));
@@ -153,8 +154,8 @@ namespace Checador
                         sabado = lector.GetInt32(lector.GetOrdinal("sabado"));
                         domingo = lector.GetInt32(lector.GetOrdinal("domingo"));
                         horas_totales_quincenales = lector.GetInt32(lector.GetOrdinal("horas_totales_quincenales"));
-                        hora_salida_descanso = lector.GetTimeSpan(lector.GetOrdinal("hora_salida_descanso"));
-                        hora_entrada_descanso = lector.GetTimeSpan(lector.GetOrdinal("hora_entrada_descanso"));
+                        hora_salida_descanso = lector.GetTimeSpan(lector.GetOrdinal("hr_salida_descanso"));
+                        hora_entrada_descanso = lector.GetTimeSpan(lector.GetOrdinal("hr_entrada_descanso"));
                         tolerancia = lector.GetInt32(lector.GetOrdinal("tolerancia"));
                         con.Close();
                         return true;
@@ -168,7 +169,8 @@ namespace Checador
             }
             catch (Exception e)
             {
-                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                MessageBox.Show(e.ToString());
+                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
                 return false;
             }
         }
