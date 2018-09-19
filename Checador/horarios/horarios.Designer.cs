@@ -188,7 +188,7 @@
             this.txt_id.MaxLength = 32;
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(100, 29);
-            this.txt_id.TabIndex = 1086;
+            this.txt_id.TabIndex = 1;
             // 
             // txt_nombre
             // 
@@ -198,7 +198,7 @@
             this.txt_nombre.MaxLength = 32;
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(248, 29);
-            this.txt_nombre.TabIndex = 1083;
+            this.txt_nombre.TabIndex = 2;
             // 
             // label2
             // 
@@ -266,7 +266,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(651, 250);
+            this.label5.Location = new System.Drawing.Point(651, 246);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(201, 24);
             this.label5.TabIndex = 1094;
@@ -319,7 +319,7 @@
             this.cb_domingo.Location = new System.Drawing.Point(346, 101);
             this.cb_domingo.Name = "cb_domingo";
             this.cb_domingo.Size = new System.Drawing.Size(106, 28);
-            this.cb_domingo.TabIndex = 6;
+            this.cb_domingo.TabIndex = 16;
             this.cb_domingo.Text = "Domingo";
             this.cb_domingo.UseVisualStyleBackColor = true;
             // 
@@ -329,7 +329,7 @@
             this.cb_sabado.Location = new System.Drawing.Point(193, 101);
             this.cb_sabado.Name = "cb_sabado";
             this.cb_sabado.Size = new System.Drawing.Size(94, 28);
-            this.cb_sabado.TabIndex = 5;
+            this.cb_sabado.TabIndex = 15;
             this.cb_sabado.Text = "Sabado";
             this.cb_sabado.UseVisualStyleBackColor = true;
             // 
@@ -339,7 +339,7 @@
             this.cb_viernes.Location = new System.Drawing.Point(27, 101);
             this.cb_viernes.Name = "cb_viernes";
             this.cb_viernes.Size = new System.Drawing.Size(94, 28);
-            this.cb_viernes.TabIndex = 4;
+            this.cb_viernes.TabIndex = 14;
             this.cb_viernes.Text = "Viernes";
             this.cb_viernes.UseVisualStyleBackColor = true;
             // 
@@ -349,7 +349,7 @@
             this.cb_jueves.Location = new System.Drawing.Point(488, 43);
             this.cb_jueves.Name = "cb_jueves";
             this.cb_jueves.Size = new System.Drawing.Size(89, 28);
-            this.cb_jueves.TabIndex = 3;
+            this.cb_jueves.TabIndex = 13;
             this.cb_jueves.Text = "Jueves";
             this.cb_jueves.UseVisualStyleBackColor = true;
             // 
@@ -359,7 +359,7 @@
             this.cb_miercoles.Location = new System.Drawing.Point(346, 43);
             this.cb_miercoles.Name = "cb_miercoles";
             this.cb_miercoles.Size = new System.Drawing.Size(111, 28);
-            this.cb_miercoles.TabIndex = 2;
+            this.cb_miercoles.TabIndex = 12;
             this.cb_miercoles.Text = "Miercoles";
             this.cb_miercoles.UseVisualStyleBackColor = true;
             // 
@@ -369,7 +369,7 @@
             this.cb_martes.Location = new System.Drawing.Point(193, 43);
             this.cb_martes.Name = "cb_martes";
             this.cb_martes.Size = new System.Drawing.Size(85, 28);
-            this.cb_martes.TabIndex = 1;
+            this.cb_martes.TabIndex = 11;
             this.cb_martes.Text = "Martes";
             this.cb_martes.UseVisualStyleBackColor = true;
             // 
@@ -379,7 +379,7 @@
             this.cb_lunes.Location = new System.Drawing.Point(27, 42);
             this.cb_lunes.Name = "cb_lunes";
             this.cb_lunes.Size = new System.Drawing.Size(81, 28);
-            this.cb_lunes.TabIndex = 0;
+            this.cb_lunes.TabIndex = 10;
             this.cb_lunes.Text = "Lunes";
             this.cb_lunes.UseVisualStyleBackColor = true;
             // 
@@ -407,7 +407,7 @@
             this.btn_registrar.Location = new System.Drawing.Point(709, 518);
             this.btn_registrar.Name = "btn_registrar";
             this.btn_registrar.Size = new System.Drawing.Size(250, 70);
-            this.btn_registrar.TabIndex = 1105;
+            this.btn_registrar.TabIndex = 18;
             this.btn_registrar.Text = "Registrar";
             this.btn_registrar.UseVisualStyleBackColor = false;
             this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
@@ -421,7 +421,7 @@
             this.dtp_hora_entrada.Name = "dtp_hora_entrada";
             this.dtp_hora_entrada.ShowUpDown = true;
             this.dtp_hora_entrada.Size = new System.Drawing.Size(75, 29);
-            this.dtp_hora_entrada.TabIndex = 1106;
+            this.dtp_hora_entrada.TabIndex = 5;
             this.dtp_hora_entrada.Value = new System.DateTime(2018, 9, 17, 9, 0, 0, 0);
             // 
             // dtp_hora_salida
@@ -433,7 +433,7 @@
             this.dtp_hora_salida.Name = "dtp_hora_salida";
             this.dtp_hora_salida.ShowUpDown = true;
             this.dtp_hora_salida.Size = new System.Drawing.Size(75, 29);
-            this.dtp_hora_salida.TabIndex = 1107;
+            this.dtp_hora_salida.TabIndex = 6;
             this.dtp_hora_salida.Value = new System.DateTime(2018, 9, 17, 18, 0, 0, 0);
             // 
             // dtp_hora_salida_desc
@@ -445,7 +445,7 @@
             this.dtp_hora_salida_desc.Name = "dtp_hora_salida_desc";
             this.dtp_hora_salida_desc.ShowUpDown = true;
             this.dtp_hora_salida_desc.Size = new System.Drawing.Size(75, 29);
-            this.dtp_hora_salida_desc.TabIndex = 1108;
+            this.dtp_hora_salida_desc.TabIndex = 7;
             // 
             // dtp_hora_entrada_desc
             // 
@@ -456,12 +456,12 @@
             this.dtp_hora_entrada_desc.Name = "dtp_hora_entrada_desc";
             this.dtp_hora_entrada_desc.ShowUpDown = true;
             this.dtp_hora_entrada_desc.Size = new System.Drawing.Size(75, 29);
-            this.dtp_hora_entrada_desc.TabIndex = 1109;
+            this.dtp_hora_entrada_desc.TabIndex = 8;
             // 
             // dtp_tolerancia
             // 
             this.dtp_tolerancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_tolerancia.Location = new System.Drawing.Point(873, 245);
+            this.dtp_tolerancia.Location = new System.Drawing.Point(873, 241);
             this.dtp_tolerancia.Maximum = new decimal(new int[] {
             60,
             0,
@@ -469,7 +469,7 @@
             0});
             this.dtp_tolerancia.Name = "dtp_tolerancia";
             this.dtp_tolerancia.Size = new System.Drawing.Size(75, 29);
-            this.dtp_tolerancia.TabIndex = 1110;
+            this.dtp_tolerancia.TabIndex = 9;
             this.dtp_tolerancia.Value = new decimal(new int[] {
             10,
             0,
@@ -488,7 +488,7 @@
             this.btn_modificar.Location = new System.Drawing.Point(709, 530);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(250, 70);
-            this.btn_modificar.TabIndex = 1111;
+            this.btn_modificar.TabIndex = 18;
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.UseVisualStyleBackColor = false;
             this.btn_modificar.Visible = false;
@@ -545,7 +545,7 @@
             0});
             this.txt_horas_diarias.Name = "txt_horas_diarias";
             this.txt_horas_diarias.Size = new System.Drawing.Size(75, 29);
-            this.txt_horas_diarias.TabIndex = 1114;
+            this.txt_horas_diarias.TabIndex = 3;
             this.txt_horas_diarias.Value = new decimal(new int[] {
             8,
             0,
@@ -568,7 +568,7 @@
             0});
             this.txt_horas_totales.Name = "txt_horas_totales";
             this.txt_horas_totales.Size = new System.Drawing.Size(75, 29);
-            this.txt_horas_totales.TabIndex = 1115;
+            this.txt_horas_totales.TabIndex = 4;
             this.txt_horas_totales.Value = new decimal(new int[] {
             96,
             0,

@@ -43,26 +43,9 @@ namespace Checador
                 }
             }
 
-            CheckForIllegalCrossThreadCalls = false;
-            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-            Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
-            hilo_secundario.IsBackground = true;
-            hilo_secundario.Start();
-            cbx_horario.SelectedIndex = 0;
         }
 
-        public void cargarID()
-        {
-            //MOSTRAR EL ID DEL EMPLEADO AL CARGAR LA PAGINA
-            try
-            {
-                txt_id.Text = (Sucursal.obtenerIdMaximo() + 1).ToString();
-            }
-            catch (Exception ex)
-            {
-                txt_id.Text = "1";
-            }
-        }
+       
 
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -270,6 +253,11 @@ namespace Checador
                 rb_mod_inactivo.Checked = true;
             }
 
+        }
+
+        private void txt_domicilio_calle_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

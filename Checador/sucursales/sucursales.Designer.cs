@@ -215,7 +215,7 @@
             this.txt_domicilio_municipio.MaxLength = 32;
             this.txt_domicilio_municipio.Name = "txt_domicilio_municipio";
             this.txt_domicilio_municipio.Size = new System.Drawing.Size(218, 29);
-            this.txt_domicilio_municipio.TabIndex = 1062;
+            this.txt_domicilio_municipio.TabIndex = 11;
             // 
             // label33
             // 
@@ -236,7 +236,7 @@
             this.txt_domicilio_cp.MaxLength = 5;
             this.txt_domicilio_cp.Name = "txt_domicilio_cp";
             this.txt_domicilio_cp.Size = new System.Drawing.Size(218, 29);
-            this.txt_domicilio_cp.TabIndex = 1047;
+            this.txt_domicilio_cp.TabIndex = 9;
             // 
             // txt_domicilio_pais
             // 
@@ -246,7 +246,7 @@
             this.txt_domicilio_pais.MaxLength = 32;
             this.txt_domicilio_pais.Name = "txt_domicilio_pais";
             this.txt_domicilio_pais.Size = new System.Drawing.Size(218, 29);
-            this.txt_domicilio_pais.TabIndex = 1050;
+            this.txt_domicilio_pais.TabIndex = 13;
             // 
             // txt_domicilio_estado
             // 
@@ -256,7 +256,7 @@
             this.txt_domicilio_estado.MaxLength = 32;
             this.txt_domicilio_estado.Name = "txt_domicilio_estado";
             this.txt_domicilio_estado.Size = new System.Drawing.Size(218, 29);
-            this.txt_domicilio_estado.TabIndex = 1049;
+            this.txt_domicilio_estado.TabIndex = 12;
             // 
             // label25
             // 
@@ -288,7 +288,7 @@
             this.txt_domicilio_colonia.MaxLength = 32;
             this.txt_domicilio_colonia.Name = "txt_domicilio_colonia";
             this.txt_domicilio_colonia.Size = new System.Drawing.Size(218, 29);
-            this.txt_domicilio_colonia.TabIndex = 1046;
+            this.txt_domicilio_colonia.TabIndex = 8;
             // 
             // label19
             // 
@@ -310,7 +310,7 @@
             this.txt_domicilio_num_int.MaxLength = 5;
             this.txt_domicilio_num_int.Name = "txt_domicilio_num_int";
             this.txt_domicilio_num_int.Size = new System.Drawing.Size(218, 29);
-            this.txt_domicilio_num_int.TabIndex = 1052;
+            this.txt_domicilio_num_int.TabIndex = 7;
             // 
             // txt_domicilio_calle
             // 
@@ -320,7 +320,8 @@
             this.txt_domicilio_calle.MaxLength = 32;
             this.txt_domicilio_calle.Name = "txt_domicilio_calle";
             this.txt_domicilio_calle.Size = new System.Drawing.Size(218, 29);
-            this.txt_domicilio_calle.TabIndex = 1044;
+            this.txt_domicilio_calle.TabIndex = 5;
+            this.txt_domicilio_calle.TextChanged += new System.EventHandler(this.txt_domicilio_calle_TextChanged);
             // 
             // label16
             // 
@@ -380,13 +381,12 @@
             // txt_id
             // 
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_id.Enabled = false;
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Location = new System.Drawing.Point(228, 72);
             this.txt_id.MaxLength = 32;
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(100, 29);
-            this.txt_id.TabIndex = 1063;
+            this.txt_id.TabIndex = 1;
             // 
             // label1
             // 
@@ -407,7 +407,7 @@
             this.txt_nombre.MaxLength = 32;
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(218, 29);
-            this.txt_nombre.TabIndex = 1065;
+            this.txt_nombre.TabIndex = 2;
             // 
             // label2
             // 
@@ -428,7 +428,7 @@
             this.txt_telefono.MaxLength = 32;
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(218, 29);
-            this.txt_telefono.TabIndex = 1067;
+            this.txt_telefono.TabIndex = 4;
             // 
             // label3
             // 
@@ -461,7 +461,7 @@
             this.txt_domicilio_pob.MaxLength = 32;
             this.txt_domicilio_pob.Name = "txt_domicilio_pob";
             this.txt_domicilio_pob.Size = new System.Drawing.Size(218, 29);
-            this.txt_domicilio_pob.TabIndex = 1070;
+            this.txt_domicilio_pob.TabIndex = 10;
             // 
             // label18
             // 
@@ -486,7 +486,7 @@
             this.btn_registrar.Location = new System.Drawing.Point(667, 515);
             this.btn_registrar.Name = "btn_registrar";
             this.btn_registrar.Size = new System.Drawing.Size(250, 70);
-            this.btn_registrar.TabIndex = 1072;
+            this.btn_registrar.TabIndex = 16;
             this.btn_registrar.Text = "Registrar";
             this.btn_registrar.UseVisualStyleBackColor = false;
             this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
@@ -618,7 +618,7 @@
             this.rb_mod_inactivo.Location = new System.Drawing.Point(180, 28);
             this.rb_mod_inactivo.Name = "rb_mod_inactivo";
             this.rb_mod_inactivo.Size = new System.Drawing.Size(91, 28);
-            this.rb_mod_inactivo.TabIndex = 56;
+            this.rb_mod_inactivo.TabIndex = 15;
             this.rb_mod_inactivo.Text = "Inactivo";
             this.rb_mod_inactivo.UseVisualStyleBackColor = true;
             // 
@@ -629,7 +629,7 @@
             this.rb_mod_activo.Location = new System.Drawing.Point(22, 28);
             this.rb_mod_activo.Name = "rb_mod_activo";
             this.rb_mod_activo.Size = new System.Drawing.Size(79, 28);
-            this.rb_mod_activo.TabIndex = 55;
+            this.rb_mod_activo.TabIndex = 14;
             this.rb_mod_activo.TabStop = true;
             this.rb_mod_activo.Text = "Activo";
             this.rb_mod_activo.UseVisualStyleBackColor = true;
@@ -642,7 +642,7 @@
             this.txt_domicilio_num_ext.MaxLength = 5;
             this.txt_domicilio_num_ext.Name = "txt_domicilio_num_ext";
             this.txt_domicilio_num_ext.Size = new System.Drawing.Size(218, 29);
-            this.txt_domicilio_num_ext.TabIndex = 1074;
+            this.txt_domicilio_num_ext.TabIndex = 6;
             // 
             // btn_modificar
             // 
@@ -657,7 +657,7 @@
             this.btn_modificar.Location = new System.Drawing.Point(667, 527);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(250, 70);
-            this.btn_modificar.TabIndex = 1075;
+            this.btn_modificar.TabIndex = 16;
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.UseVisualStyleBackColor = false;
             this.btn_modificar.Visible = false;
@@ -675,7 +675,7 @@
             this.btn_ir_modificar.Location = new System.Drawing.Point(340, 308);
             this.btn_ir_modificar.Name = "btn_ir_modificar";
             this.btn_ir_modificar.Size = new System.Drawing.Size(270, 70);
-            this.btn_ir_modificar.TabIndex = 99;
+            this.btn_ir_modificar.TabIndex = 2;
             this.btn_ir_modificar.Text = "Modificar";
             this.btn_ir_modificar.UseVisualStyleBackColor = false;
             this.btn_ir_modificar.Click += new System.EventHandler(this.btn_mod_Click);
@@ -696,7 +696,7 @@
             this.txt_id_mod.Location = new System.Drawing.Point(430, 243);
             this.txt_id_mod.Name = "txt_id_mod";
             this.txt_id_mod.Size = new System.Drawing.Size(200, 29);
-            this.txt_id_mod.TabIndex = 98;
+            this.txt_id_mod.TabIndex = 1;
             // 
             // cbx_horario
             // 
@@ -706,7 +706,7 @@
             this.cbx_horario.Location = new System.Drawing.Point(699, 72);
             this.cbx_horario.Name = "cbx_horario";
             this.cbx_horario.Size = new System.Drawing.Size(219, 32);
-            this.cbx_horario.TabIndex = 1076;
+            this.cbx_horario.TabIndex = 3;
             // 
             // label37
             // 

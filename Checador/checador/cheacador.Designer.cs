@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.gbox_datos_checador = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
+            this.rb_mod_activo = new System.Windows.Forms.RadioButton();
             this.cbx_sucursal = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_ip = new System.Windows.Forms.TextBox();
@@ -60,17 +63,6 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
-            this.rb_mod_activo = new System.Windows.Forms.RadioButton();
-=======
-
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
-            this.rb_mod_activo = new System.Windows.Forms.RadioButton();
-
->>>>>>> ea0c00fff0ec9245c704a9ed222016cc77a98739
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -79,10 +71,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
             this.gbox_datos_checador.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).BeginInit();
             this.gbox_estatus.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // rb_4
@@ -115,13 +107,6 @@
             // 
             // tabControlBase
             // 
-<<<<<<< HEAD
-            this.tabControlBase.Location = new System.Drawing.Point(309, 57);
-=======
-
-            this.tabControlBase.Location = new System.Drawing.Point(309, 57);
-
->>>>>>> ea0c00fff0ec9245c704a9ed222016cc77a98739
             this.tabControlBase.Location = new System.Drawing.Point(309, 77);
             // 
             // tabPage1
@@ -135,7 +120,6 @@
             this.tabPage2.Controls.Add(this.btn_ir_modificar);
             this.tabPage2.Controls.Add(this.label84);
             this.tabPage2.Controls.Add(this.txt_id_mod);
-            this.tabPage2.Size = new System.Drawing.Size(1012, 624);
             // 
             // tabPage3
             // 
@@ -144,15 +128,6 @@
             this.tabPage3.Controls.Add(this.dgv_empleadobuscar);
             this.tabPage3.Controls.Add(this.label42);
             this.tabPage3.Controls.Add(this.txt_nombrebuscar);
-            this.tabPage3.Size = new System.Drawing.Size(1012, 624);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Size = new System.Drawing.Size(1012, 624);
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Size = new System.Drawing.Size(1012, 624);
             // 
             // btn_home
             // 
@@ -207,6 +182,41 @@
             this.gbox_datos_checador.TabStop = false;
             this.gbox_datos_checador.Text = "Datos Checador";
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.rb_mod_inactivo);
+            this.groupBox4.Controls.Add(this.rb_mod_activo);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(174, 246);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(320, 75);
+            this.groupBox4.TabIndex = 1078;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Estatus:";
+            this.groupBox4.Visible = false;
+            // 
+            // rb_mod_inactivo
+            // 
+            this.rb_mod_inactivo.AutoSize = true;
+            this.rb_mod_inactivo.Location = new System.Drawing.Point(180, 28);
+            this.rb_mod_inactivo.Name = "rb_mod_inactivo";
+            this.rb_mod_inactivo.Size = new System.Drawing.Size(91, 28);
+            this.rb_mod_inactivo.TabIndex = 6;
+            this.rb_mod_inactivo.Text = "Inactivo";
+            this.rb_mod_inactivo.UseVisualStyleBackColor = true;
+            // 
+            // rb_mod_activo
+            // 
+            this.rb_mod_activo.AutoSize = true;
+            this.rb_mod_activo.Checked = true;
+            this.rb_mod_activo.Location = new System.Drawing.Point(22, 28);
+            this.rb_mod_activo.Name = "rb_mod_activo";
+            this.rb_mod_activo.Size = new System.Drawing.Size(79, 28);
+            this.rb_mod_activo.TabIndex = 5;
+            this.rb_mod_activo.TabStop = true;
+            this.rb_mod_activo.Text = "Activo";
+            this.rb_mod_activo.UseVisualStyleBackColor = true;
+            // 
             // cbx_sucursal
             // 
             this.cbx_sucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
@@ -214,7 +224,7 @@
             this.cbx_sucursal.Location = new System.Drawing.Point(246, 194);
             this.cbx_sucursal.Name = "cbx_sucursal";
             this.cbx_sucursal.Size = new System.Drawing.Size(248, 32);
-            this.cbx_sucursal.TabIndex = 1082;
+            this.cbx_sucursal.TabIndex = 4;
             this.cbx_sucursal.Text = "SUCURSAL 13";
             // 
             // label15
@@ -237,7 +247,7 @@
             this.txt_ip.MaxLength = 32;
             this.txt_ip.Name = "txt_ip";
             this.txt_ip.Size = new System.Drawing.Size(248, 29);
-            this.txt_ip.TabIndex = 1080;
+            this.txt_ip.TabIndex = 2;
             // 
             // txt_id
             // 
@@ -248,7 +258,7 @@
             this.txt_id.MaxLength = 32;
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(248, 29);
-            this.txt_id.TabIndex = 1079;
+            this.txt_id.TabIndex = 1;
             // 
             // label1
             // 
@@ -270,7 +280,7 @@
             this.txt_puerto.MaxLength = 32;
             this.txt_puerto.Name = "txt_puerto";
             this.txt_puerto.Size = new System.Drawing.Size(248, 29);
-            this.txt_puerto.TabIndex = 1075;
+            this.txt_puerto.TabIndex = 3;
             // 
             // label2
             // 
@@ -308,7 +318,7 @@
             this.btn_registrar.Location = new System.Drawing.Point(388, 461);
             this.btn_registrar.Name = "btn_registrar";
             this.btn_registrar.Size = new System.Drawing.Size(250, 70);
-            this.btn_registrar.TabIndex = 1076;
+            this.btn_registrar.TabIndex = 7;
             this.btn_registrar.Text = "Registrar";
             this.btn_registrar.UseVisualStyleBackColor = false;
             this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
@@ -361,7 +371,7 @@
             this.btn_modificar.Location = new System.Drawing.Point(388, 477);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(250, 70);
-            this.btn_modificar.TabIndex = 1077;
+            this.btn_modificar.TabIndex = 7;
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.UseVisualStyleBackColor = false;
             this.btn_modificar.Visible = false;
@@ -584,41 +594,6 @@
             this.btn_siguiente.Text = "Sincronizar fecha y hora";
             this.btn_siguiente.UseVisualStyleBackColor = false;
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.rb_mod_inactivo);
-            this.groupBox4.Controls.Add(this.rb_mod_activo);
-            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(174, 246);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(320, 75);
-            this.groupBox4.TabIndex = 1078;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Estatus:";
-            this.groupBox4.Visible = false;
-            // 
-            // rb_mod_inactivo
-            // 
-            this.rb_mod_inactivo.AutoSize = true;
-            this.rb_mod_inactivo.Location = new System.Drawing.Point(180, 28);
-            this.rb_mod_inactivo.Name = "rb_mod_inactivo";
-            this.rb_mod_inactivo.Size = new System.Drawing.Size(91, 28);
-            this.rb_mod_inactivo.TabIndex = 56;
-            this.rb_mod_inactivo.Text = "Inactivo";
-            this.rb_mod_inactivo.UseVisualStyleBackColor = true;
-            // 
-            // rb_mod_activo
-            // 
-            this.rb_mod_activo.AutoSize = true;
-            this.rb_mod_activo.Checked = true;
-            this.rb_mod_activo.Location = new System.Drawing.Point(22, 28);
-            this.rb_mod_activo.Name = "rb_mod_activo";
-            this.rb_mod_activo.Size = new System.Drawing.Size(79, 28);
-            this.rb_mod_activo.TabIndex = 55;
-            this.rb_mod_activo.TabStop = true;
-            this.rb_mod_activo.Text = "Activo";
-            this.rb_mod_activo.UseVisualStyleBackColor = true;
-            // 
             // cheacador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -637,12 +612,12 @@
             this.panel_menu.ResumeLayout(false);
             this.gbox_datos_checador.ResumeLayout(false);
             this.gbox_datos_checador.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).EndInit();
             this.gbox_estatus.ResumeLayout(false);
             this.gbox_estatus.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }

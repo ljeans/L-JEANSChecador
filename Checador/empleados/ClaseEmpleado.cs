@@ -55,6 +55,8 @@ namespace Checador
         public string password { get; set; }
         public int horas_extra { get; set; }
         public TimeSpan hora_entrada { get; set; }
+        public int retardos { get; set; }
+        public int total_min_retardo { get; set; }
 
         //LUEGO VEMOS
         public TimeSpan hr_entrada { get; set; }
@@ -263,6 +265,7 @@ namespace Checador
                         apellido_mat = lector.GetString(lector.GetOrdinal("apellido_mat"));
                         departamento = lector.GetString(lector.GetOrdinal("departamento"));
                         id_privilegio = lector.GetInt32(lector.GetOrdinal("id_privilegio"));
+
                         //id_privilegio = lector.GetString(lector.GetOrdinal("id_privilegio"));
                         telefono = lector.GetString(lector.GetOrdinal("telefono"));
                         calle = lector.GetString(lector.GetOrdinal("calle"));
@@ -297,11 +300,38 @@ namespace Checador
                         clave_edenred = lector.GetString(lector.GetOrdinal("clave_edenred"));
                         password = lector.GetString(lector.GetOrdinal("password"));
                         con.Close();
-                        return true;
+                     
                     }
                     else
                     {
                         con.Close();
+                        return false;
+                    }
+                 
+                }
+             
+
+                using (SqlConnection con2 = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
+                {
+                    string select = "SELECT id_sucursal FROM empleado_sucursal WHERE id_empleado=@id";//Consulta
+                    SqlCommand comando = new SqlCommand(select, con2);//Nuevo objeto sqlcommand
+                    comando.Parameters.AddWithValue("@id", id);//Agregamos parametros a la consulta
+                    con2.Open();//abre la conexion
+                    SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
+                    if (lector.HasRows)//Revisa si hay resultados
+                    {
+                        lector.Read();//Lee una linea de los resultados
+                        //this.id = ;//Asignacion a atributos
+                        //get ordinal regresa el indice de la fila
+                        //el Nombre especificado en el parametro 
+                        id_sucursal = lector.GetInt32(lector.GetOrdinal("id_sucursal"));
+ 
+                        con2.Close();
+                        return true;
+                    }
+                    else
+                    {
+                        con2.Close();
                         return false;
                     }
                 }

@@ -79,6 +79,13 @@ namespace Checador
             tabControlBase.SelectedTab = tabPage1;
             btn_modificar.Visible = false;
             btn_registrar.Visible = true;
+            cb_lunes.Checked = true;
+            cb_martes.Checked = true;
+            cb_miercoles.Checked = true;
+            cb_jueves.Checked = true;
+            cb_viernes.Checked = true;
+            cb_sabado.Checked = true;
+            cb_domingo.Checked = true;
         }
 
         private void btn_ir_modificar_Click(object sender, EventArgs e)
@@ -95,6 +102,13 @@ namespace Checador
             Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
             hilo_secundario.IsBackground = true;
             hilo_secundario.Start();
+            cb_lunes.Checked = true;
+            cb_martes.Checked = true;
+            cb_miercoles.Checked = true;
+            cb_jueves.Checked = true;
+            cb_viernes.Checked = true;
+            cb_sabado.Checked = true;
+            cb_domingo.Checked = true;
         }
 
         private void btn_registrar_Click(object sender, EventArgs e)
@@ -109,6 +123,7 @@ namespace Checador
                 horario.hora_salida_descanso = dtp_hora_salida_desc.Value.TimeOfDay;    //pizi
                 horario.hr_entrada = dtp_hora_entrada.Value.TimeOfDay;
                 horario.hr_salida = dtp_hora_salida.Value.TimeOfDay;
+
 
                 if (cb_lunes.Checked == true)
                     horario.lunes = 1;
@@ -166,5 +181,6 @@ namespace Checador
 
             }
         }
+      
     }
 }

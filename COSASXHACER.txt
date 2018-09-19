@@ -1,6 +1,5 @@
--Cambiar horario de empledo a sucursal
--Modificar horario
--Checadores multiples
--Modificar vista (empleados y sucursal)
--Agregar retardo y contador de tiempo.
-		3		150
+1.- Modificar horario
+2.- Checadores multiples
+
+**************** CUANDO AGREGUEMOS TUPLAS A REGISTROS ***************
+1.- En los eventos de chequeo agregar a la base de datos si hubo retardo, cuanto tiempo fue y las horas extras trabajadas
