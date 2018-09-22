@@ -48,7 +48,7 @@
             this.label84 = new System.Windows.Forms.Label();
             this.txt_id_mod = new System.Windows.Forms.TextBox();
             this.btn_modificar = new System.Windows.Forms.Button();
-            this.dgv_empleadobuscar = new System.Windows.Forms.DataGridView();
+            this.dgv_checadorbuscar = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DIRECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,7 +78,7 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_checadorbuscar)).BeginInit();
             this.gbox_estatus.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -131,7 +131,7 @@
             // 
             this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Controls.Add(this.gbox_estatus);
-            this.tabPage3.Controls.Add(this.dgv_empleadobuscar);
+            this.tabPage3.Controls.Add(this.dgv_checadorbuscar);
             this.tabPage3.Controls.Add(this.label42);
             this.tabPage3.Controls.Add(this.txt_nombrebuscar);
             // 
@@ -396,25 +396,25 @@
             this.btn_modificar.Visible = false;
             this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
-            // dgv_empleadobuscar
+            // dgv_checadorbuscar
             // 
-            this.dgv_empleadobuscar.AllowUserToAddRows = false;
-            this.dgv_empleadobuscar.AllowUserToDeleteRows = false;
-            this.dgv_empleadobuscar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgv_empleadobuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_empleadobuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_empleadobuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_checadorbuscar.AllowUserToAddRows = false;
+            this.dgv_checadorbuscar.AllowUserToDeleteRows = false;
+            this.dgv_checadorbuscar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_checadorbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_checadorbuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_checadorbuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn3,
             this.DIRECCION,
             this.TELEFONO,
             this.estatus});
-            this.dgv_empleadobuscar.Location = new System.Drawing.Point(23, 104);
-            this.dgv_empleadobuscar.MultiSelect = false;
-            this.dgv_empleadobuscar.Name = "dgv_empleadobuscar";
-            this.dgv_empleadobuscar.ReadOnly = true;
-            this.dgv_empleadobuscar.Size = new System.Drawing.Size(966, 380);
-            this.dgv_empleadobuscar.TabIndex = 83;
+            this.dgv_checadorbuscar.Location = new System.Drawing.Point(23, 104);
+            this.dgv_checadorbuscar.MultiSelect = false;
+            this.dgv_checadorbuscar.Name = "dgv_checadorbuscar";
+            this.dgv_checadorbuscar.ReadOnly = true;
+            this.dgv_checadorbuscar.Size = new System.Drawing.Size(966, 380);
+            this.dgv_checadorbuscar.TabIndex = 83;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -640,7 +640,7 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_checadorbuscar)).EndInit();
             this.gbox_estatus.ResumeLayout(false);
             this.gbox_estatus.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -667,7 +667,7 @@
         private System.Windows.Forms.GroupBox gbox_estatus;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.DataGridView dgv_empleadobuscar;
+        private System.Windows.Forms.DataGridView dgv_checadorbuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn DIRECCION;

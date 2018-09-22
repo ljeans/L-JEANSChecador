@@ -24,7 +24,7 @@ namespace Checador.empleados
 
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
-
+        public int sucurzal;
         public empleados()
         {
             InitializeComponent();
@@ -427,6 +427,7 @@ namespace Checador.empleados
                 txt_tipo_salario.Text = Empleado.tipo_salario;
                 dtp_fec_alt.Text = Empleado.fecha_alta.ToString();
                 cbx_sucursal.SelectedValue = Empleado.id_sucursal;
+                sucurzal = Empleado.id_sucursal;
 
                 if (Empleado.id_privilegio == 0)
                 {
@@ -531,6 +532,14 @@ namespace Checador.empleados
                 Empleado.tipo_salario = txt_tipo_salario.Text;
                 Empleado.password = txt_contra.Text;
                 Empleado.Modificar_Empleado();
+                if (sucurzal != Convert.ToInt32(cbx_sucursal.SelectedValue.ToString()))
+                {
+                    Empleado.guardarEmpleado_Sucursal();
+                }
+                else
+                {
+                    MessageBox.Show("no entro");
+                }
                 //SE OBTIENEN LOS DATOS DEL CHECADOR
                 clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
                 Conectar_Checador();
