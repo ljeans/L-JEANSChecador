@@ -55,17 +55,23 @@
             this.txt_domicilio_pob = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.btn_registrar = new System.Windows.Forms.Button();
-            this.dgv_empleadobuscar = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DIRECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_sucursal = new System.Windows.Forms.DataGridView();
+            this.idsucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.localizacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hrentradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hrsalidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vistaSucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet_checador = new Checador.DataSet_checador();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.txt_idbuscar = new System.Windows.Forms.TextBox();
             this.txt_nombrebuscar = new System.Windows.Forms.TextBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
             this.rb_mod_activo = new System.Windows.Forms.RadioButton();
@@ -75,10 +81,10 @@
             this.label84 = new System.Windows.Forms.Label();
             this.txt_id_mod = new System.Windows.Forms.TextBox();
             this.cbx_horario = new System.Windows.Forms.ComboBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.dataSet_checador = new Checador.DataSet_checador();
             this.horariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label37 = new System.Windows.Forms.Label();
             this.horariosTableAdapter = new Checador.DataSet_checadorTableAdapters.horariosTableAdapter();
+            this.vista_SucursalTableAdapter = new Checador.DataSet_checadorTableAdapters.Vista_SucursalTableAdapter();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -86,10 +92,10 @@
             this.panel_barra_sup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sucursal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaSucursalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).BeginInit();
+            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.horariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,12 +169,11 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.dgv_empleadobuscar);
+            this.tabPage2.Controls.Add(this.dgv_sucursal);
             this.tabPage2.Controls.Add(this.label42);
             this.tabPage2.Controls.Add(this.label43);
             this.tabPage2.Controls.Add(this.txt_idbuscar);
             this.tabPage2.Controls.Add(this.txt_nombrebuscar);
-            this.tabPage2.Controls.Add(this.pictureBox6);
             // 
             // tabPage3
             // 
@@ -497,63 +502,112 @@
             this.btn_registrar.UseVisualStyleBackColor = false;
             this.btn_registrar.Click += new System.EventHandler(this.btn_registrar_Click);
             // 
-            // dgv_empleadobuscar
+            // dgv_sucursal
             // 
-            this.dgv_empleadobuscar.AllowUserToAddRows = false;
-            this.dgv_empleadobuscar.AllowUserToDeleteRows = false;
-            this.dgv_empleadobuscar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgv_empleadobuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_empleadobuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_empleadobuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn3,
-            this.DIRECCION,
-            this.TELEFONO,
-            this.estatus});
-            this.dgv_empleadobuscar.Location = new System.Drawing.Point(12, 127);
-            this.dgv_empleadobuscar.MultiSelect = false;
-            this.dgv_empleadobuscar.Name = "dgv_empleadobuscar";
-            this.dgv_empleadobuscar.ReadOnly = true;
-            this.dgv_empleadobuscar.Size = new System.Drawing.Size(966, 407);
-            this.dgv_empleadobuscar.TabIndex = 80;
+            this.dgv_sucursal.AllowUserToAddRows = false;
+            this.dgv_sucursal.AllowUserToDeleteRows = false;
+            this.dgv_sucursal.AutoGenerateColumns = false;
+            this.dgv_sucursal.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_sucursal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_sucursal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_sucursal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idsucursalDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.direccionDataGridViewTextBoxColumn,
+            this.numintDataGridViewTextBoxColumn,
+            this.localizacionDataGridViewTextBoxColumn,
+            this.telefonoDataGridViewTextBoxColumn,
+            this.horarioDataGridViewTextBoxColumn,
+            this.hrentradaDataGridViewTextBoxColumn,
+            this.hrsalidaDataGridViewTextBoxColumn,
+            this.estatusDataGridViewTextBoxColumn});
+            this.dgv_sucursal.DataSource = this.vistaSucursalBindingSource;
+            this.dgv_sucursal.Location = new System.Drawing.Point(12, 127);
+            this.dgv_sucursal.MultiSelect = false;
+            this.dgv_sucursal.Name = "dgv_sucursal";
+            this.dgv_sucursal.ReadOnly = true;
+            this.dgv_sucursal.Size = new System.Drawing.Size(966, 407);
+            this.dgv_sucursal.TabIndex = 80;
             // 
-            // dataGridViewTextBoxColumn1
+            // idsucursalDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_empleado";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn1.Width = 75;
+            this.idsucursalDataGridViewTextBoxColumn.DataPropertyName = "id_sucursal";
+            this.idsucursalDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.idsucursalDataGridViewTextBoxColumn.Name = "idsucursalDataGridViewTextBoxColumn";
+            this.idsucursalDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // nombreDataGridViewTextBoxColumn
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn3.HeaderText = "NOMBRE";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn3.Width = 200;
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // DIRECCION
+            // direccionDataGridViewTextBoxColumn
             // 
-            this.DIRECCION.HeaderText = "DIRECCION";
-            this.DIRECCION.Name = "DIRECCION";
-            this.DIRECCION.ReadOnly = true;
-            this.DIRECCION.Width = 350;
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "Dirección";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // TELEFONO
+            // numintDataGridViewTextBoxColumn
             // 
-            this.TELEFONO.HeaderText = "TELEFONO";
-            this.TELEFONO.Name = "TELEFONO";
-            this.TELEFONO.ReadOnly = true;
-            this.TELEFONO.Width = 200;
+            this.numintDataGridViewTextBoxColumn.DataPropertyName = "num_int";
+            this.numintDataGridViewTextBoxColumn.HeaderText = "No. Interior";
+            this.numintDataGridViewTextBoxColumn.Name = "numintDataGridViewTextBoxColumn";
+            this.numintDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // estatus
+            // localizacionDataGridViewTextBoxColumn
             // 
-            this.estatus.HeaderText = "ESTATUS";
-            this.estatus.Name = "estatus";
-            this.estatus.ReadOnly = true;
+            this.localizacionDataGridViewTextBoxColumn.DataPropertyName = "localizacion";
+            this.localizacionDataGridViewTextBoxColumn.HeaderText = "Localización";
+            this.localizacionDataGridViewTextBoxColumn.Name = "localizacionDataGridViewTextBoxColumn";
+            this.localizacionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // horarioDataGridViewTextBoxColumn
+            // 
+            this.horarioDataGridViewTextBoxColumn.DataPropertyName = "horario";
+            this.horarioDataGridViewTextBoxColumn.HeaderText = "Horario";
+            this.horarioDataGridViewTextBoxColumn.Name = "horarioDataGridViewTextBoxColumn";
+            this.horarioDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hrentradaDataGridViewTextBoxColumn
+            // 
+            this.hrentradaDataGridViewTextBoxColumn.DataPropertyName = "hr_entrada";
+            this.hrentradaDataGridViewTextBoxColumn.HeaderText = "Hora de Entrada";
+            this.hrentradaDataGridViewTextBoxColumn.Name = "hrentradaDataGridViewTextBoxColumn";
+            this.hrentradaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hrsalidaDataGridViewTextBoxColumn
+            // 
+            this.hrsalidaDataGridViewTextBoxColumn.DataPropertyName = "hr_salida";
+            this.hrsalidaDataGridViewTextBoxColumn.HeaderText = "Hora de Salida";
+            this.hrsalidaDataGridViewTextBoxColumn.Name = "hrsalidaDataGridViewTextBoxColumn";
+            this.hrsalidaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estatusDataGridViewTextBoxColumn
+            // 
+            this.estatusDataGridViewTextBoxColumn.DataPropertyName = "estatus";
+            this.estatusDataGridViewTextBoxColumn.HeaderText = "Estatus";
+            this.estatusDataGridViewTextBoxColumn.Name = "estatusDataGridViewTextBoxColumn";
+            this.estatusDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vistaSucursalBindingSource
+            // 
+            this.vistaSucursalBindingSource.DataMember = "Vista_Sucursal";
+            this.vistaSucursalBindingSource.DataSource = this.dataSet_checador;
+            // 
+            // dataSet_checador
+            // 
+            this.dataSet_checador.DataSetName = "DataSet_checador";
+            this.dataSet_checador.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label42
             // 
@@ -594,16 +648,6 @@
             this.txt_nombrebuscar.Name = "txt_nombrebuscar";
             this.txt_nombrebuscar.Size = new System.Drawing.Size(248, 29);
             this.txt_nombrebuscar.TabIndex = 79;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Location = new System.Drawing.Point(-51, 92);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(1095, 490);
-            this.pictureBox6.TabIndex = 83;
-            this.pictureBox6.TabStop = false;
             // 
             // groupBox4
             // 
@@ -717,6 +761,11 @@
             this.cbx_horario.TabIndex = 3;
             this.cbx_horario.ValueMember = "id_horario";
             // 
+            // horariosBindingSource
+            // 
+            this.horariosBindingSource.DataMember = "horarios";
+            this.horariosBindingSource.DataSource = this.dataSet_checador;
+            // 
             // label37
             // 
             this.label37.AutoSize = true;
@@ -728,19 +777,13 @@
             this.label37.TabIndex = 1077;
             this.label37.Text = "Horario:";
             // 
-            // dataSet_checador
-            // 
-            this.dataSet_checador.DataSetName = "DataSet_checador";
-            this.dataSet_checador.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // horariosBindingSource
-            // 
-            this.horariosBindingSource.DataMember = "horarios";
-            this.horariosBindingSource.DataSource = this.dataSet_checador;
-            // 
             // horariosTableAdapter
             // 
             this.horariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // vista_SucursalTableAdapter
+            // 
+            this.vista_SucursalTableAdapter.ClearBeforeFill = true;
             // 
             // sucursales
             // 
@@ -760,11 +803,11 @@
             this.panel_barra_sup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             this.panel_menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_sucursal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaSucursalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horariosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -798,17 +841,11 @@
         private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_registrar;
-        private System.Windows.Forms.DataGridView dgv_empleadobuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DIRECCION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
+        private System.Windows.Forms.DataGridView dgv_sucursal;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txt_idbuscar;
         private System.Windows.Forms.TextBox txt_nombrebuscar;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.TextBox txt_domicilio_num_ext;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton rb_mod_inactivo;
@@ -822,5 +859,17 @@
         private DataSet_checador dataSet_checador;
         private System.Windows.Forms.BindingSource horariosBindingSource;
         private DataSet_checadorTableAdapters.horariosTableAdapter horariosTableAdapter;
+        private System.Windows.Forms.BindingSource vistaSucursalBindingSource;
+        private DataSet_checadorTableAdapters.Vista_SucursalTableAdapter vista_SucursalTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idsucursalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numintDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn localizacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn horarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hrentradaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hrsalidaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatusDataGridViewTextBoxColumn;
     }
 }

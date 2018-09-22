@@ -17,7 +17,6 @@ namespace Checador.empleados
         //SE CREA LA INSTANCIA AL OBJETO DE LA CLASE EMPLEADO
         ClaseEmpleado Empleado = new ClaseEmpleado();
         ClaseHorario horario = new ClaseHorario();
-        huella huella = new huella();
 
         //SE CREA LA INSTANCIA DE LA CLASE CHECADOR
         ClaseChecador clase_checador = new ClaseChecador();
@@ -32,8 +31,15 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet_checador.Vista_Empleados' table. You can move, or remove it, as needed.
+            this.vista_EmpleadosTableAdapter.Fill(this.dataSet_checador.Vista_Empleados);
+
             // TODO: This line of code loads data into the 'dataSet_checador.sucursal' table. You can move, or remove it, as needed.
             this.sucursalTableAdapter.Fill(this.dataSet_checador.sucursal);
+
+            //CAMBIAR LA LETRA AL DATAGRIDVIEW
+            dgv_empleadobuscar.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
+            dgv_empleadobuscar.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
 
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
             CheckForIllegalCrossThreadCalls = false;
@@ -355,10 +361,7 @@ namespace Checador.empleados
 
         private void btn_capturar_mod_Click(object sender, EventArgs e)
         {
-            Enabled = false;
-            huella = new huella();
-            huella.FormClosed += new FormClosedEventHandler(Desbloquear_empleados);
-            huella.Show();
+           
         }
 
         private void rb_buscar_CheckedChanged(object sender, EventArgs e)

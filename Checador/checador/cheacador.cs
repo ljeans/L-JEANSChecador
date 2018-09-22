@@ -165,9 +165,14 @@ namespace Checador
 
         private void cheacador_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet_checador.Vista_Checador' table. You can move, or remove it, as needed.
+            this.vista_ChecadorTableAdapter.Fill(this.dataSet_checador.Vista_Checador);
             // TODO: This line of code loads data into the 'dataSet_checador.sucursal' table. You can move, or remove it, as needed.
             this.sucursalTableAdapter.Fill(this.dataSet_checador.sucursal);
 
+            //CAMBIAR LA LETRA AL DATAGRIDVIEW
+            dgv_checador.DefaultCellStyle.Font = new Font ("Microsoft Sans Serif", 12);
+            dgv_checador.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
         }
     }
 }
