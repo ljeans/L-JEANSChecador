@@ -93,7 +93,7 @@ namespace Checador
                     //MessageBox.Show(e.Message);
                     id = 1;
                 }
-                string consulta = "INSERT INTO empleado  VALUES (@id,@nombre, @apellido_pat,@apellido_mat, @departamento,@id_privilegio, @telefono, @calle, @num_ext,@num_int, @colonia, @codigo_postal,@poblacion,@municipio, @estado, @pais,@puesto, @RFC, @CURP, @estatus, @fecha_alta,@observaciones, @email, @fecha_baja, @NSS, @tipo_contrato, @sueldo_diario, @sueldo_diario_integrado, @sueldo_base_quincenal, @tipo_salario, @dias_aguinaldo, @dias_vacaciones, @riesgo_puesto, @periodicidad_pago, @banco, @cuenta_bancaria, @tarjeta_despensa, @clave_edenred, @password, @horas_extra)";
+                string consulta = "INSERT INTO empleado  VALUES (@id,@nombre, @apellido_pat,@apellido_mat, @departamento,@id_privilegio, @telefono, @calle, @num_ext,@num_int, @colonia, @codigo_postal,@poblacion,@municipio, @estado, @pais,@puesto, @RFC, @CURP, @estatus, @fecha_alta,@observaciones, @email, @fecha_baja, @NSS, @tipo_contrato, @sueldo_diario, @sueldo_diario_integrado, @sueldo_base_quincenal, @tipo_salario, @dias_aguinaldo, @dias_vacaciones, @riesgo_puesto, @periodicidad_pago, @banco, @cuenta_bancaria, @tarjeta_despensa, @clave_edenred, @password, @horas_extra, @retardos, @total_min_retardo)";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -138,6 +138,8 @@ namespace Checador
                 comand.Parameters.AddWithValue("@clave_edenred", clave_edenred);
                 comand.Parameters.AddWithValue("@password", password);
                 comand.Parameters.AddWithValue("@horas_extra", 0);
+                comand.Parameters.AddWithValue("@retardos", DBNull.Value);
+                comand.Parameters.AddWithValue("@total_min_retardo", DBNull.Value);
 
                 comand.ExecuteNonQuery();
                 conexion.Close();
@@ -309,7 +311,6 @@ namespace Checador
                     }
                  
                 }
-             
 
                 using (SqlConnection con2 = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
                 {

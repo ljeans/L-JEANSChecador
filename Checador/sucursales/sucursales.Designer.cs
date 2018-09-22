@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txt_domicilio_municipio = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
             this.txt_domicilio_cp = new System.Windows.Forms.TextBox();
@@ -75,6 +76,9 @@
             this.txt_id_mod = new System.Windows.Forms.TextBox();
             this.cbx_horario = new System.Windows.Forms.ComboBox();
             this.label37 = new System.Windows.Forms.Label();
+            this.dataSet_checador = new Checador.DataSet_checador();
+            this.horariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.horariosTableAdapter = new Checador.DataSet_checadorTableAdapters.horariosTableAdapter();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -85,6 +89,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rb_4
@@ -700,6 +706,8 @@
             // 
             // cbx_horario
             // 
+            this.cbx_horario.DataSource = this.horariosBindingSource;
+            this.cbx_horario.DisplayMember = "horario";
             this.cbx_horario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_horario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_horario.FormattingEnabled = true;
@@ -707,6 +715,7 @@
             this.cbx_horario.Name = "cbx_horario";
             this.cbx_horario.Size = new System.Drawing.Size(219, 32);
             this.cbx_horario.TabIndex = 3;
+            this.cbx_horario.ValueMember = "id_horario";
             // 
             // label37
             // 
@@ -718,6 +727,20 @@
             this.label37.Size = new System.Drawing.Size(77, 24);
             this.label37.TabIndex = 1077;
             this.label37.Text = "Horario:";
+            // 
+            // dataSet_checador
+            // 
+            this.dataSet_checador.DataSetName = "DataSet_checador";
+            this.dataSet_checador.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // horariosBindingSource
+            // 
+            this.horariosBindingSource.DataMember = "horarios";
+            this.horariosBindingSource.DataSource = this.dataSet_checador;
+            // 
+            // horariosTableAdapter
+            // 
+            this.horariosTableAdapter.ClearBeforeFill = true;
             // 
             // sucursales
             // 
@@ -741,6 +764,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horariosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -794,5 +819,8 @@
         private System.Windows.Forms.TextBox txt_id_mod;
         private System.Windows.Forms.ComboBox cbx_horario;
         private System.Windows.Forms.Label label37;
+        private DataSet_checador dataSet_checador;
+        private System.Windows.Forms.BindingSource horariosBindingSource;
+        private DataSet_checadorTableAdapters.horariosTableAdapter horariosTableAdapter;
     }
 }

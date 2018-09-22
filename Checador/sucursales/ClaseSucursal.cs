@@ -194,7 +194,7 @@ namespace Checador
                         pais = lector.GetString(lector.GetOrdinal("pais"));
                         telefono = lector.GetString(lector.GetOrdinal("telefono"));
                         estatus = lector.GetString(lector.GetOrdinal("estatus"));
-                        id_horario = lector.GetInt32(lector.GetOrdinal("@id_horario"));
+                        id_horario = lector.GetInt32(lector.GetOrdinal("id_horario"));
                         con.Close();
                         return true;
                     }

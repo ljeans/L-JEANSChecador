@@ -29,24 +29,9 @@ namespace Checador
 
         private void sucursales_Load(object sender, EventArgs e)
         {
-            Conexion conexion = new Conexion();
-            //SqlConnection con = new SqlConnection(conexion.cadenaConexion);
-            using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))
-            {
-                string select = "SELECT horario FROM horarios";//Consulta
-                SqlCommand comando = new SqlCommand(select, con);//Nuevo objeto sqlcommand
-                con.Open();//abre la conexion
-                SqlDataReader lector = comando.ExecuteReader();
-                while (lector.Read() == true)
-                {
-                    cbx_horario.Items.Add(lector[0]);
-                }
-            }
-
+            // TODO: This line of code loads data into the 'dataSet_checador.horarios' table. You can move, or remove it, as needed.
+            this.horariosTableAdapter.Fill(this.dataSet_checador.horarios);
         }
-
-       
-
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -76,8 +61,9 @@ namespace Checador
             btn_modificar.Enabled = true;
             btn_modificar.Visible = true;
             btn_registrar.Visible = false;
-            
+            txt_id_mod.Text = "";
             tabControlBase.SelectedTab = tabPage3;
+            
         }
 
         private void rb_buscar_CheckedChanged(object sender, EventArgs e)
@@ -91,10 +77,9 @@ namespace Checador
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
         public void cargarIDHorario()
         {
-            //MOSTRAR EL ID DEL EMPLEADO AL CARGAR LA PAGINA
+            //MOSTRAR EL ID DEL HORARIO AL CARGAR LA PAGINA
             try
             {
-                MessageBox.Show(horario.horario, "eso va");
                 idhorario = (Sucursal.obtenerId(horario.horario));
             }
             catch (Exception ex)
@@ -102,11 +87,9 @@ namespace Checador
                 txt_id.Text = "1";
             }
         }
+
         private void btn_registrar_Click(object sender, EventArgs e)
         {
-            horario.horario = cbx_horario.Text;
-            idhorario= Sucursal.obtenerId(horario.horario);
-            
             try
             {
                 Sucursal.calle = txt_domicilio_calle.Text;
@@ -122,7 +105,7 @@ namespace Checador
                 Sucursal.pais = txt_domicilio_pais.Text;
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
-                Sucursal.id_horario = idhorario;
+                Sucursal.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
                 Sucursal.guardarSucursal();
                 Limpiar();
             }
@@ -214,8 +197,10 @@ namespace Checador
                 Sucursal.pais = txt_domicilio_pais.Text;
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
-                Sucursal.id_horario = idhorario;
+                Sucursal.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
                 Sucursal.Modificar_Sucursal();
+                tabControlBase.SelectedTab = tabPage3;
+                txt_id_mod.Text = "";
                 Limpiar();
             }
             catch (Exception ex)
@@ -224,33 +209,39 @@ namespace Checador
             }
         }
 
+        //CARGAR DATOS AL FORMULARIO
         private void btn_mod_Click(object sender, EventArgs e)
         {
             txt_id.Enabled = false;
             Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
-            Sucursal.verificar_existencia(Sucursal.id);
-
-            MessageBox.Show(Sucursal.id.ToString());
-            tabControlBase.SelectedTab = tabPage1;
-            txt_id.Text = Sucursal.id.ToString();
-            txt_nombre.Text = Sucursal.nombre;
-            txt_domicilio_calle.Text = Sucursal.calle;
-            txt_domicilio_num_ext.Text = Sucursal.num_ext;
-            txt_domicilio_num_int.Text = Sucursal.num_int;
-            txt_domicilio_colonia.Text = Sucursal.colonia;
-            txt_domicilio_cp.Text = Sucursal.codigo_postal;
-            txt_domicilio_pob.Text = Sucursal.poblacion;
-            txt_domicilio_municipio.Text = Sucursal.municipio;
-            txt_domicilio_estado.Text = Sucursal.estado;
-            txt_domicilio_pais.Text = Sucursal.pais;
-            txt_telefono.Text = Sucursal.telefono;
-            if (Sucursal.estatus.ToString() == "A")
+            if (Sucursal.verificar_existencia(Sucursal.id))
             {
-                rb_mod_activo.Checked = true;
+                tabControlBase.SelectedTab = tabPage1;
+                txt_id.Text = Sucursal.id.ToString();
+                txt_nombre.Text = Sucursal.nombre;
+                txt_domicilio_calle.Text = Sucursal.calle;
+                txt_domicilio_num_ext.Text = Sucursal.num_ext;
+                txt_domicilio_num_int.Text = Sucursal.num_int;
+                txt_domicilio_colonia.Text = Sucursal.colonia;
+                txt_domicilio_cp.Text = Sucursal.codigo_postal;
+                txt_domicilio_pob.Text = Sucursal.poblacion;
+                txt_domicilio_municipio.Text = Sucursal.municipio;
+                txt_domicilio_estado.Text = Sucursal.estado;
+                txt_domicilio_pais.Text = Sucursal.pais;
+                txt_telefono.Text = Sucursal.telefono;
+                cbx_horario.SelectedValue = Sucursal.id_horario;
+                if (Sucursal.estatus.ToString() == "A")
+                {
+                    rb_mod_activo.Checked = true;
+                }
+                else if (Sucursal.estatus.ToString() == "I")
+                {
+                    rb_mod_inactivo.Checked = true;
+                }
             }
-            else if(Sucursal.estatus.ToString()=="I")
+            else
             {
-                rb_mod_inactivo.Checked = true;
+                MessageBox.Show("Sucursal no registrada. Por favor intente de nuevo.");
             }
 
         }
