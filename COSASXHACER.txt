@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-1.- Modificar horario
-2.- Checadores multiples
-
-**************** CUANDO AGREGUEMOS TUPLAS A REGISTROS ***************
-1.- En los eventos de chequeo agregar a la base de datos si hubo retardo, cuanto tiempo fue y las horas extras trabajadas
-=======
 - Checadores multiples - 1/2
 - Agregar retardo y contador de tiempo.
 		3		150
@@ -14,4 +7,6 @@
 - Hacer HILOS
 - Cargar datos a COMBOBOX
 - MENSAJE DE ESTAR SEGURO EN MODIFICAR Y ELIMINAR
->>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
+- CHECAR DATOS DE EMPLEADOS PARA REGISTAR Y MODIFICAR
+- Modificar en el checador el empleado (LOS QUE SE ALMACENAN AHI)
+- Mostrar datos en datagrid

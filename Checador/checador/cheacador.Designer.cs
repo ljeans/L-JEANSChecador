@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbox_datos_checador = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
             this.rb_mod_activo = new System.Windows.Forms.RadioButton();
             this.cbx_sucursal = new System.Windows.Forms.ComboBox();
+            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet_checador = new Checador.DataSet_checador();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_ip = new System.Windows.Forms.TextBox();
             this.txt_id = new System.Windows.Forms.TextBox();
@@ -63,12 +66,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-=======
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
-            this.rb_mod_activo = new System.Windows.Forms.RadioButton();
->>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
+            this.sucursalTableAdapter = new Checador.DataSet_checadorTableAdapters.sucursalTableAdapter();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -78,6 +76,8 @@
             this.panel_menu.SuspendLayout();
             this.gbox_datos_checador.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).BeginInit();
             this.gbox_estatus.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -113,11 +113,6 @@
             // 
             // tabControlBase
             // 
-<<<<<<< HEAD
-=======
-            this.tabControlBase.Location = new System.Drawing.Point(309, 57);
-            this.tabControlBase.Location = new System.Drawing.Point(309, 57);
->>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
             this.tabControlBase.Location = new System.Drawing.Point(309, 77);
             // 
             // tabPage1
@@ -230,13 +225,26 @@
             // 
             // cbx_sucursal
             // 
+            this.cbx_sucursal.DataSource = this.sucursalBindingSource;
+            this.cbx_sucursal.DisplayMember = "nombre";
+            this.cbx_sucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_sucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.cbx_sucursal.FormattingEnabled = true;
             this.cbx_sucursal.Location = new System.Drawing.Point(246, 194);
             this.cbx_sucursal.Name = "cbx_sucursal";
             this.cbx_sucursal.Size = new System.Drawing.Size(248, 32);
             this.cbx_sucursal.TabIndex = 4;
-            this.cbx_sucursal.Text = "SUCURSAL 13";
+            this.cbx_sucursal.ValueMember = "id_sucursal";
+            // 
+            // sucursalBindingSource
+            // 
+            this.sucursalBindingSource.DataMember = "sucursal";
+            this.sucursalBindingSource.DataSource = this.dataSet_checador;
+            // 
+            // dataSet_checador
+            // 
+            this.dataSet_checador.DataSetName = "DataSet_checador";
+            this.dataSet_checador.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label15
             // 
@@ -605,12 +613,17 @@
             this.btn_siguiente.Text = "Sincronizar fecha y hora";
             this.btn_siguiente.UseVisualStyleBackColor = false;
             // 
+            // sucursalTableAdapter
+            // 
+            this.sucursalTableAdapter.ClearBeforeFill = true;
+            // 
             // cheacador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "cheacador";
+            this.Load += new System.EventHandler(this.cheacador_Load);
             this.tabControlBase.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -625,6 +638,8 @@
             this.gbox_datos_checador.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).EndInit();
             this.gbox_estatus.ResumeLayout(false);
             this.gbox_estatus.PerformLayout();
@@ -670,5 +685,8 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton rb_mod_inactivo;
         private System.Windows.Forms.RadioButton rb_mod_activo;
+        private DataSet_checador dataSet_checador;
+        private System.Windows.Forms.BindingSource sucursalBindingSource;
+        private DataSet_checadorTableAdapters.sucursalTableAdapter sucursalTableAdapter;
     }
 }

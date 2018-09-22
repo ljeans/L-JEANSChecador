@@ -462,30 +462,18 @@
             // 
             // txt_tolerancia
             // 
-<<<<<<< HEAD
-            this.dtp_tolerancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_tolerancia.Location = new System.Drawing.Point(873, 241);
-            this.dtp_tolerancia.Maximum = new decimal(new int[] {
-=======
             this.txt_tolerancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tolerancia.Location = new System.Drawing.Point(873, 241);
             this.txt_tolerancia.Maximum = new decimal(new int[] {
->>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
             60,
             0,
             0,
             0});
-<<<<<<< HEAD
-            this.dtp_tolerancia.Name = "dtp_tolerancia";
-            this.dtp_tolerancia.Size = new System.Drawing.Size(75, 29);
-            this.dtp_tolerancia.TabIndex = 9;
-            this.dtp_tolerancia.Value = new decimal(new int[] {
-=======
+            
             this.txt_tolerancia.Name = "txt_tolerancia";
             this.txt_tolerancia.Size = new System.Drawing.Size(75, 29);
             this.txt_tolerancia.TabIndex = 1110;
             this.txt_tolerancia.Value = new decimal(new int[] {
->>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
             10,
             0,
             0,

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txt_rfc = new System.Windows.Forms.MaskedTextBox();
             this.txt_nss = new System.Windows.Forms.TextBox();
             this.txt_puesto = new System.Windows.Forms.TextBox();
@@ -95,6 +96,8 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.cbx_sucursal = new System.Windows.Forms.ComboBox();
+            this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet_checador = new Checador.DataSet_checador();
             this.txt_contra = new System.Windows.Forms.TextBox();
             this.cbx_privilegio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -162,10 +165,7 @@
             this.txt_id_a_modificar = new System.Windows.Forms.TextBox();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_modificar = new System.Windows.Forms.Button();
-            this.lbl_entrada = new System.Windows.Forms.Label();
-            this.lbl_entre = new System.Windows.Forms.Label();
-            this.lbl_salida = new System.Windows.Forms.Label();
-            this.cbx_horario = new System.Windows.Forms.ComboBox();
+            this.sucursalTableAdapter = new Checador.DataSet_checadorTableAdapters.sucursalTableAdapter();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -177,6 +177,8 @@
             this.panel_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_huella_mod)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -217,10 +219,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.cbx_horario);
-            this.tabPage1.Controls.Add(this.lbl_salida);
-            this.tabPage1.Controls.Add(this.lbl_entre);
-            this.tabPage1.Controls.Add(this.lbl_entrada);
             this.tabPage1.Controls.Add(this.txt_domicilio_municipio);
             this.tabPage1.Controls.Add(this.label33);
             this.tabPage1.Controls.Add(this.txt_domicilio_cp);
@@ -1005,6 +1003,8 @@
             // 
             // cbx_sucursal
             // 
+            this.cbx_sucursal.DataSource = this.sucursalBindingSource;
+            this.cbx_sucursal.DisplayMember = "nombre";
             this.cbx_sucursal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_sucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.cbx_sucursal.FormattingEnabled = true;
@@ -1012,6 +1012,17 @@
             this.cbx_sucursal.Name = "cbx_sucursal";
             this.cbx_sucursal.Size = new System.Drawing.Size(248, 32);
             this.cbx_sucursal.TabIndex = 5;
+            this.cbx_sucursal.ValueMember = "id_sucursal";
+            // 
+            // sucursalBindingSource
+            // 
+            this.sucursalBindingSource.DataMember = "sucursal";
+            this.sucursalBindingSource.DataSource = this.dataSet_checador;
+            // 
+            // dataSet_checador
+            // 
+            this.dataSet_checador.DataSetName = "DataSet_checador";
+            this.dataSet_checador.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txt_contra
             // 
@@ -1760,40 +1771,9 @@
             this.btn_modificar.Visible = false;
             this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click_3);
             // 
-            // lbl_entrada
+            // sucursalTableAdapter
             // 
-            this.lbl_entrada.AutoSize = true;
-            this.lbl_entrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_entrada.Location = new System.Drawing.Point(865, 76);
-            this.lbl_entrada.Name = "lbl_entrada";
-            this.lbl_entrada.Size = new System.Drawing.Size(0, 20);
-            this.lbl_entrada.TabIndex = 1145;
-            // 
-            // lbl_entre
-            // 
-            this.lbl_entre.AutoSize = true;
-            this.lbl_entre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_entre.Location = new System.Drawing.Point(933, 74);
-            this.lbl_entre.Name = "lbl_entre";
-            this.lbl_entre.Size = new System.Drawing.Size(0, 24);
-            this.lbl_entre.TabIndex = 1146;
-            // 
-            // lbl_salida
-            // 
-            this.lbl_salida.AutoSize = true;
-            this.lbl_salida.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_salida.Location = new System.Drawing.Point(946, 77);
-            this.lbl_salida.Name = "lbl_salida";
-            this.lbl_salida.Size = new System.Drawing.Size(0, 20);
-            this.lbl_salida.TabIndex = 1147;
-            // 
-            // cbx_horario
-            // 
-            this.cbx_horario.FormattingEnabled = true;
-            this.cbx_horario.Location = new System.Drawing.Point(655, 38);
-            this.cbx_horario.Name = "cbx_horario";
-            this.cbx_horario.Size = new System.Drawing.Size(121, 21);
-            this.cbx_horario.TabIndex = 1148;
+            this.sucursalTableAdapter.ClearBeforeFill = true;
             // 
             // empleados
             // 
@@ -1819,6 +1799,8 @@
             this.panel_menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_huella_mod)).EndInit();
@@ -1965,9 +1947,8 @@
         private System.Windows.Forms.TextBox txt_id_a_modificar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_modificar;
-        private System.Windows.Forms.Label lbl_salida;
-        private System.Windows.Forms.Label lbl_entre;
-        private System.Windows.Forms.Label lbl_entrada;
-        private System.Windows.Forms.ComboBox cbx_horario;
+        private DataSet_checador dataSet_checador;
+        private System.Windows.Forms.BindingSource sucursalBindingSource;
+        private DataSet_checadorTableAdapters.sucursalTableAdapter sucursalTableAdapter;
     }
 }

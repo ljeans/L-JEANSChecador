@@ -47,12 +47,8 @@ namespace Checador
 
         private void principal_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
 
             string ipChecador = "20.20.0.15";
-=======
-            string ipChecador = "20.20.0.12";
->>>>>>> dd051b3fba65386a357e8dc7e70df2ea5a053267
             int id_checador = 1;
             int puerto = 4370;
 

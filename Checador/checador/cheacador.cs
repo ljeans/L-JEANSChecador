@@ -32,6 +32,7 @@ namespace Checador
             btn_modificar.Visible = true;
             btn_registrar.Visible = false;
             tabControlBase.SelectedTab = tabPage2;
+            txt_id_mod.Text = "";
         }
 
         private void rb_registrar_CheckedChanged(object sender, EventArgs e)
@@ -56,9 +57,7 @@ namespace Checador
             {
                 Clase_Checador.ip = txt_ip.Text;
                 Clase_Checador.puerto = txt_puerto.Text;
-                //SE TIENE QUE MODIFICAR ESTO!!!!!!!!!!!!!!!!!!!!!!
-                //Clase_Checador.id_sucursal = cbx_sucursal.SelectedValue.ToString();
-                Clase_Checador.id_sucursal = 13;
+                Clase_Checador.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
                 if (rb_mod_activo.Checked == true)
                 {
                     Clase_Checador.estatus = "A";
@@ -82,26 +81,31 @@ namespace Checador
         {
             txt_id.Enabled = false;
             Clase_Checador.id = Convert.ToInt32(txt_id_mod.Text);
-            Clase_Checador.verificar_existencia(Clase_Checador.id);
-            tabControlBase.SelectedTab = tabPage1;
-            MessageBox.Show(Clase_Checador.id.ToString());
-            txt_id.Text = Clase_Checador.id.ToString();
-            txt_ip.Text = Clase_Checador.ip;
-            txt_puerto.Text = Clase_Checador.puerto;
-            cbx_sucursal.SelectedValue = Clase_Checador.id_sucursal;
-
-            if (Clase_Checador.estatus.ToString() == "A")
+            if (Clase_Checador.verificar_existencia(Clase_Checador.id))
             {
-                rb_mod_activo.Checked = true;
-            }
-            else if (Clase_Checador.estatus.ToString() == "I")
-            {
-                rb_mod_inactivo.Checked = true;
-            }
+                tabControlBase.SelectedTab = tabPage1;
+                txt_id.Text = Clase_Checador.id.ToString();
+                txt_ip.Text = Clase_Checador.ip;
+                txt_puerto.Text = Clase_Checador.puerto;
+                cbx_sucursal.SelectedValue = Clase_Checador.id_sucursal;
 
-            btn_modificar.Enabled = true;
-            btn_modificar.Visible = true;
-            btn_registrar.Visible = false;
+                if (Clase_Checador.estatus.ToString() == "A")
+                {
+                    rb_mod_activo.Checked = true;
+                }
+                else if (Clase_Checador.estatus.ToString() == "I")
+                {
+                    rb_mod_inactivo.Checked = true;
+                }
+
+                btn_modificar.Enabled = true;
+                btn_modificar.Visible = true;
+                btn_registrar.Visible = false;
+            }
+            else
+            {
+                MessageBox.Show("Checador no registrado. Por favor intente de nuevo.");
+            }
             
         }
 
@@ -119,8 +123,7 @@ namespace Checador
             {
                 Clase_Checador.estatus = "A";
                 Clase_Checador.id = Convert.ToInt32(txt_id.Text);
-                //Clase_Checador.id_sucursal = cbx_sucursal.SelectedValue.ToString();
-                Clase_Checador.id_sucursal = 13;
+                Clase_Checador.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
                 Clase_Checador.ip = txt_ip.Text;
                 Clase_Checador.puerto = txt_puerto.Text;
                 Clase_Checador.guardarChecador();
@@ -160,5 +163,11 @@ namespace Checador
             btn_registrar.Enabled = true;
         }
 
+        private void cheacador_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'dataSet_checador.sucursal' table. You can move, or remove it, as needed.
+            this.sucursalTableAdapter.Fill(this.dataSet_checador.sucursal);
+
+        }
     }
 }
