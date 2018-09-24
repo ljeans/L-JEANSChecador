@@ -1,20 +1,11 @@
-<<<<<<< HEAD
-2.- Checadores multiples
-
-**************** CUANDO AGREGUEMOS TUPLAS A REGISTROS ***************
-1.- En los eventos de chequeo agregar a la base de datos si hubo retardo, cuanto tiempo fue y las horas extras trabajadas
-
-=======
-- Checadores multiples - 1/2
-- Agregar retardo y contador de tiempo.
-		3		150
-- Validar en GENERAL
-- Poner UniqueKeys en la base de datos
-- Hacer el trigger para empleadosSucursal en la fecha de baja
-- Hacer HILOS
-- Cargar datos a COMBOBOX
-- MENSAJE DE ESTAR SEGURO EN MODIFICAR Y ELIMINAR
-- CHECAR DATOS DE EMPLEADOS PARA REGISTAR Y MODIFICAR
+- Realizar funciones en el checador
+	-Agregar retardo y contador de tiempo al empleado cuando cheque.
 - Modificar en el checador el empleado (LOS QUE SE ALMACENAN AHI)
-- Mostrar datos en datagrid
->>>>>>> 1511bb843787b29df30ccb577047d1c7aa4f4cf5
+- Dar de baja todo
+- MENSAJE DE ESTAR SEGURO EN MODIFICAR Y ELIMINAR
+- Filtrar los buscar
+- Hacer HILOS
+- Poner bonitos los datagrid
+- Poner UniqueKeys en la base de datos
+- Checadores multiples - 1/2
+- Validar en GENERAL

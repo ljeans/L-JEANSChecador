@@ -29,8 +29,13 @@ namespace Checador
 
         private void sucursales_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet_checador.Vista_Sucursal' table. You can move, or remove it, as needed.
+            this.vista_SucursalTableAdapter.Fill(this.dataSet_checador.Vista_Sucursal);
             // TODO: This line of code loads data into the 'dataSet_checador.horarios' table. You can move, or remove it, as needed.
             this.horariosTableAdapter.Fill(this.dataSet_checador.horarios);
+            //CAMBIAR LA LETRA AL DATAGRIDVIEW
+            dgv_sucursal.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
+            dgv_sucursal.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
