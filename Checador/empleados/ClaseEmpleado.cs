@@ -61,6 +61,7 @@ namespace Checador
         //LUEGO VEMOS
         public TimeSpan hr_entrada { get; set; }
         public TimeSpan hr_salida { get; set; }
+        public DateTime guardarsuc;
 
         //FUNCION PARA OBTENER EL ID MAXIMO DEL EMPLEADO POR SI ES AUTOINCREMENTABLE EL ID
         public int obtenerIdMaximo()
@@ -426,6 +427,31 @@ namespace Checador
         //FUNCION PARA REGISTRAR EMPLEADO_SUCURSAL
         public void guardarEmpleado_Sucursal()
         {
+            guardarsuc = fecha_alta;
+            try
+            {
+                MessageBox.Show("si se ejecuta el update");
+                //Registrar SUCURSAL
+                string consulta = "UPDATE empleado_sucursal SET fecha_salida=@fecha_salida Where id_empleado=@id and fecha_salida is Null;";
+                Conexion con = new Conexion();
+                SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+                conexion.Open();
+                SqlCommand comand = new SqlCommand(consulta, conexion);
+                comand.Parameters.AddWithValue("@id", id);
+                comand.Parameters.AddWithValue("@fecha_salida", guardarsuc);
+                comand.Parameters.AddWithValue("@null", DBNull.Value);
+                MessageBox.Show(guardarsuc.ToString());
+                MessageBox.Show(id.ToString());
+                comand.ExecuteNonQuery();
+                conexion.Close();
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+            }
+
             try
             {
                 //Registrar SUCURSAL
@@ -437,8 +463,8 @@ namespace Checador
                 comand.Parameters.AddWithValue("@id_empleado", id);
                 comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
                 comand.Parameters.AddWithValue("@fecha_entrada", fecha_alta);
+                
                 comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
-
                 comand.ExecuteNonQuery();
                 conexion.Close();
 
@@ -448,6 +474,8 @@ namespace Checador
                 MessageBox.Show(e.ToString());
                 //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
             }
+
+
         }
 
 

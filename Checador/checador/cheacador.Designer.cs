@@ -53,6 +53,14 @@
             this.label84 = new System.Windows.Forms.Label();
             this.txt_id_mod = new System.Windows.Forms.TextBox();
             this.btn_modificar = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+            this.dgv_checadorbuscar = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DIRECCION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TELEFONO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+=======
             this.dgv_checador = new System.Windows.Forms.DataGridView();
             this.idchecadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +68,7 @@
             this.puertoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vistaChecadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+>>>>>>> 3ebb43d300ff1fd6575307b8fead2e3064e7ee6e
             this.label42 = new System.Windows.Forms.Label();
             this.txt_nombrebuscar = new System.Windows.Forms.TextBox();
             this.gbox_estatus = new System.Windows.Forms.GroupBox();
@@ -85,8 +94,12 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).BeginInit();
+<<<<<<< HEAD
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_checadorbuscar)).BeginInit();
+=======
             ((System.ComponentModel.ISupportInitialize)(this.dgv_checador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaChecadorBindingSource)).BeginInit();
+>>>>>>> 3ebb43d300ff1fd6575307b8fead2e3064e7ee6e
             this.gbox_estatus.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -139,7 +152,11 @@
             // 
             this.tabPage3.Controls.Add(this.groupBox1);
             this.tabPage3.Controls.Add(this.gbox_estatus);
+<<<<<<< HEAD
+            this.tabPage3.Controls.Add(this.dgv_checadorbuscar);
+=======
             this.tabPage3.Controls.Add(this.dgv_checador);
+>>>>>>> 3ebb43d300ff1fd6575307b8fead2e3064e7ee6e
             this.tabPage3.Controls.Add(this.label42);
             this.tabPage3.Controls.Add(this.txt_nombrebuscar);
             // 
@@ -404,6 +421,65 @@
             this.btn_modificar.Visible = false;
             this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
+<<<<<<< HEAD
+            // dgv_checadorbuscar
+            // 
+            this.dgv_checadorbuscar.AllowUserToAddRows = false;
+            this.dgv_checadorbuscar.AllowUserToDeleteRows = false;
+            this.dgv_checadorbuscar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgv_checadorbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_checadorbuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_checadorbuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn3,
+            this.DIRECCION,
+            this.TELEFONO,
+            this.estatus});
+            this.dgv_checadorbuscar.Location = new System.Drawing.Point(23, 104);
+            this.dgv_checadorbuscar.MultiSelect = false;
+            this.dgv_checadorbuscar.Name = "dgv_checadorbuscar";
+            this.dgv_checadorbuscar.ReadOnly = true;
+            this.dgv_checadorbuscar.Size = new System.Drawing.Size(966, 380);
+            this.dgv_checadorbuscar.TabIndex = 83;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_empleado";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.Width = 75;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "nombre";
+            this.dataGridViewTextBoxColumn3.HeaderText = "NOMBRE";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // DIRECCION
+            // 
+            this.DIRECCION.HeaderText = "DIRECCION";
+            this.DIRECCION.Name = "DIRECCION";
+            this.DIRECCION.ReadOnly = true;
+            this.DIRECCION.Width = 350;
+            // 
+            // TELEFONO
+            // 
+            this.TELEFONO.HeaderText = "TELEFONO";
+            this.TELEFONO.Name = "TELEFONO";
+            this.TELEFONO.ReadOnly = true;
+            this.TELEFONO.Width = 200;
+            // 
+            // estatus
+            // 
+            this.estatus.HeaderText = "ESTATUS";
+            this.estatus.Name = "estatus";
+            this.estatus.ReadOnly = true;
+=======
             // dgv_checador
             // 
             this.dgv_checador.AllowUserToAddRows = false;
@@ -487,6 +563,7 @@
             // 
             this.vistaChecadorBindingSource.DataMember = "Vista_Checador";
             this.vistaChecadorBindingSource.DataSource = this.dataSet_checador;
+>>>>>>> 3ebb43d300ff1fd6575307b8fead2e3064e7ee6e
             // 
             // label42
             // 
@@ -678,8 +755,12 @@
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).EndInit();
+<<<<<<< HEAD
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_checadorbuscar)).EndInit();
+=======
             ((System.ComponentModel.ISupportInitialize)(this.dgv_checador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaChecadorBindingSource)).EndInit();
+>>>>>>> 3ebb43d300ff1fd6575307b8fead2e3064e7ee6e
             this.gbox_estatus.ResumeLayout(false);
             this.gbox_estatus.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -706,7 +787,16 @@
         private System.Windows.Forms.GroupBox gbox_estatus;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+<<<<<<< HEAD
+        private System.Windows.Forms.DataGridView dgv_checadorbuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DIRECCION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TELEFONO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
+=======
         private System.Windows.Forms.DataGridView dgv_checador;
+>>>>>>> 3ebb43d300ff1fd6575307b8fead2e3064e7ee6e
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox txt_nombrebuscar;
         private System.Windows.Forms.GroupBox groupBox1;
