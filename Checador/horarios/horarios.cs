@@ -240,13 +240,14 @@ namespace Checador
 
         private void horarios_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Horario' table. You can move, or remove it, as needed.
+            this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
             //CAMBIAR LA LETRA AL DATAGRIDVIEW
             dgv_horarios.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
             dgv_horarios.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
 
 
-            // TODO: esta línea de código carga datos en la tabla 'dataSet_checador.horarios' Puede moverla o quitarla según sea necesario.
-            this.horariosTableAdapter.Fill(this.dataSet_checador.horarios);
+
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
             CheckForIllegalCrossThreadCalls = false;
             Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));

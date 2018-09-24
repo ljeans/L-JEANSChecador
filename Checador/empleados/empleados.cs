@@ -31,11 +31,10 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet_checador.Vista_Empleados' table. You can move, or remove it, as needed.
-            this.vista_EmpleadosTableAdapter.Fill(this.dataSet_checador.Vista_Empleados);
-
-            // TODO: This line of code loads data into the 'dataSet_checador.sucursal' table. You can move, or remove it, as needed.
-            this.sucursalTableAdapter.Fill(this.dataSet_checador.sucursal);
+            // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Empleados' table. You can move, or remove it, as needed.
+            this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+            // TODO: This line of code loads data into the 'dataSet_Checador.sucursal' table. You can move, or remove it, as needed.
+            this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
 
             //CAMBIAR LA LETRA AL DATAGRIDVIEW
             dgv_empleadobuscar.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);

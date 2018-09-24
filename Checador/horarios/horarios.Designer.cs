@@ -63,27 +63,27 @@
             this.txt_horas_totales = new System.Windows.Forms.NumericUpDown();
             this.label10 = new System.Windows.Forms.Label();
             this.dgv_horarios = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vistaHorarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet_Checador = new Checador.DataSet_Checador();
             this.label42 = new System.Windows.Forms.Label();
             this.txt_idbuscar = new System.Windows.Forms.TextBox();
-            this.dataSet_checador = new Checador.DataSet_checador();
-            this.horariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.horariosTableAdapter = new Checador.DataSet_checadorTableAdapters.horariosTableAdapter();
-            this.idhorarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hrentradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hrsalidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horasdiariasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lunesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.martesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miercolesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.juevesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viernesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sabadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.domingoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horastotalesquincenalesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hrsalidadescansoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hrentradadescansoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toleranciaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vista_HorarioTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_HorarioTableAdapter();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -96,8 +96,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_diarias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_totales)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_horarios)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.horariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).BeginInit();
             this.SuspendLayout();
             // 
             // rb_4
@@ -627,34 +627,158 @@
             // 
             this.dgv_horarios.AllowUserToAddRows = false;
             this.dgv_horarios.AllowUserToDeleteRows = false;
+            this.dgv_horarios.AllowUserToResizeColumns = false;
+            this.dgv_horarios.AllowUserToResizeRows = false;
             this.dgv_horarios.AutoGenerateColumns = false;
             this.dgv_horarios.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_horarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_horarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_horarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idhorarioDataGridViewTextBoxColumn,
-            this.horarioDataGridViewTextBoxColumn,
-            this.hrentradaDataGridViewTextBoxColumn,
-            this.hrsalidaDataGridViewTextBoxColumn,
-            this.horasdiariasDataGridViewTextBoxColumn,
-            this.lunesDataGridViewTextBoxColumn,
-            this.martesDataGridViewTextBoxColumn,
-            this.miercolesDataGridViewTextBoxColumn,
-            this.juevesDataGridViewTextBoxColumn,
-            this.viernesDataGridViewTextBoxColumn,
-            this.sabadoDataGridViewTextBoxColumn,
-            this.domingoDataGridViewTextBoxColumn,
-            this.horastotalesquincenalesDataGridViewTextBoxColumn,
-            this.hrsalidadescansoDataGridViewTextBoxColumn,
-            this.hrentradadescansoDataGridViewTextBoxColumn,
-            this.toleranciaDataGridViewTextBoxColumn});
-            this.dgv_horarios.DataSource = this.horariosBindingSource;
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16});
+            this.dgv_horarios.DataSource = this.vistaHorarioBindingSource;
             this.dgv_horarios.Location = new System.Drawing.Point(23, 172);
             this.dgv_horarios.MultiSelect = false;
             this.dgv_horarios.Name = "dgv_horarios";
             this.dgv_horarios.ReadOnly = true;
             this.dgv_horarios.Size = new System.Drawing.Size(966, 380);
             this.dgv_horarios.TabIndex = 87;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_horario";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "horario";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Horario";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "hr_entrada";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Hora de entrada";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "hr_salida_descanso";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Hora salida descanso";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "hr_entrada_descanso";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Hora entrada descanso";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "hr_salida";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Hora de salida";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "tolerancia";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Tolerancia";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "horas_diarias";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Horas diarias";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "horas_totales_quincenales";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Horarios totales quincenales";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "lunes";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Lunes";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "martes";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Martes";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "miercoles";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Miercoles";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "jueves";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Jueves";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "viernes";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Viernes";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "sabado";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Sabado";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "domingo";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Domingo";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // vistaHorarioBindingSource
+            // 
+            this.vistaHorarioBindingSource.DataMember = "Vista_Horario";
+            this.vistaHorarioBindingSource.DataSource = this.dataSet_Checador;
+            // 
+            // dataSet_Checador
+            // 
+            this.dataSet_Checador.DataSetName = "DataSet_Checador";
+            this.dataSet_Checador.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label42
             // 
@@ -676,131 +800,9 @@
             this.txt_idbuscar.Size = new System.Drawing.Size(248, 29);
             this.txt_idbuscar.TabIndex = 86;
             // 
-            // dataSet_checador
+            // vista_HorarioTableAdapter
             // 
-            this.dataSet_checador.DataSetName = "DataSet_checador";
-            this.dataSet_checador.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // horariosBindingSource
-            // 
-            this.horariosBindingSource.DataMember = "horarios";
-            this.horariosBindingSource.DataSource = this.dataSet_checador;
-            // 
-            // horariosTableAdapter
-            // 
-            this.horariosTableAdapter.ClearBeforeFill = true;
-            // 
-            // idhorarioDataGridViewTextBoxColumn
-            // 
-            this.idhorarioDataGridViewTextBoxColumn.DataPropertyName = "id_horario";
-            this.idhorarioDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idhorarioDataGridViewTextBoxColumn.Name = "idhorarioDataGridViewTextBoxColumn";
-            this.idhorarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // horarioDataGridViewTextBoxColumn
-            // 
-            this.horarioDataGridViewTextBoxColumn.DataPropertyName = "horario";
-            this.horarioDataGridViewTextBoxColumn.HeaderText = "Horario";
-            this.horarioDataGridViewTextBoxColumn.Name = "horarioDataGridViewTextBoxColumn";
-            this.horarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hrentradaDataGridViewTextBoxColumn
-            // 
-            this.hrentradaDataGridViewTextBoxColumn.DataPropertyName = "hr_entrada";
-            this.hrentradaDataGridViewTextBoxColumn.HeaderText = "Hora de entrada";
-            this.hrentradaDataGridViewTextBoxColumn.Name = "hrentradaDataGridViewTextBoxColumn";
-            this.hrentradaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hrsalidaDataGridViewTextBoxColumn
-            // 
-            this.hrsalidaDataGridViewTextBoxColumn.DataPropertyName = "hr_salida";
-            this.hrsalidaDataGridViewTextBoxColumn.HeaderText = "Hora de salida";
-            this.hrsalidaDataGridViewTextBoxColumn.Name = "hrsalidaDataGridViewTextBoxColumn";
-            this.hrsalidaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // horasdiariasDataGridViewTextBoxColumn
-            // 
-            this.horasdiariasDataGridViewTextBoxColumn.DataPropertyName = "horas_diarias";
-            this.horasdiariasDataGridViewTextBoxColumn.HeaderText = "Horas diarias";
-            this.horasdiariasDataGridViewTextBoxColumn.Name = "horasdiariasDataGridViewTextBoxColumn";
-            this.horasdiariasDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lunesDataGridViewTextBoxColumn
-            // 
-            this.lunesDataGridViewTextBoxColumn.DataPropertyName = "lunes";
-            this.lunesDataGridViewTextBoxColumn.HeaderText = "Lunes";
-            this.lunesDataGridViewTextBoxColumn.Name = "lunesDataGridViewTextBoxColumn";
-            this.lunesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // martesDataGridViewTextBoxColumn
-            // 
-            this.martesDataGridViewTextBoxColumn.DataPropertyName = "martes";
-            this.martesDataGridViewTextBoxColumn.HeaderText = "Martes";
-            this.martesDataGridViewTextBoxColumn.Name = "martesDataGridViewTextBoxColumn";
-            this.martesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // miercolesDataGridViewTextBoxColumn
-            // 
-            this.miercolesDataGridViewTextBoxColumn.DataPropertyName = "miercoles";
-            this.miercolesDataGridViewTextBoxColumn.HeaderText = "Miercoles";
-            this.miercolesDataGridViewTextBoxColumn.Name = "miercolesDataGridViewTextBoxColumn";
-            this.miercolesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // juevesDataGridViewTextBoxColumn
-            // 
-            this.juevesDataGridViewTextBoxColumn.DataPropertyName = "jueves";
-            this.juevesDataGridViewTextBoxColumn.HeaderText = "Jueves";
-            this.juevesDataGridViewTextBoxColumn.Name = "juevesDataGridViewTextBoxColumn";
-            this.juevesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // viernesDataGridViewTextBoxColumn
-            // 
-            this.viernesDataGridViewTextBoxColumn.DataPropertyName = "viernes";
-            this.viernesDataGridViewTextBoxColumn.HeaderText = "Viernes";
-            this.viernesDataGridViewTextBoxColumn.Name = "viernesDataGridViewTextBoxColumn";
-            this.viernesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sabadoDataGridViewTextBoxColumn
-            // 
-            this.sabadoDataGridViewTextBoxColumn.DataPropertyName = "sabado";
-            this.sabadoDataGridViewTextBoxColumn.HeaderText = "Sabado";
-            this.sabadoDataGridViewTextBoxColumn.Name = "sabadoDataGridViewTextBoxColumn";
-            this.sabadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // domingoDataGridViewTextBoxColumn
-            // 
-            this.domingoDataGridViewTextBoxColumn.DataPropertyName = "domingo";
-            this.domingoDataGridViewTextBoxColumn.HeaderText = "Domingo";
-            this.domingoDataGridViewTextBoxColumn.Name = "domingoDataGridViewTextBoxColumn";
-            this.domingoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // horastotalesquincenalesDataGridViewTextBoxColumn
-            // 
-            this.horastotalesquincenalesDataGridViewTextBoxColumn.DataPropertyName = "horas_totales_quincenales";
-            this.horastotalesquincenalesDataGridViewTextBoxColumn.HeaderText = "Horas totales quincenales";
-            this.horastotalesquincenalesDataGridViewTextBoxColumn.Name = "horastotalesquincenalesDataGridViewTextBoxColumn";
-            this.horastotalesquincenalesDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hrsalidadescansoDataGridViewTextBoxColumn
-            // 
-            this.hrsalidadescansoDataGridViewTextBoxColumn.DataPropertyName = "hr_salida_descanso";
-            this.hrsalidadescansoDataGridViewTextBoxColumn.HeaderText = "Hora salida descanso";
-            this.hrsalidadescansoDataGridViewTextBoxColumn.Name = "hrsalidadescansoDataGridViewTextBoxColumn";
-            this.hrsalidadescansoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hrentradadescansoDataGridViewTextBoxColumn
-            // 
-            this.hrentradadescansoDataGridViewTextBoxColumn.DataPropertyName = "hr_entrada_descanso";
-            this.hrentradadescansoDataGridViewTextBoxColumn.HeaderText = "Hora entrada descanso";
-            this.hrentradadescansoDataGridViewTextBoxColumn.Name = "hrentradadescansoDataGridViewTextBoxColumn";
-            this.hrentradadescansoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // toleranciaDataGridViewTextBoxColumn
-            // 
-            this.toleranciaDataGridViewTextBoxColumn.DataPropertyName = "tolerancia";
-            this.toleranciaDataGridViewTextBoxColumn.HeaderText = "Tolerancia";
-            this.toleranciaDataGridViewTextBoxColumn.Name = "toleranciaDataGridViewTextBoxColumn";
-            this.toleranciaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vista_HorarioTableAdapter.ClearBeforeFill = true;
             // 
             // horarios
             // 
@@ -826,8 +828,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_diarias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_totales)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_horarios)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_checador)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.horariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -870,9 +872,6 @@
         private System.Windows.Forms.DataGridView dgv_horarios;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox txt_idbuscar;
-        private DataSet_checador dataSet_checador;
-        private System.Windows.Forms.BindingSource horariosBindingSource;
-        private DataSet_checadorTableAdapters.horariosTableAdapter horariosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idhorarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn horarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hrentradaDataGridViewTextBoxColumn;
@@ -889,5 +888,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hrsalidadescansoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hrentradadescansoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn toleranciaDataGridViewTextBoxColumn;
+        private DataSet_Checador dataSet_Checador;
+        private System.Windows.Forms.BindingSource vistaHorarioBindingSource;
+        private DataSet_ChecadorTableAdapters.Vista_HorarioTableAdapter vista_HorarioTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
     }
 }
