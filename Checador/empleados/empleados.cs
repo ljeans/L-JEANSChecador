@@ -24,6 +24,7 @@ namespace Checador.empleados
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
         public int sucurzal;
+        public string valor_datagrid;
         public empleados()
         {
             InitializeComponent();
@@ -36,10 +37,7 @@ namespace Checador.empleados
             // TODO: This line of code loads data into the 'dataSet_Checador.sucursal' table. You can move, or remove it, as needed.
             this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
 
-            //CAMBIAR LA LETRA AL DATAGRIDVIEW
-            dgv_empleadobuscar.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
-            dgv_empleadobuscar.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
-
+           
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
             CheckForIllegalCrossThreadCalls = false;
             //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
@@ -365,6 +363,7 @@ namespace Checador.empleados
 
         private void rb_buscar_CheckedChanged(object sender, EventArgs e)
         {
+            this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
             tabControlBase.SelectedTab = tabPage4;
         }
 
@@ -601,6 +600,20 @@ namespace Checador.empleados
         {
             tabControlBase.SelectedTab = tabPage1;
             txt_curp.Focus();
+        }
+
+        private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_dar_baja_Click(object sender, EventArgs e)
+        {
+            var row = dgv_empleadobuscar.CurrentRow;
+            Empleado.id = Convert.ToInt32(row.Cells[0].Value);
+            Empleado.estatus = "I";
+            Empleado.Eliminar_Empleado();
+            
         }
     }
 }

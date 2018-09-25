@@ -334,6 +334,10 @@ namespace Checador
                 MessageBox.Show(ex.ToString());
             }
         }
-      
+
+        private void rb_buscar_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage3;
+        }
     }
 }

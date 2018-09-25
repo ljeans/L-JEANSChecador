@@ -29,13 +29,10 @@ namespace Checador
 
         private void sucursales_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
-            this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
+           
             // TODO: This line of code loads data into the 'dataSet_Checador.horarios' table. You can move, or remove it, as needed.
             this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
-            //CAMBIAR LA LETRA AL DATAGRIDVIEW
-            dgv_sucursal.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
-            dgv_sucursal.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
+           
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -73,6 +70,8 @@ namespace Checador
 
         private void rb_buscar_CheckedChanged(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
+            this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
             tabControlBase.SelectedTab = tabPage2;
         }
 
@@ -254,6 +253,14 @@ namespace Checador
         private void txt_domicilio_calle_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btn_dar_baja_Click(object sender, EventArgs e)
+        {
+            var row = dgv_sucursal.CurrentRow;
+            Sucursal.id = Convert.ToInt32(row.Cells[0].Value);
+            Sucursal.estatus = "I";
+            Sucursal.Eliminar_Sucursal();
         }
     }
 }
