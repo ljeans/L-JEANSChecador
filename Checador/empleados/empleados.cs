@@ -17,6 +17,7 @@ namespace Checador.empleados
         //SE CREA LA INSTANCIA AL OBJETO DE LA CLASE EMPLEADO
         ClaseEmpleado Empleado = new ClaseEmpleado();
         ClaseHorario horario = new ClaseHorario();
+        formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
 
         //SE CREA LA INSTANCIA DE LA CLASE CHECADOR
         ClaseChecador clase_checador = new ClaseChecador();
@@ -475,6 +476,10 @@ namespace Checador.empleados
         //FUNCION PARA ACTUALIZAR LOS DATOS DE UN EMPLEADO
         private void btn_modificar_Click_3(object sender, EventArgs e)
         {
+            confirmacion = new formularios_padres.Mensajes();
+            confirmacion.
+            confirmacion.Show();
+            Enabled = false;
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;

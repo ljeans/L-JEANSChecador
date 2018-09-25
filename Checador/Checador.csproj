@@ -67,6 +67,12 @@
     <Compile Include="empleados\empleados.Designer.cs">
       <DependentUpon>empleados.cs</DependentUpon>
     </Compile>
+    <Compile Include="formularios padres\Mensajes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formularios padres\Mensajes.Designer.cs">
+      <DependentUpon>Mensajes.cs</DependentUpon>
+    </Compile>
     <Compile Include="horarios\ClaseHorario.cs" />
     <Compile Include="principal.cs">
       <SubType>Form</SubType>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="empleados\empleados.resx">
       <DependentUpon>empleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formularios padres\Mensajes.resx">
+      <DependentUpon>Mensajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="principal.resx">
       <DependentUpon>principal.cs</DependentUpon>
