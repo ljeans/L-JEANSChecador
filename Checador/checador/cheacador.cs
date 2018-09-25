@@ -13,6 +13,9 @@ namespace Checador
         //SE CREA LA INSTANCIA AL OBJETO DE LA CLASE CHECADOR
         ClaseChecador Clase_Checador = new ClaseChecador();
 
+        //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
+        public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
+
         public cheacador()
         {
             InitializeComponent();
@@ -173,6 +176,99 @@ namespace Checador
             //CAMBIAR LA LETRA AL DATAGRIDVIEW
             dgv_checador.DefaultCellStyle.Font = new Font ("Microsoft Sans Serif", 12);
             dgv_checador.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
+        }
+
+        private void btn_scr_fecha_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //FUNCION PARA SINCRONIZAR LA FECHA Y HORA DEL CHECADOR CON LA DEL SERVIDOR
+                var row = dgv_checadorbuscar.CurrentRow;
+                Conectar_Checador(Convert.ToInt32(row.Cells[0].Value), row.Cells[2].Value.ToString(), Convert.ToInt32(row.Cells[3].Value));
+                Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
+                MessageBox.Show("Sincronizado");
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Ocurrió un error al sincronizar la fecha y hora del checador. Intenta de nuevo.");
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void Conectar_Checador(int ID, string IP, int Puerto)
+        {
+            try
+            {
+                //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
+                //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
+                bool bConn = Checador.Connect_Net(IP, Puerto);
+
+                if (bConn == true)
+                {
+                    //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
+                    Checador.EnableDevice(ID, true);
+                }
+                else
+                {
+                    //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
+                    MessageBox.Show("Dispositivo no conectado");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btn_fecha_manual_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //FUNCION PARA SINCRONIZAR LA FECHA Y HORA DEL CHECADOR MANUALMENTE
+                var row = dgv_checadorbuscar.CurrentRow;
+                Conectar_Checador(Convert.ToInt32(row.Cells[0].Value), row.Cells[2].Value.ToString(), Convert.ToInt32(row.Cells[3].Value));
+                Checador.SetDeviceTime2(Convert.ToInt32(row.Cells[0].Value), dtp_fecha.Value.Year, dtp_fecha.Value.Month, dtp_fecha.Value.Day, dtp_hora.Value.Hour, dtp_hora.Value.Minute, dtp_hora.Value.Second);
+                MessageBox.Show("Sincronizado");
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Ocurrió un error al sincronizar la fecha y hora del checador. Intenta de nuevo.");
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btn_scr_eventos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //FUNCION PARA SINCRONIZAR LOS EVENTOS DEL CHECADOR A LA BASE DE DATOS
+                var row = dgv_checadorbuscar.CurrentRow;
+                Conectar_Checador(Convert.ToInt32(row.Cells[0].Value), row.Cells[2].Value.ToString(), Convert.ToInt32(row.Cells[3].Value));
+                string id = string.Empty;
+                int verifyMode = 0, inOutMode = 0, workCode = 0, Error = 0;
+                int Year = 0, Month = 0, Day = 0, Hour = 0, Minute = 0, Second = 0;
+
+                if (Checador.ReadGeneralLogData(Convert.ToInt32(row.Cells[0].Value)))//read all the attendance records to the memory
+                {
+                    while (Checador.SSR_GetGeneralLogData(Convert.ToInt32(row.Cells[0].Value), out id, out verifyMode,
+                               out inOutMode, out Year, out Month, out Day, out Hour, out Minute, out Second, ref workCode))//get records from the memory
+                    {
+                        //MessageBox.Show(verifyMode.ToString());
+                        MessageBox.Show(id + "-" + verifyMode.ToString() + "-" + inOutMode.ToString() + "-" + Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + "-" + Minute.ToString() + "-" + Second.ToString());
+                    }
+                }
+                else
+                {
+                    Checador.GetLastError(ref Error);
+                    MessageBox.Show(Error.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Ocurrió un error al sincronizar la fecha y hora del checador. Intenta de nuevo.");
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

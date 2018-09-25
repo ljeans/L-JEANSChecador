@@ -49,6 +49,7 @@
             this.txt_id_mod = new System.Windows.Forms.TextBox();
             this.btn_modificar = new System.Windows.Forms.Button();
             this.dgv_checadorbuscar = new System.Windows.Forms.DataGridView();
+            this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,12 +63,13 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_siguiente = new System.Windows.Forms.Button();
+            this.dtp_hora = new System.Windows.Forms.DateTimePicker();
+            this.btn_scr_eventos = new System.Windows.Forms.Button();
+            this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
+            this.btn_fecha_manual = new System.Windows.Forms.Button();
+            this.btn_borrar_eventos = new System.Windows.Forms.Button();
+            this.btn_borrar_usuarios = new System.Windows.Forms.Button();
+            this.btn_scr_fecha = new System.Windows.Forms.Button();
             this.sucursalTableAdapter = new Checador.DataSet_ChecadorTableAdapters.sucursalTableAdapter();
             this.vista_ChecadorTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_ChecadorTableAdapter();
             this.tabControlBase.SuspendLayout();
@@ -413,6 +415,7 @@
             this.dgv_checadorbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_checadorbuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_checadorbuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.check,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -420,11 +423,16 @@
             this.dataGridViewTextBoxColumn5});
             this.dgv_checadorbuscar.DataSource = this.vistaChecadorBindingSource;
             this.dgv_checadorbuscar.Location = new System.Drawing.Point(23, 104);
-            this.dgv_checadorbuscar.MultiSelect = false;
             this.dgv_checadorbuscar.Name = "dgv_checadorbuscar";
             this.dgv_checadorbuscar.ReadOnly = true;
             this.dgv_checadorbuscar.Size = new System.Drawing.Size(966, 380);
             this.dgv_checadorbuscar.TabIndex = 83;
+            // 
+            // check
+            // 
+            this.check.HeaderText = "Check";
+            this.check.Name = "check";
+            this.check.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -538,12 +546,13 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.btn_siguiente);
+            this.groupBox1.Controls.Add(this.dtp_hora);
+            this.groupBox1.Controls.Add(this.btn_scr_eventos);
+            this.groupBox1.Controls.Add(this.dtp_fecha);
+            this.groupBox1.Controls.Add(this.btn_fecha_manual);
+            this.groupBox1.Controls.Add(this.btn_borrar_eventos);
+            this.groupBox1.Controls.Add(this.btn_borrar_usuarios);
+            this.groupBox1.Controls.Add(this.btn_scr_fecha);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(23, 493);
             this.groupBox1.Name = "groupBox1";
@@ -552,94 +561,110 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Configuraciones";
             // 
-            // button4
+            // dtp_hora
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(667, 82);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(250, 40);
-            this.button4.TabIndex = 96;
-            this.button4.Text = "Sincronizar eventos";
-            this.button4.UseVisualStyleBackColor = false;
+            this.dtp_hora.CustomFormat = "HH:mm";
+            this.dtp_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_hora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_hora.Location = new System.Drawing.Point(528, 34);
+            this.dtp_hora.Name = "dtp_hora";
+            this.dtp_hora.ShowUpDown = true;
+            this.dtp_hora.Size = new System.Drawing.Size(75, 29);
+            this.dtp_hora.TabIndex = 97;
+            this.dtp_hora.Value = new System.DateTime(2018, 9, 17, 9, 0, 0, 0);
             // 
-            // dateTimePicker1
+            // btn_scr_eventos
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(382, 38);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 29);
-            this.dateTimePicker1.TabIndex = 95;
-            this.dateTimePicker1.Value = new System.DateTime(2018, 9, 11, 12, 35, 0, 0);
+            this.btn_scr_eventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_scr_eventos.FlatAppearance.BorderSize = 0;
+            this.btn_scr_eventos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_scr_eventos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_scr_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_scr_eventos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_scr_eventos.ForeColor = System.Drawing.Color.White;
+            this.btn_scr_eventos.Location = new System.Drawing.Point(667, 82);
+            this.btn_scr_eventos.Name = "btn_scr_eventos";
+            this.btn_scr_eventos.Size = new System.Drawing.Size(250, 40);
+            this.btn_scr_eventos.TabIndex = 96;
+            this.btn_scr_eventos.Text = "Sincronizar eventos";
+            this.btn_scr_eventos.UseVisualStyleBackColor = false;
+            this.btn_scr_eventos.Click += new System.EventHandler(this.btn_scr_eventos_Click);
             // 
-            // button1
+            // dtp_fecha
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(382, 69);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 50);
-            this.button1.TabIndex = 92;
-            this.button1.Text = "Aplicar al dispositivo";
-            this.button1.UseVisualStyleBackColor = false;
+            this.dtp_fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_fecha.Location = new System.Drawing.Point(382, 34);
+            this.dtp_fecha.Name = "dtp_fecha";
+            this.dtp_fecha.Size = new System.Drawing.Size(130, 29);
+            this.dtp_fecha.TabIndex = 95;
+            this.dtp_fecha.Value = new System.DateTime(2018, 9, 11, 12, 35, 0, 0);
             // 
-            // button3
+            // btn_fecha_manual
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(52, 34);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(250, 40);
-            this.button3.TabIndex = 94;
-            this.button3.Text = "Borrar todos los eventos";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btn_fecha_manual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_fecha_manual.FlatAppearance.BorderSize = 0;
+            this.btn_fecha_manual.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_fecha_manual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_fecha_manual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_fecha_manual.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fecha_manual.ForeColor = System.Drawing.Color.White;
+            this.btn_fecha_manual.Location = new System.Drawing.Point(382, 69);
+            this.btn_fecha_manual.Name = "btn_fecha_manual";
+            this.btn_fecha_manual.Size = new System.Drawing.Size(200, 50);
+            this.btn_fecha_manual.TabIndex = 92;
+            this.btn_fecha_manual.Text = "Aplicar al dispositivo";
+            this.btn_fecha_manual.UseVisualStyleBackColor = false;
+            this.btn_fecha_manual.Click += new System.EventHandler(this.btn_fecha_manual_Click);
             // 
-            // button2
+            // btn_borrar_eventos
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(52, 82);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 40);
-            this.button2.TabIndex = 93;
-            this.button2.Text = "Borrar todos los usuarios";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btn_borrar_eventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_borrar_eventos.FlatAppearance.BorderSize = 0;
+            this.btn_borrar_eventos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_borrar_eventos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_borrar_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_borrar_eventos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_borrar_eventos.ForeColor = System.Drawing.Color.White;
+            this.btn_borrar_eventos.Location = new System.Drawing.Point(52, 34);
+            this.btn_borrar_eventos.Name = "btn_borrar_eventos";
+            this.btn_borrar_eventos.Size = new System.Drawing.Size(250, 40);
+            this.btn_borrar_eventos.TabIndex = 94;
+            this.btn_borrar_eventos.Text = "Borrar todos los eventos";
+            this.btn_borrar_eventos.UseVisualStyleBackColor = false;
             // 
-            // btn_siguiente
+            // btn_borrar_usuarios
             // 
-            this.btn_siguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_siguiente.FlatAppearance.BorderSize = 0;
-            this.btn_siguiente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_siguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_siguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_siguiente.ForeColor = System.Drawing.Color.White;
-            this.btn_siguiente.Location = new System.Drawing.Point(667, 34);
-            this.btn_siguiente.Name = "btn_siguiente";
-            this.btn_siguiente.Size = new System.Drawing.Size(250, 40);
-            this.btn_siguiente.TabIndex = 91;
-            this.btn_siguiente.Text = "Sincronizar fecha y hora";
-            this.btn_siguiente.UseVisualStyleBackColor = false;
+            this.btn_borrar_usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_borrar_usuarios.FlatAppearance.BorderSize = 0;
+            this.btn_borrar_usuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_borrar_usuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_borrar_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_borrar_usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_borrar_usuarios.ForeColor = System.Drawing.Color.White;
+            this.btn_borrar_usuarios.Location = new System.Drawing.Point(52, 82);
+            this.btn_borrar_usuarios.Name = "btn_borrar_usuarios";
+            this.btn_borrar_usuarios.Size = new System.Drawing.Size(250, 40);
+            this.btn_borrar_usuarios.TabIndex = 93;
+            this.btn_borrar_usuarios.Text = "Borrar todos los usuarios";
+            this.btn_borrar_usuarios.UseVisualStyleBackColor = false;
+            // 
+            // btn_scr_fecha
+            // 
+            this.btn_scr_fecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_scr_fecha.FlatAppearance.BorderSize = 0;
+            this.btn_scr_fecha.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_scr_fecha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_scr_fecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_scr_fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_scr_fecha.ForeColor = System.Drawing.Color.White;
+            this.btn_scr_fecha.Location = new System.Drawing.Point(667, 34);
+            this.btn_scr_fecha.Name = "btn_scr_fecha";
+            this.btn_scr_fecha.Size = new System.Drawing.Size(250, 40);
+            this.btn_scr_fecha.TabIndex = 91;
+            this.btn_scr_fecha.Text = "Sincronizar fecha y hora";
+            this.btn_scr_fecha.UseVisualStyleBackColor = false;
+            this.btn_scr_fecha.Click += new System.EventHandler(this.btn_scr_fecha_Click);
             // 
             // sucursalTableAdapter
             // 
@@ -706,12 +731,12 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox txt_nombrebuscar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btn_siguiente;
+        private System.Windows.Forms.Button btn_scr_eventos;
+        private System.Windows.Forms.DateTimePicker dtp_fecha;
+        private System.Windows.Forms.Button btn_fecha_manual;
+        private System.Windows.Forms.Button btn_borrar_eventos;
+        private System.Windows.Forms.Button btn_borrar_usuarios;
+        private System.Windows.Forms.Button btn_scr_fecha;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.RadioButton rb_mod_inactivo;
         private System.Windows.Forms.RadioButton rb_mod_activo;
@@ -725,6 +750,8 @@
         private DataSet_ChecadorTableAdapters.sucursalTableAdapter sucursalTableAdapter;
         private System.Windows.Forms.BindingSource vistaChecadorBindingSource;
         private DataSet_ChecadorTableAdapters.Vista_ChecadorTableAdapter vista_ChecadorTableAdapter;
+        private System.Windows.Forms.DateTimePicker dtp_hora;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn check;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
