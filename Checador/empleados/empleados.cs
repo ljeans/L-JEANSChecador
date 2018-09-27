@@ -477,7 +477,6 @@ namespace Checador.empleados
         private void btn_modificar_Click_3(object sender, EventArgs e)
         {
             confirmacion = new formularios_padres.Mensajes();
-            confirmacion.
             confirmacion.Show();
             Enabled = false;
             try

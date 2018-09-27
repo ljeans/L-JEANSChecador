@@ -184,7 +184,7 @@ namespace Checador
             {
                 //FUNCION PARA SINCRONIZAR LA FECHA Y HORA DEL CHECADOR CON LA DEL SERVIDOR
                 var row = dgv_checadorbuscar.CurrentRow;
-                Conectar_Checador(Convert.ToInt32(row.Cells[0].Value), row.Cells[2].Value.ToString(), Convert.ToInt32(row.Cells[3].Value));
+                Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
                 Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
                 MessageBox.Show("Sincronizado");
             }
@@ -227,8 +227,8 @@ namespace Checador
             {
                 //FUNCION PARA SINCRONIZAR LA FECHA Y HORA DEL CHECADOR MANUALMENTE
                 var row = dgv_checadorbuscar.CurrentRow;
-                Conectar_Checador(Convert.ToInt32(row.Cells[0].Value), row.Cells[2].Value.ToString(), Convert.ToInt32(row.Cells[3].Value));
-                Checador.SetDeviceTime2(Convert.ToInt32(row.Cells[0].Value), dtp_fecha.Value.Year, dtp_fecha.Value.Month, dtp_fecha.Value.Day, dtp_hora.Value.Hour, dtp_hora.Value.Minute, dtp_hora.Value.Second);
+                Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
+                Checador.SetDeviceTime2(Convert.ToInt32(row.Cells[1].Value), dtp_fecha.Value.Year, dtp_fecha.Value.Month, dtp_fecha.Value.Day, dtp_hora.Value.Hour, dtp_hora.Value.Minute, dtp_hora.Value.Second);
                 MessageBox.Show("Sincronizado");
             }
             catch (Exception ex)
@@ -244,25 +244,44 @@ namespace Checador
             {
                 //FUNCION PARA SINCRONIZAR LOS EVENTOS DEL CHECADOR A LA BASE DE DATOS
                 var row = dgv_checadorbuscar.CurrentRow;
-                Conectar_Checador(Convert.ToInt32(row.Cells[0].Value), row.Cells[2].Value.ToString(), Convert.ToInt32(row.Cells[3].Value));
+                Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
                 string id = string.Empty;
                 int verifyMode = 0, inOutMode = 0, workCode = 0, Error = 0;
                 int Year = 0, Month = 0, Day = 0, Hour = 0, Minute = 0, Second = 0;
+                DateTime fecha_max;
 
-                if (Checador.ReadGeneralLogData(Convert.ToInt32(row.Cells[0].Value)))//read all the attendance records to the memory
+                if (Checador.ReadGeneralLogData(Convert.ToInt32(row.Cells[1].Value)))//read all the attendance records to the memory
                 {
-                    while (Checador.SSR_GetGeneralLogData(Convert.ToInt32(row.Cells[0].Value), out id, out verifyMode,
+                    fecha_max = Clase_Checador.verificarEvento(Convert.ToInt32(row.Cells[1].Value));
+                    while (Checador.SSR_GetGeneralLogData(Convert.ToInt32(row.Cells[1].Value), out id, out verifyMode,
                                out inOutMode, out Year, out Month, out Day, out Hour, out Minute, out Second, ref workCode))//get records from the memory
                     {
-                        //MessageBox.Show(verifyMode.ToString());
-                        MessageBox.Show(id + "-" + verifyMode.ToString() + "-" + inOutMode.ToString() + "-" + Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + "-" + Minute.ToString() + "-" + Second.ToString());
+                        //VALIDACION PARA SABER DESDE DONDE VAMOS A JALAR LOS EVENTOS DEL CHECADOR [SE BORRARA DESPUES!!]
+
+                        if (fecha_max < Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()))
+                        {
+                            //MessageBox.Show(verifyMode.ToString());
+                            //MessageBox.Show(id + "-" + verifyMode.ToString() + "-" + inOutMode.ToString() + "-" + Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + "-" + Minute.ToString() + "-" + Second.ToString());
+                            ClaseSucursal Sucursal = new ClaseSucursal();
+                            int Id_Sucursal = Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
+                            Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Id_Sucursal, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()));
+                        }
+                        else if (fecha_max == Convert.ToDateTime("1995-12-12 00:00:00"))
+                        {
+                            ClaseSucursal Sucursal = new ClaseSucursal();
+                            int Id_Sucursal = Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
+                            Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Id_Sucursal, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()));
+                        }
                     }
+                    MessageBox.Show("Eventos Sincronizados con exito");
                 }
                 else
                 {
                     Checador.GetLastError(ref Error);
                     MessageBox.Show(Error.ToString());
                 }
+
+                //Clase_Checador.guardarEvento(1,2,2, Convert.ToDateTime("2018-09-25 10:33:00"));
             }
             catch (Exception ex)
             {

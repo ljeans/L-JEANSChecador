@@ -35,3 +35,4 @@ C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.Genera
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.CoreCompileInputs.cache
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.exe
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.pdb
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.Mensajes.resources
