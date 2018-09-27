@@ -49,7 +49,20 @@ namespace Checador
             comand.Parameters.AddWithValue("@horario", horario);
             conexion.Open();
             int id = Convert.ToInt32(comand.ExecuteScalar());
-            MessageBox.Show("este es el id", id.ToString());
+            conexion.Close();
+            return id;
+        }
+
+        //obtienes el id de la sucursal por el nombre
+        public int obtenerIdSucursal(string nombre)
+        {
+            string consulta = "Select id_sucursal From sucursal where nombre=@nombre";
+            Conexion con = new Conexion();
+            SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+            SqlCommand comand = new SqlCommand(consulta, conexion);
+            comand.Parameters.AddWithValue("@nombre", nombre);
+            conexion.Open();
+            int id = Convert.ToInt32(comand.ExecuteScalar());
             conexion.Close();
             return id;
         }

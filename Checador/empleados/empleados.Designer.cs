@@ -168,6 +168,10 @@
             this.btn_modificar = new System.Windows.Forms.Button();
             this.sucursalTableAdapter = new Checador.DataSet_ChecadorTableAdapters.sucursalTableAdapter();
             this.vista_EmpleadosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7cd597b373f093e8ef8639f09d06adb8c8ede9d2
             this.btn_dar_baja = new System.Windows.Forms.Button();
             this.btn_b_modificar = new System.Windows.Forms.Button();
             this.tabControlBase.SuspendLayout();
@@ -1807,6 +1811,10 @@
             // 
             this.vista_EmpleadosTableAdapter.ClearBeforeFill = true;
             // 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7cd597b373f093e8ef8639f09d06adb8c8ede9d2
             // btn_dar_baja
             // 
             this.btn_dar_baja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
@@ -1839,7 +1847,10 @@
             this.btn_b_modificar.TabIndex = 76;
             this.btn_b_modificar.Text = "Modificar";
             this.btn_b_modificar.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
             // 
+=======
+>>>>>>> 7cd597b373f093e8ef8639f09d06adb8c8ede9d2
             // empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

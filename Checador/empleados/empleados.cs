@@ -540,7 +540,13 @@ namespace Checador.empleados
         //FUNCION PARA ACTUALIZAR LOS DATOS DE UN EMPLEADO
         private void btn_modificar_Click_3(object sender, EventArgs e)
         {
+<<<<<<< HEAD
           
+=======
+            confirmacion = new formularios_padres.Mensajes();
+            confirmacion.Show();
+            Enabled = false;
+>>>>>>> 7cd597b373f093e8ef8639f09d06adb8c8ede9d2
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;

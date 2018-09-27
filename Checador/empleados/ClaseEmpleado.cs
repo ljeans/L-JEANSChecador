@@ -367,6 +367,7 @@ namespace Checador
                 return false;
             }
         }
+
         public bool ObtenerSucursal(string suc)
         {
             try
@@ -407,7 +408,7 @@ namespace Checador
             }
         }
 
-        public bool verificar_horario(string horario)//Funcion que hace el select retorna false si no hay resultados
+        /*public bool verificar_horario(string horario)//Funcion que hace el select retorna false si no hay resultados
         {
             try
             {
@@ -444,7 +445,7 @@ namespace Checador
                 MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
                 return false;
             }
-        }
+        }*/
 
         //FUNCION PARA REGISTRAR EMPLEADO_SUCURSAL
         public void guardarEmpleado_Sucursal()
@@ -460,6 +461,11 @@ namespace Checador
                 SqlCommand comand = new SqlCommand(consulta, conexion);
                 comand.Parameters.AddWithValue("@id", id);
                 comand.Parameters.AddWithValue("@fecha_salida", guardarsuc);
+<<<<<<< HEAD
+=======
+                MessageBox.Show(guardarsuc.ToString());
+                MessageBox.Show(id.ToString());
+>>>>>>> 7cd597b373f093e8ef8639f09d06adb8c8ede9d2
                 comand.ExecuteNonQuery();
                 conexion.Close();
 

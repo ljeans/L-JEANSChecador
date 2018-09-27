@@ -223,5 +223,128 @@ namespace Checador
         }
 
 
+        //FUNCION PARA REGISTRAR EVENTO DEL CHECADOR EN LA BD
+        public void guardarEvento(int id_checador, int id_empleado, int id_sucursal, DateTime fecha_evento)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                //SqlConnection con = new SqlConnection(conexion.cadenaConexion);
+                using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
+                {
+                    string select = "SELECT * FROM registros WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_entrada > '" + fecha_evento.Year + "-" + fecha_evento.Month.ToString("d2") + "-" + fecha_evento.Day.ToString("d2") + "T00:00:00.000' and fecha_entrada	< '" + fecha_evento.Year + "-" + fecha_evento.Month.ToString("d2") + "-" + fecha_evento.Day.ToString("d2") + "T23:59:59.000' and fecha_salida is Null;";//Consulta
+                    SqlCommand comando = new SqlCommand(select, con);//Nuevo objeto sqlcommand
+                    comando.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                    comando.Parameters.AddWithValue("@id_empleado", id_empleado);
+                    comando.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                    con.Open();//abre la conexion
+                    SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
+                    if (lector.HasRows)//Revisa si hay resultados
+                    {
+
+                        con.Close();
+                        //HACER UPDATE PARA INSERTAR LA FECHA DE SALIDA
+                        string consulta = "UPDATE registros SET fecha_salida = @fecha_evento WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_entrada > '" + fecha_evento.Year + "-" + fecha_evento.Month.ToString("d2") + "-" + fecha_evento.Day.ToString("d2") + "T00:00:00.000' and fecha_entrada	< '" + fecha_evento.Year + "-" + fecha_evento.Month.ToString("d2") + "-" + fecha_evento.Day.ToString("d2") + "T23:59:59.000' and fecha_salida is Null;";
+                        Conexion con2 = new Conexion();
+                        SqlConnection conexion2 = new SqlConnection(con2.cadenaConexion);
+                        conexion2.Open();
+                        SqlCommand comand = new SqlCommand(consulta, conexion2);
+                        comand.Parameters.AddWithValue("@fecha_evento", fecha_evento);
+                        comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                        comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+                        comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                        comand.ExecuteNonQuery();
+                        conexion2.Close();
+                        //MessageBox.Show("Evento modificado con exito");
+
+                    }
+                    else
+                    {
+                        con.Close();
+
+                        //GUARDAR NUEVO EVENTO
+                        string consulta = "INSERT INTO registros VALUES (@id_checador,@id_empleado,@id_sucursal,@fecha_entrada, @fecha_salida)";
+                        Conexion con2 = new Conexion();
+                        SqlConnection conexion2 = new SqlConnection(con2.cadenaConexion);
+                        conexion2.Open();
+                        SqlCommand comand = new SqlCommand(consulta, conexion2);
+                        comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                        comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+                        comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                        comand.Parameters.AddWithValue("@fecha_entrada", fecha_evento);
+                        comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
+                        comand.ExecuteNonQuery();
+                        conexion2.Close();
+                        //MessageBox.Show("Evento registrado con exito");
+
+                    }
+                }
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+            }
+        }
+
+        //FUNCION PARA VERIFICAR EL ULTIMO EVENTO REGISTRADO
+        public DateTime verificarEvento(int id_checador)
+        {
+            try
+            {
+                DateTime fecha_entrada, fecha_salida;
+                Conexion conexion = new Conexion();
+                //SqlConnection con = new SqlConnection(conexion.cadenaConexion);
+                using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
+                {
+                    string select = "select Max(fecha_entrada) as fecha_entrada, Max(fecha_salida) as fecha_salida from registros WHERE id_checador = @id_checador;";//Consulta
+                    SqlCommand comando = new SqlCommand(select, con);//Nuevo objeto sqlcommand
+                    comando.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                    con.Open();//abre la conexion
+                    SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
+                    if (lector.HasRows)//Revisa si hay resultados
+                    {
+                        lector.Read();
+                        if (lector.GetDateTime(lector.GetOrdinal("fecha_entrada")) != null && lector.GetDateTime(lector.GetOrdinal("fecha_salida")) != null)
+                        {
+                            fecha_entrada = lector.GetDateTime(lector.GetOrdinal("fecha_entrada"));
+                            fecha_salida = lector.GetDateTime(lector.GetOrdinal("fecha_salida"));
+
+                            if (fecha_salida > fecha_entrada)
+                            {
+                                return fecha_salida;
+                            }
+                            else if (fecha_salida < fecha_entrada)
+                            {
+                                return fecha_entrada;
+                            }
+                            else
+                            {
+                                return fecha_entrada;
+                            }
+                        }
+                        else
+                        {
+                            return Convert.ToDateTime("1995-12-12 00:00:00");
+                        }
+
+                    }
+                    else
+                    {
+                        return Convert.ToDateTime("1995-12-12 00:00:00");
+                    }
+
+                }
+            }
+            catch (Exception e)
+            {
+                //MessageBox.Show(e.ToString());
+                return Convert.ToDateTime("1995-12-12 00:00:00");
+                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+            }
+        }
+
+
     }
 }
