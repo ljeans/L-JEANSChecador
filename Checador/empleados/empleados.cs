@@ -18,14 +18,18 @@ namespace Checador.empleados
         ClaseEmpleado Empleado = new ClaseEmpleado();
         ClaseHorario horario = new ClaseHorario();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
+        formularios_padres.Mensajes confirmacion2 = new formularios_padres.Mensajes();
+        formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
 
         //SE CREA LA INSTANCIA DE LA CLASE CHECADOR
         ClaseChecador clase_checador = new ClaseChecador();
-
+      
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
-        public int sucurzal;
+        public int sucurzal, verificador=0;
         public string valor_datagrid;
+        public bool respuesta = false;
+
         public empleados()
         {
             InitializeComponent();
@@ -180,16 +184,16 @@ namespace Checador.empleados
 
                 Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
 
-                if (MessageBox.Show("Desea registrar huella al empleado?", "registrar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    tabControlBase.SelectedTab = tabPage3;
-                    cbx_huella.SelectedIndex = 6;
-                }
-                else {
-                    tabControlBase.SelectedTab = tabPage1;
-                    txt_curp.Focus();
-                }
+
+                confirmacion2 = new formularios_padres.Mensajes();
+                confirmacion2.lbl_mensaje.Text = "Desea registrar huella al empleado?";
+                confirmacion2.FormClosed += new FormClosedEventHandler(mod_huella);
+                confirmacion2.Show();
+                Enabled = false;
                 Limpiar();
+
+
+
             }
             catch (Exception ex)
             {
@@ -205,7 +209,7 @@ namespace Checador.empleados
             //ATENCION SE NECESITA MODIFICAR EL PRIMER PARAMETRO DE LA FUNCION POR EL ID DEL CHECADOR CORRESPONDIENTE
             if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
             {
-                MessageBox.Show("Registrado en el checador");
+             
             }
             else
             {
@@ -454,13 +458,16 @@ namespace Checador.empleados
                 MessageBox.Show("Empleado no registrado. Por favor intente de nuevo.");
             }
         }
-        
+
 
         private void Checador_OnEnrollFinger(int EnrollNumber, int FingerIndex, int ActionResult, int TemplateLenght)
         {
-            pic_huella_mod.Image = Image.FromFile("..\\..\\Resources\\huellaregistred.png");
-            MessageBox.Show("Huella registrada con exito");
-        
+            verificador = verificador + 1;
+            if (verificador == 1)
+            {
+                pic_huella_mod.Image = Image.FromFile("..\\..\\Resources\\huellaregistred.png");
+            }
+           
         }
 
         private void btn_modificar_Click_2(object sender, EventArgs e)
@@ -472,14 +479,68 @@ namespace Checador.empleados
                 cbx_huella.SelectedIndex = 6;
             }
         }
+        //****************** NECESARIOS PARA MOSTRAR MENSAJES *****************
+        private void responder(object sender, EventArgs e)
+        {
+            Enabled = true;
+            respuesta = confirmacion.respuesta;
+           
+            if (respuesta == true)
+            {
+                Empleado.Modificar_Empleado();
+                if (sucurzal != Convert.ToInt32(cbx_sucursal.SelectedValue.ToString()))
+                {
+                    Empleado.guardarEmpleado_Sucursal();
+                    //SE OBTIENEN LOS DATOS DEL CHECADOR
+                    clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
+                    Conectar_Checador();
+                }
+                else
+                {
+                  
+                }
+            }
+            confirmacion = null;
 
+          
+            confirmacion2 = new formularios_padres.Mensajes();
+            confirmacion2.lbl_mensaje.Text = "Desea cambiar huella al empleado?";
+            confirmacion2.FormClosed += new FormClosedEventHandler(mod_huella);
+            confirmacion2.Show();
+            Enabled = false;
+
+        }
+        private void mod_huella(object sender, EventArgs e)
+        {
+            //**************
+         
+            //****************
+
+            Enabled = true;
+            respuesta = confirmacion2.respuesta;
+            if (respuesta == true)
+            {
+                tabControlBase.SelectedTab = tabPage3;
+                cbx_huella.SelectedIndex = 6;
+            }
+            else
+            {
+                tabControlBase.SelectedTab = tabPage5;
+                txt_id_a_modificar.Clear();
+            }
+            confirmacion2 = null;
+        }
+
+        void vaciar_instancia_mensaje(Object sender, EventArgs e)
+        {
+            mensaje = null;
+            Enabled = true;
+        }
+        //**********************************************************************
         //FUNCION PARA ACTUALIZAR LOS DATOS DE UN EMPLEADO
         private void btn_modificar_Click_3(object sender, EventArgs e)
         {
-            confirmacion = new formularios_padres.Mensajes();
-            confirmacion.
-            confirmacion.Show();
-            Enabled = false;
+          
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;
@@ -537,31 +598,14 @@ namespace Checador.empleados
                
                 Empleado.tipo_salario = txt_tipo_salario.Text;
                 Empleado.password = txt_contra.Text;
-                Empleado.Modificar_Empleado();
-                if (sucurzal != Convert.ToInt32(cbx_sucursal.SelectedValue.ToString()))
-                {
-                    Empleado.guardarEmpleado_Sucursal();
-                }
-                else
-                {
-                    MessageBox.Show("no entro");
-                }
-                //SE OBTIENEN LOS DATOS DEL CHECADOR
-                clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
-                Conectar_Checador();
 
-                if
-                (MessageBox.Show("Desea cambiar huella al empleado?", "cambiar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    tabControlBase.SelectedTab = tabPage3;
-                    cbx_huella.SelectedIndex = 6;
-                }
-                else
-                {
-                    tabControlBase.SelectedTab = tabPage5;
-                    txt_id_a_modificar.Clear();
-                }
-                Limpiar();
+                confirmacion = new formularios_padres.Mensajes();
+                confirmacion.lbl_mensaje.Text = "¿Esta Seguro que desea modificar el empleado?";
+                confirmacion.FormClosed += new FormClosedEventHandler(responder);
+                confirmacion.Show();
+                Enabled = false;
+
+
             }
             catch (Exception ex)
             {
@@ -603,7 +647,12 @@ namespace Checador.empleados
 
         private void btn_guardar_huella_Click(object sender, EventArgs e)
         {
-            tabControlBase.SelectedTab = tabPage1;
+            mensaje = new formularios_padres.mensaje_info();
+            mensaje.lbl_info.Text = "La huella ha sido guardada";
+            mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+            mensaje.Show();
+            Limpiar();
+            tabControlBase.SelectedTab = tabPage5;
             txt_curp.Focus();
         }
 

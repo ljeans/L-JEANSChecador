@@ -11,6 +11,7 @@ namespace Checador
     public class ClaseEmpleado
     {
         ClaseHorario horario = new ClaseHorario();
+        formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
         public int id { get; set; }
         public int id_sucursal { get; set; }
         public string nombre { get; set; }
@@ -144,7 +145,12 @@ namespace Checador
 
                 comand.ExecuteNonQuery();
                 conexion.Close();
-                MessageBox.Show("Empleado registrado con éxito. ID= " + id.ToString());
+
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Empleado registrado con éxito. ID= " + id.ToString();
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+
 
             }
             catch (Exception e)
@@ -205,13 +211,24 @@ namespace Checador
                 comand.Parameters.AddWithValue("@password", password);
                 comand.ExecuteNonQuery();
                 conexion.Close();
-                MessageBox.Show("Empleado modificado con éxito. ID= " + id.ToString());
+
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Empleado modificado con éxito. ID= " + id.ToString();
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
             }
             catch (Exception e)
             {
 
                 MessageBox.Show(e.ToString());
             }
+        }
+
+
+        void vaciar_instancia_mensaje(Object sender, EventArgs e)
+        {
+            mensaje = null;
+        
         }
 
         //FUNCION PARA DAR DE BAJA UN EMPLEADO CAMBIANDO EL ESTATUS
@@ -230,7 +247,12 @@ namespace Checador
                 comand.ExecuteNonQuery();
 
                 conexion.Close();
-                MessageBox.Show("Empleado dado de baja con éxito. ID= " + id.ToString());
+
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Empleado dado de baja con éxito.ID = " + id.ToString();
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+              
 
             }
             catch (Exception e)
@@ -365,7 +387,7 @@ namespace Checador
                         //get ordinal regresa el indice de la fila
                         //el Nombre especificado en el parametro
                         id_sucursal = lector.GetInt32(lector.GetOrdinal("id_sucursal"));
-                        MessageBox.Show(id_sucursal.ToString());
+                      
                         con.Close();
                         return true;
                     }
@@ -430,7 +452,6 @@ namespace Checador
             guardarsuc = fecha_alta;
             try
             {
-                MessageBox.Show("si se ejecuta el update");
                 //Registrar SUCURSAL
                 string consulta = "UPDATE empleado_sucursal SET fecha_salida=@fecha_salida Where id_empleado=@id and fecha_salida is Null;";
                 Conexion con = new Conexion();
@@ -439,9 +460,6 @@ namespace Checador
                 SqlCommand comand = new SqlCommand(consulta, conexion);
                 comand.Parameters.AddWithValue("@id", id);
                 comand.Parameters.AddWithValue("@fecha_salida", guardarsuc);
-                comand.Parameters.AddWithValue("@null", DBNull.Value);
-                MessageBox.Show(guardarsuc.ToString());
-                MessageBox.Show(id.ToString());
                 comand.ExecuteNonQuery();
                 conexion.Close();
 

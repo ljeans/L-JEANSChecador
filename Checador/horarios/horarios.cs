@@ -12,7 +12,10 @@ namespace Checador
     public partial class horarios : Checador.formularios_padres.formpadre
     {
         ClaseHorario Horario = new ClaseHorario();
+        formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+        formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
 
+        public bool respuesta = false;
 
         public horarios()
         {
@@ -62,7 +65,26 @@ namespace Checador
 
         }
 
-// MODIFICAR///////////////////////////////////////////////////////////////////////////////////
+        private void responder(object sender, EventArgs e)
+        {
+            Enabled = true;
+            respuesta = confirmacion.respuesta;
+
+            if (respuesta == true)
+            {
+                Horario.Modificar_Horario();
+                Limpiar();
+                tabControlBase.SelectedTab = tabPage2;
+            }
+            else
+            {
+
+            }
+            confirmacion = null;
+
+        }
+
+        // MODIFICAR///////////////////////////////////////////////////////////////////////////////////
         private void btn_modificar_Click(object sender, EventArgs e)
         {
             try
@@ -125,13 +147,17 @@ namespace Checador
                     Horario.domingo = 0;
                 }
 
-                Horario.Modificar_Horario();
-                Limpiar();
-                tabControlBase.SelectedTab = tabPage2;
+
+                confirmacion = new formularios_padres.Mensajes();
+                confirmacion.lbl_mensaje.Text = "¿Esta Seguro que desea modificar el horario?";
+                confirmacion.FormClosed += new FormClosedEventHandler(responder);
+                confirmacion.Show();
+                Enabled = false;
+               
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
     }
 

@@ -10,24 +10,16 @@ using System.Windows.Forms;
 
 namespace Checador.formularios_padres
 {
-    public partial class Mensajes : Form
+    public partial class mensaje_info : Form
     {
-        public Mensajes()
+        public mensaje_info()
         {
             InitializeComponent();
         }
 
-        public bool respuesta = false;
-
-        private void btn_modificar_Click(object sender, EventArgs e)
+        private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            respuesta = true;
-            Close();
-        }
-
-        private void btn_no_Click(object sender, EventArgs e)
-        {
-            Close();
+            this.Close();
         }
     }
 }

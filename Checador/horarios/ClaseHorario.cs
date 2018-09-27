@@ -28,6 +28,10 @@ namespace Checador
         public TimeSpan hora_entrada_descanso { get; set; }
         public int tolerancia { get; set; }
 
+        formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+
+
+
         //FUNCION PARA OBTENER EL ID MAXIMO DEL HORARIO POR SI ES AUTOINCREMENTABLE EL ID
         public int obtenerIdMaximo()
         {
@@ -39,6 +43,13 @@ namespace Checador
             int idMaximo = Convert.ToInt32(comand.ExecuteScalar());
             conexion.Close();
             return idMaximo;
+        }
+
+
+        void vaciar_instancia_mensaje(Object sender, EventArgs e)
+        {
+            mensaje = null;
+           
         }
 
         //FUNCION PARA REGISTRAR UN HORARIO
@@ -71,7 +82,12 @@ namespace Checador
 
                 comand.ExecuteNonQuery();
                 conexion.Close();
-                MessageBox.Show("Horario registrado con éxito. ID= " + id.ToString());
+
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Horario Registrado con exito. ID= " + id.ToString();
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+                
 
             }
             catch (Exception e)
@@ -109,7 +125,12 @@ namespace Checador
                 comand.Parameters.AddWithValue("@tolerancia", tolerancia);
                 comand.ExecuteNonQuery();
                 conexion.Close();
-                MessageBox.Show("Horario modificado con éxito. ID= " + id.ToString());
+
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Horario Modificado con exito. ID= " + id.ToString();
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+
             }
             catch (Exception e)
             {

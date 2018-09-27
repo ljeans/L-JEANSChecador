@@ -28,44 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_modificar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_si = new System.Windows.Forms.Button();
+            this.btn_no = new System.Windows.Forms.Button();
             this.lbl_mensaje = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // btn_modificar
+            // btn_si
             // 
-            this.btn_modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_modificar.FlatAppearance.BorderSize = 0;
-            this.btn_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_modificar.ForeColor = System.Drawing.Color.White;
-            this.btn_modificar.Location = new System.Drawing.Point(390, 188);
-            this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(75, 50);
-            this.btn_modificar.TabIndex = 19;
-            this.btn_modificar.Text = "Si";
-            this.btn_modificar.UseVisualStyleBackColor = false;
-            this.btn_modificar.Visible = false;
+            this.btn_si.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_si.FlatAppearance.BorderSize = 0;
+            this.btn_si.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_si.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_si.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_si.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_si.ForeColor = System.Drawing.Color.White;
+            this.btn_si.Location = new System.Drawing.Point(386, 141);
+            this.btn_si.Name = "btn_si";
+            this.btn_si.Size = new System.Drawing.Size(75, 50);
+            this.btn_si.TabIndex = 19;
+            this.btn_si.Text = "Si";
+            this.btn_si.UseVisualStyleBackColor = false;
+            this.btn_si.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
-            // button1
+            // btn_no
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(298, 188);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 50);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "No";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
+            this.btn_no.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_no.FlatAppearance.BorderSize = 0;
+            this.btn_no.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_no.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_no.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_no.ForeColor = System.Drawing.Color.White;
+            this.btn_no.Location = new System.Drawing.Point(286, 141);
+            this.btn_no.Name = "btn_no";
+            this.btn_no.Size = new System.Drawing.Size(75, 50);
+            this.btn_no.TabIndex = 20;
+            this.btn_no.Text = "No";
+            this.btn_no.UseVisualStyleBackColor = false;
+            this.btn_no.Click += new System.EventHandler(this.btn_no_Click);
             // 
             // lbl_mensaje
             // 
@@ -77,17 +78,27 @@
             this.lbl_mensaje.TabIndex = 22;
             this.lbl_mensaje.Text = "¿Esta Seguro que dar de baja al empleado?";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel1.Location = new System.Drawing.Point(-1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(488, 37);
+            this.panel1.TabIndex = 45;
+            // 
             // Mensajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(500, 250);
+            this.ClientSize = new System.Drawing.Size(484, 211);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_mensaje);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_modificar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Controls.Add(this.btn_no);
+            this.Controls.Add(this.btn_si);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Mensajes";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Confirmación";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -95,9 +106,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_modificar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lbl_mensaje;
+        public System.Windows.Forms.Label lbl_mensaje;
+        public System.Windows.Forms.Button btn_si;
+        public System.Windows.Forms.Button btn_no;
+        private System.Windows.Forms.Panel panel1;
     }
 }
