@@ -598,7 +598,7 @@
             this.dtp_fecha.Name = "dtp_fecha";
             this.dtp_fecha.Size = new System.Drawing.Size(130, 29);
             this.dtp_fecha.TabIndex = 95;
-            this.dtp_fecha.Value = new System.DateTime(2018, 9, 11, 12, 35, 0, 0);
+            this.dtp_fecha.Value = new System.DateTime(2018, 9, 28, 0, 0, 0, 0);
             // 
             // btn_fecha_manual
             // 
@@ -632,6 +632,7 @@
             this.btn_borrar_eventos.TabIndex = 94;
             this.btn_borrar_eventos.Text = "Borrar todos los eventos";
             this.btn_borrar_eventos.UseVisualStyleBackColor = false;
+            this.btn_borrar_eventos.Click += new System.EventHandler(this.btn_borrar_eventos_Click);
             // 
             // btn_borrar_usuarios
             // 
@@ -648,6 +649,7 @@
             this.btn_borrar_usuarios.TabIndex = 93;
             this.btn_borrar_usuarios.Text = "Borrar todos los usuarios";
             this.btn_borrar_usuarios.UseVisualStyleBackColor = false;
+            this.btn_borrar_usuarios.Click += new System.EventHandler(this.btn_borrar_usuarios_Click);
             // 
             // btn_scr_fecha
             // 

@@ -54,17 +54,34 @@ namespace Checador
         }
 
         //obtienes el id de la sucursal por el nombre
-        public int obtenerIdSucursal(string nombre)
+        public void obtenerIdSucursal(string nombre)
         {
-            string consulta = "Select id_sucursal From sucursal where nombre=@nombre";
+            string consulta = "Select id_sucursal, id_horario From sucursal where nombre=@nombre";
             Conexion con = new Conexion();
             SqlConnection conexion = new SqlConnection(con.cadenaConexion);
             SqlCommand comand = new SqlCommand(consulta, conexion);
             comand.Parameters.AddWithValue("@nombre", nombre);
             conexion.Open();
-            int id = Convert.ToInt32(comand.ExecuteScalar());
+            /*int id = Convert.ToInt32(comand.ExecuteScalar());
+            id_horario = 
             conexion.Close();
-            return id;
+            return id;*/
+
+            SqlDataReader lector = comand.ExecuteReader();//Ejecuta el comadno
+            if (lector.HasRows)//Revisa si hay resultados
+            {
+                lector.Read();//Lee una linea de los resultados
+                              //this.id = ;//Asignacion a atributos
+                              //get ordinal regresa el indice de la fila
+                              //el Nombre especificado en el parametro 
+                id = lector.GetInt32(lector.GetOrdinal("id_sucursal"));
+                id_horario = lector.GetInt32(lector.GetOrdinal("id_horario"));
+                conexion.Close();
+            }
+            else
+            {
+                conexion.Close();
+            }
         }
 
 

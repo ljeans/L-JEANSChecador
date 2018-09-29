@@ -23,7 +23,10 @@ namespace Checador.empleados
 
         //SE CREA LA INSTANCIA DE LA CLASE CHECADOR
         ClaseChecador clase_checador = new ClaseChecador();
-      
+
+        //VARIABLE DE CONEXION DEL CHECADOR
+        bool bConn;
+
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
         public int sucurzal, verificador=0;
@@ -182,9 +185,11 @@ namespace Checador.empleados
                 clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
                 Conectar_Checador();
 
-                Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
-
-
+                if (bConn)
+                {
+                    Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
+                }
+                
                 confirmacion2 = new formularios_padres.Mensajes();
                 confirmacion2.lbl_mensaje.Text = "Desea registrar huella al empleado?";
                 confirmacion2.FormClosed += new FormClosedEventHandler(mod_huella);
@@ -206,7 +211,6 @@ namespace Checador.empleados
         {
             int error = 0;
 
-            //ATENCION SE NECESITA MODIFICAR EL PRIMER PARAMETRO DE LA FUNCION POR EL ID DEL CHECADOR CORRESPONDIENTE
             if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
             {
              
@@ -224,7 +228,7 @@ namespace Checador.empleados
             {
                 //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
                 //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
-                bool bConn = Checador.Connect_Net(clase_checador.ip, Convert.ToInt32(clase_checador.puerto));
+                bConn = Checador.Connect_Net(clase_checador.ip, Convert.ToInt32(clase_checador.puerto));
 
                 if (bConn == true)
                 {
@@ -540,13 +544,9 @@ namespace Checador.empleados
         //FUNCION PARA ACTUALIZAR LOS DATOS DE UN EMPLEADO
         private void btn_modificar_Click_3(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-          
-=======
             confirmacion = new formularios_padres.Mensajes();
             confirmacion.Show();
             Enabled = false;
->>>>>>> 7cd597b373f093e8ef8639f09d06adb8c8ede9d2
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;
@@ -605,6 +605,15 @@ namespace Checador.empleados
                 Empleado.tipo_salario = txt_tipo_salario.Text;
                 Empleado.password = txt_contra.Text;
 
+                //SE OBTIENEN LOS DATOS DEL CHECADOR
+                clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
+                Conectar_Checador();
+
+                if (bConn)
+                {
+                    Modificar_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
+                }
+
                 confirmacion = new formularios_padres.Mensajes();
                 confirmacion.lbl_mensaje.Text = "¿Esta Seguro que desea modificar el empleado?";
                 confirmacion.FormClosed += new FormClosedEventHandler(responder);
@@ -616,6 +625,22 @@ namespace Checador.empleados
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        //FUNCION PARA MODIFICAR USUARIO EN EL CHECADOR
+        public void Modificar_Usuario_Checador(int id_checador, string id_empleado, string nombre, string contra, int privilegio)
+        {
+            int error = 0;
+            
+            if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
+            {
+
+            }
+            else
+            {
+                Checador.GetLastError(ref error);
+                MessageBox.Show(error.ToString());
             }
         }
 
