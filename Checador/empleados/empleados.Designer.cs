@@ -168,10 +168,6 @@
             this.btn_modificar = new System.Windows.Forms.Button();
             this.sucursalTableAdapter = new Checador.DataSet_ChecadorTableAdapters.sucursalTableAdapter();
             this.vista_EmpleadosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter();
-<<<<<<< HEAD
-=======
-
->>>>>>> 7cd597b373f093e8ef8639f09d06adb8c8ede9d2
             this.btn_dar_baja = new System.Windows.Forms.Button();
             this.btn_b_modificar = new System.Windows.Forms.Button();
             this.tabControlBase.SuspendLayout();
@@ -1794,7 +1790,7 @@
             this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.ForeColor = System.Drawing.Color.White;
-            this.btn_modificar.Location = new System.Drawing.Point(711, 548);
+            this.btn_modificar.Location = new System.Drawing.Point(709, 548);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(250, 70);
             this.btn_modificar.TabIndex = 42;
@@ -1811,10 +1807,6 @@
             // 
             this.vista_EmpleadosTableAdapter.ClearBeforeFill = true;
             // 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7cd597b373f093e8ef8639f09d06adb8c8ede9d2
             // btn_dar_baja
             // 
             this.btn_dar_baja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
@@ -1847,10 +1839,7 @@
             this.btn_b_modificar.TabIndex = 76;
             this.btn_b_modificar.Text = "Modificar";
             this.btn_b_modificar.UseVisualStyleBackColor = false;
-<<<<<<< HEAD
             // 
-=======
->>>>>>> 7cd597b373f093e8ef8639f09d06adb8c8ede9d2
             // empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

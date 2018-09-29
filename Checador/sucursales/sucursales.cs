@@ -14,7 +14,11 @@ namespace Checador
         //SE CREA LA INSTANCIA AL OBJETO DE LA CLASE SUCURSAL
         ClaseSucursal Sucursal = new ClaseSucursal();
         ClaseHorario horario = new ClaseHorario();
+        formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+        formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
         int idhorario;
+        public bool respuesta = false;
+
         public sucursales()
         {
             InitializeComponent();
@@ -92,6 +96,26 @@ namespace Checador
             }
         }
 
+        private void responder(object sender, EventArgs e)
+        {
+            Enabled = true;
+            respuesta = confirmacion.respuesta;
+            MessageBox.Show(respuesta.ToString());
+            if (respuesta == true)
+            {
+                Sucursal.Modificar_Sucursal();
+                Limpiar();       
+            }
+            else
+            {
+              
+            }
+            confirmacion = null;
+            tabControlBase.SelectedTab = tabPage3;
+            respuesta = false;
+        }
+
+
         private void btn_registrar_Click(object sender, EventArgs e)
         {
             try
@@ -110,6 +134,7 @@ namespace Checador
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
                 Sucursal.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
+
                 Sucursal.guardarSucursal();
                 Limpiar();
             }
@@ -202,9 +227,13 @@ namespace Checador
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
                 Sucursal.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
-                Sucursal.Modificar_Sucursal();
-                tabControlBase.SelectedTab = tabPage3;
                 txt_id_mod.Text = "";
+
+                confirmacion = new formularios_padres.Mensajes();
+                confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea modificar el horario?";
+                confirmacion.FormClosed += new FormClosedEventHandler(responder);
+                confirmacion.Show();
+                Enabled = false;
                 Limpiar();
             }
             catch (Exception ex)

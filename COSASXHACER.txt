@@ -1,7 +1,5 @@
 - Realizar funciones en el checador
 	-Agregar retardo y contador de tiempo al empleado cuando cheque.
-- Modificar en el checador el empleado (LOS QUE SE ALMACENAN AHI)
-- MENSAJE DE ESTAR SEGURO EN MODIFICAR Y ELIMINAR
 - Filtrar los buscar
 - Hacer HILOS
 - Poner bonitos los datagrid

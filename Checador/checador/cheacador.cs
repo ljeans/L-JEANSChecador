@@ -12,6 +12,9 @@ namespace Checador
     {
         //SE CREA LA INSTANCIA AL OBJETO DE LA CLASE CHECADOR
         ClaseChecador Clase_Checador = new ClaseChecador();
+        formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+        formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
+        public bool respuesta = false;
 
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
@@ -52,7 +55,32 @@ namespace Checador
 
         }
 
-//MODIFICAR///////////////////////////////////////////////////////////////////////
+        private void responder(object sender, EventArgs e)
+        {
+            Enabled = true;
+            respuesta = confirmacion.respuesta;
+
+            if (respuesta == true)
+            {
+                Clase_Checador.Modificar_Checador();
+                tabControlBase.SelectedTab = tabPage2;
+                Limpiar();
+            }
+            else
+            {
+
+            }
+            confirmacion = null;
+
+        }
+
+        void vaciar_instancia_mensaje(Object sender, EventArgs e)
+        {
+            mensaje = null;
+
+        }
+
+        //MODIFICAR///////////////////////////////////////////////////////////////////////
         //FUNCION PARA ACTUALIZAR LOS DATOS EN LA BD DEL CHECADOR
         private void btn_modificar_Click(object sender, EventArgs e)
         {
@@ -69,7 +97,12 @@ namespace Checador
                 {
                     Clase_Checador.estatus = "I";
                 }
-                Clase_Checador.Modificar_Checador();
+                confirmacion = new formularios_padres.Mensajes();
+                confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea modificar el checador?";
+                confirmacion.FormClosed += new FormClosedEventHandler(responder);
+                confirmacion.Show();
+                Enabled = false;
+             
                 tabControlBase.SelectedTab = tabPage2;
                 Limpiar();
             }
@@ -107,7 +140,12 @@ namespace Checador
             }
             else
             {
-                MessageBox.Show("Checador no registrado. Por favor intente de nuevo.");
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Checador no registrado. Por favor intente de nuevo.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+
+               
             }
             
         }
@@ -186,7 +224,8 @@ namespace Checador
                 var row = dgv_checadorbuscar.CurrentRow;
                 Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
                 Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
-                MessageBox.Show("Sincronizado");
+              
+
             }
             catch (Exception ex)
             {
@@ -211,7 +250,11 @@ namespace Checador
                 else
                 {
                     //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
-                    MessageBox.Show("Dispositivo no conectado");
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Dispositivo no conectado";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.Show();
+
                 }
 
             }
@@ -229,7 +272,11 @@ namespace Checador
                 var row = dgv_checadorbuscar.CurrentRow;
                 Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
                 Checador.SetDeviceTime2(Convert.ToInt32(row.Cells[1].Value), dtp_fecha.Value.Year, dtp_fecha.Value.Month, dtp_fecha.Value.Day, dtp_hora.Value.Hour, dtp_hora.Value.Minute, dtp_hora.Value.Second);
-                MessageBox.Show("Sincronizado");
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Sincronizado.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+
             }
             catch (Exception ex)
             {
@@ -273,7 +320,11 @@ namespace Checador
                             Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Id_Sucursal, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()));
                         }
                     }
-                    MessageBox.Show("Eventos Sincronizados con exito");
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Eventos sincronizados con exito.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.Show();
+
                 }
                 else
                 {

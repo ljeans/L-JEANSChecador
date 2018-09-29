@@ -15,6 +15,8 @@ namespace Checador
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
 
+
+
         public bool respuesta = false;
 
         public horarios()
@@ -38,6 +40,11 @@ namespace Checador
             {
                 txt_id.Text = "1";
             }
+        }
+        void vaciar_instancia_mensaje(Object sender, EventArgs e)
+        {
+            mensaje = null;
+
         }
 
 
@@ -149,7 +156,7 @@ namespace Checador
 
 
                 confirmacion = new formularios_padres.Mensajes();
-                confirmacion.lbl_mensaje.Text = "¿Esta Seguro que desea modificar el horario?";
+                confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea modificar el horario?";
                 confirmacion.FormClosed += new FormClosedEventHandler(responder);
                 confirmacion.Show();
                 Enabled = false;
@@ -260,7 +267,11 @@ namespace Checador
                 btn_modificar.Visible = true;
             }else
             {
-                MessageBox.Show("Horario no registrado. Por favor intente de nuevo.");
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Horario no registrado. Por favor intente de nuevo.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+               
             }
         }
 

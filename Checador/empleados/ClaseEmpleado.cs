@@ -461,11 +461,6 @@ namespace Checador
                 SqlCommand comand = new SqlCommand(consulta, conexion);
                 comand.Parameters.AddWithValue("@id", id);
                 comand.Parameters.AddWithValue("@fecha_salida", guardarsuc);
-<<<<<<< HEAD
-=======
-                MessageBox.Show(guardarsuc.ToString());
-                MessageBox.Show(id.ToString());
->>>>>>> 7cd597b373f093e8ef8639f09d06adb8c8ede9d2
                 comand.ExecuteNonQuery();
                 conexion.Close();
 
