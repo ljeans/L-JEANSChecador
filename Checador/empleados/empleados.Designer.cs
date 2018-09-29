@@ -1790,7 +1790,7 @@
             this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.ForeColor = System.Drawing.Color.White;
-            this.btn_modificar.Location = new System.Drawing.Point(711, 548);
+            this.btn_modificar.Location = new System.Drawing.Point(709, 548);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(250, 70);
             this.btn_modificar.TabIndex = 42;

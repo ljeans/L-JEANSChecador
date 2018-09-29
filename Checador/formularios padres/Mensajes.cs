@@ -27,7 +27,13 @@ namespace Checador.formularios_padres
 
         private void btn_no_Click(object sender, EventArgs e)
         {
+            respuesta = false;
             Close();
+        }
+
+        private void Mensajes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

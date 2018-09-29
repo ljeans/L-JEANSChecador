@@ -238,7 +238,11 @@ namespace Checador.empleados
                 else
                 {
                     //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
-                    MessageBox.Show("Dispositivo no conectado");
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Empleado no registrado. Por favor ";
+                    mensaje.lbl_info2.Text = "intente de nuevo.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.Show();
                 }
 
             }
@@ -459,7 +463,11 @@ namespace Checador.empleados
             }
             else
             {
-                MessageBox.Show("Empleado no registrado. Por favor intente de nuevo.");
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Empleado no registrado. Por favor";
+                mensaje.lbl_info2.Text = "intente de nuevo.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
             }
         }
 
@@ -503,15 +511,18 @@ namespace Checador.empleados
                 {
                   
                 }
+                confirmacion2 = new formularios_padres.Mensajes();
+                confirmacion2.lbl_mensaje.Text = "Desea cambiar huella al empleado?";
+                confirmacion2.FormClosed += new FormClosedEventHandler(mod_huella);
+                confirmacion2.Show();
+                Enabled = false;
             }
             confirmacion = null;
-
+            confirmacion2 = null;
+            Limpiar();
+            tabControlBase.SelectedTab = tabPage5;
           
-            confirmacion2 = new formularios_padres.Mensajes();
-            confirmacion2.lbl_mensaje.Text = "Desea cambiar huella al empleado?";
-            confirmacion2.FormClosed += new FormClosedEventHandler(mod_huella);
-            confirmacion2.Show();
-            Enabled = false;
+          
 
         }
         private void mod_huella(object sender, EventArgs e)
@@ -544,9 +555,15 @@ namespace Checador.empleados
         //FUNCION PARA ACTUALIZAR LOS DATOS DE UN EMPLEADO
         private void btn_modificar_Click_3(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             confirmacion = new formularios_padres.Mensajes();
             confirmacion.Show();
             Enabled = false;
+=======
+
+            Enabled = false;
+
+>>>>>>> a70a26e27e42fdee469f0ac5b03f0e00cfdadf4f
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;
@@ -615,7 +632,7 @@ namespace Checador.empleados
                 }
 
                 confirmacion = new formularios_padres.Mensajes();
-                confirmacion.lbl_mensaje.Text = "¿Esta Seguro que desea modificar el empleado?";
+                confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea modificar el empleado?";
                 confirmacion.FormClosed += new FormClosedEventHandler(responder);
                 confirmacion.Show();
                 Enabled = false;
@@ -648,7 +665,10 @@ namespace Checador.empleados
 
         {
             int dedo = cbx_huella.SelectedIndex;
-            MessageBox.Show(dedo.ToString());
+            mensaje = new formularios_padres.mensaje_info();
+            mensaje.lbl_info.Text = "Coloque su dedo 3 veces en el checador.";
+            mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+            mensaje.Show();
             //CODIGO PARA LA INTERFAZ DE REGISTRO DE NUEVA HUELLA
             int flag = 0;
             Checador.StartEnrollEx(Empleado.id.ToString(), dedo, flag);

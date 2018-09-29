@@ -16,6 +16,9 @@ namespace Checador
         public string puerto { get; set; }
         public int id_sucursal { get; set; }
         public string estatus { get; set; }
+        formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+        formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
+
 
         //FUNCION PARA OBTENER EL ID MAXIMO DEL CHECADOR POR SI ES AUTOINCREMENTABLE EL ID
         public int obtenerIdMaximo()
@@ -29,6 +32,13 @@ namespace Checador
             conexion.Close();
             return idMaximo;
         }
+
+        void vaciar_instancia_mensaje(Object sender, EventArgs e)
+        {
+            mensaje = null;
+
+        }
+
 
         //FUNCION PARA REGISTRAR UN DISPOSITIVO CHECADOR
         public void guardarChecador()
@@ -49,7 +59,10 @@ namespace Checador
 
                 comand.ExecuteNonQuery();
                 conexion.Close();
-                MessageBox.Show("Checador registrado con éxito. ID= " + id.ToString());
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Checador registrado con exito. ID= " + id.ToString();
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
 
             }
             catch (Exception e)
@@ -76,12 +89,20 @@ namespace Checador
                 comand.Parameters.AddWithValue("@estatus", estatus);
                 comand.ExecuteNonQuery();
                 conexion.Close();
-                MessageBox.Show("Checador modificado con éxito. ID= " + id.ToString());
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Checador modificado con éxito.ID = " + id.ToString();
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+
+               
             }
             catch (Exception e)
             {
                 //MessageBox.Show(e.ToString());
-                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Upss.. Ocurrió un error, por favor vuelva a intentarlo.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
             }
         }
 
@@ -101,12 +122,18 @@ namespace Checador
                 comand.ExecuteNonQuery();
 
                 conexion.Close();
-                MessageBox.Show("Checador dado de baja con éxito. ID= " + id.ToString());
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Checador dado de baja con éxito. ID = " + id.ToString();
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
 
             }
             catch (Exception e)
             {
-                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Upss.. Ocurrió un error, por favor vuelva a intentarlo.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
             }
         }
 
@@ -137,7 +164,10 @@ namespace Checador
                     }
                     else
                     {
-                        MessageBox.Show("Checador inactivo o no existe");
+                        mensaje = new formularios_padres.mensaje_info();
+                        mensaje.lbl_info.Text = "Checador inactivo o no existe.";
+                        mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                        mensaje.Show();
                         con.Close();
                     }
 
@@ -217,7 +247,10 @@ namespace Checador
             }
             catch (Exception e)
             {
-                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Upss.. Ocurrió un error, por favor vuelva a intentarlo.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
                 return false;
             }
         }

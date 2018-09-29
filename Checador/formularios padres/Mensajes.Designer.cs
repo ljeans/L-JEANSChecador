@@ -32,6 +32,9 @@
             this.btn_no = new System.Windows.Forms.Button();
             this.lbl_mensaje = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btn_si
@@ -43,7 +46,7 @@
             this.btn_si.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_si.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_si.ForeColor = System.Drawing.Color.White;
-            this.btn_si.Location = new System.Drawing.Point(386, 141);
+            this.btn_si.Location = new System.Drawing.Point(400, 145);
             this.btn_si.Name = "btn_si";
             this.btn_si.Size = new System.Drawing.Size(75, 50);
             this.btn_si.TabIndex = 19;
@@ -60,7 +63,7 @@
             this.btn_no.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_no.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_no.ForeColor = System.Drawing.Color.White;
-            this.btn_no.Location = new System.Drawing.Point(286, 141);
+            this.btn_no.Location = new System.Drawing.Point(315, 145);
             this.btn_no.Name = "btn_no";
             this.btn_no.Size = new System.Drawing.Size(75, 50);
             this.btn_no.TabIndex = 20;
@@ -83,15 +86,45 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(488, 37);
+            this.panel1.Size = new System.Drawing.Size(490, 37);
             this.panel1.TabIndex = 45;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 210);
+            this.panel3.TabIndex = 47;
+            this.panel3.TabStop = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel2.Location = new System.Drawing.Point(0, 205);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(490, 5);
+            this.panel2.TabIndex = 46;
+            this.panel2.TabStop = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel4.Location = new System.Drawing.Point(485, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(5, 210);
+            this.panel4.TabIndex = 47;
+            this.panel4.TabStop = true;
             // 
             // Mensajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(484, 211);
+            this.ClientSize = new System.Drawing.Size(490, 210);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_mensaje);
             this.Controls.Add(this.btn_no);
@@ -100,6 +133,8 @@
             this.Name = "Mensajes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Confirmación";
+            this.TopMost = true;
+            this.Load += new System.EventHandler(this.Mensajes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,5 +145,8 @@
         public System.Windows.Forms.Button btn_si;
         public System.Windows.Forms.Button btn_no;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
     }
 }
