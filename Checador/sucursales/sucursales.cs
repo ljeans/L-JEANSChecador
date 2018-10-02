@@ -33,10 +33,10 @@ namespace Checador
 
         private void sucursales_Load(object sender, EventArgs e)
         {
-           
+
             // TODO: This line of code loads data into the 'dataSet_Checador.horarios' table. You can move, or remove it, as needed.
             this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
-           
+
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace Checador
             btn_registrar.Visible = false;
             txt_id_mod.Text = "";
             tabControlBase.SelectedTab = tabPage3;
-            
+
         }
 
         private void rb_buscar_CheckedChanged(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace Checador
             //MOSTRAR EL ID DEL HORARIO AL CARGAR LA PAGINA
             try
             {
-                idhorario = (Sucursal.obtenerId(horario.horario));
+            //     idhorario = (Sucursal.obtenerId(horario.horario));
             }
             catch (Exception ex)
             {
@@ -133,7 +133,7 @@ namespace Checador
                 Sucursal.pais = txt_domicilio_pais.Text;
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
-                Sucursal.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
+            //    Sucursal.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
 
                 Sucursal.guardarSucursal();
                 Limpiar();
@@ -160,7 +160,7 @@ namespace Checador
             txt_id.Text = "";
             txt_nombre.Text = "";
             txt_telefono.Text = "";
-            cbx_horario.SelectedIndex = 0;
+        
             txt_id.Focus();
             //Deshabilitar_Componentes();
         }
@@ -204,8 +204,8 @@ namespace Checador
         {
             try
             {
-                horario.horario = cbx_horario.Text;
-                idhorario = Sucursal.obtenerId(horario.horario);
+               
+            //    idhorario = Sucursal.obtenerId(horario.horario);
                 //Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
                 Sucursal.calle = txt_domicilio_calle.Text;
                 Sucursal.codigo_postal = txt_domicilio_cp.Text;
@@ -226,7 +226,7 @@ namespace Checador
                 Sucursal.pais = txt_domicilio_pais.Text;
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
-                Sucursal.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
+         //       Sucursal.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
                 txt_id_mod.Text = "";
 
                 confirmacion = new formularios_padres.Mensajes();
@@ -262,7 +262,7 @@ namespace Checador
                 txt_domicilio_estado.Text = Sucursal.estado;
                 txt_domicilio_pais.Text = Sucursal.pais;
                 txt_telefono.Text = Sucursal.telefono;
-                cbx_horario.SelectedValue = Sucursal.id_horario;
+            //    cbx_horario.SelectedValue = Sucursal.id_horario;
                 if (Sucursal.estatus.ToString() == "A")
                 {
                     rb_mod_activo.Checked = true;

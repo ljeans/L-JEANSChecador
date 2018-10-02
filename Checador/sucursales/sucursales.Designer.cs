@@ -62,9 +62,6 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vistaSucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_Checador = new Checador.DataSet_Checador();
@@ -80,9 +77,7 @@
             this.btn_ir_modificar = new System.Windows.Forms.Button();
             this.label84 = new System.Windows.Forms.Label();
             this.txt_id_mod = new System.Windows.Forms.TextBox();
-            this.cbx_horario = new System.Windows.Forms.ComboBox();
             this.horariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label37 = new System.Windows.Forms.Label();
             this.horariosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.horariosTableAdapter();
             this.vista_SucursalTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_SucursalTableAdapter();
             this.btn_dar_baja = new System.Windows.Forms.Button();
@@ -135,8 +130,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.cbx_horario);
-            this.tabPage1.Controls.Add(this.label37);
             this.tabPage1.Controls.Add(this.btn_modificar);
             this.tabPage1.Controls.Add(this.txt_domicilio_num_ext);
             this.tabPage1.Controls.Add(this.groupBox4);
@@ -289,7 +282,7 @@
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(605, 301);
+            this.label24.Location = new System.Drawing.Point(605, 298);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(73, 24);
             this.label24.TabIndex = 1059;
@@ -354,7 +347,7 @@
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(108, 260);
+            this.label20.Location = new System.Drawing.Point(108, 261);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(110, 24);
             this.label20.TabIndex = 1055;
@@ -365,7 +358,7 @@
             this.label21.AutoSize = true;
             this.label21.BackColor = System.Drawing.Color.Transparent;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(139, 342);
+            this.label21.Location = new System.Drawing.Point(139, 339);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(79, 24);
             this.label21.TabIndex = 1054;
@@ -387,7 +380,7 @@
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(161, 214);
+            this.label23.Location = new System.Drawing.Point(161, 219);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(57, 24);
             this.label23.TabIndex = 1051;
@@ -397,7 +390,7 @@
             // 
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id.Location = new System.Drawing.Point(228, 72);
+            this.txt_id.Location = new System.Drawing.Point(228, 65);
             this.txt_id.MaxLength = 32;
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(100, 29);
@@ -408,7 +401,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(175, 77);
+            this.label1.Location = new System.Drawing.Point(175, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(32, 24);
             this.label1.TabIndex = 1064;
@@ -418,7 +411,7 @@
             // 
             this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(228, 122);
+            this.txt_nombre.Location = new System.Drawing.Point(228, 116);
             this.txt_nombre.MaxLength = 32;
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(218, 29);
@@ -429,7 +422,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(123, 127);
+            this.label2.Location = new System.Drawing.Point(123, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 24);
             this.label2.TabIndex = 1066;
@@ -439,7 +432,7 @@
             // 
             this.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_telefono.Location = new System.Drawing.Point(699, 122);
+            this.txt_telefono.Location = new System.Drawing.Point(699, 65);
             this.txt_telefono.MaxLength = 32;
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(218, 29);
@@ -450,7 +443,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(588, 127);
+            this.label3.Location = new System.Drawing.Point(588, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 24);
             this.label3.TabIndex = 1068;
@@ -483,7 +476,7 @@
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(579, 219);
+            this.label18.Location = new System.Drawing.Point(579, 216);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(99, 24);
             this.label18.TabIndex = 1071;
@@ -523,9 +516,6 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
             this.dgv_sucursal.DataSource = this.vistaSucursalBindingSource;
             this.dgv_sucursal.Location = new System.Drawing.Point(12, 127);
@@ -576,27 +566,6 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Teléfono";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "horario";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Horario";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "hr_entrada";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Hora de entrada";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "hr_salida";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Hora de salida";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -754,34 +723,10 @@
             this.txt_id_mod.Size = new System.Drawing.Size(200, 29);
             this.txt_id_mod.TabIndex = 1;
             // 
-            // cbx_horario
-            // 
-            this.cbx_horario.DataSource = this.horariosBindingSource;
-            this.cbx_horario.DisplayMember = "horario";
-            this.cbx_horario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_horario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_horario.FormattingEnabled = true;
-            this.cbx_horario.Location = new System.Drawing.Point(699, 72);
-            this.cbx_horario.Name = "cbx_horario";
-            this.cbx_horario.Size = new System.Drawing.Size(219, 32);
-            this.cbx_horario.TabIndex = 3;
-            this.cbx_horario.ValueMember = "id_horario";
-            // 
             // horariosBindingSource
             // 
             this.horariosBindingSource.DataMember = "horarios";
             this.horariosBindingSource.DataSource = this.dataSet_Checador;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.BackColor = System.Drawing.Color.Transparent;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(601, 75);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(77, 24);
-            this.label37.TabIndex = 1077;
-            this.label37.Text = "Horario:";
             // 
             // horariosTableAdapter
             // 
@@ -893,8 +838,6 @@
         private System.Windows.Forms.Button btn_ir_modificar;
         private System.Windows.Forms.Label label84;
         private System.Windows.Forms.TextBox txt_id_mod;
-        private System.Windows.Forms.ComboBox cbx_horario;
-        private System.Windows.Forms.Label label37;
         private System.Windows.Forms.DataGridViewTextBoxColumn idsucursalDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccionDataGridViewTextBoxColumn;

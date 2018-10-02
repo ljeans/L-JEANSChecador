@@ -54,6 +54,9 @@
       <DependentUpon>cheacador.cs</DependentUpon>
     </Compile>
     <Compile Include="checador\ClaseChecador.cs" />
+    <Compile Include="DataSet_Checador.cs">
+      <DependentUpon>DataSet_Checador.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSet_Checador.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

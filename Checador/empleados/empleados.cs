@@ -40,10 +40,10 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Empleados' table. You can move, or remove it, as needed.
+            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Empleados' Puede moverla o quitarla según sea necesario.
             this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
-            // TODO: This line of code loads data into the 'dataSet_Checador.sucursal' table. You can move, or remove it, as needed.
-            this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
+            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador1.sucursal' Puede moverla o quitarla según sea necesario.
+            this.sucursalTableAdapter.Fill(this.dataSet_Checador1.sucursal);
 
            
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
@@ -57,7 +57,7 @@ namespace Checador.empleados
             groupBox4.Enabled = false;
 
             cbx_privilegio.SelectedIndex = 0;
-            cbx_sucursal.SelectedIndex = 0;
+        
         }            
 
         public void cargarID()
@@ -156,6 +156,7 @@ namespace Checador.empleados
                 }
                 
                 Empleado.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
+                Empleado.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
                 Empleado.municipio = txt_domicilio_municipio.Text;
                 Empleado.nombre = txt_nombre.Text;
                 Empleado.NSS = txt_nss.Text;
@@ -555,13 +556,7 @@ namespace Checador.empleados
         //FUNCION PARA ACTUALIZAR LOS DATOS DE UN EMPLEADO
         private void btn_modificar_Click_3(object sender, EventArgs e)
         {
-            confirmacion = new formularios_padres.Mensajes();
-            confirmacion.Show();
             Enabled = false;
-<<<<<<< HEAD
-            
-=======
->>>>>>> b5edc79fcb4c7bd5f056992f822705e1150b7bb0
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;
@@ -597,6 +592,7 @@ namespace Checador.empleados
                     Empleado.id_privilegio = 3;
                 }
                 Empleado.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
+                Empleado.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
                 Empleado.municipio = txt_domicilio_municipio.Text;
                 Empleado.nombre = txt_nombre.Text;
                 Empleado.NSS = txt_nss.Text;
