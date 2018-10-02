@@ -39,9 +39,17 @@ namespace Checador
             return idMaximo;
         }
 
+<<<<<<< HEAD
        
+=======
+        void vaciar_instancia_mensaje(Object sender, EventArgs e)
+        {
+            mensaje = null;
 
-        //obtienes el id de la sucursal por el nombre
+        }
+>>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
+
+        //obtienes el Id sucursal por Nombre
         public void obtenerIdSucursal(string nombre)
         {
             string consulta = "Select id_sucursal From sucursal where nombre=@nombre";
@@ -50,10 +58,13 @@ namespace Checador
             SqlCommand comand = new SqlCommand(consulta, conexion);
             comand.Parameters.AddWithValue("@nombre", nombre);
             conexion.Open();
+<<<<<<< HEAD
             /*int id = Convert.ToInt32(comand.ExecuteScalar());
          
             conexion.Close();
             return id;*/
+=======
+>>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
 
             SqlDataReader lector = comand.ExecuteReader();//Ejecuta el comadno
             if (lector.HasRows)//Revisa si hay resultados
@@ -69,12 +80,6 @@ namespace Checador
             {
                 conexion.Close();
             }
-        }
-
-        void vaciar_instancia_mensaje(Object sender, EventArgs e)
-        {
-            mensaje = null;
-
         }
 
 

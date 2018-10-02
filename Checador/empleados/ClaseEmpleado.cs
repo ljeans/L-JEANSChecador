@@ -77,8 +77,34 @@ namespace Checador
             conexion.Close();
             return idMaximo;
         }
-        //FUNCION PARA MOSTRAR EL HORARIO DESDE EL ID
-        
+
+        //obtienes el Horario del empleado por ID Empleado
+        public void obtenerIdHorario(int id_empleado)
+        {
+            string consulta = "Select id_horario From empleado where id_empleado=@id_empleado";
+            Conexion con = new Conexion();
+            SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+            SqlCommand comand = new SqlCommand(consulta, conexion);
+            comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+            conexion.Open();
+
+            SqlDataReader lector = comand.ExecuteReader();//Ejecuta el comadno
+            if (lector.HasRows)//Revisa si hay resultados
+            {
+                lector.Read();//Lee una linea de los resultados
+                              //this.id = ;//Asignacion a atributos
+                              //get ordinal regresa el indice de la fila
+                              //el Nombre especificado en el parametro 
+                id_horario = lector.GetInt32(lector.GetOrdinal("id_horario"));
+                conexion.Close();
+            }
+            else
+            {
+                conexion.Close();
+            }
+        }
+
+
 
         //FUNCION PARA REGISTRAR UN EMPLEADO
         public void guardarEmpleado()
@@ -167,7 +193,7 @@ namespace Checador
         {
             try
             {
-                string consulta = "UPDATE empleado SET nombre = @nombre, apellido_pat = @apellido_pat, apellido_mat=@apellido_mat, departamento=@departamento,id_privilegio=@id_privilegio, telefono=@telefono, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, puesto=@puesto, NSS=@NSS, RFC=@RFC, CURP=@CURP, estatus=@estatus, fecha_alta=@fecha_alta, fecha_baja=@fecha_baja, sueldo_diario=@sueldo_diario, sueldo_diario_integrado=@sueldo_diario_integrado, sueldo_base_quincenal=@sueldo_base_quincenal, tipo_salario=@tipo_salario, dias_aguinaldo=@dias_aguinaldo, dias_vacaciones=@dias_vacaciones, observaciones=@observaciones, tipo_contrato=@tipo_contrato, riesgo_puesto=@riesgo_puesto, periodicidad_pago=@periodicidad_pago, banco=@banco, cuenta_bancaria=@cuenta_bancaria, email=@email, tarjeta_despensa=@tarjeta_despensa, clave_edenred=@clave_edenred, password = @password WHERE id_empleado = @id";
+                string consulta = "UPDATE empleado SET nombre = @nombre, apellido_pat = @apellido_pat, apellido_mat=@apellido_mat, departamento=@departamento,id_privilegio=@id_privilegio, telefono=@telefono, calle = @calle, colonia = @colonia, num_ext = @num_ext, num_int=@num_int, codigo_postal=@codigo_postal, poblacion=@poblacion, municipio=@municipio, estado=@estado, pais=@pais, puesto=@puesto, NSS=@NSS, RFC=@RFC, CURP=@CURP, estatus=@estatus, fecha_alta=@fecha_alta, fecha_baja=@fecha_baja, sueldo_diario=@sueldo_diario, sueldo_diario_integrado=@sueldo_diario_integrado, sueldo_base_quincenal=@sueldo_base_quincenal, tipo_salario=@tipo_salario, dias_aguinaldo=@dias_aguinaldo, dias_vacaciones=@dias_vacaciones, observaciones=@observaciones, tipo_contrato=@tipo_contrato, riesgo_puesto=@riesgo_puesto, periodicidad_pago=@periodicidad_pago, banco=@banco, cuenta_bancaria=@cuenta_bancaria, email=@email, tarjeta_despensa=@tarjeta_despensa, clave_edenred=@clave_edenred, password = @password, id_horario = @id_horario WHERE id_empleado = @id";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -327,6 +353,7 @@ namespace Checador
                         tarjeta_despensa = lector.GetString(lector.GetOrdinal("tarjeta_despensa"));
                         clave_edenred = lector.GetString(lector.GetOrdinal("clave_edenred"));
                         password = lector.GetString(lector.GetOrdinal("password"));
+                        id_horario = lector.GetInt32(lector.GetOrdinal("id_horario"));
                         con.Close();
                      
                     }

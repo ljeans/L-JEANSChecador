@@ -83,6 +83,10 @@ namespace Checador
             mensaje = null;
 
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
         //MODIFICAR///////////////////////////////////////////////////////////////////////
         //FUNCION PARA ACTUALIZAR LOS DATOS EN LA BD DEL CHECADOR
         private void btn_modificar_Click(object sender, EventArgs e)
@@ -247,7 +251,10 @@ namespace Checador
                     Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
                     MessageBox.Show("Sincronizado");
                 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
                 Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
             }
             catch (Exception ex)
@@ -360,6 +367,7 @@ namespace Checador
                     int Year = 0, Month = 0, Day = 0, Hour = 0, Minute = 0, Second = 0;
                     DateTime fecha_max;
                     ClaseSucursal Sucursal = new ClaseSucursal();
+                    ClaseEmpleado Empleado = new ClaseEmpleado();
                     ClaseHorario Horario = new ClaseHorario();
 
                     if (Checador.ReadGeneralLogData(Convert.ToInt32(row.Cells[1].Value)))//read all the attendance records to the memory
@@ -368,9 +376,15 @@ namespace Checador
                         while (Checador.SSR_GetGeneralLogData(Convert.ToInt32(row.Cells[1].Value), out id, out verifyMode,
                                    out inOutMode, out Year, out Month, out Day, out Hour, out Minute, out Second, ref workCode))//get records from the memory
                         {
-                            //CARGAR LOS DATOS DE LA SUCURSAL Y HORARIO PERTENECIENTE A LA SUCURSAL
+                            //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
                             Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
+<<<<<<< HEAD
                            // Horario.verificar_existencia(Sucursal.id_horario);
+=======
+                            Empleado.obtenerIdHorario(Convert.ToInt32(id));
+                            Horario.verificar_existencia(Empleado.id_horario);
+
+>>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
                             //VALIDACION PARA SABER DESDE DONDE VAMOS A JALAR LOS EVENTOS DEL CHECADOR [SE BORRARA DESPUES!!]
 
                             if (fecha_max < Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()))
