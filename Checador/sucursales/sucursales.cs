@@ -83,18 +83,6 @@ namespace Checador
         //REGISTRAR///////////////////////////////////////////////////////////////////////////
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
-        public void cargarIDHorario()
-        {
-            //MOSTRAR EL ID DEL HORARIO AL CARGAR LA PAGINA
-            try
-            {
-                idhorario = (Sucursal.obtenerId(horario.horario));
-            }
-            catch (Exception ex)
-            {
-                txt_id.Text = "1";
-            }
-        }
 
         private void responder(object sender, EventArgs e)
         {
@@ -133,7 +121,6 @@ namespace Checador
                 Sucursal.pais = txt_domicilio_pais.Text;
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
-                Sucursal.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
 
                 Sucursal.guardarSucursal();
                 Limpiar();
@@ -205,7 +192,6 @@ namespace Checador
             try
             {
                 horario.horario = cbx_horario.Text;
-                idhorario = Sucursal.obtenerId(horario.horario);
                 //Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
                 Sucursal.calle = txt_domicilio_calle.Text;
                 Sucursal.codigo_postal = txt_domicilio_cp.Text;
@@ -226,7 +212,6 @@ namespace Checador
                 Sucursal.pais = txt_domicilio_pais.Text;
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
-                Sucursal.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
                 txt_id_mod.Text = "";
 
                 confirmacion = new formularios_padres.Mensajes();
@@ -262,7 +247,6 @@ namespace Checador
                 txt_domicilio_estado.Text = Sucursal.estado;
                 txt_domicilio_pais.Text = Sucursal.pais;
                 txt_telefono.Text = Sucursal.telefono;
-                cbx_horario.SelectedValue = Sucursal.id_horario;
                 if (Sucursal.estatus.ToString() == "A")
                 {
                     rb_mod_activo.Checked = true;

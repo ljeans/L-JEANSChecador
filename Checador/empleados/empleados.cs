@@ -558,10 +558,6 @@ namespace Checador.empleados
             confirmacion = new formularios_padres.Mensajes();
             confirmacion.Show();
             Enabled = false;
-<<<<<<< HEAD
-            
-=======
->>>>>>> b5edc79fcb4c7bd5f056992f822705e1150b7bb0
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;

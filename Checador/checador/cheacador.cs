@@ -58,11 +58,7 @@ namespace Checador
             Limpiar();
 
         }
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> b5edc79fcb4c7bd5f056992f822705e1150b7bb0
         private void responder(object sender, EventArgs e)
         {
             Enabled = true;
@@ -87,12 +83,7 @@ namespace Checador
             mensaje = null;
 
         }
-<<<<<<< HEAD
-        
-=======
 
-
->>>>>>> b5edc79fcb4c7bd5f056992f822705e1150b7bb0
         //MODIFICAR///////////////////////////////////////////////////////////////////////
         //FUNCION PARA ACTUALIZAR LOS DATOS EN LA BD DEL CHECADOR
         private void btn_modificar_Click(object sender, EventArgs e)
@@ -257,10 +248,6 @@ namespace Checador
                     Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
                     MessageBox.Show("Sincronizado");
                 }
-<<<<<<< HEAD
-=======
-
->>>>>>> b5edc79fcb4c7bd5f056992f822705e1150b7bb0
                 Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
             }
             catch (Exception ex)
@@ -329,10 +316,6 @@ namespace Checador
                     Checador.SetDeviceTime2(Convert.ToInt32(row.Cells[1].Value), dtp_fecha.Value.Year, dtp_fecha.Value.Month, dtp_fecha.Value.Day, dtp_hora.Value.Hour, dtp_hora.Value.Minute, dtp_hora.Value.Second);
                     MessageBox.Show("Sincronizado");
                 }
-<<<<<<< HEAD
-=======
-
->>>>>>> b5edc79fcb4c7bd5f056992f822705e1150b7bb0
                 Checador.SetDeviceTime2(Convert.ToInt32(row.Cells[1].Value), dtp_fecha.Value.Year, dtp_fecha.Value.Month, dtp_fecha.Value.Day, dtp_hora.Value.Hour, dtp_hora.Value.Minute, dtp_hora.Value.Second);
                 mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "Sincronizado.";
@@ -377,6 +360,7 @@ namespace Checador
                     int Year = 0, Month = 0, Day = 0, Hour = 0, Minute = 0, Second = 0;
                     DateTime fecha_max;
                     ClaseSucursal Sucursal = new ClaseSucursal();
+                    ClaseEmpleado Empleado = new ClaseEmpleado();
                     ClaseHorario Horario = new ClaseHorario();
 
                     if (Checador.ReadGeneralLogData(Convert.ToInt32(row.Cells[1].Value)))//read all the attendance records to the memory
@@ -385,9 +369,11 @@ namespace Checador
                         while (Checador.SSR_GetGeneralLogData(Convert.ToInt32(row.Cells[1].Value), out id, out verifyMode,
                                    out inOutMode, out Year, out Month, out Day, out Hour, out Minute, out Second, ref workCode))//get records from the memory
                         {
-                            //CARGAR LOS DATOS DE LA SUCURSAL Y HORARIO PERTENECIENTE A LA SUCURSAL
+                            //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
                             Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
-                            Horario.verificar_existencia(Sucursal.id_horario);
+                            Empleado.obtenerIdHorario(Convert.ToInt32(id));
+                            Horario.verificar_existencia(Empleado.id_horario);
+
                             //VALIDACION PARA SABER DESDE DONDE VAMOS A JALAR LOS EVENTOS DEL CHECADOR [SE BORRARA DESPUES!!]
 
                             if (fecha_max < Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()))
@@ -406,11 +392,8 @@ namespace Checador
                         Checador.GetLastError(ref Error);
                         MessageBox.Show(Error.ToString());
                     }
-<<<<<<< HEAD
                     /*mensaje = new formularios_padres.mensaje_info();
-=======
                     mensaje = new formularios_padres.mensaje_info();
->>>>>>> b5edc79fcb4c7bd5f056992f822705e1150b7bb0
                     mensaje.lbl_info.Text = "Eventos sincronizados con exito.";
                     mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                     mensaje.Show();*/
