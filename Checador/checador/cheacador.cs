@@ -58,7 +58,11 @@ namespace Checador
             Limpiar();
 
         }
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> b5edc79fcb4c7bd5f056992f822705e1150b7bb0
         private void responder(object sender, EventArgs e)
         {
             Enabled = true;
@@ -83,7 +87,12 @@ namespace Checador
             mensaje = null;
 
         }
+<<<<<<< HEAD
         
+=======
+
+
+>>>>>>> b5edc79fcb4c7bd5f056992f822705e1150b7bb0
         //MODIFICAR///////////////////////////////////////////////////////////////////////
         //FUNCION PARA ACTUALIZAR LOS DATOS EN LA BD DEL CHECADOR
         private void btn_modificar_Click(object sender, EventArgs e)
@@ -248,6 +257,10 @@ namespace Checador
                     Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
                     MessageBox.Show("Sincronizado");
                 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> b5edc79fcb4c7bd5f056992f822705e1150b7bb0
                 Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
             }
             catch (Exception ex)
@@ -316,6 +329,10 @@ namespace Checador
                     Checador.SetDeviceTime2(Convert.ToInt32(row.Cells[1].Value), dtp_fecha.Value.Year, dtp_fecha.Value.Month, dtp_fecha.Value.Day, dtp_hora.Value.Hour, dtp_hora.Value.Minute, dtp_hora.Value.Second);
                     MessageBox.Show("Sincronizado");
                 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> b5edc79fcb4c7bd5f056992f822705e1150b7bb0
                 Checador.SetDeviceTime2(Convert.ToInt32(row.Cells[1].Value), dtp_fecha.Value.Year, dtp_fecha.Value.Month, dtp_fecha.Value.Day, dtp_hora.Value.Hour, dtp_hora.Value.Minute, dtp_hora.Value.Second);
                 mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "Sincronizado.";
@@ -389,7 +406,11 @@ namespace Checador
                         Checador.GetLastError(ref Error);
                         MessageBox.Show(Error.ToString());
                     }
+<<<<<<< HEAD
                     /*mensaje = new formularios_padres.mensaje_info();
+=======
+                    mensaje = new formularios_padres.mensaje_info();
+>>>>>>> b5edc79fcb4c7bd5f056992f822705e1150b7bb0
                     mensaje.lbl_info.Text = "Eventos sincronizados con exito.";
                     mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                     mensaje.Show();*/
