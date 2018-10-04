@@ -83,10 +83,7 @@ namespace Checador
             mensaje = null;
 
         }
-<<<<<<< HEAD
-=======
 
->>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
         //MODIFICAR///////////////////////////////////////////////////////////////////////
         //FUNCION PARA ACTUALIZAR LOS DATOS EN LA BD DEL CHECADOR
         private void btn_modificar_Click(object sender, EventArgs e)
@@ -251,10 +248,6 @@ namespace Checador
                     Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
                     MessageBox.Show("Sincronizado");
                 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
                 Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
             }
             catch (Exception ex)
@@ -378,22 +371,18 @@ namespace Checador
                         {
                             //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
                             Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
-<<<<<<< HEAD
-                           // Horario.verificar_existencia(Sucursal.id_horario);
-=======
                             Empleado.obtenerIdHorario(Convert.ToInt32(id));
                             Horario.verificar_existencia(Empleado.id_horario);
 
->>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
                             //VALIDACION PARA SABER DESDE DONDE VAMOS A JALAR LOS EVENTOS DEL CHECADOR [SE BORRARA DESPUES!!]
 
                             if (fecha_max < Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()))
                             {
-                                Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso);
+                                Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode);
                             }
                             else if (fecha_max == Convert.ToDateTime("1995-12-12 00:00:00"))
                             {
-                                Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso);
+                                Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode);
                             }
                         }
                         MessageBox.Show("Eventos Sincronizados con exito");
