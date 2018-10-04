@@ -9,3 +9,4 @@
 - Checadores multiples - 1/2
 - Poner barra de progreso cuando se necesite
 - Validar en GENERAL
+- Validar los registros de salida

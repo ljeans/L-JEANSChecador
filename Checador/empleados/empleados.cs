@@ -40,6 +40,8 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.horarios' Puede moverla o quitarla según sea necesario.
+            this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
             // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Empleados' Puede moverla o quitarla según sea necesario.
             this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
             // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador1.sucursal' Puede moverla o quitarla según sea necesario.
@@ -128,6 +130,7 @@ namespace Checador.empleados
         {
             try
             {
+                Empleado.id = Convert.ToInt32(txt_id.Text);
                 Empleado.apellido_mat = txt_apellido_materno.Text;
                 Empleado.apellido_pat = txt_apellido_paterno.Text;
                 Empleado.banco = txt_banco.Text;
@@ -239,11 +242,6 @@ namespace Checador.empleados
                 else
                 {
                     //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
-                    mensaje = new formularios_padres.mensaje_info();
-                    mensaje.lbl_info.Text = "Empleado no registrado. Por favor ";
-                    mensaje.lbl_info2.Text = "intente de nuevo.";
-                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                    mensaje.Show();
                 }
 
             }
@@ -265,8 +263,8 @@ namespace Checador.empleados
             txt_curp.Text = "";
             txt_departamento.Text = "";
             txt_despensa.Text = "";
-            txt_dias_aguinaldo.Text = "";
-            txt_dias_vacaciones.Text = "";
+            txt_dias_aguinaldo.Text = "0";
+            txt_dias_vacaciones.Text = "0";
             txt_domicilio_calle.Text = "";
             txt_domicilio_colonia.Text = "";
             txt_domicilio_cp.Text = "";
@@ -285,9 +283,9 @@ namespace Checador.empleados
             txt_puesto.Text = "";
             txt_rfc.Text = "";
             txt_riesgo_puesto.Text = "";
-            txt_sueldo_diario.Text = "";
-            txt_sueldo_integrado.Text = "";
-            txt_sueldo_quincenal.Text = "";
+            txt_sueldo_diario.Text = "0";
+            txt_sueldo_integrado.Text = "0";
+            txt_sueldo_quincenal.Text = "0";
             txt_telefono.Text = "";
             txt_tipo_contrato.Text = "";
             txt_tipo_salario.Text = "";
@@ -465,7 +463,7 @@ namespace Checador.empleados
             else
             {
                 mensaje = new formularios_padres.mensaje_info();
-                mensaje.lbl_info.Text = "Empleado no registrado. Por favor";
+                mensaje.lbl_info.Text = "Empleado no registrado. Por favor xd";
                 mensaje.lbl_info2.Text = "intente de nuevo.";
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 mensaje.Show();
@@ -495,33 +493,49 @@ namespace Checador.empleados
         //****************** NECESARIOS PARA MOSTRAR MENSAJES *****************
         private void responder(object sender, EventArgs e)
         {
+           
             Enabled = true;
             respuesta = confirmacion.respuesta;
            
             if (respuesta == true)
             {
-                Empleado.Modificar_Empleado();
-                if (sucurzal != Convert.ToInt32(cbx_sucursal.SelectedValue.ToString()))
+                Conectar_Checador();
+                if (bConn)
                 {
-                    Empleado.guardarEmpleado_Sucursal();
-                    //SE OBTIENEN LOS DATOS DEL CHECADOR
-                    clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
-                    Conectar_Checador();
+                    Empleado.Modificar_Empleado();
+                   if (sucurzal != Convert.ToInt32(cbx_sucursal.SelectedValue.ToString()))
+                    {
+                        Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
+                        Empleado.guardarEmpleado_Sucursal();
+                        //SE OBTIENEN LOS DATOS DEL CHECADOR
+                        clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
+                    
+                    }
+                    else
+                    {
+
+                    }
                 }
                 else
                 {
-                  
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Checador no conectado, marquele a Mirsa.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.Show();
                 }
+
+               
                 confirmacion2 = new formularios_padres.Mensajes();
                 confirmacion2.lbl_mensaje.Text = "Desea cambiar huella al empleado?";
                 confirmacion2.FormClosed += new FormClosedEventHandler(mod_huella);
                 confirmacion2.Show();
                 Enabled = false;
+                
             }
-            confirmacion = null;
-            confirmacion2 = null;
-            Limpiar();
-            tabControlBase.SelectedTab = tabPage5;
+            else
+            {
+
+            }
           
           
 
@@ -557,6 +571,7 @@ namespace Checador.empleados
         private void btn_modificar_Click_3(object sender, EventArgs e)
         {
             Enabled = false;
+
             try
             {
                 Empleado.apellido_mat = txt_apellido_materno.Text;
@@ -631,7 +646,6 @@ namespace Checador.empleados
                 confirmacion.Show();
                 Enabled = false;
 
-
             }
             catch (Exception ex)
             {
@@ -702,6 +716,11 @@ namespace Checador.empleados
         }
 
         private void tabPage4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_dias_aguinaldo_TextChanged(object sender, EventArgs e)
         {
 
         }

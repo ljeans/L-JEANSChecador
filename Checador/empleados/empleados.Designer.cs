@@ -44,6 +44,7 @@
             this.btn_guardar_huella = new System.Windows.Forms.Button();
             this.btn_atras = new System.Windows.Forms.Button();
             this.dgv_empleadobuscar = new System.Windows.Forms.DataGridView();
+            this.vistaEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_Checador = new Checador.DataSet_Checador();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
@@ -140,7 +141,6 @@
             this.cbx_horario = new System.Windows.Forms.ComboBox();
             this.horariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label19 = new System.Windows.Forms.Label();
-            this.horariosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.horariosTableAdapter();
             this.sucursalTableAdapter = new Checador.DataSet_ChecadorTableAdapters.sucursalTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -148,8 +148,8 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vistaEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vista_EmpleadosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter();
+            this.horariosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.horariosTableAdapter();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -193,6 +193,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador1)).BeginInit();
@@ -201,7 +202,6 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rb_4
@@ -610,6 +610,11 @@
             this.dgv_empleadobuscar.Size = new System.Drawing.Size(966, 407);
             this.dgv_empleadobuscar.TabIndex = 45;
             // 
+            // vistaEmpleadosBindingSource
+            // 
+            this.vistaEmpleadosBindingSource.DataMember = "Vista_Empleados";
+            this.vistaEmpleadosBindingSource.DataSource = this.dataSet_Checador;
+            // 
             // dataSet_Checador
             // 
             this.dataSet_Checador.DataSetName = "DataSet_Checador";
@@ -920,9 +925,8 @@
             // 
             // txt_id
             // 
-            this.txt_id.BackColor = System.Drawing.Color.LightGray;
+            this.txt_id.BackColor = System.Drawing.Color.White;
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_id.Enabled = false;
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Location = new System.Drawing.Point(188, 65);
             this.txt_id.MaxLength = 32;
@@ -1267,6 +1271,7 @@
             this.txt_dias_vacaciones.Name = "txt_dias_vacaciones";
             this.txt_dias_vacaciones.Size = new System.Drawing.Size(249, 29);
             this.txt_dias_vacaciones.TabIndex = 36;
+            this.txt_dias_vacaciones.Text = "0";
             // 
             // label35
             // 
@@ -1342,6 +1347,8 @@
             this.txt_dias_aguinaldo.Name = "txt_dias_aguinaldo";
             this.txt_dias_aguinaldo.Size = new System.Drawing.Size(249, 29);
             this.txt_dias_aguinaldo.TabIndex = 34;
+            this.txt_dias_aguinaldo.Text = "0";
+            this.txt_dias_aguinaldo.TextChanged += new System.EventHandler(this.txt_dias_aguinaldo_TextChanged);
             // 
             // txt_sueldo_quincenal
             // 
@@ -1352,6 +1359,7 @@
             this.txt_sueldo_quincenal.Name = "txt_sueldo_quincenal";
             this.txt_sueldo_quincenal.Size = new System.Drawing.Size(249, 29);
             this.txt_sueldo_quincenal.TabIndex = 32;
+            this.txt_sueldo_quincenal.Text = "0";
             // 
             // txt_sueldo_diario
             // 
@@ -1362,6 +1370,7 @@
             this.txt_sueldo_diario.Name = "txt_sueldo_diario";
             this.txt_sueldo_diario.Size = new System.Drawing.Size(249, 29);
             this.txt_sueldo_diario.TabIndex = 30;
+            this.txt_sueldo_diario.Text = "0";
             // 
             // txt_sueldo_integrado
             // 
@@ -1372,6 +1381,7 @@
             this.txt_sueldo_integrado.Name = "txt_sueldo_integrado";
             this.txt_sueldo_integrado.Size = new System.Drawing.Size(249, 29);
             this.txt_sueldo_integrado.TabIndex = 31;
+            this.txt_sueldo_integrado.Text = "0";
             // 
             // txt_tipo_contrato
             // 
@@ -1662,10 +1672,6 @@
             this.label19.TabIndex = 1145;
             this.label19.Text = "Horario:";
             // 
-            // horariosTableAdapter
-            // 
-            this.horariosTableAdapter.ClearBeforeFill = true;
-            // 
             // sucursalTableAdapter
             // 
             this.sucursalTableAdapter.ClearBeforeFill = true;
@@ -1706,63 +1712,76 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Sucursal";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // vistaEmpleadosBindingSource
-            // 
-            this.vistaEmpleadosBindingSource.DataMember = "Vista_Empleados";
-            this.vistaEmpleadosBindingSource.DataSource = this.dataSet_Checador;
-            // 
             // vista_EmpleadosTableAdapter
             // 
             this.vista_EmpleadosTableAdapter.ClearBeforeFill = true;
             // 
+            // horariosTableAdapter
+            // 
+            this.horariosTableAdapter.ClearBeforeFill = true;
+            // 
             // dataGridViewTextBoxColumn7
             // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "id_empleado";
             this.dataGridViewTextBoxColumn7.HeaderText = "ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 43;
             // 
             // dataGridViewTextBoxColumn8
             // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn8.DataPropertyName = "nombre_completo";
             this.dataGridViewTextBoxColumn8.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 69;
             // 
             // dataGridViewTextBoxColumn9
             // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn9.DataPropertyName = "CURP";
             this.dataGridViewTextBoxColumn9.HeaderText = "CURP";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 62;
             // 
             // dataGridViewTextBoxColumn10
             // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn10.DataPropertyName = "RFC";
             this.dataGridViewTextBoxColumn10.HeaderText = "RFC";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 53;
             // 
             // dataGridViewTextBoxColumn11
             // 
+            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn11.DataPropertyName = "NSS";
             this.dataGridViewTextBoxColumn11.HeaderText = "NSS";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 54;
             // 
             // dataGridViewTextBoxColumn12
             // 
+            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn12.DataPropertyName = "sucursal";
             this.dataGridViewTextBoxColumn12.HeaderText = "Sucursal";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 73;
             // 
             // dataGridViewTextBoxColumn13
             // 
+            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn13.DataPropertyName = "departamento";
             this.dataGridViewTextBoxColumn13.HeaderText = "Departamento";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 99;
             // 
             // horarioDataGridViewTextBoxColumn
             // 
@@ -1777,6 +1796,7 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "Telefono";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 120;
             // 
             // dataGridViewTextBoxColumn15
             // 
@@ -1784,6 +1804,7 @@
             this.dataGridViewTextBoxColumn15.HeaderText = "Dirección";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Width = 150;
             // 
             // dataGridViewTextBoxColumn16
             // 
@@ -1791,6 +1812,7 @@
             this.dataGridViewTextBoxColumn16.HeaderText = "No. interior";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Width = 50;
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -1798,6 +1820,7 @@
             this.dataGridViewTextBoxColumn17.HeaderText = "Localización";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Width = 200;
             // 
             // dataGridViewTextBoxColumn18
             // 
@@ -1969,6 +1992,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             this.panel_menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador1)).EndInit();
@@ -1978,7 +2002,6 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2125,8 +2148,6 @@
         private System.Windows.Forms.Button btn_dar_baja;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.ComboBox cbx_horario;
-        private System.Windows.Forms.BindingSource horariosBindingSource;
-        private DataSet_ChecadorTableAdapters.horariosTableAdapter horariosTableAdapter;
         private DataSet_Checador dataSet_Checador1;
         private System.Windows.Forms.BindingSource sucursalBindingSource;
         private DataSet_ChecadorTableAdapters.sucursalTableAdapter sucursalTableAdapter;
@@ -2138,6 +2159,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.BindingSource vistaEmpleadosBindingSource;
         private DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter vista_EmpleadosTableAdapter;
+        private System.Windows.Forms.BindingSource horariosBindingSource;
+        private DataSet_ChecadorTableAdapters.horariosTableAdapter horariosTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;

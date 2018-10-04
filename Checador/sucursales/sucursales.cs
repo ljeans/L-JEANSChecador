@@ -83,7 +83,7 @@ namespace Checador
         //REGISTRAR///////////////////////////////////////////////////////////////////////////
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
-<<<<<<< HEAD
+
         public void cargarIDHorario()
         {
             //MOSTRAR EL ID DEL HORARIO AL CARGAR LA PAGINA
@@ -96,8 +96,7 @@ namespace Checador
                 txt_id.Text = "1";
             }
         }
-=======
->>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
+
 
         private void responder(object sender, EventArgs e)
         {
@@ -136,10 +135,6 @@ namespace Checador
                 Sucursal.pais = txt_domicilio_pais.Text;
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
-<<<<<<< HEAD
-            //    Sucursal.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
-=======
->>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
 
                 Sucursal.guardarSucursal();
                 Limpiar();
@@ -210,12 +205,7 @@ namespace Checador
         {
             try
             {
-<<<<<<< HEAD
-               
-            //    idhorario = Sucursal.obtenerId(horario.horario);
-=======
-                horario.horario = cbx_horario.Text;
->>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
+
                 //Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
                 Sucursal.calle = txt_domicilio_calle.Text;
                 Sucursal.codigo_postal = txt_domicilio_cp.Text;
@@ -236,10 +226,6 @@ namespace Checador
                 Sucursal.pais = txt_domicilio_pais.Text;
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
-<<<<<<< HEAD
-         //       Sucursal.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
-=======
->>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
                 txt_id_mod.Text = "";
 
                 confirmacion = new formularios_padres.Mensajes();
@@ -275,10 +261,7 @@ namespace Checador
                 txt_domicilio_estado.Text = Sucursal.estado;
                 txt_domicilio_pais.Text = Sucursal.pais;
                 txt_telefono.Text = Sucursal.telefono;
-<<<<<<< HEAD
-            //    cbx_horario.SelectedValue = Sucursal.id_horario;
-=======
->>>>>>> 86f3f8e2d6179768149f3614bc15fb6b8c888182
+
                 if (Sucursal.estatus.ToString() == "A")
                 {
                     rb_mod_activo.Checked = true;
