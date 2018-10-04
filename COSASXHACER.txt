@@ -1,7 +1,8 @@
-- Cambiar la Vista de sucursal y empleado, los datagrids
-- Cambiar la GUI de suc y empleados
 - Realizar funciones en el checador - LISTOOOO
 	- Agregar retardo y contador de tiempo al empleado cuando cheque.
+- Ventana de no registrado cuando modifica un empleado
+- GUI Horario poner que se puedan desactivar los descansos
+- Hacer RELOAD del DATAGRID en el EVENTO CLICK del BUSCAR
 - Filtrar los buscar
 - Hacer HILOS
 - Poner bonitos los datagrid
@@ -9,4 +10,8 @@
 - Checadores multiples - 1/2
 - Poner barra de progreso cuando se necesite
 - Validar en GENERAL
+<<<<<<< HEAD
 - Validar los registros de salida
+=======
+	- Verificar existencia del empleado por el ID o CURP
+>>>>>>> d52934ce8c1e9656513768ecf9e9934754388f48

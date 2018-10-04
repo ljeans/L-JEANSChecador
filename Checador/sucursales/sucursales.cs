@@ -83,6 +83,7 @@ namespace Checador
         //REGISTRAR///////////////////////////////////////////////////////////////////////////
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
+<<<<<<< HEAD
 
         public void cargarIDHorario()
         {
@@ -97,6 +98,8 @@ namespace Checador
             }
         }
 
+=======
+>>>>>>> d52934ce8c1e9656513768ecf9e9934754388f48
 
         private void responder(object sender, EventArgs e)
         {
@@ -205,7 +208,10 @@ namespace Checador
         {
             try
             {
+<<<<<<< HEAD
 
+=======
+>>>>>>> d52934ce8c1e9656513768ecf9e9934754388f48
                 //Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
                 Sucursal.calle = txt_domicilio_calle.Text;
                 Sucursal.codigo_postal = txt_domicilio_cp.Text;
