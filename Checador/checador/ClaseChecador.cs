@@ -381,7 +381,6 @@ namespace Checador
                             comand.ExecuteNonQuery();
                             conexion2.Close();
                         }*/
-                        select = "SELECT top 1 * FROM registros WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_entrada is not Null and fecha_salida is not Null ORDER BY fecha_entrada DESC";
                 }
             }
             catch (Exception ex)
@@ -606,6 +605,7 @@ namespace Checador
             try
             {
                 DateTime fecha_entrada, fecha_salida;
+                DateTime? fecha_entrada2, fecha_salida2;
                 Conexion conexion = new Conexion();
                 //SqlConnection con = new SqlConnection(conexion.cadenaConexion);
                 using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
@@ -618,21 +618,39 @@ namespace Checador
                     if (lector.HasRows)//Revisa si hay resultados
                     {
                         lector.Read();
-                        if (lector.GetDateTime(lector.GetOrdinal("fecha_entrada")) != null && lector.GetDateTime(lector.GetOrdinal("fecha_salida")) != null)
+                        if (lector.GetDateTime(lector.GetOrdinal("fecha_entrada")) != null || lector.GetDateTime(lector.GetOrdinal("fecha_salida")) != null)
                         {
-                            fecha_entrada = lector.GetDateTime(lector.GetOrdinal("fecha_entrada"));
-                            fecha_salida = lector.GetDateTime(lector.GetOrdinal("fecha_salida"));
-
-                            if (fecha_salida > fecha_entrada)
+                            try
                             {
+                                fecha_entrada2 = lector.GetDateTime(lector.GetOrdinal("fecha_entrada"));
+                            }
+                            catch (Exception ex)
+                            {
+                                fecha_entrada2 = null;
+                            }
+
+                            try
+                            {
+                                fecha_salida2 = lector.GetDateTime(lector.GetOrdinal("fecha_salida"));
+                            }
+                            catch (Exception ex)
+                            {
+                                fecha_salida2 = null;
+                            }
+
+                            if (fecha_salida2 > fecha_entrada2 || fecha_entrada2 == null)
+                            {
+                                fecha_salida = Convert.ToDateTime(fecha_salida2);
                                 return fecha_salida;
                             }
-                            else if (fecha_salida < fecha_entrada)
+                            else if (fecha_salida2 < fecha_entrada2 || fecha_salida2 == null)
                             {
+                                fecha_entrada = Convert.ToDateTime(fecha_entrada2);
                                 return fecha_entrada;
                             }
                             else
                             {
+                                fecha_entrada = Convert.ToDateTime(fecha_entrada2);
                                 return fecha_entrada;
                             }
                         }

@@ -374,6 +374,7 @@ namespace Checador
 
         private void rb_buscar_CheckedChanged(object sender, EventArgs e)
         {
+            this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
             tabControlBase.SelectedTab = tabPage3;
         }
     }

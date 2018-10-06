@@ -156,6 +156,7 @@ namespace Checador
 
         private void rb_buscar_CheckedChanged(object sender, EventArgs e)
         {
+            this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
             tabControlBase.SelectedTab = tabPage3;
         }
 
@@ -248,10 +249,6 @@ namespace Checador
                     Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
                     MessageBox.Show("Sincronizado");
                 }
-<<<<<<< HEAD
-
-=======
->>>>>>> d52934ce8c1e9656513768ecf9e9934754388f48
                 Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
             }
             catch (Exception ex)
@@ -370,22 +367,28 @@ namespace Checador
                     if (Checador.ReadGeneralLogData(Convert.ToInt32(row.Cells[1].Value)))//read all the attendance records to the memory
                     {
                         fecha_max = Clase_Checador.verificarEvento(Convert.ToInt32(row.Cells[1].Value));
+                        MessageBox.Show(fecha_max.ToString());
                         while (Checador.SSR_GetGeneralLogData(Convert.ToInt32(row.Cells[1].Value), out id, out verifyMode,
                                    out inOutMode, out Year, out Month, out Day, out Hour, out Minute, out Second, ref workCode))//get records from the memory
                         {
-                            //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
-                            Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
-                            Empleado.obtenerIdHorario(Convert.ToInt32(id));
-                            Horario.verificar_existencia(Empleado.id_horario);
+                            
 
                             //VALIDACION PARA SABER DESDE DONDE VAMOS A JALAR LOS EVENTOS DEL CHECADOR [SE BORRARA DESPUES!!]
 
                             if (fecha_max < Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()))
                             {
+                                //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
+                                Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
+                                Empleado.obtenerIdHorario(Convert.ToInt32(id));
+                                Horario.verificar_existencia(Empleado.id_horario);
                                 Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode);
                             }
                             else if (fecha_max == Convert.ToDateTime("1995-12-12 00:00:00"))
                             {
+                                //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
+                                Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
+                                Empleado.obtenerIdHorario(Convert.ToInt32(id));
+                                Horario.verificar_existencia(Empleado.id_horario);
                                 Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode);
                             }
                         }
