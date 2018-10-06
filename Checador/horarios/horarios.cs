@@ -50,7 +50,7 @@ namespace Checador
 
         private void Limpiar()
         {
-            txt_id.Text = "";
+ 
             txt_id_a_modificar.Text = "";
             txt_nombre.Text = "";
             txt_horas_diarias.Text = "8";
@@ -61,14 +61,14 @@ namespace Checador
             dtp_hora_salida_desc.Text = "";
             txt_tolerancia.Text = "10";
 
-            cb_lunes.Checked = false;
-            cb_martes.Checked = false;
-            cb_miercoles.Checked = false;
-            cb_jueves.Checked = false;
-            cb_viernes.Checked = false;
-            cb_sabado.Checked = false;
-            cb_domingo.Checked = false;
-
+            cb_lunes.Checked = true;
+            cb_martes.Checked = true;
+            cb_miercoles.Checked = true;
+            cb_jueves.Checked = true;
+            cb_viernes.Checked = true;
+            cb_sabado.Checked = true;
+            cb_domingo.Checked = true;
+            cargarID();
 
         }
 
@@ -302,14 +302,25 @@ namespace Checador
 ///REGISTRAR///////////////////////////////////////////////////////////////////////////////////
         private void btn_registrar_Click(object sender, EventArgs e)
         {
+            bool descansoFlag=false;
             try
             {
                 Horario.id = Convert.ToInt32(txt_id.Text);
                 Horario.horario = txt_nombre.Text;
                 Horario.horas_diarias = Convert.ToInt32(txt_horas_diarias.Text);
                 Horario.horas_totales_quincenales = Convert.ToInt32(txt_horas_totales.Text);
-                Horario.hora_entrada_descanso = dtp_hora_entrada_desc.Value.TimeOfDay;  //izi
-                Horario.hora_salida_descanso = dtp_hora_salida_desc.Value.TimeOfDay;    //pizi
+
+                if (cb_descanso.Checked == true)
+                {
+                    descansoFlag = true;
+                    Horario.hora_entrada_descanso = dtp_hora_entrada_desc.Value.TimeOfDay;  //izi
+                    Horario.hora_salida_descanso = dtp_hora_salida_desc.Value.TimeOfDay;    //pizi
+                }
+                else
+                {
+                    descansoFlag = false;
+                }
+
                 Horario.hr_entrada = dtp_hora_entrada.Value.TimeOfDay;
                 Horario.hr_salida = dtp_hora_salida.Value.TimeOfDay;
                 Horario.tolerancia = Convert.ToInt32(txt_tolerancia.Text);
@@ -363,7 +374,7 @@ namespace Checador
                     Horario.domingo = 0;
                 }
 
-                Horario.guardarHorario();
+                Horario.guardarHorario(descansoFlag);
                 Limpiar();
             }
             catch (Exception ex)
@@ -376,6 +387,30 @@ namespace Checador
         {
             this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
             tabControlBase.SelectedTab = tabPage3;
+        }
+
+        private void cb_descanso_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cb_descanso.Checked == true)
+            {
+                label7.Visible = true;
+                label6.Visible = true;
+                dtp_hora_entrada_desc.Visible = true;
+                dtp_hora_salida_desc.Visible = true;
+              
+            }
+            else if (cb_descanso.Checked == false)
+            {
+                label7.Visible = false;
+                label6.Visible = false;
+                dtp_hora_entrada_desc.Visible = false;
+                dtp_hora_salida_desc.Visible = false;
+            }
+        }
+
+        private void tabControlBase_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

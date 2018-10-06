@@ -54,6 +54,14 @@ namespace Checador
             SqlCommand comand = new SqlCommand(consulta, conexion);
             comand.Parameters.AddWithValue("@nombre", nombre);
             conexion.Open();
+<<<<<<< HEAD
+=======
+            /*int id = Convert.ToInt32(comand.ExecuteScalar());
+         
+            conexion.Close();
+            return id;*/
+
+>>>>>>> 3c2a11ff5b07f9b6d464b959390b166d8877f194
 
             SqlDataReader lector = comand.ExecuteReader();//Ejecuta el comadno
             if (lector.HasRows)//Revisa si hay resultados
