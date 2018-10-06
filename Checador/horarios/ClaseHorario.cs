@@ -53,7 +53,7 @@ namespace Checador
         }
 
         //FUNCION PARA REGISTRAR UN HORARIO
-        public void guardarHorario()
+        public void guardarHorario(bool flag)
         {
             try
             {
@@ -76,8 +76,17 @@ namespace Checador
                 comand.Parameters.AddWithValue("@domingo", domingo);
                 comand.Parameters.AddWithValue("@horas_diarias", horas_diarias);
                 comand.Parameters.AddWithValue("@horas_totales_quincenales", horas_totales_quincenales);
-                comand.Parameters.AddWithValue("@hora_salida_descanso", hora_salida_descanso);
-                comand.Parameters.AddWithValue("@hora_entrada_descanso", hora_entrada_descanso);
+                if (flag)
+                {
+                    comand.Parameters.AddWithValue("@hora_salida_descanso", hora_salida_descanso);
+                    comand.Parameters.AddWithValue("@hora_entrada_descanso", hora_entrada_descanso);
+                }
+                else
+                {
+                    comand.Parameters.AddWithValue("@hora_salida_descanso", DBNull.Value);
+                    comand.Parameters.AddWithValue("@hora_entrada_descanso", DBNull.Value);
+                }
+                
                 comand.Parameters.AddWithValue("@tolerancia", tolerancia);
 
                 comand.ExecuteNonQuery();

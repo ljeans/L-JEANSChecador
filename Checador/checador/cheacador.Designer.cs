@@ -120,7 +120,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(309, 77);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 67);
             // 
             // tabPage1
             // 

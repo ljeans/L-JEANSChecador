@@ -248,10 +248,6 @@ namespace Checador
                     Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
                     MessageBox.Show("Sincronizado");
                 }
-<<<<<<< HEAD
-
-=======
->>>>>>> d52934ce8c1e9656513768ecf9e9934754388f48
                 Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
             }
             catch (Exception ex)
@@ -370,6 +366,7 @@ namespace Checador
                     if (Checador.ReadGeneralLogData(Convert.ToInt32(row.Cells[1].Value)))//read all the attendance records to the memory
                     {
                         fecha_max = Clase_Checador.verificarEvento(Convert.ToInt32(row.Cells[1].Value));
+                        MessageBox.Show(fecha_max.ToString());
                         while (Checador.SSR_GetGeneralLogData(Convert.ToInt32(row.Cells[1].Value), out id, out verifyMode,
                                    out inOutMode, out Year, out Month, out Day, out Hour, out Minute, out Second, ref workCode))//get records from the memory
                         {

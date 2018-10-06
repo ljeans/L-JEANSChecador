@@ -83,7 +83,6 @@ namespace Checador
         //REGISTRAR///////////////////////////////////////////////////////////////////////////
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
-<<<<<<< HEAD
 
         public void cargarIDHorario()
         {
@@ -97,9 +96,6 @@ namespace Checador
                 txt_id.Text = "1";
             }
         }
-
-=======
->>>>>>> d52934ce8c1e9656513768ecf9e9934754388f48
 
         private void responder(object sender, EventArgs e)
         {
@@ -208,10 +204,6 @@ namespace Checador
         {
             try
             {
-<<<<<<< HEAD
-
-=======
->>>>>>> d52934ce8c1e9656513768ecf9e9934754388f48
                 //Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
                 Sucursal.calle = txt_domicilio_calle.Text;
                 Sucursal.codigo_postal = txt_domicilio_cp.Text;
@@ -235,7 +227,7 @@ namespace Checador
                 txt_id_mod.Text = "";
 
                 confirmacion = new formularios_padres.Mensajes();
-                confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea modificar el horario?";
+                confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea modificar la sucursal?";
                 confirmacion.FormClosed += new FormClosedEventHandler(responder);
                 confirmacion.Show();
                 Enabled = false;

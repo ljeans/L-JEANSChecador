@@ -151,7 +151,7 @@
             this.tabControlBase.Controls.Add(this.tabPage3);
             this.tabControlBase.Controls.Add(this.tabPage4);
             this.tabControlBase.Controls.Add(this.tabPage5);
-            this.tabControlBase.Location = new System.Drawing.Point(309, 60);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 56);
             this.tabControlBase.Name = "tabControlBase";
             this.tabControlBase.SelectedIndex = 0;
             this.tabControlBase.Size = new System.Drawing.Size(1020, 650);
