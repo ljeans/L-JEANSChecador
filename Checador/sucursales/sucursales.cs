@@ -84,8 +84,6 @@ namespace Checador
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
 
-<<<<<<< HEAD
-=======
         public void cargarIDHorario()
         {
             //MOSTRAR EL ID DEL HORARIO AL CARGAR LA PAGINA
@@ -98,8 +96,6 @@ namespace Checador
                 txt_id.Text = "1";
             }
         }
-
->>>>>>> 3c2a11ff5b07f9b6d464b959390b166d8877f194
         private void responder(object sender, EventArgs e)
         {
             Enabled = true;
