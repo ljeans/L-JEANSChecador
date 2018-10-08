@@ -58,10 +58,10 @@
             this.vistaChecadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgv_checador = new System.Windows.Forms.DataGridView();
             this.label42 = new System.Windows.Forms.Label();
-            this.txt_nombrebuscar = new System.Windows.Forms.TextBox();
+            this.txt_buscar = new System.Windows.Forms.TextBox();
             this.gbox_estatus = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.cb_buscar_inactivo = new System.Windows.Forms.CheckBox();
+            this.cb_buscar_activo = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtp_hora = new System.Windows.Forms.DateTimePicker();
             this.btn_scr_eventos = new System.Windows.Forms.Button();
@@ -141,7 +141,7 @@
             this.tabPage3.Controls.Add(this.dgv_checadorbuscar);
             this.tabPage3.Controls.Add(this.dgv_checador);
             this.tabPage3.Controls.Add(this.label42);
-            this.tabPage3.Controls.Add(this.txt_nombrebuscar);
+            this.tabPage3.Controls.Add(this.txt_buscar);
             // 
             // btn_home
             // 
@@ -501,48 +501,53 @@
             this.label42.TabIndex = 84;
             this.label42.Text = "ID:";
             // 
-            // txt_nombrebuscar
+            // txt_buscar
             // 
-            this.txt_nombrebuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_nombrebuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombrebuscar.Location = new System.Drawing.Point(89, 41);
-            this.txt_nombrebuscar.Name = "txt_nombrebuscar";
-            this.txt_nombrebuscar.Size = new System.Drawing.Size(248, 29);
-            this.txt_nombrebuscar.TabIndex = 82;
+            this.txt_buscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_buscar.Location = new System.Drawing.Point(89, 41);
+            this.txt_buscar.Name = "txt_buscar";
+            this.txt_buscar.Size = new System.Drawing.Size(248, 29);
+            this.txt_buscar.TabIndex = 82;
+            this.txt_buscar.TextChanged += new System.EventHandler(this.txt_nombrebuscar_TextChanged);
             // 
             // gbox_estatus
             // 
-            this.gbox_estatus.Controls.Add(this.radioButton2);
-            this.gbox_estatus.Controls.Add(this.radioButton1);
+            this.gbox_estatus.Controls.Add(this.cb_buscar_inactivo);
+            this.gbox_estatus.Controls.Add(this.cb_buscar_activo);
             this.gbox_estatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbox_estatus.Location = new System.Drawing.Point(702, 6);
+            this.gbox_estatus.Location = new System.Drawing.Point(405, 24);
             this.gbox_estatus.Name = "gbox_estatus";
-            this.gbox_estatus.Size = new System.Drawing.Size(300, 80);
+            this.gbox_estatus.Size = new System.Drawing.Size(270, 70);
             this.gbox_estatus.TabIndex = 85;
             this.gbox_estatus.TabStop = false;
             this.gbox_estatus.Text = "Estatus";
             // 
-            // radioButton2
+            // cb_buscar_inactivo
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(191, 33);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(91, 28);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Inactivo";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.cb_buscar_inactivo.AutoSize = true;
+            this.cb_buscar_inactivo.Checked = true;
+            this.cb_buscar_inactivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_buscar_inactivo.Location = new System.Drawing.Point(144, 25);
+            this.cb_buscar_inactivo.Name = "cb_buscar_inactivo";
+            this.cb_buscar_inactivo.Size = new System.Drawing.Size(101, 28);
+            this.cb_buscar_inactivo.TabIndex = 1;
+            this.cb_buscar_inactivo.Text = "Inactivos";
+            this.cb_buscar_inactivo.UseVisualStyleBackColor = true;
+            this.cb_buscar_inactivo.CheckedChanged += new System.EventHandler(this.cb_buscar_inactivo_CheckedChanged);
             // 
-            // radioButton1
+            // cb_buscar_activo
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(37, 33);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(79, 28);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Activo";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.cb_buscar_activo.AutoSize = true;
+            this.cb_buscar_activo.Checked = true;
+            this.cb_buscar_activo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_buscar_activo.Location = new System.Drawing.Point(22, 28);
+            this.cb_buscar_activo.Name = "cb_buscar_activo";
+            this.cb_buscar_activo.Size = new System.Drawing.Size(89, 28);
+            this.cb_buscar_activo.TabIndex = 0;
+            this.cb_buscar_activo.Text = "Activos";
+            this.cb_buscar_activo.UseVisualStyleBackColor = true;
+            this.cb_buscar_activo.CheckedChanged += new System.EventHandler(this.cb_buscar_activo_CheckedChanged);
             // 
             // groupBox1
             // 
@@ -726,12 +731,10 @@
         private System.Windows.Forms.TextBox txt_id_mod;
         private System.Windows.Forms.Button btn_modificar;
         private System.Windows.Forms.GroupBox gbox_estatus;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.DataGridView dgv_checadorbuscar;
         private System.Windows.Forms.DataGridView dgv_checador;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox txt_nombrebuscar;
+        private System.Windows.Forms.TextBox txt_buscar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_scr_eventos;
         private System.Windows.Forms.DateTimePicker dtp_fecha;
@@ -759,5 +762,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.CheckBox cb_buscar_inactivo;
+        private System.Windows.Forms.CheckBox cb_buscar_activo;
     }
 }

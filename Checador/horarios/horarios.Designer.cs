@@ -132,7 +132,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(309, 57);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 74);
             this.tabControlBase.SelectedIndexChanged += new System.EventHandler(this.tabControlBase_SelectedIndexChanged);
             // 
             // tabPage1

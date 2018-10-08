@@ -212,8 +212,30 @@ namespace Checador
                 txt_horas_totales.Value = Horario.horas_totales_quincenales;
                 txt_tolerancia.Value = Horario.tolerancia;
                 dtp_hora_entrada.Value = Convert.ToDateTime(Horario.hr_entrada.ToString());
-                dtp_hora_entrada_desc.Value = Convert.ToDateTime(Horario.hora_entrada_descanso.ToString());
-                dtp_hora_salida_desc.Value = Convert.ToDateTime(Horario.hora_salida_descanso.ToString());
+
+                //VALIDACION PARA NULL EN HORAS DE DESCANSO
+                TimeSpan hora_fija = new TimeSpan(00,00,00);
+                if(Horario.hora_entrada_descanso != hora_fija)
+                {
+                    dtp_hora_entrada_desc.Value = Convert.ToDateTime(Horario.hora_entrada_descanso.ToString());
+                }
+                else
+                {
+                    cb_descanso.Checked = false;
+                    dtp_hora_entrada_desc.Enabled = false;
+                }
+
+                if (Horario.hora_entrada_descanso != hora_fija)
+                {
+                    dtp_hora_salida_desc.Value = Convert.ToDateTime(Horario.hora_salida_descanso.ToString());
+                }
+                else
+                {
+                    cb_descanso.Checked = false;
+                    dtp_hora_salida_desc.Enabled = false;
+                }
+
+               
                 dtp_hora_salida.Value = Convert.ToDateTime(Horario.hr_salida.ToString());
                 if (Horario.lunes == 1)
                     cb_lunes.Checked = true;
@@ -393,18 +415,14 @@ namespace Checador
         {
             if (cb_descanso.Checked == true)
             {
-                label7.Visible = true;
-                label6.Visible = true;
-                dtp_hora_entrada_desc.Visible = true;
-                dtp_hora_salida_desc.Visible = true;
+                dtp_hora_entrada_desc.Enabled = true;
+                dtp_hora_salida_desc.Enabled = true;
               
             }
             else if (cb_descanso.Checked == false)
             {
-                label7.Visible = false;
-                label6.Visible = false;
-                dtp_hora_entrada_desc.Visible = false;
-                dtp_hora_salida_desc.Visible = false;
+                dtp_hora_entrada_desc.Enabled = false;
+                dtp_hora_salida_desc.Enabled = false;
             }
         }
 
