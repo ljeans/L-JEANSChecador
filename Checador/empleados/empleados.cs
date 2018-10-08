@@ -463,8 +463,8 @@ namespace Checador.empleados
             else
             {
                 mensaje = new formularios_padres.mensaje_info();
-                mensaje.lbl_info.Text = "Empleado no registrado. Por favor xd";
-                mensaje.lbl_info2.Text = "intente de nuevo.";
+                mensaje.lbl_info.Text = "Empleado no registrado.";
+                mensaje.lbl_info2.Text = "Intente de nuevo.";
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 mensaje.Show();
             }

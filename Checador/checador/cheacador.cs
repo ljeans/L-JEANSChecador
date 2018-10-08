@@ -388,7 +388,7 @@ namespace Checador
                                 //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
                                 Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
                                 Empleado.obtenerIdHorario(Convert.ToInt32(id));
-                                Horario.verificar_existencia(Empleado.id_horario);
+                                Horario.verificar_existencia(Empleado.id_horario); 
                                 Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode);
                             }
                         }
@@ -500,6 +500,100 @@ namespace Checador
             {
                 //MessageBox.Show("Ocurrió un error al borrar los usuarios del checador. Intenta de nuevo.");
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        //FILTRAR EL BUSCAR//
+        private void txt_nombrebuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == true)
+            {
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                vistaChecadorBindingSource.Filter = "";
+            }
+            else if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == false)
+            {
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                vistaChecadorBindingSource.Filter = "[estatus] = 'A'";
+            }
+            else if (txt_buscar.Text == "" && cb_buscar_activo.Checked == false && cb_buscar_inactivo.Checked == true)
+            {
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                vistaChecadorBindingSource.Filter = "[estatus] = 'I'";
+            }
+            else if (txt_buscar.Text != "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == false)
+            {
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'A";
+            }
+            else if (txt_buscar.Text != "" && cb_buscar_activo.Checked == false && cb_buscar_inactivo.Checked == true)
+            {
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'I";
+            }
+            else
+            {
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*'";
+            }
+        }
+
+        private void cb_buscar_activo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == true)
+            {
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                vistaChecadorBindingSource.Filter = "";
+            }
+            else if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == false)
+            {
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                vistaChecadorBindingSource.Filter = "[estatus] = 'A'";
+            }
+            else if (txt_buscar.Text == "" && cb_buscar_activo.Checked == false && cb_buscar_inactivo.Checked == true)
+            {
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                vistaChecadorBindingSource.Filter = "[estatus] = 'I'";
+            }
+            else if (txt_buscar.Text != "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == false)
+            {
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'A";
+            }
+            else if (txt_buscar.Text != "" && cb_buscar_activo.Checked == false && cb_buscar_inactivo.Checked == true)
+            {
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'I";
+            }
+            else
+            {
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*'";
+            }
+        }
+
+        private void cb_buscar_inactivo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == true)
+            {
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                vistaChecadorBindingSource.Filter = "";
+            }
+            else if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == false)
+            {
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                vistaChecadorBindingSource.Filter = "[estatus] = 'A'";
+            }
+            else if (txt_buscar.Text == "" && cb_buscar_activo.Checked == false && cb_buscar_inactivo.Checked == true)
+            {
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                vistaChecadorBindingSource.Filter = "[estatus] = 'I'";
+            }
+            else if (txt_buscar.Text != "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == false)
+            {
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'A";
+            }
+            else if (txt_buscar.Text != "" && cb_buscar_activo.Checked == false && cb_buscar_inactivo.Checked == true)
+            {
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'I";
+            }
+            else
+            {
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*'";
             }
         }
     }

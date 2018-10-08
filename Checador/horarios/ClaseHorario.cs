@@ -156,6 +156,7 @@ namespace Checador
         {
             try
             {
+                TimeSpan? hora_salida_descanso_null, hora_entrada_descanso_null;
                 Conexion conexion = new Conexion();
                 //SqlConnection con = new SqlConnection(conexion.cadenaConexion);
                 using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
@@ -184,8 +185,26 @@ namespace Checador
                         sabado = lector.GetInt32(lector.GetOrdinal("sabado"));
                         domingo = lector.GetInt32(lector.GetOrdinal("domingo"));
                         horas_totales_quincenales = lector.GetInt32(lector.GetOrdinal("horas_totales_quincenales"));
-                        hora_salida_descanso = lector.GetTimeSpan(lector.GetOrdinal("hr_salida_descanso"));
-                        hora_entrada_descanso = lector.GetTimeSpan(lector.GetOrdinal("hr_entrada_descanso"));
+
+                        try
+                        {
+                            hora_salida_descanso = lector.GetTimeSpan(lector.GetOrdinal("hr_salida_descanso"));
+                        }
+                        catch (Exception ex)
+                        {
+                            
+                        }
+
+                        try
+                        {
+                            hora_entrada_descanso = lector.GetTimeSpan(lector.GetOrdinal("hr_entrada_descanso"));
+                        }
+                        catch (Exception ex)
+                        {
+
+                        }
+
+                        
                         tolerancia = lector.GetInt32(lector.GetOrdinal("tolerancia"));
                         con.Close();
                         return true;
