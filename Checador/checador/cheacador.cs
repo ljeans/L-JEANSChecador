@@ -381,15 +381,20 @@ namespace Checador
                                 Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
                                 Empleado.obtenerIdHorario(Convert.ToInt32(id));
                                 Horario.verificar_existencia(Empleado.id_horario);
-                                Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode);
+                                Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
                             }
                             else if (fecha_max == Convert.ToDateTime("1995-12-12 00:00:00"))
                             {
                                 //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
                                 Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
                                 Empleado.obtenerIdHorario(Convert.ToInt32(id));
+<<<<<<< HEAD
                                 Horario.verificar_existencia(Empleado.id_horario); 
                                 Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode);
+=======
+                                Horario.verificar_existencia(Empleado.id_horario);
+                                Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
+>>>>>>> 32f1888d9419c9d4cf59375c88b88974f68e2c2b
                             }
                         }
                         MessageBox.Show("Eventos Sincronizados con exito");

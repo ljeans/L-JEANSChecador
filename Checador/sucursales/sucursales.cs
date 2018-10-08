@@ -96,7 +96,10 @@ namespace Checador
                 txt_id.Text = "1";
             }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 32f1888d9419c9d4cf59375c88b88974f68e2c2b
         private void responder(object sender, EventArgs e)
         {
             Enabled = true;
