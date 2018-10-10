@@ -430,5 +430,34 @@ namespace Checador
         {
 
         }
+
+////////////////FILTRAR EL BUSCAR//////////////////////////
+        private void txt_idbuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+            {
+                this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
+                vistaHorarioBindingSource.Filter = "";
+            }
+            else
+            {
+                vistaHorarioBindingSource.Filter = "CONVERT([id_horario], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [horario] LIKE '*" + txt_nombrebuscar.Text + "*'";
+            }
+        }
+
+        private void txt_nombrebuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+            {
+                this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
+                vistaHorarioBindingSource.Filter = "";
+            }
+            else
+            {
+                vistaHorarioBindingSource.Filter = "CONVERT([id_horario], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [horario] LIKE '*" + txt_nombrebuscar.Text + "*'";
+            }
+        }
+///////////////////////////////////////////////////////////////
+
     }
 }

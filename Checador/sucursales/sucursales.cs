@@ -96,10 +96,7 @@ namespace Checador
                 txt_id.Text = "1";
             }
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> 32f1888d9419c9d4cf59375c88b88974f68e2c2b
         private void responder(object sender, EventArgs e)
         {
             Enabled = true;
@@ -291,5 +288,34 @@ namespace Checador
             Sucursal.estatus = "I";
             Sucursal.Eliminar_Sucursal();
         }
+
+////////////////FILTRAR EL BUSCAR//////////////////////////
+        private void txt_idbuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+            {
+                this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
+                vistaSucursalBindingSource.Filter = "";
+            }
+            else
+            {
+                vistaSucursalBindingSource.Filter = "CONVERT([id_sucursal], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre] LIKE '*" + txt_nombrebuscar.Text + "*'";
+            }
+        }
+
+        private void txt_nombrebuscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+            {
+                this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
+                vistaSucursalBindingSource.Filter = "";
+            }
+            else
+            {
+                vistaSucursalBindingSource.Filter = "CONVERT([id_sucursal], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre] LIKE '*" + txt_nombrebuscar.Text + "*'";
+            }
+        }
+//////////////////////////////////////////////////////////////////
+
     }
 }

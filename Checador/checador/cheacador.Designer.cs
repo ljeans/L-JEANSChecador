@@ -422,17 +422,19 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dgv_checadorbuscar.DataSource = this.vistaChecadorBindingSource;
-            this.dgv_checadorbuscar.Location = new System.Drawing.Point(23, 104);
+            this.dgv_checadorbuscar.Location = new System.Drawing.Point(23, 124);
             this.dgv_checadorbuscar.Name = "dgv_checadorbuscar";
-            this.dgv_checadorbuscar.ReadOnly = true;
-            this.dgv_checadorbuscar.Size = new System.Drawing.Size(966, 380);
+            this.dgv_checadorbuscar.Size = new System.Drawing.Size(966, 360);
             this.dgv_checadorbuscar.TabIndex = 83;
             // 
             // check
             // 
+            this.check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.check.HeaderText = "Check";
             this.check.Name = "check";
-            this.check.ReadOnly = true;
+            this.check.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.check.ToolTipText = "Marque los checadores a los que desea  aplicar la función";
+            this.check.Width = 44;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -756,13 +758,13 @@
         private System.Windows.Forms.BindingSource vistaChecadorBindingSource;
         private DataSet_ChecadorTableAdapters.Vista_ChecadorTableAdapter vista_ChecadorTableAdapter;
         private System.Windows.Forms.DateTimePicker dtp_hora;
+        private System.Windows.Forms.CheckBox cb_buscar_inactivo;
+        private System.Windows.Forms.CheckBox cb_buscar_activo;
         private System.Windows.Forms.DataGridViewCheckBoxColumn check;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.CheckBox cb_buscar_inactivo;
-        private System.Windows.Forms.CheckBox cb_buscar_activo;
     }
 }

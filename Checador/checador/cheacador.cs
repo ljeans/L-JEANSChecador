@@ -219,6 +219,26 @@ namespace Checador
             //CAMBIAR LA LETRA AL DATAGRIDVIEW
             dgv_checador.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
             dgv_checador.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
+
+            AgregarCheckBox();
+
+        }
+
+        //AGREGAR CHECHBOX DE MARCAR TODOS
+        private void AgregarCheckBox()
+        {
+            ToolTip toolTip = new ToolTip();
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 0;
+            toolTip.ReshowDelay = 0;
+            toolTip.ShowAlways = true;
+
+            CheckBox HeaderCheckBox = new CheckBox();
+            HeaderCheckBox.Size = new Size(15, 15);
+            HeaderCheckBox.Location = new Point(15, 5);
+            toolTip.SetToolTip(HeaderCheckBox, "Marcar todos");
+            this.dgv_checadorbuscar.Controls.Add(HeaderCheckBox);
+
         }
 
         private void btn_scr_fecha_Click(object sender, EventArgs e)
@@ -234,6 +254,21 @@ namespace Checador
             {
                 //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        //FUNCION PARA RECORRER TODAS LAS FILAS DEL DATAGRID Y SABER CUALES ESTÁN MARCADAS
+        private void prueba_check()
+        {
+            int x = 1;
+            foreach (DataGridViewRow dataGridRow in dgv_checadorbuscar.Rows)
+            {
+
+                if(dataGridRow.Cells["Check"].Value != null)
+                {
+                    MessageBox.Show("Columna " + x +" checada");
+                }
+                x = x + 1;
             }
         }
 
@@ -388,13 +423,8 @@ namespace Checador
                                 //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
                                 Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
                                 Empleado.obtenerIdHorario(Convert.ToInt32(id));
-<<<<<<< HEAD
-                                Horario.verificar_existencia(Empleado.id_horario); 
-                                Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode);
-=======
                                 Horario.verificar_existencia(Empleado.id_horario);
                                 Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
->>>>>>> 32f1888d9419c9d4cf59375c88b88974f68e2c2b
                             }
                         }
                         MessageBox.Show("Eventos Sincronizados con exito");
@@ -508,7 +538,7 @@ namespace Checador
             }
         }
 
-        //FILTRAR EL BUSCAR//
+////////////////FILTRAR EL BUSCAR//////////////////////////
         private void txt_nombrebuscar_TextChanged(object sender, EventArgs e)
         {
             if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == true)
@@ -601,5 +631,6 @@ namespace Checador
                 vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*'";
             }
         }
+////////////////////////////////////////////////////////////////////////////////////////
     }
 }
