@@ -271,6 +271,7 @@
             this.btn_reportes.Text = "Reportes";
             this.btn_reportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_reportes.UseVisualStyleBackColor = false;
+            this.btn_reportes.Click += new System.EventHandler(this.btn_reportes_Click);
             // 
             // btn_empleados
             // 

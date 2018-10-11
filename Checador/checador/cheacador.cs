@@ -379,6 +379,7 @@ namespace Checador
                 //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
                 MessageBox.Show(ex.ToString());
             }
+           
         }
 
         private void sincronizar_eventos()
@@ -428,6 +429,8 @@ namespace Checador
                             }
                         }
                         MessageBox.Show("Eventos Sincronizados con exito");
+                        //CHECAR ESTO
+                        //tabControlBase.SelectedTab = tabPage4;
                     }
                     else
                     {
@@ -631,6 +634,19 @@ namespace Checador
                 vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*'";
             }
         }
+<<<<<<< HEAD
+
+        private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage3;
+        }
+=======
 ////////////////////////////////////////////////////////////////////////////////////////
+>>>>>>> 46b02f195dd416b67309f56bc0e21b7370a98839
     }
 }

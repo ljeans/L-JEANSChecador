@@ -30,7 +30,6 @@ C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.principal.res
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.formpadre.resources
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.horarios.resources
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.Properties.Resources.resources
-C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.reportes.resources
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.sucursales.resources
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.GenerateResource.Cache
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.CoreCompileInputs.cache
@@ -39,6 +38,7 @@ C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.pdb
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\Checador.exe.config
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\Checador.exe
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\Checador.pdb
+<<<<<<< HEAD
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportSource.dll
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.Shared.dll
@@ -58,3 +58,25 @@ C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.Repor
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\ShockwaveFlashObjects.dll
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\stdole.dll
+=======
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\FlashControlV71.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\stdole.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.reportes.reporte.resources
+>>>>>>> 99dbab4b865eb64e83fce051fbef1c331b99c541
