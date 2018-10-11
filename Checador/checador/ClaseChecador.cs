@@ -271,7 +271,7 @@ namespace Checador
                 TimeSpan fecha_retardo = TimeSpan.FromMinutes(hora_entrada.TotalMinutes + Convert.ToDouble(tolerancia));
 
                 TimeSpan fecha_retardo2 = TimeSpan.FromMinutes(hora_entrada_descanso.TotalMinutes + Convert.ToDouble(tolerancia));
-                MessageBox.Show(horario);
+                
                 //ENTRADA
                 if (tipo_evento == 0)
                 {
@@ -298,7 +298,7 @@ namespace Checador
                     }
                   
                     //GUARDAR NUEVO EVENTO
-                        string consulta = "INSERT INTO registros VALUES (@id_checador,@id_empleado,@id_sucursal,@fecha_entrada, @fecha_salida)";
+                        string consulta = "INSERT INTO registros VALUES (@id_checador,@id_empleado,@id_sucursal,@fecha_entrada, @fecha_salida, @horas_trabajadas)";
                         con.Open();
                         SqlCommand comand = new SqlCommand(consulta, con);
                         comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
@@ -306,6 +306,7 @@ namespace Checador
                         comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
                         comand.Parameters.AddWithValue("@fecha_entrada", fecha_evento);
                         comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
+                        comand.Parameters.AddWithValue("@horas_trabajadas", DBNull.Value);
                         comand.ExecuteNonQuery();
                         con.Close();
                 }
@@ -332,12 +333,11 @@ namespace Checador
                             fecha_salida = null;
                         }
 
-
                         if (fecha_entrada != null && fecha_salida != null)
                         {
                             con.Close();
                             //GUARDAR NUEVO EVENTO CON PURA SALIDA
-                            string consulta = "INSERT INTO registros VALUES (@id_checador,@id_empleado,@id_sucursal,@fecha_entrada, @fecha_salida)";
+                            string consulta = "INSERT INTO registros VALUES (@id_checador,@id_empleado,@id_sucursal,@fecha_entrada, @fecha_salida, @horas_trabajadas)";
                             Conexion con2 = new Conexion();
                             SqlConnection conexion2 = new SqlConnection(con2.cadenaConexion);
                             conexion2.Open();
@@ -347,14 +347,19 @@ namespace Checador
                             comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
                             comand.Parameters.AddWithValue("@fecha_entrada", DBNull.Value);
                             comand.Parameters.AddWithValue("@fecha_salida", fecha_evento);
+                            comand.Parameters.AddWithValue("@horas_trabajadas", DBNull.Value);
                             comand.ExecuteNonQuery();
                             conexion2.Close();
                         }
                         else if(fecha_entrada != null && fecha_salida == null)
                         {
+                            TimeSpan hr_entrada = new TimeSpan(fecha_entrada.Value.Hour, fecha_entrada.Value.Minute, fecha_entrada.Value.Second);
+                            TimeSpan hr_salida = new TimeSpan(fecha_evento.Hour, fecha_evento.Minute, fecha_evento.Second);
+                            int horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
+
                             con.Close();
                             //HACER UPDATE PARA INSERTAR LA FECHA DE SALIDA
-                            string consulta = "UPDATE registros SET fecha_salida = @fecha_evento WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_entrada > '" + fecha_evento.Year + "-" + fecha_evento.Month.ToString("d2") + "-" + fecha_evento.Day.ToString("d2") + "T00:00:00.000' and fecha_entrada < '" + fecha_evento.Year + "-" + fecha_evento.Month.ToString("d2") + "-" + fecha_evento.Day.ToString("d2") + "T23:59:59.000' and fecha_salida is Null and fecha_entrada = (SELECT MAX(fecha_entrada) FROM registros WHERE id_checador=@checador and id_empleado = @empleado and id_sucursal = @sucursal); ";
+                            string consulta = "UPDATE registros SET fecha_salida = @fecha_evento, horas_trabajadas = @horas_trabajadas WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_entrada > '" + fecha_evento.Year + "-" + fecha_evento.Month.ToString("d2") + "-" + fecha_evento.Day.ToString("d2") + "T00:00:00.000' and fecha_entrada < '" + fecha_evento.Year + "-" + fecha_evento.Month.ToString("d2") + "-" + fecha_evento.Day.ToString("d2") + "T23:59:59.000' and fecha_salida is Null and fecha_entrada = (SELECT MAX(fecha_entrada) FROM registros WHERE id_checador=@checador and id_empleado = @empleado and id_sucursal = @sucursal); ";
                             Conexion con2 = new Conexion();
                             SqlConnection conexion2 = new SqlConnection(con2.cadenaConexion);
                             conexion2.Open();
@@ -366,6 +371,7 @@ namespace Checador
                             comand.Parameters.AddWithValue("@checador", id_checador);//Agregamos parametros a la consulta
                             comand.Parameters.AddWithValue("@empleado", id_empleado);
                             comand.Parameters.AddWithValue("@sucursal", id_sucursal);
+                            comand.Parameters.AddWithValue("@horas_trabajadas", horas_trabajadas);
                             comand.ExecuteNonQuery();
                             conexion2.Close();
                         }

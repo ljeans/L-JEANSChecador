@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbox_datos_checador = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
@@ -72,10 +73,18 @@
             this.btn_scr_fecha = new System.Windows.Forms.Button();
             this.sucursalTableAdapter = new Checador.DataSet_ChecadorTableAdapters.sucursalTableAdapter();
             this.vista_ChecadorTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_ChecadorTableAdapter();
+            this.dgv_eventos_sincronizados = new System.Windows.Forms.DataGridView();
+            this.id_cheador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Regresar = new System.Windows.Forms.Button();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
@@ -88,6 +97,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_checador)).BeginInit();
             this.gbox_estatus.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_eventos_sincronizados)).BeginInit();
             this.SuspendLayout();
             // 
             // rb_4
@@ -142,6 +152,15 @@
             this.tabPage3.Controls.Add(this.dgv_checador);
             this.tabPage3.Controls.Add(this.label42);
             this.tabPage3.Controls.Add(this.txt_buscar);
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.Regresar);
+            this.tabPage4.Controls.Add(this.dgv_eventos_sincronizados);
+            // 
+            // panel_barra_sup
+            // 
+            this.panel_barra_sup.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barra_sup_Paint);
             // 
             // btn_home
             // 
@@ -681,6 +700,74 @@
             // 
             this.vista_ChecadorTableAdapter.ClearBeforeFill = true;
             // 
+            // dgv_eventos_sincronizados
+            // 
+            this.dgv_eventos_sincronizados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_eventos_sincronizados.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_eventos_sincronizados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgv_eventos_sincronizados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_eventos_sincronizados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_eventos_sincronizados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_eventos_sincronizados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_cheador,
+            this.id_empleado,
+            this.id_sucursal,
+            this.fecha_entrada,
+            this.fecha_salida});
+            this.dgv_eventos_sincronizados.Location = new System.Drawing.Point(102, 94);
+            this.dgv_eventos_sincronizados.Name = "dgv_eventos_sincronizados";
+            this.dgv_eventos_sincronizados.Size = new System.Drawing.Size(800, 400);
+            this.dgv_eventos_sincronizados.TabIndex = 0;
+            // 
+            // id_cheador
+            // 
+            this.id_cheador.HeaderText = "ID CHECADOR";
+            this.id_cheador.Name = "id_cheador";
+            // 
+            // id_empleado
+            // 
+            this.id_empleado.HeaderText = "ID EMPLEADO";
+            this.id_empleado.Name = "id_empleado";
+            // 
+            // id_sucursal
+            // 
+            this.id_sucursal.HeaderText = "ID SUCURSAL";
+            this.id_sucursal.Name = "id_sucursal";
+            // 
+            // fecha_entrada
+            // 
+            this.fecha_entrada.HeaderText = "FECHA ENTRADA";
+            this.fecha_entrada.Name = "fecha_entrada";
+            // 
+            // fecha_salida
+            // 
+            this.fecha_salida.HeaderText = "FECHA SALIDA";
+            this.fecha_salida.Name = "fecha_salida";
+            // 
+            // Regresar
+            // 
+            this.Regresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.Regresar.FlatAppearance.BorderSize = 0;
+            this.Regresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.Regresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Regresar.ForeColor = System.Drawing.Color.White;
+            this.Regresar.Location = new System.Drawing.Point(392, 521);
+            this.Regresar.Name = "Regresar";
+            this.Regresar.Size = new System.Drawing.Size(270, 70);
+            this.Regresar.TabIndex = 103;
+            this.Regresar.Text = "Modificar";
+            this.Regresar.UseVisualStyleBackColor = false;
+            this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
+            // 
             // cheacador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -694,6 +781,7 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
@@ -710,6 +798,7 @@
             this.gbox_estatus.ResumeLayout(false);
             this.gbox_estatus.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_eventos_sincronizados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -764,5 +853,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.CheckBox cb_buscar_inactivo;
         private System.Windows.Forms.CheckBox cb_buscar_activo;
+        private System.Windows.Forms.DataGridView dgv_eventos_sincronizados;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_cheador;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_sucursal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_salida;
+        private System.Windows.Forms.Button Regresar;
     }
 }

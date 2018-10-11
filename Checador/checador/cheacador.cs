@@ -344,6 +344,7 @@ namespace Checador
                 //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
                 MessageBox.Show(ex.ToString());
             }
+           
         }
 
         private void sincronizar_eventos()
@@ -388,16 +389,13 @@ namespace Checador
                                 //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
                                 Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
                                 Empleado.obtenerIdHorario(Convert.ToInt32(id));
-<<<<<<< HEAD
-                                Horario.verificar_existencia(Empleado.id_horario); 
-                                Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode);
-=======
                                 Horario.verificar_existencia(Empleado.id_horario);
                                 Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
->>>>>>> 32f1888d9419c9d4cf59375c88b88974f68e2c2b
                             }
                         }
                         MessageBox.Show("Eventos Sincronizados con exito");
+                        //CHECAR ESTO
+                        //tabControlBase.SelectedTab = tabPage4;
                     }
                     else
                     {
@@ -600,6 +598,16 @@ namespace Checador
             {
                 vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*'";
             }
+        }
+
+        private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Regresar_Click(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage3;
         }
     }
 }

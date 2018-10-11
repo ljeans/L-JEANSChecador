@@ -17,6 +17,8 @@ namespace Checador
         Checador.cheacador modulo_checador = new Checador.cheacador();
         sucursales modulo_sucursal = new sucursales();
         horarios modulo_horarios = new horarios();
+        reportes.reporte modulo_reportes = new reportes.reporte();
+
 
         //VARIABLE PARA CARGAR LOS CHECADORES
         DataTable dtChecadores = null;
@@ -57,7 +59,7 @@ namespace Checador
             //DataRow row = dtChecadores.Rows[0];
             //MessageBox.Show(Convert.ToString(row["ip"]));
 
-            /*for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
+            for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
             {
                 DataRow row = dtChecadores.Rows[pos];
                 ipChecador = Convert.ToString(row["ip"]);
@@ -97,7 +99,7 @@ namespace Checador
                 {
                     MessageBox.Show(ex.ToString());
                 }
-            }*/
+            }
         }
 
 
@@ -166,6 +168,15 @@ namespace Checador
             modulo_horarios = new horarios();
             modulo_horarios.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
             modulo_horarios.Show();
+        }
+
+        private void btn_reportes_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            modulo_reportes = new reportes.reporte();
+            modulo_reportes.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            modulo_reportes.Show();
+            
         }
 
         private void Checador_OnFinger()
