@@ -8,3 +8,5 @@
 - Validar en GENERAL
 	- Verificar existencia del empleado por el ID o CURP
 - Reportes
+-recalcular si se olvida cambiar el horario
+	--parametros: empleado, horario, rango de fechas.
