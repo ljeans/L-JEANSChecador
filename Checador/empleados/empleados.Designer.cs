@@ -234,7 +234,11 @@
             // 
             // tabControlBase
             // 
+<<<<<<< HEAD
             this.tabControlBase.Location = new System.Drawing.Point(309, 65);
+=======
+            this.tabControlBase.Location = new System.Drawing.Point(310, 66);
+>>>>>>> 46b02f195dd416b67309f56bc0e21b7370a98839
             // 
             // tabPage1
             // 
@@ -899,6 +903,7 @@
             this.txt_idbuscar.Name = "txt_idbuscar";
             this.txt_idbuscar.Size = new System.Drawing.Size(248, 29);
             this.txt_idbuscar.TabIndex = 43;
+            this.txt_idbuscar.TextChanged += new System.EventHandler(this.txt_idbuscar_TextChanged);
             // 
             // txt_nombrebuscar
             // 
@@ -908,6 +913,7 @@
             this.txt_nombrebuscar.Name = "txt_nombrebuscar";
             this.txt_nombrebuscar.Size = new System.Drawing.Size(248, 29);
             this.txt_nombrebuscar.TabIndex = 44;
+            this.txt_nombrebuscar.TextChanged += new System.EventHandler(this.txt_nombrebuscar_TextChanged);
             // 
             // txt_departamento
             // 

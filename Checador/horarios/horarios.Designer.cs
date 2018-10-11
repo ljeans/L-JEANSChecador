@@ -85,6 +85,8 @@
             this.vista_HorarioTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_HorarioTableAdapter();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cb_descanso = new System.Windows.Forms.CheckBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_nombrebuscar = new System.Windows.Forms.TextBox();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -165,6 +167,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label10);
+            this.tabPage3.Controls.Add(this.txt_nombrebuscar);
             this.tabPage3.Controls.Add(this.dgv_horarios);
             this.tabPage3.Controls.Add(this.label42);
             this.tabPage3.Controls.Add(this.txt_idbuscar);
@@ -641,11 +645,11 @@
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16});
             this.dgv_horarios.DataSource = this.vistaHorarioBindingSource;
-            this.dgv_horarios.Location = new System.Drawing.Point(23, 172);
+            this.dgv_horarios.Location = new System.Drawing.Point(21, 145);
             this.dgv_horarios.MultiSelect = false;
             this.dgv_horarios.Name = "dgv_horarios";
             this.dgv_horarios.ReadOnly = true;
-            this.dgv_horarios.Size = new System.Drawing.Size(966, 380);
+            this.dgv_horarios.Size = new System.Drawing.Size(966, 430);
             this.dgv_horarios.TabIndex = 87;
             // 
             // dataGridViewTextBoxColumn1
@@ -775,7 +779,7 @@
             this.label42.AutoSize = true;
             this.label42.BackColor = System.Drawing.Color.Transparent;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(19, 107);
+            this.label42.Location = new System.Drawing.Point(113, 43);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(32, 24);
             this.label42.TabIndex = 88;
@@ -785,10 +789,11 @@
             // 
             this.txt_idbuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_idbuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_idbuscar.Location = new System.Drawing.Point(57, 105);
+            this.txt_idbuscar.Location = new System.Drawing.Point(151, 41);
             this.txt_idbuscar.Name = "txt_idbuscar";
             this.txt_idbuscar.Size = new System.Drawing.Size(248, 29);
             this.txt_idbuscar.TabIndex = 86;
+            this.txt_idbuscar.TextChanged += new System.EventHandler(this.txt_idbuscar_TextChanged);
             // 
             // vista_HorarioTableAdapter
             // 
@@ -820,6 +825,27 @@
             this.cb_descanso.TabIndex = 0;
             this.cb_descanso.Text = "Descanso";
             this.cb_descanso.CheckedChanged += new System.EventHandler(this.cb_descanso_CheckedChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(35, 93);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(110, 24);
+            this.label10.TabIndex = 90;
+            this.label10.Text = "Nombre (s):";
+            // 
+            // txt_nombrebuscar
+            // 
+            this.txt_nombrebuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_nombrebuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombrebuscar.Location = new System.Drawing.Point(151, 93);
+            this.txt_nombrebuscar.Name = "txt_nombrebuscar";
+            this.txt_nombrebuscar.Size = new System.Drawing.Size(248, 29);
+            this.txt_nombrebuscar.TabIndex = 89;
+            this.txt_nombrebuscar.TextChanged += new System.EventHandler(this.txt_nombrebuscar_TextChanged);
             // 
             // horarios
             // 
@@ -927,5 +953,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox cb_descanso;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt_nombrebuscar;
     }
 }

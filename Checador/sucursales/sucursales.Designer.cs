@@ -614,6 +614,7 @@
             this.txt_idbuscar.Name = "txt_idbuscar";
             this.txt_idbuscar.Size = new System.Drawing.Size(248, 29);
             this.txt_idbuscar.TabIndex = 78;
+            this.txt_idbuscar.TextChanged += new System.EventHandler(this.txt_idbuscar_TextChanged);
             // 
             // txt_nombrebuscar
             // 
@@ -623,6 +624,7 @@
             this.txt_nombrebuscar.Name = "txt_nombrebuscar";
             this.txt_nombrebuscar.Size = new System.Drawing.Size(248, 29);
             this.txt_nombrebuscar.TabIndex = 79;
+            this.txt_nombrebuscar.TextChanged += new System.EventHandler(this.txt_nombrebuscar_TextChanged);
             // 
             // groupBox4
             // 

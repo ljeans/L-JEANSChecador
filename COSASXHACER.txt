@@ -1,7 +1,5 @@
-- Realizar funciones en el checador - LISTOOOO
-	- Agregar retardo y contador de tiempo al empleado cuando cheque.
 - Mostrar eventos sincronizados en una ventana emergente en un grid
-- Filtrar los buscar
+- Hacer dos barras en inicio
 - Hacer HILOS
 - Poner bonitos los datagrid
 - Poner UniqueKeys en la base de datos
