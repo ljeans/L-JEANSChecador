@@ -827,7 +827,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2bfb7c1a26eef880445092b5dc44ae0b13e5288a
         private System.Windows.Forms.DataGridView dgv_eventos_sincronizados;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_cheador;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_empleado;
@@ -835,6 +838,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_salida;
         private System.Windows.Forms.Button Regresar;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2bfb7c1a26eef880445092b5dc44ae0b13e5288a
     }
 }

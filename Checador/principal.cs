@@ -59,7 +59,7 @@ namespace Checador
             //DataRow row = dtChecadores.Rows[0];
             //MessageBox.Show(Convert.ToString(row["ip"]));
 
-            for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
+            /*for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
             {
                 DataRow row = dtChecadores.Rows[pos];
                 ipChecador = Convert.ToString(row["ip"]);
@@ -99,7 +99,7 @@ namespace Checador
                 {
                     MessageBox.Show(ex.ToString());
                 }
-            }
+            }*/
         }
 
 
