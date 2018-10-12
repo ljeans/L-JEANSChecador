@@ -855,9 +855,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-<<<<<<< HEAD
-        private System.Windows.Forms.CheckBox cb_buscar_inactivo;
-        private System.Windows.Forms.CheckBox cb_buscar_activo;
         private System.Windows.Forms.DataGridView dgv_eventos_sincronizados;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_cheador;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_empleado;
@@ -865,7 +862,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_salida;
         private System.Windows.Forms.Button Regresar;
-=======
->>>>>>> 46b02f195dd416b67309f56bc0e21b7370a98839
     }
 }
