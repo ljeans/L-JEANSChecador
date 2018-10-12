@@ -445,6 +445,7 @@
     <None Include="Resources\huella9.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\calendar.png" />
     <Content Include="Resources\huellaregistred.png" />
   </ItemGroup>
   <ItemGroup>

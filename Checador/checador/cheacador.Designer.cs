@@ -61,8 +61,6 @@
             this.label42 = new System.Windows.Forms.Label();
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.gbox_estatus = new System.Windows.Forms.GroupBox();
-            this.cb_buscar_inactivo = new System.Windows.Forms.CheckBox();
-            this.cb_buscar_activo = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtp_hora = new System.Windows.Forms.DateTimePicker();
             this.btn_scr_eventos = new System.Windows.Forms.Button();
@@ -543,33 +541,7 @@
             this.gbox_estatus.TabIndex = 85;
             this.gbox_estatus.TabStop = false;
             this.gbox_estatus.Text = "Estatus";
-            // 
-            // cb_buscar_inactivo
-            // 
-            this.cb_buscar_inactivo.AutoSize = true;
-            this.cb_buscar_inactivo.Checked = true;
-            this.cb_buscar_inactivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_buscar_inactivo.Location = new System.Drawing.Point(144, 25);
-            this.cb_buscar_inactivo.Name = "cb_buscar_inactivo";
-            this.cb_buscar_inactivo.Size = new System.Drawing.Size(101, 28);
-            this.cb_buscar_inactivo.TabIndex = 1;
-            this.cb_buscar_inactivo.Text = "Inactivos";
-            this.cb_buscar_inactivo.UseVisualStyleBackColor = true;
-            this.cb_buscar_inactivo.CheckedChanged += new System.EventHandler(this.cb_buscar_inactivo_CheckedChanged);
-            // 
-            // cb_buscar_activo
-            // 
-            this.cb_buscar_activo.AutoSize = true;
-            this.cb_buscar_activo.Checked = true;
-            this.cb_buscar_activo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cb_buscar_activo.Location = new System.Drawing.Point(22, 28);
-            this.cb_buscar_activo.Name = "cb_buscar_activo";
-            this.cb_buscar_activo.Size = new System.Drawing.Size(89, 28);
-            this.cb_buscar_activo.TabIndex = 0;
-            this.cb_buscar_activo.Text = "Activos";
-            this.cb_buscar_activo.UseVisualStyleBackColor = true;
-            this.cb_buscar_activo.CheckedChanged += new System.EventHandler(this.cb_buscar_activo_CheckedChanged);
-            // 
+          // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtp_hora);
@@ -855,9 +827,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-<<<<<<< HEAD
-        private System.Windows.Forms.CheckBox cb_buscar_inactivo;
-        private System.Windows.Forms.CheckBox cb_buscar_activo;
+
         private System.Windows.Forms.DataGridView dgv_eventos_sincronizados;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_cheador;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_empleado;
@@ -865,7 +835,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_salida;
         private System.Windows.Forms.Button Regresar;
-=======
->>>>>>> 46b02f195dd416b67309f56bc0e21b7370a98839
+
     }
 }

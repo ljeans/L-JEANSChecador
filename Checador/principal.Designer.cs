@@ -33,22 +33,20 @@
             this.btn_iniciar_sesion = new System.Windows.Forms.Button();
             this.btn_cerrar_sesion = new System.Windows.Forms.Button();
             this.panel_barra_superior = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.lbl_titulo = new System.Windows.Forms.Label();
-            this.panel_menu = new System.Windows.Forms.Panel();
             this.btn_cerca_de = new System.Windows.Forms.Button();
             this.btn_reportes = new System.Windows.Forms.Button();
             this.btn_empleados = new System.Windows.Forms.Button();
             this.btn_sucursal = new System.Windows.Forms.Button();
-            this.btn_horarios = new System.Windows.Forms.Button();
             this.btn_checador = new System.Windows.Forms.Button();
+            this.btn_horarios = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel_barra_superior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel_menu.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_minimizar
@@ -121,16 +119,6 @@
             this.panel_barra_superior.Size = new System.Drawing.Size(1370, 65);
             this.panel_barra_superior.TabIndex = 15;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Checador.Properties.Resources.logos_nuevos;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 65);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
@@ -167,6 +155,140 @@
             this.button3.Text = "_";
             this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button3.UseVisualStyleBackColor = false;
+            // 
+            // lbl_titulo
+            // 
+            this.lbl_titulo.AutoSize = true;
+            this.lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titulo.ForeColor = System.Drawing.Color.White;
+            this.lbl_titulo.Location = new System.Drawing.Point(545, 17);
+            this.lbl_titulo.Name = "lbl_titulo";
+            this.lbl_titulo.Size = new System.Drawing.Size(280, 37);
+            this.lbl_titulo.TabIndex = 5;
+            this.lbl_titulo.Text = "Sistema Checador";
+            // 
+            // btn_cerca_de
+            // 
+            this.btn_cerca_de.BackColor = System.Drawing.Color.Maroon;
+            this.btn_cerca_de.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_cerca_de.FlatAppearance.BorderSize = 0;
+            this.btn_cerca_de.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btn_cerca_de.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_cerca_de.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cerca_de.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerca_de.ForeColor = System.Drawing.Color.White;
+            this.btn_cerca_de.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_cerca_de.Location = new System.Drawing.Point(977, 453);
+            this.btn_cerca_de.Name = "btn_cerca_de";
+            this.btn_cerca_de.Size = new System.Drawing.Size(200, 200);
+            this.btn_cerca_de.TabIndex = 13;
+            this.btn_cerca_de.Text = "?";
+            this.btn_cerca_de.UseVisualStyleBackColor = false;
+            // 
+            // btn_reportes
+            // 
+            this.btn_reportes.BackColor = System.Drawing.Color.Maroon;
+            this.btn_reportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_reportes.FlatAppearance.BorderSize = 0;
+            this.btn_reportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_reportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_reportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reportes.ForeColor = System.Drawing.Color.White;
+            this.btn_reportes.Location = new System.Drawing.Point(605, 453);
+            this.btn_reportes.Name = "btn_reportes";
+            this.btn_reportes.Size = new System.Drawing.Size(200, 200);
+            this.btn_reportes.TabIndex = 8;
+            this.btn_reportes.Text = "Reportes";
+            this.btn_reportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_reportes.UseVisualStyleBackColor = false;
+            this.btn_reportes.Click += new System.EventHandler(this.btn_reportes_Click);
+            // 
+            // btn_empleados
+            // 
+            this.btn_empleados.BackColor = System.Drawing.Color.Maroon;
+            this.btn_empleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_empleados.FlatAppearance.BorderSize = 0;
+            this.btn_empleados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_empleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_empleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_empleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_empleados.ForeColor = System.Drawing.Color.White;
+            this.btn_empleados.Location = new System.Drawing.Point(977, 132);
+            this.btn_empleados.Name = "btn_empleados";
+            this.btn_empleados.Size = new System.Drawing.Size(200, 200);
+            this.btn_empleados.TabIndex = 6;
+            this.btn_empleados.Text = "Empleados";
+            this.btn_empleados.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_empleados.UseVisualStyleBackColor = false;
+            this.btn_empleados.Click += new System.EventHandler(this.btn_empleados_Click);
+            // 
+            // btn_sucursal
+            // 
+            this.btn_sucursal.BackColor = System.Drawing.Color.Maroon;
+            this.btn_sucursal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_sucursal.FlatAppearance.BorderSize = 0;
+            this.btn_sucursal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_sucursal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_sucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_sucursal.ForeColor = System.Drawing.Color.White;
+            this.btn_sucursal.Location = new System.Drawing.Point(176, 132);
+            this.btn_sucursal.Name = "btn_sucursal";
+            this.btn_sucursal.Size = new System.Drawing.Size(200, 200);
+            this.btn_sucursal.TabIndex = 2;
+            this.btn_sucursal.Text = "Sucursal";
+            this.btn_sucursal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_sucursal.UseVisualStyleBackColor = false;
+            this.btn_sucursal.Click += new System.EventHandler(this.btn_sucursal_Click);
+            // 
+            // btn_checador
+            // 
+            this.btn_checador.BackColor = System.Drawing.Color.Maroon;
+            this.btn_checador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_checador.FlatAppearance.BorderSize = 0;
+            this.btn_checador.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_checador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_checador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_checador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_checador.ForeColor = System.Drawing.Color.White;
+            this.btn_checador.Location = new System.Drawing.Point(605, 132);
+            this.btn_checador.Name = "btn_checador";
+            this.btn_checador.Size = new System.Drawing.Size(200, 200);
+            this.btn_checador.TabIndex = 4;
+            this.btn_checador.Text = "Checador";
+            this.btn_checador.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_checador.UseVisualStyleBackColor = false;
+            this.btn_checador.Click += new System.EventHandler(this.btn_checador_Click);
+            // 
+            // btn_horarios
+            // 
+            this.btn_horarios.BackColor = System.Drawing.Color.Maroon;
+            this.btn_horarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_horarios.FlatAppearance.BorderSize = 0;
+            this.btn_horarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_horarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_horarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_horarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_horarios.ForeColor = System.Drawing.Color.White;
+            this.btn_horarios.Location = new System.Drawing.Point(176, 453);
+            this.btn_horarios.Name = "btn_horarios";
+            this.btn_horarios.Size = new System.Drawing.Size(200, 200);
+            this.btn_horarios.TabIndex = 3;
+            this.btn_horarios.Text = "Horarios";
+            this.btn_horarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_horarios.UseVisualStyleBackColor = false;
+            this.btn_horarios.Click += new System.EventHandler(this.btn_horarios_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Checador.Properties.Resources.logos_nuevos;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(111, 65);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
             // 
             // button4
             // 
@@ -206,159 +328,21 @@
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button5.UseVisualStyleBackColor = false;
             // 
-            // lbl_titulo
-            // 
-            this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_titulo.Location = new System.Drawing.Point(545, 17);
-            this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(280, 37);
-            this.lbl_titulo.TabIndex = 5;
-            this.lbl_titulo.Text = "Sistema Checador";
-            // 
-            // panel_menu
-            // 
-            this.panel_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel_menu.Controls.Add(this.btn_cerca_de);
-            this.panel_menu.Controls.Add(this.btn_reportes);
-            this.panel_menu.Controls.Add(this.btn_empleados);
-            this.panel_menu.Controls.Add(this.btn_sucursal);
-            this.panel_menu.Controls.Add(this.btn_horarios);
-            this.panel_menu.Controls.Add(this.btn_checador);
-            this.panel_menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel_menu.ForeColor = System.Drawing.Color.White;
-            this.panel_menu.Location = new System.Drawing.Point(0, 115);
-            this.panel_menu.Name = "panel_menu";
-            this.panel_menu.Size = new System.Drawing.Size(1370, 150);
-            this.panel_menu.TabIndex = 16;
-            this.panel_menu.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_menu_Paint);
-            // 
-            // btn_cerca_de
-            // 
-            this.btn_cerca_de.BackColor = System.Drawing.Color.Transparent;
-            this.btn_cerca_de.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_cerca_de.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_cerca_de.Enabled = false;
-            this.btn_cerca_de.FlatAppearance.BorderSize = 0;
-            this.btn_cerca_de.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.btn_cerca_de.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_cerca_de.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerca_de.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cerca_de.ForeColor = System.Drawing.Color.White;
-            this.btn_cerca_de.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_cerca_de.Location = new System.Drawing.Point(1295, 0);
-            this.btn_cerca_de.Name = "btn_cerca_de";
-            this.btn_cerca_de.Size = new System.Drawing.Size(75, 150);
-            this.btn_cerca_de.TabIndex = 13;
-            this.btn_cerca_de.Text = "?";
-            this.btn_cerca_de.UseVisualStyleBackColor = false;
-            // 
-            // btn_reportes
-            // 
-            this.btn_reportes.BackColor = System.Drawing.Color.Transparent;
-            this.btn_reportes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_reportes.FlatAppearance.BorderSize = 0;
-            this.btn_reportes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_reportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_reportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reportes.ForeColor = System.Drawing.Color.White;
-            this.btn_reportes.Location = new System.Drawing.Point(1036, 3);
-            this.btn_reportes.Name = "btn_reportes";
-            this.btn_reportes.Size = new System.Drawing.Size(150, 150);
-            this.btn_reportes.TabIndex = 8;
-            this.btn_reportes.Text = "Reportes";
-            this.btn_reportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_reportes.UseVisualStyleBackColor = false;
-            this.btn_reportes.Click += new System.EventHandler(this.btn_reportes_Click);
-            // 
-            // btn_empleados
-            // 
-            this.btn_empleados.BackColor = System.Drawing.Color.Transparent;
-            this.btn_empleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_empleados.FlatAppearance.BorderSize = 0;
-            this.btn_empleados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_empleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_empleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_empleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_empleados.ForeColor = System.Drawing.Color.White;
-            this.btn_empleados.Location = new System.Drawing.Point(777, 0);
-            this.btn_empleados.Name = "btn_empleados";
-            this.btn_empleados.Size = new System.Drawing.Size(150, 150);
-            this.btn_empleados.TabIndex = 6;
-            this.btn_empleados.Text = "Empleados";
-            this.btn_empleados.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_empleados.UseVisualStyleBackColor = false;
-            this.btn_empleados.Click += new System.EventHandler(this.btn_empleados_Click);
-            // 
-            // btn_sucursal
-            // 
-            this.btn_sucursal.BackColor = System.Drawing.Color.Transparent;
-            this.btn_sucursal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_sucursal.FlatAppearance.BorderSize = 0;
-            this.btn_sucursal.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_sucursal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_sucursal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_sucursal.ForeColor = System.Drawing.Color.White;
-            this.btn_sucursal.Location = new System.Drawing.Point(0, 0);
-            this.btn_sucursal.Name = "btn_sucursal";
-            this.btn_sucursal.Size = new System.Drawing.Size(150, 150);
-            this.btn_sucursal.TabIndex = 2;
-            this.btn_sucursal.Text = "Sucursal";
-            this.btn_sucursal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_sucursal.UseVisualStyleBackColor = false;
-            this.btn_sucursal.Click += new System.EventHandler(this.btn_sucursal_Click);
-            // 
-            // btn_horarios
-            // 
-            this.btn_horarios.BackColor = System.Drawing.Color.Transparent;
-            this.btn_horarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_horarios.FlatAppearance.BorderSize = 0;
-            this.btn_horarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_horarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_horarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_horarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_horarios.ForeColor = System.Drawing.Color.White;
-            this.btn_horarios.Location = new System.Drawing.Point(259, 0);
-            this.btn_horarios.Name = "btn_horarios";
-            this.btn_horarios.Size = new System.Drawing.Size(150, 150);
-            this.btn_horarios.TabIndex = 3;
-            this.btn_horarios.Text = "Horarios";
-            this.btn_horarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_horarios.UseVisualStyleBackColor = false;
-            this.btn_horarios.Click += new System.EventHandler(this.btn_horarios_Click);
-            // 
-            // btn_checador
-            // 
-            this.btn_checador.BackColor = System.Drawing.Color.Transparent;
-            this.btn_checador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_checador.FlatAppearance.BorderSize = 0;
-            this.btn_checador.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_checador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_checador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_checador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_checador.ForeColor = System.Drawing.Color.White;
-            this.btn_checador.Location = new System.Drawing.Point(518, 0);
-            this.btn_checador.Name = "btn_checador";
-            this.btn_checador.Size = new System.Drawing.Size(150, 150);
-            this.btn_checador.TabIndex = 4;
-            this.btn_checador.Text = "Checador";
-            this.btn_checador.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_checador.UseVisualStyleBackColor = false;
-            this.btn_checador.Click += new System.EventHandler(this.btn_checador_Click);
-            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1370, 772);
-            this.Controls.Add(this.panel_menu);
+            this.Controls.Add(this.btn_cerca_de);
+            this.Controls.Add(this.btn_reportes);
             this.Controls.Add(this.panel_barra_superior);
+            this.Controls.Add(this.btn_empleados);
             this.Controls.Add(this.btn_minimizar);
+            this.Controls.Add(this.btn_sucursal);
+            this.Controls.Add(this.btn_checador);
             this.Controls.Add(this.btn_iniciar_sesion);
+            this.Controls.Add(this.btn_horarios);
             this.Controls.Add(this.btn_cerrar_sesion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "principal";
@@ -368,7 +352,6 @@
             this.panel_barra_superior.ResumeLayout(false);
             this.panel_barra_superior.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel_menu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -384,7 +367,6 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label lbl_titulo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel_menu;
         private System.Windows.Forms.Button btn_cerca_de;
         private System.Windows.Forms.Button btn_reportes;
         private System.Windows.Forms.Button btn_empleados;

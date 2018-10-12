@@ -32,17 +32,19 @@
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.label1 = new System.Windows.Forms.Label();
             this.cbx_sucursal = new System.Windows.Forms.ComboBox();
-            this.btn_generar = new System.Windows.Forms.Button();
-            this.dataSet_Checador = new Checador.DataSet_Checador();
             this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet_Checador = new Checador.DataSet_Checador();
+            this.btn_generar = new System.Windows.Forms.Button();
             this.sucursalTableAdapter = new Checador.DataSet_ChecadorTableAdapters.sucursalTableAdapter();
+            this.dtp_fecha1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_fecha2 = new System.Windows.Forms.DateTimePicker();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).BeginInit();
             this.SuspendLayout();
             // 
             // rb_4
@@ -80,6 +82,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dtp_fecha2);
+            this.tabPage1.Controls.Add(this.dtp_fecha1);
             this.tabPage1.Controls.Add(this.btn_generar);
             this.tabPage1.Controls.Add(this.cbx_sucursal);
             this.tabPage1.Controls.Add(this.label1);
@@ -162,9 +166,19 @@
             this.cbx_sucursal.TabIndex = 2;
             this.cbx_sucursal.ValueMember = "id_sucursal";
             // 
+            // sucursalBindingSource
+            // 
+            this.sucursalBindingSource.DataMember = "sucursal";
+            this.sucursalBindingSource.DataSource = this.dataSet_Checador;
+            // 
+            // dataSet_Checador
+            // 
+            this.dataSet_Checador.DataSetName = "DataSet_Checador";
+            this.dataSet_Checador.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btn_generar
             // 
-            this.btn_generar.Location = new System.Drawing.Point(308, 18);
+            this.btn_generar.Location = new System.Drawing.Point(834, 20);
             this.btn_generar.Name = "btn_generar";
             this.btn_generar.Size = new System.Drawing.Size(75, 23);
             this.btn_generar.TabIndex = 3;
@@ -172,19 +186,23 @@
             this.btn_generar.UseVisualStyleBackColor = true;
             this.btn_generar.Click += new System.EventHandler(this.btn_generar_Click);
             // 
-            // dataSet_Checador
-            // 
-            this.dataSet_Checador.DataSetName = "DataSet_Checador";
-            this.dataSet_Checador.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sucursalBindingSource
-            // 
-            this.sucursalBindingSource.DataMember = "sucursal";
-            this.sucursalBindingSource.DataSource = this.dataSet_Checador;
-            // 
             // sucursalTableAdapter
             // 
             this.sucursalTableAdapter.ClearBeforeFill = true;
+            // 
+            // dtp_fecha1
+            // 
+            this.dtp_fecha1.Location = new System.Drawing.Point(389, 17);
+            this.dtp_fecha1.Name = "dtp_fecha1";
+            this.dtp_fecha1.Size = new System.Drawing.Size(200, 20);
+            this.dtp_fecha1.TabIndex = 4;
+            // 
+            // dtp_fecha2
+            // 
+            this.dtp_fecha2.Location = new System.Drawing.Point(595, 20);
+            this.dtp_fecha2.Name = "dtp_fecha2";
+            this.dtp_fecha2.Size = new System.Drawing.Size(200, 20);
+            this.dtp_fecha2.TabIndex = 5;
             // 
             // reporte
             // 
@@ -200,8 +218,8 @@
             this.panel_barra_sup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             this.panel_menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,5 +233,7 @@
         private DataSet_Checador dataSet_Checador;
         private System.Windows.Forms.BindingSource sucursalBindingSource;
         private DataSet_ChecadorTableAdapters.sucursalTableAdapter sucursalTableAdapter;
+        private System.Windows.Forms.DateTimePicker dtp_fecha2;
+        private System.Windows.Forms.DateTimePicker dtp_fecha1;
     }
 }

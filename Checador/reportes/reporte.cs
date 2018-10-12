@@ -53,6 +53,25 @@ namespace Checador.reportes
             crParameterValue.Add(crParameterDiscreteValue);
             crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
 
+            //parametros fechas
+            crParameterDiscreteValue.Value = dtp_fecha1.Value.ToString("yyyy-MM-dd"); ;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["fecha1"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            crParameterDiscreteValue.Value = dtp_fecha2.Value.ToString("yyyy-MM-dd"); ;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["fecha2"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
             crystalReportViewer1.ReportSource = crystalrpt;
             crystalReportViewer1.Refresh();
         }

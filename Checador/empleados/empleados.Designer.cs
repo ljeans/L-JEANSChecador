@@ -234,11 +234,11 @@
             // 
             // tabControlBase
             // 
-<<<<<<< HEAD
+
             this.tabControlBase.Location = new System.Drawing.Point(309, 65);
-=======
+
             this.tabControlBase.Location = new System.Drawing.Point(310, 66);
->>>>>>> 46b02f195dd416b67309f56bc0e21b7370a98839
+
             // 
             // tabPage1
             // 
