@@ -192,7 +192,7 @@ namespace Checador
                         }
                         catch (Exception ex)
                         {
-                            
+                            hora_salida_descanso = new TimeSpan(00, 00, 00);
                         }
 
                         try
@@ -201,7 +201,7 @@ namespace Checador
                         }
                         catch (Exception ex)
                         {
-
+                            hora_entrada_descanso = new TimeSpan(00, 00, 00);
                         }
 
                         

@@ -61,6 +61,8 @@
             this.label42 = new System.Windows.Forms.Label();
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.gbox_estatus = new System.Windows.Forms.GroupBox();
+            this.cb_buscarInactivo = new System.Windows.Forms.CheckBox();
+            this.cb_buscarActivo = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtp_hora = new System.Windows.Forms.DateTimePicker();
             this.btn_scr_eventos = new System.Windows.Forms.Button();
@@ -72,12 +74,13 @@
             this.sucursalTableAdapter = new Checador.DataSet_ChecadorTableAdapters.sucursalTableAdapter();
             this.vista_ChecadorTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_ChecadorTableAdapter();
             this.dgv_eventos_sincronizados = new System.Windows.Forms.DataGridView();
-            this.id_cheador = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_checador = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_sucursal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_entrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_salida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Regresar = new System.Windows.Forms.Button();
+            this.fecha_evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipo_evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_aceptar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -153,12 +156,9 @@
             // 
             // tabPage4
             // 
-            this.tabPage4.Controls.Add(this.Regresar);
+            this.tabPage4.Controls.Add(this.label3);
+            this.tabPage4.Controls.Add(this.btn_aceptar);
             this.tabPage4.Controls.Add(this.dgv_eventos_sincronizados);
-            // 
-            // panel_barra_sup
-            // 
-            this.panel_barra_sup.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barra_sup_Paint);
             // 
             // btn_home
             // 
@@ -532,8 +532,8 @@
             // 
             // gbox_estatus
             // 
-            this.gbox_estatus.Controls.Add(this.cb_buscar_inactivo);
-            this.gbox_estatus.Controls.Add(this.cb_buscar_activo);
+            this.gbox_estatus.Controls.Add(this.cb_buscarInactivo);
+            this.gbox_estatus.Controls.Add(this.cb_buscarActivo);
             this.gbox_estatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbox_estatus.Location = new System.Drawing.Point(405, 24);
             this.gbox_estatus.Name = "gbox_estatus";
@@ -541,7 +541,33 @@
             this.gbox_estatus.TabIndex = 85;
             this.gbox_estatus.TabStop = false;
             this.gbox_estatus.Text = "Estatus";
-          // 
+            // 
+            // cb_buscarInactivo
+            // 
+            this.cb_buscarInactivo.AutoSize = true;
+            this.cb_buscarInactivo.Checked = true;
+            this.cb_buscarInactivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_buscarInactivo.Location = new System.Drawing.Point(146, 28);
+            this.cb_buscarInactivo.Name = "cb_buscarInactivo";
+            this.cb_buscarInactivo.Size = new System.Drawing.Size(92, 28);
+            this.cb_buscarInactivo.TabIndex = 1;
+            this.cb_buscarInactivo.Text = "Inactivo";
+            this.cb_buscarInactivo.UseVisualStyleBackColor = true;
+            this.cb_buscarInactivo.CheckedChanged += new System.EventHandler(this.cb_buscarInactivo_CheckedChanged);
+            // 
+            // cb_buscarActivo
+            // 
+            this.cb_buscarActivo.AutoSize = true;
+            this.cb_buscarActivo.Checked = true;
+            this.cb_buscarActivo.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cb_buscarActivo.Location = new System.Drawing.Point(31, 28);
+            this.cb_buscarActivo.Name = "cb_buscarActivo";
+            this.cb_buscarActivo.Size = new System.Drawing.Size(80, 28);
+            this.cb_buscarActivo.TabIndex = 0;
+            this.cb_buscarActivo.Text = "Activo";
+            this.cb_buscarActivo.UseVisualStyleBackColor = true;
+            this.cb_buscarActivo.CheckedChanged += new System.EventHandler(this.cb_buscarActivo_CheckedChanged);
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dtp_hora);
@@ -690,20 +716,20 @@
             this.dgv_eventos_sincronizados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_eventos_sincronizados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_eventos_sincronizados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id_cheador,
+            this.id_checador,
             this.id_empleado,
             this.id_sucursal,
-            this.fecha_entrada,
-            this.fecha_salida});
+            this.fecha_evento,
+            this.tipo_evento});
             this.dgv_eventos_sincronizados.Location = new System.Drawing.Point(102, 94);
             this.dgv_eventos_sincronizados.Name = "dgv_eventos_sincronizados";
             this.dgv_eventos_sincronizados.Size = new System.Drawing.Size(800, 400);
             this.dgv_eventos_sincronizados.TabIndex = 0;
             // 
-            // id_cheador
+            // id_checador
             // 
-            this.id_cheador.HeaderText = "ID CHECADOR";
-            this.id_cheador.Name = "id_cheador";
+            this.id_checador.HeaderText = "ID CHECADOR";
+            this.id_checador.Name = "id_checador";
             // 
             // id_empleado
             // 
@@ -715,32 +741,43 @@
             this.id_sucursal.HeaderText = "ID SUCURSAL";
             this.id_sucursal.Name = "id_sucursal";
             // 
-            // fecha_entrada
+            // fecha_evento
             // 
-            this.fecha_entrada.HeaderText = "FECHA ENTRADA";
-            this.fecha_entrada.Name = "fecha_entrada";
+            this.fecha_evento.HeaderText = "FECHA EVENTO";
+            this.fecha_evento.Name = "fecha_evento";
             // 
-            // fecha_salida
+            // tipo_evento
             // 
-            this.fecha_salida.HeaderText = "FECHA SALIDA";
-            this.fecha_salida.Name = "fecha_salida";
+            this.tipo_evento.HeaderText = "TIPO EVENTO";
+            this.tipo_evento.Name = "tipo_evento";
             // 
-            // Regresar
+            // btn_aceptar
             // 
-            this.Regresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.Regresar.FlatAppearance.BorderSize = 0;
-            this.Regresar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.Regresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.Regresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Regresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Regresar.ForeColor = System.Drawing.Color.White;
-            this.Regresar.Location = new System.Drawing.Point(392, 521);
-            this.Regresar.Name = "Regresar";
-            this.Regresar.Size = new System.Drawing.Size(270, 70);
-            this.Regresar.TabIndex = 103;
-            this.Regresar.Text = "Modificar";
-            this.Regresar.UseVisualStyleBackColor = false;
-            this.Regresar.Click += new System.EventHandler(this.Regresar_Click);
+            this.btn_aceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_aceptar.FlatAppearance.BorderSize = 0;
+            this.btn_aceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_aceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_aceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_aceptar.ForeColor = System.Drawing.Color.White;
+            this.btn_aceptar.Location = new System.Drawing.Point(392, 521);
+            this.btn_aceptar.Name = "btn_aceptar";
+            this.btn_aceptar.Size = new System.Drawing.Size(270, 70);
+            this.btn_aceptar.TabIndex = 103;
+            this.btn_aceptar.Text = "Aceptar";
+            this.btn_aceptar.UseVisualStyleBackColor = false;
+            this.btn_aceptar.Click += new System.EventHandler(this.Regresar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(444, 32);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(199, 24);
+            this.label3.TabIndex = 104;
+            this.label3.Text = "Eventos sincronizados";
             // 
             // cheacador
             // 
@@ -756,6 +793,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
@@ -819,8 +857,7 @@
         private System.Windows.Forms.BindingSource vistaChecadorBindingSource;
         private DataSet_ChecadorTableAdapters.Vista_ChecadorTableAdapter vista_ChecadorTableAdapter;
         private System.Windows.Forms.DateTimePicker dtp_hora;
-        private System.Windows.Forms.CheckBox cb_buscar_inactivo;
-        private System.Windows.Forms.CheckBox cb_buscar_activo;
+        
         private System.Windows.Forms.DataGridViewCheckBoxColumn check;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -828,12 +865,21 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridView dgv_eventos_sincronizados;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_cheador;
+        private System.Windows.Forms.Button btn_aceptar;
+        private System.Windows.Forms.CheckBox cb_buscarActivo;
+        private System.Windows.Forms.CheckBox cb_buscarInactivo;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_checador;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_sucursal;
+<<<<<<< HEAD
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrada;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_salida;
         private System.Windows.Forms.Button Regresar;
 
+=======
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_evento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipo_evento;
+>>>>>>> 557fa286581ea65d5e535d6f162f54f002331693
     }
 }
