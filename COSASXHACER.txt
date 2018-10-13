@@ -1,5 +1,3 @@
-- Mostrar eventos sincronizados en una ventana emergente en un grid
-- Hacer dos barras en inicio
 - Hacer HILOS
 - Poner bonitos los datagrid
 - Poner UniqueKeys en la base de datos
@@ -8,5 +6,7 @@
 - Modulo de incidentes
 -recalcular si se olvida cambiar el horario
 	--parametros: empleado, horario, rango de fechas.
+- Login
 - Validar en GENERAL
 	- Verificar existencia del empleado por el ID o CURP
+	- En empleado cuando se registra exitosamente se va a modificar, cambiar radiobutton

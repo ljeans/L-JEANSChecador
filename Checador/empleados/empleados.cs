@@ -47,7 +47,6 @@ namespace Checador.empleados
             // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador1.sucursal' Puede moverla o quitarla según sea necesario.
             this.sucursalTableAdapter.Fill(this.dataSet_Checador1.sucursal);
 
-           
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
             CheckForIllegalCrossThreadCalls = false;
             //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
@@ -440,6 +439,7 @@ namespace Checador.empleados
                 txt_tipo_salario.Text = Empleado.tipo_salario;
                 dtp_fec_alt.Text = Empleado.fecha_alta.ToString();
                 cbx_sucursal.SelectedValue = Empleado.id_sucursal;
+                cbx_horario.SelectedValue = Empleado.id_horario;
                 sucurzal = Empleado.id_sucursal;
 
                 if (Empleado.id_privilegio == 0)
@@ -689,7 +689,6 @@ namespace Checador.empleados
         private void btn_capturar_Click(object sender, EventArgs e)
         {
             int dedo = cbx_huella.SelectedIndex;
-            MessageBox.Show(dedo.ToString());
             //CODIGO PARA LA INTERFAZ DE REGISTRO DE NUEVA HUELLA
             int flag = 0;
             Checador.StartEnrollEx(Empleado.id.ToString(), dedo, flag);

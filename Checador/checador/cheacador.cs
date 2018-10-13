@@ -29,6 +29,8 @@ namespace Checador
         public cheacador()
         {
             InitializeComponent();
+            //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
+            //CheckForIllegalCrossThreadCalls = false;
         }
 
         private void btn_home_Click(object sender, EventArgs e)
@@ -220,6 +222,9 @@ namespace Checador
             // TODO: This line of code loads data into the 'dataSet_Checador.sucursal' table. You can move, or remove it, as needed.
             this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
 
+            //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
+            //CheckForIllegalCrossThreadCalls = false;
+
             //CAMBIAR LA LETRA AL DATAGRIDVIEW
             dgv_checador.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
             dgv_checador.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
@@ -247,22 +252,29 @@ namespace Checador
 
         private void btn_scr_fecha_Click(object sender, EventArgs e)
         {
-            try
+            //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
+            foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
             {
-                //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-                Thread hilo_secundario = new Thread(new ThreadStart(this.prueba_check));
-                hilo_secundario.IsBackground = true;
-                hilo_secundario.Start();
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
-                MessageBox.Show(ex.ToString());
+                if (row.Cells["Check"].Value != null)
+                {
+                    try
+                    {
+                        //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+                        Thread hilo_secundario = new Thread(new ThreadStart(this.sincronizar_fechaHora));
+                        hilo_secundario.IsBackground = true;
+                        hilo_secundario.Start();
+                    }
+                    catch (Exception ex)
+                    {
+                        //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
             }
         }
 
         //FUNCION PARA RECORRER TODAS LAS FILAS DEL DATAGRID Y SABER CUALES ESTÁN MARCADAS
-        private void prueba_check()
+        /*private void prueba_check()
         {
             int x = 1;
             foreach (DataGridViewRow dataGridRow in dgv_checadorbuscar.Rows)
@@ -270,13 +282,13 @@ namespace Checador
                 DataGridViewCheckBoxCell chk = (DataGridViewCheckBoxCell)dataGridRow.Cells[0];
                 chk.Value = true;
 
-                /*if (dataGridRow.Cells["Check"].Value != null)
+                if (dataGridRow.Cells["Check"].Value != null)
                 {
                     MessageBox.Show("Columna " + x +" checada");
-                }*/
+                }
                 x = x + 1;
             }
-        }
+        }*/
 
         private void sincronizar_fechaHora()
         {
@@ -331,17 +343,24 @@ namespace Checador
 
         private void btn_fecha_manual_Click(object sender, EventArgs e)
         {
-            try
+            //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
+            foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
             {
-                //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-                Thread hilo_secundario = new Thread(new ThreadStart(this.aplicar_fecha_manual));
-                hilo_secundario.IsBackground = true;
-                hilo_secundario.Start();
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
-                MessageBox.Show(ex.ToString());
+                if (row.Cells["Check"].Value != null)
+                {
+                    try
+                    {
+                        //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+                        Thread hilo_secundario = new Thread(new ThreadStart(this.aplicar_fecha_manual));
+                        hilo_secundario.IsBackground = true;
+                        hilo_secundario.Start();
+                    }
+                    catch (Exception ex)
+                    {
+                        //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
             }
         }
 
@@ -415,7 +434,7 @@ namespace Checador
                             if (Checador.ReadGeneralLogData(Convert.ToInt32(row.Cells[1].Value)))//read all the attendance records to the memory
                             {
                                 fecha_max = Clase_Checador.verificarEvento(Convert.ToInt32(row.Cells[1].Value));
-                                MessageBox.Show(fecha_max.ToString());
+                                //MessageBox.Show(fecha_max.ToString());
                                 while (Checador.SSR_GetGeneralLogData(Convert.ToInt32(row.Cells[1].Value), out id, out verifyMode,
                                            out inOutMode, out Year, out Month, out Day, out Hour, out Minute, out Second, ref workCode))//get records from the memory
                                 {
@@ -430,6 +449,9 @@ namespace Checador
                                         Empleado.obtenerIdHorario(Convert.ToInt32(id));
                                         Horario.verificar_existencia(Empleado.id_horario);
                                         Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
+                                        
+                                        //Agregar fila en DataGrid de datos sincronizados
+                                        agregarFila(Convert.ToString(row.Cells[1].Value), Sucursal.id.ToString(), Convert.ToString(id), Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString(), inOutMode);
                                     }
                                     else if (fecha_max == Convert.ToDateTime("1995-12-12 00:00:00"))
                                     {
@@ -438,11 +460,16 @@ namespace Checador
                                         Empleado.obtenerIdHorario(Convert.ToInt32(id));
                                         Horario.verificar_existencia(Empleado.id_horario);
                                         Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
+                                        agregarFila(Convert.ToString(row.Cells[1].Value), Sucursal.id.ToString(), Convert.ToString(id), Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString(), inOutMode);
                                     }
                                 }
                                 MessageBox.Show("Eventos Sincronizados con exito");
                                 //CHECAR ESTO
-                                //tabControlBase.SelectedTab = tabPage4;
+                                //CONDICION PARA INVOCAR EL DATAGRID DESDE OTRO HILO
+                                if (InvokeRequired)
+                                {
+                                    Invoke(new Action(() => tabControlBase.SelectedTab = tabPage4));
+                                }
                             }
                             else
                             {
@@ -473,19 +500,51 @@ namespace Checador
             }
         }
 
+        //Funcion para agregar filas al DATAGRID de eventos sincronizados
+        private void agregarFila(string id_checador, string id_sucursal, string id_empleado, string fecha_evento, int tipo_evento)
+        {
+            DataGridViewRow fila = new DataGridViewRow();
+            fila.CreateCells(dgv_eventos_sincronizados);
+            fila.Cells[0].Value = id_checador;
+            fila.Cells[1].Value = id_empleado;
+            fila.Cells[2].Value = id_sucursal;
+            fila.Cells[3].Value = fecha_evento;
+            if (tipo_evento == 0)
+            {
+                fila.Cells[4].Value = "ENTRADA";
+            }
+            else if(tipo_evento == 1)
+            {
+                fila.Cells[4].Value = "SALIDA";
+            }
+
+            //CONDICION PARA INVOCAR EL DATAGRID DESDE OTRO HILO
+            if (InvokeRequired)
+            {
+                Invoke(new Action(()=> dgv_eventos_sincronizados.Rows.Add(fila)));
+            }
+        }
+
         private void btn_borrar_eventos_Click(object sender, EventArgs e)
         {
-            try
+            //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
+            foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
             {
-                //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-                Thread hilo_secundario = new Thread(new ThreadStart(this.borrar_eventos));
-                hilo_secundario.IsBackground = true;
-                hilo_secundario.Start();
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
-                MessageBox.Show(ex.ToString());
+                if (row.Cells["Check"].Value != null)
+                {
+                    try
+                    {
+                        //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+                        Thread hilo_secundario = new Thread(new ThreadStart(this.borrar_eventos));
+                        hilo_secundario.IsBackground = true;
+                        hilo_secundario.Start();
+                    }
+                    catch (Exception ex)
+                    {
+                        //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
             }
         }
 
@@ -511,17 +570,24 @@ namespace Checador
 
         private void btn_borrar_usuarios_Click(object sender, EventArgs e)
         {
-            try
+            //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
+            foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
             {
-                //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-                Thread hilo_secundario = new Thread((this.borrar_usuarios));
-                hilo_secundario.IsBackground = true;
-                hilo_secundario.Start();
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
-                MessageBox.Show(ex.ToString());
+                if (row.Cells["Check"].Value != null)
+                {
+                    try
+                    {
+                        //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+                        Thread hilo_secundario = new Thread((this.borrar_usuarios));
+                        hilo_secundario.IsBackground = true;
+                        hilo_secundario.Start();
+                    }
+                    catch (Exception ex)
+                    {
+                        //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
             }
 
            
@@ -558,28 +624,61 @@ namespace Checador
 ////////////////FILTRAR EL BUSCAR//////////////////////////
         private void txt_nombrebuscar_TextChanged(object sender, EventArgs e)
         {
-            if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == true)
+            if (txt_buscar.Text == "" && cb_buscarActivo.Checked == true && cb_buscarInactivo.Checked == true)
             {
                 this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
                 vistaChecadorBindingSource.Filter = "";
             }
-            else if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == false)
+            else if (txt_buscar.Text == "" && cb_buscarActivo.Checked == true && cb_buscarInactivo.Checked == false)
             {
                 this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
                 vistaChecadorBindingSource.Filter = "[estatus] = 'A'";
             }
-            else if (txt_buscar.Text == "" && cb_buscar_activo.Checked == false && cb_buscar_inactivo.Checked == true)
+            else if (txt_buscar.Text == "" && cb_buscarActivo.Checked == false && cb_buscarInactivo.Checked == true)
             {
                 this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
                 vistaChecadorBindingSource.Filter = "[estatus] = 'I'";
             }
-            else if (txt_buscar.Text != "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == false)
+            else if (txt_buscar.Text != "" && cb_buscarActivo.Checked == true && cb_buscarInactivo.Checked == false)
             {
-                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'A";
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'A'";
             }
-            else if (txt_buscar.Text != "" && cb_buscar_activo.Checked == false && cb_buscar_inactivo.Checked == true)
+            else if (txt_buscar.Text != "" && cb_buscarActivo.Checked == false && cb_buscarInactivo.Checked == true)
             {
-                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'I";
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'I'";
+            }
+            else
+            {
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*'";
+            }
+        }        
+
+        
+
+        private void cb_buscarActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txt_buscar.Text == "" && cb_buscarActivo.Checked == true && cb_buscarInactivo.Checked == true)
+            {
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                vistaChecadorBindingSource.Filter = "";
+            }
+            else if (txt_buscar.Text == "" && cb_buscarActivo.Checked == true && cb_buscarInactivo.Checked == false)
+            {
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                vistaChecadorBindingSource.Filter = "[estatus] = 'A'";
+            }
+            else if (txt_buscar.Text == "" && cb_buscarActivo.Checked == false && cb_buscarInactivo.Checked == true)
+            {
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                vistaChecadorBindingSource.Filter = "[estatus] = 'I'";
+            }
+            else if (txt_buscar.Text != "" && cb_buscarActivo.Checked == true && cb_buscarInactivo.Checked == false)
+            {
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'A'";
+            }
+            else if (txt_buscar.Text != "" && cb_buscarActivo.Checked == false && cb_buscarInactivo.Checked == true)
+            {
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'I'";
             }
             else
             {
@@ -587,30 +686,30 @@ namespace Checador
             }
         }
 
-        private void cb_buscar_activo_CheckedChanged(object sender, EventArgs e)
+        private void cb_buscarInactivo_CheckedChanged(object sender, EventArgs e)
         {
-            if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == true)
+            if (txt_buscar.Text == "" && cb_buscarActivo.Checked == true && cb_buscarInactivo.Checked == true)
             {
                 this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
                 vistaChecadorBindingSource.Filter = "";
             }
-            else if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == false)
+            else if (txt_buscar.Text == "" && cb_buscarActivo.Checked == true && cb_buscarInactivo.Checked == false)
             {
                 this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
                 vistaChecadorBindingSource.Filter = "[estatus] = 'A'";
             }
-            else if (txt_buscar.Text == "" && cb_buscar_activo.Checked == false && cb_buscar_inactivo.Checked == true)
+            else if (txt_buscar.Text == "" && cb_buscarActivo.Checked == false && cb_buscarInactivo.Checked == true)
             {
                 this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
                 vistaChecadorBindingSource.Filter = "[estatus] = 'I'";
             }
-            else if (txt_buscar.Text != "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == false)
+            else if (txt_buscar.Text != "" && cb_buscarActivo.Checked == true && cb_buscarInactivo.Checked == false)
             {
-                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'A";
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'A'";
             }
-            else if (txt_buscar.Text != "" && cb_buscar_activo.Checked == false && cb_buscar_inactivo.Checked == true)
+            else if (txt_buscar.Text != "" && cb_buscarActivo.Checked == false && cb_buscarInactivo.Checked == true)
             {
-                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'I";
+                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'I'";
             }
             else
             {
@@ -618,38 +717,6 @@ namespace Checador
             }
         }
 
-        private void cb_buscar_inactivo_CheckedChanged(object sender, EventArgs e)
-        {
-            if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == true)
-            {
-                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
-                vistaChecadorBindingSource.Filter = "";
-            }
-            else if (txt_buscar.Text == "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == false)
-            {
-                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
-                vistaChecadorBindingSource.Filter = "[estatus] = 'A'";
-            }
-            else if (txt_buscar.Text == "" && cb_buscar_activo.Checked == false && cb_buscar_inactivo.Checked == true)
-            {
-                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
-                vistaChecadorBindingSource.Filter = "[estatus] = 'I'";
-            }
-            else if (txt_buscar.Text != "" && cb_buscar_activo.Checked == true && cb_buscar_inactivo.Checked == false)
-            {
-                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'A";
-            }
-            else if (txt_buscar.Text != "" && cb_buscar_activo.Checked == false && cb_buscar_inactivo.Checked == true)
-            {
-                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*' and [estatus] = 'I";
-            }
-            else
-            {
-                vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*'";
-            }
-        }
-<<<<<<< HEAD
-=======
         ////////////////////////////////////////////////////////////////////////////////////////
 
         //EVENTO CLICK EN MARCAR TODOS
@@ -674,23 +741,15 @@ namespace Checador
                 }
             }
         }
->>>>>>> 2bfb7c1a26eef880445092b5dc44ae0b13e5288a
-
-
-        private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void Regresar_Click(object sender, EventArgs e)
         {
+            //LIMPIAR DATOS DEL DATAGRID
+            dgv_eventos_sincronizados.Rows.Clear();
+            dgv_eventos_sincronizados.Refresh();
             tabControlBase.SelectedTab = tabPage3;
         }
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 2bfb7c1a26eef880445092b5dc44ae0b13e5288a
     }
 }

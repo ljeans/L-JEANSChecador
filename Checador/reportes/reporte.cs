@@ -36,7 +36,7 @@ namespace Checador.reportes
         private void btn_generar_Click(object sender, EventArgs e)
         {
             ReportDocument crystalrpt = new ReportDocument();
-            crystalrpt.Load(@"C:\Users\manue\Desktop\L-JEANSChecador\Checador\reportes\Sucursal-Empleados.rpt");
+            crystalrpt.Load(@"..\\..\\reportes\Sucursal-Empleados.rpt");
 
             ParameterFieldDefinitions parameterFieldDefinitions;
             ParameterFieldDefinition crParameterFieldDefinition;

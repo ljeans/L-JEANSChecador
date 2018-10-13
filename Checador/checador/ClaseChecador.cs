@@ -262,7 +262,6 @@ namespace Checador
                 Conexion conexion = new Conexion();
                 SqlConnection con = new SqlConnection(conexion.cadenaConexion);
                 DateTime? fecha_entrada, fecha_salida;
-                int Ordinal;
                 double minutos_retardo, minutos_retardo2;
                 int retardo=1;
 
