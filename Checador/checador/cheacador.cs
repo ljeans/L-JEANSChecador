@@ -648,8 +648,7 @@ namespace Checador
                 vistaChecadorBindingSource.Filter = "CONVERT([id_checador], 'System.String') LIKE " + "'" + txt_buscar.Text + "*'";
             }
         }
-<<<<<<< HEAD
-=======
+
         ////////////////////////////////////////////////////////////////////////////////////////
 
         //EVENTO CLICK EN MARCAR TODOS
@@ -674,7 +673,7 @@ namespace Checador
                 }
             }
         }
->>>>>>> 2bfb7c1a26eef880445092b5dc44ae0b13e5288a
+
 
 
         private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
@@ -687,10 +686,6 @@ namespace Checador
             tabControlBase.SelectedTab = tabPage3;
         }
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 2bfb7c1a26eef880445092b5dc44ae0b13e5288a
     }
 }

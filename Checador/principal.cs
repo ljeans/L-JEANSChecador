@@ -59,7 +59,7 @@ namespace Checador
             //DataRow row = dtChecadores.Rows[0];
             //MessageBox.Show(Convert.ToString(row["ip"]));
 
-            /*for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
+           /* for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
             {
                 DataRow row = dtChecadores.Rows[pos];
                 ipChecador = Convert.ToString(row["ip"]);
@@ -136,30 +136,12 @@ namespace Checador
         {
 
         }
-
-        private void btn_empleados_Click(object sender, EventArgs e)
+        private void btn_reportes_Click(object sender, EventArgs e)
         {
             Enabled = false;
-            modulo_empleados = new empleados.empleados();
-            modulo_empleados.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            modulo_empleados.Show();
-         
-        }
-
-        private void btn_sucursal_Click(object sender, EventArgs e)
-        {
-            Enabled = false;
-            modulo_sucursal = new sucursales();
-            modulo_sucursal.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            modulo_sucursal.Show();
-        }
-
-        private void btn_checador_Click(object sender, EventArgs e)
-        {
-            Enabled = false;
-            modulo_checador = new Checador.cheacador();
-            modulo_checador.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            modulo_checador.Show();
+            modulo_reportes = new reportes.reporte();
+            modulo_reportes.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            modulo_reportes.Show();
         }
 
         private void btn_horarios_Click(object sender, EventArgs e)
@@ -170,13 +152,33 @@ namespace Checador
             modulo_horarios.Show();
         }
 
-        private void btn_reportes_Click(object sender, EventArgs e)
+        private void btn_checador_Click(object sender, EventArgs e)
         {
             Enabled = false;
-            modulo_reportes = new reportes.reporte();
-            modulo_reportes.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            modulo_reportes.Show();
-            
+            modulo_checador = new Checador.cheacador();
+            modulo_checador.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            modulo_checador.Show();
+        }
+
+        private void btn_sucursal_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            modulo_sucursal = new sucursales();
+            modulo_sucursal.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            modulo_sucursal.Show();
+        }
+
+        private void btn_empleados_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            modulo_empleados = new empleados.empleados();
+            modulo_empleados.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            modulo_empleados.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void Checador_OnFinger()

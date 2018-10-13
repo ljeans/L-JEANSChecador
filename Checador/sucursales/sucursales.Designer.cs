@@ -197,6 +197,9 @@
             this.rb_buscar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_buscar.Image = global::Checador.Properties.Resources.sucursal_buscar;
+            this.rb_buscar.Location = new System.Drawing.Point(0, 210);
+            this.rb_buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.rb_buscar.CheckedChanged += new System.EventHandler(this.rb_buscar_CheckedChanged);
             // 
             // rb_modificar
@@ -205,6 +208,9 @@
             this.rb_modificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_modificar.Image = global::Checador.Properties.Resources.sucursal_modificar;
+            this.rb_modificar.Location = new System.Drawing.Point(0, 105);
+            this.rb_modificar.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.rb_modificar.CheckedChanged += new System.EventHandler(this.rb_modificar_CheckedChanged);
             // 
             // rb_registrar
@@ -213,6 +219,9 @@
             this.rb_registrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.rb_registrar.Image = global::Checador.Properties.Resources.sucursal_registrar;
+            this.rb_registrar.Location = new System.Drawing.Point(0, 0);
+            this.rb_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.rb_registrar.CheckedChanged += new System.EventHandler(this.rb_registrar_CheckedChanged);
             // 
             // txt_domicilio_municipio

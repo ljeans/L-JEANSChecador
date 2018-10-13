@@ -234,16 +234,7 @@
             // 
             // tabControlBase
             // 
-<<<<<<< HEAD
-
-            this.tabControlBase.Location = new System.Drawing.Point(309, 65);
-
             this.tabControlBase.Location = new System.Drawing.Point(310, 66);
-
-=======
-            this.tabControlBase.Location = new System.Drawing.Point(309, 65);
-            this.tabControlBase.Location = new System.Drawing.Point(310, 66);
->>>>>>> 2bfb7c1a26eef880445092b5dc44ae0b13e5288a
             // 
             // tabPage1
             // 
@@ -382,6 +373,7 @@
             this.rb_buscar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.rb_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_buscar.Location = new System.Drawing.Point(1, 210);
             this.rb_buscar.CheckedChanged += new System.EventHandler(this.rb_buscar_CheckedChanged);
             // 
             // rb_modificar
@@ -390,6 +382,7 @@
             this.rb_modificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.rb_modificar.Location = new System.Drawing.Point(0, 105);
             this.rb_modificar.CheckedChanged += new System.EventHandler(this.rb_modificar_CheckedChanged_1);
             // 
             // rb_registrar
@@ -398,6 +391,9 @@
             this.rb_registrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.rb_registrar.Image = global::Checador.Properties.Resources.empleados_registros;
+            this.rb_registrar.Location = new System.Drawing.Point(0, 0);
+            this.rb_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.rb_registrar.CheckedChanged += new System.EventHandler(this.rb_registrar_CheckedChanged);
             // 
             // txt_rfc

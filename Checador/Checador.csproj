@@ -445,7 +445,20 @@
     <None Include="Resources\huella9.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\sucursal_buscar.png" />
+    <None Include="Resources\sucursal_modificar.png" />
+    <None Include="Resources\sucursal_registrar.png" />
+    <None Include="Resources\reportes.png" />
+    <None Include="Resources\sucursales.png" />
+    <None Include="Resources\sucursal.png" />
     <None Include="Resources\calendar.png" />
+    <None Include="Resources\horarios.png" />
+    <None Include="Resources\horarios_registrar.png" />
+    <None Include="Resources\checador.png" />
+    <None Include="Resources\ayuda.png" />
+    <None Include="Resources\horarios_modificar.png" />
+    <None Include="Resources\horarios_buscar.png" />
+    <None Include="Resources\empleados_registros.png" />
     <Content Include="Resources\huellaregistred.png" />
   </ItemGroup>
   <ItemGroup>
