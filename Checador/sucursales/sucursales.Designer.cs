@@ -126,7 +126,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(309, 67);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 57);
             // 
             // tabPage1
             // 
@@ -177,10 +177,6 @@
             this.tabPage3.Controls.Add(this.btn_ir_modificar);
             this.tabPage3.Controls.Add(this.label84);
             this.tabPage3.Controls.Add(this.txt_id_mod);
-            // 
-            // panel_barra_sup
-            // 
-            this.panel_barra_sup.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barra_sup_Paint);
             // 
             // btn_home
             // 
@@ -690,7 +686,7 @@
             this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.ForeColor = System.Drawing.Color.White;
-            this.btn_modificar.Location = new System.Drawing.Point(667, 527);
+            this.btn_modificar.Location = new System.Drawing.Point(667, 515);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(250, 70);
             this.btn_modificar.TabIndex = 16;

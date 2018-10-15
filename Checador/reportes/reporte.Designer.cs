@@ -170,7 +170,7 @@
             this.cbx_sucursal.FormattingEnabled = true;
             this.cbx_sucursal.Location = new System.Drawing.Point(112, 9);
             this.cbx_sucursal.Name = "cbx_sucursal";
-            this.cbx_sucursal.Size = new System.Drawing.Size(150, 32);
+            this.cbx_sucursal.Size = new System.Drawing.Size(200, 32);
             this.cbx_sucursal.TabIndex = 2;
             this.cbx_sucursal.ValueMember = "id_sucursal";
             // 

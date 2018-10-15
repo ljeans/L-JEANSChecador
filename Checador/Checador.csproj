@@ -459,6 +459,8 @@
     <None Include="Resources\horarios_modificar.png" />
     <None Include="Resources\horarios_buscar.png" />
     <None Include="Resources\empleados_registros.png" />
+    <None Include="Resources\empleados_modificar.png" />
+    <None Include="Resources\empleados_buscar.png" />
     <Content Include="Resources\huellaregistred.png" />
   </ItemGroup>
   <ItemGroup>

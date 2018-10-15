@@ -273,9 +273,29 @@ namespace Checador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap empleados_buscar {
+            get {
+                object obj = ResourceManager.GetObject("empleados_buscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Empleados_mediano {
             get {
                 object obj = ResourceManager.GetObject("Empleados_mediano", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap empleados_modificar {
+            get {
+                object obj = ResourceManager.GetObject("empleados_modificar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

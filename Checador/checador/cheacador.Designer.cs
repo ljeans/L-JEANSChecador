@@ -872,14 +872,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_checador;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_sucursal;
-<<<<<<< HEAD
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_entrada;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha_salida;
-        private System.Windows.Forms.Button Regresar;
-
-=======
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_evento;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_evento;
->>>>>>> 557fa286581ea65d5e535d6f162f54f002331693
+
     }
 }

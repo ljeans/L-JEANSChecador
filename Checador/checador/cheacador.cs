@@ -741,16 +741,11 @@ namespace Checador
                 }
             }
         }
-<<<<<<< HEAD
-
-
 
         private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
         {
 
         }
-=======
->>>>>>> 557fa286581ea65d5e535d6f162f54f002331693
 
         private void Regresar_Click(object sender, EventArgs e)
         {
