@@ -874,6 +874,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_sucursal;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_evento;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_evento;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4162b9f1a17bd7522a2308f92ae2641691f04a5b
     }
 }

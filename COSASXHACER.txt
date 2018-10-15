@@ -1,8 +1,12 @@
+- Validación en el update de salida para min extra quitarlos
+- Contraseña CrystalReports quitar
 - Hacer HILOS
 - Poner bonitos los datagrid
 - Poner UniqueKeys en la base de datos
 - Poner barra de progreso cuando se necesite
 - Reportes
+	- Buscar que se conecte desde código
+	- Validar reportes vacíos
 - Modulo de incidentes
 -recalcular si se olvida cambiar el horario
 	--parametros: empleado, horario, rango de fechas.

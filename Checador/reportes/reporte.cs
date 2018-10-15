@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.Odbc;
 
 namespace Checador.reportes
 {
@@ -42,6 +43,11 @@ namespace Checador.reportes
             ParameterFieldDefinition crParameterFieldDefinition;
             ParameterValues crParameterValue = new ParameterValues();
             ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
+
+            //COLOCAR USUARIO Y CONTRASEÑA PARA CRYSTAL REPORTS
+            string username = "sa"; // database user name
+            string password = "123456"; //database password
+            crystalrpt.SetDatabaseLogon(username, password); //here usaer name and password for crystel report
 
             //parametro
             crParameterDiscreteValue.Value = cbx_sucursal.SelectedValue;
