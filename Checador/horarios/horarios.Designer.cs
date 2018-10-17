@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -134,7 +138,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(309, 57);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 67);
             this.tabControlBase.SelectedIndexChanged += new System.EventHandler(this.tabControlBase_SelectedIndexChanged);
             // 
             // tabPage1
@@ -631,9 +635,20 @@
             this.dgv_horarios.AllowUserToDeleteRows = false;
             this.dgv_horarios.AllowUserToResizeColumns = false;
             this.dgv_horarios.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.dgv_horarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_horarios.AutoGenerateColumns = false;
             this.dgv_horarios.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_horarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_horarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_horarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_horarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -653,10 +668,29 @@
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16});
             this.dgv_horarios.DataSource = this.vistaHorarioBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_horarios.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_horarios.EnableHeadersVisualStyles = false;
+            this.dgv_horarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_horarios.Location = new System.Drawing.Point(21, 145);
             this.dgv_horarios.MultiSelect = false;
             this.dgv_horarios.Name = "dgv_horarios";
             this.dgv_horarios.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_horarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_horarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_horarios.Size = new System.Drawing.Size(966, 430);
             this.dgv_horarios.TabIndex = 87;
             // 
@@ -667,7 +701,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 43;
+            this.dataGridViewTextBoxColumn1.Width = 49;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -676,7 +710,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Horario";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 66;
+            this.dataGridViewTextBoxColumn2.Width = 84;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -685,6 +719,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Hora de entrada";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 135;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -693,7 +728,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Hora salida descanso";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 123;
+            this.dataGridViewTextBoxColumn4.Width = 106;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -702,7 +737,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Hora entrada descanso";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 131;
+            this.dataGridViewTextBoxColumn5.Width = 119;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -711,7 +746,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Hora de salida";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 92;
+            this.dataGridViewTextBoxColumn6.Width = 85;
             // 
             // dataGridViewTextBoxColumn7
             // 

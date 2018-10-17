@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_rfc = new System.Windows.Forms.MaskedTextBox();
             this.txt_nss = new System.Windows.Forms.TextBox();
             this.txt_puesto = new System.Windows.Forms.TextBox();
@@ -234,7 +238,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(310, 57);
+            this.tabControlBase.Location = new System.Drawing.Point(310, 68);
             // 
             // tabPage1
             // 
@@ -573,9 +577,20 @@
             this.dgv_empleadobuscar.AllowUserToDeleteRows = false;
             this.dgv_empleadobuscar.AllowUserToResizeColumns = false;
             this.dgv_empleadobuscar.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_empleadobuscar.AutoGenerateColumns = false;
             this.dgv_empleadobuscar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_empleadobuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_empleadobuscar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empleadobuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_empleadobuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_empleadobuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
@@ -612,10 +627,29 @@
             this.horasextraDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn37});
             this.dgv_empleadobuscar.DataSource = this.vistaEmpleadosBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_empleadobuscar.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_empleadobuscar.EnableHeadersVisualStyles = false;
+            this.dgv_empleadobuscar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleadobuscar.Location = new System.Drawing.Point(30, 101);
             this.dgv_empleadobuscar.MultiSelect = false;
             this.dgv_empleadobuscar.Name = "dgv_empleadobuscar";
             this.dgv_empleadobuscar.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empleadobuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_empleadobuscar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_empleadobuscar.Size = new System.Drawing.Size(966, 407);
             this.dgv_empleadobuscar.TabIndex = 45;
             // 
@@ -626,7 +660,7 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 43;
+            this.dataGridViewTextBoxColumn7.Width = 49;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -635,7 +669,7 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 69;
+            this.dataGridViewTextBoxColumn8.Width = 88;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -644,7 +678,7 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "CURP";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 62;
+            this.dataGridViewTextBoxColumn9.Width = 77;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -653,7 +687,7 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "RFC";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 53;
+            this.dataGridViewTextBoxColumn10.Width = 65;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -662,7 +696,7 @@
             this.dataGridViewTextBoxColumn11.HeaderText = "NSS";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 54;
+            this.dataGridViewTextBoxColumn11.Width = 65;
             // 
             // dataGridViewTextBoxColumn12
             // 
@@ -671,7 +705,7 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "Sucursal";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Width = 73;
+            this.dataGridViewTextBoxColumn12.Width = 94;
             // 
             // dataGridViewTextBoxColumn13
             // 
@@ -680,193 +714,241 @@
             this.dataGridViewTextBoxColumn13.HeaderText = "Departamento";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 99;
+            this.dataGridViewTextBoxColumn13.Width = 135;
             // 
             // horarioDataGridViewTextBoxColumn
             // 
+            this.horarioDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.horarioDataGridViewTextBoxColumn.DataPropertyName = "horario";
             this.horarioDataGridViewTextBoxColumn.HeaderText = "Horario";
             this.horarioDataGridViewTextBoxColumn.Name = "horarioDataGridViewTextBoxColumn";
             this.horarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.horarioDataGridViewTextBoxColumn.Width = 84;
             // 
             // dataGridViewTextBoxColumn14
             // 
+            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn14.DataPropertyName = "telefono";
             this.dataGridViewTextBoxColumn14.HeaderText = "Telefono";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Width = 120;
+            this.dataGridViewTextBoxColumn14.Width = 94;
             // 
             // dataGridViewTextBoxColumn15
             // 
+            this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn15.DataPropertyName = "direccion";
             this.dataGridViewTextBoxColumn15.HeaderText = "Dirección";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Width = 150;
+            this.dataGridViewTextBoxColumn15.Width = 98;
             // 
             // dataGridViewTextBoxColumn16
             // 
+            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn16.DataPropertyName = "num_int";
             this.dataGridViewTextBoxColumn16.HeaderText = "No. interior";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Width = 50;
+            this.dataGridViewTextBoxColumn16.Width = 99;
             // 
             // dataGridViewTextBoxColumn17
             // 
+            this.dataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn17.DataPropertyName = "Localizacion";
             this.dataGridViewTextBoxColumn17.HeaderText = "Localización";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Width = 200;
+            this.dataGridViewTextBoxColumn17.Width = 119;
             // 
             // dataGridViewTextBoxColumn18
             // 
+            this.dataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn18.DataPropertyName = "puesto";
             this.dataGridViewTextBoxColumn18.HeaderText = "Puesto";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Width = 82;
             // 
             // dataGridViewTextBoxColumn19
             // 
+            this.dataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn19.DataPropertyName = "email";
             this.dataGridViewTextBoxColumn19.HeaderText = "Email";
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Width = 71;
             // 
             // dataGridViewTextBoxColumn20
             // 
+            this.dataGridViewTextBoxColumn20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn20.DataPropertyName = "fecha_alta";
             this.dataGridViewTextBoxColumn20.HeaderText = "Fecha alta";
             this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
             this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            this.dataGridViewTextBoxColumn20.Width = 98;
             // 
             // dataGridViewTextBoxColumn21
             // 
+            this.dataGridViewTextBoxColumn21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn21.DataPropertyName = "fecha_baja";
             this.dataGridViewTextBoxColumn21.HeaderText = "Fecha Baja";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Width = 103;
             // 
             // dataGridViewTextBoxColumn22
             // 
+            this.dataGridViewTextBoxColumn22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn22.DataPropertyName = "observaciones";
             this.dataGridViewTextBoxColumn22.HeaderText = "Observaciones";
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            this.dataGridViewTextBoxColumn22.Width = 137;
             // 
             // dataGridViewTextBoxColumn23
             // 
+            this.dataGridViewTextBoxColumn23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn23.DataPropertyName = "tipo_contrato";
             this.dataGridViewTextBoxColumn23.HeaderText = "Tipo contrato";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            this.dataGridViewTextBoxColumn23.Width = 114;
             // 
             // dataGridViewTextBoxColumn24
             // 
+            this.dataGridViewTextBoxColumn24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn24.DataPropertyName = "sueldo_diario";
             this.dataGridViewTextBoxColumn24.HeaderText = "Sueldo diario";
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
             this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            this.dataGridViewTextBoxColumn24.Width = 113;
             // 
             // dataGridViewTextBoxColumn25
             // 
+            this.dataGridViewTextBoxColumn25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn25.DataPropertyName = "sueldo_diario_integrado";
             this.dataGridViewTextBoxColumn25.HeaderText = "Sueldo diario integrado";
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            this.dataGridViewTextBoxColumn25.Width = 177;
             // 
             // dataGridViewTextBoxColumn26
             // 
+            this.dataGridViewTextBoxColumn26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn26.DataPropertyName = "sueldo_base_quincenal";
             this.dataGridViewTextBoxColumn26.HeaderText = "Sueldo base quincenal";
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
             this.dataGridViewTextBoxColumn26.ReadOnly = true;
+            this.dataGridViewTextBoxColumn26.Width = 175;
             // 
             // dataGridViewTextBoxColumn27
             // 
+            this.dataGridViewTextBoxColumn27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn27.DataPropertyName = "tipo_salario";
             this.dataGridViewTextBoxColumn27.HeaderText = "Tipo salario";
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
             this.dataGridViewTextBoxColumn27.ReadOnly = true;
+            this.dataGridViewTextBoxColumn27.Width = 103;
             // 
             // dataGridViewTextBoxColumn28
             // 
+            this.dataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn28.DataPropertyName = "dias_aguinaldo";
             this.dataGridViewTextBoxColumn28.HeaderText = "Dias aguinaldo";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
             this.dataGridViewTextBoxColumn28.ReadOnly = true;
+            this.dataGridViewTextBoxColumn28.Width = 125;
             // 
             // dataGridViewTextBoxColumn29
             // 
+            this.dataGridViewTextBoxColumn29.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn29.DataPropertyName = "dias_vacaciones";
             this.dataGridViewTextBoxColumn29.HeaderText = "Dias vacaciones";
             this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
             this.dataGridViewTextBoxColumn29.ReadOnly = true;
+            this.dataGridViewTextBoxColumn29.Width = 134;
             // 
             // dataGridViewTextBoxColumn30
             // 
+            this.dataGridViewTextBoxColumn30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn30.DataPropertyName = "riesgo_puesto";
             this.dataGridViewTextBoxColumn30.HeaderText = "Riesgo puesto";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
             this.dataGridViewTextBoxColumn30.ReadOnly = true;
+            this.dataGridViewTextBoxColumn30.Width = 123;
             // 
             // dataGridViewTextBoxColumn31
             // 
+            this.dataGridViewTextBoxColumn31.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn31.DataPropertyName = "periodicidad_pago";
             this.dataGridViewTextBoxColumn31.HeaderText = "Periodicidad pago";
             this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
             this.dataGridViewTextBoxColumn31.ReadOnly = true;
+            this.dataGridViewTextBoxColumn31.Width = 144;
             // 
             // dataGridViewTextBoxColumn32
             // 
+            this.dataGridViewTextBoxColumn32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn32.DataPropertyName = "banco";
             this.dataGridViewTextBoxColumn32.HeaderText = "Banco";
             this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
             this.dataGridViewTextBoxColumn32.ReadOnly = true;
+            this.dataGridViewTextBoxColumn32.Width = 78;
             // 
             // dataGridViewTextBoxColumn33
             // 
+            this.dataGridViewTextBoxColumn33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn33.DataPropertyName = "cuenta_bancaria";
             this.dataGridViewTextBoxColumn33.HeaderText = "Cuenta bancaria";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
             this.dataGridViewTextBoxColumn33.ReadOnly = true;
+            this.dataGridViewTextBoxColumn33.Width = 136;
             // 
             // dataGridViewTextBoxColumn34
             // 
+            this.dataGridViewTextBoxColumn34.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn34.DataPropertyName = "tarjeta_despensa";
             this.dataGridViewTextBoxColumn34.HeaderText = "Tarjeta despensa";
             this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
             this.dataGridViewTextBoxColumn34.ReadOnly = true;
+            this.dataGridViewTextBoxColumn34.Width = 141;
             // 
             // dataGridViewTextBoxColumn35
             // 
+            this.dataGridViewTextBoxColumn35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn35.DataPropertyName = "clave_edenred";
             this.dataGridViewTextBoxColumn35.HeaderText = "Clave edenred";
             this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
             this.dataGridViewTextBoxColumn35.ReadOnly = true;
+            this.dataGridViewTextBoxColumn35.Width = 122;
             // 
             // dataGridViewTextBoxColumn36
             // 
+            this.dataGridViewTextBoxColumn36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn36.DataPropertyName = "password";
             this.dataGridViewTextBoxColumn36.HeaderText = "Password";
             this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
             this.dataGridViewTextBoxColumn36.ReadOnly = true;
+            this.dataGridViewTextBoxColumn36.Width = 101;
             // 
             // horasextraDataGridViewTextBoxColumn
             // 
+            this.horasextraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.horasextraDataGridViewTextBoxColumn.DataPropertyName = "horas_extra";
             this.horasextraDataGridViewTextBoxColumn.HeaderText = "Horas extra";
             this.horasextraDataGridViewTextBoxColumn.Name = "horasextraDataGridViewTextBoxColumn";
             this.horasextraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.horasextraDataGridViewTextBoxColumn.Width = 104;
             // 
             // dataGridViewTextBoxColumn37
             // 
+            this.dataGridViewTextBoxColumn37.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn37.DataPropertyName = "estatus";
             this.dataGridViewTextBoxColumn37.HeaderText = "Estatus";
             this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
             this.dataGridViewTextBoxColumn37.ReadOnly = true;
+            this.dataGridViewTextBoxColumn37.Width = 87;
             // 
             // vistaEmpleadosBindingSource
             // 

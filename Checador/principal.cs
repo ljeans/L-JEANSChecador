@@ -18,6 +18,7 @@ namespace Checador
         sucursales modulo_sucursal = new sucursales();
         horarios modulo_horarios = new horarios();
         reportes.reporte modulo_reportes = new reportes.reporte();
+        inicio_sesion.login login = new inicio_sesion.login();
 
 
         //VARIABLE PARA CARGAR LOS CHECADORES
@@ -179,6 +180,19 @@ namespace Checador
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            login = new inicio_sesion.login();
+            login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            login.Show();
         }
 
         private void Checador_OnFinger()

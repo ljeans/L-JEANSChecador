@@ -29,7 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> 67e191ccc028c9530e7800201d2bfb5482455c54
             this.gbox_datos_checador = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
@@ -427,9 +436,20 @@
             this.dgv_checadorbuscar.AllowUserToDeleteRows = false;
             this.dgv_checadorbuscar.AllowUserToResizeColumns = false;
             this.dgv_checadorbuscar.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.dgv_checadorbuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_checadorbuscar.AutoGenerateColumns = false;
             this.dgv_checadorbuscar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_checadorbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_checadorbuscar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_checadorbuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_checadorbuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_checadorbuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.check,
@@ -439,8 +459,29 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dgv_checadorbuscar.DataSource = this.vistaChecadorBindingSource;
-            this.dgv_checadorbuscar.Location = new System.Drawing.Point(23, 124);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_checadorbuscar.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_checadorbuscar.EnableHeadersVisualStyles = false;
+            this.dgv_checadorbuscar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.dgv_checadorbuscar.Location = new System.Drawing.Point(75, 124);
             this.dgv_checadorbuscar.Name = "dgv_checadorbuscar";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_checadorbuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_checadorbuscar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            this.dgv_checadorbuscar.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_checadorbuscar.Size = new System.Drawing.Size(966, 360);
             this.dgv_checadorbuscar.TabIndex = 83;
             // 
@@ -451,42 +492,52 @@
             this.check.Name = "check";
             this.check.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.check.ToolTipText = "Marque los checadores a los que desea  aplicar la función";
-            this.check.Width = 44;
+            this.check.Width = 58;
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "id_checador";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 49;
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "sucursal";
             this.dataGridViewTextBoxColumn2.HeaderText = "Sucursal";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 94;
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "ip";
             this.dataGridViewTextBoxColumn3.HeaderText = "IP";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 47;
             // 
             // dataGridViewTextBoxColumn4
             // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "puerto";
             this.dataGridViewTextBoxColumn4.HeaderText = "Puerto";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 79;
             // 
             // dataGridViewTextBoxColumn5
             // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "estatus";
             this.dataGridViewTextBoxColumn5.HeaderText = "Estatus";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 87;
             // 
             // vistaChecadorBindingSource
             // 
@@ -514,7 +565,7 @@
             this.label42.AutoSize = true;
             this.label42.BackColor = System.Drawing.Color.Transparent;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(51, 43);
+            this.label42.Location = new System.Drawing.Point(76, 53);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(32, 24);
             this.label42.TabIndex = 84;
@@ -524,7 +575,7 @@
             // 
             this.txt_buscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_buscar.Location = new System.Drawing.Point(89, 41);
+            this.txt_buscar.Location = new System.Drawing.Point(114, 51);
             this.txt_buscar.Name = "txt_buscar";
             this.txt_buscar.Size = new System.Drawing.Size(248, 29);
             this.txt_buscar.TabIndex = 82;
@@ -535,7 +586,7 @@
             this.gbox_estatus.Controls.Add(this.cb_buscarInactivo);
             this.gbox_estatus.Controls.Add(this.cb_buscarActivo);
             this.gbox_estatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbox_estatus.Location = new System.Drawing.Point(405, 24);
+            this.gbox_estatus.Location = new System.Drawing.Point(680, 25);
             this.gbox_estatus.Name = "gbox_estatus";
             this.gbox_estatus.Size = new System.Drawing.Size(270, 70);
             this.gbox_estatus.TabIndex = 85;
@@ -635,7 +686,7 @@
             this.btn_fecha_manual.ForeColor = System.Drawing.Color.White;
             this.btn_fecha_manual.Location = new System.Drawing.Point(382, 69);
             this.btn_fecha_manual.Name = "btn_fecha_manual";
-            this.btn_fecha_manual.Size = new System.Drawing.Size(200, 50);
+            this.btn_fecha_manual.Size = new System.Drawing.Size(220, 50);
             this.btn_fecha_manual.TabIndex = 92;
             this.btn_fecha_manual.Text = "Aplicar al dispositivo";
             this.btn_fecha_manual.UseVisualStyleBackColor = false;
@@ -706,6 +757,7 @@
             this.dgv_eventos_sincronizados.BackgroundColor = System.Drawing.Color.White;
             this.dgv_eventos_sincronizados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_eventos_sincronizados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+<<<<<<< HEAD
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -714,6 +766,16 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_eventos_sincronizados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+=======
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_eventos_sincronizados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+>>>>>>> 67e191ccc028c9530e7800201d2bfb5482455c54
             this.dgv_eventos_sincronizados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_eventos_sincronizados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_checador,
@@ -857,13 +919,6 @@
         private System.Windows.Forms.BindingSource vistaChecadorBindingSource;
         private DataSet_ChecadorTableAdapters.Vista_ChecadorTableAdapter vista_ChecadorTableAdapter;
         private System.Windows.Forms.DateTimePicker dtp_hora;
-        
-        private System.Windows.Forms.DataGridViewCheckBoxColumn check;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridView dgv_eventos_sincronizados;
         private System.Windows.Forms.Button btn_aceptar;
         private System.Windows.Forms.CheckBox cb_buscarActivo;
@@ -874,5 +929,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id_sucursal;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_evento;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipo_evento;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.DataGridViewCheckBoxColumn check;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+>>>>>>> 67e191ccc028c9530e7800201d2bfb5482455c54
     }
 }
