@@ -116,7 +116,7 @@
             this.panel_barra_superior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_barra_superior.Location = new System.Drawing.Point(0, 0);
             this.panel_barra_superior.Name = "panel_barra_superior";
-            this.panel_barra_superior.Size = new System.Drawing.Size(1370, 65);
+            this.panel_barra_superior.Size = new System.Drawing.Size(1370, 79);
             this.panel_barra_superior.TabIndex = 15;
             // 
             // button2
@@ -129,9 +129,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1330, 0);
+            this.button2.Location = new System.Drawing.Point(1293, 1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 65);
+            this.button2.Size = new System.Drawing.Size(76, 76);
             this.button2.TabIndex = 10;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = false;
@@ -148,20 +148,21 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(1290, 0);
+            this.button3.Location = new System.Drawing.Point(1213, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(40, 65);
+            this.button3.Size = new System.Drawing.Size(76, 76);
             this.button3.TabIndex = 9;
             this.button3.Text = "_";
             this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // lbl_titulo
             // 
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_titulo.Location = new System.Drawing.Point(545, 17);
+            this.lbl_titulo.Location = new System.Drawing.Point(545, 20);
             this.lbl_titulo.Name = "lbl_titulo";
             this.lbl_titulo.Size = new System.Drawing.Size(280, 37);
             this.lbl_titulo.TabIndex = 5;
@@ -291,7 +292,7 @@
             this.pictureBox1.Image = global::Checador.Properties.Resources.logos_nuevos;
             this.pictureBox1.Location = new System.Drawing.Point(12, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 65);
+            this.pictureBox1.Size = new System.Drawing.Size(111, 76);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
@@ -307,13 +308,14 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1120, 20);
+            this.button4.Location = new System.Drawing.Point(1073, 20);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(136, 28);
             this.button4.TabIndex = 1;
             this.button4.Text = "Iniciar Sesión";
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -326,7 +328,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(977, 20);
+            this.button5.Location = new System.Drawing.Point(919, 20);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(151, 28);
             this.button5.TabIndex = 1;
@@ -351,6 +353,7 @@
             this.Controls.Add(this.btn_iniciar_sesion);
             this.Controls.Add(this.btn_cerrar_sesion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "principal";
             this.Text = "principal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
