@@ -352,9 +352,27 @@ namespace Checador
                         }
                         else if(fecha_entrada != null && fecha_salida == null)
                         {
-                            TimeSpan hr_entrada = new TimeSpan(fecha_entrada.Value.Hour, fecha_entrada.Value.Minute, fecha_entrada.Value.Second);
-                            TimeSpan hr_salida = new TimeSpan(fecha_evento.Hour, fecha_evento.Minute, fecha_evento.Second);
-                            int horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                            TimeSpan hr_entrada = new TimeSpan(fecha_entrada.Value.Hour, fecha_entrada.Value.Minute - tolerancia, fecha_entrada.Value.Second);
+                            TimeSpan hr_salida = new TimeSpan(fecha_evento.Hour, fecha_evento.Minute + tolerancia, fecha_evento.Second);
+                            int horas_trabajadas = 0;
+
+                            //VALIDAR LOS MINUTOS ANTES DE LA ENTADA Y DESPUES DE LA HORA DE SALIDA DEL HORARIO
+                            if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada))
+                            {
+                                horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                            }
+                            else if ((hr_salida > hora_salida) && (hr_entrada >= hora_entrada))
+                            {
+                                horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                            }
+                            else if((hr_salida <= hora_salida) && (hr_entrada < hora_entrada))
+                            {
+                                horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hora_entrada.TotalMinutes);
+                            }
+                            else if((hr_salida > hora_salida) && (hr_entrada < hora_entrada))
+                            {
+                                horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hora_entrada.TotalMinutes);
+                            }
 
                             con.Close();
                             //HACER UPDATE PARA INSERTAR LA FECHA DE SALIDA
