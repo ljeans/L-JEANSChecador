@@ -430,45 +430,6 @@ namespace Checador
             }
         }
 
-        /*public bool verificar_horario(string horario)//Funcion que hace el select retorna false si no hay resultados
-        {
-            try
-            {
-                Conexion conexion = new Conexion();
-                //SqlConnection con = new SqlConnection(conexion.cadenaConexion);
-                using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
-                {
-                    string select = "SELECT hr_entrada, hr_salida FROM horarios WHERE horario=@horario";//Consulta
-                    SqlCommand comando = new SqlCommand(select, con);//Nuevo objeto sqlcommand
-                    comando.Parameters.AddWithValue("@horario", horario);//Agregamos parametros a la consulta
-                    con.Open();//abre la conexion
-                    SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
-                    if (lector.HasRows)//Revisa si hay resultados
-                    {
-                        lector.Read();//Lee una linea de los resultados
-                        //this.id = ;//Asignacion a atributos
-                        //get ordinal regresa el indice de la fila
-                        //el Nombre especificado en el parametro
-                        hr_entrada = lector.GetTimeSpan(lector.GetOrdinal("hr_entrada"));
-                        hr_salida = lector.GetTimeSpan(lector.GetOrdinal("hr_salida"));
-                        con.Close();
-                        return true;
-                    }
-                    else
-                    {
-                        con.Close();
-                        return false;
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.ToString());
-                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
-                return false;
-            }
-        }*/
-
         //FUNCION PARA REGISTRAR EMPLEADO_SUCURSAL
         public void guardarEmpleado_Sucursal()
         {

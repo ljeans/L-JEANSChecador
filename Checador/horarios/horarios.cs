@@ -299,6 +299,10 @@ namespace Checador
 
         private void horarios_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.horarios' Puede moverla o quitarla según sea necesario.
+            this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
+            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Empleados' Puede moverla o quitarla según sea necesario.
+            this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
             // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Horario' table. You can move, or remove it, as needed.
             this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
             //CAMBIAR LA LETRA AL DATAGRIDVIEW
@@ -457,7 +461,240 @@ namespace Checador
                 vistaHorarioBindingSource.Filter = "CONVERT([id_horario], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [horario] LIKE '*" + txt_nombrebuscar.Text + "*'";
             }
         }
-///////////////////////////////////////////////////////////////
+
+        private void rb_asignar_horarios_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage4;
+        }
+
+        private void cbx_lunes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Horario.verificar_horario(cbx_lunes.SelectedValue.ToString());
+                label20.Text = Horario.hr_entrada.ToString();
+                label21.Text = Horario.hr_salida.ToString();
+                if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                {
+                    label22.Text = "-";
+                }
+                else
+                {
+                    label22.Text = Horario.hora_salida_descanso.ToString();
+                }
+                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                {
+                    label23.Text = "-";
+                }
+                else
+                {
+                    label23.Text = Horario.hora_entrada_descanso.ToString();
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
+        }
+
+        private void cbx_martes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Horario.verificar_horario(cbx_martes.SelectedValue.ToString());
+                lbl_martes_1.Text = Horario.hr_entrada.ToString();
+                lbl_martes_4.Text = Horario.hr_salida.ToString();
+                if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                {
+                    lbl_martes_2.Text = "-";
+                }
+                else
+                {
+                    lbl_martes_2.Text = Horario.hora_salida_descanso.ToString();
+                }
+                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                {
+                    lbl_martes_3.Text = "-";
+                }
+                else
+                {
+                    lbl_martes_3.Text = Horario.hora_entrada_descanso.ToString();
+                }
+            }
+            catch (Exception)
+            {
+                lbl_martes_2.Text = "-";
+                lbl_martes_3.Text = "-";
+            }
+        }
+
+        private void cbx_miercoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                Horario.verificar_horario(cbx_miercoles.SelectedValue.ToString());
+                lbl_miercoles_1.Text = Horario.hr_entrada.ToString();
+                lbl_miercoles_4.Text = Horario.hr_salida.ToString();
+                if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                {
+                    lbl_miercoles_2.Text = "-";
+                }
+                else
+                {
+                    lbl_miercoles_2.Text = Horario.hora_salida_descanso.ToString();
+                }
+                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                {
+                    lbl_miercoles_3.Text = "-";
+                }
+                else
+                {
+                    lbl_miercoles_3.Text = Horario.hora_entrada_descanso.ToString();
+                }
+            }
+            catch (Exception)
+            {
+                lbl_miercoles_3.Text = "-";
+                lbl_miercoles_2.Text = "-";
+            }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbx_jueves_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Horario.verificar_horario(cbx_jueves.SelectedValue.ToString());
+                lbl_jueves_1.Text = Horario.hr_entrada.ToString();
+                lbl_jueves_4.Text = Horario.hr_salida.ToString();
+                if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                {
+                    lbl_jueves_2.Text = "-";
+                }
+                else
+                {
+                    lbl_jueves_2.Text = Horario.hora_salida_descanso.ToString();
+                }
+                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                {
+                    lbl_jueves_3.Text = "-";
+                }
+                else
+                {
+                    lbl_jueves_3.Text = Horario.hora_entrada_descanso.ToString();
+                }
+            }
+            catch (Exception)
+            {
+                lbl_jueves_3.Text = "-";
+                lbl_jueves_2.Text = "-";
+            }
+        }
+
+        private void cbx_viernes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Horario.verificar_horario(cbx_viernes.SelectedValue.ToString());
+                lbl_viernes_1.Text = Horario.hr_entrada.ToString();
+                lbl_viernes_4.Text = Horario.hr_salida.ToString();
+                if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                {
+                    lbl_viernes_2.Text = "-";
+                }
+                else
+                {
+                    lbl_viernes_2.Text = Horario.hora_salida_descanso.ToString();
+                }
+                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                {
+                    lbl_viernes_3.Text = "-";
+                }
+                else
+                {
+                    lbl_viernes_3.Text = Horario.hora_entrada_descanso.ToString();
+                }
+
+            }
+            catch (Exception)
+            {
+                lbl_viernes_3.Text = "-";
+                lbl_viernes_2.Text = "-";
+            }
+        }
+
+        private void cbx_sabado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Horario.verificar_horario(cbx_sabado.SelectedValue.ToString());
+                lbl_sabado_1.Text = Horario.hr_entrada.ToString();
+                lbl_sabado_4.Text = Horario.hr_salida.ToString();
+                if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                {
+                    lbl_sabado_2.Text = "-";
+                }
+                else
+                {
+                    lbl_sabado_2.Text = Horario.hora_salida_descanso.ToString();
+                }
+                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                {
+                    lbl_sabado_3.Text = "-";
+                }
+                else
+                {
+                    lbl_sabado_3.Text = Horario.hora_entrada_descanso.ToString();
+                }
+            }
+            catch (Exception)
+            {
+                lbl_sabado_3.Text = "-";
+                lbl_sabado_2.Text = "-";
+            }
+        }
+
+        private void cbx_domingo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Horario.verificar_horario(cbx_domingo.SelectedValue.ToString());
+                lbl_domingo_1.Text = Horario.hr_entrada.ToString();
+                lbl_domingo_4.Text = Horario.hr_salida.ToString();
+               
+                if(Horario.hora_salida_descanso.ToString()== "00:00:00")
+                {
+                    lbl_domingo_2.Text = "-";
+                }
+                else
+                {
+                    lbl_domingo_2.Text = Horario.hora_salida_descanso.ToString();
+                }
+                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                {
+                    lbl_domingo_3.Text = "-";
+                }
+                else
+                {
+                    lbl_domingo_3.Text = Horario.hora_entrada_descanso.ToString();
+                }
+               
+            }
+            catch (Exception)
+            {
+                lbl_domingo_3.Text = "-";
+                lbl_domingo_2.Text = "-";
+            }
+        }
+
+
+        ///////////////////////////////////////////////////////////////
 
     }
 }
