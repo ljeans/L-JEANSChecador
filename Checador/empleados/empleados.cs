@@ -750,7 +750,13 @@ namespace Checador.empleados
                 vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*'";
             }
         }
-//////////////////////////////////////////////////////////////////////
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //////////////////////////////////////////////////////////////////////
 
         private void btn_dar_baja_Click(object sender, EventArgs e)
         {

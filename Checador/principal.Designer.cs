@@ -129,9 +129,9 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1293, 1);
+            this.button2.Location = new System.Drawing.Point(1293, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(76, 76);
+            this.button2.Size = new System.Drawing.Size(76, 78);
             this.button2.TabIndex = 10;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = false;
@@ -148,9 +148,9 @@
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(1213, 2);
+            this.button3.Location = new System.Drawing.Point(1213, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(76, 76);
+            this.button3.Size = new System.Drawing.Size(76, 78);
             this.button3.TabIndex = 9;
             this.button3.Text = "_";
             this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;

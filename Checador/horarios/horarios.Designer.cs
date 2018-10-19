@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -91,10 +91,73 @@
             this.cb_descanso = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txt_nombrebuscar = new System.Windows.Forms.TextBox();
+            this.rb_asignar_horarios = new System.Windows.Forms.RadioButton();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cbx_empleado = new System.Windows.Forms.ComboBox();
+            this.vistaEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vista_EmpleadosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.btn_siguiente = new System.Windows.Forms.Button();
+            this.cbx_domingo = new System.Windows.Forms.ComboBox();
+            this.vistaHorarioBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
+            this.cbx_sabado = new System.Windows.Forms.ComboBox();
+            this.vistaHorarioBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
+            this.cbx_viernes = new System.Windows.Forms.ComboBox();
+            this.vistaHorarioBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
+            this.cbx_jueves = new System.Windows.Forms.ComboBox();
+            this.vistaHorarioBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            this.cbx_miercoles = new System.Windows.Forms.ComboBox();
+            this.vistaHorarioBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.cbx_martes = new System.Windows.Forms.ComboBox();
+            this.vistaHorarioBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cbx_lunes = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.horariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.horariosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.horariosTableAdapter();
+            this.dataSetChecadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lbl_jueves_3 = new System.Windows.Forms.Label();
+            this.lbl_jueves_2 = new System.Windows.Forms.Label();
+            this.lbl_jueves_4 = new System.Windows.Forms.Label();
+            this.lbl_jueves_1 = new System.Windows.Forms.Label();
+            this.lbl_martes_1 = new System.Windows.Forms.Label();
+            this.lbl_martes_4 = new System.Windows.Forms.Label();
+            this.lbl_martes_2 = new System.Windows.Forms.Label();
+            this.lbl_martes_3 = new System.Windows.Forms.Label();
+            this.lbl_miercoles_3 = new System.Windows.Forms.Label();
+            this.lbl_miercoles_2 = new System.Windows.Forms.Label();
+            this.lbl_miercoles_4 = new System.Windows.Forms.Label();
+            this.lbl_miercoles_1 = new System.Windows.Forms.Label();
+            this.lbl_viernes_3 = new System.Windows.Forms.Label();
+            this.lbl_viernes_2 = new System.Windows.Forms.Label();
+            this.lbl_viernes_4 = new System.Windows.Forms.Label();
+            this.lbl_viernes_1 = new System.Windows.Forms.Label();
+            this.lbl_sabado_3 = new System.Windows.Forms.Label();
+            this.lbl_sabado_2 = new System.Windows.Forms.Label();
+            this.lbl_sabado_4 = new System.Windows.Forms.Label();
+            this.lbl_sabado_1 = new System.Windows.Forms.Label();
+            this.lbl_domingo_3 = new System.Windows.Forms.Label();
+            this.lbl_domingo_2 = new System.Windows.Forms.Label();
+            this.lbl_domingo_4 = new System.Windows.Forms.Label();
+            this.lbl_domingo_1 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
@@ -106,6 +169,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetChecadorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // rb_4
@@ -178,6 +251,12 @@
             this.tabPage3.Controls.Add(this.txt_idbuscar);
             this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.groupBox3);
+            this.tabPage4.Controls.Add(this.cbx_empleado);
+            this.tabPage4.Controls.Add(this.label11);
+            // 
             // btn_home
             // 
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
@@ -186,6 +265,14 @@
             // 
             this.lbl_titulo.Size = new System.Drawing.Size(139, 37);
             this.lbl_titulo.Text = "Horarios";
+            // 
+            // panel_menu
+            // 
+            this.panel_menu.Controls.Add(this.rb_asignar_horarios);
+            this.panel_menu.Controls.SetChildIndex(this.rb_registrar, 0);
+            this.panel_menu.Controls.SetChildIndex(this.rb_modificar, 0);
+            this.panel_menu.Controls.SetChildIndex(this.rb_buscar, 0);
+            this.panel_menu.Controls.SetChildIndex(this.rb_asignar_horarios, 0);
             // 
             // rb_buscar
             // 
@@ -635,20 +722,20 @@
             this.dgv_horarios.AllowUserToDeleteRows = false;
             this.dgv_horarios.AllowUserToResizeColumns = false;
             this.dgv_horarios.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dgv_horarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.dgv_horarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgv_horarios.AutoGenerateColumns = false;
             this.dgv_horarios.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_horarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_horarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgv_horarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_horarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -668,28 +755,28 @@
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16});
             this.dgv_horarios.DataSource = this.vistaHorarioBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_horarios.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_horarios.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgv_horarios.EnableHeadersVisualStyles = false;
             this.dgv_horarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_horarios.Location = new System.Drawing.Point(21, 145);
             this.dgv_horarios.MultiSelect = false;
             this.dgv_horarios.Name = "dgv_horarios";
             this.dgv_horarios.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_horarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_horarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgv_horarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_horarios.Size = new System.Drawing.Size(966, 430);
             this.dgv_horarios.TabIndex = 87;
@@ -728,7 +815,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Hora salida descanso";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 106;
+            this.dataGridViewTextBoxColumn4.Width = 168;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -737,7 +824,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Hora entrada descanso";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 119;
+            this.dataGridViewTextBoxColumn5.Width = 181;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -746,7 +833,7 @@
             this.dataGridViewTextBoxColumn6.HeaderText = "Hora de salida";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 85;
+            this.dataGridViewTextBoxColumn6.Width = 122;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -901,6 +988,616 @@
             this.txt_nombrebuscar.TabIndex = 89;
             this.txt_nombrebuscar.TextChanged += new System.EventHandler(this.txt_nombrebuscar_TextChanged);
             // 
+            // rb_asignar_horarios
+            // 
+            this.rb_asignar_horarios.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rb_asignar_horarios.BackColor = System.Drawing.Color.Transparent;
+            this.rb_asignar_horarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.rb_asignar_horarios.FlatAppearance.BorderSize = 0;
+            this.rb_asignar_horarios.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
+            this.rb_asignar_horarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
+            this.rb_asignar_horarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_asignar_horarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rb_asignar_horarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb_asignar_horarios.ForeColor = System.Drawing.Color.White;
+            this.rb_asignar_horarios.Location = new System.Drawing.Point(0, 315);
+            this.rb_asignar_horarios.Name = "rb_asignar_horarios";
+            this.rb_asignar_horarios.Size = new System.Drawing.Size(299, 104);
+            this.rb_asignar_horarios.TabIndex = 3;
+            this.rb_asignar_horarios.Text = "Asignar Horario";
+            this.rb_asignar_horarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.rb_asignar_horarios.UseVisualStyleBackColor = false;
+            this.rb_asignar_horarios.CheckedChanged += new System.EventHandler(this.rb_asignar_horarios_CheckedChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(221, 36);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(102, 24);
+            this.label11.TabIndex = 98;
+            this.label11.Text = "Empleado:";
+            // 
+            // cbx_empleado
+            // 
+            this.cbx_empleado.DataSource = this.vistaEmpleadosBindingSource;
+            this.cbx_empleado.DisplayMember = "nombre_completo";
+            this.cbx_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.cbx_empleado.FormattingEnabled = true;
+            this.cbx_empleado.Location = new System.Drawing.Point(330, 29);
+            this.cbx_empleado.Name = "cbx_empleado";
+            this.cbx_empleado.Size = new System.Drawing.Size(450, 32);
+            this.cbx_empleado.TabIndex = 99;
+            this.cbx_empleado.ValueMember = "id_empleado";
+            // 
+            // vistaEmpleadosBindingSource
+            // 
+            this.vistaEmpleadosBindingSource.DataMember = "Vista_Empleados";
+            this.vistaEmpleadosBindingSource.DataSource = this.dataSet_Checador;
+            // 
+            // vista_EmpleadosTableAdapter
+            // 
+            this.vista_EmpleadosTableAdapter.ClearBeforeFill = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(22, 120);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(71, 24);
+            this.label12.TabIndex = 101;
+            this.label12.Text = "Martes:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(25, 60);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 24);
+            this.label13.TabIndex = 101;
+            this.label13.Text = "Lunes:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.label26);
+            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.label24);
+            this.groupBox3.Controls.Add(this.lbl_domingo_3);
+            this.groupBox3.Controls.Add(this.lbl_domingo_2);
+            this.groupBox3.Controls.Add(this.lbl_domingo_4);
+            this.groupBox3.Controls.Add(this.lbl_domingo_1);
+            this.groupBox3.Controls.Add(this.lbl_sabado_3);
+            this.groupBox3.Controls.Add(this.lbl_sabado_2);
+            this.groupBox3.Controls.Add(this.lbl_sabado_4);
+            this.groupBox3.Controls.Add(this.lbl_sabado_1);
+            this.groupBox3.Controls.Add(this.lbl_viernes_3);
+            this.groupBox3.Controls.Add(this.lbl_viernes_2);
+            this.groupBox3.Controls.Add(this.lbl_viernes_4);
+            this.groupBox3.Controls.Add(this.lbl_viernes_1);
+            this.groupBox3.Controls.Add(this.lbl_miercoles_3);
+            this.groupBox3.Controls.Add(this.lbl_miercoles_2);
+            this.groupBox3.Controls.Add(this.lbl_miercoles_4);
+            this.groupBox3.Controls.Add(this.lbl_miercoles_1);
+            this.groupBox3.Controls.Add(this.lbl_martes_3);
+            this.groupBox3.Controls.Add(this.lbl_martes_2);
+            this.groupBox3.Controls.Add(this.lbl_jueves_3);
+            this.groupBox3.Controls.Add(this.lbl_martes_4);
+            this.groupBox3.Controls.Add(this.lbl_jueves_2);
+            this.groupBox3.Controls.Add(this.lbl_martes_1);
+            this.groupBox3.Controls.Add(this.lbl_jueves_4);
+            this.groupBox3.Controls.Add(this.lbl_jueves_1);
+            this.groupBox3.Controls.Add(this.label23);
+            this.groupBox3.Controls.Add(this.label22);
+            this.groupBox3.Controls.Add(this.label21);
+            this.groupBox3.Controls.Add(this.label20);
+            this.groupBox3.Controls.Add(this.btn_siguiente);
+            this.groupBox3.Controls.Add(this.cbx_domingo);
+            this.groupBox3.Controls.Add(this.cbx_sabado);
+            this.groupBox3.Controls.Add(this.cbx_viernes);
+            this.groupBox3.Controls.Add(this.cbx_jueves);
+            this.groupBox3.Controls.Add(this.cbx_miercoles);
+            this.groupBox3.Controls.Add(this.cbx_martes);
+            this.groupBox3.Controls.Add(this.cbx_lunes);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.label17);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.label14);
+            this.groupBox3.Controls.Add(this.label16);
+            this.groupBox3.Controls.Add(this.label13);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(55, 70);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(900, 550);
+            this.groupBox3.TabIndex = 102;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Asigna Horario";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(680, 63);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(0, 24);
+            this.label23.TabIndex = 123;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(538, 62);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(0, 24);
+            this.label22.TabIndex = 122;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(814, 63);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(0, 24);
+            this.label21.TabIndex = 121;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(417, 61);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(0, 24);
+            this.label20.TabIndex = 120;
+            // 
+            // btn_siguiente
+            // 
+            this.btn_siguiente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_siguiente.FlatAppearance.BorderSize = 0;
+            this.btn_siguiente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_siguiente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_siguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_siguiente.ForeColor = System.Drawing.Color.White;
+            this.btn_siguiente.Location = new System.Drawing.Point(311, 465);
+            this.btn_siguiente.Name = "btn_siguiente";
+            this.btn_siguiente.Size = new System.Drawing.Size(250, 70);
+            this.btn_siguiente.TabIndex = 119;
+            this.btn_siguiente.Text = "Guardar";
+            this.btn_siguiente.UseVisualStyleBackColor = false;
+            // 
+            // cbx_domingo
+            // 
+            this.cbx_domingo.DataSource = this.vistaHorarioBindingSource5;
+            this.cbx_domingo.DisplayMember = "horario";
+            this.cbx_domingo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_domingo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.cbx_domingo.FormattingEnabled = true;
+            this.cbx_domingo.Location = new System.Drawing.Point(142, 415);
+            this.cbx_domingo.Name = "cbx_domingo";
+            this.cbx_domingo.Size = new System.Drawing.Size(250, 32);
+            this.cbx_domingo.TabIndex = 118;
+            this.cbx_domingo.ValueMember = "id_horario";
+            this.cbx_domingo.SelectedIndexChanged += new System.EventHandler(this.cbx_domingo_SelectedIndexChanged);
+            // 
+            // vistaHorarioBindingSource5
+            // 
+            this.vistaHorarioBindingSource5.DataMember = "Vista_Horario";
+            this.vistaHorarioBindingSource5.DataSource = this.dataSet_Checador;
+            // 
+            // cbx_sabado
+            // 
+            this.cbx_sabado.DataSource = this.vistaHorarioBindingSource4;
+            this.cbx_sabado.DisplayMember = "horario";
+            this.cbx_sabado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_sabado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.cbx_sabado.FormattingEnabled = true;
+            this.cbx_sabado.Location = new System.Drawing.Point(142, 355);
+            this.cbx_sabado.Name = "cbx_sabado";
+            this.cbx_sabado.Size = new System.Drawing.Size(250, 32);
+            this.cbx_sabado.TabIndex = 117;
+            this.cbx_sabado.ValueMember = "id_horario";
+            this.cbx_sabado.SelectedIndexChanged += new System.EventHandler(this.cbx_sabado_SelectedIndexChanged);
+            // 
+            // vistaHorarioBindingSource4
+            // 
+            this.vistaHorarioBindingSource4.DataMember = "Vista_Horario";
+            this.vistaHorarioBindingSource4.DataSource = this.dataSet_Checador;
+            // 
+            // cbx_viernes
+            // 
+            this.cbx_viernes.DataSource = this.vistaHorarioBindingSource6;
+            this.cbx_viernes.DisplayMember = "horario";
+            this.cbx_viernes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_viernes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.cbx_viernes.FormattingEnabled = true;
+            this.cbx_viernes.Location = new System.Drawing.Point(142, 295);
+            this.cbx_viernes.Name = "cbx_viernes";
+            this.cbx_viernes.Size = new System.Drawing.Size(250, 32);
+            this.cbx_viernes.TabIndex = 116;
+            this.cbx_viernes.ValueMember = "id_horario";
+            this.cbx_viernes.SelectedIndexChanged += new System.EventHandler(this.cbx_viernes_SelectedIndexChanged);
+            // 
+            // vistaHorarioBindingSource6
+            // 
+            this.vistaHorarioBindingSource6.DataMember = "Vista_Horario";
+            this.vistaHorarioBindingSource6.DataSource = this.dataSet_Checador;
+            // 
+            // cbx_jueves
+            // 
+            this.cbx_jueves.DataSource = this.vistaHorarioBindingSource3;
+            this.cbx_jueves.DisplayMember = "horario";
+            this.cbx_jueves.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_jueves.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.cbx_jueves.FormattingEnabled = true;
+            this.cbx_jueves.Location = new System.Drawing.Point(142, 235);
+            this.cbx_jueves.Name = "cbx_jueves";
+            this.cbx_jueves.Size = new System.Drawing.Size(250, 32);
+            this.cbx_jueves.TabIndex = 115;
+            this.cbx_jueves.ValueMember = "id_horario";
+            this.cbx_jueves.SelectedIndexChanged += new System.EventHandler(this.cbx_jueves_SelectedIndexChanged);
+            // 
+            // vistaHorarioBindingSource3
+            // 
+            this.vistaHorarioBindingSource3.DataMember = "Vista_Horario";
+            this.vistaHorarioBindingSource3.DataSource = this.dataSet_Checador;
+            // 
+            // cbx_miercoles
+            // 
+            this.cbx_miercoles.DataSource = this.vistaHorarioBindingSource2;
+            this.cbx_miercoles.DisplayMember = "horario";
+            this.cbx_miercoles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_miercoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.cbx_miercoles.FormattingEnabled = true;
+            this.cbx_miercoles.Location = new System.Drawing.Point(142, 175);
+            this.cbx_miercoles.Name = "cbx_miercoles";
+            this.cbx_miercoles.Size = new System.Drawing.Size(250, 32);
+            this.cbx_miercoles.TabIndex = 114;
+            this.cbx_miercoles.ValueMember = "id_horario";
+            this.cbx_miercoles.SelectedIndexChanged += new System.EventHandler(this.cbx_miercoles_SelectedIndexChanged);
+            // 
+            // vistaHorarioBindingSource2
+            // 
+            this.vistaHorarioBindingSource2.DataMember = "Vista_Horario";
+            this.vistaHorarioBindingSource2.DataSource = this.dataSet_Checador;
+            // 
+            // cbx_martes
+            // 
+            this.cbx_martes.DataSource = this.vistaHorarioBindingSource1;
+            this.cbx_martes.DisplayMember = "horario";
+            this.cbx_martes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_martes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.cbx_martes.FormattingEnabled = true;
+            this.cbx_martes.Location = new System.Drawing.Point(142, 115);
+            this.cbx_martes.Name = "cbx_martes";
+            this.cbx_martes.Size = new System.Drawing.Size(250, 32);
+            this.cbx_martes.TabIndex = 113;
+            this.cbx_martes.ValueMember = "id_horario";
+            this.cbx_martes.SelectedIndexChanged += new System.EventHandler(this.cbx_martes_SelectedIndexChanged);
+            // 
+            // vistaHorarioBindingSource1
+            // 
+            this.vistaHorarioBindingSource1.DataMember = "Vista_Horario";
+            this.vistaHorarioBindingSource1.DataSource = this.dataSet_Checador;
+            // 
+            // cbx_lunes
+            // 
+            this.cbx_lunes.DataSource = this.vistaHorarioBindingSource;
+            this.cbx_lunes.DisplayMember = "horario";
+            this.cbx_lunes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_lunes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.cbx_lunes.FormattingEnabled = true;
+            this.cbx_lunes.Location = new System.Drawing.Point(142, 55);
+            this.cbx_lunes.Name = "cbx_lunes";
+            this.cbx_lunes.Size = new System.Drawing.Size(250, 32);
+            this.cbx_lunes.TabIndex = 112;
+            this.cbx_lunes.ValueMember = "id_horario";
+            this.cbx_lunes.SelectedIndexChanged += new System.EventHandler(this.cbx_lunes_SelectedIndexChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.Transparent;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(22, 420);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(92, 24);
+            this.label19.TabIndex = 111;
+            this.label19.Text = "Domingo:";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(22, 300);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(80, 24);
+            this.label17.TabIndex = 108;
+            this.label17.Text = "Viernes:";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(22, 360);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(80, 24);
+            this.label18.TabIndex = 109;
+            this.label18.Text = "Sabado:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(22, 180);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(97, 24);
+            this.label14.TabIndex = 104;
+            this.label14.Text = "Miercoles:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(22, 240);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(75, 24);
+            this.label16.TabIndex = 105;
+            this.label16.Text = "Jueves:";
+            // 
+            // horariosBindingSource
+            // 
+            this.horariosBindingSource.DataMember = "horarios";
+            this.horariosBindingSource.DataSource = this.dataSet_Checador;
+            // 
+            // horariosTableAdapter
+            // 
+            this.horariosTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataSetChecadorBindingSource
+            // 
+            this.dataSetChecadorBindingSource.DataSource = this.dataSet_Checador;
+            this.dataSetChecadorBindingSource.Position = 0;
+            // 
+            // lbl_jueves_3
+            // 
+            this.lbl_jueves_3.AutoSize = true;
+            this.lbl_jueves_3.Location = new System.Drawing.Point(682, 244);
+            this.lbl_jueves_3.Name = "lbl_jueves_3";
+            this.lbl_jueves_3.Size = new System.Drawing.Size(0, 24);
+            this.lbl_jueves_3.TabIndex = 127;
+            // 
+            // lbl_jueves_2
+            // 
+            this.lbl_jueves_2.AutoSize = true;
+            this.lbl_jueves_2.Location = new System.Drawing.Point(540, 243);
+            this.lbl_jueves_2.Name = "lbl_jueves_2";
+            this.lbl_jueves_2.Size = new System.Drawing.Size(0, 24);
+            this.lbl_jueves_2.TabIndex = 126;
+            // 
+            // lbl_jueves_4
+            // 
+            this.lbl_jueves_4.AutoSize = true;
+            this.lbl_jueves_4.Location = new System.Drawing.Point(816, 244);
+            this.lbl_jueves_4.Name = "lbl_jueves_4";
+            this.lbl_jueves_4.Size = new System.Drawing.Size(0, 24);
+            this.lbl_jueves_4.TabIndex = 125;
+            // 
+            // lbl_jueves_1
+            // 
+            this.lbl_jueves_1.AutoSize = true;
+            this.lbl_jueves_1.Location = new System.Drawing.Point(419, 242);
+            this.lbl_jueves_1.Name = "lbl_jueves_1";
+            this.lbl_jueves_1.Size = new System.Drawing.Size(0, 24);
+            this.lbl_jueves_1.TabIndex = 124;
+            // 
+            // lbl_martes_1
+            // 
+            this.lbl_martes_1.AutoSize = true;
+            this.lbl_martes_1.Location = new System.Drawing.Point(419, 123);
+            this.lbl_martes_1.Name = "lbl_martes_1";
+            this.lbl_martes_1.Size = new System.Drawing.Size(0, 24);
+            this.lbl_martes_1.TabIndex = 124;
+            // 
+            // lbl_martes_4
+            // 
+            this.lbl_martes_4.AutoSize = true;
+            this.lbl_martes_4.Location = new System.Drawing.Point(816, 125);
+            this.lbl_martes_4.Name = "lbl_martes_4";
+            this.lbl_martes_4.Size = new System.Drawing.Size(0, 24);
+            this.lbl_martes_4.TabIndex = 125;
+            // 
+            // lbl_martes_2
+            // 
+            this.lbl_martes_2.AutoSize = true;
+            this.lbl_martes_2.Location = new System.Drawing.Point(540, 124);
+            this.lbl_martes_2.Name = "lbl_martes_2";
+            this.lbl_martes_2.Size = new System.Drawing.Size(0, 24);
+            this.lbl_martes_2.TabIndex = 126;
+            // 
+            // lbl_martes_3
+            // 
+            this.lbl_martes_3.AutoSize = true;
+            this.lbl_martes_3.Location = new System.Drawing.Point(682, 125);
+            this.lbl_martes_3.Name = "lbl_martes_3";
+            this.lbl_martes_3.Size = new System.Drawing.Size(0, 24);
+            this.lbl_martes_3.TabIndex = 127;
+            // 
+            // lbl_miercoles_3
+            // 
+            this.lbl_miercoles_3.AutoSize = true;
+            this.lbl_miercoles_3.Location = new System.Drawing.Point(680, 183);
+            this.lbl_miercoles_3.Name = "lbl_miercoles_3";
+            this.lbl_miercoles_3.Size = new System.Drawing.Size(0, 24);
+            this.lbl_miercoles_3.TabIndex = 131;
+            // 
+            // lbl_miercoles_2
+            // 
+            this.lbl_miercoles_2.AutoSize = true;
+            this.lbl_miercoles_2.Location = new System.Drawing.Point(538, 182);
+            this.lbl_miercoles_2.Name = "lbl_miercoles_2";
+            this.lbl_miercoles_2.Size = new System.Drawing.Size(0, 24);
+            this.lbl_miercoles_2.TabIndex = 130;
+            // 
+            // lbl_miercoles_4
+            // 
+            this.lbl_miercoles_4.AutoSize = true;
+            this.lbl_miercoles_4.Location = new System.Drawing.Point(814, 183);
+            this.lbl_miercoles_4.Name = "lbl_miercoles_4";
+            this.lbl_miercoles_4.Size = new System.Drawing.Size(0, 24);
+            this.lbl_miercoles_4.TabIndex = 129;
+            // 
+            // lbl_miercoles_1
+            // 
+            this.lbl_miercoles_1.AutoSize = true;
+            this.lbl_miercoles_1.Location = new System.Drawing.Point(417, 181);
+            this.lbl_miercoles_1.Name = "lbl_miercoles_1";
+            this.lbl_miercoles_1.Size = new System.Drawing.Size(0, 24);
+            this.lbl_miercoles_1.TabIndex = 128;
+            // 
+            // lbl_viernes_3
+            // 
+            this.lbl_viernes_3.AutoSize = true;
+            this.lbl_viernes_3.Location = new System.Drawing.Point(680, 303);
+            this.lbl_viernes_3.Name = "lbl_viernes_3";
+            this.lbl_viernes_3.Size = new System.Drawing.Size(0, 24);
+            this.lbl_viernes_3.TabIndex = 135;
+            // 
+            // lbl_viernes_2
+            // 
+            this.lbl_viernes_2.AutoSize = true;
+            this.lbl_viernes_2.Location = new System.Drawing.Point(538, 302);
+            this.lbl_viernes_2.Name = "lbl_viernes_2";
+            this.lbl_viernes_2.Size = new System.Drawing.Size(0, 24);
+            this.lbl_viernes_2.TabIndex = 134;
+            // 
+            // lbl_viernes_4
+            // 
+            this.lbl_viernes_4.AutoSize = true;
+            this.lbl_viernes_4.Location = new System.Drawing.Point(814, 303);
+            this.lbl_viernes_4.Name = "lbl_viernes_4";
+            this.lbl_viernes_4.Size = new System.Drawing.Size(0, 24);
+            this.lbl_viernes_4.TabIndex = 133;
+            // 
+            // lbl_viernes_1
+            // 
+            this.lbl_viernes_1.AutoSize = true;
+            this.lbl_viernes_1.Location = new System.Drawing.Point(417, 301);
+            this.lbl_viernes_1.Name = "lbl_viernes_1";
+            this.lbl_viernes_1.Size = new System.Drawing.Size(0, 24);
+            this.lbl_viernes_1.TabIndex = 132;
+            // 
+            // lbl_sabado_3
+            // 
+            this.lbl_sabado_3.AutoSize = true;
+            this.lbl_sabado_3.Location = new System.Drawing.Point(680, 364);
+            this.lbl_sabado_3.Name = "lbl_sabado_3";
+            this.lbl_sabado_3.Size = new System.Drawing.Size(0, 24);
+            this.lbl_sabado_3.TabIndex = 139;
+            // 
+            // lbl_sabado_2
+            // 
+            this.lbl_sabado_2.AutoSize = true;
+            this.lbl_sabado_2.Location = new System.Drawing.Point(538, 363);
+            this.lbl_sabado_2.Name = "lbl_sabado_2";
+            this.lbl_sabado_2.Size = new System.Drawing.Size(0, 24);
+            this.lbl_sabado_2.TabIndex = 138;
+            // 
+            // lbl_sabado_4
+            // 
+            this.lbl_sabado_4.AutoSize = true;
+            this.lbl_sabado_4.Location = new System.Drawing.Point(814, 364);
+            this.lbl_sabado_4.Name = "lbl_sabado_4";
+            this.lbl_sabado_4.Size = new System.Drawing.Size(0, 24);
+            this.lbl_sabado_4.TabIndex = 137;
+            // 
+            // lbl_sabado_1
+            // 
+            this.lbl_sabado_1.AutoSize = true;
+            this.lbl_sabado_1.Location = new System.Drawing.Point(417, 362);
+            this.lbl_sabado_1.Name = "lbl_sabado_1";
+            this.lbl_sabado_1.Size = new System.Drawing.Size(0, 24);
+            this.lbl_sabado_1.TabIndex = 136;
+            // 
+            // lbl_domingo_3
+            // 
+            this.lbl_domingo_3.AutoSize = true;
+            this.lbl_domingo_3.Location = new System.Drawing.Point(680, 424);
+            this.lbl_domingo_3.Name = "lbl_domingo_3";
+            this.lbl_domingo_3.Size = new System.Drawing.Size(0, 24);
+            this.lbl_domingo_3.TabIndex = 143;
+            // 
+            // lbl_domingo_2
+            // 
+            this.lbl_domingo_2.AutoSize = true;
+            this.lbl_domingo_2.Location = new System.Drawing.Point(538, 423);
+            this.lbl_domingo_2.Name = "lbl_domingo_2";
+            this.lbl_domingo_2.Size = new System.Drawing.Size(0, 24);
+            this.lbl_domingo_2.TabIndex = 142;
+            // 
+            // lbl_domingo_4
+            // 
+            this.lbl_domingo_4.AutoSize = true;
+            this.lbl_domingo_4.Location = new System.Drawing.Point(814, 424);
+            this.lbl_domingo_4.Name = "lbl_domingo_4";
+            this.lbl_domingo_4.Size = new System.Drawing.Size(0, 24);
+            this.lbl_domingo_4.TabIndex = 141;
+            // 
+            // lbl_domingo_1
+            // 
+            this.lbl_domingo_1.AutoSize = true;
+            this.lbl_domingo_1.Location = new System.Drawing.Point(417, 422);
+            this.lbl_domingo_1.Name = "lbl_domingo_1";
+            this.lbl_domingo_1.Size = new System.Drawing.Size(0, 24);
+            this.lbl_domingo_1.TabIndex = 140;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(418, 28);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(66, 20);
+            this.label24.TabIndex = 144;
+            this.label24.Text = "Entrada";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(509, 28);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(126, 20);
+            this.label25.TabIndex = 145;
+            this.label25.Text = "Salida descanso";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(652, 28);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(143, 20);
+            this.label26.TabIndex = 146;
+            this.label26.Text = "Regreso descanso";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(823, 28);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(53, 20);
+            this.label27.TabIndex = 147;
+            this.label27.Text = "Salida";
+            // 
             // horarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -915,6 +1612,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
@@ -929,6 +1628,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vistaHorarioBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetChecadorBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1009,5 +1719,67 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        public System.Windows.Forms.RadioButton rb_asignar_horarios;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cbx_empleado;
+        private System.Windows.Forms.BindingSource vistaEmpleadosBindingSource;
+        private DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter vista_EmpleadosTableAdapter;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ComboBox cbx_domingo;
+        private System.Windows.Forms.ComboBox cbx_sabado;
+        private System.Windows.Forms.ComboBox cbx_viernes;
+        private System.Windows.Forms.ComboBox cbx_jueves;
+        private System.Windows.Forms.ComboBox cbx_miercoles;
+        private System.Windows.Forms.ComboBox cbx_martes;
+        private System.Windows.Forms.ComboBox cbx_lunes;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btn_siguiente;
+        private System.Windows.Forms.BindingSource vistaHorarioBindingSource1;
+        private System.Windows.Forms.BindingSource vistaHorarioBindingSource4;
+        private System.Windows.Forms.BindingSource vistaHorarioBindingSource3;
+        private System.Windows.Forms.BindingSource vistaHorarioBindingSource2;
+        private System.Windows.Forms.BindingSource horariosBindingSource;
+        private DataSet_ChecadorTableAdapters.horariosTableAdapter horariosTableAdapter;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.BindingSource vistaHorarioBindingSource5;
+        private System.Windows.Forms.BindingSource vistaHorarioBindingSource6;
+        private System.Windows.Forms.BindingSource dataSetChecadorBindingSource;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lbl_sabado_3;
+        private System.Windows.Forms.Label lbl_sabado_2;
+        private System.Windows.Forms.Label lbl_sabado_4;
+        private System.Windows.Forms.Label lbl_sabado_1;
+        private System.Windows.Forms.Label lbl_viernes_3;
+        private System.Windows.Forms.Label lbl_viernes_2;
+        private System.Windows.Forms.Label lbl_viernes_4;
+        private System.Windows.Forms.Label lbl_viernes_1;
+        private System.Windows.Forms.Label lbl_miercoles_3;
+        private System.Windows.Forms.Label lbl_miercoles_2;
+        private System.Windows.Forms.Label lbl_miercoles_4;
+        private System.Windows.Forms.Label lbl_miercoles_1;
+        private System.Windows.Forms.Label lbl_martes_3;
+        private System.Windows.Forms.Label lbl_martes_2;
+        private System.Windows.Forms.Label lbl_jueves_3;
+        private System.Windows.Forms.Label lbl_martes_4;
+        private System.Windows.Forms.Label lbl_jueves_2;
+        private System.Windows.Forms.Label lbl_martes_1;
+        private System.Windows.Forms.Label lbl_jueves_4;
+        private System.Windows.Forms.Label lbl_jueves_1;
+        private System.Windows.Forms.Label lbl_domingo_3;
+        private System.Windows.Forms.Label lbl_domingo_2;
+        private System.Windows.Forms.Label lbl_domingo_4;
+        private System.Windows.Forms.Label lbl_domingo_1;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
     }
 }

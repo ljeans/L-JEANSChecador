@@ -148,6 +148,64 @@ namespace Checador
             }
         }
 
+        public bool verificar_horario(string horario)//Funcion que hace el select retorna false si no hay resultados
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                //SqlConnection con = new SqlConnection(conexion.cadenaConexion);
+                using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
+                {
+                    
+                    string select = "SELECT hr_entrada, hr_salida, hr_salida_descanso, hr_entrada_descanso FROM horarios WHERE id_horario=@horario";//Consulta
+                    SqlCommand comando = new SqlCommand(select, con);//Nuevo objeto sqlcommand
+                    comando.Parameters.AddWithValue("@horario", horario);//Agregamos parametros a la consulta
+                    con.Open();//abre la conexion
+                    SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
+                    if (lector.HasRows)//Revisa si hay resultados
+                    {
+                        lector.Read();//Lee una linea de los resultados
+                        //this.id = ;//Asignacion a atributos
+                        //get ordinal regresa el indice de la fila-
+                        //el Nombre especificado en el parametro
+                        hr_entrada = lector.GetTimeSpan(lector.GetOrdinal("hr_entrada"));
+                        hr_salida = lector.GetTimeSpan(lector.GetOrdinal("hr_salida"));
+
+                        try
+                        {
+                            hora_salida_descanso = lector.GetTimeSpan(lector.GetOrdinal("hr_salida_descanso"));
+                        }
+                        catch (Exception ex)
+                        {
+                            hora_salida_descanso = new TimeSpan(00, 00, 00);
+                        }
+
+                        try
+                        {
+                            hora_entrada_descanso = lector.GetTimeSpan(lector.GetOrdinal("hr_entrada_descanso"));
+                        }
+                        catch (Exception ex)
+                        {
+                            hora_entrada_descanso = new TimeSpan(00, 00, 00);
+                        }
+                        con.Close();
+                        return true;
+                    }
+                    else
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+               MessageBox.Show(e.ToString());
+                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                return false;
+            }
+        }
+
         //FUNCION PARA VERIFICAR SI EL HORARIO YA EXISTE PREVIAMENTE EN LA BASE DE DATOS
         //RETORNA UN VALOR BOOL DEPENDIENDO SI ES V O F
         //ADEMAS CARGA LOS ATRIBUTOS DE LA CLASE CON LOS DATOS GUARDADOS DEL HORARIO
