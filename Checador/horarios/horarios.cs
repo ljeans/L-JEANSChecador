@@ -15,8 +15,6 @@ namespace Checador
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
 
-
-
         public bool respuesta = false;
 
         public horarios()

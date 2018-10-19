@@ -95,7 +95,9 @@
     <Compile Include="formularios padres\ProgressBar.Designer.cs">
       <DependentUpon>ProgressBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="horarios\ClaseAsignar_Horario.cs" />
     <Compile Include="horarios\ClaseHorario.cs" />
+    <Compile Include="inicio sesion\ClaseUsuario.cs" />
     <Compile Include="inicio sesion\login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,13 +155,11 @@
     <EmbeddedResource Include="formularios padres\mensaje_info.resx">
       <DependentUpon>mensaje_info.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="formularios padres\ProgressBar.resx">
       <DependentUpon>ProgressBar.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="inicio sesion\login.resx">
       <DependentUpon>login.cs</DependentUpon>
->>>>>>> 67e191ccc028c9530e7800201d2bfb5482455c54
     </EmbeddedResource>
     <EmbeddedResource Include="principal.resx">
       <DependentUpon>principal.cs</DependentUpon>
