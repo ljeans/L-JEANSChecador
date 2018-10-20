@@ -1,7 +1,6 @@
 - Asignacion de horario
-	-Interfaz
-	-Clase
-	-Programar
+	- En sincronizar eventos cambiar la forma para sacar los retardos y las horas trabajadas
+	- Vista
 - Validación en el update de salida para min extra quitarlos
 	--Si es de bodega no quitarlos
 - Hacer HILOS
@@ -9,6 +8,7 @@
 - Poner barra de progreso cuando se necesite - LISTO
 	-- Poner bonita la barra de progreso
 - Reportes
+	- Reporte de retardos para Dalisa (a su correo).
 	- Validar reportes vacíos
 - Modulo de tienda
 	-Incidentes
@@ -16,6 +16,6 @@
 		--recalcular si se olvida cambiar el horario
 			---parametros: empleado, horario, rango de fechas.
 - Login
+	- Crear usuarios para login
 - Validar en GENERAL
 	- Verificar existencia del empleado por el ID o CURP
-	- En empleado cuando se registra exitosamente se va a modificar, cambiar radiobutton

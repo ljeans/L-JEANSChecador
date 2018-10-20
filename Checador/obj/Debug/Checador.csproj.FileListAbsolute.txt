@@ -1,20 +1,3 @@
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csprojResolveAssemblyReference.cache
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Interop.zkemkeeper.dll
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Interop.ZKFPEngXControl.dll
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.ResolveComReference.cache
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.cheacador.resources
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.empleados.empleados.resources
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.Mensajes.resources
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.mensaje_info.resources
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.ProgressBar.resources
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.inicio_sesion.login.resources
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.principal.resources
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.formpadre.resources
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.horarios.resources
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.Properties.Resources.resources
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.reportes.reporte.resources
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.sucursales.resources
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.GenerateResource.Cache
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\Checador.exe.config
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\Checador.exe
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\Checador.pdb
@@ -37,8 +20,25 @@ C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.Repor
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\ShockwaveFlashObjects.dll
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\bin\Debug\stdole.dll
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Interop.zkemkeeper.dll
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Interop.ZKFPEngXControl.dll
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.ResolveComReference.cache
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.cheacador.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.empleados.empleados.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.Mensajes.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.mensaje_info.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.ProgressBar.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.inicio_sesion.login.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.principal.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.formpadre.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.horarios.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.Properties.Resources.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.reportes.reporte.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.sucursales.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.GenerateResource.Cache
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.exe
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.pdb
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csprojResolveAssemblyReference.cache
 <<<<<<< HEAD
 =======
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.csprojResolveAssemblyReference.cache
@@ -87,3 +87,4 @@ C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_p
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.incidentes.incidentes.resources
 >>>>>>> 68a02aeb3829975f4d49dca68355bbbfad5ff67c
 >>>>>>> 63112378576371a46ce35f22b99caa3ac37bf187
+>>>>>>> 445f002688090c703e96cf90af5c85aa6a11dc65
