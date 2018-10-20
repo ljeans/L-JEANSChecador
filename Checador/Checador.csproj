@@ -95,13 +95,18 @@
     <Compile Include="formularios padres\ProgressBar.Designer.cs">
       <DependentUpon>ProgressBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="horarios\ClaseAsignar_Horario.cs" />
     <Compile Include="horarios\ClaseHorario.cs" />
+<<<<<<< HEAD
     <Compile Include="incidentes\incidentes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="incidentes\incidentes.Designer.cs">
       <DependentUpon>incidentes.cs</DependentUpon>
     </Compile>
+=======
+    <Compile Include="inicio sesion\ClaseUsuario.cs" />
+>>>>>>> 63112378576371a46ce35f22b99caa3ac37bf187
     <Compile Include="inicio sesion\login.cs">
       <SubType>Form</SubType>
     </Compile>

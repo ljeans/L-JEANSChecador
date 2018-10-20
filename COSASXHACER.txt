@@ -1,3 +1,7 @@
+- Asignacion de horario
+	-Interfaz
+	-Clase
+	-Programar
 - Validación en el update de salida para min extra quitarlos
 	--Si es de bodega no quitarlos
 - Hacer HILOS
@@ -6,10 +10,11 @@
 	-- Poner bonita la barra de progreso
 - Reportes
 	- Validar reportes vacíos
-- Modulo de incidentes
-	-olvido de chequeo
-	-recalcular si se olvida cambiar el horario
-	--parametros: empleado, horario, rango de fechas.
+- Modulo de tienda
+	-Incidentes
+		--olvido de chequeo
+		--recalcular si se olvida cambiar el horario
+			---parametros: empleado, horario, rango de fechas.
 - Login
 - Validar en GENERAL
 	- Verificar existencia del empleado por el ID o CURP

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Checador.inicio_sesion
 {
@@ -16,6 +17,8 @@ namespace Checador.inicio_sesion
         {
             InitializeComponent();
         }
+
+        ClaseUsuario usuario = new ClaseUsuario();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -53,5 +56,20 @@ namespace Checador.inicio_sesion
         {
             this.Close();
         }
+
+        private void btn_entrar_Click(object sender, EventArgs e)
+        {
+            usuario.usuario = txt_usuario.Text;
+            usuario.contraseña = txt_contraseña.Text;
+            if (usuario.Entrar())
+            {
+                MessageBox.Show("Bienvenido(a): " + usuario.usuario);
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos..");
+            }
+        }
+
     }
 }
