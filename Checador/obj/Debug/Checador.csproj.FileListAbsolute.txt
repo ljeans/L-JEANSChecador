@@ -41,7 +41,6 @@ C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.exe
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.pdb
 <<<<<<< HEAD
 =======
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csprojResolveAssemblyReference.cache
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.csprojResolveAssemblyReference.cache
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Interop.zkemkeeper.dll
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Interop.ZKFPEngXControl.dll
@@ -82,14 +81,9 @@ C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.Repor
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\ShockwaveFlashObjects.dll
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\stdole.dll
-<<<<<<< HEAD
-C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.ProgressBar.resources
-=======
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.inicio_sesion.login.resources
 >>>>>>> 67e191ccc028c9530e7800201d2bfb5482455c54
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.ProgressBar.resources
-<<<<<<< HEAD
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.incidentes.incidentes.resources
-=======
 >>>>>>> 68a02aeb3829975f4d49dca68355bbbfad5ff67c
 >>>>>>> 63112378576371a46ce35f22b99caa3ac37bf187
