@@ -297,6 +297,7 @@
             this.txt_ip.Name = "txt_ip";
             this.txt_ip.Size = new System.Drawing.Size(248, 29);
             this.txt_ip.TabIndex = 2;
+            this.txt_ip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ip_KeyPress);
             // 
             // txt_id
             // 

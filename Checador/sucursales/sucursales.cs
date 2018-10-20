@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
+
 namespace Checador
 {
     public partial class sucursales : Checador.formularios_padres.formpadre
@@ -94,18 +95,20 @@ namespace Checador
         {
             Enabled = true;
             respuesta = confirmacion.respuesta;
-            MessageBox.Show(respuesta.ToString());
+          
             if (respuesta == true)
             {
                 Sucursal.Modificar_Sucursal();
-                Limpiar();       
+                Limpiar();
+                tabControlBase.SelectedTab = tabPage3;
+                 
             }
             else
             {
               
             }
             confirmacion = null;
-            tabControlBase.SelectedTab = tabPage3;
+           
             respuesta = false;
         }
 
@@ -224,7 +227,7 @@ namespace Checador
                 confirmacion.FormClosed += new FormClosedEventHandler(responder);
                 confirmacion.Show();
                 Enabled = false;
-                Limpiar();
+              
             }
             catch (Exception ex)
             {

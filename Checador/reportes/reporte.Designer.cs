@@ -191,6 +191,7 @@
             // dtp_fecha1
             // 
             this.dtp_fecha1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_fecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_fecha1.Location = new System.Drawing.Point(435, 12);
             this.dtp_fecha1.Name = "dtp_fecha1";
             this.dtp_fecha1.Size = new System.Drawing.Size(200, 29);
@@ -199,6 +200,7 @@
             // dtp_fecha2
             // 
             this.dtp_fecha2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_fecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_fecha2.Location = new System.Drawing.Point(641, 12);
             this.dtp_fecha2.Name = "dtp_fecha2";
             this.dtp_fecha2.Size = new System.Drawing.Size(200, 29);

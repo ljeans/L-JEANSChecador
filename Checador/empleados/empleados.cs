@@ -20,6 +20,7 @@ namespace Checador.empleados
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
         formularios_padres.Mensajes confirmacion2 = new formularios_padres.Mensajes();
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+        validacion validar = new validacion();
 
         //SE CREA LA INSTANCIA DE LA CLASE CHECADOR
         ClaseChecador clase_checador = new ClaseChecador();
@@ -58,6 +59,7 @@ namespace Checador.empleados
             groupBox4.Enabled = false;
 
             cbx_privilegio.SelectedIndex = 0;
+            txt_id.Focus();
         
         }            
 
@@ -80,7 +82,7 @@ namespace Checador.empleados
         {
             Limpiar();
             tabControlBase.SelectedTab = tabPage1;
-            txt_curp.Focus();
+            txt_id.Focus();
             groupBox4.Visible = false;
             groupBox4.Enabled = false;
             btn_modificar.Enabled = false;
@@ -195,7 +197,7 @@ namespace Checador.empleados
                 
                 confirmacion2 = new formularios_padres.Mensajes();
                 confirmacion2.lbl_mensaje.Text = "Desea registrar huella al empleado?";
-                confirmacion2.FormClosed += new FormClosedEventHandler(mod_huella);
+                confirmacion2.FormClosed += new FormClosedEventHandler(reg_huella);
                 confirmacion2.Show();
                 Enabled = false;
                 Limpiar();
@@ -536,7 +538,7 @@ namespace Checador.empleados
             {
 
             }
-          
+            txt_id.Enabled = true;
           
 
         }
@@ -557,6 +559,26 @@ namespace Checador.empleados
             {
                 tabControlBase.SelectedTab = tabPage5;
                 txt_id_a_modificar.Clear();
+            }
+            confirmacion2 = null;
+        }
+        private void reg_huella(object sender, EventArgs e)
+        {
+            //**************
+
+            //****************
+
+            Enabled = true;
+            respuesta = confirmacion2.respuesta;
+            if (respuesta == true)
+            {
+                tabControlBase.SelectedTab = tabPage3;
+                cbx_huella.SelectedIndex = 6;
+            }
+            else
+            {
+                tabControlBase.SelectedTab = tabPage1;
+                txt_id.Focus();
             }
             confirmacion2 = null;
         }
@@ -754,6 +776,118 @@ namespace Checador.empleados
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.sololetras(e);
+        }
+
+        private void txt_apellido_paterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.sololetras(e);
+        }
+
+        private void txt_apellido_materno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.sololetras(e);
+        }
+
+        private void txt_domicilio_num_ext_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_domicilio_num_int_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_domicilio_cp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_email_Leave(object sender, EventArgs e)
+        {
+
+            if (validar.validaremail(txt_email.Text))
+            {
+
+            }
+            else
+            {
+                txt_email.SelectAll();
+                txt_email.Focus();
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Correo electrónico no válido. Debe cumplir ";
+                mensaje.lbl_info2.Text = "con el Formato: 'nombre@dominio.com'";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                Enabled = false;
+                mensaje.Show();
+                txt_email.Focus();
+            }
+        }
+
+        private void txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+        }
+
+        private void txt_dias_vacaciones_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_cuenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+        }
+
+        private void txt_sueldo_diario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloimportes(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_sueldo_integrado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloimportes(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_sueldo_quincenal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloimportes(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_dias_aguinaldo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_idbuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_id_a_modificar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
         }
 
         //////////////////////////////////////////////////////////////////////

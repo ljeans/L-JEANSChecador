@@ -10,7 +10,7 @@
     <Shape ID="DesignTable:Vista_Checador" ZOrder="6" X="-4" Y="226" Height="172" Width="233" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:Vista_Empleados" ZOrder="1" X="251" Y="254" Height="305" Width="241" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:Vista_Horario" ZOrder="5" X="69" Y="81" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
-    <Shape ID="DesignTable:horarios" ZOrder="4" X="495" Y="81" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
+    <Shape ID="DesignTable:horarios" ZOrder="4" X="509" Y="48" Height="127" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="24" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:Vista_Sucursal" ZOrder="3" X="262" Y="33" Height="210" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
   </Shapes>
   <Connectors />

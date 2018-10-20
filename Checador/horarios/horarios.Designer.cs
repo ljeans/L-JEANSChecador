@@ -1401,7 +1401,10 @@
             this.btn_siguiente.TabIndex = 119;
             this.btn_siguiente.Text = "Guardar";
             this.btn_siguiente.UseVisualStyleBackColor = false;
+<<<<<<< HEAD
             this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
+=======
+>>>>>>> 445f002688090c703e96cf90af5c85aa6a11dc65
             // 
             // cbx_domingo
             // 
