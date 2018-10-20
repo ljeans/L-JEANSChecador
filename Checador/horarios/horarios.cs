@@ -12,6 +12,7 @@ namespace Checador
     public partial class horarios : Checador.formularios_padres.formpadre
     {
         ClaseHorario Horario = new ClaseHorario();
+        ClaseAsignar_Horario AsignarHorario = new ClaseAsignar_Horario();
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
 
@@ -306,6 +307,17 @@ namespace Checador
             //CAMBIAR LA LETRA AL DATAGRIDVIEW
             dgv_horarios.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
             dgv_horarios.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
+
+            //CARGAR LOS HORARIOS EN ASIGNAR HORARIOS
+            cbx_empleado_SelectedIndexChanged(cbx_empleado, EventArgs.Empty);
+
+            cbx_lunes_SelectedIndexChanged(cbx_lunes, EventArgs.Empty);
+            cbx_martes_SelectedIndexChanged(cbx_martes, EventArgs.Empty);
+            cbx_miercoles_SelectedIndexChanged(cbx_miercoles, EventArgs.Empty);
+            cbx_jueves_SelectedIndexChanged(cbx_jueves, EventArgs.Empty);
+            cbx_viernes_SelectedIndexChanged(cbx_viernes, EventArgs.Empty);
+            cbx_sabado_SelectedIndexChanged(cbx_sabado, EventArgs.Empty);
+            cbx_domingo_SelectedIndexChanged(cbx_domingo, EventArgs.Empty);
 
 
 
@@ -690,9 +702,61 @@ namespace Checador
                 lbl_domingo_2.Text = "-";
             }
         }
-
-
         ///////////////////////////////////////////////////////////////
 
+        //GURADAR LA ASIGNACION DE UN HORARIO A UN EMPLEADO
+        private void btn_siguiente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AsignarHorario.id_empleado = Convert.ToInt32(cbx_empleado.SelectedValue.ToString());
+                AsignarHorario.lunes = Convert.ToInt32(cbx_lunes.SelectedValue.ToString());
+                AsignarHorario.martes = Convert.ToInt32(cbx_martes.SelectedValue.ToString());
+                AsignarHorario.miercoles = Convert.ToInt32(cbx_miercoles.SelectedValue.ToString());
+                AsignarHorario.jueves = Convert.ToInt32(cbx_jueves.SelectedValue.ToString());
+                AsignarHorario.viernes = Convert.ToInt32(cbx_viernes.SelectedValue.ToString());
+                AsignarHorario.sabado = Convert.ToInt32(cbx_sabado.SelectedValue.ToString());
+                AsignarHorario.domingo = Convert.ToInt32(cbx_domingo.SelectedValue.ToString());
+                AsignarHorario.asignarHorario();
+
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.ToString());
+            }
+        }
+
+        //FUNCION PARA VERIFICAR SI UN EMPLEADO YA TIENE UN HORARIO ASIGNADO Y CARGARLO EN LOS COMBOBOX
+        private void cbx_empleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                AsignarHorario.id_empleado = Convert.ToInt32(cbx_empleado.SelectedValue.ToString());
+                if (AsignarHorario.verificar_existencia(AsignarHorario.id_empleado))
+                {
+                    cbx_lunes.SelectedValue = AsignarHorario.lunes;
+                    cbx_martes.SelectedValue = AsignarHorario.martes;
+                    cbx_miercoles.SelectedValue = AsignarHorario.miercoles;
+                    cbx_jueves.SelectedValue = AsignarHorario.jueves;
+                    cbx_viernes.SelectedValue = AsignarHorario.viernes;
+                    cbx_sabado.SelectedValue = AsignarHorario.sabado;
+                    cbx_domingo.SelectedValue = AsignarHorario.domingo;
+                }
+                else
+                {
+                    cbx_lunes.SelectedValue = 1;
+                    cbx_martes.SelectedValue = 1;
+                    cbx_miercoles.SelectedValue = 1;
+                    cbx_jueves.SelectedValue = 1;
+                    cbx_viernes.SelectedValue = 1;
+                    cbx_sabado.SelectedValue = 1;
+                    cbx_domingo.SelectedValue = 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }
