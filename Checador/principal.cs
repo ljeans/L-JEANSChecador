@@ -19,6 +19,7 @@ namespace Checador
         horarios modulo_horarios = new horarios();
         reportes.reporte modulo_reportes = new reportes.reporte();
         inicio_sesion.login login = new inicio_sesion.login();
+        incidentes.incidentes modulo_incidente = new incidentes.incidentes();
 
 
         //VARIABLE PARA CARGAR LOS CHECADORES
@@ -193,6 +194,14 @@ namespace Checador
             login = new inicio_sesion.login();
             login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
             login.Show();
+        }
+
+        private void btn_incidente_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            modulo_incidente = new incidentes.incidentes();
+            modulo_incidente.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            modulo_incidente.Show();
         }
 
         private void Checador_OnFinger()

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label15 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -99,6 +99,34 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lbl_domingo_3 = new System.Windows.Forms.Label();
+            this.lbl_domingo_2 = new System.Windows.Forms.Label();
+            this.lbl_domingo_4 = new System.Windows.Forms.Label();
+            this.lbl_domingo_1 = new System.Windows.Forms.Label();
+            this.lbl_sabado_3 = new System.Windows.Forms.Label();
+            this.lbl_sabado_2 = new System.Windows.Forms.Label();
+            this.lbl_sabado_4 = new System.Windows.Forms.Label();
+            this.lbl_sabado_1 = new System.Windows.Forms.Label();
+            this.lbl_viernes_3 = new System.Windows.Forms.Label();
+            this.lbl_viernes_2 = new System.Windows.Forms.Label();
+            this.lbl_viernes_4 = new System.Windows.Forms.Label();
+            this.lbl_viernes_1 = new System.Windows.Forms.Label();
+            this.lbl_miercoles_3 = new System.Windows.Forms.Label();
+            this.lbl_miercoles_2 = new System.Windows.Forms.Label();
+            this.lbl_miercoles_4 = new System.Windows.Forms.Label();
+            this.lbl_miercoles_1 = new System.Windows.Forms.Label();
+            this.lbl_martes_3 = new System.Windows.Forms.Label();
+            this.lbl_martes_2 = new System.Windows.Forms.Label();
+            this.lbl_jueves_3 = new System.Windows.Forms.Label();
+            this.lbl_martes_4 = new System.Windows.Forms.Label();
+            this.lbl_jueves_2 = new System.Windows.Forms.Label();
+            this.lbl_martes_1 = new System.Windows.Forms.Label();
+            this.lbl_jueves_4 = new System.Windows.Forms.Label();
+            this.lbl_jueves_1 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -125,34 +153,6 @@
             this.horariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.horariosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.horariosTableAdapter();
             this.dataSetChecadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lbl_jueves_3 = new System.Windows.Forms.Label();
-            this.lbl_jueves_2 = new System.Windows.Forms.Label();
-            this.lbl_jueves_4 = new System.Windows.Forms.Label();
-            this.lbl_jueves_1 = new System.Windows.Forms.Label();
-            this.lbl_martes_1 = new System.Windows.Forms.Label();
-            this.lbl_martes_4 = new System.Windows.Forms.Label();
-            this.lbl_martes_2 = new System.Windows.Forms.Label();
-            this.lbl_martes_3 = new System.Windows.Forms.Label();
-            this.lbl_miercoles_3 = new System.Windows.Forms.Label();
-            this.lbl_miercoles_2 = new System.Windows.Forms.Label();
-            this.lbl_miercoles_4 = new System.Windows.Forms.Label();
-            this.lbl_miercoles_1 = new System.Windows.Forms.Label();
-            this.lbl_viernes_3 = new System.Windows.Forms.Label();
-            this.lbl_viernes_2 = new System.Windows.Forms.Label();
-            this.lbl_viernes_4 = new System.Windows.Forms.Label();
-            this.lbl_viernes_1 = new System.Windows.Forms.Label();
-            this.lbl_sabado_3 = new System.Windows.Forms.Label();
-            this.lbl_sabado_2 = new System.Windows.Forms.Label();
-            this.lbl_sabado_4 = new System.Windows.Forms.Label();
-            this.lbl_sabado_1 = new System.Windows.Forms.Label();
-            this.lbl_domingo_3 = new System.Windows.Forms.Label();
-            this.lbl_domingo_2 = new System.Windows.Forms.Label();
-            this.lbl_domingo_4 = new System.Windows.Forms.Label();
-            this.lbl_domingo_1 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -722,20 +722,20 @@
             this.dgv_horarios.AllowUserToDeleteRows = false;
             this.dgv_horarios.AllowUserToResizeColumns = false;
             this.dgv_horarios.AllowUserToResizeRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dgv_horarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.dgv_horarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_horarios.AutoGenerateColumns = false;
             this.dgv_horarios.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_horarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_horarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_horarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_horarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -755,28 +755,28 @@
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16});
             this.dgv_horarios.DataSource = this.vistaHorarioBindingSource;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_horarios.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_horarios.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_horarios.EnableHeadersVisualStyles = false;
             this.dgv_horarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_horarios.Location = new System.Drawing.Point(21, 145);
             this.dgv_horarios.MultiSelect = false;
             this.dgv_horarios.Name = "dgv_horarios";
             this.dgv_horarios.ReadOnly = true;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_horarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_horarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_horarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_horarios.Size = new System.Drawing.Size(966, 430);
             this.dgv_horarios.TabIndex = 87;
@@ -1121,6 +1121,238 @@
             this.groupBox3.Text = "Asigna Horario";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(823, 28);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(53, 20);
+            this.label27.TabIndex = 147;
+            this.label27.Text = "Salida";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(652, 28);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(143, 20);
+            this.label26.TabIndex = 146;
+            this.label26.Text = "Regreso descanso";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(509, 28);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(126, 20);
+            this.label25.TabIndex = 145;
+            this.label25.Text = "Salida descanso";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(418, 28);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(66, 20);
+            this.label24.TabIndex = 144;
+            this.label24.Text = "Entrada";
+            // 
+            // lbl_domingo_3
+            // 
+            this.lbl_domingo_3.AutoSize = true;
+            this.lbl_domingo_3.Location = new System.Drawing.Point(680, 424);
+            this.lbl_domingo_3.Name = "lbl_domingo_3";
+            this.lbl_domingo_3.Size = new System.Drawing.Size(0, 24);
+            this.lbl_domingo_3.TabIndex = 143;
+            // 
+            // lbl_domingo_2
+            // 
+            this.lbl_domingo_2.AutoSize = true;
+            this.lbl_domingo_2.Location = new System.Drawing.Point(538, 423);
+            this.lbl_domingo_2.Name = "lbl_domingo_2";
+            this.lbl_domingo_2.Size = new System.Drawing.Size(0, 24);
+            this.lbl_domingo_2.TabIndex = 142;
+            // 
+            // lbl_domingo_4
+            // 
+            this.lbl_domingo_4.AutoSize = true;
+            this.lbl_domingo_4.Location = new System.Drawing.Point(814, 424);
+            this.lbl_domingo_4.Name = "lbl_domingo_4";
+            this.lbl_domingo_4.Size = new System.Drawing.Size(0, 24);
+            this.lbl_domingo_4.TabIndex = 141;
+            // 
+            // lbl_domingo_1
+            // 
+            this.lbl_domingo_1.AutoSize = true;
+            this.lbl_domingo_1.Location = new System.Drawing.Point(417, 422);
+            this.lbl_domingo_1.Name = "lbl_domingo_1";
+            this.lbl_domingo_1.Size = new System.Drawing.Size(0, 24);
+            this.lbl_domingo_1.TabIndex = 140;
+            // 
+            // lbl_sabado_3
+            // 
+            this.lbl_sabado_3.AutoSize = true;
+            this.lbl_sabado_3.Location = new System.Drawing.Point(680, 364);
+            this.lbl_sabado_3.Name = "lbl_sabado_3";
+            this.lbl_sabado_3.Size = new System.Drawing.Size(0, 24);
+            this.lbl_sabado_3.TabIndex = 139;
+            // 
+            // lbl_sabado_2
+            // 
+            this.lbl_sabado_2.AutoSize = true;
+            this.lbl_sabado_2.Location = new System.Drawing.Point(538, 363);
+            this.lbl_sabado_2.Name = "lbl_sabado_2";
+            this.lbl_sabado_2.Size = new System.Drawing.Size(0, 24);
+            this.lbl_sabado_2.TabIndex = 138;
+            // 
+            // lbl_sabado_4
+            // 
+            this.lbl_sabado_4.AutoSize = true;
+            this.lbl_sabado_4.Location = new System.Drawing.Point(814, 364);
+            this.lbl_sabado_4.Name = "lbl_sabado_4";
+            this.lbl_sabado_4.Size = new System.Drawing.Size(0, 24);
+            this.lbl_sabado_4.TabIndex = 137;
+            // 
+            // lbl_sabado_1
+            // 
+            this.lbl_sabado_1.AutoSize = true;
+            this.lbl_sabado_1.Location = new System.Drawing.Point(417, 362);
+            this.lbl_sabado_1.Name = "lbl_sabado_1";
+            this.lbl_sabado_1.Size = new System.Drawing.Size(0, 24);
+            this.lbl_sabado_1.TabIndex = 136;
+            // 
+            // lbl_viernes_3
+            // 
+            this.lbl_viernes_3.AutoSize = true;
+            this.lbl_viernes_3.Location = new System.Drawing.Point(680, 303);
+            this.lbl_viernes_3.Name = "lbl_viernes_3";
+            this.lbl_viernes_3.Size = new System.Drawing.Size(0, 24);
+            this.lbl_viernes_3.TabIndex = 135;
+            // 
+            // lbl_viernes_2
+            // 
+            this.lbl_viernes_2.AutoSize = true;
+            this.lbl_viernes_2.Location = new System.Drawing.Point(538, 302);
+            this.lbl_viernes_2.Name = "lbl_viernes_2";
+            this.lbl_viernes_2.Size = new System.Drawing.Size(0, 24);
+            this.lbl_viernes_2.TabIndex = 134;
+            // 
+            // lbl_viernes_4
+            // 
+            this.lbl_viernes_4.AutoSize = true;
+            this.lbl_viernes_4.Location = new System.Drawing.Point(814, 303);
+            this.lbl_viernes_4.Name = "lbl_viernes_4";
+            this.lbl_viernes_4.Size = new System.Drawing.Size(0, 24);
+            this.lbl_viernes_4.TabIndex = 133;
+            // 
+            // lbl_viernes_1
+            // 
+            this.lbl_viernes_1.AutoSize = true;
+            this.lbl_viernes_1.Location = new System.Drawing.Point(417, 301);
+            this.lbl_viernes_1.Name = "lbl_viernes_1";
+            this.lbl_viernes_1.Size = new System.Drawing.Size(0, 24);
+            this.lbl_viernes_1.TabIndex = 132;
+            // 
+            // lbl_miercoles_3
+            // 
+            this.lbl_miercoles_3.AutoSize = true;
+            this.lbl_miercoles_3.Location = new System.Drawing.Point(680, 183);
+            this.lbl_miercoles_3.Name = "lbl_miercoles_3";
+            this.lbl_miercoles_3.Size = new System.Drawing.Size(0, 24);
+            this.lbl_miercoles_3.TabIndex = 131;
+            // 
+            // lbl_miercoles_2
+            // 
+            this.lbl_miercoles_2.AutoSize = true;
+            this.lbl_miercoles_2.Location = new System.Drawing.Point(538, 182);
+            this.lbl_miercoles_2.Name = "lbl_miercoles_2";
+            this.lbl_miercoles_2.Size = new System.Drawing.Size(0, 24);
+            this.lbl_miercoles_2.TabIndex = 130;
+            // 
+            // lbl_miercoles_4
+            // 
+            this.lbl_miercoles_4.AutoSize = true;
+            this.lbl_miercoles_4.Location = new System.Drawing.Point(814, 183);
+            this.lbl_miercoles_4.Name = "lbl_miercoles_4";
+            this.lbl_miercoles_4.Size = new System.Drawing.Size(0, 24);
+            this.lbl_miercoles_4.TabIndex = 129;
+            // 
+            // lbl_miercoles_1
+            // 
+            this.lbl_miercoles_1.AutoSize = true;
+            this.lbl_miercoles_1.Location = new System.Drawing.Point(417, 181);
+            this.lbl_miercoles_1.Name = "lbl_miercoles_1";
+            this.lbl_miercoles_1.Size = new System.Drawing.Size(0, 24);
+            this.lbl_miercoles_1.TabIndex = 128;
+            // 
+            // lbl_martes_3
+            // 
+            this.lbl_martes_3.AutoSize = true;
+            this.lbl_martes_3.Location = new System.Drawing.Point(682, 125);
+            this.lbl_martes_3.Name = "lbl_martes_3";
+            this.lbl_martes_3.Size = new System.Drawing.Size(0, 24);
+            this.lbl_martes_3.TabIndex = 127;
+            // 
+            // lbl_martes_2
+            // 
+            this.lbl_martes_2.AutoSize = true;
+            this.lbl_martes_2.Location = new System.Drawing.Point(540, 124);
+            this.lbl_martes_2.Name = "lbl_martes_2";
+            this.lbl_martes_2.Size = new System.Drawing.Size(0, 24);
+            this.lbl_martes_2.TabIndex = 126;
+            // 
+            // lbl_jueves_3
+            // 
+            this.lbl_jueves_3.AutoSize = true;
+            this.lbl_jueves_3.Location = new System.Drawing.Point(682, 244);
+            this.lbl_jueves_3.Name = "lbl_jueves_3";
+            this.lbl_jueves_3.Size = new System.Drawing.Size(0, 24);
+            this.lbl_jueves_3.TabIndex = 127;
+            // 
+            // lbl_martes_4
+            // 
+            this.lbl_martes_4.AutoSize = true;
+            this.lbl_martes_4.Location = new System.Drawing.Point(816, 125);
+            this.lbl_martes_4.Name = "lbl_martes_4";
+            this.lbl_martes_4.Size = new System.Drawing.Size(0, 24);
+            this.lbl_martes_4.TabIndex = 125;
+            // 
+            // lbl_jueves_2
+            // 
+            this.lbl_jueves_2.AutoSize = true;
+            this.lbl_jueves_2.Location = new System.Drawing.Point(540, 243);
+            this.lbl_jueves_2.Name = "lbl_jueves_2";
+            this.lbl_jueves_2.Size = new System.Drawing.Size(0, 24);
+            this.lbl_jueves_2.TabIndex = 126;
+            // 
+            // lbl_martes_1
+            // 
+            this.lbl_martes_1.AutoSize = true;
+            this.lbl_martes_1.Location = new System.Drawing.Point(419, 123);
+            this.lbl_martes_1.Name = "lbl_martes_1";
+            this.lbl_martes_1.Size = new System.Drawing.Size(0, 24);
+            this.lbl_martes_1.TabIndex = 124;
+            // 
+            // lbl_jueves_4
+            // 
+            this.lbl_jueves_4.AutoSize = true;
+            this.lbl_jueves_4.Location = new System.Drawing.Point(816, 244);
+            this.lbl_jueves_4.Name = "lbl_jueves_4";
+            this.lbl_jueves_4.Size = new System.Drawing.Size(0, 24);
+            this.lbl_jueves_4.TabIndex = 125;
+            // 
+            // lbl_jueves_1
+            // 
+            this.lbl_jueves_1.AutoSize = true;
+            this.lbl_jueves_1.Location = new System.Drawing.Point(419, 242);
+            this.lbl_jueves_1.Name = "lbl_jueves_1";
+            this.lbl_jueves_1.Size = new System.Drawing.Size(0, 24);
+            this.lbl_jueves_1.TabIndex = 124;
+            // 
             // label23
             // 
             this.label23.AutoSize = true;
@@ -1365,238 +1597,6 @@
             // 
             this.dataSetChecadorBindingSource.DataSource = this.dataSet_Checador;
             this.dataSetChecadorBindingSource.Position = 0;
-            // 
-            // lbl_jueves_3
-            // 
-            this.lbl_jueves_3.AutoSize = true;
-            this.lbl_jueves_3.Location = new System.Drawing.Point(682, 244);
-            this.lbl_jueves_3.Name = "lbl_jueves_3";
-            this.lbl_jueves_3.Size = new System.Drawing.Size(0, 24);
-            this.lbl_jueves_3.TabIndex = 127;
-            // 
-            // lbl_jueves_2
-            // 
-            this.lbl_jueves_2.AutoSize = true;
-            this.lbl_jueves_2.Location = new System.Drawing.Point(540, 243);
-            this.lbl_jueves_2.Name = "lbl_jueves_2";
-            this.lbl_jueves_2.Size = new System.Drawing.Size(0, 24);
-            this.lbl_jueves_2.TabIndex = 126;
-            // 
-            // lbl_jueves_4
-            // 
-            this.lbl_jueves_4.AutoSize = true;
-            this.lbl_jueves_4.Location = new System.Drawing.Point(816, 244);
-            this.lbl_jueves_4.Name = "lbl_jueves_4";
-            this.lbl_jueves_4.Size = new System.Drawing.Size(0, 24);
-            this.lbl_jueves_4.TabIndex = 125;
-            // 
-            // lbl_jueves_1
-            // 
-            this.lbl_jueves_1.AutoSize = true;
-            this.lbl_jueves_1.Location = new System.Drawing.Point(419, 242);
-            this.lbl_jueves_1.Name = "lbl_jueves_1";
-            this.lbl_jueves_1.Size = new System.Drawing.Size(0, 24);
-            this.lbl_jueves_1.TabIndex = 124;
-            // 
-            // lbl_martes_1
-            // 
-            this.lbl_martes_1.AutoSize = true;
-            this.lbl_martes_1.Location = new System.Drawing.Point(419, 123);
-            this.lbl_martes_1.Name = "lbl_martes_1";
-            this.lbl_martes_1.Size = new System.Drawing.Size(0, 24);
-            this.lbl_martes_1.TabIndex = 124;
-            // 
-            // lbl_martes_4
-            // 
-            this.lbl_martes_4.AutoSize = true;
-            this.lbl_martes_4.Location = new System.Drawing.Point(816, 125);
-            this.lbl_martes_4.Name = "lbl_martes_4";
-            this.lbl_martes_4.Size = new System.Drawing.Size(0, 24);
-            this.lbl_martes_4.TabIndex = 125;
-            // 
-            // lbl_martes_2
-            // 
-            this.lbl_martes_2.AutoSize = true;
-            this.lbl_martes_2.Location = new System.Drawing.Point(540, 124);
-            this.lbl_martes_2.Name = "lbl_martes_2";
-            this.lbl_martes_2.Size = new System.Drawing.Size(0, 24);
-            this.lbl_martes_2.TabIndex = 126;
-            // 
-            // lbl_martes_3
-            // 
-            this.lbl_martes_3.AutoSize = true;
-            this.lbl_martes_3.Location = new System.Drawing.Point(682, 125);
-            this.lbl_martes_3.Name = "lbl_martes_3";
-            this.lbl_martes_3.Size = new System.Drawing.Size(0, 24);
-            this.lbl_martes_3.TabIndex = 127;
-            // 
-            // lbl_miercoles_3
-            // 
-            this.lbl_miercoles_3.AutoSize = true;
-            this.lbl_miercoles_3.Location = new System.Drawing.Point(680, 183);
-            this.lbl_miercoles_3.Name = "lbl_miercoles_3";
-            this.lbl_miercoles_3.Size = new System.Drawing.Size(0, 24);
-            this.lbl_miercoles_3.TabIndex = 131;
-            // 
-            // lbl_miercoles_2
-            // 
-            this.lbl_miercoles_2.AutoSize = true;
-            this.lbl_miercoles_2.Location = new System.Drawing.Point(538, 182);
-            this.lbl_miercoles_2.Name = "lbl_miercoles_2";
-            this.lbl_miercoles_2.Size = new System.Drawing.Size(0, 24);
-            this.lbl_miercoles_2.TabIndex = 130;
-            // 
-            // lbl_miercoles_4
-            // 
-            this.lbl_miercoles_4.AutoSize = true;
-            this.lbl_miercoles_4.Location = new System.Drawing.Point(814, 183);
-            this.lbl_miercoles_4.Name = "lbl_miercoles_4";
-            this.lbl_miercoles_4.Size = new System.Drawing.Size(0, 24);
-            this.lbl_miercoles_4.TabIndex = 129;
-            // 
-            // lbl_miercoles_1
-            // 
-            this.lbl_miercoles_1.AutoSize = true;
-            this.lbl_miercoles_1.Location = new System.Drawing.Point(417, 181);
-            this.lbl_miercoles_1.Name = "lbl_miercoles_1";
-            this.lbl_miercoles_1.Size = new System.Drawing.Size(0, 24);
-            this.lbl_miercoles_1.TabIndex = 128;
-            // 
-            // lbl_viernes_3
-            // 
-            this.lbl_viernes_3.AutoSize = true;
-            this.lbl_viernes_3.Location = new System.Drawing.Point(680, 303);
-            this.lbl_viernes_3.Name = "lbl_viernes_3";
-            this.lbl_viernes_3.Size = new System.Drawing.Size(0, 24);
-            this.lbl_viernes_3.TabIndex = 135;
-            // 
-            // lbl_viernes_2
-            // 
-            this.lbl_viernes_2.AutoSize = true;
-            this.lbl_viernes_2.Location = new System.Drawing.Point(538, 302);
-            this.lbl_viernes_2.Name = "lbl_viernes_2";
-            this.lbl_viernes_2.Size = new System.Drawing.Size(0, 24);
-            this.lbl_viernes_2.TabIndex = 134;
-            // 
-            // lbl_viernes_4
-            // 
-            this.lbl_viernes_4.AutoSize = true;
-            this.lbl_viernes_4.Location = new System.Drawing.Point(814, 303);
-            this.lbl_viernes_4.Name = "lbl_viernes_4";
-            this.lbl_viernes_4.Size = new System.Drawing.Size(0, 24);
-            this.lbl_viernes_4.TabIndex = 133;
-            // 
-            // lbl_viernes_1
-            // 
-            this.lbl_viernes_1.AutoSize = true;
-            this.lbl_viernes_1.Location = new System.Drawing.Point(417, 301);
-            this.lbl_viernes_1.Name = "lbl_viernes_1";
-            this.lbl_viernes_1.Size = new System.Drawing.Size(0, 24);
-            this.lbl_viernes_1.TabIndex = 132;
-            // 
-            // lbl_sabado_3
-            // 
-            this.lbl_sabado_3.AutoSize = true;
-            this.lbl_sabado_3.Location = new System.Drawing.Point(680, 364);
-            this.lbl_sabado_3.Name = "lbl_sabado_3";
-            this.lbl_sabado_3.Size = new System.Drawing.Size(0, 24);
-            this.lbl_sabado_3.TabIndex = 139;
-            // 
-            // lbl_sabado_2
-            // 
-            this.lbl_sabado_2.AutoSize = true;
-            this.lbl_sabado_2.Location = new System.Drawing.Point(538, 363);
-            this.lbl_sabado_2.Name = "lbl_sabado_2";
-            this.lbl_sabado_2.Size = new System.Drawing.Size(0, 24);
-            this.lbl_sabado_2.TabIndex = 138;
-            // 
-            // lbl_sabado_4
-            // 
-            this.lbl_sabado_4.AutoSize = true;
-            this.lbl_sabado_4.Location = new System.Drawing.Point(814, 364);
-            this.lbl_sabado_4.Name = "lbl_sabado_4";
-            this.lbl_sabado_4.Size = new System.Drawing.Size(0, 24);
-            this.lbl_sabado_4.TabIndex = 137;
-            // 
-            // lbl_sabado_1
-            // 
-            this.lbl_sabado_1.AutoSize = true;
-            this.lbl_sabado_1.Location = new System.Drawing.Point(417, 362);
-            this.lbl_sabado_1.Name = "lbl_sabado_1";
-            this.lbl_sabado_1.Size = new System.Drawing.Size(0, 24);
-            this.lbl_sabado_1.TabIndex = 136;
-            // 
-            // lbl_domingo_3
-            // 
-            this.lbl_domingo_3.AutoSize = true;
-            this.lbl_domingo_3.Location = new System.Drawing.Point(680, 424);
-            this.lbl_domingo_3.Name = "lbl_domingo_3";
-            this.lbl_domingo_3.Size = new System.Drawing.Size(0, 24);
-            this.lbl_domingo_3.TabIndex = 143;
-            // 
-            // lbl_domingo_2
-            // 
-            this.lbl_domingo_2.AutoSize = true;
-            this.lbl_domingo_2.Location = new System.Drawing.Point(538, 423);
-            this.lbl_domingo_2.Name = "lbl_domingo_2";
-            this.lbl_domingo_2.Size = new System.Drawing.Size(0, 24);
-            this.lbl_domingo_2.TabIndex = 142;
-            // 
-            // lbl_domingo_4
-            // 
-            this.lbl_domingo_4.AutoSize = true;
-            this.lbl_domingo_4.Location = new System.Drawing.Point(814, 424);
-            this.lbl_domingo_4.Name = "lbl_domingo_4";
-            this.lbl_domingo_4.Size = new System.Drawing.Size(0, 24);
-            this.lbl_domingo_4.TabIndex = 141;
-            // 
-            // lbl_domingo_1
-            // 
-            this.lbl_domingo_1.AutoSize = true;
-            this.lbl_domingo_1.Location = new System.Drawing.Point(417, 422);
-            this.lbl_domingo_1.Name = "lbl_domingo_1";
-            this.lbl_domingo_1.Size = new System.Drawing.Size(0, 24);
-            this.lbl_domingo_1.TabIndex = 140;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(418, 28);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(66, 20);
-            this.label24.TabIndex = 144;
-            this.label24.Text = "Entrada";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(509, 28);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(126, 20);
-            this.label25.TabIndex = 145;
-            this.label25.Text = "Salida descanso";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(652, 28);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(143, 20);
-            this.label26.TabIndex = 146;
-            this.label26.Text = "Regreso descanso";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(823, 28);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(53, 20);
-            this.label27.TabIndex = 147;
-            this.label27.Text = "Salida";
             // 
             // horarios
             // 

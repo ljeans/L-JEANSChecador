@@ -15,6 +15,7 @@ namespace Checador
         ClaseChecador Clase_Checador = new ClaseChecador();
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
+        validacion validar = new validacion();
         public bool respuesta = false;
 
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
@@ -72,8 +73,9 @@ namespace Checador
             if (respuesta == true)
             {
                 Clase_Checador.Modificar_Checador();
-                tabControlBase.SelectedTab = tabPage2;
                 Limpiar();
+                tabControlBase.SelectedTab = tabPage2;
+               
             }
             else
             {
@@ -112,8 +114,6 @@ namespace Checador
                 confirmacion.Show();
                 Enabled = false;
              
-                tabControlBase.SelectedTab = tabPage2;
-                Limpiar();
             }
             catch (Exception ex)
             {
@@ -750,6 +750,9 @@ namespace Checador
             tabControlBase.SelectedTab = tabPage3;
         }
 
-
+        private void txt_ip_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloimportes(e);
+        }
     }
 }

@@ -33,18 +33,18 @@
             this.btn_iniciar_sesion = new System.Windows.Forms.Button();
             this.btn_cerrar_sesion = new System.Windows.Forms.Button();
             this.panel_barra_superior = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.lbl_titulo = new System.Windows.Forms.Label();
-            this.btn_cerca_de = new System.Windows.Forms.Button();
+            this.btn_incidente = new System.Windows.Forms.Button();
             this.btn_reportes = new System.Windows.Forms.Button();
             this.btn_empleados = new System.Windows.Forms.Button();
             this.btn_sucursal = new System.Windows.Forms.Button();
             this.btn_checador = new System.Windows.Forms.Button();
             this.btn_horarios = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.panel_barra_superior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -119,6 +119,16 @@
             this.panel_barra_superior.Size = new System.Drawing.Size(1370, 79);
             this.panel_barra_superior.TabIndex = 15;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Checador.Properties.Resources.logos_nuevos;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(111, 76);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
@@ -157,6 +167,45 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.BackgroundImage = global::Checador.Properties.Resources.iniciar_sesion;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Location = new System.Drawing.Point(1073, 20);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(136, 28);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "Iniciar Sesión";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(919, 20);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(151, 28);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Cerrar Sesión";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = false;
+            // 
             // lbl_titulo
             // 
             this.lbl_titulo.AutoSize = true;
@@ -168,24 +217,25 @@
             this.lbl_titulo.TabIndex = 5;
             this.lbl_titulo.Text = "Sistema Checador";
             // 
-            // btn_cerca_de
+            // btn_incidente
             // 
-            this.btn_cerca_de.BackColor = System.Drawing.Color.Transparent;
-            this.btn_cerca_de.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_cerca_de.FlatAppearance.BorderSize = 0;
-            this.btn_cerca_de.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btn_cerca_de.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
-            this.btn_cerca_de.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerca_de.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cerca_de.ForeColor = System.Drawing.Color.Black;
-            this.btn_cerca_de.Image = global::Checador.Properties.Resources.ayuda;
-            this.btn_cerca_de.Location = new System.Drawing.Point(978, 437);
-            this.btn_cerca_de.Name = "btn_cerca_de";
-            this.btn_cerca_de.Size = new System.Drawing.Size(200, 200);
-            this.btn_cerca_de.TabIndex = 22;
-            this.btn_cerca_de.Text = "Ayuda";
-            this.btn_cerca_de.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_cerca_de.UseVisualStyleBackColor = false;
+            this.btn_incidente.BackColor = System.Drawing.Color.Transparent;
+            this.btn_incidente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_incidente.FlatAppearance.BorderSize = 0;
+            this.btn_incidente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_incidente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.btn_incidente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_incidente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_incidente.ForeColor = System.Drawing.Color.Black;
+            this.btn_incidente.Image = global::Checador.Properties.Resources.ayuda;
+            this.btn_incidente.Location = new System.Drawing.Point(978, 437);
+            this.btn_incidente.Name = "btn_incidente";
+            this.btn_incidente.Size = new System.Drawing.Size(200, 200);
+            this.btn_incidente.TabIndex = 22;
+            this.btn_incidente.Text = "Incidentes";
+            this.btn_incidente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_incidente.UseVisualStyleBackColor = false;
+            this.btn_incidente.Click += new System.EventHandler(this.btn_incidente_Click);
             // 
             // btn_reportes
             // 
@@ -287,62 +337,13 @@
             this.btn_horarios.UseVisualStyleBackColor = false;
             this.btn_horarios.Click += new System.EventHandler(this.btn_horarios_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Checador.Properties.Resources.logos_nuevos;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 76);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.Transparent;
-            this.button4.BackgroundImage = global::Checador.Properties.Resources.iniciar_sesion;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(1073, 20);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 28);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Iniciar Sesión";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(919, 20);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(151, 28);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Cerrar Sesión";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button5.UseVisualStyleBackColor = false;
-            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.GhostWhite;
             this.ClientSize = new System.Drawing.Size(1370, 772);
-            this.Controls.Add(this.btn_cerca_de);
+            this.Controls.Add(this.btn_incidente);
             this.Controls.Add(this.btn_reportes);
             this.Controls.Add(this.btn_empleados);
             this.Controls.Add(this.btn_sucursal);
@@ -376,7 +377,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label lbl_titulo;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btn_cerca_de;
+        private System.Windows.Forms.Button btn_incidente;
         private System.Windows.Forms.Button btn_reportes;
         private System.Windows.Forms.Button btn_empleados;
         private System.Windows.Forms.Button btn_sucursal;

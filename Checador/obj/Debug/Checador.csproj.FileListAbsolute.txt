@@ -83,3 +83,4 @@ C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_p
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.inicio_sesion.login.resources
 >>>>>>> 67e191ccc028c9530e7800201d2bfb5482455c54
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.ProgressBar.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.incidentes.incidentes.resources
