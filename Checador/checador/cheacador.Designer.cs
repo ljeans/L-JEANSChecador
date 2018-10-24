@@ -483,7 +483,10 @@
 <<<<<<< HEAD
             this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
 =======
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 63d17e1c9fcfc98f7ac95846c230dc219445e303
 <<<<<<< HEAD
 <<<<<<< HEAD
             this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
@@ -498,6 +501,9 @@
 >>>>>>> 4c12cd6c7d6dc5021b7708f2376190963be70cd6
 =======
 >>>>>>> 4c12cd6c7d6dc5021b7708f2376190963be70cd6
+<<<<<<< HEAD
+>>>>>>> 63d17e1c9fcfc98f7ac95846c230dc219445e303
+=======
 >>>>>>> 63d17e1c9fcfc98f7ac95846c230dc219445e303
             this.dgv_checadorbuscar.TabIndex = 83;
             // 
