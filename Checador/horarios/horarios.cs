@@ -357,8 +357,8 @@ namespace Checador
                     descansoFlag = false;
                 }
 
-                Horario.hr_entrada = dtp_hora_entrada.Value.TimeOfDay;
-                Horario.hr_salida = dtp_hora_salida.Value.TimeOfDay;
+                Horario.hr_entrada = new TimeSpan( dtp_hora_entrada.Value.TimeOfDay.Hours, dtp_hora_entrada.Value.Minute, 00);
+                Horario.hr_salida = new TimeSpan(dtp_hora_salida.Value.TimeOfDay.Hours, dtp_hora_salida.Value.Minute, 00);
                 Horario.tolerancia = Convert.ToInt32(txt_tolerancia.Text);
 
 

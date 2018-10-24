@@ -232,6 +232,9 @@ namespace Checador
             //AGREGAR EL CHECKBOX MARCAR TODOS DEL DATAGRID
             AgregarCheckBox();
             HeaderCheckBox.MouseClick += new MouseEventHandler(CheckBox_MarcarTodos_Click);
+
+            DateTime dateValue = new DateTime(2018, 10, 22);
+            //MessageBox.Show(dateValue.DayOfWeek.ToString());
         }
 
         //AGREGAR CHECHBOX DE MARCAR TODOS
@@ -252,24 +255,11 @@ namespace Checador
 
         private void btn_scr_fecha_Click(object sender, EventArgs e)
         {
-            //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
-            foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
+            //PARA PROGRESS BAR
+            using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(sincronizar_fechaHora))
             {
-                if (row.Cells["Check"].Value != null)
-                {
-                    try
-                    {
-                        //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-                        Thread hilo_secundario = new Thread(new ThreadStart(this.sincronizar_fechaHora));
-                        hilo_secundario.IsBackground = true;
-                        hilo_secundario.Start();
-                    }
-                    catch (Exception ex)
-                    {
-                        //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
-                        MessageBox.Show(ex.ToString());
-                    }
-                }
+                frm.lbl_mensaje.Text = "Sincronizando Fecha/Hora..";
+                frm.ShowDialog(this);
             }
         }
 
@@ -294,15 +284,26 @@ namespace Checador
         {
             try
             {
-                //FUNCION PARA SINCRONIZAR LA FECHA Y HORA DEL CHECADOR CON LA DEL SERVIDOR
-                var row = dgv_checadorbuscar.CurrentRow;
-                Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
-                if (bConn)
+                //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
+                foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
                 {
-                    Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
-                    MessageBox.Show("Sincronizado");
+                    //VALIDAR LAS FILAS MARCADAS EN EL DATAGRID
+                    if (row.Cells["Check"].Value != null)
+                    {
+                        if (Convert.ToBoolean(row.Cells["Check"].Value) != false)
+                        {
+                            //FUNCION PARA SINCRONIZAR LA FECHA Y HORA DEL CHECADOR CON LA DEL SERVIDOR
+                            //var row = dgv_checadorbuscar.CurrentRow;
+                            Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
+                            if (bConn)
+                            {
+                                Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
+                                MessageBox.Show("Sincronizado. Checador: " + Convert.ToInt32(row.Cells[1].Value));
+                            }
+                            //Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
+                        }
+                    }
                 }
-                Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
             }
             catch (Exception ex)
             {
@@ -343,24 +344,11 @@ namespace Checador
 
         private void btn_fecha_manual_Click(object sender, EventArgs e)
         {
-            //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
-            foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
+            //PARA PROGRESS BAR
+            using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(aplicar_fecha_manual))
             {
-                if (row.Cells["Check"].Value != null)
-                {
-                    try
-                    {
-                        //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-                        Thread hilo_secundario = new Thread(new ThreadStart(this.aplicar_fecha_manual));
-                        hilo_secundario.IsBackground = true;
-                        hilo_secundario.Start();
-                    }
-                    catch (Exception ex)
-                    {
-                        //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
-                        MessageBox.Show(ex.ToString());
-                    }
-                }
+                frm.lbl_mensaje.Text = "Aplicando Fecha/Hora..";
+                frm.ShowDialog(this);
             }
         }
 
@@ -369,19 +357,24 @@ namespace Checador
 
             try
             {
-                //FUNCION PARA SINCRONIZAR LA FECHA Y HORA DEL CHECADOR MANUALMENTE
-                var row = dgv_checadorbuscar.CurrentRow;
-                Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
-                if (bConn)
+                // CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
+                foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
                 {
-                    Checador.SetDeviceTime2(Convert.ToInt32(row.Cells[1].Value), dtp_fecha.Value.Year, dtp_fecha.Value.Month, dtp_fecha.Value.Day, dtp_hora.Value.Hour, dtp_hora.Value.Minute, dtp_hora.Value.Second);
-                    MessageBox.Show("Sincronizado");
+                    //VALIDAR LAS FILAS MARCADAS EN EL DATAGRID
+                    if (row.Cells["Check"].Value != null)
+                    {
+                        if (Convert.ToBoolean(row.Cells["Check"].Value) != false)
+                        {
+                            //FUNCION PARA SINCRONIZAR LA FECHA Y HORA DEL CHECADOR MANUALMENTE
+                            Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
+                            if (bConn)
+                            {
+                                Checador.SetDeviceTime2(Convert.ToInt32(row.Cells[1].Value), dtp_fecha.Value.Year, dtp_fecha.Value.Month, dtp_fecha.Value.Day, dtp_hora.Value.Hour, dtp_hora.Value.Minute, dtp_hora.Value.Second);
+                                MessageBox.Show("Sincronizado. Checador: " + Convert.ToInt32(row.Cells[1].Value));
+                            }
+                        }
+                    }
                 }
-                Checador.SetDeviceTime2(Convert.ToInt32(row.Cells[1].Value), dtp_fecha.Value.Year, dtp_fecha.Value.Month, dtp_fecha.Value.Day, dtp_hora.Value.Hour, dtp_hora.Value.Minute, dtp_hora.Value.Second);
-                mensaje = new formularios_padres.mensaje_info();
-                mensaje.lbl_info.Text = "Sincronizado.";
-                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                mensaje.Show();
             }
             catch (Exception ex)
             {
@@ -394,108 +387,155 @@ namespace Checador
         {
             try
             {
+                //PARA PROGRESS BAR
+                using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(sincronizar_eventos))
+                {
+                    frm.lbl_mensaje.Text = "Sincronizando eventos..";
+                    frm.ShowDialog(this);
+                }
+
                 //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-                Thread hilo_secundario = new Thread(new ThreadStart(this.sincronizar_eventos));
+                /*Thread hilo_secundario = new Thread(new ThreadStart(this.progressbar));
                 hilo_secundario.IsBackground = true;
-                hilo_secundario.Start();
+                hilo_secundario.Start();*/
             }
             catch (Exception ex)
             {
                 //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
                 MessageBox.Show(ex.ToString());
             }
-           
+
         }
 
         private void sincronizar_eventos()
         {
+            //VARIABLE PARA SABER SI SE SINCRONIZARON EVENTOS DE ALGUN CHECADOR
+            bool sincronizar = false;
+
             //FUNCION PARA SINCRONIZAR EVENTOS DE MULTIPLES CHECADORES
             foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
             {
+                //VALIDAR LAS FILAS MARCADAS EN EL DATAGRID
                 if (row.Cells["Check"].Value != null)
                 {
-
-                    try
+                    if (Convert.ToBoolean(row.Cells["Check"].Value) != false)
                     {
-                        //FUNCION PARA SINCRONIZAR LOS EVENTOS DEL CHECADOR A LA BASE DE DATOS
-                        //var row = dgv_checadorbuscar.CurrentRow;
-                        int Error = 0;
-                        Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
-                        if (bConn)
+                        try
                         {
-                            string id = string.Empty;
-                            int verifyMode = 0, inOutMode = 0, workCode = 0;
-                            int Year = 0, Month = 0, Day = 0, Hour = 0, Minute = 0, Second = 0;
-                            DateTime fecha_max;
-                            ClaseSucursal Sucursal = new ClaseSucursal();
-                            ClaseEmpleado Empleado = new ClaseEmpleado();
-                            ClaseHorario Horario = new ClaseHorario();
-
-                            if (Checador.ReadGeneralLogData(Convert.ToInt32(row.Cells[1].Value)))//read all the attendance records to the memory
+                            //FUNCION PARA SINCRONIZAR LOS EVENTOS DEL CHECADOR A LA BASE DE DATOS
+                            //var row = dgv_checadorbuscar.CurrentRow;
+                            Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
+                            if (bConn)
                             {
-                                fecha_max = Clase_Checador.verificarEvento(Convert.ToInt32(row.Cells[1].Value));
-                                //MessageBox.Show(fecha_max.ToString());
-                                while (Checador.SSR_GetGeneralLogData(Convert.ToInt32(row.Cells[1].Value), out id, out verifyMode,
-                                           out inOutMode, out Year, out Month, out Day, out Hour, out Minute, out Second, ref workCode))//get records from the memory
-                                {
-                            
+                                string id = string.Empty;
+                                int verifyMode = 0, inOutMode = 0, workCode = 0, id_horario;
+                                int Year = 0, Month = 0, Day = 0, Hour = 0, Minute = 0, Second = 0;
+                                DateTime fecha_max;
+                                ClaseSucursal Sucursal = new ClaseSucursal();
+                                ClaseEmpleado Empleado = new ClaseEmpleado();
+                                ClaseHorario Horario = new ClaseHorario();
+                                ClaseAsignar_Horario AsignarHorario = new ClaseAsignar_Horario();
 
-                                    //VALIDACION PARA SABER DESDE DONDE VAMOS A JALAR LOS EVENTOS DEL CHECADOR [SE BORRARA DESPUES!!]
-
-                                    if (fecha_max < Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()))
-                                    {
-                                        //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
-                                        Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
-                                        Empleado.obtenerIdHorario(Convert.ToInt32(id));
-                                        Horario.verificar_existencia(Empleado.id_horario);
-                                        Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
-                                        
-                                        //Agregar fila en DataGrid de datos sincronizados
-                                        agregarFila(Convert.ToString(row.Cells[1].Value), Sucursal.id.ToString(), Convert.ToString(id), Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString(), inOutMode);
-                                    }
-                                    else if (fecha_max == Convert.ToDateTime("1995-12-12 00:00:00"))
-                                    {
-                                        //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
-                                        Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
-                                        Empleado.obtenerIdHorario(Convert.ToInt32(id));
-                                        Horario.verificar_existencia(Empleado.id_horario);
-                                        Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
-                                        agregarFila(Convert.ToString(row.Cells[1].Value), Sucursal.id.ToString(), Convert.ToString(id), Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString(), inOutMode);
-                                    }
-                                }
-                                MessageBox.Show("Eventos Sincronizados con exito");
-                                //CHECAR ESTO
-                                //CONDICION PARA INVOCAR EL DATAGRID DESDE OTRO HILO
-                                if (InvokeRequired)
+                                if (Checador.ReadGeneralLogData(Convert.ToInt32(row.Cells[1].Value)))//read all the attendance records to the memory
                                 {
-                                    Invoke(new Action(() => tabControlBase.SelectedTab = tabPage4));
+                                    fecha_max = Clase_Checador.verificarEvento(Convert.ToInt32(row.Cells[1].Value));
+                                    while (Checador.SSR_GetGeneralLogData(Convert.ToInt32(row.Cells[1].Value), out id, out verifyMode,
+                                               out inOutMode, out Year, out Month, out Day, out Hour, out Minute, out Second, ref workCode))//get records from the memory
+                                    {
+                                        //VALIDACION PARA SABER DESDE DONDE VAMOS A JALAR LOS EVENTOS DEL CHECADOR [SE BORRARA DESPUES!!]
+
+                                        if (fecha_max < Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()))
+                                        {
+                                            //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
+                                            Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
+                                            //Empleado.obtenerIdHorario(Convert.ToInt32(id));
+                                            
+                                            AsignarHorario.verificar_existencia(Convert.ToInt32(id));
+                                            DateTime dia = new DateTime(Year, Month, Day);
+
+                                            if (dia.DayOfWeek.ToString() == "Monday")
+                                            {
+                                                Horario.verificar_existencia(AsignarHorario.lunes);
+                                            }
+                                            else if(dia.DayOfWeek.ToString() == "Tuesday")
+                                            {
+                                                Horario.verificar_existencia(AsignarHorario.martes);
+                                            }
+                                            else if (dia.DayOfWeek.ToString() == "Wednesday")
+                                            {
+                                                Horario.verificar_existencia(AsignarHorario.miercoles);
+                                            }
+                                            else if (dia.DayOfWeek.ToString() == "Thursday")
+                                            {
+                                                Horario.verificar_existencia(AsignarHorario.jueves);
+                                            }
+                                            else if (dia.DayOfWeek.ToString() == "Friday")
+                                            {
+                                                Horario.verificar_existencia(AsignarHorario.viernes);
+                                            }
+                                            else if (dia.DayOfWeek.ToString() == "Saturday")
+                                            {
+                                                Horario.verificar_existencia(AsignarHorario.sabado);
+                                            }
+                                            else if (dia.DayOfWeek.ToString() == "Sunday")
+                                            {
+                                                Horario.verificar_existencia(AsignarHorario.domingo);
+                                            }
+
+                                            //Horario.verificar_existencia(Empleado.id_horario);
+                                            Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
+
+                                            //Agregar fila en DataGrid de datos sincronizados
+                                            agregarFila(Convert.ToString(row.Cells[1].Value), Sucursal.id.ToString(), Convert.ToString(id), Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString(), inOutMode);
+                                        }
+                                        else if (fecha_max == Convert.ToDateTime("1995-12-12 00:00:00"))
+                                        {
+                                            //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
+                                            Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
+                                            Empleado.obtenerIdHorario(Convert.ToInt32(id));
+                                            Horario.verificar_existencia(Empleado.id_horario);
+                                            Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
+                                            agregarFila(Convert.ToString(row.Cells[1].Value), Sucursal.id.ToString(), Convert.ToString(id), Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString(), inOutMode);
+                                        }
+                                    }
+                                    MessageBox.Show("Eventos Sincronizados con exito. Checador: " + Convert.ToInt32(row.Cells[1].Value));
+                                    sincronizar = true;
+
                                 }
+                                else
+                                {
+                                    /*Checador.GetLastError(ref Error);
+                                    MessageBox.Show(Error.ToString());*/
+                                }
+                                /*mensaje = new formularios_padres.mensaje_info();
+                                mensaje = new formularios_padres.mensaje_info();
+                                mensaje.lbl_info.Text = "Eventos sincronizados con exito.";
+                                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                                mensaje.Show();*/
+
                             }
                             else
                             {
-                                Checador.GetLastError(ref Error);
-                                MessageBox.Show(Error.ToString());
+                                /*Checador.GetLastError(ref Error);
+                                MessageBox.Show(Error.ToString());*/
                             }
-                            /*mensaje = new formularios_padres.mensaje_info();
-                            mensaje = new formularios_padres.mensaje_info();
-                            mensaje.lbl_info.Text = "Eventos sincronizados con exito.";
-                            mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                            mensaje.Show();*/
 
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            Checador.GetLastError(ref Error);
-                            MessageBox.Show(Error.ToString());
+                            //MessageBox.Show("Ocurrió un error al sincronizar la fecha y hora del checador. Intenta de nuevo.");
+                            MessageBox.Show(ex.ToString());
                         }
+                    }
+                }
+            }
 
-                        //Clase_Checador.guardarEvento(1,2,2, Convert.ToDateTime("2018-09-25 10:33:00"));
-                    }
-                    catch (Exception ex)
-                    {
-                        //MessageBox.Show("Ocurrió un error al sincronizar la fecha y hora del checador. Intenta de nuevo.");
-                        MessageBox.Show(ex.ToString());
-                    }
+            if (sincronizar)
+            {
+                //CONDICION PARA INVOCAR EL DATAGRID DESDE OTRO HILO
+                if (InvokeRequired)
+                {
+                    Invoke(new Action(() => tabControlBase.SelectedTab = tabPage4));
                 }
             }
         }
@@ -527,24 +567,11 @@ namespace Checador
 
         private void btn_borrar_eventos_Click(object sender, EventArgs e)
         {
-            //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
-            foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
+            //PARA PROGRESS BAR
+            using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(borrar_eventos))
             {
-                if (row.Cells["Check"].Value != null)
-                {
-                    try
-                    {
-                        //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-                        Thread hilo_secundario = new Thread(new ThreadStart(this.borrar_eventos));
-                        hilo_secundario.IsBackground = true;
-                        hilo_secundario.Start();
-                    }
-                    catch (Exception ex)
-                    {
-                        //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
-                        MessageBox.Show(ex.ToString());
-                    }
-                }
+                frm.lbl_mensaje.Text = "Borrando eventos..";
+                frm.ShowDialog(this);
             }
         }
 
@@ -552,13 +579,23 @@ namespace Checador
         {
             try
             {
-                //FUNCION PARA BORRAR TODOS LOS EVENTOS DE UN CHECADOR                
-                var row = dgv_checadorbuscar.CurrentRow;
-                Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
-                if (bConn)
+                //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
+                foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
                 {
-                    Checador.ClearGLog(Convert.ToInt32(row.Cells[1].Value));
-                    MessageBox.Show("Eventos eliminados con éxito");
+                    //VALIDAR LAS FILAS MARCADAS EN EL DATAGRID
+                    if (row.Cells["Check"].Value != null)
+                    {
+                        if (Convert.ToBoolean(row.Cells["Check"].Value) != false)
+                        {
+                            //FUNCION PARA BORRAR TODOS LOS EVENTOS DE UN CHECADOR                
+                            Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
+                            if (bConn)
+                            {
+                                Checador.ClearGLog(Convert.ToInt32(row.Cells[1].Value));
+                                MessageBox.Show("Eventos eliminados con exito. Checador: " + Convert.ToInt32(row.Cells[1].Value));
+                            }
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -570,47 +607,43 @@ namespace Checador
 
         private void btn_borrar_usuarios_Click(object sender, EventArgs e)
         {
-            //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
-            foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
+            //PARA PROGRESS BAR
+            using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(borrar_eventos))
             {
-                if (row.Cells["Check"].Value != null)
-                {
-                    try
-                    {
-                        //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-                        Thread hilo_secundario = new Thread((this.borrar_usuarios));
-                        hilo_secundario.IsBackground = true;
-                        hilo_secundario.Start();
-                    }
-                    catch (Exception ex)
-                    {
-                        //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
-                        MessageBox.Show(ex.ToString());
-                    }
-                }
+                frm.lbl_mensaje.Text = "Borrando usuarios..";
+                frm.ShowDialog(this);
             }
-
-           
         }
 
         private void borrar_usuarios()
         {
             try
             {
-                //FUNCION PARA BORRAR TODOS LOS USUARIOS DE UN CHECADOR                
-                var row = dgv_checadorbuscar.CurrentRow;
-                int id_checador = Convert.ToInt32(row.Cells[1].Value);
-
-                Conectar_Checador(id_checador, row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
-
-                if (bConn) {
-                    if (Checador.ClearData(id_checador, 5))
+                //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
+                foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
+                {
+                    //VALIDAR LAS FILAS MARCADAS EN EL DATAGRID
+                    if (row.Cells["Check"].Value != null)
                     {
-                        MessageBox.Show("Usuarios eliminados con éxito");
-                    }
-                    else
-                    {
-                        MessageBox.Show("No existen usuarios en el checador.");
+                        if (Convert.ToBoolean(row.Cells["Check"].Value) != false)
+                        {
+                            //FUNCION PARA BORRAR TODOS LOS USUARIOS DE UN CHECADOR
+                            int id_checador = Convert.ToInt32(row.Cells[1].Value);
+
+                            Conectar_Checador(id_checador, row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
+
+                            if (bConn)
+                            {
+                                if (Checador.ClearData(id_checador, 5))
+                                {
+                                    MessageBox.Show("Usuarios eliminados con exito. Checador: " + Convert.ToInt32(row.Cells[1].Value));
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No existen usuarios en el Checador: " + Convert.ToInt32(row.Cells[1].Value));
+                                }
+                            }
+                        }
                     }
                 }
             }

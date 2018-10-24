@@ -41,7 +41,6 @@ namespace Checador
                     SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
                     if (lector.HasRows)//Revisa si hay resultados
                     {
-                        MessageBox.Show("Si hubo " + domingo);
                         string consulta = "UPDATE horario_empleados SET lunes=@lunes, martes=@martes, miercoles= @miercoles, jueves=@jueves, viernes=@viernes, sabado=@sabado, domingo=@domingo WHERE id_empleado = @id_empleado";
                         SqlConnection con2 = new SqlConnection(conexion.cadenaConexion);
                         con2.Open();

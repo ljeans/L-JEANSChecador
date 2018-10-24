@@ -509,7 +509,6 @@
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(249, 29);
             this.txt_email.TabIndex = 26;
-            this.txt_email.Leave += new System.EventHandler(this.txt_email_Leave);
             // 
             // txt_observaciones
             // 
@@ -993,7 +992,6 @@
             this.txt_idbuscar.Size = new System.Drawing.Size(248, 29);
             this.txt_idbuscar.TabIndex = 43;
             this.txt_idbuscar.TextChanged += new System.EventHandler(this.txt_idbuscar_TextChanged);
-            this.txt_idbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_idbuscar_KeyPress);
             // 
             // txt_nombrebuscar
             // 
@@ -1046,7 +1044,6 @@
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(249, 29);
             this.txt_telefono.TabIndex = 27;
-            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // btn_siguiente
             // 
@@ -1074,7 +1071,6 @@
             this.txt_apellido_paterno.Name = "txt_apellido_paterno";
             this.txt_apellido_paterno.Size = new System.Drawing.Size(248, 29);
             this.txt_apellido_paterno.TabIndex = 3;
-            this.txt_apellido_paterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_paterno_KeyPress);
             // 
             // txt_apellido_materno
             // 
@@ -1085,7 +1081,6 @@
             this.txt_apellido_materno.Name = "txt_apellido_materno";
             this.txt_apellido_materno.Size = new System.Drawing.Size(248, 29);
             this.txt_apellido_materno.TabIndex = 4;
-            this.txt_apellido_materno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_materno_KeyPress);
             // 
             // label9
             // 
@@ -1173,7 +1168,6 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(248, 29);
             this.txt_nombre.TabIndex = 2;
-            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             // 
             // label29
             // 
@@ -1281,8 +1275,7 @@
             this.txt_id.MaxLength = 32;
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(248, 29);
-            this.txt_id.TabIndex = 0;
-            this.txt_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_KeyPress);
+            this.txt_id.TabIndex = 1050;
             // 
             // groupBox4
             // 
@@ -1360,7 +1353,6 @@
             this.txt_domicilio_cp.Name = "txt_domicilio_cp";
             this.txt_domicilio_cp.Size = new System.Drawing.Size(249, 29);
             this.txt_domicilio_cp.TabIndex = 16;
-            this.txt_domicilio_cp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_cp_KeyPress);
             // 
             // txt_domicilio_pais
             // 
@@ -1433,7 +1425,6 @@
             this.txt_domicilio_num_ext.Name = "txt_domicilio_num_ext";
             this.txt_domicilio_num_ext.Size = new System.Drawing.Size(249, 29);
             this.txt_domicilio_num_ext.TabIndex = 13;
-            this.txt_domicilio_num_ext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_num_ext_KeyPress);
             // 
             // txt_domicilio_num_int
             // 
@@ -1444,7 +1435,6 @@
             this.txt_domicilio_num_int.Name = "txt_domicilio_num_int";
             this.txt_domicilio_num_int.Size = new System.Drawing.Size(249, 29);
             this.txt_domicilio_num_int.TabIndex = 14;
-            this.txt_domicilio_num_int.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_num_int_KeyPress);
             // 
             // txt_domicilio_calle
             // 
@@ -1594,7 +1584,6 @@
             this.txt_cuenta.Name = "txt_cuenta";
             this.txt_cuenta.Size = new System.Drawing.Size(249, 29);
             this.txt_cuenta.TabIndex = 40;
-            this.txt_cuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuenta_KeyPress);
             // 
             // txt_periodicidad_pago
             // 
@@ -1626,7 +1615,6 @@
             this.txt_dias_vacaciones.Size = new System.Drawing.Size(249, 29);
             this.txt_dias_vacaciones.TabIndex = 36;
             this.txt_dias_vacaciones.Text = "0";
-            this.txt_dias_vacaciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dias_vacaciones_KeyPress);
             // 
             // label35
             // 
@@ -1704,7 +1692,6 @@
             this.txt_dias_aguinaldo.TabIndex = 34;
             this.txt_dias_aguinaldo.Text = "0";
             this.txt_dias_aguinaldo.TextChanged += new System.EventHandler(this.txt_dias_aguinaldo_TextChanged);
-            this.txt_dias_aguinaldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dias_aguinaldo_KeyPress);
             // 
             // txt_sueldo_quincenal
             // 
@@ -1716,7 +1703,6 @@
             this.txt_sueldo_quincenal.Size = new System.Drawing.Size(249, 29);
             this.txt_sueldo_quincenal.TabIndex = 32;
             this.txt_sueldo_quincenal.Text = "0";
-            this.txt_sueldo_quincenal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sueldo_quincenal_KeyPress);
             // 
             // txt_sueldo_diario
             // 
@@ -1728,7 +1714,6 @@
             this.txt_sueldo_diario.Size = new System.Drawing.Size(249, 29);
             this.txt_sueldo_diario.TabIndex = 30;
             this.txt_sueldo_diario.Text = "0";
-            this.txt_sueldo_diario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sueldo_diario_KeyPress);
             // 
             // txt_sueldo_integrado
             // 
@@ -1740,7 +1725,6 @@
             this.txt_sueldo_integrado.Size = new System.Drawing.Size(249, 29);
             this.txt_sueldo_integrado.TabIndex = 31;
             this.txt_sueldo_integrado.Text = "0";
-            this.txt_sueldo_integrado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sueldo_integrado_KeyPress);
             // 
             // txt_tipo_contrato
             // 
@@ -1934,7 +1918,6 @@
             this.txt_id_a_modificar.Name = "txt_id_a_modificar";
             this.txt_id_a_modificar.Size = new System.Drawing.Size(200, 29);
             this.txt_id_a_modificar.TabIndex = 50;
-            this.txt_id_a_modificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_a_modificar_KeyPress);
             // 
             // btn_cancelar
             // 
@@ -1962,7 +1945,7 @@
             this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.ForeColor = System.Drawing.Color.White;
-            this.btn_modificar.Location = new System.Drawing.Point(709, 532);
+            this.btn_modificar.Location = new System.Drawing.Point(709, 529);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(250, 70);
             this.btn_modificar.TabIndex = 42;

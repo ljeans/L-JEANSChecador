@@ -1,5 +1,4 @@
 - Asignacion de horario
-	- En sincronizar eventos cambiar la forma para sacar los retardos y las horas trabajadas
 	- Vista
 - Validación en el update de salida para min extra quitarlos
 	--Si es de bodega no quitarlos
@@ -8,6 +7,7 @@
 - Poner barra de progreso cuando se necesite - LISTO
 	-- Poner bonita la barra de progreso
 - Reportes
+	- Salen repetidas las horas trabajadas, checar
 	- Reporte de retardos para Dalisa (a su correo).
 	- Validar reportes vacíos
 - Modulo de tienda
