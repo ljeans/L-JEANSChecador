@@ -358,6 +358,27 @@ SELECT id_horario, horario, hr_entrada, hr_salida, horas_diarias, lunes, martes,
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vista_registrosTableAdapter" GeneratorDataComponentClassName="vista_registrosTableAdapter" Name="vista_registros" UserDataComponentName="vista_registrosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sistema_checadorConnectionString (Settings)" DbObjectName="sistema_checador.dbo.vista_registros" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        vista_registros.*
+FROM            vista_registros</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombre_completo" DataSetColumn="nombre_completo" />
+              <Mapping SourceColumn="id_checador" DataSetColumn="id_checador" />
+              <Mapping SourceColumn="Sucursal" DataSetColumn="Sucursal" />
+              <Mapping SourceColumn="fecha_entrada" DataSetColumn="fecha_entrada" />
+              <Mapping SourceColumn="fecha_salida" DataSetColumn="fecha_salida" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -366,7 +387,7 @@ SELECT id_horario, horario, hr_entrada, hr_salida, horas_diarias, lunes, martes,
   <xs:element name="DataSet_Checador" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_Checador" msprop:Generator_UserDSName="DataSet_Checador">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="sucursal" msprop:Generator_TableClassName="sucursalDataTable" msprop:Generator_TableVarName="tablesucursal" msprop:Generator_TablePropName="sucursal" msprop:Generator_RowDeletingName="sucursalRowDeleting" msprop:Generator_RowChangingName="sucursalRowChanging" msprop:Generator_RowEvHandlerName="sucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="sucursalRowDeleted" msprop:Generator_UserTableName="sucursal" msprop:Generator_RowChangedName="sucursalRowChanged" msprop:Generator_RowEvArgName="sucursalRowChangeEvent" msprop:Generator_RowClassName="sucursalRow">
+        <xs:element name="sucursal" msprop:Generator_TableClassName="sucursalDataTable" msprop:Generator_TableVarName="tablesucursal" msprop:Generator_RowChangedName="sucursalRowChanged" msprop:Generator_TablePropName="sucursal" msprop:Generator_RowDeletingName="sucursalRowDeleting" msprop:Generator_RowChangingName="sucursalRowChanging" msprop:Generator_RowEvHandlerName="sucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="sucursalRowDeleted" msprop:Generator_RowClassName="sucursalRow" msprop:Generator_UserTableName="sucursal" msprop:Generator_RowEvArgName="sucursalRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_sucursal" msprop:Generator_ColumnVarNameInTable="columnid_sucursal" msprop:Generator_ColumnPropNameInRow="id_sucursal" msprop:Generator_ColumnPropNameInTable="id_sucursalColumn" msprop:Generator_UserColumnName="id_sucursal" type="xs:int" />
@@ -457,7 +478,7 @@ SELECT id_horario, horario, hr_entrada, hr_salida, horas_diarias, lunes, martes,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vista_Checador" msprop:Generator_TableClassName="Vista_ChecadorDataTable" msprop:Generator_TableVarName="tableVista_Checador" msprop:Generator_TablePropName="Vista_Checador" msprop:Generator_RowDeletingName="Vista_ChecadorRowDeleting" msprop:Generator_RowChangingName="Vista_ChecadorRowChanging" msprop:Generator_RowEvHandlerName="Vista_ChecadorRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_ChecadorRowDeleted" msprop:Generator_UserTableName="Vista_Checador" msprop:Generator_RowChangedName="Vista_ChecadorRowChanged" msprop:Generator_RowEvArgName="Vista_ChecadorRowChangeEvent" msprop:Generator_RowClassName="Vista_ChecadorRow">
+        <xs:element name="Vista_Checador" msprop:Generator_TableClassName="Vista_ChecadorDataTable" msprop:Generator_TableVarName="tableVista_Checador" msprop:Generator_RowChangedName="Vista_ChecadorRowChanged" msprop:Generator_TablePropName="Vista_Checador" msprop:Generator_RowDeletingName="Vista_ChecadorRowDeleting" msprop:Generator_RowChangingName="Vista_ChecadorRowChanging" msprop:Generator_RowEvHandlerName="Vista_ChecadorRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_ChecadorRowDeleted" msprop:Generator_RowClassName="Vista_ChecadorRow" msprop:Generator_UserTableName="Vista_Checador" msprop:Generator_RowEvArgName="Vista_ChecadorRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_checador" msprop:Generator_ColumnVarNameInTable="columnid_checador" msprop:Generator_ColumnPropNameInRow="id_checador" msprop:Generator_ColumnPropNameInTable="id_checadorColumn" msprop:Generator_UserColumnName="id_checador" type="xs:int" />
@@ -492,7 +513,7 @@ SELECT id_horario, horario, hr_entrada, hr_salida, horas_diarias, lunes, martes,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vista_Empleados" msprop:Generator_TableClassName="Vista_EmpleadosDataTable" msprop:Generator_TableVarName="tableVista_Empleados" msprop:Generator_TablePropName="Vista_Empleados" msprop:Generator_RowDeletingName="Vista_EmpleadosRowDeleting" msprop:Generator_RowChangingName="Vista_EmpleadosRowChanging" msprop:Generator_RowEvHandlerName="Vista_EmpleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_EmpleadosRowDeleted" msprop:Generator_UserTableName="Vista_Empleados" msprop:Generator_RowChangedName="Vista_EmpleadosRowChanged" msprop:Generator_RowEvArgName="Vista_EmpleadosRowChangeEvent" msprop:Generator_RowClassName="Vista_EmpleadosRow">
+        <xs:element name="Vista_Empleados" msprop:Generator_TableClassName="Vista_EmpleadosDataTable" msprop:Generator_TableVarName="tableVista_Empleados" msprop:Generator_RowChangedName="Vista_EmpleadosRowChanged" msprop:Generator_TablePropName="Vista_Empleados" msprop:Generator_RowDeletingName="Vista_EmpleadosRowDeleting" msprop:Generator_RowChangingName="Vista_EmpleadosRowChanging" msprop:Generator_RowEvHandlerName="Vista_EmpleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_EmpleadosRowDeleted" msprop:Generator_RowClassName="Vista_EmpleadosRow" msprop:Generator_UserTableName="Vista_Empleados" msprop:Generator_RowEvArgName="Vista_EmpleadosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_empleado" msprop:Generator_ColumnVarNameInTable="columnid_empleado" msprop:Generator_ColumnPropNameInRow="id_empleado" msprop:Generator_ColumnPropNameInTable="id_empleadoColumn" msprop:Generator_UserColumnName="id_empleado" type="xs:int" />
@@ -675,7 +696,7 @@ SELECT id_horario, horario, hr_entrada, hr_salida, horas_diarias, lunes, martes,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vista_Horario" msprop:Generator_TableClassName="Vista_HorarioDataTable" msprop:Generator_TableVarName="tableVista_Horario" msprop:Generator_TablePropName="Vista_Horario" msprop:Generator_RowDeletingName="Vista_HorarioRowDeleting" msprop:Generator_RowChangingName="Vista_HorarioRowChanging" msprop:Generator_RowEvHandlerName="Vista_HorarioRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_HorarioRowDeleted" msprop:Generator_UserTableName="Vista_Horario" msprop:Generator_RowChangedName="Vista_HorarioRowChanged" msprop:Generator_RowEvArgName="Vista_HorarioRowChangeEvent" msprop:Generator_RowClassName="Vista_HorarioRow">
+        <xs:element name="Vista_Horario" msprop:Generator_TableClassName="Vista_HorarioDataTable" msprop:Generator_TableVarName="tableVista_Horario" msprop:Generator_RowChangedName="Vista_HorarioRowChanged" msprop:Generator_TablePropName="Vista_Horario" msprop:Generator_RowDeletingName="Vista_HorarioRowDeleting" msprop:Generator_RowChangingName="Vista_HorarioRowChanging" msprop:Generator_RowEvHandlerName="Vista_HorarioRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_HorarioRowDeleted" msprop:Generator_RowClassName="Vista_HorarioRow" msprop:Generator_UserTableName="Vista_Horario" msprop:Generator_RowEvArgName="Vista_HorarioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_horario" msprop:Generator_ColumnVarNameInTable="columnid_horario" msprop:Generator_ColumnPropNameInRow="id_horario" msprop:Generator_ColumnPropNameInTable="id_horarioColumn" msprop:Generator_UserColumnName="id_horario" type="xs:int" />
@@ -703,7 +724,7 @@ SELECT id_horario, horario, hr_entrada, hr_salida, horas_diarias, lunes, martes,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="horarios" msprop:Generator_TableClassName="horariosDataTable" msprop:Generator_TableVarName="tablehorarios" msprop:Generator_RowChangedName="horariosRowChanged" msprop:Generator_TablePropName="horarios" msprop:Generator_RowDeletingName="horariosRowDeleting" msprop:Generator_RowChangingName="horariosRowChanging" msprop:Generator_RowEvHandlerName="horariosRowChangeEventHandler" msprop:Generator_RowDeletedName="horariosRowDeleted" msprop:Generator_RowClassName="horariosRow" msprop:Generator_UserTableName="horarios" msprop:Generator_RowEvArgName="horariosRowChangeEvent">
+        <xs:element name="horarios" msprop:Generator_TableClassName="horariosDataTable" msprop:Generator_TableVarName="tablehorarios" msprop:Generator_TablePropName="horarios" msprop:Generator_RowDeletingName="horariosRowDeleting" msprop:Generator_RowChangingName="horariosRowChanging" msprop:Generator_RowEvHandlerName="horariosRowChangeEventHandler" msprop:Generator_RowDeletedName="horariosRowDeleted" msprop:Generator_UserTableName="horarios" msprop:Generator_RowChangedName="horariosRowChanged" msprop:Generator_RowEvArgName="horariosRowChangeEvent" msprop:Generator_RowClassName="horariosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_horario" msprop:Generator_ColumnVarNameInTable="columnid_horario" msprop:Generator_ColumnPropNameInRow="id_horario" msprop:Generator_ColumnPropNameInTable="id_horarioColumn" msprop:Generator_UserColumnName="id_horario" type="xs:int" />
@@ -731,7 +752,7 @@ SELECT id_horario, horario, hr_entrada, hr_salida, horas_diarias, lunes, martes,
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vista_Sucursal" msprop:Generator_TableClassName="Vista_SucursalDataTable" msprop:Generator_TableVarName="tableVista_Sucursal" msprop:Generator_RowChangedName="Vista_SucursalRowChanged" msprop:Generator_TablePropName="Vista_Sucursal" msprop:Generator_RowDeletingName="Vista_SucursalRowDeleting" msprop:Generator_RowChangingName="Vista_SucursalRowChanging" msprop:Generator_RowEvHandlerName="Vista_SucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_SucursalRowDeleted" msprop:Generator_RowClassName="Vista_SucursalRow" msprop:Generator_UserTableName="Vista_Sucursal" msprop:Generator_RowEvArgName="Vista_SucursalRowChangeEvent">
+        <xs:element name="Vista_Sucursal" msprop:Generator_TableClassName="Vista_SucursalDataTable" msprop:Generator_TableVarName="tableVista_Sucursal" msprop:Generator_TablePropName="Vista_Sucursal" msprop:Generator_RowDeletingName="Vista_SucursalRowDeleting" msprop:Generator_RowChangingName="Vista_SucursalRowChanging" msprop:Generator_RowEvHandlerName="Vista_SucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_SucursalRowDeleted" msprop:Generator_UserTableName="Vista_Sucursal" msprop:Generator_RowChangedName="Vista_SucursalRowChanged" msprop:Generator_RowEvArgName="Vista_SucursalRowChangeEvent" msprop:Generator_RowClassName="Vista_SucursalRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_sucursal" msprop:Generator_ColumnVarNameInTable="columnid_sucursal" msprop:Generator_ColumnPropNameInRow="id_sucursal" msprop:Generator_ColumnPropNameInTable="id_sucursalColumn" msprop:Generator_UserColumnName="id_sucursal" type="xs:int" />
@@ -777,6 +798,29 @@ SELECT id_horario, horario, hr_entrada, hr_salida, horas_diarias, lunes, martes,
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vista_registros" msprop:Generator_TableClassName="vista_registrosDataTable" msprop:Generator_TableVarName="tablevista_registros" msprop:Generator_TablePropName="vista_registros" msprop:Generator_RowDeletingName="vista_registrosRowDeleting" msprop:Generator_RowChangingName="vista_registrosRowChanging" msprop:Generator_RowEvHandlerName="vista_registrosRowChangeEventHandler" msprop:Generator_RowDeletedName="vista_registrosRowDeleted" msprop:Generator_UserTableName="vista_registros" msprop:Generator_RowChangedName="vista_registrosRowChanged" msprop:Generator_RowEvArgName="vista_registrosRowChangeEvent" msprop:Generator_RowClassName="vista_registrosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre_completo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnombre_completo" msprop:Generator_ColumnPropNameInRow="nombre_completo" msprop:Generator_ColumnPropNameInTable="nombre_completoColumn" msprop:Generator_UserColumnName="nombre_completo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="122" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_checador" msprop:Generator_ColumnVarNameInTable="columnid_checador" msprop:Generator_ColumnPropNameInRow="id_checador" msprop:Generator_ColumnPropNameInTable="id_checadorColumn" msprop:Generator_UserColumnName="id_checador" type="xs:int" />
+              <xs:element name="Sucursal" msprop:Generator_ColumnVarNameInTable="columnSucursal" msprop:Generator_ColumnPropNameInRow="Sucursal" msprop:Generator_ColumnPropNameInTable="SucursalColumn" msprop:Generator_UserColumnName="Sucursal">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha_entrada" msprop:Generator_ColumnVarNameInTable="columnfecha_entrada" msprop:Generator_ColumnPropNameInRow="fecha_entrada" msprop:Generator_ColumnPropNameInTable="fecha_entradaColumn" msprop:Generator_UserColumnName="fecha_entrada" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="fecha_salida" msprop:Generator_ColumnVarNameInTable="columnfecha_salida" msprop:Generator_ColumnPropNameInRow="fecha_salida" msprop:Generator_ColumnPropNameInTable="fecha_salidaColumn" msprop:Generator_UserColumnName="fecha_salida" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
