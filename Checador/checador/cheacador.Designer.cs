@@ -440,9 +440,9 @@
             this.dgv_checadorbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_checadorbuscar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -479,13 +479,26 @@
             this.dgv_checadorbuscar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgv_checadorbuscar.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
 <<<<<<< HEAD
             this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
 =======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+            this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
+=======
+=======
+>>>>>>> 4c12cd6c7d6dc5021b7708f2376190963be70cd6
 
             this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
 
 >>>>>>> b37560a353a367baded37661705ed13f7aaf5812
+<<<<<<< HEAD
+>>>>>>> 4c12cd6c7d6dc5021b7708f2376190963be70cd6
+=======
+>>>>>>> 4c12cd6c7d6dc5021b7708f2376190963be70cd6
+>>>>>>> 63d17e1c9fcfc98f7ac95846c230dc219445e303
             this.dgv_checadorbuscar.TabIndex = 83;
             // 
             // check
@@ -495,7 +508,7 @@
             this.check.Name = "check";
             this.check.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.check.ToolTipText = "Marque los checadores a los que desea  aplicar la función";
-            this.check.Width = 42;
+            this.check.Width = 58;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -504,7 +517,7 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 41;
+            this.dataGridViewTextBoxColumn1.Width = 49;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -513,7 +526,7 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Sucursal";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 71;
+            this.dataGridViewTextBoxColumn2.Width = 94;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -522,7 +535,7 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "IP";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 40;
+            this.dataGridViewTextBoxColumn3.Width = 47;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -531,7 +544,7 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "Puerto";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 61;
+            this.dataGridViewTextBoxColumn4.Width = 79;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -540,7 +553,7 @@
             this.dataGridViewTextBoxColumn5.HeaderText = "Estatus";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 65;
+            this.dataGridViewTextBoxColumn5.Width = 87;
             // 
             // vistaChecadorBindingSource
             // 

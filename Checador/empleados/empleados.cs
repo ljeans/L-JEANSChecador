@@ -20,7 +20,6 @@ namespace Checador.empleados
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
         formularios_padres.Mensajes confirmacion2 = new formularios_padres.Mensajes();
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
-        validacion validar = new validacion();
 
         //SE CREA LA INSTANCIA DE LA CLASE CHECADOR
         ClaseChecador clase_checador = new ClaseChecador();
@@ -33,6 +32,7 @@ namespace Checador.empleados
         public int sucurzal, verificador=0;
         public string valor_datagrid;
         public bool respuesta = false;
+        public int id_checador_viejo;
 
         public empleados()
         {
@@ -59,7 +59,6 @@ namespace Checador.empleados
             groupBox4.Enabled = false;
 
             cbx_privilegio.SelectedIndex = 0;
-            txt_id.Focus();
         
         }            
 
@@ -82,7 +81,7 @@ namespace Checador.empleados
         {
             Limpiar();
             tabControlBase.SelectedTab = tabPage1;
-            txt_id.Focus();
+            txt_curp.Focus();
             groupBox4.Visible = false;
             groupBox4.Enabled = false;
             btn_modificar.Enabled = false;
@@ -192,12 +191,12 @@ namespace Checador.empleados
 
                 if (bConn)
                 {
-                    Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
+                    Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio,0);
                 }
                 
                 confirmacion2 = new formularios_padres.Mensajes();
                 confirmacion2.lbl_mensaje.Text = "Desea registrar huella al empleado?";
-                confirmacion2.FormClosed += new FormClosedEventHandler(reg_huella);
+                confirmacion2.FormClosed += new FormClosedEventHandler(mod_huella);
                 confirmacion2.Show();
                 Enabled = false;
                 Limpiar();
@@ -212,18 +211,46 @@ namespace Checador.empleados
         }
 
         //FUNCION PARA REGISTRAR NUEVO USUARIO EN EL CHECADOR
-        public void Crear_Usuario_Checador(int id_checador, string id_empleado, string nombre, string contra, int privilegio)
+        public void Crear_Usuario_Checador(int id_checador, string id_empleado, string nombre, string contra, int privilegio, int id_checador_viejo)
         {
             int error = 0;
+            int dedo;
+            int tFlag = 0, tTemplateLength = 0;
+            string huella = string.Empty;
 
-            if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
+            //VALIDACION PARA SABER SI ESTA REGISTANDO O MODIFICANDO
+            if (id_checador_viejo != 0)
             {
-             
+                for (dedo = 0; dedo < 10; dedo++)
+                {
+                    //OBTENER HUELLA
+                    if (Checador.GetUserTmpExStr(id_checador_viejo, id_empleado, dedo, out tFlag, out huella, out tTemplateLength))
+                    {
+                        //CREAR USUARIO EN EL NUEVO CHECADOR
+                        if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
+                        {
+                            //SETEAR LA HUELLA
+                            Checador.SetUserTmpExStr(id_checador, id_empleado, dedo, tFlag, huella);
+                        }
+                        else
+                        {
+                            Checador.GetLastError(ref error);
+                            MessageBox.Show(error.ToString());
+                        }
+                    }
+                }
             }
             else
             {
-                Checador.GetLastError(ref error);
-                MessageBox.Show(error.ToString());
+                //CREAR USUARIO EN EL NUEVO CHECADOR
+                if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
+                {
+                }
+                else
+                {
+                    Checador.GetLastError(ref error);
+                    MessageBox.Show(error.ToString());
+                }
             }
         }
 
@@ -507,7 +534,7 @@ namespace Checador.empleados
                     Empleado.Modificar_Empleado();
                    if (sucurzal != Convert.ToInt32(cbx_sucursal.SelectedValue.ToString()))
                     {
-                        Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
+                        Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio, id_checador_viejo);
                         Empleado.guardarEmpleado_Sucursal();
                         //SE OBTIENEN LOS DATOS DEL CHECADOR
                         clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
@@ -538,7 +565,7 @@ namespace Checador.empleados
             {
 
             }
-            txt_id.Enabled = true;
+          
           
 
         }
@@ -559,26 +586,6 @@ namespace Checador.empleados
             {
                 tabControlBase.SelectedTab = tabPage5;
                 txt_id_a_modificar.Clear();
-            }
-            confirmacion2 = null;
-        }
-        private void reg_huella(object sender, EventArgs e)
-        {
-            //**************
-
-            //****************
-
-            Enabled = true;
-            respuesta = confirmacion2.respuesta;
-            if (respuesta == true)
-            {
-                tabControlBase.SelectedTab = tabPage3;
-                cbx_huella.SelectedIndex = 6;
-            }
-            else
-            {
-                tabControlBase.SelectedTab = tabPage1;
-                txt_id.Focus();
             }
             confirmacion2 = null;
         }
@@ -652,6 +659,10 @@ namespace Checador.empleados
                
                 Empleado.tipo_salario = txt_tipo_salario.Text;
                 Empleado.password = txt_contra.Text;
+
+                //SE OBTIENEN LOS DATOS DEL CHECADOR VIEJO EN CASO DE SER NECESARIO POR CAMBIO DE SUCURSAL
+                clase_checador.getChecador_Sucursal(sucurzal);
+                id_checador_viejo = clase_checador.id;
 
                 //SE OBTIENEN LOS DATOS DEL CHECADOR
                 clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
@@ -776,118 +787,6 @@ namespace Checador.empleados
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void txt_id_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.solonumeros(e);
-            validar.sinespacios(e);
-        }
-
-        private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.sololetras(e);
-        }
-
-        private void txt_apellido_paterno_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.sololetras(e);
-        }
-
-        private void txt_apellido_materno_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.sololetras(e);
-        }
-
-        private void txt_domicilio_num_ext_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.solonumeros(e);
-            validar.sinespacios(e);
-        }
-
-        private void txt_domicilio_num_int_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.solonumeros(e);
-            validar.sinespacios(e);
-        }
-
-        private void txt_domicilio_cp_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.solonumeros(e);
-            validar.sinespacios(e);
-        }
-
-        private void txt_email_Leave(object sender, EventArgs e)
-        {
-
-            if (validar.validaremail(txt_email.Text))
-            {
-
-            }
-            else
-            {
-                txt_email.SelectAll();
-                txt_email.Focus();
-                mensaje = new formularios_padres.mensaje_info();
-                mensaje.lbl_info.Text = "Correo electrónico no válido. Debe cumplir ";
-                mensaje.lbl_info2.Text = "con el Formato: 'nombre@dominio.com'";
-                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                Enabled = false;
-                mensaje.Show();
-                txt_email.Focus();
-            }
-        }
-
-        private void txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.solonumeros(e);
-        }
-
-        private void txt_dias_vacaciones_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.solonumeros(e);
-            validar.sinespacios(e);
-        }
-
-        private void txt_cuenta_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.solonumeros(e);
-        }
-
-        private void txt_sueldo_diario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.soloimportes(e);
-            validar.sinespacios(e);
-        }
-
-        private void txt_sueldo_integrado_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.soloimportes(e);
-            validar.sinespacios(e);
-        }
-
-        private void txt_sueldo_quincenal_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.soloimportes(e);
-            validar.sinespacios(e);
-        }
-
-        private void txt_dias_aguinaldo_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.solonumeros(e);
-            validar.sinespacios(e);
-        }
-
-        private void txt_idbuscar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.solonumeros(e);
-            validar.sinespacios(e);
-        }
-
-        private void txt_id_a_modificar_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.solonumeros(e);
-            validar.sinespacios(e);
         }
 
         //////////////////////////////////////////////////////////////////////

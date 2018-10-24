@@ -56,6 +56,7 @@
             this.ClientSize = new System.Drawing.Size(464, 125);
             this.Controls.Add(this.lbl_mensaje);
             this.Controls.Add(this.progressBar1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProgressBar";
             this.Text = "ProgressBar";
             this.Load += new System.EventHandler(this.ProgressBar_Load);

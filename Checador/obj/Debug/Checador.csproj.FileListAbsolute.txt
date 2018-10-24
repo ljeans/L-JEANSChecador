@@ -28,6 +28,7 @@ C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.empleados.emp
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.Mensajes.resources
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.mensaje_info.resources
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.ProgressBar.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.incidentes.incidentes.resources
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.inicio_sesion.login.resources
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.principal.resources
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.formpadre.resources
@@ -39,6 +40,8 @@ C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.Genera
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.exe
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.pdb
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csprojResolveAssemblyReference.cache
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
 =======
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.csprojResolveAssemblyReference.cache
@@ -88,3 +91,4 @@ C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.incidentes.in
 >>>>>>> 68a02aeb3829975f4d49dca68355bbbfad5ff67c
 >>>>>>> 63112378576371a46ce35f22b99caa3ac37bf187
 >>>>>>> 445f002688090c703e96cf90af5c85aa6a11dc65
+>>>>>>> 4c12cd6c7d6dc5021b7708f2376190963be70cd6
