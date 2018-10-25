@@ -17,6 +17,7 @@ namespace Checador
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
         validacion validar = new validacion();
         public bool respuesta = false;
+        public bool sincronizar = false;
 
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
@@ -75,7 +76,7 @@ namespace Checador
                 Clase_Checador.Modificar_Checador();
                 Limpiar();
                 tabControlBase.SelectedTab = tabPage2;
-               
+
             }
             else
             {
@@ -113,7 +114,7 @@ namespace Checador
                 confirmacion.FormClosed += new FormClosedEventHandler(responder);
                 confirmacion.Show();
                 Enabled = false;
-             
+
             }
             catch (Exception ex)
             {
@@ -154,7 +155,7 @@ namespace Checador
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 mensaje.Show();
 
-               
+
             }
 
         }
@@ -245,7 +246,7 @@ namespace Checador
             toolTip.InitialDelay = 0;
             toolTip.ReshowDelay = 0;
             toolTip.ShowAlways = true;
-            
+
             HeaderCheckBox.Size = new Size(15, 15);
             HeaderCheckBox.Location = new Point(15, 5);
             toolTip.SetToolTip(HeaderCheckBox, "Marcar todos");
@@ -260,6 +261,13 @@ namespace Checador
             {
                 frm.lbl_mensaje.Text = "Sincronizando Fecha/Hora..";
                 frm.ShowDialog(this);
+            }
+            if (sincronizar == true)
+            {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Fecha Y hora sincronizada.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
             }
         }
 
@@ -282,6 +290,7 @@ namespace Checador
 
         private void sincronizar_fechaHora()
         {
+            sincronizar = false;
             try
             {
                 //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
@@ -298,7 +307,7 @@ namespace Checador
                             if (bConn)
                             {
                                 Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
-                                MessageBox.Show("Sincronizado. Checador: " + Convert.ToInt32(row.Cells[1].Value));
+                                sincronizar = true;
                             }
                             //Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
                         }
@@ -350,6 +359,13 @@ namespace Checador
                 frm.lbl_mensaje.Text = "Aplicando Fecha/Hora..";
                 frm.ShowDialog(this);
             }
+            if (sincronizar == true)
+            {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Fecha Y hora sincronizada.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+            }
         }
 
         private void aplicar_fecha_manual()
@@ -357,6 +373,7 @@ namespace Checador
 
             try
             {
+                sincronizar = false;
                 // CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
                 foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
                 {
@@ -370,7 +387,7 @@ namespace Checador
                             if (bConn)
                             {
                                 Checador.SetDeviceTime2(Convert.ToInt32(row.Cells[1].Value), dtp_fecha.Value.Year, dtp_fecha.Value.Month, dtp_fecha.Value.Day, dtp_hora.Value.Hour, dtp_hora.Value.Minute, dtp_hora.Value.Second);
-                                MessageBox.Show("Sincronizado. Checador: " + Convert.ToInt32(row.Cells[1].Value));
+                                sincronizar = true;
                             }
                         }
                     }
@@ -404,13 +421,21 @@ namespace Checador
                 //MessageBox.Show("Ocurrió un error al borrar los eventos del checador. Intenta de nuevo.");
                 MessageBox.Show(ex.ToString());
             }
+            if (sincronizar == true)
+            {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Eventos sincronizados con exito.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+            }
+          
 
         }
 
         private void sincronizar_eventos()
         {
             //VARIABLE PARA SABER SI SE SINCRONIZARON EVENTOS DE ALGUN CHECADOR
-            bool sincronizar = false;
+            sincronizar = false;
 
             //FUNCION PARA SINCRONIZAR EVENTOS DE MULTIPLES CHECADORES
             foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
@@ -498,7 +523,6 @@ namespace Checador
                                             agregarFila(Convert.ToString(row.Cells[1].Value), Sucursal.id.ToString(), Convert.ToString(id), Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString(), inOutMode);
                                         }
                                     }
-                                    MessageBox.Show("Eventos Sincronizados con exito. Checador: " + Convert.ToInt32(row.Cells[1].Value));
                                     sincronizar = true;
 
                                 }
@@ -573,12 +597,21 @@ namespace Checador
                 frm.lbl_mensaje.Text = "Borrando eventos..";
                 frm.ShowDialog(this);
             }
+            //REALIZA ACCION SEGUN LA BANDERA RETORNADA
+            if (sincronizar == true)
+            {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Los eventos han sido borrados.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+            }
         }
 
         private void borrar_eventos()
         {
             try
             {
+                sincronizar = false;
                 //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
                 foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
                 {
@@ -592,7 +625,7 @@ namespace Checador
                             if (bConn)
                             {
                                 Checador.ClearGLog(Convert.ToInt32(row.Cells[1].Value));
-                                MessageBox.Show("Eventos eliminados con exito. Checador: " + Convert.ToInt32(row.Cells[1].Value));
+                                sincronizar = true;
                             }
                         }
                     }
@@ -613,12 +646,28 @@ namespace Checador
                 frm.lbl_mensaje.Text = "Borrando usuarios..";
                 frm.ShowDialog(this);
             }
+            //REALIZA ACCION SEGUN LA BANDERA RETORNADA
+            if (sincronizar == true)
+            {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Los usuarios han sido borrados con exito.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+            }
+            else {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "No se encontraron usuarios en el checador..";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+            }
+
         }
 
         private void borrar_usuarios()
         {
             try
             {
+                sincronizar = false;
                 //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
                 foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
                 {
@@ -632,15 +681,16 @@ namespace Checador
 
                             Conectar_Checador(id_checador, row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
 
+                            //BANDERA SI BORRO O NO.
                             if (bConn)
                             {
                                 if (Checador.ClearData(id_checador, 5))
                                 {
-                                    MessageBox.Show("Usuarios eliminados con exito. Checador: " + Convert.ToInt32(row.Cells[1].Value));
+                                    sincronizar = true;
                                 }
                                 else
                                 {
-                                    MessageBox.Show("No existen usuarios en el Checador: " + Convert.ToInt32(row.Cells[1].Value));
+                                    sincronizar = false;
                                 }
                             }
                         }
