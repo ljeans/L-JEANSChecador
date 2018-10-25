@@ -511,6 +511,9 @@
 =======
 >>>>>>> 63d17e1c9fcfc98f7ac95846c230dc219445e303
 >>>>>>> 2752941ec2e38ab7df0c30547fddca0959614500
+<<<<<<< HEAD
+>>>>>>> 009004163b7a743c85ae4b296c5c36cc094bbdf8
+=======
 >>>>>>> 009004163b7a743c85ae4b296c5c36cc094bbdf8
             this.dgv_checadorbuscar.TabIndex = 83;
             // 
