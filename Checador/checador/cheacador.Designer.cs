@@ -479,7 +479,12 @@
             this.dgv_checadorbuscar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgv_checadorbuscar.RowsDefaultCellStyle = dataGridViewCellStyle5;
+<<<<<<< HEAD
             this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
+=======
+            this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
             this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
 =======
@@ -505,6 +510,8 @@
 >>>>>>> 63d17e1c9fcfc98f7ac95846c230dc219445e303
 =======
 >>>>>>> 63d17e1c9fcfc98f7ac95846c230dc219445e303
+>>>>>>> 2752941ec2e38ab7df0c30547fddca0959614500
+>>>>>>> 009004163b7a743c85ae4b296c5c36cc094bbdf8
             this.dgv_checadorbuscar.TabIndex = 83;
             // 
             // check

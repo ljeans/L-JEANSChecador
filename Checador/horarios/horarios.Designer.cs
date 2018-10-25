@@ -1402,13 +1402,6 @@
             this.btn_siguiente.Text = "Guardar";
             this.btn_siguiente.UseVisualStyleBackColor = false;
             this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 63d17e1c9fcfc98f7ac95846c230dc219445e303
-=======
->>>>>>> 63d17e1c9fcfc98f7ac95846c230dc219445e303
             // 
             // cbx_domingo
             // 
