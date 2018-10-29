@@ -39,8 +39,16 @@
             this.dtp_fecha2 = new System.Windows.Forms.DateTimePicker();
             this.btn_gnerar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_retardo = new System.Windows.Forms.Button();
+            this.dtp_fecha2_retardo = new System.Windows.Forms.DateTimePicker();
+            this.dtp_fecha1_retardo = new System.Windows.Forms.DateTimePicker();
+            this.cbx_sucursal_retardo = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.crystalReportViewer2 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
@@ -78,7 +86,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(309, 57);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 68);
             this.tabControlBase.Size = new System.Drawing.Size(1020, 670);
             // 
             // tabPage1
@@ -94,6 +102,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.crystalReportViewer2);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Controls.Add(this.btn_retardo);
+            this.tabPage2.Controls.Add(this.dtp_fecha2_retardo);
+            this.tabPage2.Controls.Add(this.dtp_fecha1_retardo);
+            this.tabPage2.Controls.Add(this.cbx_sucursal_retardo);
+            this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Size = new System.Drawing.Size(1012, 644);
             // 
             // tabPage3
@@ -126,7 +141,8 @@
             this.rb_modificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.rb_modificar.Text = "";
+            this.rb_modificar.Text = "Reporte Retardos";
+            this.rb_modificar.CheckedChanged += new System.EventHandler(this.rb_modificar_CheckedChanged);
             // 
             // rb_registrar
             // 
@@ -135,6 +151,7 @@
             this.rb_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.Text = "Reporte por sucursal";
+            this.rb_registrar.CheckedChanged += new System.EventHandler(this.rb_registrar_CheckedChanged);
             // 
             // crystalReportViewer1
             // 
@@ -233,6 +250,89 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Fechas:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(347, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 24);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Fechas:";
+            // 
+            // btn_retardo
+            // 
+            this.btn_retardo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_retardo.FlatAppearance.BorderSize = 0;
+            this.btn_retardo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_retardo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_retardo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_retardo.ForeColor = System.Drawing.Color.White;
+            this.btn_retardo.Location = new System.Drawing.Point(852, 15);
+            this.btn_retardo.Name = "btn_retardo";
+            this.btn_retardo.Size = new System.Drawing.Size(150, 32);
+            this.btn_retardo.TabIndex = 25;
+            this.btn_retardo.Text = "Generar";
+            this.btn_retardo.UseVisualStyleBackColor = false;
+            this.btn_retardo.Click += new System.EventHandler(this.btn_retardo_Click);
+            // 
+            // dtp_fecha2_retardo
+            // 
+            this.dtp_fecha2_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_fecha2_retardo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_fecha2_retardo.Location = new System.Drawing.Point(637, 18);
+            this.dtp_fecha2_retardo.Name = "dtp_fecha2_retardo";
+            this.dtp_fecha2_retardo.Size = new System.Drawing.Size(200, 29);
+            this.dtp_fecha2_retardo.TabIndex = 24;
+            // 
+            // dtp_fecha1_retardo
+            // 
+            this.dtp_fecha1_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_fecha1_retardo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_fecha1_retardo.Location = new System.Drawing.Point(431, 18);
+            this.dtp_fecha1_retardo.Name = "dtp_fecha1_retardo";
+            this.dtp_fecha1_retardo.Size = new System.Drawing.Size(200, 29);
+            this.dtp_fecha1_retardo.TabIndex = 23;
+            // 
+            // cbx_sucursal_retardo
+            // 
+            this.cbx_sucursal_retardo.DataSource = this.sucursalBindingSource;
+            this.cbx_sucursal_retardo.DisplayMember = "nombre";
+            this.cbx_sucursal_retardo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_sucursal_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_sucursal_retardo.FormattingEnabled = true;
+            this.cbx_sucursal_retardo.Location = new System.Drawing.Point(108, 15);
+            this.cbx_sucursal_retardo.Name = "cbx_sucursal_retardo";
+            this.cbx_sucursal_retardo.Size = new System.Drawing.Size(200, 32);
+            this.cbx_sucursal_retardo.TabIndex = 22;
+            this.cbx_sucursal_retardo.ValueMember = "id_sucursal";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(14, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(88, 24);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Sucursal:";
+            // 
+            // crystalReportViewer2
+            // 
+            this.crystalReportViewer2.ActiveViewIndex = -1;
+            this.crystalReportViewer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.crystalReportViewer2.Location = new System.Drawing.Point(3, 51);
+            this.crystalReportViewer2.Name = "crystalReportViewer2";
+            this.crystalReportViewer2.ShowCloseButton = false;
+            this.crystalReportViewer2.ShowParameterPanelButton = false;
+            this.crystalReportViewer2.ShowRefreshButton = false;
+            this.crystalReportViewer2.Size = new System.Drawing.Size(1006, 590);
+            this.crystalReportViewer2.TabIndex = 27;
+            this.crystalReportViewer2.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
             // reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -243,6 +343,8 @@
             this.tabControlBase.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
@@ -265,5 +367,12 @@
         private System.Windows.Forms.DateTimePicker dtp_fecha1;
         private System.Windows.Forms.Button btn_gnerar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_retardo;
+        private System.Windows.Forms.DateTimePicker dtp_fecha2_retardo;
+        private System.Windows.Forms.DateTimePicker dtp_fecha1_retardo;
+        private System.Windows.Forms.ComboBox cbx_sucursal_retardo;
+        private System.Windows.Forms.Label label4;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer2;
     }
 }

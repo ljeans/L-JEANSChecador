@@ -60,7 +60,7 @@ namespace Checador.reportes
             crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
 
             //parametros fechas
-            crParameterDiscreteValue.Value = dtp_fecha1.Value.ToString("yyyy-MM-dd"); ;
+            crParameterDiscreteValue.Value = dtp_fecha1.Value.ToString("yyyy-MM-dd 00:00:00");
             parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
             crParameterFieldDefinition = parameterFieldDefinitions["fecha1"];
             crParameterValue = crParameterFieldDefinition.CurrentValues;
@@ -69,7 +69,7 @@ namespace Checador.reportes
             crParameterValue.Add(crParameterDiscreteValue);
             crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
 
-            crParameterDiscreteValue.Value = dtp_fecha2.Value.ToString("yyyy-MM-dd"); ;
+            crParameterDiscreteValue.Value = dtp_fecha2.Value.ToString("yyyy-MM-dd 23:59:59"); ;
             parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
             crParameterFieldDefinition = parameterFieldDefinitions["fecha2"];
             crParameterValue = crParameterFieldDefinition.CurrentValues;
@@ -80,6 +80,64 @@ namespace Checador.reportes
 
             crystalReportViewer1.ReportSource = crystalrpt;
             crystalReportViewer1.Refresh();
+        }
+
+        private void rb_modificar_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage2;
+        }
+
+        private void btn_retardo_Click(object sender, EventArgs e)
+        {
+            ReportDocument crystalrpt = new ReportDocument();
+            crystalrpt.Load(@"..\\..\\reportes\retardos.rpt");
+
+            ParameterFieldDefinitions parameterFieldDefinitions;
+            ParameterFieldDefinition crParameterFieldDefinition;
+            ParameterValues crParameterValue = new ParameterValues();
+            ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
+
+            //COLOCAR USUARIO Y CONTRASEÑA PARA CRYSTAL REPORTS
+            string username = "sa"; // database user name
+            string password = "123456"; //database password
+            crystalrpt.SetDatabaseLogon(username, password); //here usaer name and password for crystel report
+
+            //parametro
+            crParameterDiscreteValue.Value = cbx_sucursal_retardo.SelectedValue;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["id_sucursal"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            //parametros fechas
+            crParameterDiscreteValue.Value = dtp_fecha1_retardo.Value.ToString("yyyy-MM-dd"); ;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["fecha1"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            crParameterDiscreteValue.Value = dtp_fecha2_retardo.Value.ToString("yyyy-MM-dd"); ;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["fecha2"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            crystalReportViewer2.ReportSource = crystalrpt;
+            crystalReportViewer2.Refresh();
+        }
+
+        private void rb_registrar_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage1;
         }
     }
 }
