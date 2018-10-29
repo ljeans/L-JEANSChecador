@@ -223,9 +223,14 @@ namespace Checador.empleados
             {
                 for (dedo = 0; dedo < 10; dedo++)
                 {
+                    clase_checador.getChecador_Sucursal(sucurzal);
+                    Conectar_Checador();
                     //OBTENER HUELLA
-                    if (Checador.GetUserTmpExStr(id_checador_viejo, id_empleado, dedo, out tFlag, out huella, out tTemplateLength))
+                    if (Checador.GetUserTmpExStr(id_checador_viejo, id_empleado.ToString(), dedo, out tFlag, out huella, out tTemplateLength))
                     {
+                        clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
+                        Conectar_Checador();
+
                         //CREAR USUARIO EN EL NUEVO CHECADOR
                         if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
                         {

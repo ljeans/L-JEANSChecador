@@ -389,7 +389,7 @@ namespace Checador
                         {
                             con.Close();
                             //GUARDAR NUEVO EVENTO CON PURA SALIDA
-                            string consulta = "INSERT INTO registros VALUES (@id_checador,@id_empleado,@id_sucursal,@fecha_entrada, @fecha_salida, @horas_trabajadas)";
+                            string consulta = "INSERT INTO registros VALUES (@id_checador,@id_empleado,@id_sucursal,@fecha_entrada, @fecha_salida, @horas_trabajadas, @retardos,@total_min_retardo)";
                             Conexion con2 = new Conexion();
                             SqlConnection conexion2 = new SqlConnection(con2.cadenaConexion);
                             conexion2.Open();
@@ -400,6 +400,8 @@ namespace Checador
                             comand.Parameters.AddWithValue("@fecha_entrada", DBNull.Value);
                             comand.Parameters.AddWithValue("@fecha_salida", fecha_evento);
                             comand.Parameters.AddWithValue("@horas_trabajadas", 0);
+                            comand.Parameters.AddWithValue("@retardos", DBNull.Value);
+                            comand.Parameters.AddWithValue("@total_min_retardo", DBNull.Value);
                             comand.ExecuteNonQuery();
                             conexion2.Close();
                         }
@@ -439,7 +441,11 @@ namespace Checador
                                 if (hora_entrada_descanso != new TimeSpan (00,00,00))
                                 {
                                     //ENTRADA DESCANSO
-                                    if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada_descanso))
+                                    if (hr_entrada > hora_salida)
+                                    {
+                                        horas_trabajadas = 0;
+                                    }
+                                    else if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada_descanso))
                                     {
                                         horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
                                     }
@@ -459,7 +465,11 @@ namespace Checador
                                 else
                                 {
                                     //ENTRADA DE TURNO
-                                    if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada))
+                                    if (hr_entrada > hora_salida_descanso && hora_salida_descanso != new TimeSpan(00, 00, 00))
+                                    {
+                                        horas_trabajadas = 0;
+                                    }
+                                    else if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada))
                                     {
                                         horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
                                     }
@@ -499,6 +509,211 @@ namespace Checador
                         }
                     }
                 }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        //FUNCION PARA REGISTRAR UN CHEQUEO EN LA BD POR SI SE LE OLVIDO CHECAR
+        public void RegistrarChequeo(int id_checador, int id_empleado, int id_sucursal, DateTime fecha_evento, DateTime fecha_referencia, TimeSpan hora_entrada, TimeSpan hora_salida, TimeSpan hora_entrada_descanso, TimeSpan hora_salida_descanso, int tolerancia, int tipo_evento, string horario)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                SqlConnection con = new SqlConnection(conexion.cadenaConexion);
+                DateTime? fecha_entrada = fecha_referencia, fecha_salida = fecha_evento;
+                double minutos_retardo, minutos_retardo2;
+                int retardo = 1;
+
+                TimeSpan fecha_event = new TimeSpan(fecha_evento.Hour, fecha_evento.Minute, fecha_evento.Second);
+
+                TimeSpan fecha_retardo = TimeSpan.FromMinutes(hora_entrada.TotalMinutes + Convert.ToDouble(tolerancia));
+
+                TimeSpan fecha_retardo2 = TimeSpan.FromMinutes(hora_entrada_descanso.TotalMinutes + Convert.ToDouble(tolerancia));
+
+                //ENTRADA
+                if (tipo_evento == 0)
+                {                    
+                    fecha_entrada = fecha_evento;
+                    fecha_salida = fecha_referencia;
+                    //GUARDAR RETARDO
+                    if (fecha_event.TotalMinutes > fecha_retardo2.TotalMinutes && hora_entrada_descanso != new TimeSpan(00, 00, 00))
+                    {
+                        minutos_retardo2 = Math.Abs(fecha_event.TotalMinutes - fecha_retardo2.TotalMinutes);
+
+                        //ACTUALIZAR ENTRADA DEL EVENTO
+                        string consulta = "UPDATE registros SET fecha_entrada = @fecha_evento, retardos = @retardos, total_min_retardo = @total_min_retardo WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_salida=@fecha_salida";
+                        con.Open();
+                        SqlCommand comand = new SqlCommand(consulta, con);
+                        comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                        comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+                        comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                        comand.Parameters.AddWithValue("@fecha_entrada", fecha_evento);
+                        comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
+                        comand.Parameters.AddWithValue("@retardos", retardo);
+                        comand.Parameters.AddWithValue("@total_min_retardo", minutos_retardo2);
+                        comand.Parameters.AddWithValue("@fecha_salida", fecha_referencia);
+                        comand.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    else if (fecha_event.TotalMinutes > fecha_retardo.TotalMinutes && fecha_event.TotalMinutes < hora_salida_descanso.TotalMinutes)
+                    {
+                        minutos_retardo = fecha_event.TotalMinutes - fecha_retardo.TotalMinutes;
+
+                        //ACTUALIZAR ENTRADA DEL EVENTO
+                        string consulta = "UPDATE registros SET fecha_entrada = @fecha_evento, retardos = @retardos, total_min_retardo = @total_min_retardo WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_salida=@fecha_salida";
+                        con.Open();
+                        SqlCommand comand = new SqlCommand(consulta, con);
+                        comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                        comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+                        comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                        comand.Parameters.AddWithValue("@fecha_entrada", fecha_evento);
+                        comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
+                        comand.Parameters.AddWithValue("@retardos", retardo);
+                        comand.Parameters.AddWithValue("@total_min_retardo", minutos_retardo);
+                        comand.Parameters.AddWithValue("@fecha_salida", fecha_referencia);
+                        comand.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    else
+                    {
+                        //ACTUALIZAR ENTRADA DEL EVENTO
+                        string consulta = "UPDATE registros SET fecha_entrada = @fecha_evento, retardos = @retardos, total_min_retardo = @total_min_retardo WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_salida=@fecha_salida";
+                        con.Open();
+                        SqlCommand comand = new SqlCommand(consulta, con);
+                        comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                        comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+                        comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                        comand.Parameters.AddWithValue("@fecha_entrada", fecha_evento);
+                        comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
+                        comand.Parameters.AddWithValue("@retardos", DBNull.Value);
+                        comand.Parameters.AddWithValue("@total_min_retardo", DBNull.Value);
+                        comand.Parameters.AddWithValue("@fecha_salida", fecha_referencia);
+                        comand.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+                //SALIDA
+                else if (tipo_evento == 1)
+                {
+                    fecha_entrada = fecha_referencia;
+                    fecha_salida = fecha_evento;
+                    //HACER UPDATE PARA INSERTAR LA FECHA DE SALIDA
+                    string consulta = "UPDATE registros SET fecha_salida = @fecha_evento WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_entrada=@fecha_entrada";
+                    Conexion con2 = new Conexion();
+                    SqlConnection conexion2 = new SqlConnection(con2.cadenaConexion);
+                    conexion2.Open();
+                    SqlCommand comand = new SqlCommand(consulta, conexion2);
+                    comand.Parameters.AddWithValue("@fecha_evento", fecha_evento);
+                    comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                    comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+                    comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                    comand.ExecuteNonQuery();
+                    conexion2.Close();
+                }
+
+                //OBTENER HORAS TRABAJADAS
+                TimeSpan hr_entrada = new TimeSpan(fecha_entrada.Value.Hour, fecha_entrada.Value.Minute - tolerancia, fecha_entrada.Value.Second);
+                TimeSpan hr_salida = new TimeSpan(fecha_salida.Value.Hour, fecha_salida.Value.Minute + tolerancia, fecha_salida.Value.Second);
+                int horas_trabajadas = 0;
+
+                //VALIDACION PARA SABER COMO SE CALCULAN LAS HORAS TRABAJADAS
+                if (Math.Abs(hr_salida.TotalMinutes - hora_salida.TotalMinutes) > Math.Abs(hr_salida.TotalMinutes - hora_salida_descanso.TotalMinutes))
+                {
+                    //SALIDA DE DESCANSO
+                    //VALIDAR LOS MINUTOS ANTES DE LA ENTADA Y DESPUES DE LA HORA DE SALIDA DEL HORARIO
+                    if ((hr_salida <= hora_salida_descanso) && (hr_entrada >= hora_entrada))
+                    {
+                        horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                    }
+                    else if ((hr_salida > hora_salida_descanso) && (hr_entrada >= hora_entrada))
+                    {
+                        horas_trabajadas = Convert.ToInt32(hora_salida_descanso.TotalMinutes - hr_entrada.TotalMinutes);
+                    }
+                    else if ((hr_salida <= hora_salida_descanso) && (hr_entrada < hora_entrada))
+                    {
+                        horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hora_entrada.TotalMinutes);
+                    }
+                    else if ((hr_salida > hora_salida_descanso) && (hr_entrada < hora_entrada))
+                    {
+                        horas_trabajadas = Convert.ToInt32(hora_salida_descanso.TotalMinutes - hora_entrada.TotalMinutes);
+                    }
+
+                }
+                else if (Math.Abs(hr_salida.TotalMinutes - hora_salida.TotalMinutes) < Math.Abs(hr_salida.TotalMinutes - hora_salida_descanso.TotalMinutes))
+                {
+                    //SALIDA DE TURNO
+                    if (hora_entrada_descanso != new TimeSpan(00, 00, 00))
+                    {
+                        //ENTRADA DESCANSO
+                        if (hr_entrada > hora_salida)
+                        {
+                            horas_trabajadas = 0;
+                        }
+                        else if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada_descanso))
+                        {
+                            horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                        }
+                        else if ((hr_salida > hora_salida) && (hr_entrada >= hora_entrada_descanso))
+                        {
+                            horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                        }
+                        else if ((hr_salida <= hora_salida) && (hr_entrada < hora_entrada_descanso))
+                        {
+                            horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hora_entrada_descanso.TotalMinutes);
+                        }
+                        else if ((hr_salida > hora_salida) && (hr_entrada < hora_entrada_descanso))
+                        {
+                            horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hora_entrada_descanso.TotalMinutes);
+                        }
+                    }
+                    else
+                    {
+                        //ENTRADA DE TURNO
+                        if (hr_entrada > hora_salida_descanso && hora_salida_descanso != new TimeSpan(00, 00, 00))
+                        {
+                            horas_trabajadas = 0;
+                        }
+                        else if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada))
+                        {
+                            horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                        }
+                        else if ((hr_salida > hora_salida) && (hr_entrada >= hora_entrada))
+                        {
+                            horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                        }
+                        else if ((hr_salida <= hora_salida) && (hr_entrada < hora_entrada))
+                        {
+                            horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hora_entrada.TotalMinutes);
+                        }
+                        else if ((hr_salida > hora_salida) && (hr_entrada < hora_entrada))
+                        {
+                            horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hora_entrada.TotalMinutes);
+                        }
+                    }
+                }
+
+                //AGREGAR HORAS TABAJADAS AL REGISTRO
+                //HACER UPDATE PARA INSERTAR LA FECHA DE SALIDA
+                string consulta3 = "UPDATE registros SET horas_trabajadas=@horas_trabajadas WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_entrada=@fecha_entrada and fecha_salida= @fecha_salida";
+                Conexion con3 = new Conexion();
+                SqlConnection conexion3 = new SqlConnection(con3.cadenaConexion);
+                conexion3.Open();
+                SqlCommand comando = new SqlCommand(consulta3, conexion3);
+                comando.Parameters.AddWithValue("@fecha_evento", fecha_evento);
+                comando.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                comando.Parameters.AddWithValue("@id_empleado", id_empleado);
+                comando.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                comando.Parameters.AddWithValue("@horas_trabajadas", horas_trabajadas);
+                comando.Parameters.AddWithValue("@fecha_entrada", fecha_entrada);
+                comando.Parameters.AddWithValue("@fecha_salida", fecha_salida);
+                comando.ExecuteNonQuery();
+                conexion3.Close();
+
+                MessageBox.Show("Chequeo registrado con éxito");
 
             }
             catch (Exception ex)

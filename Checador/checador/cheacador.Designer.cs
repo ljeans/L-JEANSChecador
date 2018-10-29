@@ -480,43 +480,6 @@
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             this.dgv_checadorbuscar.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
-<<<<<<< HEAD
-=======
-=======
-            this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-            this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 63d17e1c9fcfc98f7ac95846c230dc219445e303
-<<<<<<< HEAD
-<<<<<<< HEAD
-            this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
-=======
-=======
->>>>>>> 4c12cd6c7d6dc5021b7708f2376190963be70cd6
-
-            this.dgv_checadorbuscar.Size = new System.Drawing.Size(866, 360);
-
->>>>>>> b37560a353a367baded37661705ed13f7aaf5812
-<<<<<<< HEAD
->>>>>>> 4c12cd6c7d6dc5021b7708f2376190963be70cd6
-=======
->>>>>>> 4c12cd6c7d6dc5021b7708f2376190963be70cd6
-<<<<<<< HEAD
->>>>>>> 63d17e1c9fcfc98f7ac95846c230dc219445e303
-=======
->>>>>>> 63d17e1c9fcfc98f7ac95846c230dc219445e303
->>>>>>> 2752941ec2e38ab7df0c30547fddca0959614500
-<<<<<<< HEAD
->>>>>>> 009004163b7a743c85ae4b296c5c36cc094bbdf8
-=======
->>>>>>> 009004163b7a743c85ae4b296c5c36cc094bbdf8
->>>>>>> 1d5071484a91db798a0adbbd42e9d313919349e8
             this.dgv_checadorbuscar.TabIndex = 83;
             // 
             // check
