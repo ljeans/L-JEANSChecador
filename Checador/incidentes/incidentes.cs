@@ -62,6 +62,76 @@ namespace Checador.incidentes
                 vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*'";
             }
         }
-//////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////
+
+        //FUNCION PARA RECALCULAS LAS HORAS TRABAJADAS Y LOS RETARDOS
+        private void btn_recalcular_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ClaseChecador Clase_Checador = new ClaseChecador();
+                ClaseSucursal Sucursal = new ClaseSucursal();
+                ClaseHorario Horario = new ClaseHorario();
+                ClaseAsignar_Horario AsignarHorario = new ClaseAsignar_Horario();
+
+                var row = dgv_empleados_recalcular.CurrentRow;
+                DateTime fecha_inicio = new DateTime(dtp_fechaInicial.Value.Year, dtp_fechaInicial.Value.Month, dtp_fechaInicial.Value.Day);
+                DateTime fecha_final = new DateTime(dtp_fechaFinal.Value.Year, dtp_fechaFinal.Value.Month, dtp_fechaFinal.Value.Day);
+
+                for (DateTime fecha_evento= fecha_inicio; fecha_evento <= fecha_final; fecha_evento = fecha_evento.AddDays(1))
+                {
+                    // OBTENER EL ID DE LA SUCURSAL
+                    Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
+
+                    //OBTENER ID CHECADOR
+                    Clase_Checador.obtenerIdChecador(Sucursal.id);
+
+                    //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
+                    AsignarHorario.verificar_existencia(Convert.ToInt32(row.Cells[0].Value.ToString())); //SE MANDA EL ID DEL EMPLEADO COMO PARAMETRO
+                    DateTime dia = new DateTime(fecha_evento.Year, fecha_evento.Month, fecha_evento.Day);
+
+                    if (dia.DayOfWeek.ToString() == "Monday")
+                    {
+                        Horario.verificar_existencia(AsignarHorario.lunes);
+                    }
+                    else if (dia.DayOfWeek.ToString() == "Tuesday")
+                    {
+                        Horario.verificar_existencia(AsignarHorario.martes);
+                    }
+                    else if (dia.DayOfWeek.ToString() == "Wednesday")
+                    {
+                        Horario.verificar_existencia(AsignarHorario.miercoles);
+                    }
+                    else if (dia.DayOfWeek.ToString() == "Thursday")
+                    {
+                        Horario.verificar_existencia(AsignarHorario.jueves);
+                    }
+                    else if (dia.DayOfWeek.ToString() == "Friday")
+                    {
+                        Horario.verificar_existencia(AsignarHorario.viernes);
+                    }
+                    else if (dia.DayOfWeek.ToString() == "Saturday")
+                    {
+                        Horario.verificar_existencia(AsignarHorario.sabado);
+                    }
+                    else if (dia.DayOfWeek.ToString() == "Sunday")
+                    {
+                        Horario.verificar_existencia(AsignarHorario.domingo);
+                    }
+
+                    Clase_Checador.Recalcular_HorasTrabajadas(Clase_Checador.id, Convert.ToInt32(row.Cells[0].Value), Sucursal.id, fecha_evento, Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, Horario.horario);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        
+
+
+
     }
 }
