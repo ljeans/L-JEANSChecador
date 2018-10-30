@@ -62,6 +62,28 @@ namespace Checador.incidentes
                 vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*'";
             }
         }
-//////////////////////////////////////////////////////////////////////
+
+        private void rb_modificar_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage2;
+
+        }
+
+        private void rb_registrar_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage1;
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_buscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        //////////////////////////////////////////////////////////////////////
     }
 }

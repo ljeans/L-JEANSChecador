@@ -29,6 +29,8 @@ namespace Checador.reportes
 
         private void reporte_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Empleados' Puede moverla o quitarla según sea necesario.
+            this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
             // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.sucursal' Puede moverla o quitarla según sea necesario.
             this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
 
@@ -138,6 +140,54 @@ namespace Checador.reportes
         private void rb_registrar_CheckedChanged(object sender, EventArgs e)
         {
             tabControlBase.SelectedTab = tabPage1;
+        }
+
+        private void btn_asistencia_Click(object sender, EventArgs e)
+        {
+            ReportDocument crystalrpt = new ReportDocument();
+            crystalrpt.Load(@"..\\..\\reportes\asistenciaxempleados.rpt");
+
+            ParameterFieldDefinitions parameterFieldDefinitions;
+            ParameterFieldDefinition crParameterFieldDefinition;
+            ParameterValues crParameterValue = new ParameterValues();
+            ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
+
+            //COLOCAR USUARIO Y CONTRASEÑA PARA CRYSTAL REPORTS
+            string username = "sa"; // database user name
+            string password = "123456"; //database password
+            crystalrpt.SetDatabaseLogon(username, password); //here usaer name and password for crystel report
+
+            //parametro
+            crParameterDiscreteValue.Value = cbx_empleado.SelectedValue;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["id_empleado"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            //parametros fechas
+            crParameterDiscreteValue.Value = dtp_asistencia1.Value.ToString("yyyy-MM-dd"); ;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["fecha1"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            crParameterDiscreteValue.Value = dtp_asistencia2.Value.ToString("yyyy-MM-dd"); ;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["fecha2"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            crystalReportViewer3.ReportSource = crystalrpt;
+            crystalReportViewer3.Refresh();
         }
     }
 }
