@@ -39,6 +39,31 @@ namespace Checador
 
         }
 
+        //obtienes el Id Checador por Sucursal
+        public void obtenerIdChecador(int id_sucursal)
+        {
+            string consulta = "Select id_checador From checador where id_sucursal=@id_sucursal";
+            Conexion con = new Conexion();
+            SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+            SqlCommand comand = new SqlCommand(consulta, conexion);
+            comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+            conexion.Open();
+            SqlDataReader lector = comand.ExecuteReader();//Ejecuta el comadno
+            if (lector.HasRows)//Revisa si hay resultados
+            {
+                lector.Read();//Lee una linea de los resultados
+                              //this.id = ;//Asignacion a atributos
+                              //get ordinal regresa el indice de la fila
+                              //el Nombre especificado en el parametro 
+                id = lector.GetInt32(lector.GetOrdinal("id_checador"));
+                conexion.Close();
+            }
+            else
+            {
+                conexion.Close();
+            }
+        }
+
 
         //FUNCION PARA REGISTRAR UN DISPOSITIVO CHECADOR
         public void guardarChecador()
@@ -510,6 +535,194 @@ namespace Checador
                     }
                 }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        //FUNCION PARA RECALCULAR HORAS TRABAJADAS Y RETARDOS
+        public void Recalcular_HorasTrabajadas(int id_checador, int id_empleado, int id_sucursal, DateTime fecha_evento, TimeSpan hora_entrada, TimeSpan hora_salida, TimeSpan hora_entrada_descanso, TimeSpan hora_salida_descanso, int tolerancia, string horario)
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                SqlConnection con = new SqlConnection(conexion.cadenaConexion);
+
+                DateTime fecha_salida, fecha_entrada;
+
+                string select = "SELECT * FROM registros WHERE id_checador =@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_entrada > '" + fecha_evento.Year + "-" + fecha_evento.Month.ToString("d2") + "-" + fecha_evento.Day.ToString("d2") + "T00:00:00.000' and fecha_entrada < '" + fecha_evento.Year + "-" + fecha_evento.Month.ToString("d2") + "-" + fecha_evento.Day.ToString("d2") + "T23:59:59.000' and fecha_salida > '" + fecha_evento.Year + "-" + fecha_evento.Month.ToString("d2") + "-" + fecha_evento.Day.ToString("d2") + "T00:00:00.000' and fecha_salida < '" + fecha_evento.Year + "-" + fecha_evento.Month.ToString("d2") + "-" + fecha_evento.Day.ToString("d2") + "T23:59:59.000';";//Consulta
+                SqlCommand comando = new SqlCommand(select, con);//Nuevo objeto sqlcommand
+                comando.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                comando.Parameters.AddWithValue("@id_empleado", id_empleado);
+                comando.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                con.Open();//abre la conexion
+                SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
+                if (lector.HasRows)//Revisa si hay resultados
+                {
+                    //OBTENER LOS CHEQUEOS DEL RANGO DE FECHAS 
+                    while (lector.Read())
+                    {
+                        fecha_entrada = lector.GetDateTime(lector.GetOrdinal("fecha_entrada"));
+                        fecha_salida = lector.GetDateTime(lector.GetOrdinal("fecha_salida"));
+
+                        //RECALCULAR LOS RETRDOS
+                        TimeSpan fecha_event = new TimeSpan(fecha_entrada.Hour, fecha_entrada.Minute, fecha_entrada.Second);
+                        TimeSpan fecha_retardo = TimeSpan.FromMinutes(hora_entrada.TotalMinutes + Convert.ToDouble(tolerancia));
+                        TimeSpan fecha_retardo2 = TimeSpan.FromMinutes(hora_entrada_descanso.TotalMinutes + Convert.ToDouble(tolerancia));
+                        double minutos_retardo, minutos_retardo2;
+                        int retardo = 1;
+
+                        //RECALCULAR LAS HORAS TRABAJADAS
+                        TimeSpan hr_entrada = new TimeSpan(fecha_entrada.Hour, fecha_entrada.Minute - tolerancia, fecha_entrada.Second);
+                        TimeSpan hr_salida = new TimeSpan(fecha_salida.Hour, fecha_salida.Minute + tolerancia, fecha_salida.Second);
+                        int horas_trabajadas = 0;
+
+                        //VALIDACION PARA SABER COMO SE CALCULAN LAS HORAS TRABAJADAS
+                        if (Math.Abs(hr_salida.TotalMinutes - hora_salida.TotalMinutes) > Math.Abs(hr_salida.TotalMinutes - hora_salida_descanso.TotalMinutes))
+                        {
+                            //SALIDA DE DESCANSO
+                            //VALIDAR LOS MINUTOS ANTES DE LA ENTADA Y DESPUES DE LA HORA DE SALIDA DEL HORARIO
+                            if ((hr_salida <= hora_salida_descanso) && (hr_entrada >= hora_entrada))
+                            {
+                                horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                            }
+                            else if ((hr_salida > hora_salida_descanso) && (hr_entrada >= hora_entrada))
+                            {
+                                horas_trabajadas = Convert.ToInt32(hora_salida_descanso.TotalMinutes - hr_entrada.TotalMinutes);
+                            }
+                            else if ((hr_salida <= hora_salida_descanso) && (hr_entrada < hora_entrada))
+                            {
+                                horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hora_entrada.TotalMinutes);
+                            }
+                            else if ((hr_salida > hora_salida_descanso) && (hr_entrada < hora_entrada))
+                            {
+                                horas_trabajadas = Convert.ToInt32(hora_salida_descanso.TotalMinutes - hora_entrada.TotalMinutes);
+                            }
+
+                        }
+                        else if (Math.Abs(hr_salida.TotalMinutes - hora_salida.TotalMinutes) < Math.Abs(hr_salida.TotalMinutes - hora_salida_descanso.TotalMinutes))
+                        {
+                            //SALIDA DE TURNO
+                            if (hora_entrada_descanso != new TimeSpan(00, 00, 00))
+                            {
+                                //ENTRADA DESCANSO
+                                if (hr_entrada > hora_salida)
+                                {
+                                    horas_trabajadas = 0;
+                                }
+                                else if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada_descanso))
+                                {
+                                    horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                                }
+                                else if ((hr_salida > hora_salida) && (hr_entrada >= hora_entrada_descanso))
+                                {
+                                    horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                                }
+                                else if ((hr_salida <= hora_salida) && (hr_entrada < hora_entrada_descanso))
+                                {
+                                    horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hora_entrada_descanso.TotalMinutes);
+                                }
+                                else if ((hr_salida > hora_salida) && (hr_entrada < hora_entrada_descanso))
+                                {
+                                    horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hora_entrada_descanso.TotalMinutes);
+                                }
+                            }
+                            else
+                            {
+                                //ENTRADA DE TURNO
+                                if (hr_entrada > hora_salida_descanso && hora_salida_descanso != new TimeSpan(00, 00, 00))
+                                {
+                                    horas_trabajadas = 0;
+                                }
+                                else if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada))
+                                {
+                                    horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                                }
+                                else if ((hr_salida > hora_salida) && (hr_entrada >= hora_entrada))
+                                {
+                                    horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                                }
+                                else if ((hr_salida <= hora_salida) && (hr_entrada < hora_entrada))
+                                {
+                                    horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hora_entrada.TotalMinutes);
+                                }
+                                else if ((hr_salida > hora_salida) && (hr_entrada < hora_entrada))
+                                {
+                                    horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hora_entrada.TotalMinutes);
+                                }
+                            }
+                        }
+
+                        //GUARDAR RETARDO
+                        if (fecha_event.TotalMinutes > fecha_retardo2.TotalMinutes && hora_entrada_descanso != new TimeSpan(00, 00, 00))
+                        {
+                            minutos_retardo2 = Math.Abs(fecha_event.TotalMinutes - fecha_retardo2.TotalMinutes);
+
+                            //HACER UPDATE PARA INSERTAR LOS RETARDOS Y LAS HORAS TRABAJADAS RECALCULADAS
+                            string consulta = "UPDATE registros SET horas_trabajadas = @horas_trabajadas, retardos = @retardos, total_min_retardo=@total_min_retardo WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_entrada = @fecha_entrada and fecha_salida = @fecha_salida ; ";
+                            Conexion con2 = new Conexion();
+                            SqlConnection conexion2 = new SqlConnection(con2.cadenaConexion);
+                            conexion2.Open();
+                            SqlCommand comand = new SqlCommand(consulta, conexion2);
+                            comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                            comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+                            comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                            comand.Parameters.AddWithValue("@horas_trabajadas", horas_trabajadas);
+                            comand.Parameters.AddWithValue("@retardos", retardo);
+                            comand.Parameters.AddWithValue("@total_min_retardo", minutos_retardo2);
+                            comand.Parameters.AddWithValue("@fecha_entrada", fecha_entrada);
+                            comand.Parameters.AddWithValue("@fecha_salida", fecha_salida);
+                            comand.ExecuteNonQuery();
+                            conexion2.Close();
+                        }
+                        else if (fecha_event.TotalMinutes > fecha_retardo.TotalMinutes && fecha_event.TotalMinutes < hora_salida_descanso.TotalMinutes)
+                        {
+                            minutos_retardo = fecha_event.TotalMinutes - fecha_retardo.TotalMinutes;
+
+                            //HACER UPDATE PARA INSERTAR LOS RETARDOS Y LAS HORAS TRABAJADAS RECALCULADAS
+                            string consulta = "UPDATE registros SET horas_trabajadas = @horas_trabajadas, retardos = @retardos, total_min_retardo=@total_min_retardo WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_entrada = @fecha_entrada and fecha_salida = @fecha_salida ; ";
+                            Conexion con2 = new Conexion();
+                            SqlConnection conexion2 = new SqlConnection(con2.cadenaConexion);
+                            conexion2.Open();
+                            SqlCommand comand = new SqlCommand(consulta, conexion2);
+                            comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                            comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+                            comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                            comand.Parameters.AddWithValue("@horas_trabajadas", horas_trabajadas);
+                            comand.Parameters.AddWithValue("@retardos", retardo);
+                            comand.Parameters.AddWithValue("@total_min_retardo", minutos_retardo);
+                            comand.Parameters.AddWithValue("@fecha_entrada", fecha_entrada);
+                            comand.Parameters.AddWithValue("@fecha_salida", fecha_salida);
+                            comand.ExecuteNonQuery();
+                            conexion2.Close();
+                        }
+                        else
+                        {
+                            //POR SI NO HAY RETARTOS
+
+                            //HACER UPDATE PARA INSERTAR LOS RETARDOS Y LAS HORAS TRABAJADAS RECALCULADAS
+                            string consulta = "UPDATE registros SET horas_trabajadas = @horas_trabajadas, retardos = @retardos, total_min_retardo=@total_min_retardo WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_entrada = @fecha_entrada and fecha_salida = @fecha_salida ; ";
+                            Conexion con2 = new Conexion();
+                            SqlConnection conexion2 = new SqlConnection(con2.cadenaConexion);
+                            conexion2.Open();
+                            SqlCommand comand = new SqlCommand(consulta, conexion2);
+                            comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                            comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+                            comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                            comand.Parameters.AddWithValue("@horas_trabajadas", horas_trabajadas);
+                            comand.Parameters.AddWithValue("@retardos", DBNull.Value);
+                            comand.Parameters.AddWithValue("@total_min_retardo", DBNull.Value);
+                            comand.Parameters.AddWithValue("@fecha_entrada", fecha_entrada);
+                            comand.Parameters.AddWithValue("@fecha_salida", fecha_salida);
+                            comand.ExecuteNonQuery();
+                            conexion2.Close();
+                        }
+                    }
+                    con.Close();                    
+                }
+                MessageBox.Show("Horas recalculadas con éxito!");
             }
             catch (Exception ex)
             {
