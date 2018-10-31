@@ -189,5 +189,53 @@ namespace Checador.reportes
             crystalReportViewer3.ReportSource = crystalrpt;
             crystalReportViewer3.Refresh();
         }
+
+        private void btn_empleado_retardo_Click(object sender, EventArgs e)
+        {
+            ReportDocument crystalrpt = new ReportDocument();
+            crystalrpt.Load(@"..\\..\\reportes\retardoempleados.rpt");
+
+            ParameterFieldDefinitions parameterFieldDefinitions;
+            ParameterFieldDefinition crParameterFieldDefinition;
+            ParameterValues crParameterValue = new ParameterValues();
+            ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
+
+            //COLOCAR USUARIO Y CONTRASEÑA PARA CRYSTAL REPORTS
+            string username = "sa"; // database user name
+            string password = "123456"; //database password
+            crystalrpt.SetDatabaseLogon(username, password); //here usaer name and password for crystel report
+
+            //parametro
+            crParameterDiscreteValue.Value = cbx_empleado_retardo.SelectedValue;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["id_empleado"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            //parametros fechas
+            crParameterDiscreteValue.Value = dtp_empleado_retardo1.Value.ToString("yyyy-MM-dd"); ;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["fecha1"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            crParameterDiscreteValue.Value = dtp_empleado_retardo2.Value.ToString("yyyy-MM-dd"); ;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["fecha2"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            crystalReportViewer4.ReportSource = crystalrpt;
+            crystalReportViewer4.Refresh();
+        }
     }
 }

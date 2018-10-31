@@ -238,37 +238,50 @@ namespace Checador
         //CARGAR DATOS AL FORMULARIO
         private void btn_mod_Click(object sender, EventArgs e)
         {
-            txt_id.Enabled = false;
-            Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
-            if (Sucursal.verificar_existencia(Sucursal.id))
+            try
             {
-                tabControlBase.SelectedTab = tabPage1;
-                txt_id.Text = Sucursal.id.ToString();
-                txt_nombre.Text = Sucursal.nombre;
-                txt_domicilio_calle.Text = Sucursal.calle;
-                txt_domicilio_num_ext.Text = Sucursal.num_ext;
-                txt_domicilio_num_int.Text = Sucursal.num_int;
-                txt_domicilio_colonia.Text = Sucursal.colonia;
-                txt_domicilio_cp.Text = Sucursal.codigo_postal;
-                txt_domicilio_pob.Text = Sucursal.poblacion;
-                txt_domicilio_municipio.Text = Sucursal.municipio;
-                txt_domicilio_estado.Text = Sucursal.estado;
-                txt_domicilio_pais.Text = Sucursal.pais;
-                txt_telefono.Text = Sucursal.telefono;
+                txt_id.Enabled = false;
+                Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
+                if (Sucursal.verificar_existencia(Sucursal.id))
+                {
+                    tabControlBase.SelectedTab = tabPage1;
+                    txt_id.Text = Sucursal.id.ToString();
+                    txt_nombre.Text = Sucursal.nombre;
+                    txt_domicilio_calle.Text = Sucursal.calle;
+                    txt_domicilio_num_ext.Text = Sucursal.num_ext;
+                    txt_domicilio_num_int.Text = Sucursal.num_int;
+                    txt_domicilio_colonia.Text = Sucursal.colonia;
+                    txt_domicilio_cp.Text = Sucursal.codigo_postal;
+                    txt_domicilio_pob.Text = Sucursal.poblacion;
+                    txt_domicilio_municipio.Text = Sucursal.municipio;
+                    txt_domicilio_estado.Text = Sucursal.estado;
+                    txt_domicilio_pais.Text = Sucursal.pais;
+                    txt_telefono.Text = Sucursal.telefono;
 
-                if (Sucursal.estatus.ToString() == "A")
-                {
-                    rb_mod_activo.Checked = true;
+                    if (Sucursal.estatus.ToString() == "A")
+                    {
+                        rb_mod_activo.Checked = true;
+                    }
+                    else if (Sucursal.estatus.ToString() == "I")
+                    {
+                        rb_mod_inactivo.Checked = true;
+                    }
                 }
-                else if (Sucursal.estatus.ToString() == "I")
+                else
                 {
-                    rb_mod_inactivo.Checked = true;
+                    MessageBox.Show("Sucursal no registrada. Por favor intente de nuevo.");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Sucursal no registrada. Por favor intente de nuevo.");
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "No ha ingresado el identificador.";
+                mensaje.FormClosed += new FormClosedEventHandler(responder);
+                mensaje.Show();
+                Enabled = false;
+
             }
+            
 
         }
 
@@ -311,7 +324,17 @@ namespace Checador
                 vistaSucursalBindingSource.Filter = "CONVERT([id_sucursal], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre] LIKE '*" + txt_nombrebuscar.Text + "*'";
             }
         }
-//////////////////////////////////////////////////////////////////
+
+        private void btn_b_modificar_Click(object sender, EventArgs e)
+        {
+            rb_modificar.Checked = true;
+            var row = dgv_sucursal.CurrentRow;
+            Sucursal.id= Convert.ToInt32(row.Cells[0].Value);
+            txt_id_mod.Text = Convert.ToString(Sucursal.id);
+            tabControlBase.SelectedTab = tabPage3;
+            btn_ir_modificar.PerformClick();
+        }
+        //////////////////////////////////////////////////////////////////
 
     }
 }

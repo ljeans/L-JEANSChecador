@@ -823,6 +823,7 @@
             this.btn_b_modificar.TabIndex = 84;
             this.btn_b_modificar.Text = "Modificar";
             this.btn_b_modificar.UseVisualStyleBackColor = false;
+            this.btn_b_modificar.Click += new System.EventHandler(this.btn_b_modificar_Click);
             // 
             // sucursales
             // 

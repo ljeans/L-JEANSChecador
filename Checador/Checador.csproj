@@ -136,6 +136,12 @@
     <Compile Include="reportes\reporte.Designer.cs">
       <DependentUpon>reporte.cs</DependentUpon>
     </Compile>
+    <Compile Include="reportes\retardoempleados.cs">
+      <DependentUpon>retardoempleados.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="reportes\retardos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -204,6 +210,10 @@
     </Compile>
     <EmbeddedResource Include="reportes\reporte.resx">
       <DependentUpon>reporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\retardoempleados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>retardoempleados.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="reportes\retardos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

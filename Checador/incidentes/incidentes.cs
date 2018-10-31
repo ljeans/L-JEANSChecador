@@ -62,7 +62,6 @@ namespace Checador.incidentes
                 vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*'";
             }
         }
-<<<<<<< HEAD
 
         private void rb_modificar_CheckedChanged(object sender, EventArgs e)
         {
@@ -85,8 +84,6 @@ namespace Checador.incidentes
         {
 
         }
-        //////////////////////////////////////////////////////////////////////
-=======
         //////////////////////////////////////////////////////////////////////
 
         //FUNCION PARA RECALCULAS LAS HORAS TRABAJADAS Y LOS RETARDOS
@@ -154,10 +151,5 @@ namespace Checador.incidentes
                 MessageBox.Show(ex.ToString());
             }
         }
-        
-
-
-
->>>>>>> 138bc1ea1dc8f8f5a9f67852bd6d00a48864b536
     }
 }

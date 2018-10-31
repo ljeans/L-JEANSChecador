@@ -33,15 +33,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-=======
             this.dgv_empleados_recalcular = new System.Windows.Forms.DataGridView();
->>>>>>> 138bc1ea1dc8f8f5a9f67852bd6d00a48864b536
             this.idempleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombrecompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sucursalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,9 +69,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_buscar = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_llenar_null = new System.Windows.Forms.Button();
             this.dtp_hora = new System.Windows.Forms.DateTimePicker();
             this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
-            this.btn_llenar_null = new System.Windows.Forms.Button();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -190,17 +186,6 @@
             this.rb_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.CheckedChanged += new System.EventHandler(this.rb_registrar_CheckedChanged);
             // 
-<<<<<<< HEAD
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-=======
             // dgv_empleados_recalcular
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
@@ -208,23 +193,10 @@
             this.dgv_empleados_recalcular.AutoGenerateColumns = false;
             this.dgv_empleados_recalcular.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleados_recalcular.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
->>>>>>> 138bc1ea1dc8f8f5a9f67852bd6d00a48864b536
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idempleadoDataGridViewTextBoxColumn,
-            this.nombrecompletoDataGridViewTextBoxColumn,
-            this.sucursalDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.vistaEmpleadosBindingSource;
-=======
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -235,7 +207,6 @@
             this.nombrecompletoDataGridViewTextBoxColumn,
             this.sucursalDataGridViewTextBoxColumn});
             this.dgv_empleados_recalcular.DataSource = this.vistaEmpleadosBindingSource;
->>>>>>> 138bc1ea1dc8f8f5a9f67852bd6d00a48864b536
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -243,21 +214,12 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-<<<<<<< HEAD
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dataGridView1.Location = new System.Drawing.Point(55, 110);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-=======
             this.dgv_empleados_recalcular.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_empleados_recalcular.EnableHeadersVisualStyles = false;
             this.dgv_empleados_recalcular.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleados_recalcular.Location = new System.Drawing.Point(55, 105);
             this.dgv_empleados_recalcular.MultiSelect = false;
             this.dgv_empleados_recalcular.Name = "dgv_empleados_recalcular";
->>>>>>> 138bc1ea1dc8f8f5a9f67852bd6d00a48864b536
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -265,19 +227,11 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-<<<<<<< HEAD
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(420, 480);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-=======
             this.dgv_empleados_recalcular.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_empleados_recalcular.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_empleados_recalcular.Size = new System.Drawing.Size(420, 480);
             this.dgv_empleados_recalcular.TabIndex = 0;
             this.dgv_empleados_recalcular.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
->>>>>>> 138bc1ea1dc8f8f5a9f67852bd6d00a48864b536
             // 
             // idempleadoDataGridViewTextBoxColumn
             // 
@@ -524,7 +478,7 @@
             this.nombrecompletoDataGridViewTextBoxColumn1.HeaderText = "Nombre empleado";
             this.nombrecompletoDataGridViewTextBoxColumn1.Name = "nombrecompletoDataGridViewTextBoxColumn1";
             this.nombrecompletoDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nombrecompletoDataGridViewTextBoxColumn1.Width = 162;
+            this.nombrecompletoDataGridViewTextBoxColumn1.Width = 148;
             // 
             // idchecadorDataGridViewTextBoxColumn
             // 
@@ -532,7 +486,7 @@
             this.idchecadorDataGridViewTextBoxColumn.DataPropertyName = "id_checador";
             this.idchecadorDataGridViewTextBoxColumn.HeaderText = "ID checador";
             this.idchecadorDataGridViewTextBoxColumn.Name = "idchecadorDataGridViewTextBoxColumn";
-            this.idchecadorDataGridViewTextBoxColumn.Width = 119;
+            this.idchecadorDataGridViewTextBoxColumn.Width = 109;
             // 
             // sucursalDataGridViewTextBoxColumn1
             // 
@@ -548,7 +502,7 @@
             this.fechaentradaDataGridViewTextBoxColumn.DataPropertyName = "fecha_entrada";
             this.fechaentradaDataGridViewTextBoxColumn.HeaderText = "Fecha de entrada";
             this.fechaentradaDataGridViewTextBoxColumn.Name = "fechaentradaDataGridViewTextBoxColumn";
-            this.fechaentradaDataGridViewTextBoxColumn.Width = 158;
+            this.fechaentradaDataGridViewTextBoxColumn.Width = 144;
             // 
             // fechasalidaDataGridViewTextBoxColumn
             // 
@@ -556,7 +510,7 @@
             this.fechasalidaDataGridViewTextBoxColumn.DataPropertyName = "fecha_salida";
             this.fechasalidaDataGridViewTextBoxColumn.HeaderText = "Fecha de salida";
             this.fechasalidaDataGridViewTextBoxColumn.Name = "fechasalidaDataGridViewTextBoxColumn";
-            this.fechasalidaDataGridViewTextBoxColumn.Width = 144;
+            this.fechasalidaDataGridViewTextBoxColumn.Width = 131;
             // 
             // vistaregistrosBindingSource
             // 
@@ -601,6 +555,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Fecha";
             // 
+            // btn_llenar_null
+            // 
+            this.btn_llenar_null.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_llenar_null.FlatAppearance.BorderSize = 0;
+            this.btn_llenar_null.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_llenar_null.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_llenar_null.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_llenar_null.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_llenar_null.ForeColor = System.Drawing.Color.White;
+            this.btn_llenar_null.Location = new System.Drawing.Point(275, 33);
+            this.btn_llenar_null.Name = "btn_llenar_null";
+            this.btn_llenar_null.Size = new System.Drawing.Size(200, 35);
+            this.btn_llenar_null.TabIndex = 105;
+            this.btn_llenar_null.Text = "Registrar";
+            this.btn_llenar_null.UseVisualStyleBackColor = false;
+            // 
             // dtp_hora
             // 
             this.dtp_hora.CustomFormat = "HH:mm";
@@ -622,22 +592,6 @@
             this.dtp_fecha.Size = new System.Drawing.Size(130, 29);
             this.dtp_fecha.TabIndex = 106;
             this.dtp_fecha.Value = new System.DateTime(2018, 9, 28, 0, 0, 0, 0);
-            // 
-            // btn_llenar_null
-            // 
-            this.btn_llenar_null.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_llenar_null.FlatAppearance.BorderSize = 0;
-            this.btn_llenar_null.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_llenar_null.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_llenar_null.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_llenar_null.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_llenar_null.ForeColor = System.Drawing.Color.White;
-            this.btn_llenar_null.Location = new System.Drawing.Point(275, 33);
-            this.btn_llenar_null.Name = "btn_llenar_null";
-            this.btn_llenar_null.Size = new System.Drawing.Size(200, 35);
-            this.btn_llenar_null.TabIndex = 105;
-            this.btn_llenar_null.Text = "Registrar";
-            this.btn_llenar_null.UseVisualStyleBackColor = false;
             // 
             // incidentes
             // 

@@ -51,14 +51,23 @@
             this.dtp_asistencia2 = new System.Windows.Forms.DateTimePicker();
             this.dtp_asistencia1 = new System.Windows.Forms.DateTimePicker();
             this.cbx_empleado = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.vistaEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label6 = new System.Windows.Forms.Label();
             this.vista_EmpleadosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter();
             this.btn_asistencia = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.btn_empleado_retardo = new System.Windows.Forms.Button();
+            this.crystalReportViewer4 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtp_empleado_retardo2 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_empleado_retardo1 = new System.Windows.Forms.DateTimePicker();
+            this.cbx_empleado_retardo = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
@@ -135,6 +144,13 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.btn_empleado_retardo);
+            this.tabPage4.Controls.Add(this.crystalReportViewer4);
+            this.tabPage4.Controls.Add(this.label7);
+            this.tabPage4.Controls.Add(this.dtp_empleado_retardo2);
+            this.tabPage4.Controls.Add(this.dtp_empleado_retardo1);
+            this.tabPage4.Controls.Add(this.cbx_empleado_retardo);
+            this.tabPage4.Controls.Add(this.label8);
             this.tabPage4.Size = new System.Drawing.Size(1012, 644);
             // 
             // tabPage5
@@ -145,12 +161,21 @@
             // 
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
+            // panel_menu
+            // 
+            this.panel_menu.Controls.Add(this.radioButton1);
+            this.panel_menu.Controls.SetChildIndex(this.rb_registrar, 0);
+            this.panel_menu.Controls.SetChildIndex(this.rb_modificar, 0);
+            this.panel_menu.Controls.SetChildIndex(this.rb_buscar, 0);
+            this.panel_menu.Controls.SetChildIndex(this.radioButton1, 0);
+            // 
             // rb_buscar
             // 
             this.rb_buscar.FlatAppearance.BorderSize = 0;
             this.rb_buscar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_buscar.Location = new System.Drawing.Point(1, 210);
             this.rb_buscar.Text = "Reporte Asistencia";
             // 
             // rb_modificar
@@ -159,6 +184,7 @@
             this.rb_modificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_modificar.Location = new System.Drawing.Point(1, 105);
             this.rb_modificar.Text = "Reporte Retardos";
             this.rb_modificar.CheckedChanged += new System.EventHandler(this.rb_modificar_CheckedChanged);
             // 
@@ -407,6 +433,11 @@
             this.cbx_empleado.TabIndex = 29;
             this.cbx_empleado.ValueMember = "id_empleado";
             // 
+            // vistaEmpleadosBindingSource
+            // 
+            this.vistaEmpleadosBindingSource.DataMember = "Vista_Empleados";
+            this.vistaEmpleadosBindingSource.DataSource = this.dataSet_Checador;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -416,11 +447,6 @@
             this.label6.Size = new System.Drawing.Size(102, 24);
             this.label6.TabIndex = 28;
             this.label6.Text = "Empleado:";
-            // 
-            // vistaEmpleadosBindingSource
-            // 
-            this.vistaEmpleadosBindingSource.DataMember = "Vista_Empleados";
-            this.vistaEmpleadosBindingSource.DataSource = this.dataSet_Checador;
             // 
             // vista_EmpleadosTableAdapter
             // 
@@ -443,6 +469,108 @@
             this.btn_asistencia.UseVisualStyleBackColor = false;
             this.btn_asistencia.Click += new System.EventHandler(this.btn_asistencia_Click);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton1.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.radioButton1.ForeColor = System.Drawing.Color.White;
+            this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.radioButton1.Location = new System.Drawing.Point(1, 315);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(299, 104);
+            this.radioButton1.TabIndex = 3;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Retardos x empleado";
+            this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.radioButton1.UseVisualStyleBackColor = false;
+            // 
+            // btn_empleado_retardo
+            // 
+            this.btn_empleado_retardo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_empleado_retardo.FlatAppearance.BorderSize = 0;
+            this.btn_empleado_retardo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_empleado_retardo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_empleado_retardo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_empleado_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_empleado_retardo.ForeColor = System.Drawing.Color.White;
+            this.btn_empleado_retardo.Location = new System.Drawing.Point(856, 6);
+            this.btn_empleado_retardo.Name = "btn_empleado_retardo";
+            this.btn_empleado_retardo.Size = new System.Drawing.Size(150, 32);
+            this.btn_empleado_retardo.TabIndex = 41;
+            this.btn_empleado_retardo.Text = "Generar";
+            this.btn_empleado_retardo.UseVisualStyleBackColor = false;
+            this.btn_empleado_retardo.Click += new System.EventHandler(this.btn_empleado_retardo_Click);
+            // 
+            // crystalReportViewer4
+            // 
+            this.crystalReportViewer4.ActiveViewIndex = -1;
+            this.crystalReportViewer4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.crystalReportViewer4.Location = new System.Drawing.Point(3, 51);
+            this.crystalReportViewer4.Name = "crystalReportViewer4";
+            this.crystalReportViewer4.ShowCloseButton = false;
+            this.crystalReportViewer4.ShowParameterPanelButton = false;
+            this.crystalReportViewer4.ShowRefreshButton = false;
+            this.crystalReportViewer4.Size = new System.Drawing.Size(1006, 590);
+            this.crystalReportViewer4.TabIndex = 40;
+            this.crystalReportViewer4.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(347, 14);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(78, 24);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Fechas:";
+            // 
+            // dtp_empleado_retardo2
+            // 
+            this.dtp_empleado_retardo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_empleado_retardo2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_empleado_retardo2.Location = new System.Drawing.Point(637, 10);
+            this.dtp_empleado_retardo2.Name = "dtp_empleado_retardo2";
+            this.dtp_empleado_retardo2.Size = new System.Drawing.Size(200, 29);
+            this.dtp_empleado_retardo2.TabIndex = 38;
+            // 
+            // dtp_empleado_retardo1
+            // 
+            this.dtp_empleado_retardo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_empleado_retardo1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_empleado_retardo1.Location = new System.Drawing.Point(431, 10);
+            this.dtp_empleado_retardo1.Name = "dtp_empleado_retardo1";
+            this.dtp_empleado_retardo1.Size = new System.Drawing.Size(200, 29);
+            this.dtp_empleado_retardo1.TabIndex = 37;
+            // 
+            // cbx_empleado_retardo
+            // 
+            this.cbx_empleado_retardo.DataSource = this.vistaEmpleadosBindingSource;
+            this.cbx_empleado_retardo.DisplayMember = "nombre_completo";
+            this.cbx_empleado_retardo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_empleado_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_empleado_retardo.FormattingEnabled = true;
+            this.cbx_empleado_retardo.Location = new System.Drawing.Point(122, 7);
+            this.cbx_empleado_retardo.Name = "cbx_empleado_retardo";
+            this.cbx_empleado_retardo.Size = new System.Drawing.Size(200, 32);
+            this.cbx_empleado_retardo.TabIndex = 36;
+            this.cbx_empleado_retardo.ValueMember = "id_empleado";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(14, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(102, 24);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "Empleado:";
+            // 
             // reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -457,6 +585,8 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
@@ -496,5 +626,13 @@
         private System.Windows.Forms.BindingSource vistaEmpleadosBindingSource;
         private DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter vista_EmpleadosTableAdapter;
         private System.Windows.Forms.Button btn_asistencia;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Button btn_empleado_retardo;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker dtp_empleado_retardo2;
+        private System.Windows.Forms.DateTimePicker dtp_empleado_retardo1;
+        private System.Windows.Forms.ComboBox cbx_empleado_retardo;
+        private System.Windows.Forms.Label label8;
     }
 }

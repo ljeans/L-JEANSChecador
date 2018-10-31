@@ -159,7 +159,7 @@ namespace Checador.empleados
                 }
                 
                 Empleado.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
-                Empleado.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
+                Empleado.id_horario = 0;
                 Empleado.municipio = txt_domicilio_municipio.Text;
                 Empleado.nombre = txt_nombre.Text;
                 Empleado.NSS = txt_nss.Text;
@@ -424,84 +424,95 @@ namespace Checador.empleados
         //*************************** MODIFICAR EMPLEADOS ***********************************************
         private void btn_modificar_Click_1(object sender, EventArgs e)
         {
-            txt_id.Enabled = false;
-            Empleado.id = Convert.ToInt32(txt_id_a_modificar.Text);
-            if (Empleado.verificar_existencia(Empleado.id))
+            try
             {
-                tabControlBase.SelectedTab = tabPage1;
-                txt_curp.Focus();
-                btn_modificar.Enabled = true;
-                btn_modificar.Visible = true;
-                btn_registrar.Visible = false;
-                btn_registrar.Enabled = false;
-                txt_id.Text = Empleado.id.ToString();
-                txt_nombre.Text = Empleado.nombre;
-                txt_apellido_materno.Text = Empleado.apellido_mat;
-                txt_apellido_paterno.Text = Empleado.apellido_pat;
-                txt_banco.Text = Empleado.banco;
-                txt_contra.Text = Empleado.password;
-                txt_cuenta.Text = Empleado.cuenta_bancaria;
-                txt_curp.Text = Empleado.CURP;
-                txt_departamento.Text = Empleado.departamento;
-                txt_despensa.Text = Empleado.tarjeta_despensa;
-                txt_dias_aguinaldo.Text = Empleado.dias_aguinaldo.ToString();
-                txt_dias_vacaciones.Text = Empleado.dias_vacaciones.ToString();
-                txt_domicilio_calle.Text = Empleado.calle;
-                txt_domicilio_colonia.Text = Empleado.colonia;
-                txt_domicilio_cp.Text = Empleado.codigo_postal;
-                txt_domicilio_estado.Text = Empleado.estado;
-                txt_domicilio_municipio.Text = Empleado.municipio;
-                txt_domicilio_num_ext.Text = Empleado.num_ext;
-                txt_domicilio_num_int.Text = Empleado.num_int;
-                txt_domicilio_municipio.Text = Empleado.municipio;
-                txt_domicilio_pais.Text = Empleado.pais;
-                txt_domicilio_pob.Text = Empleado.poblacion;
-                txt_edenred.Text = Empleado.clave_edenred;
-                txt_email.Text = Empleado.email;
-                txt_nombre.Text = Empleado.nombre;
-                txt_nss.Text = Empleado.NSS;
-                txt_observaciones.Text = Empleado.observaciones;
-                txt_periodicidad_pago.Text = Empleado.periodicidad_pago;
-                txt_puesto.Text = Empleado.puesto;
-                txt_rfc.Text = Empleado.RFC;
-                txt_riesgo_puesto.Text = Empleado.riesgo_puesto;
-                txt_sueldo_diario.Text = Empleado.sueldo_diario.ToString();
-                txt_sueldo_integrado.Text = Empleado.sueldo_diario_integrado.ToString();
-                txt_sueldo_quincenal.Text = Empleado.sueldo_base_quincenal.ToString();
-                txt_telefono.Text = Empleado.telefono.ToString();
-                txt_tipo_contrato.Text = Empleado.tipo_contrato;
-                txt_tipo_salario.Text = Empleado.tipo_salario;
-                dtp_fec_alt.Text = Empleado.fecha_alta.ToString();
-                cbx_sucursal.SelectedValue = Empleado.id_sucursal;
-                cbx_horario.SelectedValue = Empleado.id_horario;
-                sucurzal = Empleado.id_sucursal;
+                txt_id.Enabled = false;
+                Empleado.id = Convert.ToInt32(txt_id_a_modificar.Text);
+                if (Empleado.verificar_existencia(Empleado.id))
+                {
+                    tabControlBase.SelectedTab = tabPage1;
+                    txt_curp.Focus();
+                    btn_modificar.Enabled = true;
+                    btn_modificar.Visible = true;
+                    btn_registrar.Visible = false;
+                    btn_registrar.Enabled = false;
+                    txt_id.Text = Empleado.id.ToString();
+                    txt_nombre.Text = Empleado.nombre;
+                    txt_apellido_materno.Text = Empleado.apellido_mat;
+                    txt_apellido_paterno.Text = Empleado.apellido_pat;
+                    txt_banco.Text = Empleado.banco;
+                    txt_contra.Text = Empleado.password;
+                    txt_cuenta.Text = Empleado.cuenta_bancaria;
+                    txt_curp.Text = Empleado.CURP;
+                    txt_departamento.Text = Empleado.departamento;
+                    txt_despensa.Text = Empleado.tarjeta_despensa;
+                    txt_dias_aguinaldo.Text = Empleado.dias_aguinaldo.ToString();
+                    txt_dias_vacaciones.Text = Empleado.dias_vacaciones.ToString();
+                    txt_domicilio_calle.Text = Empleado.calle;
+                    txt_domicilio_colonia.Text = Empleado.colonia;
+                    txt_domicilio_cp.Text = Empleado.codigo_postal;
+                    txt_domicilio_estado.Text = Empleado.estado;
+                    txt_domicilio_municipio.Text = Empleado.municipio;
+                    txt_domicilio_num_ext.Text = Empleado.num_ext;
+                    txt_domicilio_num_int.Text = Empleado.num_int;
+                    txt_domicilio_municipio.Text = Empleado.municipio;
+                    txt_domicilio_pais.Text = Empleado.pais;
+                    txt_domicilio_pob.Text = Empleado.poblacion;
+                    txt_edenred.Text = Empleado.clave_edenred;
+                    txt_email.Text = Empleado.email;
+                    txt_nombre.Text = Empleado.nombre;
+                    txt_nss.Text = Empleado.NSS;
+                    txt_observaciones.Text = Empleado.observaciones;
+                    txt_periodicidad_pago.Text = Empleado.periodicidad_pago;
+                    txt_puesto.Text = Empleado.puesto;
+                    txt_rfc.Text = Empleado.RFC;
+                    txt_riesgo_puesto.Text = Empleado.riesgo_puesto;
+                    txt_sueldo_diario.Text = Empleado.sueldo_diario.ToString();
+                    txt_sueldo_integrado.Text = Empleado.sueldo_diario_integrado.ToString();
+                    txt_sueldo_quincenal.Text = Empleado.sueldo_base_quincenal.ToString();
+                    txt_telefono.Text = Empleado.telefono.ToString();
+                    txt_tipo_contrato.Text = Empleado.tipo_contrato;
+                    txt_tipo_salario.Text = Empleado.tipo_salario;
+                    dtp_fec_alt.Text = Empleado.fecha_alta.ToString();
+                    cbx_sucursal.SelectedValue = Empleado.id_sucursal;
+                    sucurzal = Empleado.id_sucursal;
 
-                if (Empleado.id_privilegio == 0)
-                {
-                    cbx_privilegio.SelectedIndex = 0;
-                }
-                else if (Empleado.id_privilegio == 3)
-                {
-                    cbx_privilegio.SelectedIndex = 1;
-                }
+                    if (Empleado.id_privilegio == 0)
+                    {
+                        cbx_privilegio.SelectedIndex = 0;
+                    }
+                    else if (Empleado.id_privilegio == 3)
+                    {
+                        cbx_privilegio.SelectedIndex = 1;
+                    }
 
-                if (Empleado.estatus == "A")
-                {
-                    rb_mod_activo.Checked = true;
+                    if (Empleado.estatus == "A")
+                    {
+                        rb_mod_activo.Checked = true;
+                    }
+                    else
+                    {
+                        rb_mod_inactivo.Checked = true;
+                    }
                 }
                 else
                 {
-                    rb_mod_inactivo.Checked = true;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Empleado no registrado.";
+                    mensaje.lbl_info2.Text = "Intente de nuevo.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.Show();
                 }
             }
-            else
+            catch (Exception ex)
             {
                 mensaje = new formularios_padres.mensaje_info();
-                mensaje.lbl_info.Text = "Empleado no registrado.";
-                mensaje.lbl_info2.Text = "Intente de nuevo.";
-                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.lbl_info.Text = "No ha ingresado el identificador.";
+                mensaje.FormClosed += new FormClosedEventHandler(responder);
                 mensaje.Show();
+                Enabled = false;
             }
+            
         }
 
 
@@ -641,7 +652,7 @@ namespace Checador.empleados
                     Empleado.id_privilegio = 3;
                 }
                 Empleado.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
-                Empleado.id_horario = Convert.ToInt32(cbx_horario.SelectedValue.ToString());
+                Empleado.id_horario = 0;
                 Empleado.municipio = txt_domicilio_municipio.Text;
                 Empleado.nombre = txt_nombre.Text;
                 Empleado.NSS = txt_nss.Text;
@@ -790,6 +801,22 @@ namespace Checador.empleados
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_b_modificar_Click(object sender, EventArgs e)
+        {
+            rb_modificar.Checked = true;
+            var row = dgv_empleadobuscar.CurrentRow;
+            Empleado.id = Convert.ToInt32(row.Cells[0].Value);
+            txt_id_a_modificar.Text = Convert.ToString(Empleado.id);
+            tabControlBase.SelectedTab = tabPage5;
+            btn_ir_modificar.PerformClick();
+            
+        }
+
+        private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
         {
 
         }

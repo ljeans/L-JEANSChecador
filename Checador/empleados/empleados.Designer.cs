@@ -87,8 +87,6 @@
             this.label43 = new System.Windows.Forms.Label();
             this.txt_idbuscar = new System.Windows.Forms.TextBox();
             this.txt_nombrebuscar = new System.Windows.Forms.TextBox();
-            this.txt_departamento = new System.Windows.Forms.TextBox();
-            this.label85 = new System.Windows.Forms.Label();
             this.label86 = new System.Windows.Forms.Label();
             this.txt_telefono = new System.Windows.Forms.TextBox();
             this.btn_siguiente = new System.Windows.Forms.Button();
@@ -175,9 +173,7 @@
             this.btn_modificar = new System.Windows.Forms.Button();
             this.btn_dar_baja = new System.Windows.Forms.Button();
             this.btn_b_modificar = new System.Windows.Forms.Button();
-            this.cbx_horario = new System.Windows.Forms.ComboBox();
             this.horariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label19 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -187,6 +183,8 @@
             this.horariosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.horariosTableAdapter();
             this.sucursalTableAdapter = new Checador.DataSet_ChecadorTableAdapters.sucursalTableAdapter();
             this.vista_EmpleadosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter();
+            this.txt_departamento = new System.Windows.Forms.TextBox();
+            this.label85 = new System.Windows.Forms.Label();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -242,8 +240,8 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.label19);
-            this.tabPage1.Controls.Add(this.cbx_horario);
+            this.tabPage1.Controls.Add(this.txt_departamento);
+            this.tabPage1.Controls.Add(this.label85);
             this.tabPage1.Controls.Add(this.cbx_privilegio);
             this.tabPage1.Controls.Add(this.label26);
             this.tabPage1.Controls.Add(this.txt_domicilio_municipio);
@@ -318,8 +316,6 @@
             this.tabPage2.Controls.Add(this.label32);
             this.tabPage2.Controls.Add(this.label86);
             this.tabPage2.Controls.Add(this.txt_telefono);
-            this.tabPage2.Controls.Add(this.txt_departamento);
-            this.tabPage2.Controls.Add(this.label85);
             this.tabPage2.Controls.Add(this.btn_atras);
             this.tabPage2.Controls.Add(this.btn_registrar);
             this.tabPage2.Controls.Add(this.txt_observaciones);
@@ -361,6 +357,10 @@
             this.tabPage5.Controls.Add(this.btn_ir_modificar);
             this.tabPage5.Controls.Add(this.label84);
             this.tabPage5.Controls.Add(this.txt_id_a_modificar);
+            // 
+            // panel_barra_sup
+            // 
+            this.panel_barra_sup.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barra_sup_Paint);
             // 
             // btn_home
             // 
@@ -428,11 +428,11 @@
             // 
             this.txt_puesto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_puesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_puesto.Location = new System.Drawing.Point(240, 183);
+            this.txt_puesto.Location = new System.Drawing.Point(240, 142);
             this.txt_puesto.MaxLength = 32;
             this.txt_puesto.Name = "txt_puesto";
             this.txt_puesto.Size = new System.Drawing.Size(249, 29);
-            this.txt_puesto.TabIndex = 25;
+            this.txt_puesto.TabIndex = 24;
             // 
             // label4
             // 
@@ -461,7 +461,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(147, 188);
+            this.label10.Location = new System.Drawing.Point(147, 147);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 24);
             this.label10.TabIndex = 1000;
@@ -508,7 +508,7 @@
             this.txt_email.MaxLength = 32;
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(249, 29);
-            this.txt_email.TabIndex = 26;
+            this.txt_email.TabIndex = 25;
             // 
             // txt_observaciones
             // 
@@ -519,7 +519,7 @@
             this.txt_observaciones.Multiline = true;
             this.txt_observaciones.Name = "txt_observaciones";
             this.txt_observaciones.Size = new System.Drawing.Size(249, 72);
-            this.txt_observaciones.TabIndex = 28;
+            this.txt_observaciones.TabIndex = 27;
             // 
             // btn_registrar
             // 
@@ -1003,27 +1003,6 @@
             this.txt_nombrebuscar.TabIndex = 44;
             this.txt_nombrebuscar.TextChanged += new System.EventHandler(this.txt_nombrebuscar_TextChanged);
             // 
-            // txt_departamento
-            // 
-            this.txt_departamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_departamento.Location = new System.Drawing.Point(240, 143);
-            this.txt_departamento.MaxLength = 32;
-            this.txt_departamento.Name = "txt_departamento";
-            this.txt_departamento.Size = new System.Drawing.Size(249, 29);
-            this.txt_departamento.TabIndex = 24;
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.BackColor = System.Drawing.Color.Transparent;
-            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label85.Location = new System.Drawing.Point(87, 148);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(133, 24);
-            this.label85.TabIndex = 1042;
-            this.label85.Text = "Departamento:";
-            // 
             // label86
             // 
             this.label86.AutoSize = true;
@@ -1043,7 +1022,7 @@
             this.txt_telefono.MaxLength = 32;
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(249, 29);
-            this.txt_telefono.TabIndex = 27;
+            this.txt_telefono.TabIndex = 26;
             // 
             // btn_siguiente
             // 
@@ -1109,7 +1088,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(473, 70);
+            this.label6.Location = new System.Drawing.Point(473, 109);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(132, 24);
             this.label6.TabIndex = 1038;
@@ -1120,7 +1099,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(495, 117);
+            this.label5.Location = new System.Drawing.Point(495, 156);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 24);
             this.label5.TabIndex = 1036;
@@ -1206,11 +1185,11 @@
             // 
             this.txt_contra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_contra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_contra.Location = new System.Drawing.Point(616, 112);
+            this.txt_contra.Location = new System.Drawing.Point(617, 149);
             this.txt_contra.MaxLength = 11;
             this.txt_contra.Name = "txt_contra";
             this.txt_contra.Size = new System.Drawing.Size(248, 29);
-            this.txt_contra.TabIndex = 7;
+            this.txt_contra.TabIndex = 8;
             // 
             // cbx_privilegio
             // 
@@ -1251,10 +1230,10 @@
             // 
             this.dtp_fec_alt.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_fec_alt.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_fec_alt.Location = new System.Drawing.Point(616, 65);
+            this.dtp_fec_alt.Location = new System.Drawing.Point(617, 106);
             this.dtp_fec_alt.Name = "dtp_fec_alt";
             this.dtp_fec_alt.Size = new System.Drawing.Size(248, 29);
-            this.dtp_fec_alt.TabIndex = 6;
+            this.dtp_fec_alt.TabIndex = 7;
             // 
             // txt_curp
             // 
@@ -1986,34 +1965,12 @@
             this.btn_b_modificar.TabIndex = 76;
             this.btn_b_modificar.Text = "Modificar";
             this.btn_b_modificar.UseVisualStyleBackColor = false;
-            // 
-            // cbx_horario
-            // 
-            this.cbx_horario.DataSource = this.horariosBindingSource;
-            this.cbx_horario.DisplayMember = "horario";
-            this.cbx_horario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_horario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_horario.FormattingEnabled = true;
-            this.cbx_horario.Location = new System.Drawing.Point(616, 153);
-            this.cbx_horario.Name = "cbx_horario";
-            this.cbx_horario.Size = new System.Drawing.Size(248, 32);
-            this.cbx_horario.TabIndex = 8;
-            this.cbx_horario.ValueMember = "id_horario";
+            this.btn_b_modificar.Click += new System.EventHandler(this.btn_b_modificar_Click);
             // 
             // horariosBindingSource
             // 
             this.horariosBindingSource.DataMember = "horarios";
             this.horariosBindingSource.DataSource = this.dataSet_Checador;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.label19.Location = new System.Drawing.Point(528, 161);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(77, 24);
-            this.label19.TabIndex = 1145;
-            this.label19.Text = "Horario:";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -2062,6 +2019,27 @@
             // vista_EmpleadosTableAdapter
             // 
             this.vista_EmpleadosTableAdapter.ClearBeforeFill = true;
+            // 
+            // txt_departamento
+            // 
+            this.txt_departamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_departamento.Location = new System.Drawing.Point(616, 64);
+            this.txt_departamento.MaxLength = 32;
+            this.txt_departamento.Name = "txt_departamento";
+            this.txt_departamento.Size = new System.Drawing.Size(249, 29);
+            this.txt_departamento.TabIndex = 6;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.BackColor = System.Drawing.Color.Transparent;
+            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label85.Location = new System.Drawing.Point(473, 69);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(133, 24);
+            this.label85.TabIndex = 1145;
+            this.label85.Text = "Departamento:";
             // 
             // empleados
             // 
@@ -2122,8 +2100,6 @@
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox txt_idbuscar;
         private System.Windows.Forms.TextBox txt_nombrebuscar;
-        private System.Windows.Forms.TextBox txt_departamento;
-        private System.Windows.Forms.Label label85;
         private System.Windows.Forms.Label label86;
         private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Label label15;
@@ -2240,8 +2216,6 @@
         private DataSet_Checador dataSet_Checador;
         private System.Windows.Forms.Button btn_b_modificar;
         private System.Windows.Forms.Button btn_dar_baja;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox cbx_horario;
         private DataSet_Checador dataSet_Checador1;
         private System.Windows.Forms.BindingSource sucursalBindingSource;
         private DataSet_ChecadorTableAdapters.sucursalTableAdapter sucursalTableAdapter;
@@ -2288,5 +2262,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
         private System.Windows.Forms.DataGridViewTextBoxColumn horasextraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
+        private System.Windows.Forms.TextBox txt_departamento;
+        private System.Windows.Forms.Label label85;
     }
 }
