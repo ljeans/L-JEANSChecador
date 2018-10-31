@@ -731,13 +731,13 @@ namespace Checador
         }
 
         //FUNCION PARA REGISTRAR UN CHEQUEO EN LA BD POR SI SE LE OLVIDO CHECAR
-        public void RegistrarChequeo(int id_checador, int id_empleado, int id_sucursal, DateTime fecha_evento, DateTime fecha_referencia, TimeSpan hora_entrada, TimeSpan hora_salida, TimeSpan hora_entrada_descanso, TimeSpan hora_salida_descanso, int tolerancia, int tipo_evento, string horario)
+        public bool RegistrarChequeo(int id_checador, int id_empleado, int id_sucursal, DateTime fecha_evento, DateTime fecha_referencia, TimeSpan hora_entrada, TimeSpan hora_salida, TimeSpan hora_entrada_descanso, TimeSpan hora_salida_descanso, int tolerancia, int tipo_evento, string horario)
         {
             try
             {
                 Conexion conexion = new Conexion();
                 SqlConnection con = new SqlConnection(conexion.cadenaConexion);
-                DateTime? fecha_entrada = fecha_referencia, fecha_salida = fecha_evento;
+                DateTime? fecha_entrada, fecha_salida;
                 double minutos_retardo, minutos_retardo2;
                 int retardo = 1;
 
@@ -758,14 +758,13 @@ namespace Checador
                         minutos_retardo2 = Math.Abs(fecha_event.TotalMinutes - fecha_retardo2.TotalMinutes);
 
                         //ACTUALIZAR ENTRADA DEL EVENTO
-                        string consulta = "UPDATE registros SET fecha_entrada = @fecha_evento, retardos = @retardos, total_min_retardo = @total_min_retardo WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_salida=@fecha_salida";
+                        string consulta = "UPDATE registros SET fecha_entrada = @fecha_entrada, retardos = @retardos, total_min_retardo = @total_min_retardo WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_salida=@fecha_salida";
                         con.Open();
                         SqlCommand comand = new SqlCommand(consulta, con);
                         comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
                         comand.Parameters.AddWithValue("@id_empleado", id_empleado);
                         comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
                         comand.Parameters.AddWithValue("@fecha_entrada", fecha_evento);
-                        comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
                         comand.Parameters.AddWithValue("@retardos", retardo);
                         comand.Parameters.AddWithValue("@total_min_retardo", minutos_retardo2);
                         comand.Parameters.AddWithValue("@fecha_salida", fecha_referencia);
@@ -777,14 +776,13 @@ namespace Checador
                         minutos_retardo = fecha_event.TotalMinutes - fecha_retardo.TotalMinutes;
 
                         //ACTUALIZAR ENTRADA DEL EVENTO
-                        string consulta = "UPDATE registros SET fecha_entrada = @fecha_evento, retardos = @retardos, total_min_retardo = @total_min_retardo WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_salida=@fecha_salida";
+                        string consulta = "UPDATE registros SET fecha_entrada = @fecha_entrada, retardos = @retardos, total_min_retardo = @total_min_retardo WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_salida=@fecha_salida";
                         con.Open();
                         SqlCommand comand = new SqlCommand(consulta, con);
                         comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
                         comand.Parameters.AddWithValue("@id_empleado", id_empleado);
                         comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
                         comand.Parameters.AddWithValue("@fecha_entrada", fecha_evento);
-                        comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
                         comand.Parameters.AddWithValue("@retardos", retardo);
                         comand.Parameters.AddWithValue("@total_min_retardo", minutos_retardo);
                         comand.Parameters.AddWithValue("@fecha_salida", fecha_referencia);
@@ -794,14 +792,13 @@ namespace Checador
                     else
                     {
                         //ACTUALIZAR ENTRADA DEL EVENTO
-                        string consulta = "UPDATE registros SET fecha_entrada = @fecha_evento, retardos = @retardos, total_min_retardo = @total_min_retardo WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_salida=@fecha_salida";
+                        string consulta = "UPDATE registros SET fecha_entrada = @fecha_entrada, retardos = @retardos, total_min_retardo = @total_min_retardo WHERE id_checador=@id_checador and id_empleado = @id_empleado and id_sucursal = @id_sucursal and fecha_salida=@fecha_salida";
                         con.Open();
                         SqlCommand comand = new SqlCommand(consulta, con);
                         comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
                         comand.Parameters.AddWithValue("@id_empleado", id_empleado);
                         comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
                         comand.Parameters.AddWithValue("@fecha_entrada", fecha_evento);
-                        comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
                         comand.Parameters.AddWithValue("@retardos", DBNull.Value);
                         comand.Parameters.AddWithValue("@total_min_retardo", DBNull.Value);
                         comand.Parameters.AddWithValue("@fecha_salida", fecha_referencia);
@@ -810,7 +807,7 @@ namespace Checador
                     }
                 }
                 //SALIDA
-                else if (tipo_evento == 1)
+                else
                 {
                     fecha_entrada = fecha_referencia;
                     fecha_salida = fecha_evento;
@@ -821,6 +818,7 @@ namespace Checador
                     conexion2.Open();
                     SqlCommand comand = new SqlCommand(consulta, conexion2);
                     comand.Parameters.AddWithValue("@fecha_evento", fecha_evento);
+                    comand.Parameters.AddWithValue("@fecha_entrada", fecha_entrada);
                     comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
                     comand.Parameters.AddWithValue("@id_empleado", id_empleado);
                     comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
@@ -916,7 +914,6 @@ namespace Checador
                 SqlConnection conexion3 = new SqlConnection(con3.cadenaConexion);
                 conexion3.Open();
                 SqlCommand comando = new SqlCommand(consulta3, conexion3);
-                comando.Parameters.AddWithValue("@fecha_evento", fecha_evento);
                 comando.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
                 comando.Parameters.AddWithValue("@id_empleado", id_empleado);
                 comando.Parameters.AddWithValue("@id_sucursal", id_sucursal);
@@ -927,11 +924,13 @@ namespace Checador
                 conexion3.Close();
 
                 MessageBox.Show("Chequeo registrado con éxito");
+                return true;
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                return false;
             }
         }
 

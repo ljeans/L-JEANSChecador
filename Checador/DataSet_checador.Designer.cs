@@ -3386,6 +3386,8 @@ namespace Checador {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class vista_registrosDataTable : global::System.Data.TypedTableBase<vista_registrosRow> {
             
+            private global::System.Data.DataColumn columnid_empleado;
+            
             private global::System.Data.DataColumn columnnombre_completo;
             
             private global::System.Data.DataColumn columnid_checador;
@@ -3427,6 +3429,14 @@ namespace Checador {
             protected vista_registrosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_empleadoColumn {
+                get {
+                    return this.columnid_empleado;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3506,9 +3516,10 @@ namespace Checador {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public vista_registrosRow Addvista_registrosRow(string nombre_completo, int id_checador, string Sucursal, System.DateTime fecha_entrada, System.DateTime fecha_salida) {
+            public vista_registrosRow Addvista_registrosRow(int id_empleado, string nombre_completo, int id_checador, string Sucursal, System.DateTime fecha_entrada, System.DateTime fecha_salida) {
                 vista_registrosRow rowvista_registrosRow = ((vista_registrosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        id_empleado,
                         nombre_completo,
                         id_checador,
                         Sucursal,
@@ -3536,6 +3547,7 @@ namespace Checador {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnid_empleado = base.Columns["id_empleado"];
                 this.columnnombre_completo = base.Columns["nombre_completo"];
                 this.columnid_checador = base.Columns["id_checador"];
                 this.columnSucursal = base.Columns["Sucursal"];
@@ -3546,6 +3558,8 @@ namespace Checador {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnid_empleado = new global::System.Data.DataColumn("id_empleado", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_empleado);
                 this.columnnombre_completo = new global::System.Data.DataColumn("nombre_completo", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombre_completo);
                 this.columnid_checador = new global::System.Data.DataColumn("id_checador", typeof(int), null, global::System.Data.MappingType.Element);
@@ -3556,6 +3570,7 @@ namespace Checador {
                 base.Columns.Add(this.columnfecha_entrada);
                 this.columnfecha_salida = new global::System.Data.DataColumn("fecha_salida", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfecha_salida);
+                this.columnid_empleado.AllowDBNull = false;
                 this.columnnombre_completo.ReadOnly = true;
                 this.columnnombre_completo.MaxLength = 122;
                 this.columnid_checador.AllowDBNull = false;
@@ -5274,6 +5289,17 @@ namespace Checador {
             internal vista_registrosRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tablevista_registros = ((vista_registrosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_empleado {
+                get {
+                    return ((int)(this[this.tablevista_registros.id_empleadoColumn]));
+                }
+                set {
+                    this[this.tablevista_registros.id_empleadoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7776,6 +7802,7 @@ SELECT id_horario, horario, hr_entrada, hr_salida, horas_diarias, lunes, martes,
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "vista_registros";
+            tableMapping.ColumnMappings.Add("id_empleado", "id_empleado");
             tableMapping.ColumnMappings.Add("nombre_completo", "nombre_completo");
             tableMapping.ColumnMappings.Add("id_checador", "id_checador");
             tableMapping.ColumnMappings.Add("Sucursal", "Sucursal");

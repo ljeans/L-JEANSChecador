@@ -12,7 +12,7 @@
     <Shape ID="DesignTable:Vista_Horario" ZOrder="6" X="69" Y="81" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:horarios" ZOrder="5" X="509" Y="48" Height="127" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="24" OldDataTableHeight="0" SplitterPosition="0" />
     <Shape ID="DesignTable:Vista_Sucursal" ZOrder="4" X="262" Y="33" Height="210" Width="226" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
-    <Shape ID="DesignTable:vista_registros" ZOrder="1" X="-16" Y="422" Height="172" Width="227" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
+    <Shape ID="DesignTable:vista_registros" ZOrder="1" X="-16" Y="422" Height="191" Width="227" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

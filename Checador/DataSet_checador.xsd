@@ -371,6 +371,7 @@ FROM            vista_registros</CommandText>
               </DbSource>
             </MainSource>
             <Mappings>
+              <Mapping SourceColumn="id_empleado" DataSetColumn="id_empleado" />
               <Mapping SourceColumn="nombre_completo" DataSetColumn="nombre_completo" />
               <Mapping SourceColumn="id_checador" DataSetColumn="id_checador" />
               <Mapping SourceColumn="Sucursal" DataSetColumn="Sucursal" />
@@ -804,6 +805,7 @@ FROM            vista_registros</CommandText>
         <xs:element name="vista_registros" msprop:Generator_TableClassName="vista_registrosDataTable" msprop:Generator_TableVarName="tablevista_registros" msprop:Generator_TablePropName="vista_registros" msprop:Generator_RowDeletingName="vista_registrosRowDeleting" msprop:Generator_RowChangingName="vista_registrosRowChanging" msprop:Generator_RowEvHandlerName="vista_registrosRowChangeEventHandler" msprop:Generator_RowDeletedName="vista_registrosRowDeleted" msprop:Generator_UserTableName="vista_registros" msprop:Generator_RowChangedName="vista_registrosRowChanged" msprop:Generator_RowEvArgName="vista_registrosRowChangeEvent" msprop:Generator_RowClassName="vista_registrosRow">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="id_empleado" msprop:Generator_ColumnVarNameInTable="columnid_empleado" msprop:Generator_ColumnPropNameInRow="id_empleado" msprop:Generator_ColumnPropNameInTable="id_empleadoColumn" msprop:Generator_UserColumnName="id_empleado" type="xs:int" />
               <xs:element name="nombre_completo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnombre_completo" msprop:Generator_ColumnPropNameInRow="nombre_completo" msprop:Generator_ColumnPropNameInTable="nombre_completoColumn" msprop:Generator_UserColumnName="nombre_completo" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

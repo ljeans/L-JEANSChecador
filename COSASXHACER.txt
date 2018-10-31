@@ -6,13 +6,9 @@
 	- Salen repetidas las horas trabajadas, checar
 	- Reporte de retardos para Dalisa (a su correo).
 	- Validar reportes vacíos
-- Modulo de tienda
-	-Incidentes
-		--olvido de chequeo
-		--recalcular si se olvida cambiar el horario
-			---parametros: empleado, horario, rango de fechas.
 - Login
 	- Crear usuarios para login
 	- Roles para ver que puede usar c/usuario
 - Validar en GENERAL
 	- Verificar existencia del empleado por el ID o CURP
+	- recargar los grid al hacer transacciones
