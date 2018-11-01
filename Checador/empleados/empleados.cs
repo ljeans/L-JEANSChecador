@@ -20,7 +20,7 @@ namespace Checador.empleados
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
         formularios_padres.Mensajes confirmacion2 = new formularios_padres.Mensajes();
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
-
+        validacion validar = new validacion();
         //SE CREA LA INSTANCIA DE LA CLASE CHECADOR
         ClaseChecador clase_checador = new ClaseChecador();
 
@@ -29,7 +29,7 @@ namespace Checador.empleados
 
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
-        public int sucurzal, verificador=0;
+        public int sucurzal, verificador=0, contador;
         public string valor_datagrid;
         public bool respuesta = false;
         public int id_checador_viejo;
@@ -81,7 +81,7 @@ namespace Checador.empleados
         {
             Limpiar();
             tabControlBase.SelectedTab = tabPage1;
-            txt_curp.Focus();
+            txt_id.Focus();
             groupBox4.Visible = false;
             groupBox4.Enabled = false;
             btn_modificar.Enabled = false;
@@ -128,85 +128,96 @@ namespace Checador.empleados
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
         private void btn_registrar_Click(object sender, EventArgs e)
         {
-            try
+            if (contador >= 4)
             {
-                Empleado.id = Convert.ToInt32(txt_id.Text);
-                Empleado.apellido_mat = txt_apellido_materno.Text;
-                Empleado.apellido_pat = txt_apellido_paterno.Text;
-                Empleado.banco = txt_banco.Text;
-                Empleado.calle = txt_domicilio_calle.Text;
-                Empleado.clave_edenred = txt_edenred.Text;
-                Empleado.codigo_postal = txt_domicilio_cp.Text;
-                Empleado.colonia = txt_domicilio_colonia.Text;
-                Empleado.cuenta_bancaria = txt_cuenta.Text;
-                Empleado.CURP = txt_curp.Text;
-                Empleado.departamento = txt_departamento.Text;
-                Empleado.dias_aguinaldo = Convert.ToInt32(txt_dias_aguinaldo.Text);
-                Empleado.dias_vacaciones = Convert.ToInt32(txt_dias_vacaciones.Text);
-                Empleado.email = txt_email.Text;
-                Empleado.estado = txt_domicilio_estado.Text;
-                Empleado.estatus = "A";
-                //Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.Year.ToString() + "-" + dtp_fec_alt.Value.Month.ToString() + "-" + dtp_fec_alt.Value.Day.ToString());
-                Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.ToString("yyyy-MM-dd HH:mm:ss"));
 
-                if (cbx_privilegio.Text=="Usuario")
+                try
                 {
-                    Empleado.id_privilegio = 0;
+                    Empleado.id = Convert.ToInt32(txt_id.Text);
+                    Empleado.apellido_mat = txt_apellido_materno.Text;
+                    Empleado.apellido_pat = txt_apellido_paterno.Text;
+                    Empleado.banco = txt_banco.Text;
+                    Empleado.calle = txt_domicilio_calle.Text;
+                    Empleado.clave_edenred = txt_edenred.Text;
+                    Empleado.codigo_postal = txt_domicilio_cp.Text;
+                    Empleado.colonia = txt_domicilio_colonia.Text;
+                    Empleado.cuenta_bancaria = txt_cuenta.Text;
+                    Empleado.CURP = txt_curp.Text;
+                    Empleado.departamento = txt_departamento.Text;
+                    Empleado.dias_aguinaldo = Convert.ToInt32(txt_dias_aguinaldo.Text);
+                    Empleado.dias_vacaciones = Convert.ToInt32(txt_dias_vacaciones.Text);
+                    Empleado.email = txt_email.Text;
+                    Empleado.estado = txt_domicilio_estado.Text;
+                    Empleado.estatus = "A";
+                    //Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.Year.ToString() + "-" + dtp_fec_alt.Value.Month.ToString() + "-" + dtp_fec_alt.Value.Day.ToString());
+                    Empleado.fecha_alta = Convert.ToDateTime(dtp_fec_alt.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+
+                    if (cbx_privilegio.Text == "Usuario")
+                    {
+                        Empleado.id_privilegio = 0;
+                    }
+                    else
+                    {
+                        Empleado.id_privilegio = 3;
+                    }
+
+                    Empleado.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
+                    Empleado.id_horario = 0;
+                    Empleado.municipio = txt_domicilio_municipio.Text;
+                    Empleado.nombre = txt_nombre.Text;
+                    Empleado.NSS = txt_nss.Text;
+                    Empleado.num_ext = txt_domicilio_num_ext.Text;
+                    Empleado.num_int = txt_domicilio_num_int.Text;
+                    Empleado.observaciones = txt_observaciones.Text;
+                    Empleado.pais = txt_domicilio_pais.Text;
+                    Empleado.periodicidad_pago = txt_periodicidad_pago.Text;
+                    Empleado.poblacion = txt_domicilio_pob.Text;
+                    Empleado.puesto = txt_puesto.Text;
+                    Empleado.RFC = txt_rfc.Text;
+                    Empleado.riesgo_puesto = txt_riesgo_puesto.Text;
+                    Empleado.sueldo_base_quincenal = Convert.ToDecimal(txt_sueldo_quincenal.Text);
+                    Empleado.sueldo_diario = Convert.ToDecimal(txt_sueldo_diario.Text);
+                    Empleado.sueldo_diario_integrado = Convert.ToDecimal(txt_sueldo_integrado.Text);
+                    Empleado.tarjeta_despensa = txt_despensa.Text;
+                    Empleado.telefono = txt_telefono.Text;
+                    Empleado.tipo_contrato = txt_tipo_contrato.Text;
+                    //Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
+
+                    Empleado.tipo_salario = txt_tipo_salario.Text;
+                    Empleado.password = txt_contra.Text;
+                    Empleado.guardarEmpleado();
+                    Empleado.guardarEmpleado_Sucursal();
+
+                    //SE OBTIENEN LOS DATOS DEL CHECADOR
+                    clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
+                    Conectar_Checador();
+
+                    if (bConn)
+                    {
+                        Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio, 0);
+                    }
+
+                    confirmacion2 = new formularios_padres.Mensajes();
+                    confirmacion2.lbl_mensaje.Text = "Desea registrar huella al empleado?";
+                    confirmacion2.FormClosed += new FormClosedEventHandler(reg_huella);
+                    confirmacion2.Show();
+                    Enabled = false;
+                    Limpiar();
+
+
+
                 }
-                else
+                catch (Exception ex)
                 {
-                    Empleado.id_privilegio = 3;
+                    MessageBox.Show(ex.ToString());
                 }
-                
-                Empleado.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
-                Empleado.id_horario = 0;
-                Empleado.municipio = txt_domicilio_municipio.Text;
-                Empleado.nombre = txt_nombre.Text;
-                Empleado.NSS = txt_nss.Text;
-                Empleado.num_ext = txt_domicilio_num_ext.Text;
-                Empleado.num_int = txt_domicilio_num_int.Text;
-                Empleado.observaciones = txt_observaciones.Text;
-                Empleado.pais = txt_domicilio_pais.Text;
-                Empleado.periodicidad_pago = txt_periodicidad_pago.Text;
-                Empleado.poblacion = txt_domicilio_pob.Text;
-                Empleado.puesto = txt_puesto.Text;
-                Empleado.RFC = txt_rfc.Text;
-                Empleado.riesgo_puesto = txt_riesgo_puesto.Text;
-                Empleado.sueldo_base_quincenal = Convert.ToDecimal(txt_sueldo_quincenal.Text);
-                Empleado.sueldo_diario = Convert.ToDecimal(txt_sueldo_diario.Text);
-                Empleado.sueldo_diario_integrado = Convert.ToDecimal(txt_sueldo_integrado.Text);
-                Empleado.tarjeta_despensa = txt_despensa.Text;
-                Empleado.telefono = txt_telefono.Text;
-                Empleado.tipo_contrato = txt_tipo_contrato.Text;
-                //Empleado.tipo_horario = cbx_horario.SelectedValue.ToString();
-               
-                Empleado.tipo_salario = txt_tipo_salario.Text;
-                Empleado.password = txt_contra.Text;
-                Empleado.guardarEmpleado();
-                Empleado.guardarEmpleado_Sucursal();
-
-                //SE OBTIENEN LOS DATOS DEL CHECADOR
-                clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
-                Conectar_Checador();
-
-                if (bConn)
-                {
-                    Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio,0);
-                }
-                
-                confirmacion2 = new formularios_padres.Mensajes();
-                confirmacion2.lbl_mensaje.Text = "Desea registrar huella al empleado?";
-                confirmacion2.FormClosed += new FormClosedEventHandler(mod_huella);
-                confirmacion2.Show();
-                Enabled = false;
-                Limpiar();
-
-
-
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Ingrese los campos obligatorios.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
             }
         }
 
@@ -581,10 +592,34 @@ namespace Checador.empleados
             {
 
             }
+            txt_id.Enabled = true;
           
           
 
         }
+
+        private void reg_huella(object sender, EventArgs e)
+        {
+            //**************
+
+            //****************
+
+            Enabled = true;
+            respuesta = confirmacion2.respuesta;
+            if (respuesta == true)
+            {
+                tabControlBase.SelectedTab = tabPage3;
+                cbx_huella.SelectedIndex = 6;
+            }
+            else
+            {
+                tabControlBase.SelectedTab = tabPage1;
+                txt_id.Clear();
+                txt_id.Focus();
+            }
+            confirmacion2 = null;
+        }
+
         private void mod_huella(object sender, EventArgs e)
         {
             //**************
@@ -759,8 +794,11 @@ namespace Checador.empleados
             mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
             mensaje.Show();
             Limpiar();
-            tabControlBase.SelectedTab = tabPage5;
-            txt_curp.Focus();
+            tabControlBase.SelectedTab = tabPage1;
+            btn_registrar.Visible = true;
+            btn_modificar.Visible = false;
+            rb_registrar.Checked = true;
+            txt_id.Focus();
         }
 
         private void tabPage4_Click(object sender, EventArgs e)
@@ -807,21 +845,191 @@ namespace Checador.empleados
 
         private void btn_b_modificar_Click(object sender, EventArgs e)
         {
-            rb_modificar.Checked = true;
+          
             var row = dgv_empleadobuscar.CurrentRow;
             Empleado.id = Convert.ToInt32(row.Cells[0].Value);
+            rb_modificar.Checked = true;
             txt_id_a_modificar.Text = Convert.ToString(Empleado.id);
-            tabControlBase.SelectedTab = tabPage5;
             btn_ir_modificar.PerformClick();
             
+
         }
 
         private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
         {
 
         }
+        //******************************   VALIDACION DE LOS CAMPOS    *******************************************
 
-        //////////////////////////////////////////////////////////////////////
+        private void txt_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.sololetras(e);
+        }
+
+        private void txt_apellido_paterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.sololetras(e);
+        }
+
+        private void txt_apellido_materno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.sololetras(e);
+        }
+
+        private void txt_departamento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.sololetras(e);
+        }
+
+        private void txt_domicilio_num_ext_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_domicilio_num_int_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_domicilio_cp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_nss_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_email_Leave(object sender, EventArgs e)
+        {
+            if (validar.validaremail(txt_email.Text))
+            {
+
+            }
+            else
+            {
+                txt_email.SelectAll();
+                if (string.IsNullOrEmpty(txt_email.Text))
+                {
+
+                    errorProvider1.SetError(txt_email, "El correo electronico proporcionado no tiene el formato correcto.");
+
+                }
+                else
+                {
+                    errorProvider1.SetError(txt_email, null);
+                    contador = contador + 1;
+                }
+                txt_email.Focus();
+            }
+        }
+
+        private void txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+        }
+
+        private void txt_sueldo_diario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloimportes(e);
+        }
+
+        private void txt_sueldo_integrado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloimportes(e);
+        }
+
+        private void txt_sueldo_quincenal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.soloimportes(e);
+        }
+
+        private void txt_dias_aguinaldo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+        }
+
+        private void txt_dias_vacaciones_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+        }
+
+        private void txt_cuenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+        }
+
+        private void txt_nombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_nombre.Text))
+            {
+
+                errorProvider1.SetError(txt_nombre, "No ha ingresado el nombre del empleado.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_nombre, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_apellido_paterno_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_apellido_paterno.Text))
+            {
+
+                errorProvider1.SetError(txt_apellido_paterno, "No ha ingresado el apelido paterno del empleado.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_apellido_paterno, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_apellido_materno_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_apellido_materno.Text))
+            {
+
+                errorProvider1.SetError(txt_apellido_materno, "No ha ingresado el apelido paterno del empleado.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_apellido_materno, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_id_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_id.Text))
+            {
+
+                errorProvider1.SetError(txt_id, "No ha ingresado el numero de empleado.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_id, null);
+                contador = contador + 1;
+            }
+        }
+        //**************************  AQUI TERMINA LA VALIDACION DE LOS CAMPOS    *******************************
 
         private void btn_dar_baja_Click(object sender, EventArgs e)
         {

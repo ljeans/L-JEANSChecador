@@ -40,7 +40,6 @@ C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.Genera
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.exe
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.pdb
 <<<<<<< HEAD
-<<<<<<< HEAD
 =======
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.csprojResolveAssemblyReference.cache
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Interop.zkemkeeper.dll
@@ -93,6 +92,5 @@ C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.incidentes.in
 >>>>>>> 009004163b7a743c85ae4b296c5c36cc094bbdf8
 >>>>>>> 37453b5cadc0eebf4f56750bb831e45ebbd81ad0
 >>>>>>> 138bc1ea1dc8f8f5a9f67852bd6d00a48864b536
-=======
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csprojResolveAssemblyReference.cache
 >>>>>>> b212b3a4d7869720b497e785a26c97e498736f1d
