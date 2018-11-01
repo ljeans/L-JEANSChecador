@@ -337,9 +337,9 @@ namespace Checador
 
         private void btn_b_modificar_Click(object sender, EventArgs e)
         {
-            rb_modificar.Checked = true;
             var row = dgv_sucursal.CurrentRow;
             Sucursal.id= Convert.ToInt32(row.Cells[0].Value);
+            rb_modificar.Checked = true;
             txt_id_mod.Text = Convert.ToString(Sucursal.id);
             tabControlBase.SelectedTab = tabPage3;
             btn_ir_modificar.PerformClick();

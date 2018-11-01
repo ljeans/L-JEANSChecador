@@ -350,6 +350,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "formpadre";
             this.Text = "formpadre";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tabControlBase.ResumeLayout(false);
             this.panel_barra_sup.ResumeLayout(false);

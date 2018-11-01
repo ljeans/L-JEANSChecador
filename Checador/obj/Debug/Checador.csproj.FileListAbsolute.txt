@@ -39,4 +39,60 @@ C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.sucursales.re
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.GenerateResource.Cache
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.exe
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.pdb
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.csprojResolveAssemblyReference.cache
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Interop.zkemkeeper.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Interop.ZKFPEngXControl.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.ResolveComReference.cache
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.cheacador.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.empleados.empleados.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.Mensajes.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.mensaje_info.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.principal.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.formpadre.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.horarios.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.Properties.Resources.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.reportes.reporte.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.sucursales.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.GenerateResource.Cache
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.CoreCompileInputs.cache
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.exe
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.pdb
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\Checador.exe.config
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\Checador.exe
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\Checador.pdb
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportSource.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.Shared.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\FlashControlV71.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\ShockwaveFlashObjects.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\stdole.dll
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.inicio_sesion.login.resources
+>>>>>>> 67e191ccc028c9530e7800201d2bfb5482455c54
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.ProgressBar.resources
+C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.incidentes.incidentes.resources
+>>>>>>> 68a02aeb3829975f4d49dca68355bbbfad5ff67c
+>>>>>>> 63112378576371a46ce35f22b99caa3ac37bf187
+>>>>>>> 445f002688090c703e96cf90af5c85aa6a11dc65
+>>>>>>> 4c12cd6c7d6dc5021b7708f2376190963be70cd6
+>>>>>>> 009004163b7a743c85ae4b296c5c36cc094bbdf8
+>>>>>>> 37453b5cadc0eebf4f56750bb831e45ebbd81ad0
+>>>>>>> 138bc1ea1dc8f8f5a9f67852bd6d00a48864b536
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csprojResolveAssemblyReference.cache
