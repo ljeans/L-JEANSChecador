@@ -2,9 +2,9 @@
 	--Si es de bodega no quitarlos
 - Hacer HILOS
 - Poner UniqueKeys en la base de datos
+- Modulo checadores
+	*Modificar y dar de baja en la pestaña consultar
 - Reportes
-	- Salen repetidas las horas trabajadas, checar
-	- Reporte de retardos para Dalisa (a su correo).
 	- Validar reportes vacíos
 - Login
 	- Crear usuarios para login
@@ -12,3 +12,12 @@
 - Validar en GENERAL
 	- Verificar existencia del empleado por el ID o CURP
 	- recargar los grid al hacer transacciones
+- Campos innecesarios en la bd
+	Empleados:
+		* Id_Horario, retartdos, total_min_retardo, horas_extra
+	Horarios:
+		*Lunes-Domingo
+- Interfaces
+	*Reacomodar registrar horario
+- Modulo Horarios
+	* Falta modificar en pestaña de consultas

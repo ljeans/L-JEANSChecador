@@ -27,7 +27,6 @@ namespace Checador
 
         private void sucursales_Load(object sender, EventArgs e)
         {
-
             // TODO: This line of code loads data into the 'dataSet_Checador.horarios' table. You can move, or remove it, as needed.
             this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
 
@@ -99,9 +98,12 @@ namespace Checador
             if (respuesta == true)
             {
                 Sucursal.Modificar_Sucursal();
+                //FUNCION PAR RECARGAR EL DATAGRID
+                // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
+                this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
                 Limpiar();
                 tabControlBase.SelectedTab = tabPage3;
-                 
+                txt_id_mod.Focus();
             }
             else
             {
@@ -132,6 +134,11 @@ namespace Checador
                 Sucursal.telefono = txt_telefono.Text;
 
                 Sucursal.guardarSucursal();
+
+                //FUNCION PAR RECARGAR EL DATAGRID
+                // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
+                this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
+
                 Limpiar();
             }
             catch (Exception ex)
@@ -296,6 +303,9 @@ namespace Checador
             Sucursal.id = Convert.ToInt32(row.Cells[0].Value);
             Sucursal.estatus = "I";
             Sucursal.Eliminar_Sucursal();
+            //FUNCION PAR RECARGAR EL DATAGRID
+            // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
+            this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
         }
 
 ////////////////FILTRAR EL BUSCAR//////////////////////////

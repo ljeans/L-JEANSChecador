@@ -151,8 +151,6 @@ namespace Checador.incidentes
                 MessageBox.Show(ex.ToString());
             }
         }
-<<<<<<< HEAD
-=======
 
         //FUNCION PARA REGISTRAR UN CHEQUEO MANUALMENTE
         private void btn_llenar_null_Click(object sender, EventArgs e)
@@ -236,6 +234,5 @@ namespace Checador.incidentes
                 MessageBox.Show(ex.ToString());
             }
         }
->>>>>>> b212b3a4d7869720b497e785a26c97e498736f1d
     }
 }

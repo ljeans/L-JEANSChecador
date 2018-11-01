@@ -331,6 +331,7 @@
             this.txt_puerto.Name = "txt_puerto";
             this.txt_puerto.Size = new System.Drawing.Size(248, 29);
             this.txt_puerto.TabIndex = 3;
+            this.txt_puerto.Text = "4370";
             // 
             // label2
             // 
@@ -365,7 +366,7 @@
             this.btn_registrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_registrar.ForeColor = System.Drawing.Color.White;
-            this.btn_registrar.Location = new System.Drawing.Point(388, 461);
+            this.btn_registrar.Location = new System.Drawing.Point(388, 477);
             this.btn_registrar.Name = "btn_registrar";
             this.btn_registrar.Size = new System.Drawing.Size(250, 70);
             this.btn_registrar.TabIndex = 7;
