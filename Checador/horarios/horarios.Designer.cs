@@ -44,14 +44,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cb_domingo = new System.Windows.Forms.CheckBox();
-            this.cb_sabado = new System.Windows.Forms.CheckBox();
-            this.cb_viernes = new System.Windows.Forms.CheckBox();
-            this.cb_jueves = new System.Windows.Forms.CheckBox();
-            this.cb_miercoles = new System.Windows.Forms.CheckBox();
-            this.cb_martes = new System.Windows.Forms.CheckBox();
-            this.cb_lunes = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_registrar = new System.Windows.Forms.Button();
             this.dtp_hora_entrada = new System.Windows.Forms.DateTimePicker();
@@ -75,13 +67,6 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vistaHorarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_Checador = new Checador.DataSet_Checador();
             this.label42 = new System.Windows.Forms.Label();
@@ -153,6 +138,7 @@
             this.horariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.horariosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.horariosTableAdapter();
             this.dataSetChecadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btn_b_modificar = new System.Windows.Forms.Button();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -161,7 +147,6 @@
             this.panel_barra_sup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tolerancia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_diarias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_totales)).BeginInit();
@@ -225,7 +210,6 @@
             this.tabPage1.Controls.Add(this.dtp_hora_entrada);
             this.tabPage1.Controls.Add(this.btn_registrar);
             this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label1);
@@ -244,6 +228,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btn_b_modificar);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.txt_nombrebuscar);
             this.tabPage3.Controls.Add(this.dgv_horarios);
@@ -434,93 +419,6 @@
             this.label7.Size = new System.Drawing.Size(201, 24);
             this.label7.TabIndex = 1099;
             this.label7.Text = "Hora Salida Descanso:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cb_domingo);
-            this.groupBox1.Controls.Add(this.cb_sabado);
-            this.groupBox1.Controls.Add(this.cb_viernes);
-            this.groupBox1.Controls.Add(this.cb_jueves);
-            this.groupBox1.Controls.Add(this.cb_miercoles);
-            this.groupBox1.Controls.Add(this.cb_martes);
-            this.groupBox1.Controls.Add(this.cb_lunes);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(30, 438);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(580, 150);
-            this.groupBox1.TabIndex = 1103;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Dias De Trabajo";
-            // 
-            // cb_domingo
-            // 
-            this.cb_domingo.AutoSize = true;
-            this.cb_domingo.Location = new System.Drawing.Point(346, 101);
-            this.cb_domingo.Name = "cb_domingo";
-            this.cb_domingo.Size = new System.Drawing.Size(106, 28);
-            this.cb_domingo.TabIndex = 16;
-            this.cb_domingo.Text = "Domingo";
-            this.cb_domingo.UseVisualStyleBackColor = true;
-            // 
-            // cb_sabado
-            // 
-            this.cb_sabado.AutoSize = true;
-            this.cb_sabado.Location = new System.Drawing.Point(193, 101);
-            this.cb_sabado.Name = "cb_sabado";
-            this.cb_sabado.Size = new System.Drawing.Size(94, 28);
-            this.cb_sabado.TabIndex = 15;
-            this.cb_sabado.Text = "Sabado";
-            this.cb_sabado.UseVisualStyleBackColor = true;
-            // 
-            // cb_viernes
-            // 
-            this.cb_viernes.AutoSize = true;
-            this.cb_viernes.Location = new System.Drawing.Point(27, 101);
-            this.cb_viernes.Name = "cb_viernes";
-            this.cb_viernes.Size = new System.Drawing.Size(94, 28);
-            this.cb_viernes.TabIndex = 14;
-            this.cb_viernes.Text = "Viernes";
-            this.cb_viernes.UseVisualStyleBackColor = true;
-            // 
-            // cb_jueves
-            // 
-            this.cb_jueves.AutoSize = true;
-            this.cb_jueves.Location = new System.Drawing.Point(488, 43);
-            this.cb_jueves.Name = "cb_jueves";
-            this.cb_jueves.Size = new System.Drawing.Size(89, 28);
-            this.cb_jueves.TabIndex = 13;
-            this.cb_jueves.Text = "Jueves";
-            this.cb_jueves.UseVisualStyleBackColor = true;
-            // 
-            // cb_miercoles
-            // 
-            this.cb_miercoles.AutoSize = true;
-            this.cb_miercoles.Location = new System.Drawing.Point(346, 43);
-            this.cb_miercoles.Name = "cb_miercoles";
-            this.cb_miercoles.Size = new System.Drawing.Size(111, 28);
-            this.cb_miercoles.TabIndex = 12;
-            this.cb_miercoles.Text = "Miercoles";
-            this.cb_miercoles.UseVisualStyleBackColor = true;
-            // 
-            // cb_martes
-            // 
-            this.cb_martes.AutoSize = true;
-            this.cb_martes.Location = new System.Drawing.Point(193, 43);
-            this.cb_martes.Name = "cb_martes";
-            this.cb_martes.Size = new System.Drawing.Size(85, 28);
-            this.cb_martes.TabIndex = 11;
-            this.cb_martes.Text = "Martes";
-            this.cb_martes.UseVisualStyleBackColor = true;
-            // 
-            // cb_lunes
-            // 
-            this.cb_lunes.AutoSize = true;
-            this.cb_lunes.Location = new System.Drawing.Point(27, 42);
-            this.cb_lunes.Name = "cb_lunes";
-            this.cb_lunes.Size = new System.Drawing.Size(81, 28);
-            this.cb_lunes.TabIndex = 10;
-            this.cb_lunes.Text = "Lunes";
-            this.cb_lunes.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -746,14 +644,7 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dataGridViewTextBoxColumn16});
+            this.dataGridViewTextBoxColumn9});
             this.dgv_horarios.DataSource = this.vistaHorarioBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -778,7 +669,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_horarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_horarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv_horarios.Size = new System.Drawing.Size(966, 430);
+            this.dgv_horarios.Size = new System.Drawing.Size(966, 390);
             this.dgv_horarios.TabIndex = 87;
             // 
             // dataGridViewTextBoxColumn1
@@ -855,55 +746,6 @@
             this.dataGridViewTextBoxColumn9.HeaderText = "Horarios totales quincenales";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "lunes";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Lunes";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "martes";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Martes";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "miercoles";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Miercoles";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "jueves";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Jueves";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "viernes";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Viernes";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "sabado";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Sabado";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "domingo";
-            this.dataGridViewTextBoxColumn16.HeaderText = "Domingo";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
             // 
             // vistaHorarioBindingSource
             // 
@@ -1600,6 +1442,23 @@
             this.dataSetChecadorBindingSource.DataSource = this.dataSet_Checador;
             this.dataSetChecadorBindingSource.Position = 0;
             // 
+            // btn_b_modificar
+            // 
+            this.btn_b_modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_b_modificar.FlatAppearance.BorderSize = 0;
+            this.btn_b_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_b_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_b_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_b_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_b_modificar.ForeColor = System.Drawing.Color.White;
+            this.btn_b_modificar.Location = new System.Drawing.Point(381, 548);
+            this.btn_b_modificar.Name = "btn_b_modificar";
+            this.btn_b_modificar.Size = new System.Drawing.Size(250, 70);
+            this.btn_b_modificar.TabIndex = 91;
+            this.btn_b_modificar.Text = "Modificar";
+            this.btn_b_modificar.UseVisualStyleBackColor = false;
+            this.btn_b_modificar.Click += new System.EventHandler(this.btn_b_modificar_Click);
+            // 
             // horarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1620,8 +1479,6 @@
             this.panel_barra_sup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             this.panel_menu.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tolerancia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_diarias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_totales)).EndInit();
@@ -1656,14 +1513,6 @@
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox cb_domingo;
-        private System.Windows.Forms.CheckBox cb_sabado;
-        private System.Windows.Forms.CheckBox cb_viernes;
-        private System.Windows.Forms.CheckBox cb_jueves;
-        private System.Windows.Forms.CheckBox cb_miercoles;
-        private System.Windows.Forms.CheckBox cb_martes;
-        private System.Windows.Forms.CheckBox cb_lunes;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -1705,22 +1554,6 @@
         private System.Windows.Forms.CheckBox cb_descanso;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txt_nombrebuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         public System.Windows.Forms.RadioButton rb_asignar_horarios;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cbx_empleado;
@@ -1783,5 +1616,15 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.Button btn_b_modificar;
     }
 }

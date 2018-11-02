@@ -29,10 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+<<<<<<< HEAD
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
+>>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
             this.txt_rfc = new System.Windows.Forms.MaskedTextBox();
             this.txt_nss = new System.Windows.Forms.TextBox();
             this.txt_puesto = new System.Windows.Forms.TextBox();
@@ -48,39 +62,6 @@
             this.btn_guardar_huella = new System.Windows.Forms.Button();
             this.btn_atras = new System.Windows.Forms.Button();
             this.dgv_empleadobuscar = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horasextraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vistaEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_Checador = new Checador.DataSet_Checador();
             this.label42 = new System.Windows.Forms.Label();
@@ -185,7 +166,41 @@
             this.vista_EmpleadosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter();
             this.txt_departamento = new System.Windows.Forms.TextBox();
             this.label85 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+=======
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -331,7 +346,7 @@
             this.tabPage2.Controls.Add(this.label12);
             this.tabPage2.Controls.Add(this.label14);
             this.tabPage2.Controls.Add(this.txt_email);
-            this.tabPage2.Text = "25";
+            this.tabPage2.Text = "TabPage2";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click_1);
             // 
             // tabPage3
@@ -582,12 +597,23 @@
             this.dgv_empleadobuscar.AllowUserToDeleteRows = false;
             this.dgv_empleadobuscar.AllowUserToResizeColumns = false;
             this.dgv_empleadobuscar.AllowUserToResizeRows = false;
+<<<<<<< HEAD
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+=======
+<<<<<<< HEAD
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+=======
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
+>>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
             this.dgv_empleadobuscar.AutoGenerateColumns = false;
             this.dgv_empleadobuscar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_empleadobuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_empleadobuscar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+<<<<<<< HEAD
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -596,6 +622,27 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_empleadobuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+=======
+<<<<<<< HEAD
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empleadobuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+=======
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empleadobuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
+>>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
             this.dgv_empleadobuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_empleadobuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
@@ -605,7 +652,6 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12,
             this.dataGridViewTextBoxColumn13,
-            this.horarioDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16,
@@ -629,9 +675,9 @@
             this.dataGridViewTextBoxColumn34,
             this.dataGridViewTextBoxColumn35,
             this.dataGridViewTextBoxColumn36,
-            this.horasextraDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn37});
             this.dgv_empleadobuscar.DataSource = this.vistaEmpleadosBindingSource;
+<<<<<<< HEAD
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -640,12 +686,34 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_empleadobuscar.DefaultCellStyle = dataGridViewCellStyle3;
+=======
+<<<<<<< HEAD
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_empleadobuscar.DefaultCellStyle = dataGridViewCellStyle7;
+=======
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_empleadobuscar.DefaultCellStyle = dataGridViewCellStyle11;
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
+>>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
             this.dgv_empleadobuscar.EnableHeadersVisualStyles = false;
             this.dgv_empleadobuscar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleadobuscar.Location = new System.Drawing.Point(30, 101);
             this.dgv_empleadobuscar.MultiSelect = false;
             this.dgv_empleadobuscar.Name = "dgv_empleadobuscar";
             this.dgv_empleadobuscar.ReadOnly = true;
+<<<<<<< HEAD
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -654,306 +722,30 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_empleadobuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+=======
+<<<<<<< HEAD
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empleadobuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+=======
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empleadobuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
+>>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
             this.dgv_empleadobuscar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_empleadobuscar.Size = new System.Drawing.Size(966, 407);
             this.dgv_empleadobuscar.TabIndex = 45;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "id_empleado";
-            this.dataGridViewTextBoxColumn7.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 49;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "nombre_completo";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 88;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "CURP";
-            this.dataGridViewTextBoxColumn9.HeaderText = "CURP";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 77;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "RFC";
-            this.dataGridViewTextBoxColumn10.HeaderText = "RFC";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "NSS";
-            this.dataGridViewTextBoxColumn11.HeaderText = "NSS";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "sucursal";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Sucursal";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            this.dataGridViewTextBoxColumn12.Width = 94;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "departamento";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Departamento";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Width = 135;
-            // 
-            // horarioDataGridViewTextBoxColumn
-            // 
-            this.horarioDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.horarioDataGridViewTextBoxColumn.DataPropertyName = "horario";
-            this.horarioDataGridViewTextBoxColumn.HeaderText = "Horario";
-            this.horarioDataGridViewTextBoxColumn.Name = "horarioDataGridViewTextBoxColumn";
-            this.horarioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.horarioDataGridViewTextBoxColumn.Width = 84;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "telefono";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Telefono";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Width = 94;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "direccion";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Dirección";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            this.dataGridViewTextBoxColumn15.Width = 98;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "num_int";
-            this.dataGridViewTextBoxColumn16.HeaderText = "No. interior";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Width = 99;
-            // 
-            // dataGridViewTextBoxColumn17
-            // 
-            this.dataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn17.DataPropertyName = "Localizacion";
-            this.dataGridViewTextBoxColumn17.HeaderText = "Localización";
-            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
-            this.dataGridViewTextBoxColumn17.ReadOnly = true;
-            this.dataGridViewTextBoxColumn17.Width = 119;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "puesto";
-            this.dataGridViewTextBoxColumn18.HeaderText = "Puesto";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            this.dataGridViewTextBoxColumn18.Width = 82;
-            // 
-            // dataGridViewTextBoxColumn19
-            // 
-            this.dataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn19.DataPropertyName = "email";
-            this.dataGridViewTextBoxColumn19.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
-            this.dataGridViewTextBoxColumn19.ReadOnly = true;
-            this.dataGridViewTextBoxColumn19.Width = 71;
-            // 
-            // dataGridViewTextBoxColumn20
-            // 
-            this.dataGridViewTextBoxColumn20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn20.DataPropertyName = "fecha_alta";
-            this.dataGridViewTextBoxColumn20.HeaderText = "Fecha alta";
-            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
-            this.dataGridViewTextBoxColumn20.ReadOnly = true;
-            this.dataGridViewTextBoxColumn20.Width = 98;
-            // 
-            // dataGridViewTextBoxColumn21
-            // 
-            this.dataGridViewTextBoxColumn21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn21.DataPropertyName = "fecha_baja";
-            this.dataGridViewTextBoxColumn21.HeaderText = "Fecha Baja";
-            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            this.dataGridViewTextBoxColumn21.ReadOnly = true;
-            this.dataGridViewTextBoxColumn21.Width = 103;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "observaciones";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Observaciones";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            this.dataGridViewTextBoxColumn22.ReadOnly = true;
-            this.dataGridViewTextBoxColumn22.Width = 137;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "tipo_contrato";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Tipo contrato";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.ReadOnly = true;
-            this.dataGridViewTextBoxColumn23.Width = 114;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "sueldo_diario";
-            this.dataGridViewTextBoxColumn24.HeaderText = "Sueldo diario";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.ReadOnly = true;
-            this.dataGridViewTextBoxColumn24.Width = 113;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "sueldo_diario_integrado";
-            this.dataGridViewTextBoxColumn25.HeaderText = "Sueldo diario integrado";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.ReadOnly = true;
-            this.dataGridViewTextBoxColumn25.Width = 177;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "sueldo_base_quincenal";
-            this.dataGridViewTextBoxColumn26.HeaderText = "Sueldo base quincenal";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.ReadOnly = true;
-            this.dataGridViewTextBoxColumn26.Width = 175;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "tipo_salario";
-            this.dataGridViewTextBoxColumn27.HeaderText = "Tipo salario";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.ReadOnly = true;
-            this.dataGridViewTextBoxColumn27.Width = 103;
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "dias_aguinaldo";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Dias aguinaldo";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.ReadOnly = true;
-            this.dataGridViewTextBoxColumn28.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "dias_vacaciones";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Dias vacaciones";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.ReadOnly = true;
-            this.dataGridViewTextBoxColumn29.Width = 134;
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "riesgo_puesto";
-            this.dataGridViewTextBoxColumn30.HeaderText = "Riesgo puesto";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            this.dataGridViewTextBoxColumn30.ReadOnly = true;
-            this.dataGridViewTextBoxColumn30.Width = 123;
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "periodicidad_pago";
-            this.dataGridViewTextBoxColumn31.HeaderText = "Periodicidad pago";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            this.dataGridViewTextBoxColumn31.ReadOnly = true;
-            this.dataGridViewTextBoxColumn31.Width = 144;
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "banco";
-            this.dataGridViewTextBoxColumn32.HeaderText = "Banco";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            this.dataGridViewTextBoxColumn32.ReadOnly = true;
-            this.dataGridViewTextBoxColumn32.Width = 78;
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "cuenta_bancaria";
-            this.dataGridViewTextBoxColumn33.HeaderText = "Cuenta bancaria";
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            this.dataGridViewTextBoxColumn33.ReadOnly = true;
-            this.dataGridViewTextBoxColumn33.Width = 136;
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "tarjeta_despensa";
-            this.dataGridViewTextBoxColumn34.HeaderText = "Tarjeta despensa";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            this.dataGridViewTextBoxColumn34.ReadOnly = true;
-            this.dataGridViewTextBoxColumn34.Width = 141;
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "clave_edenred";
-            this.dataGridViewTextBoxColumn35.HeaderText = "Clave edenred";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            this.dataGridViewTextBoxColumn35.ReadOnly = true;
-            this.dataGridViewTextBoxColumn35.Width = 122;
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn36.DataPropertyName = "password";
-            this.dataGridViewTextBoxColumn36.HeaderText = "Password";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            this.dataGridViewTextBoxColumn36.ReadOnly = true;
-            this.dataGridViewTextBoxColumn36.Width = 101;
-            // 
-            // horasextraDataGridViewTextBoxColumn
-            // 
-            this.horasextraDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.horasextraDataGridViewTextBoxColumn.DataPropertyName = "horas_extra";
-            this.horasextraDataGridViewTextBoxColumn.HeaderText = "Horas extra";
-            this.horasextraDataGridViewTextBoxColumn.Name = "horasextraDataGridViewTextBoxColumn";
-            this.horasextraDataGridViewTextBoxColumn.ReadOnly = true;
-            this.horasextraDataGridViewTextBoxColumn.Width = 104;
-            // 
-            // dataGridViewTextBoxColumn37
-            // 
-            this.dataGridViewTextBoxColumn37.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn37.DataPropertyName = "estatus";
-            this.dataGridViewTextBoxColumn37.HeaderText = "Estatus";
-            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            this.dataGridViewTextBoxColumn37.ReadOnly = true;
-            this.dataGridViewTextBoxColumn37.Width = 87;
             // 
             // vistaEmpleadosBindingSource
             // 
@@ -1027,7 +819,6 @@
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(249, 29);
             this.txt_telefono.TabIndex = 26;
-            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // btn_siguiente
             // 
@@ -1055,8 +846,6 @@
             this.txt_apellido_paterno.Name = "txt_apellido_paterno";
             this.txt_apellido_paterno.Size = new System.Drawing.Size(248, 29);
             this.txt_apellido_paterno.TabIndex = 3;
-            this.txt_apellido_paterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_paterno_KeyPress);
-            this.txt_apellido_paterno.Validating += new System.ComponentModel.CancelEventHandler(this.txt_apellido_paterno_Validating);
             // 
             // txt_apellido_materno
             // 
@@ -1067,8 +856,6 @@
             this.txt_apellido_materno.Name = "txt_apellido_materno";
             this.txt_apellido_materno.Size = new System.Drawing.Size(248, 29);
             this.txt_apellido_materno.TabIndex = 4;
-            this.txt_apellido_materno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_materno_KeyPress);
-            this.txt_apellido_materno.Validating += new System.ComponentModel.CancelEventHandler(this.txt_apellido_materno_Validating);
             // 
             // label9
             // 
@@ -1156,8 +943,6 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(248, 29);
             this.txt_nombre.TabIndex = 2;
-            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
-            this.txt_nombre.Validating += new System.ComponentModel.CancelEventHandler(this.txt_nombre_Validating);
             // 
             // label29
             // 
@@ -1265,9 +1050,7 @@
             this.txt_id.MaxLength = 32;
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(248, 29);
-            this.txt_id.TabIndex = 0;
-            this.txt_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_KeyPress);
-            this.txt_id.Validating += new System.ComponentModel.CancelEventHandler(this.txt_id_Validating);
+            this.txt_id.TabIndex = 1050;
             // 
             // groupBox4
             // 
@@ -1345,7 +1128,6 @@
             this.txt_domicilio_cp.Name = "txt_domicilio_cp";
             this.txt_domicilio_cp.Size = new System.Drawing.Size(249, 29);
             this.txt_domicilio_cp.TabIndex = 16;
-            this.txt_domicilio_cp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_cp_KeyPress);
             // 
             // txt_domicilio_pais
             // 
@@ -1380,6 +1162,7 @@
             // 
             // label24
             // 
+<<<<<<< HEAD
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.Transparent;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1388,6 +1171,16 @@
             this.label24.Size = new System.Drawing.Size(73, 24);
             this.label24.TabIndex = 1141;
             this.label24.Text = "Estado:";
+=======
+            this.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefono.Location = new System.Drawing.Point(711, 100);
+            this.txt_telefono.MaxLength = 32;
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(249, 29);
+            this.txt_telefono.TabIndex = 26;
+            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // txt_domicilio_pob
             // 
@@ -1401,6 +1194,7 @@
             // 
             // txt_domicilio_colonia
             // 
+<<<<<<< HEAD
             this.txt_domicilio_colonia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_domicilio_colonia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_domicilio_colonia.Location = new System.Drawing.Point(188, 484);
@@ -1408,9 +1202,21 @@
             this.txt_domicilio_colonia.Name = "txt_domicilio_colonia";
             this.txt_domicilio_colonia.Size = new System.Drawing.Size(249, 29);
             this.txt_domicilio_colonia.TabIndex = 15;
+=======
+            this.txt_apellido_paterno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_apellido_paterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_apellido_paterno.Location = new System.Drawing.Point(189, 194);
+            this.txt_apellido_paterno.MaxLength = 32;
+            this.txt_apellido_paterno.Name = "txt_apellido_paterno";
+            this.txt_apellido_paterno.Size = new System.Drawing.Size(248, 29);
+            this.txt_apellido_paterno.TabIndex = 3;
+            this.txt_apellido_paterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_paterno_KeyPress);
+            this.txt_apellido_paterno.Validating += new System.ComponentModel.CancelEventHandler(this.txt_apellido_paterno_Validating);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // txt_domicilio_num_ext
             // 
+<<<<<<< HEAD
             this.txt_domicilio_num_ext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_domicilio_num_ext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_domicilio_num_ext.Location = new System.Drawing.Point(188, 410);
@@ -1418,7 +1224,17 @@
             this.txt_domicilio_num_ext.Name = "txt_domicilio_num_ext";
             this.txt_domicilio_num_ext.Size = new System.Drawing.Size(249, 29);
             this.txt_domicilio_num_ext.TabIndex = 13;
-            this.txt_domicilio_num_ext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_num_ext_KeyPress);
+=======
+            this.txt_apellido_materno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_apellido_materno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_apellido_materno.Location = new System.Drawing.Point(189, 239);
+            this.txt_apellido_materno.MaxLength = 32;
+            this.txt_apellido_materno.Name = "txt_apellido_materno";
+            this.txt_apellido_materno.Size = new System.Drawing.Size(248, 29);
+            this.txt_apellido_materno.TabIndex = 4;
+            this.txt_apellido_materno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_materno_KeyPress);
+            this.txt_apellido_materno.Validating += new System.ComponentModel.CancelEventHandler(this.txt_apellido_materno_Validating);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // txt_domicilio_num_int
             // 
@@ -1429,7 +1245,6 @@
             this.txt_domicilio_num_int.Name = "txt_domicilio_num_int";
             this.txt_domicilio_num_int.Size = new System.Drawing.Size(249, 29);
             this.txt_domicilio_num_int.TabIndex = 14;
-            this.txt_domicilio_num_int.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_num_int_KeyPress);
             // 
             // txt_domicilio_calle
             // 
@@ -1496,7 +1311,19 @@
             this.label22.TabIndex = 1136;
             this.label22.Text = "Municipio:";
             // 
+<<<<<<< HEAD
             // label23
+=======
+            this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombre.Location = new System.Drawing.Point(189, 149);
+            this.txt_nombre.MaxLength = 32;
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(248, 29);
+            this.txt_nombre.TabIndex = 2;
+            this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
+            this.txt_nombre.Validating += new System.ComponentModel.CancelEventHandler(this.txt_nombre_Validating);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             this.label23.AutoSize = true;
             this.label23.BackColor = System.Drawing.Color.Transparent;
@@ -1565,7 +1392,7 @@
             this.txt_banco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_banco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_banco.Location = new System.Drawing.Point(710, 380);
-            this.txt_banco.MaxLength = 10;
+            this.txt_banco.MaxLength = 5;
             this.txt_banco.Name = "txt_banco";
             this.txt_banco.Size = new System.Drawing.Size(249, 29);
             this.txt_banco.TabIndex = 39;
@@ -1579,7 +1406,6 @@
             this.txt_cuenta.Name = "txt_cuenta";
             this.txt_cuenta.Size = new System.Drawing.Size(249, 29);
             this.txt_cuenta.TabIndex = 40;
-            this.txt_cuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuenta_KeyPress);
             // 
             // txt_periodicidad_pago
             // 
@@ -1603,6 +1429,7 @@
             // 
             // txt_dias_vacaciones
             // 
+<<<<<<< HEAD
             this.txt_dias_vacaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_dias_vacaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dias_vacaciones.Location = new System.Drawing.Point(710, 260);
@@ -1611,7 +1438,32 @@
             this.txt_dias_vacaciones.Size = new System.Drawing.Size(249, 29);
             this.txt_dias_vacaciones.TabIndex = 36;
             this.txt_dias_vacaciones.Text = "0";
-            this.txt_dias_vacaciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dias_vacaciones_KeyPress);
+=======
+            // txt_id
+            // 
+            this.txt_id.BackColor = System.Drawing.Color.White;
+            this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id.Location = new System.Drawing.Point(188, 65);
+            this.txt_id.MaxLength = 32;
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(248, 29);
+            this.txt_id.TabIndex = 0;
+            this.txt_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_KeyPress);
+            this.txt_id.Validating += new System.ComponentModel.CancelEventHandler(this.txt_id_Validating);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.rb_mod_inactivo);
+            this.groupBox4.Controls.Add(this.rb_mod_activo);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(519, 251);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(345, 75);
+            this.groupBox4.TabIndex = 1065;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Estatus:";
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // label35
             // 
@@ -1670,6 +1522,7 @@
             // 
             // txt_tipo_salario
             // 
+<<<<<<< HEAD
             this.txt_tipo_salario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_tipo_salario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_tipo_salario.Location = new System.Drawing.Point(242, 420);
@@ -1677,6 +1530,16 @@
             this.txt_tipo_salario.Name = "txt_tipo_salario";
             this.txt_tipo_salario.Size = new System.Drawing.Size(249, 29);
             this.txt_tipo_salario.TabIndex = 33;
+=======
+            this.txt_domicilio_cp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_domicilio_cp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_domicilio_cp.Location = new System.Drawing.Point(188, 528);
+            this.txt_domicilio_cp.MaxLength = 5;
+            this.txt_domicilio_cp.Name = "txt_domicilio_cp";
+            this.txt_domicilio_cp.Size = new System.Drawing.Size(249, 29);
+            this.txt_domicilio_cp.TabIndex = 16;
+            this.txt_domicilio_cp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_cp_KeyPress);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // txt_dias_aguinaldo
             // 
@@ -1689,7 +1552,6 @@
             this.txt_dias_aguinaldo.TabIndex = 34;
             this.txt_dias_aguinaldo.Text = "0";
             this.txt_dias_aguinaldo.TextChanged += new System.EventHandler(this.txt_dias_aguinaldo_TextChanged);
-            this.txt_dias_aguinaldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dias_aguinaldo_KeyPress);
             // 
             // txt_sueldo_quincenal
             // 
@@ -1701,7 +1563,6 @@
             this.txt_sueldo_quincenal.Size = new System.Drawing.Size(249, 29);
             this.txt_sueldo_quincenal.TabIndex = 32;
             this.txt_sueldo_quincenal.Text = "0";
-            this.txt_sueldo_quincenal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sueldo_quincenal_KeyPress);
             // 
             // txt_sueldo_diario
             // 
@@ -1713,7 +1574,6 @@
             this.txt_sueldo_diario.Size = new System.Drawing.Size(249, 29);
             this.txt_sueldo_diario.TabIndex = 30;
             this.txt_sueldo_diario.Text = "0";
-            this.txt_sueldo_diario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sueldo_diario_KeyPress);
             // 
             // txt_sueldo_integrado
             // 
@@ -1725,7 +1585,6 @@
             this.txt_sueldo_integrado.Size = new System.Drawing.Size(249, 29);
             this.txt_sueldo_integrado.TabIndex = 31;
             this.txt_sueldo_integrado.Text = "0";
-            this.txt_sueldo_integrado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sueldo_integrado_KeyPress);
             // 
             // txt_tipo_contrato
             // 
@@ -1750,6 +1609,7 @@
             // 
             // label28
             // 
+<<<<<<< HEAD
             this.label28.AutoSize = true;
             this.label28.BackColor = System.Drawing.Color.Transparent;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1758,9 +1618,20 @@
             this.label28.Size = new System.Drawing.Size(212, 24);
             this.label28.TabIndex = 1090;
             this.label28.Text = "Sueldo Diario Integrado:";
+=======
+            this.txt_domicilio_num_ext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_domicilio_num_ext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_domicilio_num_ext.Location = new System.Drawing.Point(188, 410);
+            this.txt_domicilio_num_ext.MaxLength = 5;
+            this.txt_domicilio_num_ext.Name = "txt_domicilio_num_ext";
+            this.txt_domicilio_num_ext.Size = new System.Drawing.Size(249, 29);
+            this.txt_domicilio_num_ext.TabIndex = 13;
+            this.txt_domicilio_num_ext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_num_ext_KeyPress);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // label30
             // 
+<<<<<<< HEAD
             this.label30.AutoSize = true;
             this.label30.BackColor = System.Drawing.Color.Transparent;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1769,6 +1640,16 @@
             this.label30.Size = new System.Drawing.Size(128, 24);
             this.label30.TabIndex = 1088;
             this.label30.Text = "Sueldo Diario:";
+=======
+            this.txt_domicilio_num_int.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_domicilio_num_int.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_domicilio_num_int.Location = new System.Drawing.Point(188, 447);
+            this.txt_domicilio_num_int.MaxLength = 5;
+            this.txt_domicilio_num_int.Name = "txt_domicilio_num_int";
+            this.txt_domicilio_num_int.Size = new System.Drawing.Size(249, 29);
+            this.txt_domicilio_num_int.TabIndex = 14;
+            this.txt_domicilio_num_int.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_num_int_KeyPress);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // label31
             // 
@@ -1922,6 +1803,7 @@
             // 
             // btn_cancelar
             // 
+<<<<<<< HEAD
             this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_cancelar.FlatAppearance.BorderSize = 0;
             this.btn_cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
@@ -1935,9 +1817,19 @@
             this.btn_cancelar.TabIndex = 46;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+=======
+            this.txt_banco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_banco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_banco.Location = new System.Drawing.Point(710, 380);
+            this.txt_banco.MaxLength = 10;
+            this.txt_banco.Name = "txt_banco";
+            this.txt_banco.Size = new System.Drawing.Size(249, 29);
+            this.txt_banco.TabIndex = 39;
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // btn_modificar
             // 
+<<<<<<< HEAD
             this.btn_modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_modificar.Enabled = false;
             this.btn_modificar.FlatAppearance.BorderSize = 0;
@@ -1954,6 +1846,16 @@
             this.btn_modificar.UseVisualStyleBackColor = false;
             this.btn_modificar.Visible = false;
             this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click_3);
+=======
+            this.txt_cuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_cuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cuenta.Location = new System.Drawing.Point(710, 420);
+            this.txt_cuenta.MaxLength = 32;
+            this.txt_cuenta.Name = "txt_cuenta";
+            this.txt_cuenta.Size = new System.Drawing.Size(249, 29);
+            this.txt_cuenta.TabIndex = 40;
+            this.txt_cuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuenta_KeyPress);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // btn_dar_baja
             // 
@@ -1991,8 +1893,20 @@
             // 
             // horariosBindingSource
             // 
+<<<<<<< HEAD
             this.horariosBindingSource.DataMember = "horarios";
             this.horariosBindingSource.DataSource = this.dataSet_Checador;
+=======
+            this.txt_dias_vacaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_dias_vacaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dias_vacaciones.Location = new System.Drawing.Point(710, 260);
+            this.txt_dias_vacaciones.MaxLength = 32;
+            this.txt_dias_vacaciones.Name = "txt_dias_vacaciones";
+            this.txt_dias_vacaciones.Size = new System.Drawing.Size(249, 29);
+            this.txt_dias_vacaciones.TabIndex = 36;
+            this.txt_dias_vacaciones.Text = "0";
+            this.txt_dias_vacaciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dias_vacaciones_KeyPress);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -2032,18 +1946,56 @@
             // 
             // horariosTableAdapter
             // 
+<<<<<<< HEAD
             this.horariosTableAdapter.ClearBeforeFill = true;
+=======
+            this.txt_dias_aguinaldo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_dias_aguinaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dias_aguinaldo.Location = new System.Drawing.Point(240, 460);
+            this.txt_dias_aguinaldo.MaxLength = 32;
+            this.txt_dias_aguinaldo.Name = "txt_dias_aguinaldo";
+            this.txt_dias_aguinaldo.Size = new System.Drawing.Size(249, 29);
+            this.txt_dias_aguinaldo.TabIndex = 34;
+            this.txt_dias_aguinaldo.Text = "0";
+            this.txt_dias_aguinaldo.TextChanged += new System.EventHandler(this.txt_dias_aguinaldo_TextChanged);
+            this.txt_dias_aguinaldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dias_aguinaldo_KeyPress);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // sucursalTableAdapter
             // 
+<<<<<<< HEAD
             this.sucursalTableAdapter.ClearBeforeFill = true;
+=======
+            this.txt_sueldo_quincenal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_sueldo_quincenal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_sueldo_quincenal.Location = new System.Drawing.Point(242, 380);
+            this.txt_sueldo_quincenal.MaxLength = 32;
+            this.txt_sueldo_quincenal.Name = "txt_sueldo_quincenal";
+            this.txt_sueldo_quincenal.Size = new System.Drawing.Size(249, 29);
+            this.txt_sueldo_quincenal.TabIndex = 32;
+            this.txt_sueldo_quincenal.Text = "0";
+            this.txt_sueldo_quincenal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sueldo_quincenal_KeyPress);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // vista_EmpleadosTableAdapter
             // 
+<<<<<<< HEAD
             this.vista_EmpleadosTableAdapter.ClearBeforeFill = true;
+=======
+            this.txt_sueldo_diario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_sueldo_diario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_sueldo_diario.Location = new System.Drawing.Point(240, 300);
+            this.txt_sueldo_diario.MaxLength = 5;
+            this.txt_sueldo_diario.Name = "txt_sueldo_diario";
+            this.txt_sueldo_diario.Size = new System.Drawing.Size(249, 29);
+            this.txt_sueldo_diario.TabIndex = 30;
+            this.txt_sueldo_diario.Text = "0";
+            this.txt_sueldo_diario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sueldo_diario_KeyPress);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // txt_departamento
             // 
+<<<<<<< HEAD
             this.txt_departamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_departamento.Location = new System.Drawing.Point(616, 64);
@@ -2051,7 +2003,17 @@
             this.txt_departamento.Name = "txt_departamento";
             this.txt_departamento.Size = new System.Drawing.Size(249, 29);
             this.txt_departamento.TabIndex = 6;
-            this.txt_departamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_departamento_KeyPress);
+=======
+            this.txt_sueldo_integrado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_sueldo_integrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_sueldo_integrado.Location = new System.Drawing.Point(240, 340);
+            this.txt_sueldo_integrado.MaxLength = 5;
+            this.txt_sueldo_integrado.Name = "txt_sueldo_integrado";
+            this.txt_sueldo_integrado.Size = new System.Drawing.Size(249, 29);
+            this.txt_sueldo_integrado.TabIndex = 31;
+            this.txt_sueldo_integrado.Text = "0";
+            this.txt_sueldo_integrado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sueldo_integrado_KeyPress);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
             // 
             // label85
             // 
@@ -2063,6 +2025,296 @@
             this.label85.Size = new System.Drawing.Size(133, 24);
             this.label85.TabIndex = 1145;
             this.label85.Text = "Departamento:";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "id_empleado";
+            this.dataGridViewTextBoxColumn7.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 49;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "nombre_completo";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 88;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "CURP";
+            this.dataGridViewTextBoxColumn9.HeaderText = "CURP";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 77;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "RFC";
+            this.dataGridViewTextBoxColumn10.HeaderText = "RFC";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "NSS";
+            this.dataGridViewTextBoxColumn11.HeaderText = "NSS";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "sucursal";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Sucursal";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 94;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "departamento";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Departamento";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Width = 135;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "telefono";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Telefono";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 94;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "direccion";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Dirección";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Width = 98;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "num_int";
+            this.dataGridViewTextBoxColumn16.HeaderText = "No. interior";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Width = 108;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Localizacion";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Localización";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            this.dataGridViewTextBoxColumn17.Width = 119;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "puesto";
+            this.dataGridViewTextBoxColumn18.HeaderText = "Puesto";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.dataGridViewTextBoxColumn18.Width = 82;
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "email";
+            this.dataGridViewTextBoxColumn19.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.ReadOnly = true;
+            this.dataGridViewTextBoxColumn19.Width = 71;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "fecha_alta";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Fecha alta";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            this.dataGridViewTextBoxColumn20.ReadOnly = true;
+            this.dataGridViewTextBoxColumn20.Width = 107;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "fecha_baja";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Fecha Baja";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            this.dataGridViewTextBoxColumn21.ReadOnly = true;
+            this.dataGridViewTextBoxColumn21.Width = 113;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "observaciones";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Observaciones";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn22.ReadOnly = true;
+            this.dataGridViewTextBoxColumn22.Width = 137;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "tipo_contrato";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Tipo contrato";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.ReadOnly = true;
+            this.dataGridViewTextBoxColumn23.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "sueldo_diario";
+            this.dataGridViewTextBoxColumn24.HeaderText = "Sueldo diario";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.ReadOnly = true;
+            this.dataGridViewTextBoxColumn24.Width = 124;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "sueldo_diario_integrado";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Sueldo diario integrado";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.ReadOnly = true;
+            this.dataGridViewTextBoxColumn25.Width = 177;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "sueldo_base_quincenal";
+            this.dataGridViewTextBoxColumn26.HeaderText = "Sueldo base quincenal";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.ReadOnly = true;
+            this.dataGridViewTextBoxColumn26.Width = 175;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "tipo_salario";
+            this.dataGridViewTextBoxColumn27.HeaderText = "Tipo salario";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.ReadOnly = true;
+            this.dataGridViewTextBoxColumn27.Width = 103;
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "dias_aguinaldo";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Dias aguinaldo";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.ReadOnly = true;
+            this.dataGridViewTextBoxColumn28.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "dias_vacaciones";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Dias vacaciones";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.ReadOnly = true;
+            this.dataGridViewTextBoxColumn29.Width = 134;
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "riesgo_puesto";
+            this.dataGridViewTextBoxColumn30.HeaderText = "Riesgo puesto";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.dataGridViewTextBoxColumn30.ReadOnly = true;
+            this.dataGridViewTextBoxColumn30.Width = 123;
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "periodicidad_pago";
+            this.dataGridViewTextBoxColumn31.HeaderText = "Periodicidad pago";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.dataGridViewTextBoxColumn31.ReadOnly = true;
+            this.dataGridViewTextBoxColumn31.Width = 144;
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "banco";
+            this.dataGridViewTextBoxColumn32.HeaderText = "Banco";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.ReadOnly = true;
+            this.dataGridViewTextBoxColumn32.Width = 78;
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "cuenta_bancaria";
+            this.dataGridViewTextBoxColumn33.HeaderText = "Cuenta bancaria";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            this.dataGridViewTextBoxColumn33.ReadOnly = true;
+            this.dataGridViewTextBoxColumn33.Width = 136;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "tarjeta_despensa";
+            this.dataGridViewTextBoxColumn34.HeaderText = "Tarjeta despensa";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            this.dataGridViewTextBoxColumn34.ReadOnly = true;
+            this.dataGridViewTextBoxColumn34.Width = 141;
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "clave_edenred";
+            this.dataGridViewTextBoxColumn35.HeaderText = "Clave edenred";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.ReadOnly = true;
+            this.dataGridViewTextBoxColumn35.Width = 122;
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+<<<<<<< HEAD
+            this.dataGridViewTextBoxColumn36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "password";
+            this.dataGridViewTextBoxColumn36.HeaderText = "Password";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.ReadOnly = true;
+            this.dataGridViewTextBoxColumn36.Width = 101;
+=======
+            this.txt_departamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_departamento.Location = new System.Drawing.Point(616, 64);
+            this.txt_departamento.MaxLength = 32;
+            this.txt_departamento.Name = "txt_departamento";
+            this.txt_departamento.Size = new System.Drawing.Size(249, 29);
+            this.txt_departamento.TabIndex = 6;
+            this.txt_departamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_departamento_KeyPress);
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn37.DataPropertyName = "estatus";
+            this.dataGridViewTextBoxColumn37.HeaderText = "Estatus";
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.ReadOnly = true;
+            this.dataGridViewTextBoxColumn37.Width = 87;
             // 
             // errorProvider1
             // 
@@ -2258,6 +2510,8 @@
         private DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter vista_EmpleadosTableAdapter;
         private System.Windows.Forms.BindingSource horariosBindingSource;
         private DataSet_ChecadorTableAdapters.horariosTableAdapter horariosTableAdapter;
+        private System.Windows.Forms.TextBox txt_departamento;
+        private System.Windows.Forms.Label label85;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
@@ -2265,7 +2519,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horarioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
@@ -2289,10 +2542,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
-        private System.Windows.Forms.DataGridViewTextBoxColumn horasextraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
+<<<<<<< HEAD
+=======
         private System.Windows.Forms.TextBox txt_departamento;
         private System.Windows.Forms.Label label85;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+>>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
     }
 }

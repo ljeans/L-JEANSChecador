@@ -59,14 +59,7 @@ namespace Checador
             dtp_hora_salida.Text = "";
             dtp_hora_salida_desc.Text = "";
             txt_tolerancia.Text = "10";
-
-            cb_lunes.Checked = true;
-            cb_martes.Checked = true;
-            cb_miercoles.Checked = true;
-            cb_jueves.Checked = true;
-            cb_viernes.Checked = true;
-            cb_sabado.Checked = true;
-            cb_domingo.Checked = true;
+            
             cargarID();
 
         }
@@ -79,8 +72,12 @@ namespace Checador
             if (respuesta == true)
             {
                 Horario.Modificar_Horario();
+                //FUNCION PAR RECARGAR EL DATAGRID
+                // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Horario' table. You can move, or remove it, as needed.
+                this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
                 Limpiar();
                 tabControlBase.SelectedTab = tabPage2;
+                txt_id_a_modificar.Focus();
             }
             else
             {
@@ -104,55 +101,6 @@ namespace Checador
                 Horario.hr_entrada = dtp_hora_entrada.Value.TimeOfDay;
                 Horario.hr_salida = dtp_hora_salida.Value.TimeOfDay;
                 Horario.tolerancia = Convert.ToInt32(txt_tolerancia.Text);
-
-                if (cb_lunes.Checked == true)
-                    Horario.lunes = 1;
-                else
-                {
-                    Horario.lunes = 0;
-                }
-
-                if (cb_martes.Checked == true)
-                    Horario.martes = 1;
-                else
-                {
-                    Horario.martes = 0;
-                }
-
-                if (cb_miercoles.Checked == true)
-                    Horario.miercoles = 1;
-                else
-                {
-                    Horario.miercoles = 0;
-                }
-
-                if (cb_jueves.Checked == true)
-                    Horario.jueves = 1;
-                else
-                {
-                    Horario.jueves = 0;
-                }
-
-                if (cb_viernes.Checked == true)
-                    Horario.viernes = 1;
-                else
-                {
-                    Horario.viernes = 0;
-                }
-
-                if (cb_sabado.Checked == true)
-                    Horario.sabado = 1;
-                else
-                {
-                    Horario.sabado = 0;
-                }
-                if (cb_domingo.Checked == true)
-                    Horario.domingo = 1;
-                else
-                {
-                    Horario.domingo = 0;
-                }
-
 
                 confirmacion = new formularios_padres.Mensajes();
                 confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea modificar el horario?";
@@ -180,14 +128,6 @@ namespace Checador
             tabControlBase.SelectedTab = tabPage1;
             btn_modificar.Visible = false;
             btn_registrar.Visible = true;
-
-            cb_lunes.Checked = true;
-            cb_martes.Checked = true;
-            cb_miercoles.Checked = true;
-            cb_jueves.Checked = true;
-            cb_viernes.Checked = true;
-            cb_sabado.Checked = true;
-            cb_domingo.Checked = true;
             Limpiar();
 
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
@@ -233,56 +173,8 @@ namespace Checador
                     cb_descanso.Checked = false;
                     dtp_hora_salida_desc.Enabled = false;
                 }
-
                
                 dtp_hora_salida.Value = Convert.ToDateTime(Horario.hr_salida.ToString());
-                if (Horario.lunes == 1)
-                    cb_lunes.Checked = true;
-                else
-                {
-                    cb_lunes.Checked = false;
-                }
-
-                if (Horario.martes == 1)
-                    cb_martes.Checked = true;
-                else
-                {
-                    cb_martes.Checked = false;
-                }
-
-                if (Horario.miercoles == 1)
-                    cb_miercoles.Checked = true;
-                else
-                {
-                    cb_miercoles.Checked = false;
-                }
-
-                if (Horario.jueves == 1)
-                    cb_jueves.Checked = true;
-                else
-                {
-                    cb_jueves.Checked = false;
-                }
-
-                if (Horario.viernes == 1)
-                    cb_viernes.Checked = true;
-                else
-                {
-                    cb_viernes.Checked = true;
-                }
-
-                if (Horario.sabado == 1)
-                    cb_sabado.Checked = true;
-                else
-                {
-                    cb_sabado.Checked = false;
-                }
-                if (Horario.domingo == 1)
-                    cb_domingo.Checked = true;
-                else
-                {
-                    cb_domingo.Checked = false;
-                }
 
                 btn_registrar.Visible = false;
                 btn_modificar.Visible = true;
@@ -326,13 +218,6 @@ namespace Checador
             Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
             hilo_secundario.IsBackground = true;
             hilo_secundario.Start();
-            cb_lunes.Checked = true;
-            cb_martes.Checked = true;
-            cb_miercoles.Checked = true;
-            cb_jueves.Checked = true;
-            cb_viernes.Checked = true;
-            cb_sabado.Checked = true;
-            cb_domingo.Checked = true;
         }
 
 ///REGISTRAR///////////////////////////////////////////////////////////////////////////////////
@@ -361,56 +246,10 @@ namespace Checador
                 Horario.hr_salida = new TimeSpan(dtp_hora_salida.Value.TimeOfDay.Hours, dtp_hora_salida.Value.Minute, 00);
                 Horario.tolerancia = Convert.ToInt32(txt_tolerancia.Text);
 
-
-                if (cb_lunes.Checked == true)
-                    Horario.lunes = 1;
-                else
-                {
-                    Horario.lunes = 0;
-                }
-
-                if (cb_martes.Checked == true)
-                    Horario.martes = 1;
-                else
-                {
-                    Horario.martes = 0;
-                }
-
-                if (cb_miercoles.Checked == true)
-                    Horario.miercoles = 1;
-                else
-                {
-                    Horario.miercoles = 0;
-                }
-
-                if (cb_jueves.Checked == true)
-                    Horario.jueves = 1;
-                else
-                {
-                    Horario.jueves = 0;
-                }
-
-                if (cb_viernes.Checked == true)
-                    Horario.viernes = 1;
-                else
-                {
-                    Horario.viernes = 0;
-                }
-
-                if (cb_sabado.Checked == true)
-                    Horario.sabado = 1;
-                else
-                {
-                    Horario.sabado = 0;
-                }
-                if (cb_domingo.Checked == true)
-                    Horario.domingo = 1;
-                else
-                {
-                    Horario.domingo = 0;
-                }
-
                 Horario.guardarHorario(descansoFlag);
+                //FUNCION PAR RECARGAR EL DATAGRID
+                // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Horario' table. You can move, or remove it, as needed.
+                this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
                 Limpiar();
             }
             catch (Exception ex)
@@ -757,6 +596,17 @@ namespace Checador
             {
                 //MessageBox.Show(ex.ToString());
             }
+        }
+
+        //FUNCION PARA CARGAR LOS DATOS DESDE LA PESTAÑA CONSULTAR PARA MODIFICAR
+        private void btn_b_modificar_Click(object sender, EventArgs e)
+        {
+            var row = dgv_horarios.CurrentRow;
+            Horario.id = Convert.ToInt32(row.Cells[0].Value);
+            rb_modificar.Checked = true;
+            txt_id_a_modificar.Text = Convert.ToString(Horario.id);
+            tabControlBase.SelectedTab = tabPage2;
+            btn_ir_modificar.PerformClick();
         }
     }
 }

@@ -74,9 +74,11 @@ namespace Checador
             if (respuesta == true)
             {
                 Clase_Checador.Modificar_Checador();
+                //FUNCION PAR RECARGAR EL DATAGRID
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
                 Limpiar();
                 tabControlBase.SelectedTab = tabPage2;
-
+                txt_id_mod.Focus();
             }
             else
             {
@@ -180,6 +182,10 @@ namespace Checador
                 Clase_Checador.ip = txt_ip.Text;
                 Clase_Checador.puerto = txt_puerto.Text;
                 Clase_Checador.guardarChecador();
+
+                //FUNCION PAR RECARGAR EL DATAGRID
+                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+
                 Limpiar();
             }
             catch (Exception ex)
