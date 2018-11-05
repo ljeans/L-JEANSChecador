@@ -346,5 +346,21 @@ namespace Checador
         }
         //////////////////////////////////////////////////////////////////
 
+        //FUNCION PARA CUANDO DEJE EL CAMPO DE TEXTO ID BUSQUE SI EXISTE LA SUCURSAL
+        private void txt_id_Leave(object sender, EventArgs e)
+        {
+            if (txt_id.Text != "")
+            {
+                Sucursal.id = Convert.ToInt32(txt_id.Text);
+                if (Sucursal.verificar_existencia(Sucursal.id))
+                {
+                    MessageBox.Show("El ID de la sucursal " + Sucursal.id + " ya existe. Ingrese otro ID");
+                    txt_id.Text = "";
+                    txt_id.Focus();
+                }
+            }
+        }
+        
+
     }
 }

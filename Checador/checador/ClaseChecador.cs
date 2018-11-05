@@ -369,6 +369,25 @@ namespace Checador
                         comand.ExecuteNonQuery();
                         con.Close();
                     }
+                    else if (fecha_event.TotalMinutes > fecha_retardo.TotalMinutes && hora_salida_descanso  == new TimeSpan(00,00,00))
+                    {
+                        minutos_retardo = fecha_event.TotalMinutes - fecha_retardo.TotalMinutes;
+
+                        //GUARDAR NUEVO EVENTO
+                        string consulta = "INSERT INTO registros VALUES (@id_checador,@id_empleado,@id_sucursal,@fecha_entrada, @fecha_salida, @horas_trabajadas, @retardos, @total_min_retardo)";
+                        con.Open();
+                        SqlCommand comand = new SqlCommand(consulta, con);
+                        comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                        comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+                        comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                        comand.Parameters.AddWithValue("@fecha_entrada", fecha_evento);
+                        comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
+                        comand.Parameters.AddWithValue("@horas_trabajadas", DBNull.Value);
+                        comand.Parameters.AddWithValue("@retardos", retardo);
+                        comand.Parameters.AddWithValue("@total_min_retardo", minutos_retardo);
+                        comand.ExecuteNonQuery();
+                        con.Close();
+                    }
                     else
                     {
                         //GUARDAR NUEVO EVENTO
@@ -437,81 +456,94 @@ namespace Checador
                             //TimeSpan hr_evento = new TimeSpan(fecha_evento.Hour, fecha_evento.Minute + tolerancia, fecha_evento.Second);
                             int horas_trabajadas = 0;
 
-                            //VALIDACION PARA SABER COMO SE CALCULAN LAS HORAS TRABAJADAS
-                            if (Math.Abs(hr_salida.TotalMinutes - hora_salida.TotalMinutes) > Math.Abs(hr_salida.TotalMinutes - hora_salida_descanso.TotalMinutes))
+                            //VALIDACION PARA HORAS EXTRAS A BODEGA, ESTA FIJO POR EL ID DE LA SUCURSAL DE BODEGA
+                            if (id_sucursal != 101)
                             {
-                                //SALIDA DE DESCANSO
-                                //VALIDAR LOS MINUTOS ANTES DE LA ENTADA Y DESPUES DE LA HORA DE SALIDA DEL HORARIO
-                                if ((hr_salida <= hora_salida_descanso) && (hr_entrada >= hora_entrada))
-                                {
-                                    horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
-                                }
-                                else if ((hr_salida > hora_salida_descanso) && (hr_entrada >= hora_entrada))
-                                {
-                                    horas_trabajadas = Convert.ToInt32(hora_salida_descanso.TotalMinutes - hr_entrada.TotalMinutes);
-                                }
-                                else if ((hr_salida <= hora_salida_descanso) && (hr_entrada < hora_entrada))
-                                {
-                                    horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hora_entrada.TotalMinutes);
-                                }
-                                else if ((hr_salida > hora_salida_descanso) && (hr_entrada < hora_entrada))
-                                {
-                                    horas_trabajadas = Convert.ToInt32(hora_salida_descanso.TotalMinutes - hora_entrada.TotalMinutes);
-                                }
+                                /*TimeSpan hr_entrada = new TimeSpan(fecha_entrada.Value.Hour, fecha_entrada.Value.Minute - tolerancia, fecha_entrada.Value.Second);
+                                TimeSpan hr_salida = new TimeSpan(fecha_evento.Hour, fecha_evento.Minute + tolerancia, fecha_evento.Second);
+                                //TimeSpan hr_evento = new TimeSpan(fecha_evento.Hour, fecha_evento.Minute + tolerancia, fecha_evento.Second);
+                                int horas_trabajadas = 0;*/
 
-                            }
-                            else if (Math.Abs(hr_salida.TotalMinutes - hora_salida.TotalMinutes) < Math.Abs(hr_salida.TotalMinutes - hora_salida_descanso.TotalMinutes))
-                            {
-                                //SALIDA DE TURNO
-                                if (hora_entrada_descanso != new TimeSpan (00,00,00))
+                                //VALIDACION PARA SABER COMO SE CALCULAN LAS HORAS TRABAJADAS
+                                if (Math.Abs(hr_salida.TotalMinutes - hora_salida.TotalMinutes) > Math.Abs(hr_salida.TotalMinutes - hora_salida_descanso.TotalMinutes))
                                 {
-                                    //ENTRADA DESCANSO
-                                    if (hr_entrada > hora_salida)
-                                    {
-                                        horas_trabajadas = 0;
-                                    }
-                                    else if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada_descanso))
+                                    //SALIDA DE DESCANSO
+                                    //VALIDAR LOS MINUTOS ANTES DE LA ENTADA Y DESPUES DE LA HORA DE SALIDA DEL HORARIO
+                                    if ((hr_salida <= hora_salida_descanso) && (hr_entrada >= hora_entrada))
                                     {
                                         horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
                                     }
-                                    else if ((hr_salida > hora_salida) && (hr_entrada >= hora_entrada_descanso))
+                                    else if ((hr_salida > hora_salida_descanso) && (hr_entrada >= hora_entrada))
                                     {
-                                        horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                                        horas_trabajadas = Convert.ToInt32(hora_salida_descanso.TotalMinutes - hr_entrada.TotalMinutes);
                                     }
-                                    else if ((hr_salida <= hora_salida) && (hr_entrada < hora_entrada_descanso))
-                                    {
-                                        horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hora_entrada_descanso.TotalMinutes);
-                                    }
-                                    else if ((hr_salida > hora_salida) && (hr_entrada < hora_entrada_descanso))
-                                    {
-                                        horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hora_entrada_descanso.TotalMinutes);
-                                    }
-                                }
-                                else
-                                {
-                                    //ENTRADA DE TURNO
-                                    if (hr_entrada > hora_salida_descanso && hora_salida_descanso != new TimeSpan(00, 00, 00))
-                                    {
-                                        horas_trabajadas = 0;
-                                    }
-                                    else if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada))
-                                    {
-                                        horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
-                                    }
-                                    else if ((hr_salida > hora_salida) && (hr_entrada >= hora_entrada))
-                                    {
-                                        horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hr_entrada.TotalMinutes);
-                                    }
-                                    else if ((hr_salida <= hora_salida) && (hr_entrada < hora_entrada))
+                                    else if ((hr_salida <= hora_salida_descanso) && (hr_entrada < hora_entrada))
                                     {
                                         horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hora_entrada.TotalMinutes);
                                     }
-                                    else if ((hr_salida > hora_salida) && (hr_entrada < hora_entrada))
+                                    else if ((hr_salida > hora_salida_descanso) && (hr_entrada < hora_entrada))
                                     {
-                                        horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hora_entrada.TotalMinutes);
+                                        horas_trabajadas = Convert.ToInt32(hora_salida_descanso.TotalMinutes - hora_entrada.TotalMinutes);
                                     }
-                                }
 
+                                }
+                                else if (Math.Abs(hr_salida.TotalMinutes - hora_salida.TotalMinutes) < Math.Abs(hr_salida.TotalMinutes - hora_salida_descanso.TotalMinutes))
+                                {
+                                    //SALIDA DE TURNO
+                                    if (hora_entrada_descanso != new TimeSpan(00, 00, 00))
+                                    {
+                                        //ENTRADA DESCANSO
+                                        if (hr_entrada > hora_salida)
+                                        {
+                                            horas_trabajadas = 0;
+                                        }
+                                        else if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada_descanso))
+                                        {
+                                            horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                                        }
+                                        else if ((hr_salida > hora_salida) && (hr_entrada >= hora_entrada_descanso))
+                                        {
+                                            horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                                        }
+                                        else if ((hr_salida <= hora_salida) && (hr_entrada < hora_entrada_descanso))
+                                        {
+                                            horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hora_entrada_descanso.TotalMinutes);
+                                        }
+                                        else if ((hr_salida > hora_salida) && (hr_entrada < hora_entrada_descanso))
+                                        {
+                                            horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hora_entrada_descanso.TotalMinutes);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        //ENTRADA DE TURNO
+                                        if (hr_entrada > hora_salida_descanso && hora_salida_descanso != new TimeSpan(00, 00, 00))
+                                        {
+                                            horas_trabajadas = 0;
+                                        }
+                                        else if ((hr_salida <= hora_salida) && (hr_entrada >= hora_entrada))
+                                        {
+                                            horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                                        }
+                                        else if ((hr_salida > hora_salida) && (hr_entrada >= hora_entrada))
+                                        {
+                                            horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                                        }
+                                        else if ((hr_salida <= hora_salida) && (hr_entrada < hora_entrada))
+                                        {
+                                            horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hora_entrada.TotalMinutes);
+                                        }
+                                        else if ((hr_salida > hora_salida) && (hr_entrada < hora_entrada))
+                                        {
+                                            horas_trabajadas = Convert.ToInt32(hora_salida.TotalMinutes - hora_entrada.TotalMinutes);
+                                        }
+                                    }
+
+                                }
+                            }
+                            else
+                            {
+                                horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
                             }
 
                             con.Close();

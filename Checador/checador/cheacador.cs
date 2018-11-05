@@ -843,5 +843,20 @@ namespace Checador
         {
             validar.soloimportes(e);
         }
+
+        //FUNCION PARA CUANDO DEJE EL CAMPO DE TEXTO ID BUSQUE SI EXISTE EL CHECADOR
+        private void txt_id_Leave(object sender, EventArgs e)
+        {
+            if (txt_id.Text != "")
+            {
+                Clase_Checador.id = Convert.ToInt32(txt_id.Text);
+                if (Clase_Checador.verificar_existencia(Clase_Checador.id))
+                {
+                    MessageBox.Show("El ID del checador "+ Clase_Checador.id +" ya existe. Ingrese otro ID");
+                    txt_id.Text = "";
+                    txt_id.Focus();
+                }
+            }
+        }
     }
 }

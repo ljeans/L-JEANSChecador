@@ -608,5 +608,19 @@ namespace Checador
             tabControlBase.SelectedTab = tabPage2;
             btn_ir_modificar.PerformClick();
         }
+
+        private void txt_id_Leave(object sender, EventArgs e)
+        {
+            if (txt_id.Text != "")
+            {
+                Horario.id = Convert.ToInt32(txt_id.Text);
+                if (Horario.verificar_existencia(Horario.id))
+                {
+                    MessageBox.Show("El ID del horario " + Horario.id + " ya existe. Ingrese otro ID");
+                    txt_id.Text = "";
+                    txt_id.Focus();
+                }
+            }
+        }
     }
 }
