@@ -30,15 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
+=======
 >>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
 =======
 <<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -52,6 +58,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
 >>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
 >>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
+<<<<<<< HEAD
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
+=======
 >>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
             this.txt_rfc = new System.Windows.Forms.MaskedTextBox();
             this.txt_nss = new System.Windows.Forms.TextBox();
@@ -605,10 +614,13 @@
             this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
 =======
@@ -616,14 +628,20 @@
             this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
 >>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
 >>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
+<<<<<<< HEAD
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
+=======
 >>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
             this.dgv_empleadobuscar.AutoGenerateColumns = false;
             this.dgv_empleadobuscar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_empleadobuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_empleadobuscar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
+=======
 >>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
@@ -634,7 +652,10 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_empleadobuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
 =======
 <<<<<<< HEAD
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -656,6 +677,9 @@
             this.dgv_empleadobuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
 >>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
 >>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
+<<<<<<< HEAD
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
+=======
 >>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
             this.dgv_empleadobuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_empleadobuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -692,8 +716,11 @@
             this.dataGridViewTextBoxColumn37});
             this.dgv_empleadobuscar.DataSource = this.vistaEmpleadosBindingSource;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
+=======
 >>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
@@ -704,7 +731,10 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_empleadobuscar.DefaultCellStyle = dataGridViewCellStyle3;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
 =======
 <<<<<<< HEAD
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -726,6 +756,9 @@
             this.dgv_empleadobuscar.DefaultCellStyle = dataGridViewCellStyle11;
 >>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
 >>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
+<<<<<<< HEAD
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
+=======
 >>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
             this.dgv_empleadobuscar.EnableHeadersVisualStyles = false;
             this.dgv_empleadobuscar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
@@ -734,8 +767,11 @@
             this.dgv_empleadobuscar.Name = "dgv_empleadobuscar";
             this.dgv_empleadobuscar.ReadOnly = true;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
+=======
 >>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
@@ -746,7 +782,10 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_empleadobuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
 =======
 <<<<<<< HEAD
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -768,6 +807,9 @@
             this.dgv_empleadobuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
 >>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
 >>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
+<<<<<<< HEAD
+>>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
+=======
 >>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
             this.dgv_empleadobuscar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_empleadobuscar.Size = new System.Drawing.Size(966, 407);
