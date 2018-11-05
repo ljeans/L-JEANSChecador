@@ -17,7 +17,8 @@ namespace Checador
         ClaseHorario horario = new ClaseHorario();
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
-        int idhorario;
+        validacion validar = new validacion();
+        int idhorario, contador;
         public bool respuesta = false;
 
         public sucursales()
@@ -29,6 +30,7 @@ namespace Checador
         {
             // TODO: This line of code loads data into the 'dataSet_Checador.horarios' table. You can move, or remove it, as needed.
             this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
+            txt_id.Focus();
 
         }
 
@@ -343,6 +345,222 @@ namespace Checador
             txt_id_mod.Text = Convert.ToString(Sucursal.id);
             tabControlBase.SelectedTab = tabPage3;
             btn_ir_modificar.PerformClick();
+        }
+
+        private void txt_nombre_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txt_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+        }
+
+        private void txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+        }
+
+        private void txt_domicilio_num_ext_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_domicilio_num_int_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_domicilio_cp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+            if (string.IsNullOrEmpty(txt_domicilio_cp.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_cp, "No ha ingresado el codigo postal de la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_cp, null);
+                contador = contador + 1;
+            }
+
+        }
+
+        private void txt_domicilio_pais_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.sololetras(e);
+            if (string.IsNullOrEmpty(txt_domicilio_pais.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_pais, "No ha ingresado el nombre de la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_pais, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_nombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_nombre.Text))
+            {
+
+                errorProvider1.SetError(txt_nombre, "No ha ingresado el nombre de la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_nombre, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_telefono_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_telefono.Text))
+            {
+
+                errorProvider1.SetError(txt_telefono, "No ha ingresado el telefono de la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_telefono, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_domicilio_calle_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_domicilio_calle.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_calle, "No ha ingresado la calle de la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_calle, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_domicilio_num_ext_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_domicilio_num_ext.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_num_ext, "No ha ingresado el numero exterior de la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_num_ext, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_domicilio_num_int_Validating(object sender, CancelEventArgs e)
+        {
+            if (txt_domicilio_num_ext.Text == "")
+            {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "No puede ingresar un num. interior si ";
+                mensaje.lbl_info2.Text = "no existe un num. exterior.";
+                mensaje.FormClosed += new FormClosedEventHandler(responder);
+                mensaje.Show();
+                Enabled = false;
+                txt_domicilio_num_ext.Focus();
+            }
+        }
+
+        private void txt_domicilio_colonia_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_domicilio_colonia.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_colonia, "No ha ingresado la colonia donde se encuentra la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_colonia, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_domicilio_pob_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_domicilio_pob.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_pob, "No ha ingresado la poblacion donde se ecuentra la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_pob, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_domicilio_municipio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_domicilio_municipio.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_municipio, "No ha ingresado el municipio donde se ecuentra la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_municipio, null);
+                contador = contador + 1;
+            }
+
+        }
+
+        private void txt_domicilio_estado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(string.IsNullOrEmpty(txt_domicilio_estado.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_estado, "No ha ingresado el estado donde se ecuentra la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_estado, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_id_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_id.Text))
+            {
+
+                errorProvider1.SetError(txt_id, "No ha ingresado el identificador de la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_id, null);
+                contador = contador + 1;
+            }
         }
         //////////////////////////////////////////////////////////////////
 

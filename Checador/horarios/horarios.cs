@@ -608,5 +608,10 @@ namespace Checador
             tabControlBase.SelectedTab = tabPage2;
             btn_ir_modificar.PerformClick();
         }
+
+        private void txt_tolerancia_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
