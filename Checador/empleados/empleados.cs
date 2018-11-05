@@ -197,6 +197,9 @@ namespace Checador.empleados
                         Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio, 0);
                     }
 
+                    //FUNCION PAR RECARGAR EL DATAGRID
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+
                     confirmacion2 = new formularios_padres.Mensajes();
                     confirmacion2.lbl_mensaje.Text = "Desea registrar huella al empleado?";
                     confirmacion2.FormClosed += new FormClosedEventHandler(reg_huella);
@@ -555,10 +558,15 @@ namespace Checador.empleados
            
             if (respuesta == true)
             {
+                Empleado.Modificar_Empleado();
+                //FUNCION PAR RECARGAR EL DATAGRID
+                this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+
                 Conectar_Checador();
                 if (bConn)
                 {
-                    Empleado.Modificar_Empleado();
+                    //Empleado.Modificar_Empleado();
+
                    if (sucurzal != Convert.ToInt32(cbx_sucursal.SelectedValue.ToString()))
                     {
                         Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio, id_checador_viejo);
@@ -1015,6 +1023,21 @@ namespace Checador.empleados
             }
         }
 
+        //FUNCION PARA CUANDO DEJE EL CAMPO DE TEXTO ID BUSQUE SI EXISTE EL EMPLEADO
+        private void txt_id_Leave(object sender, EventArgs e)
+        {
+            if (txt_id.Text != "")
+            {
+                Empleado.id = Convert.ToInt32(txt_id.Text);
+                if (Empleado.verificar_existencia(Empleado.id))
+                {
+                    MessageBox.Show("El ID del empleado " + Empleado.id + " ya existe. Ingrese otro ID");
+                    txt_id.Text = "";
+                    txt_id.Focus();
+                }
+            }
+        }
+
         private void txt_id_Validating(object sender, CancelEventArgs e)
         {
             if (string.IsNullOrEmpty(txt_id.Text))
@@ -1037,7 +1060,8 @@ namespace Checador.empleados
             Empleado.id = Convert.ToInt32(row.Cells[0].Value);
             Empleado.estatus = "I";
             Empleado.Eliminar_Empleado();
-            
+            //FUNCION PAR RECARGAR EL DATAGRID
+            this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
         }
     }
 }

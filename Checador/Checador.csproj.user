@@ -8,7 +8,11 @@
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />
     <ErrorReportUrlHistory />
+<<<<<<< HEAD
     <FallbackCulture>es-ES</FallbackCulture>
+=======
+    <FallbackCulture>en-US</FallbackCulture>
+>>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
   <PropertyGroup>

@@ -79,7 +79,10 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_llenar_null = new System.Windows.Forms.Button();
             this.dtp_hora = new System.Windows.Forms.DateTimePicker();
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.vista_registrosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.vista_registrosTableAdapter();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -205,7 +208,10 @@
             this.dgv_empleados_recalcular.AutoGenerateColumns = false;
             this.dgv_empleados_recalcular.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleados_recalcular.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
             dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,7 +245,10 @@
             this.nombrecompletoDataGridViewTextBoxColumn,
             this.sucursalDataGridViewTextBoxColumn});
             this.dgv_empleados_recalcular.DataSource = this.vistaEmpleadosBindingSource;
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,7 +257,10 @@
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_empleados_recalcular.DefaultCellStyle = dataGridViewCellStyle15;
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -265,13 +277,19 @@
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_empleados_recalcular.DefaultCellStyle = dataGridViewCellStyle11;
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.dgv_empleados_recalcular.EnableHeadersVisualStyles = false;
             this.dgv_empleados_recalcular.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleados_recalcular.Location = new System.Drawing.Point(55, 105);
             this.dgv_empleados_recalcular.MultiSelect = false;
             this.dgv_empleados_recalcular.Name = "dgv_empleados_recalcular";
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -280,7 +298,10 @@
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_empleados_recalcular.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -298,7 +319,10 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_empleados_recalcular.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+<<<<<<< HEAD
 
+=======
+>>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.dgv_empleados_recalcular.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_empleados_recalcular.Size = new System.Drawing.Size(420, 480);
             this.dgv_empleados_recalcular.TabIndex = 0;
@@ -548,7 +572,11 @@
             this.nombrecompletoDataGridViewTextBoxColumn1.HeaderText = "Nombre de empleado";
             this.nombrecompletoDataGridViewTextBoxColumn1.Name = "nombrecompletoDataGridViewTextBoxColumn1";
             this.nombrecompletoDataGridViewTextBoxColumn1.ReadOnly = true;
+<<<<<<< HEAD
             this.nombrecompletoDataGridViewTextBoxColumn1.Width = 148;
+=======
+
+>>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // idchecadorDataGridViewTextBoxColumn
             // 

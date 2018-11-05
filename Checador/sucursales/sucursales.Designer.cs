@@ -414,8 +414,12 @@
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(100, 29);
             this.txt_id.TabIndex = 1;
+<<<<<<< HEAD
             this.txt_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_KeyPress);
             this.txt_id.Validating += new System.ComponentModel.CancelEventHandler(this.txt_id_Validating);
+=======
+            this.txt_id.Leave += new System.EventHandler(this.txt_id_Leave);
+>>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // label1
             // 

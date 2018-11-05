@@ -11,7 +11,6 @@
 	- Roles para ver que puede usar c/usuario
 - Validar en GENERAL
 	- Verificar existencia del empleado por el ID o CURP
-	- recargar los grid al hacer transacciones
 - Campos innecesarios en la bd
 	Empleados:
 		* Id_Horario, retartdos, total_min_retardo, horas_extra
@@ -19,5 +18,4 @@
 		*Lunes-Domingo
 - Interfaces
 	*Reacomodar registrar horario
-- Modulo Horarios
-	* Falta modificar en pestaña de consultas
+-Eliminar horarios
