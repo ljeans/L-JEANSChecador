@@ -232,7 +232,7 @@
             this.btn_incidente.Name = "btn_incidente";
             this.btn_incidente.Size = new System.Drawing.Size(200, 200);
             this.btn_incidente.TabIndex = 22;
-            this.btn_incidente.Text = "Incidentes";
+            this.btn_incidente.Text = "Tienda";
             this.btn_incidente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_incidente.UseVisualStyleBackColor = false;
             this.btn_incidente.Click += new System.EventHandler(this.btn_incidente_Click);

@@ -140,6 +140,7 @@
             this.cb_descanso = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_dar_baja = new System.Windows.Forms.Button();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -221,6 +222,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.btn_dar_baja);
             this.tabPage3.Controls.Add(this.btn_b_modificar);
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Controls.Add(this.txt_nombrebuscar);
@@ -1370,9 +1372,9 @@
             this.btn_b_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_b_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_b_modificar.ForeColor = System.Drawing.Color.White;
-            this.btn_b_modificar.Location = new System.Drawing.Point(381, 548);
+            this.btn_b_modificar.Location = new System.Drawing.Point(143, 548);
             this.btn_b_modificar.Name = "btn_b_modificar";
-            this.btn_b_modificar.Size = new System.Drawing.Size(250, 70);
+            this.btn_b_modificar.Size = new System.Drawing.Size(200, 50);
             this.btn_b_modificar.TabIndex = 91;
             this.btn_b_modificar.Text = "Modificar";
             this.btn_b_modificar.UseVisualStyleBackColor = false;
@@ -1472,6 +1474,23 @@
             this.groupBox1.TabIndex = 1112;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Horario";
+            // 
+            // btn_dar_baja
+            // 
+            this.btn_dar_baja.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_dar_baja.FlatAppearance.BorderSize = 0;
+            this.btn_dar_baja.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_dar_baja.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_dar_baja.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dar_baja.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dar_baja.ForeColor = System.Drawing.Color.White;
+            this.btn_dar_baja.Location = new System.Drawing.Point(577, 548);
+            this.btn_dar_baja.Name = "btn_dar_baja";
+            this.btn_dar_baja.Size = new System.Drawing.Size(200, 50);
+            this.btn_dar_baja.TabIndex = 94;
+            this.btn_dar_baja.Text = "Eliminar";
+            this.btn_dar_baja.UseVisualStyleBackColor = false;
+            this.btn_dar_baja.Click += new System.EventHandler(this.btn_dar_baja_Click);
             // 
             // horarios
             // 
@@ -1644,5 +1663,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtp_hora_salida_desc;
         private System.Windows.Forms.DateTimePicker dtp_hora_entrada_desc;
+        private System.Windows.Forms.Button btn_dar_baja;
     }
 }

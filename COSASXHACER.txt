@@ -1,21 +1,15 @@
-- Validación en el update de salida para min extra quitarlos
-	--Si es de bodega no quitarlos
 - Hacer HILOS
 - Poner UniqueKeys en la base de datos
-- Modulo checadores
-	*Modificar y dar de baja en la pestaña consultar
 - Reportes
-	- Validar reportes vacíos
+	* Reporte por departamento
 - Login
 	- Crear usuarios para login
 	- Roles para ver que puede usar c/usuario
 - Validar en GENERAL
-	- Verificar existencia del empleado por el ID o CURP
+	*PONER DIALOGOS DE CONFIRMACIÓN DONDE SEA NECESARIO
 - Campos innecesarios en la bd
 	Empleados:
 		* Id_Horario, retartdos, total_min_retardo, horas_extra
 	Horarios:
 		*Lunes-Domingo
-- Interfaces
-	*Reacomodar registrar horario
--Eliminar horarios
+- TOPMOST

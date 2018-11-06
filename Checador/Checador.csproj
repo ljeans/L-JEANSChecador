@@ -13,7 +13,11 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+<<<<<<< HEAD
     <PublishUrl>C:\Users\manue\Desktop\</PublishUrl>
+=======
+    <PublishUrl>C:\Users\Adrián\Desktop\</PublishUrl>
+>>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -26,7 +30,6 @@
     <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
-    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -49,7 +52,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
+<<<<<<< HEAD
     <ManifestCertificateThumbprint>03DF753293DD633618FCF0CC994089CF95F66E88</ManifestCertificateThumbprint>
+=======
+    <ManifestCertificateThumbprint>D79C90A201219981ADFEAEE69FCCCEE3AA1D0F85</ManifestCertificateThumbprint>
+>>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Checador_TemporaryKey.pfx</ManifestKeyFile>
@@ -569,7 +576,11 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
+<<<<<<< HEAD
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
+=======
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+>>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

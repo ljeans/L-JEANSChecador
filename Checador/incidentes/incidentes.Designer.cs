@@ -56,6 +56,15 @@
             this.txt_idbuscar = new System.Windows.Forms.TextBox();
             this.txt_nombrebuscar = new System.Windows.Forms.TextBox();
             this.dgv_rellenar = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
+=======
+            this.idempleadoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombrecompletoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idchecadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sucursalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaentradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechasalidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+>>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
             this.vistaregistrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_Checador1 = new Checador.DataSet_Checador();
             this.label4 = new System.Windows.Forms.Label();
@@ -166,6 +175,7 @@
             this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.rb_buscar.Location = new System.Drawing.Point(0, 210);
+            this.rb_buscar.Visible = false;
             // 
             // rb_modificar
             // 
@@ -434,6 +444,7 @@
             this.dgv_rellenar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_rellenar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_rellenar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idempleadoDataGridViewTextBoxColumn2,
             this.nombrecompletoDataGridViewTextBoxColumn1,
             this.idchecadorDataGridViewTextBoxColumn,
             this.sucursalDataGridViewTextBoxColumn1,
@@ -450,10 +461,50 @@
             this.dgv_rellenar.Size = new System.Drawing.Size(900, 400);
             this.dgv_rellenar.TabIndex = 0;
             // 
+<<<<<<< HEAD
+=======
+            // idempleadoDataGridViewTextBoxColumn2
+            // 
+            this.idempleadoDataGridViewTextBoxColumn2.DataPropertyName = "id_empleado";
+            this.idempleadoDataGridViewTextBoxColumn2.HeaderText = "ID Empleado";
+            this.idempleadoDataGridViewTextBoxColumn2.Name = "idempleadoDataGridViewTextBoxColumn2";
+            // 
+            // nombrecompletoDataGridViewTextBoxColumn1
+            // 
+            this.nombrecompletoDataGridViewTextBoxColumn1.DataPropertyName = "nombre_completo";
+            this.nombrecompletoDataGridViewTextBoxColumn1.HeaderText = "Nombre completo";
+            this.nombrecompletoDataGridViewTextBoxColumn1.Name = "nombrecompletoDataGridViewTextBoxColumn1";
+            this.nombrecompletoDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // idchecadorDataGridViewTextBoxColumn
+            // 
+            this.idchecadorDataGridViewTextBoxColumn.DataPropertyName = "id_checador";
+            this.idchecadorDataGridViewTextBoxColumn.HeaderText = "ID Checador";
+            this.idchecadorDataGridViewTextBoxColumn.Name = "idchecadorDataGridViewTextBoxColumn";
+            // 
+            // sucursalDataGridViewTextBoxColumn1
+            // 
+            this.sucursalDataGridViewTextBoxColumn1.DataPropertyName = "Sucursal";
+            this.sucursalDataGridViewTextBoxColumn1.HeaderText = "Sucursal";
+            this.sucursalDataGridViewTextBoxColumn1.Name = "sucursalDataGridViewTextBoxColumn1";
+            // 
+            // fechaentradaDataGridViewTextBoxColumn
+            // 
+            this.fechaentradaDataGridViewTextBoxColumn.DataPropertyName = "fecha_entrada";
+            this.fechaentradaDataGridViewTextBoxColumn.HeaderText = "Fecha de entrada";
+            this.fechaentradaDataGridViewTextBoxColumn.Name = "fechaentradaDataGridViewTextBoxColumn";
+            // 
+            // fechasalidaDataGridViewTextBoxColumn
+            // 
+            this.fechasalidaDataGridViewTextBoxColumn.DataPropertyName = "fecha_salida";
+            this.fechasalidaDataGridViewTextBoxColumn.HeaderText = "Fecha de salida";
+            this.fechasalidaDataGridViewTextBoxColumn.Name = "fechasalidaDataGridViewTextBoxColumn";
+            // 
+>>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
             // vistaregistrosBindingSource
             // 
             this.vistaregistrosBindingSource.DataMember = "vista_registros";
-            this.vistaregistrosBindingSource.DataSource = this.dataSet_Checador1;
+            this.vistaregistrosBindingSource.DataSource = this.dataSet_Checador;
             // 
             // dataSet_Checador1
             // 
@@ -573,6 +624,7 @@
             this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "incidentes";
+            this.TopMost = false;
             this.Load += new System.EventHandler(this.incidentes_Load);
             this.tabControlBase.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -627,9 +679,10 @@
         private System.Windows.Forms.Button btn_llenar_null;
         private System.Windows.Forms.DateTimePicker dtp_hora;
         private DataSet_Checador dataSet_Checador1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idempleadoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.BindingSource vistaregistrosBindingSource;
         private DataSet_ChecadorTableAdapters.vista_registrosTableAdapter vista_registrosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idempleadoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idempleadoDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombrecompletoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idchecadorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sucursalDataGridViewTextBoxColumn1;

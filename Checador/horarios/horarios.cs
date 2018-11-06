@@ -621,6 +621,47 @@ namespace Checador
                     txt_id.Focus();
                 }
             }
+<<<<<<< HEAD
+=======
+        }
+
+        //FUNCION PARA ELIMINAR UN HORARIO PERMANENTEMENTE DE LA BD
+        private void btn_dar_baja_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                confirmacion = new formularios_padres.Mensajes();
+                confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea eliminar el horario?";
+                confirmacion.FormClosed += new FormClosedEventHandler(eliminar);
+                confirmacion.Show();
+                Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void eliminar(object sender, EventArgs e)
+        {
+            try
+            {
+                Enabled = true;
+                respuesta = confirmacion.respuesta;
+                if (respuesta) {
+                    var row = dgv_horarios.CurrentRow;
+                    Horario.id = Convert.ToInt32(row.Cells[0].Value);
+                    Horario.eliminarHorario();
+                    //FUNCION PAR RECARGAR EL DATAGRID
+                    // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Horario' table. You can move, or remove it, as needed.
+                    this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+>>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
         }
     }
 }
