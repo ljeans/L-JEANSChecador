@@ -13,11 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-<<<<<<< HEAD
     <PublishUrl>C:\Users\manue\Desktop\</PublishUrl>
-=======
-    <PublishUrl>C:\Users\Adrián\Desktop\</PublishUrl>
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -27,11 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-<<<<<<< HEAD
     <ApplicationRevision>1</ApplicationRevision>
-=======
-    <ApplicationRevision>0</ApplicationRevision>
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -57,11 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-<<<<<<< HEAD
     <ManifestCertificateThumbprint>03DF753293DD633618FCF0CC994089CF95F66E88</ManifestCertificateThumbprint>
-=======
-    <ManifestCertificateThumbprint>D79C90A201219981ADFEAEE69FCCCEE3AA1D0F85</ManifestCertificateThumbprint>
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Checador_TemporaryKey.pfx</ManifestKeyFile>
@@ -194,6 +182,12 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="reportes\empleados-departamento.cs">
+      <DependentUpon>empleados-departamento.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="reportes\Sucursal-Empleados.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -213,6 +207,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="empleados\empleados.resx">
       <DependentUpon>empleados.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="formularios padres\Mensajes.resx">
       <DependentUpon>Mensajes.cs</DependentUpon>
@@ -262,6 +257,10 @@
     <EmbeddedResource Include="reportes\asistenciaxempleados.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>asistenciaxempleados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\empleados-departamento.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>empleados-departamento.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="reportes\Sucursal-Empleados.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -570,11 +569,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
-<<<<<<< HEAD
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
-=======
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

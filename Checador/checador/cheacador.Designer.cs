@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbox_datos_checador = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.rb_mod_inactivo = new System.Windows.Forms.RadioButton();
@@ -55,6 +55,12 @@
             this.txt_id_mod = new System.Windows.Forms.TextBox();
             this.btn_modificar = new System.Windows.Forms.Button();
             this.dgv_checadorbuscar = new System.Windows.Forms.DataGridView();
+            this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vistaChecadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgv_checador = new System.Windows.Forms.DataGridView();
             this.label42 = new System.Windows.Forms.Label();
@@ -63,8 +69,13 @@
             this.cb_buscarInactivo = new System.Windows.Forms.CheckBox();
             this.cb_buscarActivo = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtp_hora = new System.Windows.Forms.DateTimePicker();
             this.btn_borrar_eventos = new System.Windows.Forms.Button();
+            this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
+            this.btn_scr_eventos = new System.Windows.Forms.Button();
+            this.btn_fecha_manual = new System.Windows.Forms.Button();
             this.btn_borrar_usuarios = new System.Windows.Forms.Button();
+            this.btn_scr_fecha = new System.Windows.Forms.Button();
             this.sucursalTableAdapter = new Checador.DataSet_ChecadorTableAdapters.sucursalTableAdapter();
             this.vista_ChecadorTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_ChecadorTableAdapter();
             this.dgv_eventos_sincronizados = new System.Windows.Forms.DataGridView();
@@ -75,19 +86,9 @@
             this.tipo_evento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.dtp_hora = new System.Windows.Forms.DateTimePicker();
-            this.btn_scr_eventos = new System.Windows.Forms.Button();
-            this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
-            this.btn_fecha_manual = new System.Windows.Forms.Button();
-            this.btn_scr_fecha = new System.Windows.Forms.Button();
             this.btn_b_modificar = new System.Windows.Forms.Button();
             this.btn_dar_baja = new System.Windows.Forms.Button();
-            this.check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -106,6 +107,7 @@
             this.gbox_estatus.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_eventos_sincronizados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // rb_4
@@ -138,7 +140,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(309, 67);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 69);
             // 
             // tabPage1
             // 
@@ -168,10 +170,6 @@
             this.tabPage4.Controls.Add(this.label3);
             this.tabPage4.Controls.Add(this.btn_aceptar);
             this.tabPage4.Controls.Add(this.dgv_eventos_sincronizados);
-            // 
-            // panel_barra_sup
-            // 
-            this.panel_barra_sup.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barra_sup_Paint);
             // 
             // btn_home
             // 
@@ -306,10 +304,11 @@
             this.txt_ip.Size = new System.Drawing.Size(248, 29);
             this.txt_ip.TabIndex = 2;
             this.txt_ip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ip_KeyPress);
+            this.txt_ip.Leave += new System.EventHandler(this.txt_ip_Leave);
             // 
             // txt_id
             // 
-            this.txt_id.BackColor = System.Drawing.Color.LightGray;
+            this.txt_id.BackColor = System.Drawing.SystemColors.Window;
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Location = new System.Drawing.Point(245, 73);
@@ -317,6 +316,7 @@
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(248, 29);
             this.txt_id.TabIndex = 1;
+            this.txt_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_KeyPress);
             this.txt_id.Leave += new System.EventHandler(this.txt_id_Leave);
             // 
             // label1
@@ -341,6 +341,8 @@
             this.txt_puerto.Size = new System.Drawing.Size(248, 29);
             this.txt_puerto.TabIndex = 3;
             this.txt_puerto.Text = "4370";
+            this.txt_puerto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_puerto_KeyPress);
+            this.txt_puerto.Leave += new System.EventHandler(this.txt_puerto_Leave);
             // 
             // label2
             // 
@@ -443,20 +445,20 @@
             this.dgv_checadorbuscar.AllowUserToDeleteRows = false;
             this.dgv_checadorbuscar.AllowUserToResizeColumns = false;
             this.dgv_checadorbuscar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dgv_checadorbuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle43.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.dgv_checadorbuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle43;
             this.dgv_checadorbuscar.AutoGenerateColumns = false;
             this.dgv_checadorbuscar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_checadorbuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_checadorbuscar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            dataGridViewCellStyle26.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_checadorbuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle44.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle44.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_checadorbuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
             this.dgv_checadorbuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_checadorbuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.check,
@@ -466,31 +468,89 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dgv_checadorbuscar.DataSource = this.vistaChecadorBindingSource;
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_checadorbuscar.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle45.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle45.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle45.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle45.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_checadorbuscar.DefaultCellStyle = dataGridViewCellStyle45;
             this.dgv_checadorbuscar.EnableHeadersVisualStyles = false;
             this.dgv_checadorbuscar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_checadorbuscar.Location = new System.Drawing.Point(46, 121);
             this.dgv_checadorbuscar.Name = "dgv_checadorbuscar";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_checadorbuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle46.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle46.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle46.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_checadorbuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle46;
             this.dgv_checadorbuscar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle29.BackColor = System.Drawing.Color.White;
-            this.dgv_checadorbuscar.RowsDefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.White;
+            this.dgv_checadorbuscar.RowsDefaultCellStyle = dataGridViewCellStyle47;
             this.dgv_checadorbuscar.Size = new System.Drawing.Size(600, 400);
             this.dgv_checadorbuscar.TabIndex = 83;
+            // 
+            // check
+            // 
+            this.check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.check.HeaderText = "Check";
+            this.check.Name = "check";
+            this.check.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.check.ToolTipText = "Marque los checadores a los que desea  aplicar la función";
+            this.check.Width = 58;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_checador";
+            this.dataGridViewTextBoxColumn1.FillWeight = 110F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 49;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "sucursal";
+            this.dataGridViewTextBoxColumn2.FillWeight = 200F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Sucursal";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 94;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ip";
+            this.dataGridViewTextBoxColumn3.FillWeight = 200F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "IP";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 47;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "puerto";
+            this.dataGridViewTextBoxColumn4.FillWeight = 150F;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Puerto";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 79;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "estatus";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Estatus";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 87;
             // 
             // vistaChecadorBindingSource
             // 
@@ -589,6 +649,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Configuraciones";
             // 
+            // dtp_hora
+            // 
+            this.dtp_hora.CustomFormat = "HH:mm";
+            this.dtp_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_hora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtp_hora.Location = new System.Drawing.Point(198, 280);
+            this.dtp_hora.Name = "dtp_hora";
+            this.dtp_hora.ShowUpDown = true;
+            this.dtp_hora.Size = new System.Drawing.Size(80, 29);
+            this.dtp_hora.TabIndex = 102;
+            this.dtp_hora.Value = new System.DateTime(2018, 9, 17, 9, 0, 0, 0);
+            // 
             // btn_borrar_eventos
             // 
             this.btn_borrar_eventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
@@ -605,6 +677,48 @@
             this.btn_borrar_eventos.Text = "Borrar todos los eventos";
             this.btn_borrar_eventos.UseVisualStyleBackColor = false;
             this.btn_borrar_eventos.Click += new System.EventHandler(this.btn_borrar_eventos_Click);
+            // 
+            // dtp_fecha
+            // 
+            this.dtp_fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_fecha.Location = new System.Drawing.Point(28, 280);
+            this.dtp_fecha.Name = "dtp_fecha";
+            this.dtp_fecha.Size = new System.Drawing.Size(140, 29);
+            this.dtp_fecha.TabIndex = 100;
+            this.dtp_fecha.Value = new System.DateTime(2018, 9, 28, 0, 0, 0, 0);
+            // 
+            // btn_scr_eventos
+            // 
+            this.btn_scr_eventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_scr_eventos.FlatAppearance.BorderSize = 0;
+            this.btn_scr_eventos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_scr_eventos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_scr_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_scr_eventos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_scr_eventos.ForeColor = System.Drawing.Color.White;
+            this.btn_scr_eventos.Location = new System.Drawing.Point(28, 40);
+            this.btn_scr_eventos.Name = "btn_scr_eventos";
+            this.btn_scr_eventos.Size = new System.Drawing.Size(250, 40);
+            this.btn_scr_eventos.TabIndex = 101;
+            this.btn_scr_eventos.Text = "Sincronizar eventos";
+            this.btn_scr_eventos.UseVisualStyleBackColor = false;
+            // 
+            // btn_fecha_manual
+            // 
+            this.btn_fecha_manual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_fecha_manual.FlatAppearance.BorderSize = 0;
+            this.btn_fecha_manual.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_fecha_manual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_fecha_manual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_fecha_manual.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_fecha_manual.ForeColor = System.Drawing.Color.White;
+            this.btn_fecha_manual.Location = new System.Drawing.Point(28, 329);
+            this.btn_fecha_manual.Name = "btn_fecha_manual";
+            this.btn_fecha_manual.Size = new System.Drawing.Size(250, 50);
+            this.btn_fecha_manual.TabIndex = 99;
+            this.btn_fecha_manual.Text = "Aplicar al dispositivo";
+            this.btn_fecha_manual.UseVisualStyleBackColor = false;
             // 
             // btn_borrar_usuarios
             // 
@@ -623,6 +737,22 @@
             this.btn_borrar_usuarios.UseVisualStyleBackColor = false;
             this.btn_borrar_usuarios.Click += new System.EventHandler(this.btn_borrar_usuarios_Click);
             // 
+            // btn_scr_fecha
+            // 
+            this.btn_scr_fecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_scr_fecha.FlatAppearance.BorderSize = 0;
+            this.btn_scr_fecha.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_scr_fecha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_scr_fecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_scr_fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_scr_fecha.ForeColor = System.Drawing.Color.White;
+            this.btn_scr_fecha.Location = new System.Drawing.Point(28, 100);
+            this.btn_scr_fecha.Name = "btn_scr_fecha";
+            this.btn_scr_fecha.Size = new System.Drawing.Size(250, 40);
+            this.btn_scr_fecha.TabIndex = 98;
+            this.btn_scr_fecha.Text = "Sincronizar fecha y hora";
+            this.btn_scr_fecha.UseVisualStyleBackColor = false;
+            // 
             // sucursalTableAdapter
             // 
             this.sucursalTableAdapter.ClearBeforeFill = true;
@@ -637,14 +767,14 @@
             this.dgv_eventos_sincronizados.BackgroundColor = System.Drawing.Color.White;
             this.dgv_eventos_sincronizados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv_eventos_sincronizados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle30.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_eventos_sincronizados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_eventos_sincronizados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle48;
             this.dgv_eventos_sincronizados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_eventos_sincronizados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_checador,
@@ -710,76 +840,6 @@
             this.label3.TabIndex = 104;
             this.label3.Text = "Eventos sincronizados";
             // 
-            // dtp_hora
-            // 
-            this.dtp_hora.CustomFormat = "HH:mm";
-            this.dtp_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_hora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_hora.Location = new System.Drawing.Point(198, 280);
-            this.dtp_hora.Name = "dtp_hora";
-            this.dtp_hora.ShowUpDown = true;
-            this.dtp_hora.Size = new System.Drawing.Size(80, 29);
-            this.dtp_hora.TabIndex = 102;
-            this.dtp_hora.Value = new System.DateTime(2018, 9, 17, 9, 0, 0, 0);
-            // 
-            // btn_scr_eventos
-            // 
-            this.btn_scr_eventos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_scr_eventos.FlatAppearance.BorderSize = 0;
-            this.btn_scr_eventos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_scr_eventos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_scr_eventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_scr_eventos.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_scr_eventos.ForeColor = System.Drawing.Color.White;
-            this.btn_scr_eventos.Location = new System.Drawing.Point(28, 40);
-            this.btn_scr_eventos.Name = "btn_scr_eventos";
-            this.btn_scr_eventos.Size = new System.Drawing.Size(250, 40);
-            this.btn_scr_eventos.TabIndex = 101;
-            this.btn_scr_eventos.Text = "Sincronizar eventos";
-            this.btn_scr_eventos.UseVisualStyleBackColor = false;
-            // 
-            // dtp_fecha
-            // 
-            this.dtp_fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp_fecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_fecha.Location = new System.Drawing.Point(28, 280);
-            this.dtp_fecha.Name = "dtp_fecha";
-            this.dtp_fecha.Size = new System.Drawing.Size(140, 29);
-            this.dtp_fecha.TabIndex = 100;
-            this.dtp_fecha.Value = new System.DateTime(2018, 9, 28, 0, 0, 0, 0);
-            // 
-            // btn_fecha_manual
-            // 
-            this.btn_fecha_manual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_fecha_manual.FlatAppearance.BorderSize = 0;
-            this.btn_fecha_manual.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_fecha_manual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_fecha_manual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_fecha_manual.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_fecha_manual.ForeColor = System.Drawing.Color.White;
-            this.btn_fecha_manual.Location = new System.Drawing.Point(28, 329);
-            this.btn_fecha_manual.Name = "btn_fecha_manual";
-            this.btn_fecha_manual.Size = new System.Drawing.Size(250, 50);
-            this.btn_fecha_manual.TabIndex = 99;
-            this.btn_fecha_manual.Text = "Aplicar al dispositivo";
-            this.btn_fecha_manual.UseVisualStyleBackColor = false;
-            // 
-            // btn_scr_fecha
-            // 
-            this.btn_scr_fecha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_scr_fecha.FlatAppearance.BorderSize = 0;
-            this.btn_scr_fecha.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_scr_fecha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_scr_fecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_scr_fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_scr_fecha.ForeColor = System.Drawing.Color.White;
-            this.btn_scr_fecha.Location = new System.Drawing.Point(28, 100);
-            this.btn_scr_fecha.Name = "btn_scr_fecha";
-            this.btn_scr_fecha.Size = new System.Drawing.Size(250, 40);
-            this.btn_scr_fecha.TabIndex = 98;
-            this.btn_scr_fecha.Text = "Sincronizar fecha y hora";
-            this.btn_scr_fecha.UseVisualStyleBackColor = false;
-            // 
             // btn_b_modificar
             // 
             this.btn_b_modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
@@ -811,64 +871,11 @@
             this.btn_dar_baja.TabIndex = 93;
             this.btn_dar_baja.Text = "Dar de baja";
             this.btn_dar_baja.UseVisualStyleBackColor = false;
+            this.btn_dar_baja.Click += new System.EventHandler(this.btn_dar_baja_Click);
             // 
-            // check
+            // errorProvider1
             // 
-            this.check.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.check.HeaderText = "Check";
-            this.check.Name = "check";
-            this.check.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.check.ToolTipText = "Marque los checadores a los que desea  aplicar la función";
-            this.check.Width = 58;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id_checador";
-            this.dataGridViewTextBoxColumn1.FillWeight = 110F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 49;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "sucursal";
-            this.dataGridViewTextBoxColumn2.FillWeight = 200F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Sucursal";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 94;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "ip";
-            this.dataGridViewTextBoxColumn3.FillWeight = 200F;
-            this.dataGridViewTextBoxColumn3.HeaderText = "IP";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 47;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "puerto";
-            this.dataGridViewTextBoxColumn4.FillWeight = 150F;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Puerto";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 79;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "estatus";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Estatus";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 87;
+            this.errorProvider1.ContainerControl = this;
             // 
             // cheacador
             // 
@@ -876,6 +883,7 @@
             this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "cheacador";
+            this.TopMost = false;
             this.Load += new System.EventHandler(this.cheacador_Load);
             this.tabControlBase.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -902,6 +910,7 @@
             this.gbox_estatus.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_eventos_sincronizados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -966,5 +975,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

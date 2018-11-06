@@ -18,6 +18,7 @@ namespace Checador
         validacion validar = new validacion();
         public bool respuesta = false;
         public bool sincronizar = false;
+        int contador;
 
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
@@ -241,6 +242,7 @@ namespace Checador
             HeaderCheckBox.MouseClick += new MouseEventHandler(CheckBox_MarcarTodos_Click);
 
             DateTime dateValue = new DateTime(2018, 10, 22);
+            txt_id.Focus();
             //MessageBox.Show(dateValue.DayOfWeek.ToString());
         }
 
@@ -595,22 +597,77 @@ namespace Checador
             }
         }
 
+        private void responder2(object sender, EventArgs e)
+        {
+            Enabled = true;
+            respuesta = confirmacion.respuesta;
+
+            if (respuesta == true)
+            {
+                using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(borrar_eventos))
+                {
+                    frm.lbl_mensaje.Text = "Borrando eventos..";
+                    frm.ShowDialog(this);
+                }
+                //REALIZA ACCION SEGUN LA BANDERA RETORNADA
+                if (sincronizar == true)
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Los eventos han sido borrados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.Show();
+                }
+            }
+            else
+            {
+
+            }
+            confirmacion = null;
+
+        }
+
+        private void responder3(object sender, EventArgs e)
+        {
+            Enabled = true;
+            respuesta = confirmacion.respuesta;
+
+            if (respuesta == true)
+            {
+                //PARA PROGRESS BAR
+                using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(borrar_eventos))
+                {
+                    frm.lbl_mensaje.Text = "Borrando usuarios..";
+                    frm.ShowDialog(this);
+                }
+                //REALIZA ACCION SEGUN LA BANDERA RETORNADA
+                if (sincronizar == true)
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Los usuarios han sido borrados con exito.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.Show();
+                }
+                else
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No se encontraron usuarios en el checador..";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.Show();
+                }
+            }
+        
+        }
+
+
         private void btn_borrar_eventos_Click(object sender, EventArgs e)
         {
             //PARA PROGRESS BAR
-            using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(borrar_eventos))
-            {
-                frm.lbl_mensaje.Text = "Borrando eventos..";
-                frm.ShowDialog(this);
-            }
-            //REALIZA ACCION SEGUN LA BANDERA RETORNADA
-            if (sincronizar == true)
-            {
-                mensaje = new formularios_padres.mensaje_info();
-                mensaje.lbl_info.Text = "Los eventos han sido borrados.";
-                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                mensaje.Show();
-            }
+            confirmacion = new formularios_padres.Mensajes();
+            confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea borrar los eventos";
+            confirmacion.lbl_mensaje2.Text = "de este checador?";
+            confirmacion.FormClosed += new FormClosedEventHandler(responder2);
+            confirmacion.Show();
+            Enabled = false;
         }
 
         private void borrar_eventos()
@@ -646,26 +703,12 @@ namespace Checador
 
         private void btn_borrar_usuarios_Click(object sender, EventArgs e)
         {
-            //PARA PROGRESS BAR
-            using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(borrar_eventos))
-            {
-                frm.lbl_mensaje.Text = "Borrando usuarios..";
-                frm.ShowDialog(this);
-            }
-            //REALIZA ACCION SEGUN LA BANDERA RETORNADA
-            if (sincronizar == true)
-            {
-                mensaje = new formularios_padres.mensaje_info();
-                mensaje.lbl_info.Text = "Los usuarios han sido borrados con exito.";
-                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                mensaje.Show();
-            }
-            else {
-                mensaje = new formularios_padres.mensaje_info();
-                mensaje.lbl_info.Text = "No se encontraron usuarios en el checador..";
-                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                mensaje.Show();
-            }
+            confirmacion = new formularios_padres.Mensajes();
+            confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea borrar todos los";
+            confirmacion.lbl_mensaje2.Text = "usuarios de este checador?";
+            confirmacion.FormClosed += new FormClosedEventHandler(responder2);
+            confirmacion.Show();
+            Enabled = false;
 
         }
 
@@ -844,11 +887,6 @@ namespace Checador
             validar.soloimportes(e);
         }
 
-<<<<<<< HEAD
-        private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
-        {
-
-=======
         //FUNCION PARA CUANDO DEJE EL CAMPO DE TEXTO ID BUSQUE SI EXISTE EL CHECADOR
         private void txt_id_Leave(object sender, EventArgs e)
         {
@@ -862,7 +900,67 @@ namespace Checador
                     txt_id.Focus();
                 }
             }
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
+            else
+            {
+                if (string.IsNullOrEmpty(txt_id.Text))
+                {
+
+                    errorProvider1.SetError(txt_id, "No ha ingresado el id del checador.");
+
+                }
+                else
+                {
+                    errorProvider1.SetError(txt_id, null);
+                    contador = contador + 1;
+                }
+            }
+        }
+
+        private void txt_id_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_puerto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void txt_ip_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_ip.Text))
+            {
+
+                errorProvider1.SetError(txt_ip, "No ha ingresado la IP del checador.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_ip, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_puerto_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_puerto.Text))
+            {
+
+                errorProvider1.SetError(txt_puerto, "No ha ingresado el puerto del checador.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_puerto, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void btn_dar_baja_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

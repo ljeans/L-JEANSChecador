@@ -1056,12 +1056,31 @@ namespace Checador.empleados
 
         private void btn_dar_baja_Click(object sender, EventArgs e)
         {
-            var row = dgv_empleadobuscar.CurrentRow;
-            Empleado.id = Convert.ToInt32(row.Cells[0].Value);
-            Empleado.estatus = "I";
-            Empleado.Eliminar_Empleado();
-            //FUNCION PAR RECARGAR EL DATAGRID
-            this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+            confirmacion = new formularios_padres.Mensajes();
+            confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea dar de baja";
+            confirmacion.lbl_mensaje2.Text = " al empleado?";
+            confirmacion.FormClosed += new FormClosedEventHandler(darbaja);
+            confirmacion.Show();
+            Enabled = false;
+      
         }
-    }
+
+        private void darbaja(object sender, EventArgs e)
+        {
+            Enabled = true;
+            respuesta = confirmacion.respuesta;
+
+            if (respuesta == true)
+            {
+                var row = dgv_empleadobuscar.CurrentRow;
+                Empleado.id = Convert.ToInt32(row.Cells[0].Value);
+                Empleado.estatus = "I";
+                Empleado.Eliminar_Empleado();
+                //FUNCION PAR RECARGAR EL DATAGRID
+                this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+            }
+        }
+
+
+        }
 }

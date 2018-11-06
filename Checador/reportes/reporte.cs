@@ -14,7 +14,7 @@ namespace Checador.reportes
     using CrystalDecisions.CrystalReports.Engine;
     using CrystalDecisions.Shared;
     #endregion
-   
+
     public partial class reporte : Checador.formularios_padres.formpadre
     {
         public reporte()
@@ -236,6 +236,95 @@ namespace Checador.reportes
 
             crystalReportViewer4.ReportSource = crystalrpt;
             crystalReportViewer4.Refresh();
+        }
+
+        private void dtp_empleado_retardo2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtp_empleado_retardo1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbx_empleado_retardo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rb_buscar_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage3;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage4;
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage5;
+        }
+
+        private void btn_departamento_Click(object sender, EventArgs e)
+        {
+
+            ReportDocument crystalrpt = new ReportDocument();
+            crystalrpt.Load(@"..\\..\\reportes\empleados-departamento.rpt");
+
+            ParameterFieldDefinitions parameterFieldDefinitions;
+            ParameterFieldDefinition crParameterFieldDefinition;
+            ParameterValues crParameterValue = new ParameterValues();
+            ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
+
+            //COLOCAR USUARIO Y CONTRASEÑA PARA CRYSTAL REPORTS
+            string username = "sa"; // database user name
+            string password = "123456"; //database password
+            crystalrpt.SetDatabaseLogon(username, password); //here usaer name and password for crystel report
+
+            //parametro
+            crParameterDiscreteValue.Value = txt_departamento.Text;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["departamento"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            //parametros fechas
+            crParameterDiscreteValue.Value = dtp_departamento1.Value.ToString("yyyy-MM-dd"); ;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["fecha1"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            crParameterDiscreteValue.Value = dtp_departamento2.Value.ToString("yyyy-MM-dd"); ;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["fecha2"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            crystalReportViewer5.ReportSource = crystalrpt;
+            crystalReportViewer5.Refresh();
         }
     }
 }

@@ -35,6 +35,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.lbl_mensaje2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btn_si
@@ -75,7 +76,7 @@
             // 
             this.lbl_mensaje.AutoSize = true;
             this.lbl_mensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_mensaje.Location = new System.Drawing.Point(12, 74);
+            this.lbl_mensaje.Location = new System.Drawing.Point(12, 69);
             this.lbl_mensaje.Name = "lbl_mensaje";
             this.lbl_mensaje.Size = new System.Drawing.Size(433, 25);
             this.lbl_mensaje.TabIndex = 22;
@@ -116,12 +117,23 @@
             this.panel4.TabIndex = 47;
             this.panel4.TabStop = true;
             // 
+            // lbl_mensaje2
+            // 
+            this.lbl_mensaje2.AutoSize = true;
+            this.lbl_mensaje2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_mensaje2.Location = new System.Drawing.Point(11, 103);
+            this.lbl_mensaje2.Name = "lbl_mensaje2";
+            this.lbl_mensaje2.Size = new System.Drawing.Size(18, 25);
+            this.lbl_mensaje2.TabIndex = 48;
+            this.lbl_mensaje2.Text = " ";
+            // 
             // Mensajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(490, 210);
+            this.Controls.Add(this.lbl_mensaje2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -148,5 +160,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
+        public System.Windows.Forms.Label lbl_mensaje2;
     }
 }

@@ -301,17 +301,35 @@ namespace Checador
 
         private void btn_dar_baja_Click(object sender, EventArgs e)
         {
-            var row = dgv_sucursal.CurrentRow;
-            Sucursal.id = Convert.ToInt32(row.Cells[0].Value);
-            Sucursal.estatus = "I";
-            Sucursal.Eliminar_Sucursal();
-            //FUNCION PAR RECARGAR EL DATAGRID
-            // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
-            this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
+
+            confirmacion = new formularios_padres.Mensajes();
+            confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea dar de baja";
+            confirmacion.lbl_mensaje2.Text = "la sucursal?";
+            confirmacion.FormClosed += new FormClosedEventHandler(darbaja);
+            confirmacion.Show();
+            Enabled = false;
+
+            
+        }
+        private void darbaja(object sender, EventArgs e)
+        {
+            Enabled = true;
+            respuesta = confirmacion.respuesta;
+
+            if (respuesta == true)
+            {
+                var row = dgv_sucursal.CurrentRow;
+                Sucursal.id = Convert.ToInt32(row.Cells[0].Value);
+                Sucursal.estatus = "I";
+                Sucursal.Eliminar_Sucursal();
+                //FUNCION PAR RECARGAR EL DATAGRID
+                // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
+                this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
+            }
         }
 
-////////////////FILTRAR EL BUSCAR//////////////////////////
-        private void txt_idbuscar_TextChanged(object sender, EventArgs e)
+            ////////////////FILTRAR EL BUSCAR//////////////////////////
+            private void txt_idbuscar_TextChanged(object sender, EventArgs e)
         {
             if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
             {
@@ -339,6 +357,7 @@ namespace Checador
 
         private void btn_b_modificar_Click(object sender, EventArgs e)
         {
+
             var row = dgv_sucursal.CurrentRow;
             Sucursal.id= Convert.ToInt32(row.Cells[0].Value);
             rb_modificar.Checked = true;

@@ -29,47 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
-<<<<<<< HEAD
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-<<<<<<< HEAD
-=======
->>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
->>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
-<<<<<<< HEAD
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_rfc = new System.Windows.Forms.MaskedTextBox();
             this.txt_nss = new System.Windows.Forms.TextBox();
             this.txt_puesto = new System.Windows.Forms.TextBox();
@@ -221,41 +184,6 @@
             this.txt_departamento = new System.Windows.Forms.TextBox();
             this.label85 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-<<<<<<< HEAD
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-          
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -654,46 +582,10 @@
             this.dgv_empleadobuscar.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-=======
-<<<<<<< HEAD
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
-<<<<<<< HEAD
-=======
->>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
->>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
-<<<<<<< HEAD
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.dgv_empleadobuscar.AutoGenerateColumns = false;
             this.dgv_empleadobuscar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_empleadobuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_empleadobuscar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -701,45 +593,7 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-
             this.dgv_empleadobuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
-<<<<<<< HEAD
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-
-            this.dgv_empleadobuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-
-            this.dgv_empleadobuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
-<<<<<<< HEAD
-=======
->>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
->>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
-<<<<<<< HEAD
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.dgv_empleadobuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_empleadobuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
@@ -773,18 +627,7 @@
             this.dataGridViewTextBoxColumn35,
             this.dataGridViewTextBoxColumn36,
             this.dataGridViewTextBoxColumn37});
-
             this.dgv_empleadobuscar.DataSource = this.vistaEmpleadosBindingSource;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -792,63 +635,13 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-
             this.dgv_empleadobuscar.DefaultCellStyle = dataGridViewCellStyle3;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
-<<<<<<< HEAD
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-
-            this.dgv_empleadobuscar.DefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-
-            this.dgv_empleadobuscar.DefaultCellStyle = dataGridViewCellStyle11;
-<<<<<<< HEAD
-
-=======
->>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
->>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
-<<<<<<< HEAD
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.dgv_empleadobuscar.EnableHeadersVisualStyles = false;
             this.dgv_empleadobuscar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleadobuscar.Location = new System.Drawing.Point(30, 101);
             this.dgv_empleadobuscar.MultiSelect = false;
             this.dgv_empleadobuscar.Name = "dgv_empleadobuscar";
             this.dgv_empleadobuscar.ReadOnly = true;
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -857,42 +650,6 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_empleadobuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
-<<<<<<< HEAD
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_empleadobuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_empleadobuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-<<<<<<< HEAD
-=======
->>>>>>> 8de56b1f542fe179bf787a96fd37b8f1ca5a2b61
->>>>>>> c0f2c5b2de49a6c7bc3db55c3b4d21e14b2024b1
-<<<<<<< HEAD
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
-=======
->>>>>>> f71d1657bba5e7de389447f65614353d3e4b0f34
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.dgv_empleadobuscar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_empleadobuscar.Size = new System.Drawing.Size(966, 407);
             this.dgv_empleadobuscar.TabIndex = 45;
@@ -1241,17 +998,6 @@
             // 
             // txt_telefono
             // 
-<<<<<<< HEAD
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.Color.Transparent;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(522, 417);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(73, 24);
-            this.label24.TabIndex = 1141;
-            this.label24.Text = "Estado:";
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_telefono.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_telefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_telefono.Location = new System.Drawing.Point(711, 100);
@@ -1280,18 +1026,6 @@
             // 
             // txt_apellido_paterno
             // 
-<<<<<<< HEAD
-
-            this.txt_domicilio_colonia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_domicilio_colonia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_domicilio_colonia.Location = new System.Drawing.Point(188, 484);
-            this.txt_domicilio_colonia.MaxLength = 32;
-            this.txt_domicilio_colonia.Name = "txt_domicilio_colonia";
-            this.txt_domicilio_colonia.Size = new System.Drawing.Size(249, 29);
-            this.txt_domicilio_colonia.TabIndex = 15;
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_apellido_paterno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_apellido_paterno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_apellido_paterno.Location = new System.Drawing.Point(189, 194);
@@ -1301,24 +1035,9 @@
             this.txt_apellido_paterno.TabIndex = 3;
             this.txt_apellido_paterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_apellido_paterno_KeyPress);
             this.txt_apellido_paterno.Validating += new System.ComponentModel.CancelEventHandler(this.txt_apellido_paterno_Validating);
-<<<<<<< HEAD
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // txt_apellido_materno
             // 
-<<<<<<< HEAD
-
-            this.txt_domicilio_num_ext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_domicilio_num_ext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_domicilio_num_ext.Location = new System.Drawing.Point(188, 410);
-            this.txt_domicilio_num_ext.MaxLength = 5;
-            this.txt_domicilio_num_ext.Name = "txt_domicilio_num_ext";
-            this.txt_domicilio_num_ext.Size = new System.Drawing.Size(249, 29);
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_apellido_materno.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_apellido_materno.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_apellido_materno.Location = new System.Drawing.Point(189, 239);
@@ -1408,12 +1127,6 @@
             // 
             // txt_nombre
             // 
-<<<<<<< HEAD
-
-            // label23
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombre.Location = new System.Drawing.Point(189, 149);
@@ -1423,19 +1136,6 @@
             this.txt_nombre.TabIndex = 2;
             this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             this.txt_nombre.Validating += new System.ComponentModel.CancelEventHandler(this.txt_nombre_Validating);
-<<<<<<< HEAD
-
-            // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.Transparent;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(121, 375);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(57, 24);
-            this.label23.TabIndex = 1134;
-            this.label23.Text = "Calle:";
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // label29
             // 
@@ -1534,19 +1234,6 @@
             this.txt_curp.Size = new System.Drawing.Size(248, 29);
             this.txt_curp.TabIndex = 1;
             // 
-<<<<<<< HEAD
-
-            this.txt_dias_vacaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_dias_vacaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dias_vacaciones.Location = new System.Drawing.Point(710, 260);
-            this.txt_dias_vacaciones.MaxLength = 32;
-            this.txt_dias_vacaciones.Name = "txt_dias_vacaciones";
-            this.txt_dias_vacaciones.Size = new System.Drawing.Size(249, 29);
-            this.txt_dias_vacaciones.TabIndex = 36;
-            this.txt_dias_vacaciones.Text = "0";
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // txt_id
             // 
             this.txt_id.BackColor = System.Drawing.Color.White;
@@ -1572,10 +1259,6 @@
             this.groupBox4.TabIndex = 1065;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Estatus:";
-<<<<<<< HEAD
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // rb_mod_inactivo
             // 
@@ -1634,18 +1317,6 @@
             // 
             // txt_domicilio_cp
             // 
-<<<<<<< HEAD
-
-            this.txt_tipo_salario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_tipo_salario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tipo_salario.Location = new System.Drawing.Point(242, 420);
-            this.txt_tipo_salario.MaxLength = 5;
-            this.txt_tipo_salario.Name = "txt_tipo_salario";
-            this.txt_tipo_salario.Size = new System.Drawing.Size(249, 29);
-            this.txt_tipo_salario.TabIndex = 33;
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_domicilio_cp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_domicilio_cp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_domicilio_cp.Location = new System.Drawing.Point(188, 528);
@@ -1654,10 +1325,6 @@
             this.txt_domicilio_cp.Size = new System.Drawing.Size(249, 29);
             this.txt_domicilio_cp.TabIndex = 16;
             this.txt_domicilio_cp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_cp_KeyPress);
-<<<<<<< HEAD
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // txt_domicilio_pais
             // 
@@ -1723,19 +1390,6 @@
             // 
             // txt_domicilio_num_ext
             // 
-<<<<<<< HEAD
-
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.Transparent;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(8, 339);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(212, 24);
-            this.label28.TabIndex = 1090;
-            this.label28.Text = "Sueldo Diario Integrado:";
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_domicilio_num_ext.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_domicilio_num_ext.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_domicilio_num_ext.Location = new System.Drawing.Point(188, 410);
@@ -1744,26 +1398,9 @@
             this.txt_domicilio_num_ext.Size = new System.Drawing.Size(249, 29);
             this.txt_domicilio_num_ext.TabIndex = 13;
             this.txt_domicilio_num_ext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_num_ext_KeyPress);
-<<<<<<< HEAD
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // txt_domicilio_num_int
             // 
-<<<<<<< HEAD
-
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.Transparent;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(92, 302);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(128, 24);
-            this.label30.TabIndex = 1088;
-            this.label30.Text = "Sueldo Diario:";
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_domicilio_num_int.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_domicilio_num_int.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_domicilio_num_int.Location = new System.Drawing.Point(188, 447);
@@ -1772,12 +1409,6 @@
             this.txt_domicilio_num_int.Size = new System.Drawing.Size(249, 29);
             this.txt_domicilio_num_int.TabIndex = 14;
             this.txt_domicilio_num_int.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_num_int_KeyPress);
-<<<<<<< HEAD
-
-            // 
-            // label31
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // txt_domicilio_calle
             // 
@@ -1910,24 +1541,6 @@
             // 
             // txt_banco
             // 
-<<<<<<< HEAD
-
-            this.btn_cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_cancelar.FlatAppearance.BorderSize = 0;
-            this.btn_cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cancelar.ForeColor = System.Drawing.Color.White;
-            this.btn_cancelar.Location = new System.Drawing.Point(530, 558);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(150, 50);
-            this.btn_cancelar.TabIndex = 46;
-            this.btn_cancelar.Text = "Cancelar";
-            this.btn_cancelar.UseVisualStyleBackColor = false;
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_banco.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_banco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_banco.Location = new System.Drawing.Point(710, 380);
@@ -1935,33 +1548,9 @@
             this.txt_banco.Name = "txt_banco";
             this.txt_banco.Size = new System.Drawing.Size(249, 29);
             this.txt_banco.TabIndex = 39;
-<<<<<<< HEAD
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // txt_cuenta
             // 
-<<<<<<< HEAD
-            this.btn_modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.btn_modificar.Enabled = false;
-            this.btn_modificar.FlatAppearance.BorderSize = 0;
-            this.btn_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
-            this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_modificar.ForeColor = System.Drawing.Color.White;
-            this.btn_modificar.Location = new System.Drawing.Point(709, 529);
-            this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(250, 70);
-            this.btn_modificar.TabIndex = 42;
-            this.btn_modificar.Text = "Modificar";
-            this.btn_modificar.UseVisualStyleBackColor = false;
-            this.btn_modificar.Visible = false;
-            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click_3);
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_cuenta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_cuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_cuenta.Location = new System.Drawing.Point(710, 420);
@@ -1970,10 +1559,6 @@
             this.txt_cuenta.Size = new System.Drawing.Size(249, 29);
             this.txt_cuenta.TabIndex = 40;
             this.txt_cuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuenta_KeyPress);
-<<<<<<< HEAD
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // txt_periodicidad_pago
             // 
@@ -1997,13 +1582,6 @@
             // 
             // txt_dias_vacaciones
             // 
-<<<<<<< HEAD
-
-            this.horariosBindingSource.DataMember = "horarios";
-            this.horariosBindingSource.DataSource = this.dataSet_Checador;
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_dias_vacaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_dias_vacaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dias_vacaciones.Location = new System.Drawing.Point(710, 260);
@@ -2013,10 +1591,6 @@
             this.txt_dias_vacaciones.TabIndex = 36;
             this.txt_dias_vacaciones.Text = "0";
             this.txt_dias_vacaciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dias_vacaciones_KeyPress);
-<<<<<<< HEAD
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // label35
             // 
@@ -2085,10 +1659,6 @@
             // 
             // txt_dias_aguinaldo
             // 
-<<<<<<< HEAD
-            this.horariosTableAdapter.ClearBeforeFill = true;
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_dias_aguinaldo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_dias_aguinaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dias_aguinaldo.Location = new System.Drawing.Point(240, 460);
@@ -2099,18 +1669,9 @@
             this.txt_dias_aguinaldo.Text = "0";
             this.txt_dias_aguinaldo.TextChanged += new System.EventHandler(this.txt_dias_aguinaldo_TextChanged);
             this.txt_dias_aguinaldo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dias_aguinaldo_KeyPress);
-<<<<<<< HEAD
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // txt_sueldo_quincenal
             // 
-<<<<<<< HEAD
-
-            this.sucursalTableAdapter.ClearBeforeFill = true;
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_sueldo_quincenal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_sueldo_quincenal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_sueldo_quincenal.Location = new System.Drawing.Point(242, 380);
@@ -2120,18 +1681,9 @@
             this.txt_sueldo_quincenal.TabIndex = 32;
             this.txt_sueldo_quincenal.Text = "0";
             this.txt_sueldo_quincenal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sueldo_quincenal_KeyPress);
-<<<<<<< HEAD
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // txt_sueldo_diario
             // 
-<<<<<<< HEAD
-
-            this.vista_EmpleadosTableAdapter.ClearBeforeFill = true;
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_sueldo_diario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_sueldo_diario.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_sueldo_diario.Location = new System.Drawing.Point(240, 300);
@@ -2141,25 +1693,9 @@
             this.txt_sueldo_diario.TabIndex = 30;
             this.txt_sueldo_diario.Text = "0";
             this.txt_sueldo_diario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_sueldo_diario_KeyPress);
-<<<<<<< HEAD
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // txt_sueldo_integrado
             // 
-<<<<<<< HEAD
-
-            this.txt_departamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_departamento.Location = new System.Drawing.Point(616, 64);
-            this.txt_departamento.MaxLength = 32;
-            this.txt_departamento.Name = "txt_departamento";
-            this.txt_departamento.Size = new System.Drawing.Size(249, 29);
-            this.txt_departamento.TabIndex = 6;
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_sueldo_integrado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_sueldo_integrado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_sueldo_integrado.Location = new System.Drawing.Point(240, 340);
@@ -2487,17 +2023,6 @@
             // 
             // txt_departamento
             // 
-<<<<<<< HEAD
-
-            this.dataGridViewTextBoxColumn36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn36.DataPropertyName = "password";
-            this.dataGridViewTextBoxColumn36.HeaderText = "Password";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            this.dataGridViewTextBoxColumn36.ReadOnly = true;
-            this.dataGridViewTextBoxColumn36.Width = 101;
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             this.txt_departamento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_departamento.Location = new System.Drawing.Point(616, 64);
@@ -2506,10 +2031,6 @@
             this.txt_departamento.Size = new System.Drawing.Size(249, 29);
             this.txt_departamento.TabIndex = 6;
             this.txt_departamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_departamento_KeyPress);
-<<<<<<< HEAD
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
             // 
             // label85
             // 
@@ -2532,6 +2053,7 @@
             this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "empleados";
+            this.TopMost = false;
             this.Load += new System.EventHandler(this.empleados_Load);
             this.tabControlBase.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -2749,9 +2271,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-<<<<<<< HEAD
-
-=======
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
     }
 }

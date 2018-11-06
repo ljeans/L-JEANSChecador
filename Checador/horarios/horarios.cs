@@ -609,11 +609,6 @@ namespace Checador
             btn_ir_modificar.PerformClick();
         }
 
-<<<<<<< HEAD
-        private void txt_tolerancia_ValueChanged(object sender, EventArgs e)
-        {
-
-=======
         private void txt_id_Leave(object sender, EventArgs e)
         {
             if (txt_id.Text != "")
@@ -626,7 +621,6 @@ namespace Checador
                     txt_id.Focus();
                 }
             }
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
         }
     }
 }

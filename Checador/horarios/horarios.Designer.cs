@@ -460,7 +460,6 @@
             0,
             0,
             0});
-            this.txt_tolerancia.ValueChanged += new System.EventHandler(this.txt_tolerancia_ValueChanged);
             // 
             // btn_modificar
             // 
@@ -1480,6 +1479,7 @@
             this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "horarios";
+            this.TopMost = false;
             this.Load += new System.EventHandler(this.horarios_Load);
             this.tabControlBase.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
