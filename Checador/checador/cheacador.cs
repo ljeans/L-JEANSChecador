@@ -156,8 +156,6 @@ namespace Checador
                 mensaje.lbl_info.Text = "Checador no registrado. Por favor intente de nuevo.";
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 mensaje.Show();
-
-
             }
 
         }
@@ -199,7 +197,7 @@ namespace Checador
         {
             txt_id.Text = "";
             txt_ip.Text = "";
-            txt_puerto.Text = "";
+            txt_puerto.Text = "4370";
             txt_id.Focus();
             //Deshabilitar_Componentes();
         }
@@ -230,7 +228,7 @@ namespace Checador
             this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
 
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
-            //CheckForIllegalCrossThreadCalls = false;
+            CheckForIllegalCrossThreadCalls = false;
 
             //CAMBIAR LA LETRA AL DATAGRIDVIEW
             dgv_checador.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
@@ -434,8 +432,6 @@ namespace Checador
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 mensaje.Show();
             }
-          
-
         }
 
         private void sincronizar_eventos()
@@ -844,25 +840,97 @@ namespace Checador
             validar.soloimportes(e);
         }
 
-<<<<<<< HEAD
-        private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
-        {
-
-=======
         //FUNCION PARA CUANDO DEJE EL CAMPO DE TEXTO ID BUSQUE SI EXISTE EL CHECADOR
         private void txt_id_Leave(object sender, EventArgs e)
         {
-            if (txt_id.Text != "")
+            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+            Thread hilo_secundario = new Thread(new ThreadStart(this.verificarExistencia));
+            hilo_secundario.IsBackground = true;
+            hilo_secundario.Start();
+        }
+
+        public void verificarExistencia()
+        {
+            try
             {
-                Clase_Checador.id = Convert.ToInt32(txt_id.Text);
-                if (Clase_Checador.verificar_existencia(Clase_Checador.id))
+                if (txt_id.Text != "")
                 {
-                    MessageBox.Show("El ID del checador "+ Clase_Checador.id +" ya existe. Ingrese otro ID");
-                    txt_id.Text = "";
-                    txt_id.Focus();
+                    Clase_Checador.id = Convert.ToInt32(txt_id.Text);
+                    if (Clase_Checador.verificar_existencia(Clase_Checador.id))
+                    {
+                        MessageBox.Show("El ID del checador " + Clase_Checador.id + " ya existe. Ingrese otro ID");
+                        
+                        txt_id.Text = "";
+                        //CONDICION PARA INVOCAR EL TXT DESDE OTRO HILO
+                        if (InvokeRequired)
+                        {
+                            Invoke(new Action(() => txt_id.Focus()));
+                        }
+                    }
                 }
             }
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
+        }
+
+        //FUNCION PARA IR A MODIFICAR DESDE CONSULTAR CHECADOR
+        private void btn_b_modificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
+                foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
+                {
+                    //VALIDAR LAS FILAS MARCADAS EN EL DATAGRID
+                    if (row.Cells["Check"].Value != null)
+                    {
+                        if (Convert.ToBoolean(row.Cells["Check"].Value) != false)
+                        {
+                            Clase_Checador.id = Convert.ToInt32(row.Cells[1].Value);
+                            rb_modificar.Checked = true;
+                            txt_id_mod.Text = Convert.ToString(Clase_Checador.id);
+                            tabControlBase.SelectedTab = tabPage2;
+                            btn_ir_modificar.PerformClick();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        //FUNCION PARA DAR DE BAJA UN CHECADOR
+        private void btn_dar_baja_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
+                foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
+                {
+                    //VALIDAR LAS FILAS MARCADAS EN EL DATAGRID
+                    if (row.Cells["Check"].Value != null)
+                    {
+                        if (Convert.ToBoolean(row.Cells["Check"].Value) != false)
+                        {
+                            Clase_Checador.id = Convert.ToInt32(row.Cells[1].Value);
+                            Clase_Checador.estatus = "I";
+                            Clase_Checador.Eliminar_Checador();
+                            //FUNCION PAR RECARGAR EL DATAGRID
+                            // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
+                            this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

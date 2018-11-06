@@ -1026,16 +1026,37 @@ namespace Checador.empleados
         //FUNCION PARA CUANDO DEJE EL CAMPO DE TEXTO ID BUSQUE SI EXISTE EL EMPLEADO
         private void txt_id_Leave(object sender, EventArgs e)
         {
-            if (txt_id.Text != "")
+            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+            Thread hilo_secundario = new Thread(new ThreadStart(this.verificarExistencia));
+            hilo_secundario.IsBackground = true;
+            hilo_secundario.Start();
+            
+        }
+
+        public void verificarExistencia()
+        {
+            try
             {
-                Empleado.id = Convert.ToInt32(txt_id.Text);
-                if (Empleado.verificar_existencia(Empleado.id))
+                if (txt_id.Text != "")
                 {
-                    MessageBox.Show("El ID del empleado " + Empleado.id + " ya existe. Ingrese otro ID");
-                    txt_id.Text = "";
-                    txt_id.Focus();
+                    Empleado.id = Convert.ToInt32(txt_id.Text);
+                    if (Empleado.verificar_existencia(Empleado.id))
+                    {
+                        MessageBox.Show("El ID del empleado " + Empleado.id + " ya existe. Ingrese otro ID");
+                        txt_id.Text = "";
+                        //CONDICION PARA INVOCAR EL TXT DESDE OTRO HILO
+                        if (InvokeRequired)
+                        {
+                            Invoke(new Action(() => txt_id.Focus()));
+                        }
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
         private void txt_id_Validating(object sender, CancelEventArgs e)

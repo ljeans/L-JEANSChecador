@@ -31,6 +31,8 @@ namespace Checador
             // TODO: This line of code loads data into the 'dataSet_Checador.horarios' table. You can move, or remove it, as needed.
             this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
             txt_id.Focus();
+            //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
+            CheckForIllegalCrossThreadCalls = false;
 
         }
 
@@ -567,18 +569,38 @@ namespace Checador
         //FUNCION PARA CUANDO DEJE EL CAMPO DE TEXTO ID BUSQUE SI EXISTE LA SUCURSAL
         private void txt_id_Leave(object sender, EventArgs e)
         {
-            if (txt_id.Text != "")
+            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+            Thread hilo_secundario = new Thread(new ThreadStart(this.verificarExistencia));
+            hilo_secundario.IsBackground = true;
+            hilo_secundario.Start();
+        }
+
+        public void verificarExistencia()
+        {
+            try
             {
-                Sucursal.id = Convert.ToInt32(txt_id.Text);
-                if (Sucursal.verificar_existencia(Sucursal.id))
+                if (txt_id.Text != "")
                 {
-                    MessageBox.Show("El ID de la sucursal " + Sucursal.id + " ya existe. Ingrese otro ID");
-                    txt_id.Text = "";
-                    txt_id.Focus();
+                    Sucursal.id = Convert.ToInt32(txt_id.Text);
+                    if (Sucursal.verificar_existencia(Sucursal.id))
+                    {
+                        MessageBox.Show("El ID de la sucursal " + Sucursal.id + " ya existe. Ingrese otro ID");
+                        txt_id.Text = "";
+                        //CONDICION PARA INVOCAR EL TXT DESDE OTRO HILO
+                        if (InvokeRequired)
+                        {
+                            Invoke(new Action(() => txt_id.Focus()));
+                        }
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
         }
-        
+
 
     }
 }

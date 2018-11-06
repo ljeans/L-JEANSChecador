@@ -22,6 +22,8 @@ namespace Checador.incidentes
 
         private void incidentes_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dataSet_Checador.vista_registros' table. You can move, or remove it, as needed.
+            this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
             // TODO: This line of code loads data into the 'dataSet_Checador1.vista_registros' table. You can move, or remove it, as needed.
             this.vista_registrosTableAdapter.Fill(this.dataSet_Checador1.vista_registros);
             // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.horarios' Puede moverla o quitarla según sea necesario.
@@ -226,7 +228,8 @@ namespace Checador.incidentes
                 if (Clase_Checador.RegistrarChequeo(Clase_Checador.id, Convert.ToInt32(row.Cells[0].Value), Sucursal.id, fecha_evento, fecha_referencia, Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, tipo_evento, Horario.horario))
                 {
                     //FUNCION PAR RECARGAR EL DATAGRID
-                    this.vista_registrosTableAdapter.Fill(this.dataSet_Checador1.vista_registros);
+                    // TODO: This line of code loads data into the 'dataSet_Checador1.vista_registros' table. You can move, or remove it, as needed.
+                    this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
                 }
             }
             catch (Exception ex)

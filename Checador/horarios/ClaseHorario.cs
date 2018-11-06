@@ -282,5 +282,35 @@ namespace Checador
             }
         }
 
+        //FUNCION PARA ELIMINAR UN HORARIO EN LA BASE DE DATOS UN HORARIO
+        public void eliminarHorario()
+        {
+            try
+            {
+                //ELIMINAR HORARIO
+                string consulta = "DELETE from horarios WHERE id_horario = @id";
+                Conexion con = new Conexion();
+                SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+                conexion.Open();
+                SqlCommand comand = new SqlCommand(consulta, conexion);
+                comand.Parameters.AddWithValue("@id", id);
+
+                comand.ExecuteNonQuery();
+                conexion.Close();
+
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Horario eliminado con exito. ID= " + id.ToString();
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+            }
+        }
+
     }
 }

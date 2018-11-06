@@ -609,11 +609,6 @@ namespace Checador
             btn_ir_modificar.PerformClick();
         }
 
-<<<<<<< HEAD
-        private void txt_tolerancia_ValueChanged(object sender, EventArgs e)
-        {
-
-=======
         private void txt_id_Leave(object sender, EventArgs e)
         {
             if (txt_id.Text != "")
@@ -626,7 +621,44 @@ namespace Checador
                     txt_id.Focus();
                 }
             }
->>>>>>> bc226c8b45f5abd5d398b3a68f9adb726241a185
+        }
+
+        //FUNCION PARA ELIMINAR UN HORARIO PERMANENTEMENTE DE LA BD
+        private void btn_dar_baja_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                confirmacion = new formularios_padres.Mensajes();
+                confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea eliminar el horario?";
+                confirmacion.FormClosed += new FormClosedEventHandler(eliminar);
+                confirmacion.Show();
+                Enabled = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        public void eliminar(object sender, EventArgs e)
+        {
+            try
+            {
+                Enabled = true;
+                respuesta = confirmacion.respuesta;
+                if (respuesta) {
+                    var row = dgv_horarios.CurrentRow;
+                    Horario.id = Convert.ToInt32(row.Cells[0].Value);
+                    Horario.eliminarHorario();
+                    //FUNCION PAR RECARGAR EL DATAGRID
+                    // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Horario' table. You can move, or remove it, as needed.
+                    this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
