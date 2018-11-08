@@ -7,22 +7,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-<<<<<<< HEAD
-    <dependentAssembly dependencyType="install" codebase="Checador.exe.manifest" size="17983">
-=======
     <dependentAssembly dependencyType="install" codebase="Checador.exe.manifest" size="17951">
->>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
       <assemblyIdentity name="Checador.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-<<<<<<< HEAD
-        <dsig:DigestValue>m+BxJAAckJvgeXMoUXhGMcq+GpqglDY6Py5EwCQPTqk=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>QSmMWjyAnPHIWmqTpjYdzzgOP0Gz1pIHrhPtqetovTw=</dsig:DigestValue>
->>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
+        <dsig:DigestValue>LYTS0HGHk2vffffrkKALyprFDRFiGSO0h1GVDAHGRdI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

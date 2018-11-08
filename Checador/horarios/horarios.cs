@@ -621,8 +621,6 @@ namespace Checador
                     txt_id.Focus();
                 }
             }
-<<<<<<< HEAD
-=======
         }
 
         //FUNCION PARA ELIMINAR UN HORARIO PERMANENTEMENTE DE LA BD
@@ -661,7 +659,6 @@ namespace Checador
             {
                 MessageBox.Show(ex.ToString());
             }
->>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
         }
     }
 }

@@ -1,15 +1,11 @@
 - Hacer HILOS
 - Poner UniqueKeys en la base de datos
-- Reportes
-	* Reporte por departamento
 - Login
 	- Crear usuarios para login
 	- Roles para ver que puede usar c/usuario
-- Validar en GENERAL
-	*PONER DIALOGOS DE CONFIRMACIÓN DONDE SEA NECESARIO
 - Campos innecesarios en la bd
 	Empleados:
 		* Id_Horario, retartdos, total_min_retardo, horas_extra
 	Horarios:
 		*Lunes-Domingo
-- TOPMOST
+- VALIDAR FECHA ALTA EN MODIFICAR EMPLEADO

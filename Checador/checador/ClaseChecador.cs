@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using System.Data;
+using System.Threading;
 
 namespace Checador
 {
@@ -84,11 +85,11 @@ namespace Checador
 
                 comand.ExecuteNonQuery();
                 conexion.Close();
+                
                 mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "Checador registrado con exito. ID= " + id.ToString();
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                mensaje.Show();
-
+                mensaje.ShowDialog();
             }
             catch (Exception e)
             {

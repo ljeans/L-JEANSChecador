@@ -173,6 +173,14 @@ namespace Checador
         //FUNCION PARA REGITAR CHECADOR EN LA BASE DE DATOS
         private void btn_registrar_Click(object sender, EventArgs e)
         {
+            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+            Thread hilo_secundario = new Thread(new ThreadStart(this.Registrar));
+            hilo_secundario.IsBackground = true;
+            hilo_secundario.Start();
+        }
+
+        public void Registrar()
+        {
             try
             {
                 Clase_Checador.estatus = "A";
@@ -180,7 +188,6 @@ namespace Checador
                 Clase_Checador.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
                 Clase_Checador.ip = txt_ip.Text;
                 Clase_Checador.puerto = txt_puerto.Text;
-                Clase_Checador.guardarChecador();
 
                 //FUNCION PAR RECARGAR EL DATAGRID
                 this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
@@ -912,20 +919,9 @@ namespace Checador
                     }
                 }
             }
-<<<<<<< HEAD
-            else
+            catch (Exception ex)
             {
-                if (string.IsNullOrEmpty(txt_id.Text))
-                {
-
-                    errorProvider1.SetError(txt_id, "No ha ingresado el id del checador.");
-
-                }
-                else
-                {
-                    errorProvider1.SetError(txt_id, null);
-                    contador = contador + 1;
-                }
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -969,17 +965,6 @@ namespace Checador
                 errorProvider1.SetError(txt_puerto, null);
                 contador = contador + 1;
             }
-        }
-
-        private void btn_dar_baja_Click(object sender, EventArgs e)
-        {
-
-=======
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            
         }
 
         //FUNCION PARA IR A MODIFICAR DESDE CONSULTAR CHECADOR
@@ -1037,7 +1022,6 @@ namespace Checador
             {
                 MessageBox.Show(ex.ToString());
             }
->>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
         }
     }
 }
