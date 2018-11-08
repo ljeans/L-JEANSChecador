@@ -56,15 +56,12 @@
             this.txt_idbuscar = new System.Windows.Forms.TextBox();
             this.txt_nombrebuscar = new System.Windows.Forms.TextBox();
             this.dgv_rellenar = new System.Windows.Forms.DataGridView();
-<<<<<<< HEAD
-=======
             this.idempleadoDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombrecompletoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idchecadorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sucursalDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaentradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechasalidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
->>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
             this.vistaregistrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_Checador1 = new Checador.DataSet_Checador();
             this.label4 = new System.Windows.Forms.Label();
@@ -461,8 +458,6 @@
             this.dgv_rellenar.Size = new System.Drawing.Size(900, 400);
             this.dgv_rellenar.TabIndex = 0;
             // 
-<<<<<<< HEAD
-=======
             // idempleadoDataGridViewTextBoxColumn2
             // 
             this.idempleadoDataGridViewTextBoxColumn2.DataPropertyName = "id_empleado";
@@ -500,7 +495,6 @@
             this.fechasalidaDataGridViewTextBoxColumn.HeaderText = "Fecha de salida";
             this.fechasalidaDataGridViewTextBoxColumn.Name = "fechasalidaDataGridViewTextBoxColumn";
             // 
->>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
             // vistaregistrosBindingSource
             // 
             this.vistaregistrosBindingSource.DataMember = "vista_registros";

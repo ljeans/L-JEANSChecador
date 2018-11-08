@@ -208,6 +208,9 @@
   <data name="sucursal_registrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sucursal_registrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ver_pass1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ver_pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -258,6 +261,9 @@
   </data>
   <data name="Ventas_caja" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ventas_caja.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="huella8" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\huella8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -388,7 +394,7 @@
   <data name="sucursal_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sucursal_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ver_pass1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ver_pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="crearusuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crearusuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -63,6 +63,16 @@ namespace Checador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add {
+            get {
+                object obj = ResourceManager.GetObject("add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ayuda {
             get {
                 object obj = ResourceManager.GetObject("ayuda", resourceCulture);
@@ -236,6 +246,16 @@ namespace Checador.Properties {
         internal static System.Drawing.Bitmap conf_user_t_h {
             get {
                 object obj = ResourceManager.GetObject("conf_user_t_h", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap crearusuario {
+            get {
+                object obj = ResourceManager.GetObject("crearusuario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

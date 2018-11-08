@@ -20,6 +20,7 @@ namespace Checador
         reportes.reporte modulo_reportes = new reportes.reporte();
         inicio_sesion.login login = new inicio_sesion.login();
         incidentes.incidentes modulo_incidente = new incidentes.incidentes();
+        inicio_sesion.usuario crearusuario = new inicio_sesion.usuario();
 
 
         //VARIABLE PARA CARGAR LOS CHECADORES
@@ -180,7 +181,10 @@ namespace Checador
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
+            Enabled = false;
+            modulo_empleados = new empleados.empleados();
+            modulo_empleados.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            modulo_empleados.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -203,6 +207,14 @@ namespace Checador
             modulo_incidente = new incidentes.incidentes();
             modulo_incidente.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
             modulo_incidente.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Enabled = false;
+            crearusuario = new inicio_sesion.usuario();
+            crearusuario.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            crearusuario.Show();
         }
 
         private void Checador_OnFinger()

@@ -912,20 +912,9 @@ namespace Checador
                     }
                 }
             }
-<<<<<<< HEAD
-            else
+            catch (Exception ex)
             {
-                if (string.IsNullOrEmpty(txt_id.Text))
-                {
-
-                    errorProvider1.SetError(txt_id, "No ha ingresado el id del checador.");
-
-                }
-                else
-                {
-                    errorProvider1.SetError(txt_id, null);
-                    contador = contador + 1;
-                }
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -970,18 +959,6 @@ namespace Checador
                 contador = contador + 1;
             }
         }
-
-        private void btn_dar_baja_Click(object sender, EventArgs e)
-        {
-
-=======
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            
-        }
-
         //FUNCION PARA IR A MODIFICAR DESDE CONSULTAR CHECADOR
         private void btn_b_modificar_Click(object sender, EventArgs e)
         {
@@ -1037,7 +1014,6 @@ namespace Checador
             {
                 MessageBox.Show(ex.ToString());
             }
->>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
         }
     }
 }

@@ -71,5 +71,9 @@ namespace Checador.inicio_sesion
             }
         }
 
+        private void txt_contraseña_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

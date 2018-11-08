@@ -13,11 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-<<<<<<< HEAD
     <PublishUrl>C:\Users\manue\Desktop\</PublishUrl>
-=======
-    <PublishUrl>C:\Users\Adrián\Desktop\</PublishUrl>
->>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -52,11 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-<<<<<<< HEAD
     <ManifestCertificateThumbprint>03DF753293DD633618FCF0CC994089CF95F66E88</ManifestCertificateThumbprint>
-=======
-    <ManifestCertificateThumbprint>D79C90A201219981ADFEAEE69FCCCEE3AA1D0F85</ManifestCertificateThumbprint>
->>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Checador_TemporaryKey.pfx</ManifestKeyFile>
@@ -145,6 +137,12 @@
     <Compile Include="inicio sesion\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
+    <Compile Include="inicio sesion\usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inicio sesion\usuario.Designer.cs">
+      <DependentUpon>usuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +209,7 @@
     <Compile Include="validacion.cs" />
     <EmbeddedResource Include="checador\cheacador.resx">
       <DependentUpon>cheacador.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="empleados\empleados.resx">
       <DependentUpon>empleados.cs</DependentUpon>
@@ -227,9 +226,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="incidentes\incidentes.resx">
       <DependentUpon>incidentes.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="inicio sesion\login.resx">
       <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inicio sesion\usuario.resx">
+      <DependentUpon>usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="principal.resx">
       <DependentUpon>principal.cs</DependentUpon>
@@ -568,6 +571,8 @@
     <None Include="Resources\empleados_registros.png" />
     <None Include="Resources\empleados_modificar.png" />
     <None Include="Resources\empleados_buscar.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\crearusuario.png" />
     <Content Include="Resources\huellaregistred.png" />
   </ItemGroup>
   <ItemGroup>
@@ -576,11 +581,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
-<<<<<<< HEAD
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
-=======
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
->>>>>>> 4a6151bbf101d8bfc8eb118531161ed3e5026bdd
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
