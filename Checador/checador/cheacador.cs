@@ -173,6 +173,14 @@ namespace Checador
         //FUNCION PARA REGITAR CHECADOR EN LA BASE DE DATOS
         private void btn_registrar_Click(object sender, EventArgs e)
         {
+            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+            Thread hilo_secundario = new Thread(new ThreadStart(this.Registrar));
+            hilo_secundario.IsBackground = true;
+            hilo_secundario.Start();
+        }
+
+        public void Registrar()
+        {
             try
             {
                 Clase_Checador.estatus = "A";
@@ -180,7 +188,6 @@ namespace Checador
                 Clase_Checador.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
                 Clase_Checador.ip = txt_ip.Text;
                 Clase_Checador.puerto = txt_puerto.Text;
-                Clase_Checador.guardarChecador();
 
                 //FUNCION PAR RECARGAR EL DATAGRID
                 this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
@@ -959,6 +966,10 @@ namespace Checador
                 contador = contador + 1;
             }
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1b2f66530bcd67f50db1ea768989dd36c43c5142
         //FUNCION PARA IR A MODIFICAR DESDE CONSULTAR CHECADOR
         private void btn_b_modificar_Click(object sender, EventArgs e)
         {
