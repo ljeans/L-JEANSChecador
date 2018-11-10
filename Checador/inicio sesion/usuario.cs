@@ -18,6 +18,7 @@ namespace Checador.inicio_sesion
         }
 
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+        ClaseUsuario usuarios = new ClaseUsuario();
 
         private void usuario_Load(object sender, EventArgs e)
         {
@@ -44,8 +45,23 @@ namespace Checador.inicio_sesion
                 mensaje.lbl_info.Text = "Las contraseñas no coinciden";
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 mensaje.Show();
+                txt_comfirmar.Focus();
             }
-            txt_comfirmar.Focus();
+            usuarios.usuario = txt_usuario.Text;
+            usuarios.contraseña = txt_contraseña.Text;
+            usuarios.id_rol = Convert.ToInt32(cbx_rol.SelectedValue.ToString());
+            usuarios.id_empleado = Convert.ToInt32(txt_empleado.Text);
+            usuarios.guardarUsuario();
+            this.Close();
+        }
+
+        public void limpiar()
+        {
+            txt_usuario.Clear();
+            cbx_rol.SelectedIndex = 1;
+            txt_contraseña.Text = "";
+            txt_comfirmar.Text = "";
+
         }
 
         private void ver_pass()

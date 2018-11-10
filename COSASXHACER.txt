@@ -3,17 +3,15 @@
 - Login
 	- Crear usuarios para login
 	- Roles para ver que puede usar c/usuario
-<<<<<<< HEAD
-- Validar en GENERAL
-=======
->>>>>>> 1b2f66530bcd67f50db1ea768989dd36c43c5142
 - Campos innecesarios en la bd
 	Empleados:
 		* Id_Horario, retartdos, total_min_retardo, horas_extra
 	Horarios:
-<<<<<<< HEAD
-		*Lunes-Domingo
-=======
 		*Lunes-Domingo
 - VALIDAR FECHA ALTA EN MODIFICAR EMPLEADO
->>>>>>> 1b2f66530bcd67f50db1ea768989dd36c43c5142
+
+-CAMBIAR FECHA:
+CESAR
+BRISA
+CRISTIAN
+Y TODAS LAS ENTRADAS DE UNIDEL

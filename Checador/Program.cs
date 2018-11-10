@@ -6,8 +6,10 @@ using System.Windows.Forms;
 
 namespace Checador
 {
+    
     static class Program
     {
+        public static string rol;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

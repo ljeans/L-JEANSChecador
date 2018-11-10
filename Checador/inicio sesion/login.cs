@@ -55,7 +55,10 @@ namespace Checador.inicio_sesion
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+
         }
+
+
 
         private void btn_entrar_Click(object sender, EventArgs e)
         {
@@ -64,11 +67,16 @@ namespace Checador.inicio_sesion
             if (usuario.Entrar())
             {
                 MessageBox.Show("Bienvenido(a): " + usuario.usuario);
+                usuario.obtener_rol(usuario.id_rol);
+                Program.rol = usuario.nombre_rol;
+                MessageBox.Show(Program.rol);
+                
             }
             else
             {
                 MessageBox.Show("Usuario o contraseña incorrectos..");
             }
+            this.Close();
         }
 
         private void txt_contraseña_TextChanged(object sender, EventArgs e)
