@@ -326,5 +326,40 @@ namespace Checador.reportes
             crystalReportViewer5.ReportSource = crystalrpt;
             crystalReportViewer5.Refresh();
         }
+
+        private void btn_empleados_Click(object sender, EventArgs e)
+        {
+            ReportDocument crystalrpt = new ReportDocument();
+            crystalrpt.Load(@"..\\..\\reportes\Empleados-checador.rpt");
+
+            ParameterFieldDefinitions parameterFieldDefinitions;
+            ParameterFieldDefinition crParameterFieldDefinition;
+            ParameterValues crParameterValue = new ParameterValues();
+            ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
+
+            //COLOCAR USUARIO Y CONTRASEÑA PARA CRYSTAL REPORTS
+            string username = "sa"; // database user name
+            string password = "123456"; //database password
+            crystalrpt.SetDatabaseLogon(username, password); //here usaer name and password for crystel report
+
+            //parametro
+            crParameterDiscreteValue.Value = cbx_sucursal_checando.SelectedValue;
+            parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
+            crParameterFieldDefinition = parameterFieldDefinitions["id_sucursal"];
+            crParameterValue = crParameterFieldDefinition.CurrentValues;
+
+            crParameterValue.Clear();
+            crParameterValue.Add(crParameterDiscreteValue);
+            crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
+
+            crystalReportViewer6.ReportSource = crystalrpt;
+            crystalReportViewer6.Refresh();
+         
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage6;
+        }
     }
 }
