@@ -92,3 +92,4 @@ C:\Users\manue\Desktop\L-JEANSChecador\Checador\bin\Debug\stdole.dll
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.exe.manifest
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.application
 C:\Users\manue\Desktop\L-JEANSChecador\Checador\obj\Debug\Checador.inicio_sesion.usuario.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.inicio_sesion.usuario.resources

@@ -457,11 +457,7 @@
             this.dgv_rellenar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_rellenar.Size = new System.Drawing.Size(900, 400);
             this.dgv_rellenar.TabIndex = 0;
-<<<<<<< HEAD
             // 
-=======
-            //
->>>>>>> 1b2f66530bcd67f50db1ea768989dd36c43c5142
             // idempleadoDataGridViewTextBoxColumn2
             // 
             this.idempleadoDataGridViewTextBoxColumn2.DataPropertyName = "id_empleado";
@@ -498,11 +494,7 @@
             this.fechasalidaDataGridViewTextBoxColumn.DataPropertyName = "fecha_salida";
             this.fechasalidaDataGridViewTextBoxColumn.HeaderText = "Fecha de salida";
             this.fechasalidaDataGridViewTextBoxColumn.Name = "fechasalidaDataGridViewTextBoxColumn";
-<<<<<<< HEAD
             // 
-=======
-            //
->>>>>>> 1b2f66530bcd67f50db1ea768989dd36c43c5142
             // vistaregistrosBindingSource
             // 
             this.vistaregistrosBindingSource.DataMember = "vista_registros";

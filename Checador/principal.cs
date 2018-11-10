@@ -31,11 +31,75 @@ namespace Checador
 
         private void Desbloquear_Principal(object sender, EventArgs e)
         {
-            if (modulo_empleados != null) { modulo_empleados = null; }
-            else if (modulo_checador != null) { modulo_checador = null; }
-            Enabled = true;
+            if(Program.rol== "ADMINISTRADOR")
+            {
+                Enabled = true;
+                btn_checador.Enabled = true;
+                btn_sucursal.Enabled = true;
+                btn_empleados.Enabled = true;
+                btn_horarios.Enabled = true;
+                btn_reportes.Enabled = true;
+                btn_incidente.Enabled = true;
+                btn_cerrar.Enabled = true;
+                btn_iniciar.Enabled = true;
+                button1.Enabled = true;
+                //cerrar
+                button2.Enabled = true;
+                //minimizar
+                button3.Enabled = true;
+            }
+           else if(Program.rol == "SUPERVISOR DE PERSONAL")
+            {
+                Enabled = true;
+                btn_checador.Enabled = false;
+                btn_sucursal.Enabled = false;
+                btn_empleados.Enabled = false;
+                btn_horarios.Enabled = false;
+                 btn_reportes.Enabled = true;
+                btn_incidente.Enabled = true;
+                //cerrar
+                button2.Enabled = true;
+                //minimizar
+                button3.Enabled = true;
+            }
+            else if(Program.rol == "ENCARGADA DE TIENDA")
+            {
+                Enabled = true;
+                btn_checador.Enabled = false;
+                btn_sucursal.Enabled = false;
+                btn_empleados.Enabled = false;
+                btn_horarios.Enabled = true;
+                btn_reportes.Enabled = true;
+                btn_incidente.Enabled = true;
+                //cerrar
+                button2.Enabled = true;
+                //minimizar
+                button3.Enabled = true;
+            }
+            else
+            {
+                Desbloquear_inicio(sender, e);
+            }
+          
         }
 
+        private void Desbloquear_inicio(object sender, EventArgs e)
+        {
+            btn_checador.Enabled = false;
+            btn_sucursal.Enabled = false;
+            btn_empleados.Enabled = false;
+            btn_horarios.Enabled = false;
+            btn_reportes.Enabled = false;
+            btn_incidente.Enabled = false;
+            btn_cerrar.Enabled = false;
+            btn_iniciar.Enabled = true;
+            button1.Enabled = false;
+            //cerrar
+            button2.Enabled = false;
+            //minimizar
+            button3.Enabled = false;
+           
+        }
 
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
@@ -62,47 +126,53 @@ namespace Checador
             //DataRow row = dtChecadores.Rows[0];
             //MessageBox.Show(Convert.ToString(row["ip"]));
 
-           /* for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
-            {
-                DataRow row = dtChecadores.Rows[pos];
-                ipChecador = Convert.ToString(row["ip"]);
-                id_checador = Convert.ToInt32(row["id_checador"]);
-                puerto = Convert.ToInt32(row["puerto"]);
+            /* for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
+             {
+                 DataRow row = dtChecadores.Rows[pos];
+                 ipChecador = Convert.ToString(row["ip"]);
+                 id_checador = Convert.ToInt32(row["id_checador"]);
+                 puerto = Convert.ToInt32(row["puerto"]);
 
-                try
-                {
-                    zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
-                    //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
-                    //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
-                    bool bConn = Checador.Connect_Net(ipChecador, puerto);
+                 try
+                 {
+                     zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
+                     //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
+                     //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
+                     bool bConn = Checador.Connect_Net(ipChecador, puerto);
 
-                    //
-                    if (bConn == true)
-                    {
-                        //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
-                        Checador.EnableDevice(id_checador, true);
-                        MessageBox.Show("Dispositivo conectado + ID: " + id_checador);
+                     //
+                     if (bConn == true)
+                     {
+                         //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
+                         Checador.EnableDevice(id_checador, true);
+                         MessageBox.Show("Dispositivo conectado + ID: " + id_checador);
 
-                        //FUNCION PARA REGISTRAR TODOS LOS EVENTOS DEL CHECADOR EN TIEMPO REAL
-                        if (Checador.RegEvent(id_checador, 65535))
-                        {
-                            //Checador.OnEnrollFingerEx += new zkemkeeper._IZKEMEvents_OnEnrollFingerExEventHandler(Checador_OnEnroll);
-                            Checador.OnAttTransactionEx += new zkemkeeper._IZKEMEvents_OnAttTransactionExEventHandler(Checador_OnAttTransactionEx);
-                            Checador.OnNewUser += new zkemkeeper._IZKEMEvents_OnNewUserEventHandler(Checador_OnNewUser);
-                            //Checador.OnFinger += new zkemkeeper._IZKEMEvents_OnFingerEventHandler(Checador_OnFinger);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Dispositivo no conectado");
-                    }
+                         //FUNCION PARA REGISTRAR TODOS LOS EVENTOS DEL CHECADOR EN TIEMPO REAL
+                         if (Checador.RegEvent(id_checador, 65535))
+                         {
+                             //Checador.OnEnrollFingerEx += new zkemkeeper._IZKEMEvents_OnEnrollFingerExEventHandler(Checador_OnEnroll);
+                             Checador.OnAttTransactionEx += new zkemkeeper._IZKEMEvents_OnAttTransactionExEventHandler(Checador_OnAttTransactionEx);
+                             Checador.OnNewUser += new zkemkeeper._IZKEMEvents_OnNewUserEventHandler(Checador_OnNewUser);
+                             //Checador.OnFinger += new zkemkeeper._IZKEMEvents_OnFingerEventHandler(Checador_OnFinger);
+                         }
+                     }
+                     else
+                     {
+                         MessageBox.Show("Dispositivo no conectado");
+                     }
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            }*/
+                 }
+                 catch (Exception ex)
+                 {
+                     MessageBox.Show(ex.ToString());
+                 }
+             }*/
+            Desbloquear_inicio(sender, e);
+            Enabled = false;
+            login = new inicio_sesion.login();
+            login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+            login.Show();
+
         }
 
 
@@ -215,6 +285,11 @@ namespace Checador
             crearusuario = new inicio_sesion.usuario();
             crearusuario.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
             crearusuario.Show();
+        }
+
+        private void btn_cerrar_Click(object sender, EventArgs e)
+        {
+            Desbloquear_inicio(sender, e);
         }
 
         private void Checador_OnFinger()
