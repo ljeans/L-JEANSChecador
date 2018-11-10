@@ -75,6 +75,7 @@ namespace Checador
                 button2.Enabled = true;
                 //minimizar
                 button3.Enabled = true;
+                btn_cerrar.Enabled = true;
             }
             else
             {
@@ -95,9 +96,9 @@ namespace Checador
             btn_iniciar.Enabled = true;
             button1.Enabled = false;
             //cerrar
-            button2.Enabled = false;
+            button2.Enabled = true;
             //minimizar
-            button3.Enabled = false;
+            button3.Enabled = true;
            
         }
 

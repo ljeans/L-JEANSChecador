@@ -13,11 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-<<<<<<< HEAD
     <PublishUrl>C:\Users\manue\Desktop\</PublishUrl>
-=======
-    <PublishUrl>C:\Users\Adrián\Desktop\</PublishUrl>
->>>>>>> 9237da5b222210464294ee41d7d44d258db2032a
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -53,10 +49,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>03DF753293DD633618FCF0CC994089CF95F66E88</ManifestCertificateThumbprint>
-<<<<<<< HEAD
-=======
-    <ManifestCertificateThumbprint>D79C90A201219981ADFEAEE69FCCCEE3AA1D0F85</ManifestCertificateThumbprint>
->>>>>>> 9237da5b222210464294ee41d7d44d258db2032a
   </PropertyGroup>
   <PropertyGroup>
     <ManifestKeyFile>Checador_TemporaryKey.pfx</ManifestKeyFile>
@@ -201,10 +193,16 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="reportes\Sucursal-Empleados.cs">
+    <Compile Include="reportes\Empleados.cs">
+      <DependentUpon>Empleados.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reportes\Empleados-Checador.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Sucursal-Empleados.rpt</DependentUpon>
+      <DependentUpon>Empleados-Checador.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="sucursales\ClaseSucursal.cs" />
@@ -280,9 +278,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>empleados-departamento.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportes\Sucursal-Empleados.rpt">
+    <EmbeddedResource Include="reportes\Empleados.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Sucursal-Empleados.cs</LastGenOutput>
+      <LastGenOutput>Empleados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\Empleados-Checador.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Empleados-Checador.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="sucursales\sucursales.resx">
       <DependentUpon>sucursales.cs</DependentUpon>
@@ -589,11 +591,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
-<<<<<<< HEAD
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 y x64%29</ProductName>
-=======
-      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
->>>>>>> 9237da5b222210464294ee41d7d44d258db2032a
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

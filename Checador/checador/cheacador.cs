@@ -966,10 +966,6 @@ namespace Checador
                 contador = contador + 1;
             }
         }
-<<<<<<< HEAD
-=======
-
->>>>>>> 9237da5b222210464294ee41d7d44d258db2032a
         //FUNCION PARA IR A MODIFICAR DESDE CONSULTAR CHECADOR
         private void btn_b_modificar_Click(object sender, EventArgs e)
         {

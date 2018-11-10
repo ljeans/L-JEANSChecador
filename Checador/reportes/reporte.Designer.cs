@@ -71,6 +71,13 @@
             this.cbx_sucursal = new System.Windows.Forms.ComboBox();
             this.txt_departamento = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.crystalReportViewer6 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.btn_empleados = new System.Windows.Forms.Button();
+            this.cbx_sucursal_checando = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.sucursalBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -83,6 +90,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // rb_4
@@ -115,8 +124,15 @@
             // 
             // tabControlBase
             // 
+            this.tabControlBase.Controls.Add(this.tabPage6);
             this.tabControlBase.Location = new System.Drawing.Point(309, 68);
             this.tabControlBase.Size = new System.Drawing.Size(1020, 670);
+            this.tabControlBase.Controls.SetChildIndex(this.tabPage6, 0);
+            this.tabControlBase.Controls.SetChildIndex(this.tabPage5, 0);
+            this.tabControlBase.Controls.SetChildIndex(this.tabPage4, 0);
+            this.tabControlBase.Controls.SetChildIndex(this.tabPage3, 0);
+            this.tabControlBase.Controls.SetChildIndex(this.tabPage2, 0);
+            this.tabControlBase.Controls.SetChildIndex(this.tabPage1, 0);
             // 
             // tabPage1
             // 
@@ -180,6 +196,7 @@
             // 
             // panel_menu
             // 
+            this.panel_menu.Controls.Add(this.radioButton3);
             this.panel_menu.Controls.Add(this.radioButton2);
             this.panel_menu.Controls.Add(this.radioButton1);
             this.panel_menu.Controls.SetChildIndex(this.rb_registrar, 0);
@@ -187,6 +204,7 @@
             this.panel_menu.Controls.SetChildIndex(this.rb_buscar, 0);
             this.panel_menu.Controls.SetChildIndex(this.radioButton1, 0);
             this.panel_menu.Controls.SetChildIndex(this.radioButton2, 0);
+            this.panel_menu.Controls.SetChildIndex(this.radioButton3, 0);
             // 
             // rb_buscar
             // 
@@ -702,12 +720,111 @@
             this.radioButton2.UseVisualStyleBackColor = false;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
+            // radioButton3
+            // 
+            this.radioButton3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton3.BackColor = System.Drawing.Color.Transparent;
+            this.radioButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.radioButton3.FlatAppearance.BorderSize = 0;
+            this.radioButton3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
+            this.radioButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
+            this.radioButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.radioButton3.ForeColor = System.Drawing.Color.White;
+            this.radioButton3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.radioButton3.Location = new System.Drawing.Point(1, 525);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(299, 104);
+            this.radioButton3.TabIndex = 5;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Empleados Checador";
+            this.radioButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.radioButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.radioButton3.UseVisualStyleBackColor = false;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.crystalReportViewer6);
+            this.tabPage6.Controls.Add(this.btn_empleados);
+            this.tabPage6.Controls.Add(this.cbx_sucursal_checando);
+            this.tabPage6.Controls.Add(this.label11);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1012, 644);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "tabPage6";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // crystalReportViewer6
+            // 
+            this.crystalReportViewer6.ActiveViewIndex = -1;
+            this.crystalReportViewer6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.crystalReportViewer6.Location = new System.Drawing.Point(3, 51);
+            this.crystalReportViewer6.Name = "crystalReportViewer6";
+            this.crystalReportViewer6.ShowCloseButton = false;
+            this.crystalReportViewer6.ShowParameterPanelButton = false;
+            this.crystalReportViewer6.ShowRefreshButton = false;
+            this.crystalReportViewer6.Size = new System.Drawing.Size(1006, 590);
+            this.crystalReportViewer6.TabIndex = 48;
+            this.crystalReportViewer6.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            // 
+            // btn_empleados
+            // 
+            this.btn_empleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_empleados.FlatAppearance.BorderSize = 0;
+            this.btn_empleados.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_empleados.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_empleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_empleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_empleados.ForeColor = System.Drawing.Color.White;
+            this.btn_empleados.Location = new System.Drawing.Point(856, 6);
+            this.btn_empleados.Name = "btn_empleados";
+            this.btn_empleados.Size = new System.Drawing.Size(150, 32);
+            this.btn_empleados.TabIndex = 28;
+            this.btn_empleados.Text = "Generar";
+            this.btn_empleados.UseVisualStyleBackColor = false;
+            this.btn_empleados.Click += new System.EventHandler(this.btn_empleados_Click);
+            // 
+            // cbx_sucursal_checando
+            // 
+            this.cbx_sucursal_checando.DataSource = this.sucursalBindingSource1;
+            this.cbx_sucursal_checando.DisplayMember = "nombre";
+            this.cbx_sucursal_checando.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_sucursal_checando.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_sucursal_checando.FormattingEnabled = true;
+            this.cbx_sucursal_checando.Location = new System.Drawing.Point(108, 6);
+            this.cbx_sucursal_checando.Name = "cbx_sucursal_checando";
+            this.cbx_sucursal_checando.Size = new System.Drawing.Size(200, 32);
+            this.cbx_sucursal_checando.TabIndex = 27;
+            this.cbx_sucursal_checando.ValueMember = "id_sucursal";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(8, 11);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 24);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Sucursal:";
+            // 
+            // sucursalBindingSource1
+            // 
+            this.sucursalBindingSource1.DataMember = "sucursal";
+            this.sucursalBindingSource1.DataSource = this.dataSet_Checador;
+            // 
             // reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "reporte";
+            this.TopMost = false;
             this.Load += new System.EventHandler(this.reporte_Load);
             this.tabControlBase.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -727,6 +844,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -775,5 +895,12 @@
         private System.Windows.Forms.ComboBox cbx_sucursal;
         private System.Windows.Forms.TextBox txt_departamento;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TabPage tabPage6;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer6;
+        private System.Windows.Forms.Button btn_empleados;
+        private System.Windows.Forms.ComboBox cbx_sucursal_checando;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.BindingSource sucursalBindingSource1;
     }
 }
