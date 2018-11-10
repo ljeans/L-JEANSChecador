@@ -1,15 +1,15 @@
 - Hacer HILOS
-- Poner UniqueKeys en la base de datos
 - Login
-	- Crear usuarios para login
-	- Roles para ver que puede usar c/usuario
+	- Cerrar sesión
+	- Label de usuario
 - Campos innecesarios en la bd
 	Empleados:
 		* Id_Horario, retartdos, total_min_retardo, horas_extra
 	Horarios:
 		*Lunes-Domingo
 - VALIDAR FECHA ALTA EN MODIFICAR EMPLEADO
-
+- Reporte
+	* Reporte empleado cheador: Validar la sucursal impresa en la cabecera
 -CAMBIAR FECHA:
 CESAR
 BRISA
