@@ -183,16 +183,21 @@ namespace Checador
         {
             try
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
                 Clase_Checador.estatus = "A";
                 Clase_Checador.id = Convert.ToInt32(txt_id.Text);
                 Clase_Checador.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
                 Clase_Checador.ip = txt_ip.Text;
                 Clase_Checador.puerto = txt_puerto.Text;
-
-                //FUNCION PAR RECARGAR EL DATAGRID
-                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                if (Clase_Checador.guardarChecador()){
+                    //FUNCION PAR RECARGAR EL DATAGRID
+                    this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                }
 
                 Limpiar();
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
             }
             catch (Exception ex)
             {
