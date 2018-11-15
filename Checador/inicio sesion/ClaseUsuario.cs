@@ -47,6 +47,7 @@ namespace Checador.inicio_sesion
                         usuario = lector.GetString(lector.GetOrdinal("usuario"));
                         contraseña = lector.GetString(lector.GetOrdinal("password"));
                         id_rol = lector.GetInt32(lector.GetOrdinal("id_rol"));
+                        id_empleado = lector.GetInt32(lector.GetOrdinal("id_empleado"));
                         con.Close();
                         return true;
                     }
@@ -98,27 +99,35 @@ namespace Checador.inicio_sesion
 
         public void obtener_rol(int id)
         {
-            string consulta = "Select nombre From rol where id_rol=@id_rol";
-            Conexion con = new Conexion();
-            SqlConnection conexion = new SqlConnection(con.cadenaConexion);
-            SqlCommand comand = new SqlCommand(consulta, conexion);
-            comand.Parameters.AddWithValue("@id_rol", id);
-            conexion.Open();
-            SqlDataReader lector = comand.ExecuteReader();//Ejecuta el comadno
-            if (lector.HasRows)//Revisa si hay resultados
+            try
             {
-                lector.Read();//Lee una linea de los resultados
-                              //this.id = ;//Asignacion a atributos
-                              //get ordinal regresa el indice de la fila
-                              //el Nombre especificado en el parametro 
-                            
-               nombre_rol  = lector.GetString(lector.GetOrdinal("nombre"));
-                conexion.Close();
+                string consulta = "Select nombre From rol where id_rol=@id_rol";
+                Conexion con = new Conexion();
+                SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+                SqlCommand comand = new SqlCommand(consulta, conexion);
+                comand.Parameters.AddWithValue("@id_rol", id);
+                conexion.Open();
+                SqlDataReader lector = comand.ExecuteReader();//Ejecuta el comadno
+                if (lector.HasRows)//Revisa si hay resultados
+                {
+                    lector.Read();//Lee una linea de los resultados
+                                  //this.id = ;//Asignacion a atributos
+                                  //get ordinal regresa el indice de la fila
+                                  //el Nombre especificado en el parametro 
+
+                    nombre_rol = lector.GetString(lector.GetOrdinal("nombre"));
+                    conexion.Close();
+                }
+                else
+                {
+                    conexion.Close();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                conexion.Close();
+                MessageBox.Show(ex.ToString());
             }
+           
         }
 
     }

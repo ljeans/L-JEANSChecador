@@ -205,6 +205,12 @@
       <DependentUpon>Empleados-Checador.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="reportes\Sucursal-Empleados1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sucursal-Empleados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="sucursales\ClaseSucursal.cs" />
     <Compile Include="sucursales\sucursales.cs">
       <SubType>Form</SubType>
@@ -285,6 +291,10 @@
     <EmbeddedResource Include="reportes\Empleados-Checador.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Empleados-Checador.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reportes\Sucursal-Empleados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sucursal-Empleados1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="sucursales\sucursales.resx">
       <DependentUpon>sucursales.cs</DependentUpon>

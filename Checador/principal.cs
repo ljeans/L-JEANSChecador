@@ -47,6 +47,9 @@ namespace Checador
                 button2.Enabled = true;
                 //minimizar
                 button3.Enabled = true;
+                lbl_usuario.Text = Program.nombre_usuario;
+                btn_cerrar.Visible = true;
+                btn_iniciar.Visible = false;
             }
            else if(Program.rol == "SUPERVISOR DE PERSONAL")
             {
@@ -61,6 +64,9 @@ namespace Checador
                 button2.Enabled = true;
                 //minimizar
                 button3.Enabled = true;
+                lbl_usuario.Text = Program.nombre_usuario;
+                btn_cerrar.Visible = true;
+                btn_iniciar.Visible = false;
             }
             else if(Program.rol == "ENCARGADA DE TIENDA")
             {
@@ -76,6 +82,9 @@ namespace Checador
                 //minimizar
                 button3.Enabled = true;
                 btn_cerrar.Enabled = true;
+                lbl_usuario.Text = Program.nombre_usuario;
+                btn_cerrar.Visible = true;
+                btn_iniciar.Visible = false;
             }
             else
             {
@@ -92,7 +101,7 @@ namespace Checador
             btn_horarios.Enabled = false;
             btn_reportes.Enabled = false;
             btn_incidente.Enabled = false;
-            btn_cerrar.Enabled = false;
+            btn_cerrar.Visible = false;
             btn_iniciar.Enabled = true;
             button1.Enabled = false;
             //cerrar
@@ -173,6 +182,7 @@ namespace Checador
             login = new inicio_sesion.login();
             login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
             login.Show();
+            btn_cerrar.Visible = true;
 
         }
 
@@ -266,9 +276,8 @@ namespace Checador
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Enabled = false;
+           
             login = new inicio_sesion.login();
-            login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
             login.Show();
         }
 
@@ -291,6 +300,15 @@ namespace Checador
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
             Desbloquear_inicio(sender, e);
+            Program.nombre_usuario = "";
+            Program.rol = null;
+            lbl_usuario.Text = "";
+            btn_iniciar.Visible = true;
+        }
+
+        private void panel_barra_superior_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void Checador_OnFinger()

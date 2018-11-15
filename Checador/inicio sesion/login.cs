@@ -19,6 +19,7 @@ namespace Checador.inicio_sesion
         }
 
         ClaseUsuario usuario = new ClaseUsuario();
+        ClaseEmpleado empleados = new ClaseEmpleado();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -54,29 +55,36 @@ namespace Checador.inicio_sesion
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Enabled = true;
             this.Close();
 
         }
-
-
-
         private void btn_entrar_Click(object sender, EventArgs e)
         {
-            usuario.usuario = txt_usuario.Text;
-            usuario.contraseña = txt_contraseña.Text;
-            if (usuario.Entrar())
+            try
             {
-                MessageBox.Show("Bienvenido(a): " + usuario.usuario);
-                usuario.obtener_rol(usuario.id_rol);
-                Program.rol = usuario.nombre_rol;
-                MessageBox.Show(Program.rol);
-                
+                usuario.usuario = txt_usuario.Text;
+                usuario.contraseña = txt_contraseña.Text;
+                if (usuario.Entrar())
+                {
+                    MessageBox.Show("Bienvenido(a): " + usuario.usuario);
+                    usuario.obtener_rol(usuario.id_rol);
+                    Program.rol = usuario.nombre_rol;
+                    empleados.verificar_existencia(usuario.id_empleado);
+                    Program.nombre_usuario = empleados.nombre + " " + empleados.apellido_mat;
+                    MessageBox.Show(Program.nombre_usuario);
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos..");
+                }
+                this.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Usuario o contraseña incorrectos..");
+                MessageBox.Show(ex.ToString());
             }
-            this.Close();
+            
         }
 
         private void txt_contraseña_TextChanged(object sender, EventArgs e)

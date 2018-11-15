@@ -46,6 +46,8 @@
             this.btn_sucursal = new System.Windows.Forms.Button();
             this.btn_checador = new System.Windows.Forms.Button();
             this.btn_horarios = new System.Windows.Forms.Button();
+            this.lbl_usuario = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel_barra_superior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -108,6 +110,8 @@
             // panel_barra_superior
             // 
             this.panel_barra_superior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel_barra_superior.Controls.Add(this.label1);
+            this.panel_barra_superior.Controls.Add(this.lbl_usuario);
             this.panel_barra_superior.Controls.Add(this.pictureBox1);
             this.panel_barra_superior.Controls.Add(this.button2);
             this.panel_barra_superior.Controls.Add(this.button3);
@@ -119,6 +123,7 @@
             this.panel_barra_superior.Name = "panel_barra_superior";
             this.panel_barra_superior.Size = new System.Drawing.Size(1370, 79);
             this.panel_barra_superior.TabIndex = 15;
+            this.panel_barra_superior.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barra_superior_Paint);
             // 
             // pictureBox1
             // 
@@ -179,7 +184,7 @@
             this.btn_iniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_iniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_iniciar.ForeColor = System.Drawing.Color.White;
-            this.btn_iniciar.Location = new System.Drawing.Point(1073, 20);
+            this.btn_iniciar.Location = new System.Drawing.Point(1078, 49);
             this.btn_iniciar.Name = "btn_iniciar";
             this.btn_iniciar.Size = new System.Drawing.Size(136, 28);
             this.btn_iniciar.TabIndex = 1;
@@ -199,7 +204,7 @@
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar.ForeColor = System.Drawing.Color.White;
-            this.btn_cerrar.Location = new System.Drawing.Point(919, 20);
+            this.btn_cerrar.Location = new System.Drawing.Point(1063, 49);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(151, 28);
             this.btn_cerrar.TabIndex = 1;
@@ -213,7 +218,7 @@
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_titulo.Location = new System.Drawing.Point(545, 20);
+            this.lbl_titulo.Location = new System.Drawing.Point(154, 20);
             this.lbl_titulo.Name = "lbl_titulo";
             this.lbl_titulo.Size = new System.Drawing.Size(280, 37);
             this.lbl_titulo.TabIndex = 5;
@@ -356,6 +361,27 @@
             this.btn_horarios.UseVisualStyleBackColor = false;
             this.btn_horarios.Click += new System.EventHandler(this.btn_horarios_Click);
             // 
+            // lbl_usuario
+            // 
+            this.lbl_usuario.AutoSize = true;
+            this.lbl_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usuario.ForeColor = System.Drawing.Color.White;
+            this.lbl_usuario.Location = new System.Drawing.Point(886, 13);
+            this.lbl_usuario.Name = "lbl_usuario";
+            this.lbl_usuario.Size = new System.Drawing.Size(0, 20);
+            this.lbl_usuario.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(801, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 20);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Empleado:";
+            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,6 +403,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "principal";
             this.Text = "principal";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.principal_Load);
             this.panel_barra_superior.ResumeLayout(false);
@@ -404,6 +431,8 @@
         private System.Windows.Forms.Button btn_checador;
         private System.Windows.Forms.Button btn_horarios;
         private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label lbl_usuario;
+        public System.Windows.Forms.Label label1;
     }
 }
 

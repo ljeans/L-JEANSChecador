@@ -482,7 +482,5 @@ namespace Checador
 
 
         }
-
-
     }
 }
