@@ -371,6 +371,7 @@
             // btn_registrar
             // 
             this.btn_registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.btn_registrar.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.btn_registrar.FlatAppearance.BorderSize = 0;
             this.btn_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.btn_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
@@ -885,6 +886,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(1362, 741);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "cheacador";
             this.TopMost = false;

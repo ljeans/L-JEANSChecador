@@ -76,8 +76,8 @@
             this.crystalReportViewer6 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.btn_empleados = new System.Windows.Forms.Button();
             this.cbx_sucursal_checando = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.sucursalBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label11 = new System.Windows.Forms.Label();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -193,6 +193,11 @@
             // btn_home
             // 
             this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
+            // 
+            // lbl_titulo
+            // 
+            this.lbl_titulo.Size = new System.Drawing.Size(145, 37);
+            this.lbl_titulo.Text = "Reportes";
             // 
             // panel_menu
             // 
@@ -803,6 +808,11 @@
             this.cbx_sucursal_checando.TabIndex = 27;
             this.cbx_sucursal_checando.ValueMember = "id_sucursal";
             // 
+            // sucursalBindingSource1
+            // 
+            this.sucursalBindingSource1.DataMember = "sucursal";
+            this.sucursalBindingSource1.DataSource = this.dataSet_Checador;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -812,11 +822,6 @@
             this.label11.Size = new System.Drawing.Size(88, 24);
             this.label11.TabIndex = 26;
             this.label11.Text = "Sucursal:";
-            // 
-            // sucursalBindingSource1
-            // 
-            this.sucursalBindingSource1.DataMember = "sucursal";
-            this.sucursalBindingSource1.DataSource = this.dataSet_Checador;
             // 
             // reporte
             // 

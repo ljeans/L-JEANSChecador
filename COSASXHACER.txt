@@ -1,7 +1,4 @@
 - Hacer HILOS
-- Login
-	- Cerrar sesión
-	- Label de usuario
 - Campos innecesarios en la bd
 	Empleados:
 		* Id_Horario, retartdos, total_min_retardo, horas_extra
@@ -10,8 +7,3 @@
 - VALIDAR FECHA ALTA EN MODIFICAR EMPLEADO
 - Reporte
 	* Reporte empleado cheador: Validar la sucursal impresa en la cabecera
--CAMBIAR FECHA:
-CESAR
-BRISA
-CRISTIAN
-Y TODAS LAS ENTRADAS DE UNIDEL
