@@ -163,6 +163,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="reportes\reporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,14 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="reportes\reporte.resx">
       <DependentUpon>reporte.cs</DependentUpon>
     </EmbeddedResource>
@@ -575,6 +575,9 @@
     <None Include="Resources\huella9.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\tienda_chequeos.png" />
+    <None Include="Resources\tienda.png" />
+    <None Include="Resources\tiendas.png" />
     <None Include="Resources\sucursal_buscar.png" />
     <None Include="Resources\sucursal_modificar.png" />
     <None Include="Resources\sucursal_registrar.png" />
@@ -593,6 +596,11 @@
     <None Include="Resources\empleados_buscar.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\crearusuario.png" />
+    <None Include="Resources\horarios_registrar2.png" />
+    <None Include="Resources\checador_modificar.png" />
+    <None Include="Resources\checador_registrar.png" />
+    <None Include="Resources\checador_buscar.png" />
+    <None Include="Resources\calcular_horas.png" />
     <Content Include="Resources\huellaregistred.png" />
   </ItemGroup>
   <ItemGroup>

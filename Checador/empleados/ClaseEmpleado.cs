@@ -436,7 +436,7 @@ namespace Checador
         //FUNCION PARA REGISTRAR EMPLEADO_SUCURSAL
         public void guardarEmpleado_Sucursal()
         {
-            guardarsuc = fecha_alta;
+            guardarsuc = DateTime.Now;
             try
             {
                 //Registrar SUCURSAL
@@ -467,8 +467,7 @@ namespace Checador
                 SqlCommand comand = new SqlCommand(consulta, conexion);
                 comand.Parameters.AddWithValue("@id_empleado", id);
                 comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
-                comand.Parameters.AddWithValue("@fecha_entrada", fecha_alta);
-                
+                comand.Parameters.AddWithValue("@fecha_entrada", guardarsuc);               
                 comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
                 comand.ExecuteNonQuery();
                 conexion.Close();

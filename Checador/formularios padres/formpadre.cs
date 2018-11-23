@@ -36,5 +36,10 @@ namespace Checador.formularios_padres
         {
             tabControlBase.SelectedTab = tabPage3;
         }
+
+        private void btn_checador_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -147,7 +147,6 @@
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tolerancia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_diarias)).BeginInit();
@@ -237,10 +236,6 @@
             this.tabPage4.Controls.Add(this.cbx_empleado);
             this.tabPage4.Controls.Add(this.label11);
             // 
-            // btn_home
-            // 
-            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
-            // 
             // lbl_titulo
             // 
             this.lbl_titulo.Size = new System.Drawing.Size(139, 37);
@@ -282,7 +277,7 @@
             this.rb_registrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.rb_registrar.Image = global::Checador.Properties.Resources.horarios_registrar;
+            this.rb_registrar.Image = global::Checador.Properties.Resources.horarios_registrar2;
             this.rb_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.rb_registrar.CheckedChanged += new System.EventHandler(this.rb_registrar_CheckedChanged);
             // 
@@ -763,6 +758,7 @@
             this.rb_asignar_horarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rb_asignar_horarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_asignar_horarios.ForeColor = System.Drawing.Color.White;
+            this.rb_asignar_horarios.Image = global::Checador.Properties.Resources.horarios_registrar;
             this.rb_asignar_horarios.Location = new System.Drawing.Point(0, 315);
             this.rb_asignar_horarios.Name = "rb_asignar_horarios";
             this.rb_asignar_horarios.Size = new System.Drawing.Size(299, 104);
@@ -1511,7 +1507,6 @@
             this.tabPage4.PerformLayout();
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             this.panel_menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txt_tolerancia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_diarias)).EndInit();

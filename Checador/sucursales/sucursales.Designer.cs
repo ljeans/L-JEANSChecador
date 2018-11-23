@@ -92,7 +92,6 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sucursal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaSucursalBindingSource)).BeginInit();
@@ -183,10 +182,6 @@
             this.tabPage3.Controls.Add(this.btn_ir_modificar);
             this.tabPage3.Controls.Add(this.label84);
             this.tabPage3.Controls.Add(this.txt_id_mod);
-            // 
-            // btn_home
-            // 
-            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // lbl_titulo
             // 
@@ -867,7 +862,6 @@
             this.tabPage3.PerformLayout();
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             this.panel_menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sucursal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaSucursalBindingSource)).EndInit();

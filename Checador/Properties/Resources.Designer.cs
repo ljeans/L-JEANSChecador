@@ -103,6 +103,16 @@ namespace Checador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calcular_horas {
+            get {
+                object obj = ResourceManager.GetObject("calcular_horas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calendar {
             get {
                 object obj = ResourceManager.GetObject("calendar", resourceCulture);
@@ -133,9 +143,9 @@ namespace Checador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cliente_baja {
+        internal static System.Drawing.Bitmap checador_buscar {
             get {
-                object obj = ResourceManager.GetObject("Cliente_baja", resourceCulture);
+                object obj = ResourceManager.GetObject("checador_buscar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -143,9 +153,9 @@ namespace Checador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cliente_buscar {
+        internal static System.Drawing.Bitmap checador_modificar {
             get {
-                object obj = ResourceManager.GetObject("Cliente_buscar", resourceCulture);
+                object obj = ResourceManager.GetObject("checador_modificar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,49 +163,9 @@ namespace Checador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cliente_modif {
+        internal static System.Drawing.Bitmap checador_registrar {
             get {
-                object obj = ResourceManager.GetObject("Cliente_modif", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Cliente_registrar_n {
-            get {
-                object obj = ResourceManager.GetObject("Cliente_registrar_n", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Clientes {
-            get {
-                object obj = ResourceManager.GetObject("Clientes", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Clientes_mediano {
-            get {
-                object obj = ResourceManager.GetObject("Clientes_mediano", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Clientes_ver_todos {
-            get {
-                object obj = ResourceManager.GetObject("Clientes_ver_todos", resourceCulture);
+                object obj = ResourceManager.GetObject("checador_registrar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,26 +183,6 @@ namespace Checador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Compras_registrar {
-            get {
-                object obj = ResourceManager.GetObject("Compras_registrar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Compras_servicios {
-            get {
-                object obj = ResourceManager.GetObject("Compras_servicios", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap conf_user_st {
             get {
                 object obj = ResourceManager.GetObject("conf_user_st", resourceCulture);
@@ -243,39 +193,9 @@ namespace Checador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap conf_user_t_h {
-            get {
-                object obj = ResourceManager.GetObject("conf_user_t_h", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap crearusuario {
             get {
                 object obj = ResourceManager.GetObject("crearusuario", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap delete_user_st {
-            get {
-                object obj = ResourceManager.GetObject("delete_user_st", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap delete_user_t_h {
-            get {
-                object obj = ResourceManager.GetObject("delete_user_t_h", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,16 +216,6 @@ namespace Checador.Properties {
         internal static System.Drawing.Bitmap empleados_buscar {
             get {
                 object obj = ResourceManager.GetObject("empleados_buscar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Empleados_mediano {
-            get {
-                object obj = ResourceManager.GetObject("Empleados_mediano", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,6 +296,16 @@ namespace Checador.Properties {
         internal static System.Drawing.Bitmap horarios_registrar {
             get {
                 object obj = ResourceManager.GetObject("horarios_registrar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap horarios_registrar2 {
+            get {
+                object obj = ResourceManager.GetObject("horarios_registrar2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -623,196 +543,6 @@ namespace Checador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Prod_baja {
-            get {
-                object obj = ResourceManager.GetObject("Prod_baja", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Prod_buscar {
-            get {
-                object obj = ResourceManager.GetObject("Prod_buscar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Prod_inventario {
-            get {
-                object obj = ResourceManager.GetObject("Prod_inventario", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Prod_modificar {
-            get {
-                object obj = ResourceManager.GetObject("Prod_modificar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Prod_registrar_nuevo {
-            get {
-                object obj = ResourceManager.GetObject("Prod_registrar_nuevo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Productos {
-            get {
-                object obj = ResourceManager.GetObject("Productos", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Productos_baja {
-            get {
-                object obj = ResourceManager.GetObject("Productos_baja", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap productos_buscar {
-            get {
-                object obj = ResourceManager.GetObject("productos_buscar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Productos_mediano {
-            get {
-                object obj = ResourceManager.GetObject("Productos_mediano", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Productos_modificar {
-            get {
-                object obj = ResourceManager.GetObject("Productos_modificar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Productos_registrar {
-            get {
-                object obj = ResourceManager.GetObject("Productos_registrar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap productos_ver_todos {
-            get {
-                object obj = ResourceManager.GetObject("productos_ver_todos", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Prov_Baja {
-            get {
-                object obj = ResourceManager.GetObject("Prov_Baja", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Prov_Buscar {
-            get {
-                object obj = ResourceManager.GetObject("Prov_Buscar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Prov_Modificar {
-            get {
-                object obj = ResourceManager.GetObject("Prov_Modificar", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Prov_Registrar_n {
-            get {
-                object obj = ResourceManager.GetObject("Prov_Registrar_n", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Prov_Ver_todos {
-            get {
-                object obj = ResourceManager.GetObject("Prov_Ver_todos", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Proveedore_mediano {
-            get {
-                object obj = ResourceManager.GetObject("Proveedore_mediano", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Proveedores {
-            get {
-                object obj = ResourceManager.GetObject("Proveedores", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap remove {
             get {
                 object obj = ResourceManager.GetObject("remove", resourceCulture);
@@ -836,26 +566,6 @@ namespace Checador.Properties {
         internal static System.Drawing.Bitmap reportes {
             get {
                 object obj = ResourceManager.GetObject("reportes", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search_user_st {
-            get {
-                object obj = ResourceManager.GetObject("search_user_st", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search_user_t_h {
-            get {
-                object obj = ResourceManager.GetObject("search_user_t_h", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -923,9 +633,9 @@ namespace Checador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Ventas {
+        internal static System.Drawing.Bitmap tienda {
             get {
-                object obj = ResourceManager.GetObject("Ventas", resourceCulture);
+                object obj = ResourceManager.GetObject("tienda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -933,9 +643,9 @@ namespace Checador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Ventas_caja {
+        internal static System.Drawing.Bitmap tienda_chequeos {
             get {
-                object obj = ResourceManager.GetObject("Ventas_caja", resourceCulture);
+                object obj = ResourceManager.GetObject("tienda_chequeos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -943,29 +653,9 @@ namespace Checador.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Ventas_cambio_mediano {
+        internal static System.Drawing.Bitmap tiendas {
             get {
-                object obj = ResourceManager.GetObject("Ventas_cambio_mediano", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Ventas_mediano {
-            get {
-                object obj = ResourceManager.GetObject("Ventas_mediano", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Ventas_nueva_v {
-            get {
-                object obj = ResourceManager.GetObject("Ventas_nueva_v", resourceCulture);
+                object obj = ResourceManager.GetObject("tiendas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

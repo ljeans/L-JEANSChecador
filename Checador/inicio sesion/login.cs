@@ -71,14 +71,15 @@ namespace Checador.inicio_sesion
                     usuario.obtener_rol(usuario.id_rol);
                     Program.rol = usuario.nombre_rol;
                     empleados.verificar_existencia(usuario.id_empleado);
-                    Program.nombre_usuario = empleados.nombre + " " + empleados.apellido_mat;
+                    Program.nombre_usuario = empleados.nombre + " " + empleados.apellido_pat;
                     MessageBox.Show(Program.nombre_usuario);
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos..");
                 }
-                this.Close();
+        
             }
             catch (Exception ex)
             {
