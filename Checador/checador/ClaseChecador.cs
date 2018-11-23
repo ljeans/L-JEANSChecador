@@ -94,9 +94,7 @@ namespace Checador
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
-                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
-                return false;
+                throw;
             }
         }
 
@@ -121,8 +119,6 @@ namespace Checador
                 mensaje.lbl_info.Text = "Checador modificado con éxito.ID = " + id.ToString();
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 mensaje.Show();
-
-               
             }
             catch (Exception e)
             {

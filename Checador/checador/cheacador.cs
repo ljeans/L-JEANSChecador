@@ -69,24 +69,33 @@ namespace Checador
 
         private void responder(object sender, EventArgs e)
         {
-            Enabled = true;
-            respuesta = confirmacion.respuesta;
-
-            if (respuesta == true)
+            try
             {
-                Clase_Checador.Modificar_Checador();
-                //FUNCION PAR RECARGAR EL DATAGRID
-                this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
-                Limpiar();
-                tabControlBase.SelectedTab = tabPage2;
-                txt_id_mod.Focus();
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
+                Enabled = true;
+                respuesta = confirmacion.respuesta;
+
+                if (respuesta == true)
+                {
+                    Clase_Checador.Modificar_Checador();
+                    //FUNCION PAR RECARGAR EL DATAGRID
+                    this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                    Limpiar();
+                    tabControlBase.SelectedTab = tabPage2;
+                    txt_id_mod.Focus();
+                }
+                confirmacion = null;
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
             }
-            else
+            catch (Exception ex)
             {
-
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                MessageBox.Show(ex.ToString());
             }
-            confirmacion = null;
-
+            
         }
 
         void vaciar_instancia_mensaje(Object sender, EventArgs e)
@@ -99,8 +108,18 @@ namespace Checador
         //FUNCION PARA ACTUALIZAR LOS DATOS EN LA BD DEL CHECADOR
         private void btn_modificar_Click(object sender, EventArgs e)
         {
+            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+            Thread hilo_secundario = new Thread(new ThreadStart(this.Modificar));
+            hilo_secundario.IsBackground = true;
+            hilo_secundario.Start();
+        }
+
+        public void Modificar()
+        {
             try
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
                 Clase_Checador.ip = txt_ip.Text;
                 Clase_Checador.puerto = txt_puerto.Text;
                 Clase_Checador.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
@@ -112,15 +131,19 @@ namespace Checador
                 {
                     Clase_Checador.estatus = "I";
                 }
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
                 confirmacion = new formularios_padres.Mensajes();
                 confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea modificar el checador?";
                 confirmacion.FormClosed += new FormClosedEventHandler(responder);
-                confirmacion.Show();
-                Enabled = false;
+                confirmacion.ShowDialog();
+                //Enabled = false;
 
             }
             catch (Exception ex)
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -201,6 +224,8 @@ namespace Checador
             }
             catch (Exception ex)
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
                 MessageBox.Show(ex.ToString());
             }
         }

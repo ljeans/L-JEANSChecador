@@ -121,8 +121,18 @@ namespace Checador
 
         private void btn_registrar_Click(object sender, EventArgs e)
         {
+            // SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+            Thread hilo_secundario = new Thread(new ThreadStart(this.Registrar));
+            hilo_secundario.IsBackground = true;
+            hilo_secundario.Start();        
+        }
+
+        public void Registrar()
+        {
             try
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
                 Sucursal.calle = txt_domicilio_calle.Text;
                 Sucursal.codigo_postal = txt_domicilio_cp.Text;
                 Sucursal.colonia = txt_domicilio_colonia.Text;
@@ -144,12 +154,15 @@ namespace Checador
                 this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
 
                 Limpiar();
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
             }
             catch (Exception ex)
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
                 MessageBox.Show(ex.ToString());
             }
-
         }
 
         //FUNCION PARA LIMPIAR LOS COMPONENTES DEL FORMULARIO DESPUES DE HACER UN REGISTRO
