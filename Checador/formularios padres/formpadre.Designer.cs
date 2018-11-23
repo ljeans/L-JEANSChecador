@@ -39,18 +39,17 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel_barra_sup = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btn_home = new System.Windows.Forms.PictureBox();
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.panel_menu = new System.Windows.Forms.Panel();
             this.rb_buscar = new System.Windows.Forms.RadioButton();
             this.rb_modificar = new System.Windows.Forms.RadioButton();
             this.rb_registrar = new System.Windows.Forms.RadioButton();
+            this.btn_checador = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControlBase.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // rb_4
@@ -211,36 +210,14 @@
             // panel_barra_sup
             // 
             this.panel_barra_sup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel_barra_sup.Controls.Add(this.btn_checador);
             this.panel_barra_sup.Controls.Add(this.pictureBox2);
-            this.panel_barra_sup.Controls.Add(this.btn_home);
             this.panel_barra_sup.Controls.Add(this.lbl_titulo);
             this.panel_barra_sup.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_barra_sup.Location = new System.Drawing.Point(0, 0);
             this.panel_barra_sup.Name = "panel_barra_sup";
             this.panel_barra_sup.Size = new System.Drawing.Size(1362, 79);
             this.panel_barra_sup.TabIndex = 12;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::Checador.Properties.Resources.logos_nuevos_1;
-            this.pictureBox2.Location = new System.Drawing.Point(1147, 18);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(182, 36);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btn_home
-            // 
-            this.btn_home.BackColor = System.Drawing.Color.Transparent;
-            this.btn_home.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_home.Image = global::Checador.Properties.Resources.homo_gray;
-            this.btn_home.Location = new System.Drawing.Point(12, 3);
-            this.btn_home.Name = "btn_home";
-            this.btn_home.Size = new System.Drawing.Size(82, 70);
-            this.btn_home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btn_home.TabIndex = 6;
-            this.btn_home.TabStop = false;
             // 
             // lbl_titulo
             // 
@@ -334,6 +311,34 @@
             this.rb_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.rb_registrar.UseVisualStyleBackColor = false;
             // 
+            // btn_checador
+            // 
+            this.btn_checador.BackColor = System.Drawing.Color.Transparent;
+            this.btn_checador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_checador.FlatAppearance.BorderSize = 0;
+            this.btn_checador.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_checador.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
+            this.btn_checador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_checador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_checador.ForeColor = System.Drawing.Color.Black;
+            this.btn_checador.Image = global::Checador.Properties.Resources.homo_gray;
+            this.btn_checador.Location = new System.Drawing.Point(0, 0);
+            this.btn_checador.Name = "btn_checador";
+            this.btn_checador.Size = new System.Drawing.Size(79, 79);
+            this.btn_checador.TabIndex = 20;
+            this.btn_checador.UseVisualStyleBackColor = false;
+            this.btn_checador.Click += new System.EventHandler(this.btn_checador_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Checador.Properties.Resources.logos_nuevos_1;
+            this.pictureBox2.Location = new System.Drawing.Point(1147, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(182, 36);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
             // formpadre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,9 +360,8 @@
             this.tabControlBase.ResumeLayout(false);
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             this.panel_menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -374,12 +378,12 @@
         public System.Windows.Forms.TabPage tabPage4;
         public System.Windows.Forms.TabPage tabPage5;
         public System.Windows.Forms.Panel panel_barra_sup;
-        public System.Windows.Forms.PictureBox btn_home;
         public System.Windows.Forms.Label lbl_titulo;
         public System.Windows.Forms.Panel panel_menu;
         public System.Windows.Forms.RadioButton rb_buscar;
         public System.Windows.Forms.RadioButton rb_modificar;
         public System.Windows.Forms.RadioButton rb_registrar;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btn_checador;
     }
 }

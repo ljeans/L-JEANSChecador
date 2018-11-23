@@ -461,6 +461,9 @@
     <None Include="Resources\huella9.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\tienda_chequeos.png" />
+    <None Include="Resources\tienda.png" />
+    <None Include="Resources\tiendas.png" />
     <None Include="Resources\sucursal_buscar.png" />
     <None Include="Resources\sucursal_modificar.png" />
     <None Include="Resources\sucursal_registrar.png" />
@@ -479,6 +482,11 @@
     <None Include="Resources\empleados_buscar.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\crearusuario.png" />
+    <None Include="Resources\horarios_registrar2.png" />
+    <None Include="Resources\checador_modificar.png" />
+    <None Include="Resources\checador_registrar.png" />
+    <None Include="Resources\checador_buscar.png" />
+    <None Include="Resources\calcular_horas.png" />
     <Content Include="Resources\huellaregistred.png" />
   </ItemGroup>
   <ItemGroup>

@@ -515,7 +515,7 @@ namespace Checador.empleados
                     mensaje.lbl_info.Text = "Empleado no registrado.";
                     mensaje.lbl_info2.Text = "Intente de nuevo.";
                     mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                    mensaje.Show();
+                    mensaje.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -523,8 +523,7 @@ namespace Checador.empleados
                 mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "No ha ingresado el identificador.";
                 mensaje.FormClosed += new FormClosedEventHandler(responder);
-                mensaje.Show();
-                Enabled = false;
+                mensaje.ShowDialog();
             }
             
         }
@@ -735,8 +734,7 @@ namespace Checador.empleados
                 confirmacion = new formularios_padres.Mensajes();
                 confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea modificar el empleado?";
                 confirmacion.FormClosed += new FormClosedEventHandler(responder);
-                confirmacion.Show();
-                Enabled = false;
+                confirmacion.ShowDialog();
 
             }
             catch (Exception ex)

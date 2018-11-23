@@ -93,6 +93,7 @@ namespace Checador
 
         private void Desbloquear_inicio(object sender, EventArgs e)
         {
+            Enabled = true;
             btn_checador.Enabled = false;
             btn_sucursal.Enabled = false;
             btn_empleados.Enabled = false;
@@ -181,6 +182,7 @@ namespace Checador
             login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
             login.Show();
             btn_cerrar.Visible = true;
+            lbl_usuario.Text = Program.nombre_usuario;
 
         }
 
@@ -276,6 +278,7 @@ namespace Checador
         {
            
             login = new inicio_sesion.login();
+            login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
             login.Show();
         }
 

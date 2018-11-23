@@ -85,7 +85,6 @@
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_home)).BeginInit();
             this.panel_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).BeginInit();
@@ -192,7 +191,6 @@
             // 
             // btn_home
             // 
-            this.btn_home.Click += new System.EventHandler(this.btn_home_Click);
             // 
             // lbl_titulo
             // 
@@ -844,7 +842,6 @@
             this.tabPage5.PerformLayout();
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_home)).EndInit();
             this.panel_menu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).EndInit();

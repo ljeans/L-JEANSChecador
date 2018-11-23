@@ -464,8 +464,7 @@ namespace Checador
                 SqlCommand comand = new SqlCommand(consulta, conexion);
                 comand.Parameters.AddWithValue("@id_empleado", id);
                 comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
-                comand.Parameters.AddWithValue("@fecha_entrada", guardarsuc);
-                
+                comand.Parameters.AddWithValue("@fecha_entrada", guardarsuc);               
                 comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
                 comand.ExecuteNonQuery();
                 conexion.Close();
