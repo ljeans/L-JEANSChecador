@@ -33,6 +33,8 @@
             this.btn_iniciar_sesion = new System.Windows.Forms.Button();
             this.btn_cerrar_sesion = new System.Windows.Forms.Button();
             this.panel_barra_superior = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_usuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -46,8 +48,6 @@
             this.btn_sucursal = new System.Windows.Forms.Button();
             this.btn_checador = new System.Windows.Forms.Button();
             this.btn_horarios = new System.Windows.Forms.Button();
-            this.lbl_usuario = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel_barra_superior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -123,7 +123,27 @@
             this.panel_barra_superior.Name = "panel_barra_superior";
             this.panel_barra_superior.Size = new System.Drawing.Size(1370, 79);
             this.panel_barra_superior.TabIndex = 15;
-            this.panel_barra_superior.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barra_superior_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(801, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 20);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Empleado:";
+            // 
+            // lbl_usuario
+            // 
+            this.lbl_usuario.AutoSize = true;
+            this.lbl_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_usuario.ForeColor = System.Drawing.Color.White;
+            this.lbl_usuario.Location = new System.Drawing.Point(886, 13);
+            this.lbl_usuario.Name = "lbl_usuario";
+            this.lbl_usuario.Size = new System.Drawing.Size(0, 20);
+            this.lbl_usuario.TabIndex = 17;
             // 
             // pictureBox1
             // 
@@ -361,27 +381,6 @@
             this.btn_horarios.UseVisualStyleBackColor = false;
             this.btn_horarios.Click += new System.EventHandler(this.btn_horarios_Click);
             // 
-            // lbl_usuario
-            // 
-            this.lbl_usuario.AutoSize = true;
-            this.lbl_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_usuario.ForeColor = System.Drawing.Color.White;
-            this.lbl_usuario.Location = new System.Drawing.Point(886, 13);
-            this.lbl_usuario.Name = "lbl_usuario";
-            this.lbl_usuario.Size = new System.Drawing.Size(0, 20);
-            this.lbl_usuario.TabIndex = 17;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(801, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 20);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Empleado:";
-            // 
             // principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -403,7 +402,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "principal";
             this.Text = "principal";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.principal_Load);
             this.panel_barra_superior.ResumeLayout(false);

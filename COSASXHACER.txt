@@ -4,6 +4,7 @@
 		* Id_Horario, retartdos, total_min_retardo, horas_extra
 	Horarios:
 		*Lunes-Domingo
-- VALIDAR FECHA ALTA EN MODIFICAR EMPLEADO
-- Reporte
-	* Reporte empleado cheador: Validar la sucursal impresa en la cabecera
+- Filtrar por encargada de tienda
+- ShowDialog en mensajes
+	Quitar el false en algunos casos
+-Seleccionar home en el sistema hacerla blanca con el hoover

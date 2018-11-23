@@ -31,7 +31,8 @@ namespace Checador
 
         private void Desbloquear_Principal(object sender, EventArgs e)
         {
-            if(Program.rol== "ADMINISTRADOR")
+            lbl_usuario.Text = Program.nombre_usuario;
+            if (Program.rol== "ADMINISTRADOR")
             {
                 Enabled = true;
                 btn_checador.Enabled = true;
@@ -47,7 +48,6 @@ namespace Checador
                 button2.Enabled = true;
                 //minimizar
                 button3.Enabled = true;
-                lbl_usuario.Text = Program.nombre_usuario;
                 btn_cerrar.Visible = true;
                 btn_iniciar.Visible = false;
             }
@@ -64,7 +64,6 @@ namespace Checador
                 button2.Enabled = true;
                 //minimizar
                 button3.Enabled = true;
-                lbl_usuario.Text = Program.nombre_usuario;
                 btn_cerrar.Visible = true;
                 btn_iniciar.Visible = false;
             }
@@ -82,7 +81,6 @@ namespace Checador
                 //minimizar
                 button3.Enabled = true;
                 btn_cerrar.Enabled = true;
-                lbl_usuario.Text = Program.nombre_usuario;
                 btn_cerrar.Visible = true;
                 btn_iniciar.Visible = false;
             }
@@ -301,14 +299,9 @@ namespace Checador
         {
             Desbloquear_inicio(sender, e);
             Program.nombre_usuario = "";
-            Program.rol = null;
+            Program.rol = "";
             lbl_usuario.Text = "";
             btn_iniciar.Visible = true;
-        }
-
-        private void panel_barra_superior_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void Checador_OnFinger()

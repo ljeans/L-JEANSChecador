@@ -163,6 +163,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="reportes\reporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,14 +262,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="reportes\reporte.resx">
       <DependentUpon>reporte.cs</DependentUpon>
     </EmbeddedResource>
@@ -371,34 +371,7 @@
     <None Include="Resources\cerrar_sesion.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Cliente_baja.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cliente_buscar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cliente_modif.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cliente_registrar_n.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Clientes.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Clientes_mediano.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Clientes_ver_todos.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\close_gray.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Compras_registrar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Compras_servicios.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\conf_user_st.png" />
@@ -407,16 +380,7 @@
     <None Include="Resources\conf_user_t_h.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\delete_user_st.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete_user_t_h.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Empleados.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Empleados_mediano.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondo_panel_vert.png" />
@@ -440,91 +404,13 @@
     <None Include="Resources\ocultar_pass.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Prod_baja.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Prod_buscar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Prod_inventario.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Prod_modificar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Prod_registrar_nuevo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Productos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Productos_baja.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\productos_buscar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Productos_mediano.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Productos_modificar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Productos_registrar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\productos_ver_todos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Prov_Baja.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Prov_Buscar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Prov_Modificar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Prov_Registrar_n.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Prov_Ver_todos.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Proveedore_mediano.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Proveedores.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\remove.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Repertes.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\search_user_st.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search_user_t_h.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\sombra_boton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ventas.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ventas_caja.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ventas_cambio_mediano.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ventas_mediano.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Ventas_nueva_v.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ver_pass.png" />

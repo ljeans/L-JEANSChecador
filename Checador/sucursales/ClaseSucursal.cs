@@ -103,7 +103,7 @@ namespace Checador
                 mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "Sucursal registrada con éxito. ID= " + id.ToString();
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                mensaje.Show();
+                mensaje.ShowDialog();
 
             }
             catch (Exception e)
@@ -111,7 +111,7 @@ namespace Checador
                 mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "Upss.. Ocurrió un error, por favor vuelva a intentarlo.";
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                mensaje.Show();
+                mensaje.ShowDialog();
                 //MessageBox.Show(e.ToString());
             }
         }

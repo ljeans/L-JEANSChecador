@@ -223,9 +223,19 @@ namespace Checador
 ///REGISTRAR///////////////////////////////////////////////////////////////////////////////////
         private void btn_registrar_Click(object sender, EventArgs e)
         {
-            bool descansoFlag=false;
+            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+            Thread hilo_secundario = new Thread(new ThreadStart(this.Registrar));
+            hilo_secundario.IsBackground = true;
+            hilo_secundario.Start();
+        }
+
+        public void Registrar()
+        {
+            bool descansoFlag = false;
             try
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
                 Horario.id = Convert.ToInt32(txt_id.Text);
                 Horario.horario = txt_nombre.Text;
                 Horario.horas_diarias = Convert.ToInt32(txt_horas_diarias.Text);
@@ -242,7 +252,7 @@ namespace Checador
                     descansoFlag = false;
                 }
 
-                Horario.hr_entrada = new TimeSpan( dtp_hora_entrada.Value.TimeOfDay.Hours, dtp_hora_entrada.Value.Minute, 00);
+                Horario.hr_entrada = new TimeSpan(dtp_hora_entrada.Value.TimeOfDay.Hours, dtp_hora_entrada.Value.Minute, 00);
                 Horario.hr_salida = new TimeSpan(dtp_hora_salida.Value.TimeOfDay.Hours, dtp_hora_salida.Value.Minute, 00);
                 Horario.tolerancia = Convert.ToInt32(txt_tolerancia.Text);
 
@@ -251,9 +261,13 @@ namespace Checador
                 // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Horario' table. You can move, or remove it, as needed.
                 this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
                 Limpiar();
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
             }
             catch (Exception ex)
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
                 MessageBox.Show(ex.ToString());
             }
         }

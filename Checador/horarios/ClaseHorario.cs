@@ -95,14 +95,13 @@ namespace Checador
                 mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "Horario Registrado con exito. ID= " + id.ToString();
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                mensaje.Show();
+                mensaje.ShowDialog();
                 
 
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
-                //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                throw;
             }
         }
 
@@ -138,7 +137,7 @@ namespace Checador
                 mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "Horario Modificado con exito. ID= " + id.ToString();
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                mensaje.Show();
+                mensaje.ShowDialog();
 
             }
             catch (Exception e)
@@ -201,7 +200,6 @@ namespace Checador
             catch (Exception e)
             {
                MessageBox.Show(e.ToString());
-                MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
                 return false;
             }
         }
@@ -301,7 +299,7 @@ namespace Checador
                 mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "Horario eliminado con exito. ID= " + id.ToString();
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                mensaje.Show();
+                mensaje.ShowDialog();
 
 
             }
