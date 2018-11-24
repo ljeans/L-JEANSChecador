@@ -7,4 +7,6 @@
 - Filtrar por encargada de tienda
 - ShowDialog en mensajes
 	Quitar el false en algunos casos
--Seleccionar home en el sistema hacerla blanca con el hoover
+-FALTA EMPLEADOS DE CAMBIAR EL CURSOR
+- Verificar existencia de todas las clases en exception throw, checar si no afecta en otros componentes
+-Cambiar los mensajes por mensajes bonitos

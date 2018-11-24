@@ -272,12 +272,13 @@ namespace Checador
             catch (Exception e)
             {
                 //MessageBox.Show("Ocurrió un problema");
-                mensaje = new formularios_padres.mensaje_info();
+                /*mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "Upss.. Ocurrió un error,";
                 mensaje.lbl_info2.Text = "por favor vuelva a intentarlo.";
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 mensaje.ShowDialog();
-                return false;
+                return false;*/
+                throw;
             }
         }
 

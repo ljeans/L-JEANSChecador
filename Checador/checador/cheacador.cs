@@ -95,7 +95,6 @@ namespace Checador
                 this.UseWaitCursor = false;
                 MessageBox.Show(ex.ToString());
             }
-            
         }
 
         void vaciar_instancia_mensaje(Object sender, EventArgs e)
@@ -107,14 +106,6 @@ namespace Checador
         //MODIFICAR///////////////////////////////////////////////////////////////////////
         //FUNCION PARA ACTUALIZAR LOS DATOS EN LA BD DEL CHECADOR
         private void btn_modificar_Click(object sender, EventArgs e)
-        {
-            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-            Thread hilo_secundario = new Thread(new ThreadStart(this.Modificar));
-            hilo_secundario.IsBackground = true;
-            hilo_secundario.Start();
-        }
-
-        public void Modificar()
         {
             try
             {
@@ -151,44 +142,61 @@ namespace Checador
         //FUNCION PARA CARGAR LOS DATOS DEL CHECADOR EN EL FORMULARIO
         private void btn_ir_modificar_Click(object sender, EventArgs e)
         {
-            txt_id.Enabled = false;
-            Clase_Checador.id = Convert.ToInt32(txt_id_mod.Text);
-            if (Clase_Checador.verificar_existencia(Clase_Checador.id))
+            try
             {
-                tabControlBase.SelectedTab = tabPage1;
-                txt_id.Text = Clase_Checador.id.ToString();
-                txt_ip.Text = Clase_Checador.ip;
-                txt_puerto.Text = Clase_Checador.puerto;
-                cbx_sucursal.SelectedValue = Clase_Checador.id_sucursal;
-
-                if (Clase_Checador.estatus.ToString() == "A")
+                txt_id.Enabled = false;
+                Clase_Checador.id = Convert.ToInt32(txt_id_mod.Text);
+                if (Clase_Checador.verificar_existencia(Clase_Checador.id))
                 {
-                    rb_mod_activo.Checked = true;
-                }
-                else if (Clase_Checador.estatus.ToString() == "I")
-                {
-                    rb_mod_inactivo.Checked = true;
-                }
+                    tabControlBase.SelectedTab = tabPage1;
+                    txt_id.Text = Clase_Checador.id.ToString();
+                    txt_ip.Text = Clase_Checador.ip;
+                    txt_puerto.Text = Clase_Checador.puerto;
+                    cbx_sucursal.SelectedValue = Clase_Checador.id_sucursal;
 
-                btn_modificar.Enabled = true;
-                btn_modificar.Visible = true;
-                btn_registrar.Visible = false;
+                    if (Clase_Checador.estatus.ToString() == "A")
+                    {
+                        rb_mod_activo.Checked = true;
+                    }
+                    else if (Clase_Checador.estatus.ToString() == "I")
+                    {
+                        rb_mod_inactivo.Checked = true;
+                    }
+
+                    btn_modificar.Enabled = true;
+                    btn_modificar.Visible = true;
+                    btn_registrar.Visible = false;
+                }
+                else
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Checador no registrado. Por favor intente de nuevo.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.Show();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                mensaje = new formularios_padres.mensaje_info();
-                mensaje.lbl_info.Text = "Checador no registrado. Por favor intente de nuevo.";
-                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                mensaje.Show();
+                MessageBox.Show(ex.ToString());
             }
-
         }
 
         private void rb_buscar_CheckedChanged(object sender, EventArgs e)
         {
-            this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
-            tabControlBase.SelectedTab = tabPage3;
-            HeaderCheckBox.Checked = false;
+            try
+            {
+                if (rb_buscar.Checked == true)
+                {
+                    this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                    tabControlBase.SelectedTab = tabPage3;
+                    HeaderCheckBox.Checked = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
 
         //REGISTRAR//////////////////////////////////////////////////////////////////////////
@@ -1001,6 +1009,8 @@ namespace Checador
         {
             try
             {
+                // CAMBIAR EL CURSOR
+                //this.UseWaitCursor = true;
                 //CODIGO PARA APLICAR LA FUNCION A MULTIPLES CHECADORES
                 foreach (DataGridViewRow row in dgv_checadorbuscar.Rows)
                 {
@@ -1017,9 +1027,13 @@ namespace Checador
                         }
                     }
                 }
+                // CAMBIAR EL CURSOR
+                //this.UseWaitCursor = false;
             }
             catch (Exception ex)
             {
+                // CAMBIAR EL CURSOR
+                //this.UseWaitCursor = false;
                 MessageBox.Show(ex.ToString());
             }
         }

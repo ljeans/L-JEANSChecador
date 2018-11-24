@@ -211,7 +211,6 @@ namespace Checador.empleados
                 confirmacion2.lbl_mensaje.Text = "Desea registrar huella al empleado?";
                 confirmacion2.FormClosed += new FormClosedEventHandler(reg_huella);
                 confirmacion2.Show();
-                Enabled = false;
                 Limpiar();
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;

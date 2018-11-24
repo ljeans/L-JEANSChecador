@@ -96,26 +96,38 @@ namespace Checador
 
         private void responder(object sender, EventArgs e)
         {
-            Enabled = true;
-            respuesta = confirmacion.respuesta;
-          
-            if (respuesta == true)
+            try
             {
-                Sucursal.Modificar_Sucursal();
-                //FUNCION PAR RECARGAR EL DATAGRID
-                // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
-                this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
-                Limpiar();
-                tabControlBase.SelectedTab = tabPage3;
-                txt_id_mod.Focus();
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
+                Enabled = true;
+                respuesta = confirmacion.respuesta;
+
+                if (respuesta == true)
+                {
+                    Sucursal.Modificar_Sucursal();
+                    //FUNCION PAR RECARGAR EL DATAGRID
+                    // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
+                    this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
+                    Limpiar();
+                    tabControlBase.SelectedTab = tabPage3;
+                    txt_id_mod.Focus();
+                }
+                else
+                {
+
+                }
+                confirmacion = null;
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
             }
-            else
+            catch (Exception ex)
             {
-              
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                MessageBox.Show(ex.ToString());
             }
-            confirmacion = null;
-           
-            respuesta = false;
+            
         }
 
 
@@ -224,6 +236,8 @@ namespace Checador
         {
             try
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
                 //Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
                 Sucursal.calle = txt_domicilio_calle.Text;
                 Sucursal.codigo_postal = txt_domicilio_cp.Text;
@@ -245,7 +259,8 @@ namespace Checador
                 Sucursal.poblacion = txt_domicilio_pob.Text;
                 Sucursal.telefono = txt_telefono.Text;
                 txt_id_mod.Text = "";
-
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
                 confirmacion = new formularios_padres.Mensajes();
                 confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea modificar la sucursal?";
                 confirmacion.FormClosed += new FormClosedEventHandler(responder);
@@ -255,6 +270,8 @@ namespace Checador
             }
             catch (Exception ex)
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
                 MessageBox.Show(ex.ToString());
             }
         }
