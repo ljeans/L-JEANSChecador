@@ -130,6 +130,11 @@ namespace Checador
             
         }
 
+        void vaciar_instancia_mensaje(Object sender, EventArgs e)
+        {
+            mensaje = null;
+            Enabled = true;
+        }
 
         private void btn_registrar_Click(object sender, EventArgs e)
         {
@@ -145,29 +150,95 @@ namespace Checador
             {
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = true;
-                Sucursal.calle = txt_domicilio_calle.Text;
-                Sucursal.codigo_postal = txt_domicilio_cp.Text;
-                Sucursal.colonia = txt_domicilio_colonia.Text;
-                Sucursal.estado = txt_domicilio_estado.Text;
+                Sucursal.calle = txt_domicilio_calle.Text.ToUpper();
+                Sucursal.codigo_postal = txt_domicilio_cp.Text.ToUpper();
+                Sucursal.colonia = txt_domicilio_colonia.Text.ToUpper();
+                Sucursal.estado = txt_domicilio_estado.Text.ToUpper();
                 Sucursal.estatus = "A";
                 Sucursal.id = Convert.ToInt32(txt_id.Text);
-                Sucursal.municipio = txt_domicilio_municipio.Text;
-                Sucursal.nombre = txt_nombre.Text;
+                Sucursal.municipio = txt_domicilio_municipio.Text.ToUpper();
+                Sucursal.nombre = txt_nombre.Text.ToUpper();
                 Sucursal.num_ext = txt_domicilio_num_ext.Text;
                 Sucursal.num_int = txt_domicilio_num_int.Text;
-                Sucursal.pais = txt_domicilio_pais.Text;
-                Sucursal.poblacion = txt_domicilio_pob.Text;
+                Sucursal.pais = txt_domicilio_pais.Text.ToUpper();
+                Sucursal.poblacion = txt_domicilio_pob.Text.ToUpper();
                 Sucursal.telefono = txt_telefono.Text;
 
-                Sucursal.guardarSucursal();
+                if (Sucursal.id.ToString() == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado el id de la sucursal.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_id.Focus();
+                }
+                else if (Sucursal.nombre == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado el nombre de la sucursal.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_nombre.Focus();
+                }
+                else if (Sucursal.telefono == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado el numero de telefono de";
+                    mensaje.lbl_info2.Text = "la sucursal.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_telefono.Focus();
+                }
+                else if (Sucursal.calle == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado la calle donde se encuetra";
+                    mensaje.lbl_info2.Text = "la sucursal.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_domicilio_calle.Focus();
+                }
+                else if (Sucursal.num_ext == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado el num. exterior de la";
+                    mensaje.lbl_info2.Text = "sucursal.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_domicilio_num_ext.Focus();
+                }
+               
+                else if (Sucursal.colonia == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado la colonia donde se ";
+                    mensaje.lbl_info2.Text = " encuentra la sucursal.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_domicilio_colonia.Focus();
+                }
+                else if (Sucursal.codigo_postal == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado el codigo postal donde ";
+                    mensaje.lbl_info2.Text = "se encuentra la sucursal.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_domicilio_cp.Focus();
+                }
+                else
+                {
+                    Sucursal.guardarSucursal();
 
-                //FUNCION PAR RECARGAR EL DATAGRID
-                // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
-                this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
+                    //FUNCION PAR RECARGAR EL DATAGRID
+                    // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
+                    this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
 
-                Limpiar();
-                //CAMBIAR EL CURSOR
-                this.UseWaitCursor = false;
+                    Limpiar();
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                }
+                   
             }
             catch (Exception ex)
             {
@@ -239,10 +310,10 @@ namespace Checador
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = true;
                 //Sucursal.id = Convert.ToInt32(txt_id_mod.Text);
-                Sucursal.calle = txt_domicilio_calle.Text;
+                Sucursal.calle = txt_domicilio_calle.Text.ToUpper();
                 Sucursal.codigo_postal = txt_domicilio_cp.Text;
-                Sucursal.colonia = txt_domicilio_colonia.Text;
-                Sucursal.estado = txt_domicilio_estado.Text;
+                Sucursal.colonia = txt_domicilio_colonia.Text.ToUpper();
+                Sucursal.estado = txt_domicilio_estado.Text.ToUpper();
                 if (rb_mod_activo.Checked==true)
                 {
                     Sucursal.estatus = "A";
@@ -251,12 +322,12 @@ namespace Checador
                 {
                     Sucursal.estatus = "I";
                 }
-                Sucursal.municipio = txt_domicilio_municipio.Text;
-                Sucursal.nombre = txt_nombre.Text;
+                Sucursal.municipio = txt_domicilio_municipio.Text.ToUpper();
+                Sucursal.nombre = txt_nombre.Text.ToUpper();
                 Sucursal.num_ext = txt_domicilio_num_ext.Text;
                 Sucursal.num_int = txt_domicilio_num_int.Text;
-                Sucursal.pais = txt_domicilio_pais.Text;
-                Sucursal.poblacion = txt_domicilio_pob.Text;
+                Sucursal.pais = txt_domicilio_pais.Text.ToUpper();
+                Sucursal.poblacion = txt_domicilio_pob.Text.ToUpper();
                 Sucursal.telefono = txt_telefono.Text;
                 txt_id_mod.Text = "";
                 //CAMBIAR EL CURSOR
@@ -326,11 +397,6 @@ namespace Checador
 
         }
 
-        private void txt_domicilio_calle_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
         private void btn_dar_baja_Click(object sender, EventArgs e)
         {
 
@@ -398,11 +464,6 @@ namespace Checador
             btn_ir_modificar.PerformClick();
         }
 
-        private void txt_nombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txt_nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -434,18 +495,6 @@ namespace Checador
         {
             validar.solonumeros(e);
             validar.sinespacios(e);
-            if (string.IsNullOrEmpty(txt_domicilio_cp.Text))
-            {
-
-                errorProvider1.SetError(txt_domicilio_cp, "No ha ingresado el codigo postal de la sucursal.");
-
-            }
-            else
-            {
-                errorProvider1.SetError(txt_domicilio_cp, null);
-                contador = contador + 1;
-            }
-
         }
 
         private void txt_domicilio_pais_KeyPress(object sender, KeyPressEventArgs e)
@@ -622,6 +671,21 @@ namespace Checador
             Thread hilo_secundario = new Thread(new ThreadStart(this.verificarExistencia));
             hilo_secundario.IsBackground = true;
             hilo_secundario.Start();
+        }
+
+        private void txt_domicilio_cp_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_domicilio_cp.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_cp, "No ha ingresado el codigo postal de la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_cp, null);
+                contador = contador + 1;
+            }
         }
 
         public void verificarExistencia()

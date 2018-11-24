@@ -243,6 +243,7 @@ namespace Checador
             Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
             hilo_secundario.IsBackground = true;
             hilo_secundario.Start();
+            txt_nombre.Focus();
         }
 
 ///REGISTRAR///////////////////////////////////////////////////////////////////////////////////
@@ -260,7 +261,7 @@ namespace Checador
             try
             {
                 //CAMBIAR EL CURSOR
-                this.UseWaitCursor = true;
+               
                 Horario.id = Convert.ToInt32(txt_id.Text);
                 Horario.horario = txt_nombre.Text;
                 Horario.horas_diarias = Convert.ToInt32(txt_horas_diarias.Text);
@@ -281,13 +282,34 @@ namespace Checador
                 Horario.hr_salida = new TimeSpan(dtp_hora_salida.Value.TimeOfDay.Hours, dtp_hora_salida.Value.Minute, 00);
                 Horario.tolerancia = Convert.ToInt32(txt_tolerancia.Text);
 
-                Horario.guardarHorario(descansoFlag);
-                //FUNCION PAR RECARGAR EL DATAGRID
-                // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Horario' table. You can move, or remove it, as needed.
-                this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
-                Limpiar();
-                //CAMBIAR EL CURSOR
-                this.UseWaitCursor = false;
+                if (Horario.id.ToString() == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado el id del horario.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_id.Focus();
+                }
+                else if (Horario.horario == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado el nombre del horario.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_nombre.Focus();
+                }
+                else
+                {
+                    this.UseWaitCursor = true;
+                    Horario.guardarHorario(descansoFlag);
+                    //FUNCION PAR RECARGAR EL DATAGRID
+                    // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Horario' table. You can move, or remove it, as needed.
+                    this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
+                    Limpiar();
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                }
+               
             }
             catch (Exception ex)
             {
@@ -367,6 +389,10 @@ namespace Checador
 
         private void cbx_lunes_SelectedIndexChanged(object sender, EventArgs e)
         {
+<<<<<<< HEAD
+=======
+            MessageBox.Show("esta loco.");
+>>>>>>> 849d47c0f250b6d909f23ba8e37567f14bf26e11
             try
             {
                 Horario.verificar_horario(cbx_lunes.SelectedValue.ToString());
@@ -397,6 +423,7 @@ namespace Checador
 
         private void cbx_martes_SelectedIndexChanged(object sender, EventArgs e)
         {
+            MessageBox.Show("como es esto posible.");
             try
             {
                 Horario.verificar_horario(cbx_martes.SelectedValue.ToString());
@@ -720,6 +747,39 @@ namespace Checador
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void txt_id_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_id.Text))
+            {
+
+                errorProvider1.SetError(txt_id, "No ha ingresado el ID del horario");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_id, null);
+            }
+        }
+
+        private void txt_nombre_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_nombre.Text))
+            {
+
+                errorProvider1.SetError(txt_nombre, "No ha ingresado el nombre del horario");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_nombre, null);
+            }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

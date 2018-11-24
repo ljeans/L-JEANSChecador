@@ -120,7 +120,10 @@ namespace Checador.Properties {
             }
         }
         
+<<<<<<< HEAD
         
+=======
+>>>>>>> 849d47c0f250b6d909f23ba8e37567f14bf26e11
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>

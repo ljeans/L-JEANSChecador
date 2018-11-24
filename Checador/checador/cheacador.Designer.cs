@@ -309,6 +309,7 @@
             this.txt_ip.TabIndex = 2;
             this.txt_ip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_ip_KeyPress);
             this.txt_ip.Leave += new System.EventHandler(this.txt_ip_Leave);
+            this.txt_ip.Validating += new System.ComponentModel.CancelEventHandler(this.txt_ip_Validating);
             // 
             // txt_id
             // 
@@ -322,6 +323,7 @@
             this.txt_id.TabIndex = 1;
             this.txt_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_KeyPress);
             this.txt_id.Leave += new System.EventHandler(this.txt_id_Leave);
+            this.txt_id.Validating += new System.ComponentModel.CancelEventHandler(this.txt_id_Validating);
             // 
             // label1
             // 
@@ -347,6 +349,7 @@
             this.txt_puerto.Text = "4370";
             this.txt_puerto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_puerto_KeyPress);
             this.txt_puerto.Leave += new System.EventHandler(this.txt_puerto_Leave);
+            this.txt_puerto.Validating += new System.ComponentModel.CancelEventHandler(this.txt_puerto_Validating);
             // 
             // label2
             // 
@@ -435,10 +438,10 @@
             this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.ForeColor = System.Drawing.Color.White;
-            this.btn_modificar.Location = new System.Drawing.Point(388, 477);
+            this.btn_modificar.Location = new System.Drawing.Point(389, 508);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(250, 70);
-            this.btn_modificar.TabIndex = 7;
+            this.btn_modificar.TabIndex = 8;
             this.btn_modificar.Text = "Modificar";
             this.btn_modificar.UseVisualStyleBackColor = false;
             this.btn_modificar.Visible = false;
