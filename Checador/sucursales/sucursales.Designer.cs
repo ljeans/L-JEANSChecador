@@ -131,7 +131,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(309, 66);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 58);
             // 
             // tabPage1
             // 
@@ -253,6 +253,7 @@
             this.txt_domicilio_cp.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_cp.TabIndex = 9;
             this.txt_domicilio_cp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_cp_KeyPress);
+            this.txt_domicilio_cp.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_cp_Validating);
             // 
             // txt_domicilio_pais
             // 
@@ -342,7 +343,6 @@
             this.txt_domicilio_calle.Name = "txt_domicilio_calle";
             this.txt_domicilio_calle.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_calle.TabIndex = 5;
-            this.txt_domicilio_calle.TextChanged += new System.EventHandler(this.txt_domicilio_calle_TextChanged);
             this.txt_domicilio_calle.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_calle_Validating);
             // 
             // label16
@@ -433,7 +433,6 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(218, 29);
             this.txt_nombre.TabIndex = 2;
-            this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
             this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             this.txt_nombre.Validating += new System.ComponentModel.CancelEventHandler(this.txt_nombre_Validating);
             // 

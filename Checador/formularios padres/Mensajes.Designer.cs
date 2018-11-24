@@ -78,9 +78,8 @@
             this.lbl_mensaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_mensaje.Location = new System.Drawing.Point(12, 69);
             this.lbl_mensaje.Name = "lbl_mensaje";
-            this.lbl_mensaje.Size = new System.Drawing.Size(433, 25);
+            this.lbl_mensaje.Size = new System.Drawing.Size(0, 25);
             this.lbl_mensaje.TabIndex = 22;
-            this.lbl_mensaje.Text = "¿Esta Seguro que dar de baja al empleado?";
             // 
             // panel1
             // 

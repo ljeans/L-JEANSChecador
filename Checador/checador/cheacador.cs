@@ -207,20 +207,50 @@ namespace Checador
             try
             {
                 //CAMBIAR EL CURSOR
-                this.UseWaitCursor = true;
+              
                 Clase_Checador.estatus = "A";
                 Clase_Checador.id = Convert.ToInt32(txt_id.Text);
                 Clase_Checador.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
                 Clase_Checador.ip = txt_ip.Text;
                 Clase_Checador.puerto = txt_puerto.Text;
-                if (Clase_Checador.guardarChecador()){
-                    //FUNCION PAR RECARGAR EL DATAGRID
-                    this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                if (Clase_Checador.id.ToString() == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado el ID del checador";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_id.Focus();
                 }
+                else if (Clase_Checador.ip == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado la IP del checador";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_ip.Focus();
+                }
+                else if (Clase_Checador.puerto == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado el puerto del checador";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_puerto.Focus();
+                }
+                else
+                {
+                    this.UseWaitCursor = true;
+                    if (Clase_Checador.guardarChecador())
+                    {
+                        //FUNCION PAR RECARGAR EL DATAGRID
+                        this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
+                    }
 
-                Limpiar();
-                //CAMBIAR EL CURSOR
-                this.UseWaitCursor = false;
+                    Limpiar();
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                }
+               
             }
             catch (Exception ex)
             {
@@ -1050,6 +1080,51 @@ namespace Checador
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txt_id_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_id.Text))
+            {
+
+                errorProvider1.SetError(txt_id, "No ha ingresado el numero de empleado.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_id, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_ip_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_id.Text))
+            {
+
+                errorProvider1.SetError(txt_id, "No ha ingresado el numero de empleado.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_id, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_puerto_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_id.Text))
+            {
+
+                errorProvider1.SetError(txt_id, "No ha ingresado el numero de empleado.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_id, null);
+                contador = contador + 1;
             }
         }
     }

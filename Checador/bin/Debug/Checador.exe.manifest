@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Checador.exe" size="36503008">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Checador.exe" size="36650464">
       <assemblyIdentity name="Checador" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hhPYAhw8rdN+CY0ewHlVCrLTeV70eGIS6j+0af7DkEk=</dsig:DigestValue>
+        <dsig:DigestValue>CTDKkIjnEs9Ig6bXAY+ifP0bkehiLudnns8X4CkKyAo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
