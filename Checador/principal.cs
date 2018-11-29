@@ -57,7 +57,6 @@ namespace Checador
                 btn_checador.Enabled = false;
                 btn_sucursal.Enabled = false;
                 btn_empleados.Enabled = false;
-                btn_horarios.Enabled = false;
                  btn_reportes.Enabled = true;
                 btn_incidente.Enabled = true;
                 //cerrar
@@ -303,6 +302,8 @@ namespace Checador
             Desbloquear_inicio(sender, e);
             Program.nombre_usuario = "";
             Program.rol = "";
+            Program.id_empleado = 0;
+            Program.id_sucursal = 0;
             lbl_usuario.Text = "";
             btn_iniciar.Visible = true;
         }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Checador.inicio_sesion
 {
@@ -22,37 +23,72 @@ namespace Checador.inicio_sesion
 
         private void usuario_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.rol' Puede moverla o quitarla según sea necesario.
-            this.rolTableAdapter.Fill(this.dataSet_Checador.rol);
-            txt_contraseña.UseSystemPasswordChar = true;
-            txt_comfirmar.UseSystemPasswordChar = true;
-            txt_usuario.Focus();
-
+            try
+            {
+                // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.rol' Puede moverla o quitarla según sea necesario.
+                this.rolTableAdapter.Fill(this.dataSet_Checador.rol);
+                txt_contraseña.UseSystemPasswordChar = true;
+                txt_comfirmar.UseSystemPasswordChar = true;
+                txt_usuario.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
 
         void vaciar_instancia_mensaje(Object sender, EventArgs e)
         {
             mensaje = null;
-
         }
 
         private void btn_entrar_Click(object sender, EventArgs e)
         {
-            if (txt_contraseña.Text != txt_comfirmar.Text)
+            try
             {
-                mensaje = new formularios_padres.mensaje_info();
-                mensaje.lbl_info.Text = "Las contraseñas no coinciden";
-                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                mensaje.Show();
-                txt_comfirmar.Focus();
+                if (txt_contraseña.Text != txt_comfirmar.Text)
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Las contraseñas no coinciden";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.Show();
+                    txt_comfirmar.Focus();
+                }
+                usuarios.usuario = txt_usuario.Text;
+                usuarios.contraseña = txt_contraseña.Text;
+                usuarios.id_rol = Convert.ToInt32(cbx_rol.SelectedValue.ToString());
+                usuarios.id_empleado = Convert.ToInt32(txt_empleado.Text);
+                usuarios.guardarUsuario();
+                this.Close();
             }
-            usuarios.usuario = txt_usuario.Text;
-            usuarios.contraseña = txt_contraseña.Text;
-            usuarios.id_rol = Convert.ToInt32(cbx_rol.SelectedValue.ToString());
-            usuarios.id_empleado = Convert.ToInt32(txt_empleado.Text);
-            usuarios.guardarUsuario();
-            this.Close();
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         public void limpiar()

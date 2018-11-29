@@ -16,7 +16,7 @@ namespace Checador
         public TimeSpan hr_entrada { get; set; }
         public TimeSpan hr_salida { get; set; }
         public int horas_diarias { get; set; }
-        public int lunes { get; set; }
+        public int id_empleado { get; set; }
         public int martes { get; set; }
         public int miercoles { get; set; }
         public int jueves { get; set; }
@@ -58,7 +58,7 @@ namespace Checador
             try
             {
                 //Registrar HORARIO
-                string consulta = "INSERT INTO horarios VALUES (@id,@horario,@hora_entrada, @hora_salida,@horas_diarias,@lunes, @martes, @miercoles, @jueves, @viernes, @sabado, @domingo, @horas_totales_quincenales, @hora_salida_descanso, @hora_entrada_descanso, @tolerancia)";
+                string consulta = "INSERT INTO horarios VALUES (@id,@horario,@hora_entrada, @hora_salida,@horas_diarias,@id_empleado, @martes, @miercoles, @jueves, @viernes, @sabado, @domingo, @horas_totales_quincenales, @hora_salida_descanso, @hora_entrada_descanso, @tolerancia)";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -67,7 +67,7 @@ namespace Checador
                 comand.Parameters.AddWithValue("@horario", horario);
                 comand.Parameters.AddWithValue("@hora_entrada", hr_entrada);
                 comand.Parameters.AddWithValue("@hora_salida", hr_salida);
-                comand.Parameters.AddWithValue("@lunes", 0);
+                comand.Parameters.AddWithValue("@id_empleado", id_empleado);
                 comand.Parameters.AddWithValue("@martes", 0);
                 comand.Parameters.AddWithValue("@miercoles", 0);
                 comand.Parameters.AddWithValue("@jueves", 0);
@@ -110,7 +110,7 @@ namespace Checador
         {
             try
             {
-                string consulta = "UPDATE horarios SET horario = @horario, hr_entrada =@hora_entrada, hr_salida =@hora_salida,horas_diarias= @horas_diarias,lunes=@lunes, martes=@martes, miercoles= @miercoles, jueves=@jueves, viernes=@viernes, sabado=@sabado, domingo=@domingo, horas_totales_quincenales=@horas_totales_quincenales, hr_salida_descanso= @hora_salida_descanso, hr_entrada_descanso= @hora_entrada_descanso, tolerancia=@tolerancia WHERE id_horario = @id";
+                string consulta = "UPDATE horarios SET horario = @horario, hr_entrada =@hora_entrada, hr_salida =@hora_salida,horas_diarias= @horas_diarias,lunes=@id_empleado, martes=@martes, miercoles= @miercoles, jueves=@jueves, viernes=@viernes, sabado=@sabado, domingo=@domingo, horas_totales_quincenales=@horas_totales_quincenales, hr_salida_descanso= @hora_salida_descanso, hr_entrada_descanso= @hora_entrada_descanso, tolerancia=@tolerancia WHERE id_horario = @id";
                 Conexion con = new Conexion();
                 SqlConnection conexion = new SqlConnection(con.cadenaConexion);
                 conexion.Open();
@@ -119,7 +119,7 @@ namespace Checador
                 comand.Parameters.AddWithValue("@horario", horario);
                 comand.Parameters.AddWithValue("@hora_entrada", hr_entrada);
                 comand.Parameters.AddWithValue("@hora_salida", hr_salida);
-                comand.Parameters.AddWithValue("@lunes", 0);
+                comand.Parameters.AddWithValue("@id_empleado", id_empleado);
                 comand.Parameters.AddWithValue("@martes", 0);
                 comand.Parameters.AddWithValue("@miercoles", 0);
                 comand.Parameters.AddWithValue("@jueves", 0);
@@ -233,7 +233,7 @@ namespace Checador
                         hr_entrada = lector.GetTimeSpan(lector.GetOrdinal("hr_entrada"));
                         hr_salida = lector.GetTimeSpan(lector.GetOrdinal("hr_salida"));
                         horas_diarias = lector.GetInt32(lector.GetOrdinal("horas_diarias"));
-                        lunes = lector.GetInt32(lector.GetOrdinal("lunes"));
+                        id_empleado = lector.GetInt32(lector.GetOrdinal("lunes"));
                         martes = lector.GetInt32(lector.GetOrdinal("martes"));
                         miercoles = lector.GetInt32(lector.GetOrdinal("miercoles"));
                         jueves = lector.GetInt32(lector.GetOrdinal("jueves"));

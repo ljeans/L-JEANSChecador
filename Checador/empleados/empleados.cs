@@ -69,6 +69,29 @@ namespace Checador.empleados
             {
                 txt_id.Text = (Empleado.obtenerIdMaximo() + 1).ToString();
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 txt_id.Text = "1";
@@ -127,16 +150,6 @@ namespace Checador.empleados
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
         private void btn_registrar_Click(object sender, EventArgs e)
-        {
-            /*SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-            Thread hilo_secundario = new Thread(new ThreadStart(this.Registrar));
-            hilo_secundario.IsBackground = true;
-            hilo_secundario.Start();
-            */
-            Registrar();
-        }
-
-        public void Registrar()
         {
             try
             {
@@ -203,7 +216,8 @@ namespace Checador.empleados
                     tabControlBase.SelectedTab = tabPage1;
                     txt_id.Focus();
                 }
-                else if(Empleado.nombre==""){
+                else if (Empleado.nombre == "")
+                {
                     mensaje = new formularios_padres.mensaje_info();
                     mensaje.lbl_info.Text = "No ha ingresado el nombre del empleado.";
                     mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
@@ -221,7 +235,7 @@ namespace Checador.empleados
                     tabControlBase.SelectedTab = tabPage1;
                     txt_apellido_paterno.Focus();
                 }
-                else if (Empleado.departamento =="")
+                else if (Empleado.departamento == "")
                 {
                     mensaje = new formularios_padres.mensaje_info();
                     mensaje.lbl_info.Text = "No ha iasignado departamento al.";
@@ -253,27 +267,39 @@ namespace Checador.empleados
                         Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio, 0);
                     }
 
-<<<<<<< HEAD
-                confirmacion2 = new formularios_padres.Mensajes();
-                confirmacion2.lbl_mensaje.Text = "Desea registrar huella al empleado?";
-                confirmacion2.FormClosed += new FormClosedEventHandler(reg_huella);
-                confirmacion2.Show();
-                Limpiar();
-                //CAMBIAR EL CURSOR
-                this.UseWaitCursor = false;
-=======
                     //FUNCION PAR RECARGAR EL DATAGRID
                     this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
 
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
                     confirmacion2 = new formularios_padres.Mensajes();
                     confirmacion2.lbl_mensaje.Text = "Desea registrar huella al empleado?";
                     confirmacion2.FormClosed += new FormClosedEventHandler(reg_huella);
                     confirmacion2.ShowDialog();
-
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
                     //CAMBIAR EL CURSOR
                     this.UseWaitCursor = false;
-                } 
->>>>>>> 849d47c0f250b6d909f23ba8e37567f14bf26e11
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -286,49 +312,56 @@ namespace Checador.empleados
         //FUNCION PARA REGISTRAR NUEVO USUARIO EN EL CHECADOR
         public void Crear_Usuario_Checador(int id_checador, string id_empleado, string nombre, string contra, int privilegio, int id_checador_viejo)
         {
-            int error = 0;
-            int dedo;
-            int tFlag = 0, tTemplateLength = 0;
-            string huella = string.Empty;
-
-            //VALIDACION PARA SABER SI ESTA REGISTANDO O MODIFICANDO
-            if (id_checador_viejo != 0)
+            try
             {
-                for (dedo = 0; dedo < 10; dedo++)
-                {
-                    clase_checador.getChecador_Sucursal(sucurzal);
-                    Conectar_Checador();
-                    //OBTENER HUELLA
-                    if (Checador.GetUserTmpExStr(id_checador_viejo, id_empleado.ToString(), dedo, out tFlag, out huella, out tTemplateLength))
-                    {
-                        clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
-                        Conectar_Checador();
+                int error = 0;
+                int dedo;
+                int tFlag = 0, tTemplateLength = 0;
+                string huella = string.Empty;
 
-                        //CREAR USUARIO EN EL NUEVO CHECADOR
-                        if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
+                //VALIDACION PARA SABER SI ESTA REGISTANDO O MODIFICANDO
+                if (id_checador_viejo != 0)
+                {
+                    for (dedo = 0; dedo < 10; dedo++)
+                    {
+                        clase_checador.getChecador_Sucursal(sucurzal);
+                        Conectar_Checador();
+                        //OBTENER HUELLA
+                        if (Checador.GetUserTmpExStr(id_checador_viejo, id_empleado.ToString(), dedo, out tFlag, out huella, out tTemplateLength))
                         {
-                            //SETEAR LA HUELLA
-                            Checador.SetUserTmpExStr(id_checador, id_empleado, dedo, tFlag, huella);
-                        }
-                        else
-                        {
-                            Checador.GetLastError(ref error);
-                            MessageBox.Show(error.ToString());
+                            clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
+                            Conectar_Checador();
+
+                            //CREAR USUARIO EN EL NUEVO CHECADOR
+                            if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
+                            {
+                                //SETEAR LA HUELLA
+                                Checador.SetUserTmpExStr(id_checador, id_empleado, dedo, tFlag, huella);
+                            }
+                            else
+                            {
+                                Checador.GetLastError(ref error);
+                                MessageBox.Show(error.ToString());
+                            }
                         }
                     }
                 }
-            }
-            else
-            {
-                //CREAR USUARIO EN EL NUEVO CHECADOR
-                if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
-                {
-                }
                 else
                 {
-                    Checador.GetLastError(ref error);
-                    MessageBox.Show(error.ToString());
+                    //CREAR USUARIO EN EL NUEVO CHECADOR
+                    if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
+                    {
+                    }
+                    else
+                    {
+                        Checador.GetLastError(ref error);
+                        MessageBox.Show(error.ToString());
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -345,15 +378,11 @@ namespace Checador.empleados
                     //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
                     Checador.EnableDevice(clase_checador.id, true);
                 }
-                else
-                {
-                    //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
-                }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -427,45 +456,52 @@ namespace Checador.empleados
         //CARGA EL DEDO SELECCIONADO PARA REGISTRARLO EN EL CHECADOR
         private void cbx_huella_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbx_huella.Text == "1 (anular izquierdo)")
+            try
             {
-                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella1.png");
+                if (cbx_huella.Text == "1 (anular izquierdo)")
+                {
+                    pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella1.png");
+                }
+                else if (cbx_huella.Text == "0 (meñique izquierdo)")
+                {
+                    pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella0.png");
+                }
+                else if (cbx_huella.Text == "2 (medio izquierdo)")
+                {
+                    pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella2.png");
+                }
+                else if (cbx_huella.Text == "3 (indice izquierdo)")
+                {
+                    pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella3.png");
+                }
+                else if (cbx_huella.Text == "4 (pulgar izquierdo)")
+                {
+                    pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella4.png");
+                }
+                else if (cbx_huella.Text == "5 (pulgar derecho)")
+                {
+                    pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella5.png");
+                }
+                else if (cbx_huella.Text == "6 (indice  derecho)")
+                {
+                    pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella6.png");
+                }
+                else if (cbx_huella.Text == "7 (medio derecho)")
+                {
+                    pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella7.png");
+                }
+                else if (cbx_huella.Text == "8 (anular derecho)")
+                {
+                    pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella8.png");
+                }
+                else if (cbx_huella.Text == "9 (meñique derecho)")
+                {
+                    pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella9.png");
+                }
             }
-            else if (cbx_huella.Text == "0 (meñique izquierdo)")
+            catch (Exception ex)
             {
-                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella0.png");
-            }
-            else if (cbx_huella.Text == "2 (medio izquierdo)")
-            {
-                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella2.png");
-            }
-            else if (cbx_huella.Text == "3 (indice izquierdo)")
-            {
-                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella3.png");
-            }
-            else if (cbx_huella.Text == "4 (pulgar izquierdo)")
-            {
-                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella4.png");
-            }
-            else if (cbx_huella.Text == "5 (pulgar derecho)")
-            {
-                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella5.png");
-            }
-            else if (cbx_huella.Text == "6 (indice  derecho)")
-            {
-                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella6.png");
-            }
-            else if (cbx_huella.Text == "7 (medio derecho)")
-            {
-                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella7.png");
-            }
-            else if (cbx_huella.Text == "8 (anular derecho)")
-            {
-                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella8.png");
-            }
-            else if (cbx_huella.Text == "9 (meñique derecho)")
-            {
-                pictureBox1.Image = Image.FromFile("..\\..\\Resources\\huella9.png");
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -577,6 +613,29 @@ namespace Checador.empleados
                     mensaje.ShowDialog();
                 }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 mensaje = new formularios_padres.mensaje_info();
@@ -590,18 +649,23 @@ namespace Checador.empleados
 
         private void Checador_OnEnrollFinger(int EnrollNumber, int FingerIndex, int ActionResult, int TemplateLenght)
         {
-            verificador = verificador + 1;
-            if (verificador == 1)
+            try
             {
-                pic_huella_mod.Image = Image.FromFile("..\\..\\Resources\\huellaregistred.png");
+                verificador = verificador + 1;
+                if (verificador == 1)
+                {
+                    pic_huella_mod.Image = Image.FromFile("..\\..\\Resources\\huellaregistred.png");
+                }
             }
-           
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void btn_modificar_Click_2(object sender, EventArgs e)
         {
-            if
-          (MessageBox.Show("Desea cambiar huella al empleado?", "cambiar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if(MessageBox.Show("Desea cambiar huella al empleado?", "cambiar", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 tabControlBase.SelectedTab = tabPage3;
                 cbx_huella.SelectedIndex = 6;
@@ -610,97 +674,174 @@ namespace Checador.empleados
         //****************** NECESARIOS PARA MOSTRAR MENSAJES *****************
         private void responder(object sender, EventArgs e)
         {
-           
-            Enabled = true;
-            respuesta = confirmacion.respuesta;
-           
-            if (respuesta == true)
+            try
             {
-                Empleado.Modificar_Empleado();
-                //FUNCION PAR RECARGAR EL DATAGRID
-                this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
+                Enabled = true;
+                respuesta = confirmacion.respuesta;
 
-                Conectar_Checador();
-                if (bConn)
+                if (respuesta == true)
                 {
-                    //Empleado.Modificar_Empleado();
+                    Empleado.Modificar_Empleado();
+                    //FUNCION PAR RECARGAR EL DATAGRID
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
 
-                   if (sucurzal != Convert.ToInt32(cbx_sucursal.SelectedValue.ToString()))
+                    Conectar_Checador();
+                    if (bConn)
                     {
-                        Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio, id_checador_viejo);
-                        Empleado.guardarEmpleado_Sucursal();
-                        //SE OBTIENEN LOS DATOS DEL CHECADOR
-                        clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
-                    
+                        //Empleado.Modificar_Empleado();
+
+                        if (sucurzal != Convert.ToInt32(cbx_sucursal.SelectedValue.ToString()))
+                        {
+                            Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio, id_checador_viejo);
+                            Empleado.guardarEmpleado_Sucursal();
+                            //SE OBTIENEN LOS DATOS DEL CHECADOR
+                            clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
+
+                        }
                     }
                     else
                     {
-
+                        //CAMBIAR EL CURSOR
+                        this.UseWaitCursor = false;
+                        mensaje = new formularios_padres.mensaje_info();
+                        mensaje.lbl_info.Text = "Checador no conectado, marquele a Mirsa.";
+                        mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                        mensaje.ShowDialog();
                     }
+
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    confirmacion2 = new formularios_padres.Mensajes();
+                    confirmacion2.lbl_mensaje.Text = "Desea cambiar huella al empleado?";
+                    confirmacion2.FormClosed += new FormClosedEventHandler(mod_huella);
+                    confirmacion2.Show();
+                    Enabled = false;
+
                 }
-                else
+                txt_id.Enabled = true;
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
                 {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
                     mensaje = new formularios_padres.mensaje_info();
-                    mensaje.lbl_info.Text = "Checador no conectado, marquele a Mirsa.";
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
                     mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                     mensaje.ShowDialog();
                 }
-
-               
-                confirmacion2 = new formularios_padres.Mensajes();
-                confirmacion2.lbl_mensaje.Text = "Desea cambiar huella al empleado?";
-                confirmacion2.FormClosed += new FormClosedEventHandler(mod_huella);
-                confirmacion2.Show();
-                Enabled = false;
-                
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
-            else
+            catch (Exception ex)
             {
-
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                MessageBox.Show(ex.ToString());
             }
-            txt_id.Enabled = true;
-          
-          
-
         }
 
         private void reg_huella(object sender, EventArgs e)
         {
-            Enabled = true;
-            respuesta = confirmacion2.respuesta;
-            if (respuesta == true)
+            try
             {
-                tabControlBase.SelectedTab = tabPage3;
-                cbx_huella.SelectedIndex = 6;
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
+                Enabled = true;
+                respuesta = confirmacion2.respuesta;
+                if (respuesta == true)
+                {
+                    tabControlBase.SelectedTab = tabPage3;
+                    cbx_huella.SelectedIndex = 6;
+                }
+                else
+                {
+                    tabControlBase.SelectedTab = tabPage1;
+                    txt_id.Clear();
+                    txt_id.Focus();
+                }
+                confirmacion2 = null;
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
             }
-            else
+            catch (SqlException ex)
             {
-                tabControlBase.SelectedTab = tabPage1;
-                txt_id.Clear();
-                txt_id.Focus();
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
-            confirmacion2 = null;
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void mod_huella(object sender, EventArgs e)
         {
             //**************
-         
-            //****************
 
-            Enabled = true;
-            respuesta = confirmacion2.respuesta;
-            if (respuesta == true)
+            //****************
+            try
             {
-                tabControlBase.SelectedTab = tabPage3;
-                cbx_huella.SelectedIndex = 6;
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
+                Enabled = true;
+                respuesta = confirmacion2.respuesta;
+                if (respuesta == true)
+                {
+                    tabControlBase.SelectedTab = tabPage3;
+                    cbx_huella.SelectedIndex = 6;
+                }
+                else
+                {
+                    tabControlBase.SelectedTab = tabPage5;
+                    txt_id_a_modificar.Clear();
+                }
+                confirmacion2 = null;
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
             }
-            else
+            catch (Exception ex)
             {
-                tabControlBase.SelectedTab = tabPage5;
-                txt_id_a_modificar.Clear();
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                MessageBox.Show(ex.ToString());
             }
-            confirmacion2 = null;
+            
         }
 
         void vaciar_instancia_mensaje(Object sender, EventArgs e)
@@ -716,6 +857,8 @@ namespace Checador.empleados
 
             try
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
                 Empleado.apellido_mat = txt_apellido_materno.Text;
                 Empleado.apellido_pat = txt_apellido_paterno.Text;
                 Empleado.banco = txt_banco.Text;
@@ -786,14 +929,41 @@ namespace Checador.empleados
                     Modificar_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio);
                 }
 
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
                 confirmacion = new formularios_padres.Mensajes();
                 confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea modificar el empleado?";
                 confirmacion.FormClosed += new FormClosedEventHandler(responder);
                 confirmacion.ShowDialog();
 
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -801,75 +971,65 @@ namespace Checador.empleados
         //FUNCION PARA MODIFICAR USUARIO EN EL CHECADOR
         public void Modificar_Usuario_Checador(int id_checador, string id_empleado, string nombre, string contra, int privilegio)
         {
-            int error = 0;
-            
-            if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
+            try
             {
+                int error = 0;
 
+                if (Checador.SSR_SetUserInfo(id_checador, id_empleado, nombre, contra, privilegio, true))
+                {
+
+                }
+                else
+                {
+                    Checador.GetLastError(ref error);
+                    MessageBox.Show(error.ToString());
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Checador.GetLastError(ref error);
-                MessageBox.Show(error.ToString());
-            }
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-
-        {
-            int dedo = cbx_huella.SelectedIndex;
-            mensaje = new formularios_padres.mensaje_info();
-            mensaje.lbl_info.Text = "Coloque su dedo 3 veces en el checador.";
-            mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-            mensaje.Show();
-            //CODIGO PARA LA INTERFAZ DE REGISTRO DE NUEVA HUELLA
-            int flag = 0;
-            Checador.StartEnrollEx(Empleado.id.ToString(), dedo, flag);
-            if (Checador.RegEvent(clase_checador.id, 65535))
-            {
-                Checador.OnEnrollFinger += new zkemkeeper._IZKEMEvents_OnEnrollFingerEventHandler(Checador_OnEnrollFinger);
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
         private void btn_capturar_Click(object sender, EventArgs e)
         {
-            int dedo = cbx_huella.SelectedIndex;
-            //CODIGO PARA LA INTERFAZ DE REGISTRO DE NUEVA HUELLA
-            int flag = 0;
-            Checador.StartEnrollEx(Empleado.id.ToString(), dedo, flag);
-            if (Checador.RegEvent(clase_checador.id, 65535))
+            try
             {
-                Checador.OnEnrollFinger += new zkemkeeper._IZKEMEvents_OnEnrollFingerEventHandler(Checador_OnEnrollFinger);
+                int dedo = cbx_huella.SelectedIndex;
+                //CODIGO PARA LA INTERFAZ DE REGISTRO DE NUEVA HUELLA
+                int flag = 0;
+                Checador.StartEnrollEx(Empleado.id.ToString(), dedo, flag);
+                if (Checador.RegEvent(clase_checador.id, 65535))
+                {
+                    Checador.OnEnrollFinger += new zkemkeeper._IZKEMEvents_OnEnrollFingerEventHandler(Checador_OnEnrollFinger);
+                }
             }
-        }
-
-        private void tabPage2_Click_1(object sender, EventArgs e)
-        {
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            
         }
 
         private void btn_guardar_huella_Click(object sender, EventArgs e)
         {
-            mensaje = new formularios_padres.mensaje_info();
-            mensaje.lbl_info.Text = "La huella ha sido guardada";
-            mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-            mensaje.Show();
-            Limpiar();
-            tabControlBase.SelectedTab = tabPage1;
-            btn_registrar.Visible = true;
-            btn_modificar.Visible = false;
-            rb_registrar.Checked = true;
-            txt_id.Focus();
-        }
-
-        private void tabPage4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_dias_aguinaldo_TextChanged(object sender, EventArgs e)
-        {
-
+            try
+            {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "La huella ha sido guardada";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+                Limpiar();
+                tabControlBase.SelectedTab = tabPage1;
+                btn_registrar.Visible = true;
+                btn_modificar.Visible = false;
+                rb_registrar.Checked = true;
+                txt_id.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
         
 ////////////////FILTRAR EL BUSCAR//////////////////////////
@@ -906,14 +1066,18 @@ namespace Checador.empleados
 
         private void btn_b_modificar_Click(object sender, EventArgs e)
         {
-          
-            var row = dgv_empleadobuscar.CurrentRow;
-            Empleado.id = Convert.ToInt32(row.Cells[0].Value);
-            rb_modificar.Checked = true;
-            txt_id_a_modificar.Text = Convert.ToString(Empleado.id);
-            btn_ir_modificar.PerformClick();
-            
-
+            try
+            {
+                var row = dgv_empleadobuscar.CurrentRow;
+                Empleado.id = Convert.ToInt32(row.Cells[0].Value);
+                rb_modificar.Checked = true;
+                txt_id_a_modificar.Text = Convert.ToString(Empleado.id);
+                btn_ir_modificar.PerformClick();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void panel_barra_sup_Paint(object sender, PaintEventArgs e)
@@ -1105,6 +1269,29 @@ namespace Checador.empleados
                     }
                 }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -1126,6 +1313,33 @@ namespace Checador.empleados
                 contador = contador + 1;
             }
         }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                confirmacion = new formularios_padres.Mensajes();
+                confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea CANCELAR?";
+                confirmacion.FormClosed += new FormClosedEventHandler(cancelar);
+                confirmacion.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void cancelar(object sender, EventArgs e)
+        {
+            Enabled = true;
+            respuesta = confirmacion.respuesta;
+
+            if (respuesta == true)
+            {
+                tabControlBase.SelectedTab = tabPage5;
+            }
+        }
+
         //**************************  AQUI TERMINA LA VALIDACION DE LOS CAMPOS    *******************************
 
         private void btn_dar_baja_Click(object sender, EventArgs e)
@@ -1139,20 +1353,48 @@ namespace Checador.empleados
 
         private void darbaja(object sender, EventArgs e)
         {
-            Enabled = true;
-            respuesta = confirmacion.respuesta;
-
-            if (respuesta == true)
+            try
             {
-                var row = dgv_empleadobuscar.CurrentRow;
-                Empleado.id = Convert.ToInt32(row.Cells[0].Value);
-                Empleado.estatus = "I";
-                Empleado.Eliminar_Empleado();
-                //FUNCION PAR RECARGAR EL DATAGRID
-                this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                Enabled = true;
+                respuesta = confirmacion.respuesta;
+
+                if (respuesta == true)
+                {
+                    var row = dgv_empleadobuscar.CurrentRow;
+                    Empleado.id = Convert.ToInt32(row.Cells[0].Value);
+                    Empleado.estatus = "I";
+                    Empleado.Eliminar_Empleado();
+                    //FUNCION PAR RECARGAR EL DATAGRID
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
             }
         }
-
-
-        }
+    }
 }

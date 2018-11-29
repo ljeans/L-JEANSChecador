@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_empleados_recalcular = new System.Windows.Forms.DataGridView();
             this.idempleadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombrecompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -192,46 +192,46 @@
             // 
             // dgv_empleados_recalcular
             // 
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dgv_empleados_recalcular.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.dgv_empleados_recalcular.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_empleados_recalcular.AutoGenerateColumns = false;
             this.dgv_empleados_recalcular.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleados_recalcular.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_empleados_recalcular.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empleados_recalcular.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_empleados_recalcular.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_empleados_recalcular.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idempleadoDataGridViewTextBoxColumn,
             this.nombrecompletoDataGridViewTextBoxColumn,
             this.sucursalDataGridViewTextBoxColumn});
             this.dgv_empleados_recalcular.DataSource = this.vistaEmpleadosBindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_empleados_recalcular.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_empleados_recalcular.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_empleados_recalcular.EnableHeadersVisualStyles = false;
             this.dgv_empleados_recalcular.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleados_recalcular.Location = new System.Drawing.Point(55, 105);
             this.dgv_empleados_recalcular.MultiSelect = false;
             this.dgv_empleados_recalcular.Name = "dgv_empleados_recalcular";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_empleados_recalcular.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_empleados_recalcular.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_empleados_recalcular.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_empleados_recalcular.Size = new System.Drawing.Size(420, 480);
             this.dgv_empleados_recalcular.TabIndex = 0;
@@ -246,13 +246,13 @@
             // 
             // nombrecompletoDataGridViewTextBoxColumn
             // 
-            this.nombrecompletoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.nombrecompletoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.nombrecompletoDataGridViewTextBoxColumn.DataPropertyName = "nombre_completo";
             this.nombrecompletoDataGridViewTextBoxColumn.FillWeight = 200F;
             this.nombrecompletoDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombrecompletoDataGridViewTextBoxColumn.Name = "nombrecompletoDataGridViewTextBoxColumn";
             this.nombrecompletoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombrecompletoDataGridViewTextBoxColumn.Width = 200;
+            this.nombrecompletoDataGridViewTextBoxColumn.Width = 88;
             // 
             // sucursalDataGridViewTextBoxColumn
             // 
@@ -431,11 +431,11 @@
             // 
             this.dgv_rellenar.AllowUserToResizeColumns = false;
             this.dgv_rellenar.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dgv_rellenar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.dgv_rellenar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_rellenar.AutoGenerateColumns = false;
             this.dgv_rellenar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgv_rellenar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_rellenar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_rellenar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_rellenar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idempleadoDataGridViewTextBoxColumn2,
@@ -445,12 +445,12 @@
             this.fechaentradaDataGridViewTextBoxColumn,
             this.fechasalidaDataGridViewTextBoxColumn});
             this.dgv_rellenar.DataSource = this.vistaregistrosBindingSource;
-            this.dgv_rellenar.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dgv_rellenar.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_rellenar.EnableHeadersVisualStyles = false;
             this.dgv_rellenar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_rellenar.Location = new System.Drawing.Point(75, 146);
             this.dgv_rellenar.Name = "dgv_rellenar";
-            this.dgv_rellenar.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgv_rellenar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_rellenar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_rellenar.Size = new System.Drawing.Size(900, 400);
             this.dgv_rellenar.TabIndex = 0;
@@ -614,9 +614,6 @@
         private DataSet_Checador dataSet_Checador;
         private System.Windows.Forms.BindingSource vistaEmpleadosBindingSource;
         private DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter vista_EmpleadosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idempleadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombrecompletoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sucursalDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_recalcular;
         private System.Windows.Forms.Label label3;
@@ -647,5 +644,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sucursalDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaentradaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechasalidaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idempleadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombrecompletoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sucursalDataGridViewTextBoxColumn;
     }
 }

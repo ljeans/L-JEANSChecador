@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Checador
 {
@@ -89,6 +90,29 @@ namespace Checador
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 //CAMBIAR EL CURSOR
@@ -130,6 +154,29 @@ namespace Checador
                 confirmacion.ShowDialog();
                 //Enabled = false;
 
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -173,6 +220,29 @@ namespace Checador
                     mensaje.lbl_info.Text = "Checador no registrado. Por favor intente de nuevo.";
                     mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                     mensaje.Show();
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -259,6 +329,29 @@ namespace Checador
                     this.UseWaitCursor = false;
                 }
                
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -393,6 +486,29 @@ namespace Checador
                             //Checador.SetDeviceTime(Convert.ToInt32(row.Cells[0].Value));
                         }
                     }
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -624,6 +740,29 @@ namespace Checador
                             }
 
                         }
+                        catch (SqlException ex)
+                        {
+                            if (ex.Number == 121 || ex.Number == 1232)
+                            {
+                                //CAMBIAR EL CURSOR
+                                this.UseWaitCursor = false;
+                                mensaje = new formularios_padres.mensaje_info();
+                                mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                                mensaje.lbl_info2.Text = "Verifique la conexión.";
+                                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                                mensaje.ShowDialog();
+                            }
+                            else
+                            {
+                                //CAMBIAR EL CURSOR
+                                this.UseWaitCursor = false;
+                                mensaje = new formularios_padres.mensaje_info();
+                                mensaje.lbl_info.Text = "Error referente a la base de datos";
+                                mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                                mensaje.ShowDialog();
+                            }
+                        }
                         catch (Exception ex)
                         {
                             //MessageBox.Show("Ocurrió un error al sincronizar la fecha y hora del checador. Intenta de nuevo.");
@@ -646,87 +785,106 @@ namespace Checador
         //Funcion para agregar filas al DATAGRID de eventos sincronizados
         private void agregarFila(string id_checador, string id_sucursal, string id_empleado, string fecha_evento, int tipo_evento)
         {
-            DataGridViewRow fila = new DataGridViewRow();
-            fila.CreateCells(dgv_eventos_sincronizados);
-            fila.Cells[0].Value = id_checador;
-            fila.Cells[1].Value = id_empleado;
-            fila.Cells[2].Value = id_sucursal;
-            fila.Cells[3].Value = fecha_evento;
-            if (tipo_evento == 0)
+            try
             {
-                fila.Cells[4].Value = "ENTRADA";
-            }
-            else if(tipo_evento == 1)
-            {
-                fila.Cells[4].Value = "SALIDA";
-            }
+                DataGridViewRow fila = new DataGridViewRow();
+                fila.CreateCells(dgv_eventos_sincronizados);
+                fila.Cells[0].Value = id_checador;
+                fila.Cells[1].Value = id_empleado;
+                fila.Cells[2].Value = id_sucursal;
+                fila.Cells[3].Value = fecha_evento;
+                if (tipo_evento == 0)
+                {
+                    fila.Cells[4].Value = "ENTRADA";
+                }
+                else if (tipo_evento == 1)
+                {
+                    fila.Cells[4].Value = "SALIDA";
+                }
 
-            //CONDICION PARA INVOCAR EL DATAGRID DESDE OTRO HILO
-            if (InvokeRequired)
+                //CONDICION PARA INVOCAR EL DATAGRID DESDE OTRO HILO
+                if (InvokeRequired)
+                {
+                    Invoke(new Action(() => dgv_eventos_sincronizados.Rows.Add(fila)));
+                }
+            }
+            catch (Exception ex)
             {
-                Invoke(new Action(()=> dgv_eventos_sincronizados.Rows.Add(fila)));
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void responder2(object sender, EventArgs e)
         {
-            Enabled = true;
-            respuesta = confirmacion.respuesta;
-
-            if (respuesta == true)
+            try
             {
-                using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(borrar_eventos))
+                Enabled = true;
+                respuesta = confirmacion.respuesta;
+
+                if (respuesta == true)
                 {
-                    frm.lbl_mensaje.Text = "Borrando eventos..";
-                    frm.ShowDialog(this);
+                    using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(borrar_eventos))
+                    {
+                        frm.lbl_mensaje.Text = "Borrando eventos..";
+                        frm.ShowDialog(this);
+                    }
+                    //REALIZA ACCION SEGUN LA BANDERA RETORNADA
+                    if (sincronizar == true)
+                    {
+                        mensaje = new formularios_padres.mensaje_info();
+                        mensaje.lbl_info.Text = "Los eventos han sido borrados.";
+                        mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                        mensaje.Show();
+                    }
                 }
-                //REALIZA ACCION SEGUN LA BANDERA RETORNADA
-                if (sincronizar == true)
+                else
                 {
-                    mensaje = new formularios_padres.mensaje_info();
-                    mensaje.lbl_info.Text = "Los eventos han sido borrados.";
-                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                    mensaje.Show();
+
                 }
+                confirmacion = null;
             }
-            else
+            catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
-            confirmacion = null;
-
         }
 
         private void responder3(object sender, EventArgs e)
         {
-            Enabled = true;
-            respuesta = confirmacion.respuesta;
-
-            if (respuesta == true)
+            try
             {
-                //PARA PROGRESS BAR
-                using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(borrar_eventos))
+                Enabled = true;
+                respuesta = confirmacion.respuesta;
+
+                if (respuesta == true)
                 {
-                    frm.lbl_mensaje.Text = "Borrando usuarios..";
-                    frm.ShowDialog(this);
-                }
-                //REALIZA ACCION SEGUN LA BANDERA RETORNADA
-                if (sincronizar == true)
-                {
-                    mensaje = new formularios_padres.mensaje_info();
-                    mensaje.lbl_info.Text = "Los usuarios han sido borrados con exito.";
-                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                    mensaje.Show();
-                }
-                else
-                {
-                    mensaje = new formularios_padres.mensaje_info();
-                    mensaje.lbl_info.Text = "No se encontraron usuarios en el checador..";
-                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                    mensaje.Show();
+                    //PARA PROGRESS BAR
+                    using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(borrar_eventos))
+                    {
+                        frm.lbl_mensaje.Text = "Borrando usuarios..";
+                        frm.ShowDialog(this);
+                    }
+                    //REALIZA ACCION SEGUN LA BANDERA RETORNADA
+                    if (sincronizar == true)
+                    {
+                        mensaje = new formularios_padres.mensaje_info();
+                        mensaje.lbl_info.Text = "Los usuarios han sido borrados con exito.";
+                        mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                        mensaje.Show();
+                    }
+                    else
+                    {
+                        mensaje = new formularios_padres.mensaje_info();
+                        mensaje.lbl_info.Text = "No se encontraron usuarios en el checador..";
+                        mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                        mensaje.Show();
+                    }
                 }
             }
-        
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
 
@@ -987,6 +1145,29 @@ namespace Checador
                     }
                 }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -1060,6 +1241,29 @@ namespace Checador
                 // CAMBIAR EL CURSOR
                 //this.UseWaitCursor = false;
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 // CAMBIAR EL CURSOR
@@ -1089,6 +1293,29 @@ namespace Checador
                             this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
                         }
                     }
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
                 }
             }
             catch (Exception ex)

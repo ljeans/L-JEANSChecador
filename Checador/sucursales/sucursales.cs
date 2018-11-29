@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
+using System.Data.SqlClient;
 
 namespace Checador
 {
@@ -28,12 +29,18 @@ namespace Checador
 
         private void sucursales_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet_Checador.horarios' table. You can move, or remove it, as needed.
-            this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
-            txt_id.Focus();
-            //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
-            CheckForIllegalCrossThreadCalls = false;
-
+            try
+            {
+                // TODO: This line of code loads data into the 'dataSet_Checador.horarios' table. You can move, or remove it, as needed.
+                this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
+                txt_id.Focus();
+                //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
+                CheckForIllegalCrossThreadCalls = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -81,19 +88,6 @@ namespace Checador
         //CLICK AL BOTON REGISTRAR
         //FUNCION PARA REGITAR SUCURSAL EN LA BASE DE DATOS
 
-        public void cargarIDHorario()
-        {
-            //MOSTRAR EL ID DEL HORARIO AL CARGAR LA PAGINA
-            try
-            {
-            //     idhorario = (Sucursal.obtenerId(horario.horario));
-            }
-            catch (Exception ex)
-            {
-                txt_id.Text = "1";
-            }
-        }
-
         private void responder(object sender, EventArgs e)
         {
             try
@@ -120,6 +114,29 @@ namespace Checador
                 confirmacion = null;
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -240,6 +257,29 @@ namespace Checador
                 }
                    
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 //CAMBIAR EL CURSOR
@@ -339,6 +379,29 @@ namespace Checador
                 Enabled = false;
               
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 //CAMBIAR EL CURSOR
@@ -384,6 +447,29 @@ namespace Checador
                     MessageBox.Show("Sucursal no registrada. Por favor intente de nuevo.");
                 }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 mensaje = new formularios_padres.mensaje_info();
@@ -391,43 +477,45 @@ namespace Checador
                 mensaje.FormClosed += new FormClosedEventHandler(responder);
                 mensaje.Show();
                 Enabled = false;
-
             }
-            
-
         }
 
         private void btn_dar_baja_Click(object sender, EventArgs e)
         {
-
             confirmacion = new formularios_padres.Mensajes();
             confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea dar de baja";
             confirmacion.lbl_mensaje2.Text = "la sucursal?";
             confirmacion.FormClosed += new FormClosedEventHandler(darbaja);
             confirmacion.Show();
             Enabled = false;
-
-            
         }
+
         private void darbaja(object sender, EventArgs e)
         {
-            Enabled = true;
-            respuesta = confirmacion.respuesta;
-
-            if (respuesta == true)
+            try
             {
-                var row = dgv_sucursal.CurrentRow;
-                Sucursal.id = Convert.ToInt32(row.Cells[0].Value);
-                Sucursal.estatus = "I";
-                Sucursal.Eliminar_Sucursal();
-                //FUNCION PAR RECARGAR EL DATAGRID
-                // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
-                this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
+                Enabled = true;
+                respuesta = confirmacion.respuesta;
+
+                if (respuesta == true)
+                {
+                    var row = dgv_sucursal.CurrentRow;
+                    Sucursal.id = Convert.ToInt32(row.Cells[0].Value);
+                    Sucursal.estatus = "I";
+                    Sucursal.Eliminar_Sucursal();
+                    //FUNCION PAR RECARGAR EL DATAGRID
+                    // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Sucursal' table. You can move, or remove it, as needed.
+                    this.vista_SucursalTableAdapter.Fill(this.dataSet_Checador.Vista_Sucursal);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
             }
         }
 
             ////////////////FILTRAR EL BUSCAR//////////////////////////
-            private void txt_idbuscar_TextChanged(object sender, EventArgs e)
+        private void txt_idbuscar_TextChanged(object sender, EventArgs e)
         {
             if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
             {
@@ -707,13 +795,34 @@ namespace Checador
                     }
                 }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
 
         }
-
-
     }
 }

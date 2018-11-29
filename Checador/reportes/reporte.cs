@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.Odbc;
 using System.Threading;
+using System.Data.SqlClient;
 
 namespace Checador.reportes
 {
@@ -18,6 +19,10 @@ namespace Checador.reportes
 
     public partial class reporte : Checador.formularios_padres.formpadre
     {
+
+        formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+        formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
+
         public reporte()
         {
             InitializeComponent();
@@ -28,14 +33,27 @@ namespace Checador.reportes
             this.Close();
         }
 
+        void vaciar_instancia_mensaje(Object sender, EventArgs e)
+        {
+            mensaje = null;
+        }
+
         private void reporte_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Empleados' Puede moverla o quitarla según sea necesario.
-            this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
-            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.sucursal' Puede moverla o quitarla según sea necesario.
-            this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
+            try
+            {
+                // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Empleados' Puede moverla o quitarla según sea necesario.
+                this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.sucursal' Puede moverla o quitarla según sea necesario.
+                this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
 
-            CheckForIllegalCrossThreadCalls = false;
+                CheckForIllegalCrossThreadCalls = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+           
         }
 
         private void btn_gnerar_Click(object sender, EventArgs e)
@@ -102,8 +120,29 @@ namespace Checador.reportes
                 }
                 
                 crystalReportViewer1.Refresh();
-                
-
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -181,6 +220,29 @@ namespace Checador.reportes
 
                 crystalReportViewer2.Refresh();
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -256,6 +318,29 @@ namespace Checador.reportes
                 }
                 crystalReportViewer3.Refresh();
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -325,6 +410,29 @@ namespace Checador.reportes
                     Invoke(new Action(() => crystalReportViewer4.ReportSource = crystalrpt));
                 }
                 crystalReportViewer4.Refresh();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -436,6 +544,29 @@ namespace Checador.reportes
                 }
                 crystalReportViewer5.Refresh();
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -486,6 +617,29 @@ namespace Checador.reportes
                     Invoke(new Action(() => crystalReportViewer6.ReportSource = crystalrpt));
                 }
                 crystalReportViewer6.Refresh();
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
             catch (Exception ex)
             {

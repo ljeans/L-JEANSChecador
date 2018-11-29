@@ -13,6 +13,9 @@ namespace Checador.inicio_sesion
 {
     public partial class login : Form
     {
+        formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+        formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
+
         public login()
         {
             InitializeComponent();
@@ -20,12 +23,17 @@ namespace Checador.inicio_sesion
 
         ClaseUsuario usuario = new ClaseUsuario();
         ClaseEmpleado empleados = new ClaseEmpleado();
+        ClaseSucursal sucursal = new ClaseSucursal();
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        void vaciar_instancia_mensaje(Object sender, EventArgs e)
+        {
+            mensaje = null;
+        }
 
         private void login_Load(object sender, EventArgs e)
         {
@@ -70,7 +78,11 @@ namespace Checador.inicio_sesion
                     MessageBox.Show("Bienvenido(a): " + usuario.usuario);
                     usuario.obtener_rol(usuario.id_rol);
                     Program.rol = usuario.nombre_rol;
+                    Program.id_empleado = usuario.id_empleado;
                     empleados.verificar_existencia(usuario.id_empleado);
+                    sucursal.verificar_existencia(empleados.id_sucursal);
+                    Program.sucursal = sucursal.nombre;
+                    MessageBox.Show(Program.sucursal);
                     Program.nombre_usuario = empleados.nombre + " " + empleados.apellido_pat;
                     MessageBox.Show(Program.nombre_usuario);
                     this.Close();
@@ -80,6 +92,29 @@ namespace Checador.inicio_sesion
                     MessageBox.Show("Usuario o contraseña incorrectos..");
                 }
         
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
