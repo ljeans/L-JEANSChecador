@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
+using System.Data.SqlClient;
 
 namespace Checador
 {
@@ -35,18 +36,40 @@ namespace Checador
             {
                 txt_id.Text = (Horario.obtenerIdMaximo() + 1).ToString();
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 txt_id.Text = "1";
             }
         }
+
         void vaciar_instancia_mensaje(Object sender, EventArgs e)
         {
             mensaje = null;
-
         }
-
-
+        
         private void Limpiar()
         {
  
@@ -91,6 +114,29 @@ namespace Checador
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 //CAMBIAR EL CURSOR
@@ -115,6 +161,7 @@ namespace Checador
                 Horario.hr_entrada = dtp_hora_entrada.Value.TimeOfDay;
                 Horario.hr_salida = dtp_hora_salida.Value.TimeOfDay;
                 Horario.tolerancia = Convert.ToInt32(txt_tolerancia.Text);
+                Horario.id_empleado = Program.id_empleado;
 
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
@@ -123,6 +170,29 @@ namespace Checador
                 confirmacion.FormClosed += new FormClosedEventHandler(responder);
                 confirmacion.Show();
                 Enabled = false;
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -134,24 +204,28 @@ namespace Checador
 
         private void rb_modificar_CheckedChanged(object sender, EventArgs e)
         {
-           
             tabControlBase.SelectedTab = tabPage2;
-         
-
         }
 
         private void rb_registrar_CheckedChanged(object sender, EventArgs e)
         {
-            tabControlBase.SelectedTab = tabPage1;
-            btn_modificar.Visible = false;
-            btn_registrar.Visible = true;
-            Limpiar();
+            try
+            {
+                tabControlBase.SelectedTab = tabPage1;
+                btn_modificar.Visible = false;
+                btn_registrar.Visible = true;
+                Limpiar();
 
-            //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
-            CheckForIllegalCrossThreadCalls = false;
-            Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
-            hilo_secundario.IsBackground = true;
-            hilo_secundario.Start();
+                //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
+                CheckForIllegalCrossThreadCalls = false;
+                Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
+                hilo_secundario.IsBackground = true;
+                hilo_secundario.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         //FUNCION PARA CARGAR LOS DATOS DEL HORARIO EN EL FORMULARIO
@@ -207,6 +281,29 @@ namespace Checador
 
                 }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -215,29 +312,32 @@ namespace Checador
 
         private void horarios_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.horarios' Puede moverla o quitarla según sea necesario.
-            this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
-            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Empleados' Puede moverla o quitarla según sea necesario.
-            this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
-            // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Horario' table. You can move, or remove it, as needed.
-            this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
-            //CAMBIAR LA LETRA AL DATAGRIDVIEW
-            dgv_horarios.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
-            dgv_horarios.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
+            try
+            {
+                // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.horarios' Puede moverla o quitarla según sea necesario.
+                this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
+                // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Empleados' Puede moverla o quitarla según sea necesario.
+                this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Horario' table. You can move, or remove it, as needed.
+                this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
+                //CAMBIAR LA LETRA AL DATAGRIDVIEW
+                dgv_horarios.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
+                dgv_horarios.ColumnHeadersDefaultCellStyle.Font = new Font("Microsoft Sans Serif", 12);
 
-            //CARGAR LOS HORARIOS EN ASIGNAR HORARIOS
-            cbx_empleado_SelectedIndexChanged(cbx_empleado, EventArgs.Empty);
+                //CARGAR LOS HORARIOS EN ASIGNAR HORARIOS
+                cbx_empleado_SelectedIndexChanged(cbx_empleado, EventArgs.Empty);
 
-            cbx_lunes_SelectedIndexChanged(cbx_lunes, EventArgs.Empty);
-            cbx_martes_SelectedIndexChanged(cbx_martes, EventArgs.Empty);
-            cbx_miercoles_SelectedIndexChanged(cbx_miercoles, EventArgs.Empty);
-            cbx_jueves_SelectedIndexChanged(cbx_jueves, EventArgs.Empty);
-            cbx_viernes_SelectedIndexChanged(cbx_viernes, EventArgs.Empty);
-            cbx_sabado_SelectedIndexChanged(cbx_sabado, EventArgs.Empty);
-            cbx_domingo_SelectedIndexChanged(cbx_domingo, EventArgs.Empty);
+                cbx_lunes_SelectedIndexChanged(cbx_lunes, EventArgs.Empty);
+                cbx_martes_SelectedIndexChanged(cbx_martes, EventArgs.Empty);
+                cbx_miercoles_SelectedIndexChanged(cbx_miercoles, EventArgs.Empty);
+                cbx_jueves_SelectedIndexChanged(cbx_jueves, EventArgs.Empty);
+                cbx_viernes_SelectedIndexChanged(cbx_viernes, EventArgs.Empty);
+                cbx_sabado_SelectedIndexChanged(cbx_sabado, EventArgs.Empty);
+                cbx_domingo_SelectedIndexChanged(cbx_domingo, EventArgs.Empty);
 
 
 
+<<<<<<< HEAD
             //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
             CheckForIllegalCrossThreadCalls = false;
             Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
@@ -338,6 +438,70 @@ namespace Checador
                 }
             }
             //********************************************************************************************
+=======
+                //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
+                CheckForIllegalCrossThreadCalls = false;
+                Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
+                hilo_secundario.IsBackground = true;
+                hilo_secundario.Start();
+                txt_nombre.Focus();
+
+                //FLITRAR CONSULTA HORARIO DEPENDIENDO EL ROL
+                if (Program.rol != "ENCARGADA DE TIENDA")
+                {
+                    this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
+                    vistaHorarioBindingSource.Filter = "";
+                }
+                else
+                {
+                    vistaHorarioBindingSource.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
+                    vistaHorarioBindingSource1.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
+                    vistaHorarioBindingSource2.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
+                    vistaHorarioBindingSource3.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
+                    vistaHorarioBindingSource4.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
+                    vistaHorarioBindingSource5.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
+                    vistaHorarioBindingSource6.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
+                }
+
+                //FILTRAR COMBOBOX DE EMPLEADOS EN ASIGNAR HORARIO DEPENDIENDO EL ROL
+                if (Program.rol != "ENCARGADA DE TIENDA")
+                {
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                    vistaEmpleadosBindingSource.Filter = "";
+                }
+                else
+                {
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
         }
 
         ///REGISTRAR///////////////////////////////////////////////////////////////////////////////////
@@ -360,6 +524,7 @@ namespace Checador
                 Horario.horario = txt_nombre.Text;
                 Horario.horas_diarias = Convert.ToInt32(txt_horas_diarias.Text);
                 Horario.horas_totales_quincenales = Convert.ToInt32(txt_horas_totales.Text);
+                Horario.id_empleado = Program.id_empleado;
 
                 if (cb_descanso.Checked == true)
                 {
@@ -404,6 +569,29 @@ namespace Checador
                     this.UseWaitCursor = false;
                 }
                
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
@@ -452,27 +640,57 @@ namespace Checador
 ////////////////FILTRAR EL BUSCAR//////////////////////////
         private void txt_idbuscar_TextChanged(object sender, EventArgs e)
         {
-            if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+            if (Program.rol != "ENCARGADA DE TIENDA")
             {
-                this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
-                vistaHorarioBindingSource.Filter = "";
+                if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+                {
+                    this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
+                    vistaHorarioBindingSource.Filter = "";
+                }
+                else
+                {
+                    vistaHorarioBindingSource.Filter = "CONVERT([id_horario], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [horario] LIKE '*" + txt_nombrebuscar.Text + "*'";
+                }
             }
             else
             {
-                vistaHorarioBindingSource.Filter = "CONVERT([id_horario], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [horario] LIKE '*" + txt_nombrebuscar.Text + "*'";
+                if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+                {
+                    this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
+                    vistaHorarioBindingSource.Filter = "lunes ='" + Program.id_empleado + "'";
+                }
+                else
+                {
+                    vistaHorarioBindingSource.Filter = "CONVERT([id_horario], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [horario] LIKE '*" + txt_nombrebuscar.Text + "*' and [lunes] = '" + Program.id_empleado + "'";
+                }
             }
         }
 
         private void txt_nombrebuscar_TextChanged(object sender, EventArgs e)
         {
-            if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+            if (Program.rol != "ENCARGADA DE TIENDA")
             {
-                this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
-                vistaHorarioBindingSource.Filter = "";
+                if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+                {
+                    this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
+                    vistaHorarioBindingSource.Filter = "";
+                }
+                else
+                {
+                    vistaHorarioBindingSource.Filter = "CONVERT([id_horario], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [horario] LIKE '*" + txt_nombrebuscar.Text + "*'";
+                }
             }
             else
             {
-                vistaHorarioBindingSource.Filter = "CONVERT([id_horario], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [horario] LIKE '*" + txt_nombrebuscar.Text + "*'";
+                if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+                {
+                    this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
+                    vistaHorarioBindingSource.Filter = "lunes ='" + Program.id_empleado + "'";
+                }
+                else
+                {
+                    vistaHorarioBindingSource.Filter = "CONVERT([id_horario], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [horario] LIKE '*" + txt_nombrebuscar.Text + "*' and [lunes] = '" + Program.id_empleado + "'";
+                }
             }
         }
 
@@ -723,6 +941,29 @@ namespace Checador
                 AsignarHorario.asignarHorario();
 
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -756,9 +997,32 @@ namespace Checador
                     cbx_domingo.SelectedValue = 1;
                 }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.Message.ToString());
             }
         }
 
@@ -832,6 +1096,29 @@ namespace Checador
                     this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
                 }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -864,11 +1151,6 @@ namespace Checador
             {
                 errorProvider1.SetError(txt_nombre, null);
             }
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

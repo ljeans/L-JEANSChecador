@@ -5,11 +5,15 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Checador.incidentes
 {
     public partial class incidentes : Checador.formularios_padres.formpadre
     {
+        formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+        formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
+
         public incidentes()
         {
             InitializeComponent();
@@ -22,15 +26,29 @@ namespace Checador.incidentes
 
         private void incidentes_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet_Checador.vista_registros' table. You can move, or remove it, as needed.
-            this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
-            // TODO: This line of code loads data into the 'dataSet_Checador1.vista_registros' table. You can move, or remove it, as needed.
-            this.vista_registrosTableAdapter.Fill(this.dataSet_Checador1.vista_registros);
-            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.horarios' Puede moverla o quitarla según sea necesario.
-            this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
-            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Empleados' Puede moverla o quitarla según sea necesario.
-            this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+            try
+            {
+                // TODO: This line of code loads data into the 'dataSet_Checador.vista_registros' table. You can move, or remove it, as needed.
+                this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
+                // TODO: This line of code loads data into the 'dataSet_Checador1.vista_registros' table. You can move, or remove it, as needed.
+                this.vista_registrosTableAdapter.Fill(this.dataSet_Checador1.vista_registros);
+                // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.horarios' Puede moverla o quitarla según sea necesario.
+                this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
+                // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Empleados' Puede moverla o quitarla según sea necesario.
+                this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
 
+                //FILTRAR COMBOBOX DE EMPLEADOS EN ASIGNAR RECALCULAR HORAS DEPENDIENDO LA SUCURSAL
+                if (Program.rol != "ENCARGADA DE TIENDA")
+                {
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                    vistaEmpleadosBindingSource.Filter = "";
+                }
+                else
+                {
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                }
+
+<<<<<<< HEAD
             //*************   HACER FORMULARIO RESPONSIVO   *****************
             double porcentaje_ancho = (Convert.ToDouble(Width) / 1362);
             double porcentaje_alto = (Convert.ToDouble(Height) / 741);
@@ -125,6 +143,34 @@ namespace Checador.incidentes
             }
             //********************************************************************************************
 
+=======
+                //FILTRAR COMBOBOX DE EMPLEADOS EN REGISTRAR CHEQUEO DEPENDIENDO LA SUCURSAL
+                if (Program.rol != "ENCARGADA DE TIENDA")
+                {
+                    this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
+                    vistaregistrosBindingSource.Filter = "";
+                }
+                else
+                {
+                    vistaregistrosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                }
+
+                //FLITRAR CONSULTA HORARIO DEPENDIENDO EL ROL
+                if (Program.rol != "ENCARGADA DE TIENDA")
+                {
+                    this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
+                    horariosBindingSource.Filter = "";
+                }
+                else
+                {
+                    horariosBindingSource.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -135,27 +181,57 @@ namespace Checador.incidentes
 ////////////////FILTRAR EL BUSCAR//////////////////////////
         private void txt_idbuscar_TextChanged(object sender, EventArgs e)
         {
-            if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+            if (Program.rol != "ENCARGADA DE TIENDA")
             {
-                this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
-                vistaEmpleadosBindingSource.Filter = "";
+                if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+                {
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                    vistaEmpleadosBindingSource.Filter = "";
+                }
+                else
+                {
+                    vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*'";
+                }
             }
             else
             {
-                vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*'";
+                if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+                {
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                }
+                else
+                {
+                    vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*' and sucursal ='" + Program.sucursal + "'";
+                }
             }
         }
 
         private void txt_nombrebuscar_TextChanged(object sender, EventArgs e)
         {
-            if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+            if (Program.rol != "ENCARGADA DE TIENDA")
             {
-                this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
-                vistaEmpleadosBindingSource.Filter = "";
+                if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+                {
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                    vistaEmpleadosBindingSource.Filter = "";
+                }
+                else
+                {
+                    vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*'";
+                }
             }
             else
             {
-                vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*'";
+                if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+                {
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                }
+                else
+                {
+                    vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*' and sucursal ='" + Program.sucursal + "'";
+                }
             }
         }
 
@@ -180,7 +256,30 @@ namespace Checador.incidentes
 
         private void txt_buscar_TextChanged(object sender, EventArgs e)
         {
-
+            if (Program.rol != "ENCARGADA DE TIENDA")
+            {
+                if (txt_buscar.Text == "")
+                {
+                    this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
+                    vistaregistrosBindingSource.Filter = "";
+                }
+                else
+                {
+                    vistaregistrosBindingSource.Filter = "[nombre_completo] LIKE '*" + txt_buscar.Text + "*'";
+                }
+            }
+            else
+            {
+                if (txt_buscar.Text == "")
+                {
+                    this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
+                    vistaregistrosBindingSource.Filter = "Sucursal ='" + Program.sucursal + "'";
+                }
+                else
+                {
+                    vistaregistrosBindingSource.Filter = "[nombre_completo] LIKE '*" + txt_buscar.Text + "*' and Sucursal ='" + Program.sucursal + "'";
+                }
+            }
         }
         //////////////////////////////////////////////////////////////////////
 
@@ -240,6 +339,29 @@ namespace Checador.incidentes
                     }
 
                     Clase_Checador.Recalcular_HorasTrabajadas(Clase_Checador.id, Convert.ToInt32(row.Cells[0].Value), Sucursal.id, fecha_evento, Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, Horario.horario);
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
                 }
             }
             catch (Exception ex)
@@ -326,10 +448,39 @@ namespace Checador.incidentes
                     this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
                 }
             }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        void vaciar_instancia_mensaje(Object sender, EventArgs e)
+        {
+            mensaje = null;
+
         }
     }
 }

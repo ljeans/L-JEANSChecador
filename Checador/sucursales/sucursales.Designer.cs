@@ -133,8 +133,12 @@
             // 
             // tabControlBase
             // 
+<<<<<<< HEAD
             this.tabControlBase.Location = new System.Drawing.Point(309, 70);
             this.tabControlBase.Multiline = true;
+=======
+            this.tabControlBase.Location = new System.Drawing.Point(309, 63);
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             // 
             // tabPage1
             // 
@@ -754,7 +758,13 @@
             // 
             // btn_modificar
             // 
+<<<<<<< HEAD
             this.btn_modificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+=======
+            this.btn_modificar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.btn_modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_modificar.Enabled = false;
             this.btn_modificar.FlatAppearance.BorderSize = 0;
@@ -861,6 +871,9 @@
             // sucursales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1362, 741);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "sucursales";

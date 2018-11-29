@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(incidentes));
+=======
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -248,13 +251,13 @@
             // 
             // nombrecompletoDataGridViewTextBoxColumn
             // 
-            this.nombrecompletoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.nombrecompletoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.nombrecompletoDataGridViewTextBoxColumn.DataPropertyName = "nombre_completo";
             this.nombrecompletoDataGridViewTextBoxColumn.FillWeight = 200F;
             this.nombrecompletoDataGridViewTextBoxColumn.HeaderText = "Nombre";
             this.nombrecompletoDataGridViewTextBoxColumn.Name = "nombrecompletoDataGridViewTextBoxColumn";
             this.nombrecompletoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombrecompletoDataGridViewTextBoxColumn.Width = 200;
+            this.nombrecompletoDataGridViewTextBoxColumn.Width = 88;
             // 
             // sucursalDataGridViewTextBoxColumn
             // 
@@ -617,9 +620,6 @@
         private DataSet_Checador dataSet_Checador;
         private System.Windows.Forms.BindingSource vistaEmpleadosBindingSource;
         private DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter vista_EmpleadosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idempleadoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombrecompletoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sucursalDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btn_recalcular;
         private System.Windows.Forms.Label label3;
@@ -650,5 +650,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sucursalDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaentradaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechasalidaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idempleadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombrecompletoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sucursalDataGridViewTextBoxColumn;
     }
 }

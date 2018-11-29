@@ -10,7 +10,8 @@ namespace Checador
     static class Program
     {
         public static string rol;
-        public static string nombre_usuario;
+        public static string nombre_usuario, sucursal;
+        public static int id_empleado, id_sucursal;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

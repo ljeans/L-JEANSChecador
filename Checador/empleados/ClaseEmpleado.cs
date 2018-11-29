@@ -356,7 +356,7 @@ namespace Checador
 
                 using (SqlConnection con2 = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
                 {
-                    string select = "SELECT id_sucursal FROM empleado_sucursal WHERE id_empleado=@id";//Consulta
+                    string select = "SELECT id_sucursal FROM empleado_sucursal WHERE id_empleado=@id and fecha_salida is Null";//Consulta
                     SqlCommand comando = new SqlCommand(select, con2);//Nuevo objeto sqlcommand
                     comando.Parameters.AddWithValue("@id", id);//Agregamos parametros a la consulta
                     con2.Open();//abre la conexion
@@ -398,7 +398,7 @@ namespace Checador
                 //SqlConnection con = new SqlConnection(conexion.cadenaConexion);
                 using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
                 {
-                    string select = "SELECT id_sucursal FROM sucursal WHERE nombre=@suc";//Consulta
+                    string select = "SELECT id_sucursal FROM empleado_sucursal WHERE id_empleado=@id";//Consulta
                     SqlCommand comando = new SqlCommand(select, con);//Nuevo objeto sqlcommand
                     comando.Parameters.AddWithValue("@suc", suc);//Agregamos parametros a la consulta
                     con.Open();//abre la conexion
