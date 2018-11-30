@@ -47,6 +47,104 @@ namespace Checador.reportes
                 // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.sucursal' Puede moverla o quitarla según sea necesario.
                 this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
 
+<<<<<<< HEAD
+            CheckForIllegalCrossThreadCalls = false;
+
+            //*************   HACER FORMULARIO RESPONSIVO   *****************
+            double porcentaje_ancho = (Convert.ToDouble(Width) / 1362);
+            double porcentaje_alto = (Convert.ToDouble(Height) / 741);
+
+            foreach (Control x in this.Controls)
+            {
+                if (x.HasChildren)
+                {
+                    foreach (Control y in x.Controls)
+                    {
+                        if (y.HasChildren)
+                        {
+                            foreach (Control z in y.Controls)
+                            {
+                                if (z.HasChildren)
+                                {
+                                    foreach (Control w in z.Controls)
+                                    {
+                                        if (w is TextBox | w is Label | w is Button | w is MaskedTextBox | w is DateTimePicker | w is ComboBox | w is RadioButton | w is PictureBox | w is GroupBox | w is DataGridView | w is NumericUpDown)
+                                        {
+                                            if ((w is Label & porcentaje_ancho <= 0.8) | (w is DateTimePicker & porcentaje_ancho <= 0.8) | (w is NumericUpDown & porcentaje_ancho <= 0.8) | (w is Button & porcentaje_ancho <= 0.8) | (w is ComboBox & porcentaje_ancho <= 0.8) | (w is RadioButton & porcentaje_ancho <= 0.8))
+                                            {
+                                                if (w is Label)
+                                                {
+                                                    w.Font = new Font("Microsoft Sans Serif", 10);
+                                                }
+                                                w.Font = new Font("Microsoft Sans Serif", 11);
+                                            }
+                                            double posicionx = Convert.ToDouble(w.Location.X) * porcentaje_ancho;
+                                            double posiciony = Convert.ToDouble(w.Location.Y) * porcentaje_alto;
+                                            double ancho = w.Width * porcentaje_ancho;
+                                            double alto = w.Height * porcentaje_alto;
+
+                                            w.Left = Convert.ToInt32(posicionx);
+                                            w.Top = Convert.ToInt32(posiciony);
+                                            w.Width = Convert.ToInt32(ancho);
+                                            w.Height = Convert.ToInt32(alto);
+                                        }
+                                    }
+                                }
+                                if (z is TextBox | z is Label | z is Button | z is MaskedTextBox | z is DateTimePicker | z is ComboBox | z is RadioButton | z is PictureBox | z is GroupBox | z is DataGridView)
+                                {
+
+                                    if ((z is Label & porcentaje_ancho <= 0.8) | (z is Button & porcentaje_ancho <= 0.8) | (z is ComboBox & porcentaje_ancho <= 0.8) | (z is RadioButton & porcentaje_ancho <= 0.8))
+                                    {
+                                        z.Font = new Font("Microsoft Sans Serif", 11);
+                                    }
+
+                                    double posicionx = Convert.ToDouble(z.Location.X) * porcentaje_ancho;
+                                    double posiciony = Convert.ToDouble(z.Location.Y) * porcentaje_alto;
+                                    double ancho = z.Width * porcentaje_ancho;
+                                    double alto = z.Height * porcentaje_alto;
+
+                                    z.Left = Convert.ToInt32(posicionx);
+                                    z.Top = Convert.ToInt32(posiciony);
+                                    z.Width = Convert.ToInt32(ancho);
+                                    z.Height = Convert.ToInt32(alto);
+                                }
+                            }
+                        }
+                        if (y is TextBox | y is Label | y is Button | y is MaskedTextBox | y is DateTimePicker | y is ComboBox | y is RadioButton | y is Panel | y is TabControl)
+                        {
+                            if ((y is Button & porcentaje_ancho <= 0.8) | (y is RadioButton & porcentaje_ancho <= 0.8))
+                            {
+                                y.Font = new Font("Microsoft Sans Serif", 12);
+                            }
+
+                            double posicionx = Convert.ToDouble(y.Location.X) * porcentaje_ancho;
+                            double posiciony = Convert.ToDouble(y.Location.Y) * porcentaje_alto;
+                            double ancho = y.Width * porcentaje_ancho;
+                            double alto = y.Height * porcentaje_alto;
+
+                            y.Left = Convert.ToInt32(posicionx);
+                            y.Top = Convert.ToInt32(posiciony);
+                            y.Width = Convert.ToInt32(ancho);
+                            y.Height = Convert.ToInt32(alto);
+                        }
+                    }
+                }
+                if (x is TextBox | x is Label | x is Button | x is MaskedTextBox | x is DateTimePicker | x is ComboBox | x is RadioButton | x is Panel | x is TabControl)
+                {
+                    double posicionx = Convert.ToDouble(x.Location.X) * porcentaje_ancho;
+                    double posiciony = Convert.ToDouble(x.Location.Y) * porcentaje_alto;
+                    double ancho = x.Width * porcentaje_ancho;
+                    double alto = x.Height * porcentaje_alto;
+
+                    x.Left = Convert.ToInt32(posicionx);
+                    x.Top = Convert.ToInt32(posiciony);
+                    x.Width = Convert.ToInt32(ancho);
+                    x.Height = Convert.ToInt32(alto);
+                }
+            }
+            //********************************************************************************************
+
+=======
                 CheckForIllegalCrossThreadCalls = false;
             }
             catch (Exception ex)
@@ -54,6 +152,7 @@ namespace Checador.reportes
                 MessageBox.Show(ex.Message.ToString());
             }
            
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
         }
 
         private void btn_gnerar_Click(object sender, EventArgs e)

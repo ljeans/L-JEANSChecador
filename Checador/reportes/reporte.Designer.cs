@@ -86,6 +86,7 @@
             this.tabPage5.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             this.panel_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).BeginInit();
@@ -99,6 +100,8 @@
             this.rb_4.FlatAppearance.CheckedBackColor = System.Drawing.Color.Red;
             this.rb_4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
+            this.rb_4.Location = new System.Drawing.Point(0, 390);
+            this.rb_4.Size = new System.Drawing.Size(250, 104);
             // 
             // rb_3
             // 
@@ -106,6 +109,7 @@
             this.rb_3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_3.Size = new System.Drawing.Size(250, 104);
             // 
             // rb_2
             // 
@@ -113,6 +117,7 @@
             this.rb_2.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_2.Size = new System.Drawing.Size(250, 104);
             // 
             // rb_1
             // 
@@ -120,12 +125,13 @@
             this.rb_1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
+            this.rb_1.Size = new System.Drawing.Size(250, 104);
             // 
             // tabControlBase
             // 
             this.tabControlBase.Controls.Add(this.tabPage6);
-            this.tabControlBase.Location = new System.Drawing.Point(309, 68);
-            this.tabControlBase.Size = new System.Drawing.Size(1020, 670);
+            this.tabControlBase.Location = new System.Drawing.Point(259, 68);
+            this.tabControlBase.Size = new System.Drawing.Size(1080, 670);
             this.tabControlBase.Controls.SetChildIndex(this.tabPage6, 0);
             this.tabControlBase.Controls.SetChildIndex(this.tabPage5, 0);
             this.tabControlBase.Controls.SetChildIndex(this.tabPage4, 0);
@@ -142,7 +148,7 @@
             this.tabPage1.Controls.Add(this.cbx_sucursal);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.crystalReportViewer1);
-            this.tabPage1.Size = new System.Drawing.Size(1012, 644);
+            this.tabPage1.Size = new System.Drawing.Size(1072, 644);
             // 
             // tabPage2
             // 
@@ -189,9 +195,6 @@
             this.tabPage5.Size = new System.Drawing.Size(1012, 644);
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
-            // btn_home
-            // 
-            // 
             // lbl_titulo
             // 
             this.lbl_titulo.Size = new System.Drawing.Size(145, 37);
@@ -202,6 +205,7 @@
             this.panel_menu.Controls.Add(this.radioButton3);
             this.panel_menu.Controls.Add(this.radioButton2);
             this.panel_menu.Controls.Add(this.radioButton1);
+            this.panel_menu.Size = new System.Drawing.Size(250, 661);
             this.panel_menu.Controls.SetChildIndex(this.rb_registrar, 0);
             this.panel_menu.Controls.SetChildIndex(this.rb_modificar, 0);
             this.panel_menu.Controls.SetChildIndex(this.rb_buscar, 0);
@@ -216,7 +220,8 @@
             this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.rb_buscar.Location = new System.Drawing.Point(1, 210);
-            this.rb_buscar.Text = "Reporte Asistencia";
+            this.rb_buscar.Size = new System.Drawing.Size(250, 104);
+            this.rb_buscar.Text = "Asistencia";
             this.rb_buscar.CheckedChanged += new System.EventHandler(this.rb_buscar_CheckedChanged);
             // 
             // rb_modificar
@@ -226,7 +231,8 @@
             this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.rb_modificar.Location = new System.Drawing.Point(1, 105);
-            this.rb_modificar.Text = "Reporte Retardos";
+            this.rb_modificar.Size = new System.Drawing.Size(250, 104);
+            this.rb_modificar.Text = "Retardos";
             this.rb_modificar.CheckedChanged += new System.EventHandler(this.rb_modificar_CheckedChanged);
             // 
             // rb_registrar
@@ -235,7 +241,8 @@
             this.rb_registrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.rb_registrar.Text = "Reporte por sucursal";
+            this.rb_registrar.Size = new System.Drawing.Size(250, 104);
+            this.rb_registrar.Text = "Por sucursal";
             this.rb_registrar.CheckedChanged += new System.EventHandler(this.rb_registrar_CheckedChanged);
             // 
             // crystalReportViewer1
@@ -249,7 +256,7 @@
             this.crystalReportViewer1.ShowCloseButton = false;
             this.crystalReportViewer1.ShowParameterPanelButton = false;
             this.crystalReportViewer1.ShowRefreshButton = false;
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1006, 590);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1066, 590);
             this.crystalReportViewer1.TabIndex = 0;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -512,10 +519,10 @@
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.radioButton1.Location = new System.Drawing.Point(1, 315);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(299, 104);
+            this.radioButton1.Size = new System.Drawing.Size(250, 104);
             this.radioButton1.TabIndex = 3;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Retardos x empleado";
+            this.radioButton1.Text = "Por Empleado";
             this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.radioButton1.UseVisualStyleBackColor = false;
@@ -714,10 +721,10 @@
             this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.radioButton2.Location = new System.Drawing.Point(1, 420);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(299, 104);
+            this.radioButton2.Size = new System.Drawing.Size(250, 104);
             this.radioButton2.TabIndex = 4;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Reporte x departamento";
+            this.radioButton2.Text = "Por Departamento";
             this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.radioButton2.UseVisualStyleBackColor = false;
@@ -738,10 +745,10 @@
             this.radioButton3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.radioButton3.Location = new System.Drawing.Point(1, 525);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(299, 104);
+            this.radioButton3.Size = new System.Drawing.Size(250, 104);
             this.radioButton3.TabIndex = 5;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Empleados Checador";
+            this.radioButton3.Text = "Empleados Checando";
             this.radioButton3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.radioButton3.UseVisualStyleBackColor = false;
@@ -843,6 +850,7 @@
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             this.panel_menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sucursalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).EndInit();

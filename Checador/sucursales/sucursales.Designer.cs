@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sucursales));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -93,6 +94,7 @@
             this.tabPage3.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             this.panel_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sucursal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaSucursalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).BeginInit();
@@ -131,7 +133,12 @@
             // 
             // tabControlBase
             // 
+<<<<<<< HEAD
+            this.tabControlBase.Location = new System.Drawing.Point(309, 70);
+            this.tabControlBase.Multiline = true;
+=======
             this.tabControlBase.Location = new System.Drawing.Point(309, 63);
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             // 
             // tabPage1
             // 
@@ -165,7 +172,6 @@
             this.tabPage1.Controls.Add(this.label22);
             this.tabPage1.Controls.Add(this.label23);
             this.tabPage1.Text = "Registrar";
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabPage2
             // 
@@ -190,11 +196,12 @@
             // 
             // rb_buscar
             // 
+            this.rb_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.rb_buscar.FlatAppearance.BorderSize = 0;
             this.rb_buscar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.rb_buscar.Image = global::Checador.Properties.Resources.sucursal_buscar;
+            this.rb_buscar.Image = ((System.Drawing.Image)(resources.GetObject("rb_buscar.Image")));
             this.rb_buscar.Location = new System.Drawing.Point(0, 210);
             this.rb_buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.rb_buscar.CheckedChanged += new System.EventHandler(this.rb_buscar_CheckedChanged);
@@ -205,7 +212,7 @@
             this.rb_modificar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.rb_modificar.Image = global::Checador.Properties.Resources.sucursal_modificar;
+            this.rb_modificar.Image = ((System.Drawing.Image)(resources.GetObject("rb_modificar.Image")));
             this.rb_modificar.Location = new System.Drawing.Point(0, 105);
             this.rb_modificar.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.rb_modificar.CheckedChanged += new System.EventHandler(this.rb_modificar_CheckedChanged);
@@ -216,7 +223,7 @@
             this.rb_registrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.rb_registrar.Image = global::Checador.Properties.Resources.sucursal_registrar;
+            this.rb_registrar.Image = ((System.Drawing.Image)(resources.GetObject("rb_registrar.Image")));
             this.rb_registrar.Location = new System.Drawing.Point(0, 0);
             this.rb_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.rb_registrar.CheckedChanged += new System.EventHandler(this.rb_registrar_CheckedChanged);
@@ -252,6 +259,7 @@
             this.txt_domicilio_cp.Name = "txt_domicilio_cp";
             this.txt_domicilio_cp.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_cp.TabIndex = 9;
+            this.txt_domicilio_cp.TextChanged += new System.EventHandler(this.txt_domicilio_cp_TextChanged);
             this.txt_domicilio_cp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_cp_KeyPress);
             this.txt_domicilio_cp.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_cp_Validating);
             // 
@@ -264,6 +272,7 @@
             this.txt_domicilio_pais.Name = "txt_domicilio_pais";
             this.txt_domicilio_pais.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_pais.TabIndex = 13;
+            this.txt_domicilio_pais.TextChanged += new System.EventHandler(this.txt_domicilio_pais_TextChanged);
             this.txt_domicilio_pais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_pais_KeyPress);
             // 
             // txt_domicilio_estado
@@ -308,6 +317,7 @@
             this.txt_domicilio_colonia.Name = "txt_domicilio_colonia";
             this.txt_domicilio_colonia.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_colonia.TabIndex = 8;
+            this.txt_domicilio_colonia.TextChanged += new System.EventHandler(this.txt_domicilio_colonia_TextChanged);
             this.txt_domicilio_colonia.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_colonia_Validating);
             // 
             // label19
@@ -331,6 +341,7 @@
             this.txt_domicilio_num_int.Name = "txt_domicilio_num_int";
             this.txt_domicilio_num_int.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_num_int.TabIndex = 7;
+            this.txt_domicilio_num_int.TextChanged += new System.EventHandler(this.txt_domicilio_num_int_TextChanged);
             this.txt_domicilio_num_int.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_num_int_KeyPress);
             this.txt_domicilio_num_int.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_num_int_Validating);
             // 
@@ -343,6 +354,7 @@
             this.txt_domicilio_calle.Name = "txt_domicilio_calle";
             this.txt_domicilio_calle.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_calle.TabIndex = 5;
+            this.txt_domicilio_calle.TextChanged += new System.EventHandler(this.txt_domicilio_calle_TextChanged);
             this.txt_domicilio_calle.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_calle_Validating);
             // 
             // label16
@@ -409,6 +421,7 @@
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(100, 29);
             this.txt_id.TabIndex = 1;
+            this.txt_id.TextChanged += new System.EventHandler(this.txt_id_TextChanged);
             this.txt_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_KeyPress);
             this.txt_id.Leave += new System.EventHandler(this.txt_id_Leave);
             this.txt_id.Validating += new System.ComponentModel.CancelEventHandler(this.txt_id_Validating);
@@ -433,6 +446,7 @@
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(218, 29);
             this.txt_nombre.TabIndex = 2;
+            this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
             this.txt_nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_nombre_KeyPress);
             this.txt_nombre.Validating += new System.ComponentModel.CancelEventHandler(this.txt_nombre_Validating);
             // 
@@ -506,6 +520,7 @@
             // 
             // btn_registrar
             // 
+            this.btn_registrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_registrar.FlatAppearance.BorderSize = 0;
             this.btn_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
@@ -655,7 +670,7 @@
             this.label42.AutoSize = true;
             this.label42.BackColor = System.Drawing.Color.Transparent;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(56, 80);
+            this.label42.Location = new System.Drawing.Point(54, 80);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(84, 24);
             this.label42.TabIndex = 81;
@@ -666,7 +681,7 @@
             this.label43.AutoSize = true;
             this.label43.BackColor = System.Drawing.Color.Transparent;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(108, 47);
+            this.label43.Location = new System.Drawing.Point(106, 47);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(32, 24);
             this.label43.TabIndex = 82;
@@ -704,6 +719,7 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Estatus:";
             this.groupBox4.Visible = false;
+            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // rb_mod_inactivo
             // 
@@ -736,14 +752,19 @@
             this.txt_domicilio_num_ext.Name = "txt_domicilio_num_ext";
             this.txt_domicilio_num_ext.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_num_ext.TabIndex = 6;
+            this.txt_domicilio_num_ext.TextChanged += new System.EventHandler(this.txt_domicilio_num_ext_TextChanged);
             this.txt_domicilio_num_ext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_num_ext_KeyPress);
             this.txt_domicilio_num_ext.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_num_ext_Validating);
             // 
             // btn_modificar
             // 
+<<<<<<< HEAD
+            this.btn_modificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+=======
             this.btn_modificar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.btn_modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_modificar.Enabled = false;
             this.btn_modificar.FlatAppearance.BorderSize = 0;
@@ -782,7 +803,7 @@
             // 
             this.label84.AutoSize = true;
             this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label84.Location = new System.Drawing.Point(314, 246);
+            this.label84.Location = new System.Drawing.Point(309, 246);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(110, 24);
             this.label84.TabIndex = 97;
@@ -868,6 +889,7 @@
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             this.panel_menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sucursal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaSucursalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).EndInit();

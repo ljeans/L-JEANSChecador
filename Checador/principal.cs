@@ -47,22 +47,26 @@ namespace Checador
                 //cerrar
                 button2.Enabled = true;
                 //minimizar
-                button3.Enabled = true;
+                btn_minimizar.Enabled = true;
                 btn_cerrar.Visible = true;
                 btn_iniciar.Visible = false;
             }
            else if(Program.rol == "SUPERVISOR DE PERSONAL")
             {
                 Enabled = true;
-                btn_checador.Enabled = false;
+                btn_checador.Enabled = true;
                 btn_sucursal.Enabled = false;
                 btn_empleados.Enabled = false;
+<<<<<<< HEAD
+                btn_horarios.Enabled = true;
+=======
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
                  btn_reportes.Enabled = true;
                 btn_incidente.Enabled = true;
                 //cerrar
                 button2.Enabled = true;
                 //minimizar
-                button3.Enabled = true;
+                btn_minimizar.Enabled = true;
                 btn_cerrar.Visible = true;
                 btn_iniciar.Visible = false;
             }
@@ -78,7 +82,7 @@ namespace Checador
                 //cerrar
                 button2.Enabled = true;
                 //minimizar
-                button3.Enabled = true;
+                btn_minimizar.Enabled = true;
                 btn_cerrar.Enabled = true;
                 btn_cerrar.Visible = true;
                 btn_iniciar.Visible = false;
@@ -105,7 +109,7 @@ namespace Checador
             //cerrar
             button2.Enabled = true;
             //minimizar
-            button3.Enabled = true;
+            btn_minimizar.Enabled = true;
            
         }
 
@@ -128,6 +132,68 @@ namespace Checador
             string ipChecador = "20.20.0.15";
             int id_checador = 1;
             int puerto = 4370;
+
+            //************ACOMODAR FORMULARIO************
+
+            double porcentaje_ancho = (Convert.ToDouble(Width) / 1370);
+            double porcentaje_alto = (Convert.ToDouble(Height) / 766);
+
+
+            double proporcion_barrar_superior = Convert.ToDouble(Height) / Convert.ToDouble(panel_barra_superior.Height);
+            double proporcion_menu = Convert.ToDouble(Height) / Convert.ToDouble(Height);
+            panel_barra_superior.Height = Convert.ToInt32(Math.Round(Height / proporcion_barrar_superior, 0));
+
+            btn_minimizar.Top = 0;
+            button2.Top = 0;
+            button2.Left = this.Width - 41;
+            btn_minimizar.Left = this.Width - 83;
+            btn_iniciar_sesion.Left = Width - 246;
+            btn_cerrar_sesion.Left = Width - 261;
+            btn_iniciar_sesion.Top = 18;
+            btn_cerrar_sesion.Top = 18;
+
+            double posicionx = Convert.ToDouble(btn_checador.Location.X) * porcentaje_ancho;
+            double posiciony = Convert.ToDouble(btn_checador.Location.Y) * porcentaje_alto;
+            double ancho = btn_checador.Width * porcentaje_ancho;
+            double alto = btn_checador.Height * porcentaje_alto;
+
+            btn_checador.Left = Convert.ToInt32(posicionx);
+            btn_checador.Top = Convert.ToInt32(posiciony);
+            btn_checador.Width = Convert.ToInt32(ancho);
+            btn_checador.Height = Convert.ToInt32(alto);
+
+             posicionx = Convert.ToDouble(btn_sucursal.Location.X) * porcentaje_ancho;
+             posiciony = Convert.ToDouble(btn_sucursal.Location.Y) * porcentaje_alto;
+             btn_sucursal.Left = Convert.ToInt32(posicionx);
+             btn_sucursal.Top = Convert.ToInt32(posiciony);
+
+            posicionx = Convert.ToDouble(btn_empleados.Location.X) * porcentaje_ancho;
+            posiciony = Convert.ToDouble(btn_empleados.Location.Y) * porcentaje_alto;
+            btn_empleados.Left = Convert.ToInt32(posicionx);
+            btn_empleados.Top = Convert.ToInt32(posiciony);
+           
+
+            posicionx = 193 * porcentaje_ancho;
+            posiciony = 437 * porcentaje_alto;
+            btn_horarios.Left = Convert.ToInt32(posicionx);
+            btn_horarios.Top = Convert.ToInt32(posiciony);
+           
+
+            posicionx = 585 * porcentaje_ancho;
+            posiciony = 437 * porcentaje_alto;
+            btn_reportes.Left = Convert.ToInt32(posicionx);
+            btn_reportes.Top = Convert.ToInt32(posiciony);
+        
+
+            posicionx = 978 * porcentaje_ancho;
+            posiciony = 437 * porcentaje_alto;
+            btn_incidente.Left = Convert.ToInt32(posicionx);
+            btn_incidente.Top = Convert.ToInt32(posiciony);
+         
+           
+
+            //*********************************************
+
 
             //OBTIENE TODOS LOS CHECADORES ACTIVOS Y LOS CONECTA
             dtChecadores = Clase_Checador.Obtener_Checadores_Activos();

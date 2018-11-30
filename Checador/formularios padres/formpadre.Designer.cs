@@ -216,11 +216,15 @@
             this.panel_barra_sup.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_barra_sup.Location = new System.Drawing.Point(0, 0);
             this.panel_barra_sup.Name = "panel_barra_sup";
-            this.panel_barra_sup.Size = new System.Drawing.Size(1362, 79);
+            this.panel_barra_sup.Size = new System.Drawing.Size(1362, 80);
             this.panel_barra_sup.TabIndex = 12;
             // 
             // btn_checador
             // 
+<<<<<<< HEAD
+            this.btn_checador.AutoSize = true;
+=======
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.btn_checador.BackColor = System.Drawing.Color.Transparent;
             this.btn_checador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_checador.FlatAppearance.BorderSize = 0;
@@ -232,13 +236,21 @@
             this.btn_checador.Image = global::Checador.Properties.Resources.homo_gray;
             this.btn_checador.Location = new System.Drawing.Point(0, 0);
             this.btn_checador.Name = "btn_checador";
+<<<<<<< HEAD
+            this.btn_checador.Size = new System.Drawing.Size(81, 81);
+=======
             this.btn_checador.Size = new System.Drawing.Size(79, 79);
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.btn_checador.TabIndex = 20;
             this.btn_checador.UseVisualStyleBackColor = false;
             this.btn_checador.Click += new System.EventHandler(this.btn_checador_Click);
             // 
             // pictureBox2
             // 
+<<<<<<< HEAD
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+=======
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.pictureBox2.Image = global::Checador.Properties.Resources.logos_nuevos_1;
             this.pictureBox2.Location = new System.Drawing.Point(1147, 18);
             this.pictureBox2.Name = "pictureBox2";
@@ -249,6 +261,7 @@
             // 
             // lbl_titulo
             // 
+            this.lbl_titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo.ForeColor = System.Drawing.Color.GhostWhite;
@@ -266,13 +279,14 @@
             this.panel_menu.Controls.Add(this.rb_modificar);
             this.panel_menu.Controls.Add(this.rb_registrar);
             this.panel_menu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel_menu.Location = new System.Drawing.Point(0, 79);
+            this.panel_menu.Location = new System.Drawing.Point(0, 80);
             this.panel_menu.Name = "panel_menu";
-            this.panel_menu.Size = new System.Drawing.Size(299, 662);
+            this.panel_menu.Size = new System.Drawing.Size(299, 661);
             this.panel_menu.TabIndex = 13;
             // 
             // rb_buscar
             // 
+            this.rb_buscar.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rb_buscar.Appearance = System.Windows.Forms.Appearance.Button;
             this.rb_buscar.BackColor = System.Drawing.Color.Transparent;
             this.rb_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -284,7 +298,7 @@
             this.rb_buscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_buscar.ForeColor = System.Drawing.Color.White;
             this.rb_buscar.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.rb_buscar.Location = new System.Drawing.Point(1, 208);
+            this.rb_buscar.Location = new System.Drawing.Point(1, 207);
             this.rb_buscar.Name = "rb_buscar";
             this.rb_buscar.Size = new System.Drawing.Size(299, 104);
             this.rb_buscar.TabIndex = 2;
@@ -379,11 +393,11 @@
         public System.Windows.Forms.TabPage tabPage5;
         public System.Windows.Forms.Panel panel_barra_sup;
         public System.Windows.Forms.Label lbl_titulo;
+        private System.Windows.Forms.Button btn_checador;
         public System.Windows.Forms.Panel panel_menu;
         public System.Windows.Forms.RadioButton rb_buscar;
         public System.Windows.Forms.RadioButton rb_modificar;
         public System.Windows.Forms.RadioButton rb_registrar;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btn_checador;
+        public System.Windows.Forms.PictureBox pictureBox2;
     }
 }

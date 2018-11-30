@@ -29,10 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.label15 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -239,8 +246,13 @@
             this.tabPage4.Controls.Add(this.cbx_empleado);
             this.tabPage4.Controls.Add(this.label11);
             // 
+            // panel_barra_sup
+            // 
+            this.panel_barra_sup.Size = new System.Drawing.Size(1362, 80);
+            // 
             // lbl_titulo
             // 
+            this.lbl_titulo.Location = new System.Drawing.Point(636, 23);
             this.lbl_titulo.Size = new System.Drawing.Size(139, 37);
             this.lbl_titulo.Text = "Horarios";
             // 
@@ -254,6 +266,7 @@
             // 
             // rb_buscar
             // 
+            this.rb_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.rb_buscar.FlatAppearance.BorderSize = 0;
             this.rb_buscar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
@@ -429,7 +442,7 @@
             this.dtp_hora_entrada.Location = new System.Drawing.Point(175, 40);
             this.dtp_hora_entrada.Name = "dtp_hora_entrada";
             this.dtp_hora_entrada.ShowUpDown = true;
-            this.dtp_hora_entrada.Size = new System.Drawing.Size(75, 29);
+            this.dtp_hora_entrada.Size = new System.Drawing.Size(85, 29);
             this.dtp_hora_entrada.TabIndex = 5;
             this.dtp_hora_entrada.Value = new System.DateTime(2018, 9, 17, 9, 0, 0, 0);
             // 
@@ -441,7 +454,7 @@
             this.dtp_hora_salida.Location = new System.Drawing.Point(496, 40);
             this.dtp_hora_salida.Name = "dtp_hora_salida";
             this.dtp_hora_salida.ShowUpDown = true;
-            this.dtp_hora_salida.Size = new System.Drawing.Size(75, 29);
+            this.dtp_hora_salida.Size = new System.Drawing.Size(85, 29);
             this.dtp_hora_salida.TabIndex = 6;
             this.dtp_hora_salida.Value = new System.DateTime(2018, 9, 17, 18, 0, 0, 0);
             // 
@@ -568,12 +581,27 @@
             this.dgv_horarios.AllowUserToDeleteRows = false;
             this.dgv_horarios.AllowUserToResizeColumns = false;
             this.dgv_horarios.AllowUserToResizeRows = false;
+<<<<<<< HEAD
+            dataGridViewCellStyle49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            this.dgv_horarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle49;
+=======
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_horarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.dgv_horarios.AutoGenerateColumns = false;
             this.dgv_horarios.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_horarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_horarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+<<<<<<< HEAD
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle50.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle50;
+=======
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -582,6 +610,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.dgv_horarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_horarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -595,6 +624,16 @@
             this.dataGridViewTextBoxColumn9,
             this.lunes});
             this.dgv_horarios.DataSource = this.vistaHorarioBindingSource;
+<<<<<<< HEAD
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_horarios.DefaultCellStyle = dataGridViewCellStyle51;
+=======
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -603,12 +642,23 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_horarios.DefaultCellStyle = dataGridViewCellStyle3;
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.dgv_horarios.EnableHeadersVisualStyles = false;
             this.dgv_horarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_horarios.Location = new System.Drawing.Point(21, 145);
             this.dgv_horarios.MultiSelect = false;
             this.dgv_horarios.Name = "dgv_horarios";
             this.dgv_horarios.ReadOnly = true;
+<<<<<<< HEAD
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle52.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle52.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_horarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle52;
+=======
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -617,6 +667,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_horarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.dgv_horarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_horarios.Size = new System.Drawing.Size(966, 390);
             this.dgv_horarios.TabIndex = 87;
@@ -773,6 +824,7 @@
             this.rb_asignar_horarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rb_asignar_horarios.ForeColor = System.Drawing.Color.White;
             this.rb_asignar_horarios.Image = global::Checador.Properties.Resources.horarios_registrar;
+            this.rb_asignar_horarios.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.rb_asignar_horarios.Location = new System.Drawing.Point(0, 315);
             this.rb_asignar_horarios.Name = "rb_asignar_horarios";
             this.rb_asignar_horarios.Size = new System.Drawing.Size(299, 104);
@@ -911,9 +963,9 @@
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(652, 28);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(143, 20);
+            this.label26.Size = new System.Drawing.Size(118, 20);
             this.label26.TabIndex = 146;
-            this.label26.Text = "Regreso descanso";
+            this.label26.Text = "Regreso comer";
             // 
             // label25
             // 
@@ -921,9 +973,9 @@
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.Location = new System.Drawing.Point(509, 28);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(126, 20);
+            this.label25.Size = new System.Drawing.Size(101, 20);
             this.label25.TabIndex = 145;
-            this.label25.Text = "Salida descanso";
+            this.label25.Text = "Salida comer";
             // 
             // label24
             // 
@@ -1398,7 +1450,7 @@
             this.dtp_hora_entrada_desc.Location = new System.Drawing.Point(256, 88);
             this.dtp_hora_entrada_desc.Name = "dtp_hora_entrada_desc";
             this.dtp_hora_entrada_desc.ShowUpDown = true;
-            this.dtp_hora_entrada_desc.Size = new System.Drawing.Size(75, 29);
+            this.dtp_hora_entrada_desc.Size = new System.Drawing.Size(85, 29);
             this.dtp_hora_entrada_desc.TabIndex = 8;
             this.dtp_hora_entrada_desc.Value = new System.DateTime(2018, 10, 5, 13, 0, 0, 0);
             // 
@@ -1410,7 +1462,7 @@
             this.dtp_hora_salida_desc.Location = new System.Drawing.Point(256, 44);
             this.dtp_hora_salida_desc.Name = "dtp_hora_salida_desc";
             this.dtp_hora_salida_desc.ShowUpDown = true;
-            this.dtp_hora_salida_desc.Size = new System.Drawing.Size(75, 29);
+            this.dtp_hora_salida_desc.Size = new System.Drawing.Size(85, 29);
             this.dtp_hora_salida_desc.TabIndex = 7;
             this.dtp_hora_salida_desc.Value = new System.DateTime(2018, 10, 5, 13, 0, 0, 0);
             // 

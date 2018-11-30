@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(incidentes));
+=======
+>>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -75,6 +79,7 @@
             this.tabPage2.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             this.panel_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleados_recalcular)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).BeginInit();
@@ -171,7 +176,7 @@
             this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.rb_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_modificar.Image = global::Checador.Properties.Resources.tienda_chequeos;
+            this.rb_modificar.Image = ((System.Drawing.Image)(resources.GetObject("rb_modificar.Image")));
             this.rb_modificar.Location = new System.Drawing.Point(0, 105);
             this.rb_modificar.Text = "Registar chequeos";
             this.rb_modificar.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
@@ -184,7 +189,7 @@
             this.rb_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rb_registrar.Image = global::Checador.Properties.Resources.calcular_horas;
+            this.rb_registrar.Image = ((System.Drawing.Image)(resources.GetObject("rb_registrar.Image")));
             this.rb_registrar.Location = new System.Drawing.Point(0, 0);
             this.rb_registrar.Text = "Recalcular Horas";
             this.rb_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
@@ -594,6 +599,7 @@
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             this.panel_menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleados_recalcular)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).EndInit();
