@@ -18,6 +18,7 @@ namespace Checador
         public int viernes { get; set; }
         public int sabado { get; set; }
         public int domingo { get; set; }
+
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
 
         void vaciar_instancia_mensaje(Object sender, EventArgs e)
@@ -75,8 +76,10 @@ namespace Checador
                         comand.ExecuteNonQuery();
                         con2.Close();
                     }
-
-                    MessageBox.Show("Horario asignado al empleado = " + id_empleado);
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Horario asignado al empleado = " + id_empleado;
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
 
 
                 }

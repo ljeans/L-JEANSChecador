@@ -20,6 +20,7 @@ namespace Checador.empleados
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
         formularios_padres.Mensajes confirmacion2 = new formularios_padres.Mensajes();
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+        formularios_padres.mensaje_error frm_error = new formularios_padres.mensaje_error();
         validacion validar = new validacion();
         //SE CREA LA INSTANCIA DE LA CLASE CHECADOR
         ClaseChecador clase_checador = new ClaseChecador();
@@ -41,109 +42,127 @@ namespace Checador.empleados
 
         private void empleados_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.horarios' Puede moverla o quitarla según sea necesario.
-            this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
-            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Empleados' Puede moverla o quitarla según sea necesario.
-            this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
-            // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador1.sucursal' Puede moverla o quitarla según sea necesario.
-            this.sucursalTableAdapter.Fill(this.dataSet_Checador1.sucursal);
-
-            //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
-            CheckForIllegalCrossThreadCalls = false;
-            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-            Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
-            hilo_secundario.IsBackground = true;
-            hilo_secundario.Start();
-            //cargarID();
-            groupBox4.Visible = false;
-            groupBox4.Enabled = false;
-            cbx_privilegio.SelectedIndex = 0;
-
-            //*************   HACER FORMULARIO RESPONSIVO   *****************
-            double porcentaje_ancho = (Convert.ToDouble(Width) / 1362);
-            double porcentaje_alto = (Convert.ToDouble(Height) / 741);
-
-            foreach (Control x in this.Controls)
+            try
             {
-                if (x.HasChildren)
-                {
-                    foreach (Control y in x.Controls)
-                    {
-                        if (y.HasChildren)
-                        {
-                            foreach (Control z in y.Controls)
-                            {   if (z.HasChildren)
-                                {
-                                    foreach (Control w in z.Controls)
-                                    {
-                                        if (w is PictureBox | w is Button)
-                                        {
-                                            double posicionx = Convert.ToDouble(w.Location.X) * porcentaje_ancho;
-                                            double posiciony = Convert.ToDouble(w.Location.Y) * porcentaje_alto;
-                                            double ancho = w.Width * porcentaje_ancho;
-                                            double alto = w.Height * porcentaje_alto;
+                // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.horarios' Puede moverla o quitarla según sea necesario.
+                this.horariosTableAdapter.Fill(this.dataSet_Checador.horarios);
+                // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Empleados' Puede moverla o quitarla según sea necesario.
+                this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador1.sucursal' Puede moverla o quitarla según sea necesario.
+                this.sucursalTableAdapter.Fill(this.dataSet_Checador1.sucursal);
 
-                                            w.Left = Convert.ToInt32(posicionx);
-                                            w.Top = Convert.ToInt32(posiciony);
-                                            w.Width = Convert.ToInt32(ancho);
-                                            w.Height = Convert.ToInt32(alto);
+                //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
+                CheckForIllegalCrossThreadCalls = false;
+                //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+                Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
+                hilo_secundario.IsBackground = true;
+                hilo_secundario.Start();
+                //cargarID();
+                groupBox4.Visible = false;
+                groupBox4.Enabled = false;
+                cbx_privilegio.SelectedIndex = 0;
+
+                //*************   HACER FORMULARIO RESPONSIVO   *****************
+                double porcentaje_ancho = (Convert.ToDouble(Width) / 1362);
+                double porcentaje_alto = (Convert.ToDouble(Height) / 741);
+
+                foreach (Control x in this.Controls)
+                {
+                    if (x.HasChildren)
+                    {
+                        foreach (Control y in x.Controls)
+                        {
+                            if (y.HasChildren)
+                            {
+                                foreach (Control z in y.Controls)
+                                {
+                                    if (z.HasChildren)
+                                    {
+                                        foreach (Control w in z.Controls)
+                                        {
+                                            if (w is TextBox | w is Label | w is Button | w is MaskedTextBox | w is DateTimePicker | w is ComboBox | w is RadioButton | w is PictureBox | w is GroupBox)
+                                            {
+                                                if (w is Label)
+                                                {
+                                                    w.Font = new Font("Microsoft Sans Serif", 10);
+                                                }
+                                                w.Font = new Font("Microsoft Sans Serif", 11);
+                                                double posicionx = Convert.ToDouble(w.Location.X) * porcentaje_ancho;
+                                                double posiciony = Convert.ToDouble(w.Location.Y) * porcentaje_alto;
+                                                double ancho = w.Width * porcentaje_ancho;
+                                                double alto = w.Height * porcentaje_alto;
+
+                                                w.Left = Convert.ToInt32(posicionx);
+                                                w.Top = Convert.ToInt32(posiciony);
+                                                w.Width = Convert.ToInt32(ancho);
+                                                w.Height = Convert.ToInt32(alto);
+                                            }
                                         }
                                     }
-                                }
-                                if (z is TextBox | z is Label | z is Button | z is MaskedTextBox | z is DateTimePicker | z is ComboBox | z is RadioButton | z is PictureBox | z is GroupBox | z is DataGridView)
-                                {
-
-                                    if ((z is Label & porcentaje_ancho <= 0.8) | (z is Button & porcentaje_ancho <= 0.8)| (z is ComboBox & porcentaje_ancho <= 0.8))
+                                    if (z is TextBox | z is Label | z is Button | z is MaskedTextBox | z is DateTimePicker | z is ComboBox | z is RadioButton | z is PictureBox | z is GroupBox | z is DataGridView)
                                     {
-                                        z.Font = new Font("Microsoft Sans Serif", 11);
+
+                                        if ((z is Label & porcentaje_ancho <= 0.8) | (z is Button & porcentaje_ancho <= 0.8) | (z is ComboBox & porcentaje_ancho <= 0.8))
+                                        {
+                                            z.Font = new Font("Microsoft Sans Serif", 11);
+                                        }
+
+                                        double posicionx = Convert.ToDouble(z.Location.X) * porcentaje_ancho;
+                                        double posiciony = Convert.ToDouble(z.Location.Y) * porcentaje_alto;
+                                        double ancho = z.Width * porcentaje_ancho;
+                                        double alto = z.Height * porcentaje_alto;
+
+                                        z.Left = Convert.ToInt32(posicionx);
+                                        z.Top = Convert.ToInt32(posiciony);
+                                        z.Width = Convert.ToInt32(ancho);
+                                        z.Height = Convert.ToInt32(alto);
                                     }
-
-                                    double posicionx = Convert.ToDouble(z.Location.X) * porcentaje_ancho;
-                                    double posiciony = Convert.ToDouble(z.Location.Y) * porcentaje_alto;
-                                    double ancho = z.Width * porcentaje_ancho;
-                                    double alto = z.Height * porcentaje_alto;
-
-                                    z.Left = Convert.ToInt32(posicionx);
-                                    z.Top = Convert.ToInt32(posiciony);
-                                    z.Width = Convert.ToInt32(ancho);
-                                    z.Height = Convert.ToInt32(alto);
                                 }
                             }
-                        }
-                        if (y is TextBox | y is Label | y is Button | y is MaskedTextBox | y is DateTimePicker | y is ComboBox | y is RadioButton | y is Panel | y is TabControl)
-                        {
-                            if ((y is Button & porcentaje_ancho <= 0.8) | (y is RadioButton & porcentaje_ancho <= 0.8))
+                            if (y is TextBox | y is Label | y is Button | y is MaskedTextBox | y is DateTimePicker | y is ComboBox | y is RadioButton | y is Panel | y is TabControl)
                             {
-                                y.Font = new Font("Microsoft Sans Serif", 12);
+                                if ((y is Button & porcentaje_ancho <= 0.8) | (y is RadioButton & porcentaje_ancho <= 0.8))
+                                {
+                                    y.Font = new Font("Microsoft Sans Serif", 12);
+                                }
+
+                                double posicionx = Convert.ToDouble(y.Location.X) * porcentaje_ancho;
+                                double posiciony = Convert.ToDouble(y.Location.Y) * porcentaje_alto;
+                                double ancho = y.Width * porcentaje_ancho;
+                                double alto = y.Height * porcentaje_alto;
+
+                                y.Left = Convert.ToInt32(posicionx);
+                                y.Top = Convert.ToInt32(posiciony);
+                                y.Width = Convert.ToInt32(ancho);
+                                y.Height = Convert.ToInt32(alto);
                             }
-
-                            double posicionx = Convert.ToDouble(y.Location.X) * porcentaje_ancho;
-                            double posiciony = Convert.ToDouble(y.Location.Y) * porcentaje_alto;
-                            double ancho = y.Width * porcentaje_ancho;
-                            double alto = y.Height * porcentaje_alto;
-
-                            y.Left = Convert.ToInt32(posicionx);
-                            y.Top = Convert.ToInt32(posiciony);
-                            y.Width = Convert.ToInt32(ancho);
-                            y.Height = Convert.ToInt32(alto);
                         }
                     }
-                }
-                if (x is TextBox | x is Label | x is Button | x is MaskedTextBox | x is DateTimePicker | x is ComboBox | x is RadioButton | x is Panel | x is TabControl )
-                {
-                    double posicionx = Convert.ToDouble(x.Location.X) * porcentaje_ancho;
-                    double posiciony = Convert.ToDouble(x.Location.Y) * porcentaje_alto;
-                    double ancho = x.Width * porcentaje_ancho;
-                    double alto = x.Height * porcentaje_alto;
+                    if (x is TextBox | x is Label | x is Button | x is MaskedTextBox | x is DateTimePicker | x is ComboBox | x is RadioButton | x is Panel | x is TabControl)
+                    {
+                        double posicionx = Convert.ToDouble(x.Location.X) * porcentaje_ancho;
+                        double posiciony = Convert.ToDouble(x.Location.Y) * porcentaje_alto;
+                        double ancho = x.Width * porcentaje_ancho;
+                        double alto = x.Height * porcentaje_alto;
 
-                    x.Left = Convert.ToInt32(posicionx);
-                    x.Top = Convert.ToInt32(posiciony);
-                    x.Width = Convert.ToInt32(ancho);
-                    x.Height = Convert.ToInt32(alto);
+                        x.Left = Convert.ToInt32(posicionx);
+                        x.Top = Convert.ToInt32(posiciony);
+                        x.Width = Convert.ToInt32(ancho);
+                        x.Height = Convert.ToInt32(alto);
+                    }
                 }
+                //********************************************************************************************
             }
-            //********************************************************************************************
-
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }            
 
         public void cargarID()
@@ -195,8 +214,6 @@ namespace Checador.empleados
             btn_modificar.Visible = false;
             btn_registrar.Visible = true;
             btn_registrar.Enabled = true;
-            
-
         }
 
         private void btn_home_Click(object sender, EventArgs e)
@@ -350,17 +367,7 @@ namespace Checador.empleados
                     {
                         Crear_Usuario_Checador(clase_checador.id, Convert.ToString(Empleado.id), Empleado.nombre, Empleado.password, Empleado.id_privilegio, 0);
                     }
-<<<<<<< HEAD
-                confirmacion2 = new formularios_padres.Mensajes();
-                confirmacion2.lbl_mensaje.Text = "Desea registrar huella al empleado?";
-                confirmacion2.FormClosed += new FormClosedEventHandler(reg_huella);
-                confirmacion2.Show();
-                Limpiar();
-                //CAMBIAR EL CURSOR
-                this.UseWaitCursor = false;
-=======
-
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
+                    confirmacion2 = new formularios_padres.Mensajes();
                     //FUNCION PAR RECARGAR EL DATAGRID
                     this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
 
@@ -378,9 +385,7 @@ namespace Checador.empleados
                 {
                     //CAMBIAR EL CURSOR
                     this.UseWaitCursor = false;
-<<<<<<< HEAD
-                } 
-=======
+                
                     mensaje = new formularios_padres.mensaje_info();
                     mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
                     mensaje.lbl_info2.Text = "Verifique la conexión.";
@@ -397,13 +402,16 @@ namespace Checador.empleados
                     mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                     mensaje.ShowDialog();
                 }
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             }
             catch (Exception ex)
             {
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
-                MessageBox.Show(ex.ToString());
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -459,7 +467,13 @@ namespace Checador.empleados
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -480,7 +494,13 @@ namespace Checador.empleados
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -599,7 +619,13 @@ namespace Checador.empleados
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -633,80 +659,90 @@ namespace Checador.empleados
         {
             try
             {
-                txt_id.Enabled = false;
-                Empleado.id = Convert.ToInt32(txt_id_a_modificar.Text);
-                if (Empleado.verificar_existencia(Empleado.id))
+                if (txt_id_a_modificar.Text != "")
                 {
-                    tabControlBase.SelectedTab = tabPage1;
-                    txt_curp.Focus();
-                    btn_modificar.Enabled = true;
-                    btn_modificar.Visible = true;
-                    btn_registrar.Visible = false;
-                    btn_registrar.Enabled = false;
-                    txt_id.Text = Empleado.id.ToString();
-                    txt_nombre.Text = Empleado.nombre;
-                    txt_apellido_materno.Text = Empleado.apellido_mat;
-                    txt_apellido_paterno.Text = Empleado.apellido_pat;
-                    txt_banco.Text = Empleado.banco;
-                    txt_contra.Text = Empleado.password;
-                    txt_cuenta.Text = Empleado.cuenta_bancaria;
-                    txt_curp.Text = Empleado.CURP;
-                    txt_departamento.Text = Empleado.departamento;
-                    txt_despensa.Text = Empleado.tarjeta_despensa;
-                    txt_dias_aguinaldo.Text = Empleado.dias_aguinaldo.ToString();
-                    txt_dias_vacaciones.Text = Empleado.dias_vacaciones.ToString();
-                    txt_domicilio_calle.Text = Empleado.calle;
-                    txt_domicilio_colonia.Text = Empleado.colonia;
-                    txt_domicilio_cp.Text = Empleado.codigo_postal;
-                    txt_domicilio_estado.Text = Empleado.estado;
-                    txt_domicilio_municipio.Text = Empleado.municipio;
-                    txt_domicilio_num_ext.Text = Empleado.num_ext;
-                    txt_domicilio_num_int.Text = Empleado.num_int;
-                    txt_domicilio_municipio.Text = Empleado.municipio;
-                    txt_domicilio_pais.Text = Empleado.pais;
-                    txt_domicilio_pob.Text = Empleado.poblacion;
-                    txt_edenred.Text = Empleado.clave_edenred;
-                    txt_email.Text = Empleado.email;
-                    txt_nombre.Text = Empleado.nombre;
-                    txt_nss.Text = Empleado.NSS;
-                    txt_observaciones.Text = Empleado.observaciones;
-                    txt_periodicidad_pago.Text = Empleado.periodicidad_pago;
-                    txt_puesto.Text = Empleado.puesto;
-                    txt_rfc.Text = Empleado.RFC;
-                    txt_riesgo_puesto.Text = Empleado.riesgo_puesto;
-                    txt_sueldo_diario.Text = Empleado.sueldo_diario.ToString();
-                    txt_sueldo_integrado.Text = Empleado.sueldo_diario_integrado.ToString();
-                    txt_sueldo_quincenal.Text = Empleado.sueldo_base_quincenal.ToString();
-                    txt_telefono.Text = Empleado.telefono.ToString();
-                    txt_tipo_contrato.Text = Empleado.tipo_contrato;
-                    txt_tipo_salario.Text = Empleado.tipo_salario;
-                    dtp_fec_alt.Text = Empleado.fecha_alta.ToString();
-                    cbx_sucursal.SelectedValue = Empleado.id_sucursal;
-                    sucurzal = Empleado.id_sucursal;
+                    txt_id.Enabled = false;
+                    Empleado.id = Convert.ToInt32(txt_id_a_modificar.Text);
+                    if (Empleado.verificar_existencia(Empleado.id))
+                    {
+                        tabControlBase.SelectedTab = tabPage1;
+                        txt_curp.Focus();
+                        btn_modificar.Enabled = true;
+                        btn_modificar.Visible = true;
+                        btn_registrar.Visible = false;
+                        btn_registrar.Enabled = false;
+                        txt_id.Text = Empleado.id.ToString();
+                        txt_nombre.Text = Empleado.nombre;
+                        txt_apellido_materno.Text = Empleado.apellido_mat;
+                        txt_apellido_paterno.Text = Empleado.apellido_pat;
+                        txt_banco.Text = Empleado.banco;
+                        txt_contra.Text = Empleado.password;
+                        txt_cuenta.Text = Empleado.cuenta_bancaria;
+                        txt_curp.Text = Empleado.CURP;
+                        txt_departamento.Text = Empleado.departamento;
+                        txt_despensa.Text = Empleado.tarjeta_despensa;
+                        txt_dias_aguinaldo.Text = Empleado.dias_aguinaldo.ToString();
+                        txt_dias_vacaciones.Text = Empleado.dias_vacaciones.ToString();
+                        txt_domicilio_calle.Text = Empleado.calle;
+                        txt_domicilio_colonia.Text = Empleado.colonia;
+                        txt_domicilio_cp.Text = Empleado.codigo_postal;
+                        txt_domicilio_estado.Text = Empleado.estado;
+                        txt_domicilio_municipio.Text = Empleado.municipio;
+                        txt_domicilio_num_ext.Text = Empleado.num_ext;
+                        txt_domicilio_num_int.Text = Empleado.num_int;
+                        txt_domicilio_municipio.Text = Empleado.municipio;
+                        txt_domicilio_pais.Text = Empleado.pais;
+                        txt_domicilio_pob.Text = Empleado.poblacion;
+                        txt_edenred.Text = Empleado.clave_edenred;
+                        txt_email.Text = Empleado.email;
+                        txt_nombre.Text = Empleado.nombre;
+                        txt_nss.Text = Empleado.NSS;
+                        txt_observaciones.Text = Empleado.observaciones;
+                        txt_periodicidad_pago.Text = Empleado.periodicidad_pago;
+                        txt_puesto.Text = Empleado.puesto;
+                        txt_rfc.Text = Empleado.RFC;
+                        txt_riesgo_puesto.Text = Empleado.riesgo_puesto;
+                        txt_sueldo_diario.Text = Empleado.sueldo_diario.ToString();
+                        txt_sueldo_integrado.Text = Empleado.sueldo_diario_integrado.ToString();
+                        txt_sueldo_quincenal.Text = Empleado.sueldo_base_quincenal.ToString();
+                        txt_telefono.Text = Empleado.telefono.ToString();
+                        txt_tipo_contrato.Text = Empleado.tipo_contrato;
+                        txt_tipo_salario.Text = Empleado.tipo_salario;
+                        dtp_fec_alt.Text = Empleado.fecha_alta.ToString();
+                        cbx_sucursal.SelectedValue = Empleado.id_sucursal;
+                        sucurzal = Empleado.id_sucursal;
 
-                    if (Empleado.id_privilegio == 0)
-                    {
-                        cbx_privilegio.SelectedIndex = 0;
-                    }
-                    else if (Empleado.id_privilegio == 3)
-                    {
-                        cbx_privilegio.SelectedIndex = 1;
-                    }
+                        if (Empleado.id_privilegio == 0)
+                        {
+                            cbx_privilegio.SelectedIndex = 0;
+                        }
+                        else if (Empleado.id_privilegio == 3)
+                        {
+                            cbx_privilegio.SelectedIndex = 1;
+                        }
 
-                    if (Empleado.estatus == "A")
-                    {
-                        rb_mod_activo.Checked = true;
+                        if (Empleado.estatus == "A")
+                        {
+                            rb_mod_activo.Checked = true;
+                        }
+                        else
+                        {
+                            rb_mod_inactivo.Checked = true;
+                        }
                     }
                     else
                     {
-                        rb_mod_inactivo.Checked = true;
+                        mensaje = new formularios_padres.mensaje_info();
+                        mensaje.lbl_info.Text = "Empleado no registrado.";
+                        mensaje.lbl_info2.Text = "Intente de nuevo.";
+                        mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                        mensaje.ShowDialog();
                     }
                 }
                 else
                 {
                     mensaje = new formularios_padres.mensaje_info();
-                    mensaje.lbl_info.Text = "Empleado no registrado.";
-                    mensaje.lbl_info2.Text = "Intente de nuevo.";
+                    mensaje.lbl_info.Text = "No ha ingresado el identificador.";
                     mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                     mensaje.ShowDialog();
                 }
@@ -736,10 +772,13 @@ namespace Checador.empleados
             }
             catch (Exception ex)
             {
-                mensaje = new formularios_padres.mensaje_info();
-                mensaje.lbl_info.Text = "No ha ingresado el identificador.";
-                mensaje.FormClosed += new FormClosedEventHandler(responder);
-                mensaje.ShowDialog();
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
             
         }
@@ -757,7 +796,13 @@ namespace Checador.empleados
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -850,7 +895,11 @@ namespace Checador.empleados
             {
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
-                MessageBox.Show(ex.ToString());
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -858,11 +907,8 @@ namespace Checador.empleados
         {
             try
             {
-<<<<<<< HEAD
-=======
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = true;
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
                 Enabled = true;
                 respuesta = confirmacion2.respuesta;
                 if (respuesta == true)
@@ -873,18 +919,10 @@ namespace Checador.empleados
                 else
                 {
                     tabControlBase.SelectedTab = tabPage1;
-                    txt_id.Clear();
                     txt_id.Focus();
+                    Limpiar();
                 }
                 confirmacion2 = null;
-<<<<<<< HEAD
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-         
-=======
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
             }
@@ -915,9 +953,12 @@ namespace Checador.empleados
             {
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
-                MessageBox.Show(ex.ToString());
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
         }
 
         private void mod_huella(object sender, EventArgs e)
@@ -949,9 +990,12 @@ namespace Checador.empleados
             {
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
-                MessageBox.Show(ex.ToString());
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
-            
         }
 
         void vaciar_instancia_mensaje(Object sender, EventArgs e)
@@ -1042,7 +1086,7 @@ namespace Checador.empleados
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
                 confirmacion = new formularios_padres.Mensajes();
-                confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea modificar el empleado?";
+                confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea actualizar el empleado?";
                 confirmacion.FormClosed += new FormClosedEventHandler(responder);
                 confirmacion.ShowDialog();
 
@@ -1074,7 +1118,11 @@ namespace Checador.empleados
             {
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
-                MessageBox.Show(ex.ToString());
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -1097,7 +1145,13 @@ namespace Checador.empleados
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -1116,9 +1170,14 @@ namespace Checador.empleados
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
-            
         }
 
         private void btn_guardar_huella_Click(object sender, EventArgs e)
@@ -1138,7 +1197,13 @@ namespace Checador.empleados
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
         
@@ -1186,7 +1251,13 @@ namespace Checador.empleados
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -1404,7 +1475,13 @@ namespace Checador.empleados
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
 
         }
@@ -1435,7 +1512,13 @@ namespace Checador.empleados
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -1448,6 +1531,22 @@ namespace Checador.empleados
             {
                 tabControlBase.SelectedTab = tabPage5;
             }
+        }
+
+        private void txt_id_a_modificar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //EJECUTAR MODIFICAR CON ENTER
+            if (e.KeyChar == 13)
+            {
+                btn_ir_modificar.PerformClick();
+            }
+            validar.solonumeros(e);
+        }
+
+        private void txt_idbuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
         }
 
         //**************************  AQUI TERMINA LA VALIDACION DE LOS CAMPOS    *******************************
@@ -1503,7 +1602,13 @@ namespace Checador.empleados
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
     }

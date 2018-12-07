@@ -133,12 +133,8 @@
             // 
             // tabControlBase
             // 
-<<<<<<< HEAD
-            this.tabControlBase.Location = new System.Drawing.Point(309, 70);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 58);
             this.tabControlBase.Multiline = true;
-=======
-            this.tabControlBase.Location = new System.Drawing.Point(309, 63);
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             // 
             // tabPage1
             // 
@@ -417,7 +413,7 @@
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Location = new System.Drawing.Point(228, 65);
-            this.txt_id.MaxLength = 32;
+            this.txt_id.MaxLength = 10;
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(100, 29);
             this.txt_id.TabIndex = 1;
@@ -425,6 +421,7 @@
             this.txt_id.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_KeyPress);
             this.txt_id.Leave += new System.EventHandler(this.txt_id_Leave);
             this.txt_id.Validating += new System.ComponentModel.CancelEventHandler(this.txt_id_Validating);
+            this.txt_id.Validated += new System.EventHandler(this.txt_id_Validated);
             // 
             // label1
             // 
@@ -520,7 +517,6 @@
             // 
             // btn_registrar
             // 
-            this.btn_registrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_registrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_registrar.FlatAppearance.BorderSize = 0;
             this.btn_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
@@ -696,6 +692,7 @@
             this.txt_idbuscar.Size = new System.Drawing.Size(248, 29);
             this.txt_idbuscar.TabIndex = 78;
             this.txt_idbuscar.TextChanged += new System.EventHandler(this.txt_idbuscar_TextChanged);
+            this.txt_idbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_idbuscar_KeyPress);
             // 
             // txt_nombrebuscar
             // 
@@ -758,13 +755,6 @@
             // 
             // btn_modificar
             // 
-<<<<<<< HEAD
-            this.btn_modificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-=======
-            this.btn_modificar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.btn_modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.btn_modificar.Enabled = false;
             this.btn_modificar.FlatAppearance.BorderSize = 0;
@@ -777,7 +767,7 @@
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(250, 70);
             this.btn_modificar.TabIndex = 16;
-            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.Text = "Actualizar";
             this.btn_modificar.UseVisualStyleBackColor = false;
             this.btn_modificar.Visible = false;
             this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
@@ -791,9 +781,9 @@
             this.btn_ir_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ir_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ir_modificar.ForeColor = System.Drawing.Color.White;
-            this.btn_ir_modificar.Location = new System.Drawing.Point(340, 308);
+            this.btn_ir_modificar.Location = new System.Drawing.Point(358, 299);
             this.btn_ir_modificar.Name = "btn_ir_modificar";
-            this.btn_ir_modificar.Size = new System.Drawing.Size(270, 70);
+            this.btn_ir_modificar.Size = new System.Drawing.Size(250, 70);
             this.btn_ir_modificar.TabIndex = 2;
             this.btn_ir_modificar.Text = "Modificar";
             this.btn_ir_modificar.UseVisualStyleBackColor = false;
@@ -816,6 +806,7 @@
             this.txt_id_mod.Name = "txt_id_mod";
             this.txt_id_mod.Size = new System.Drawing.Size(200, 29);
             this.txt_id_mod.TabIndex = 1;
+            this.txt_id_mod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_mod_KeyPress);
             // 
             // horariosBindingSource
             // 

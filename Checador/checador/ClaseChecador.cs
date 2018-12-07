@@ -20,7 +20,6 @@ namespace Checador
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
 
-
         //FUNCION PARA OBTENER EL ID MAXIMO DEL CHECADOR POR SI ES AUTOINCREMENTABLE EL ID
         public int obtenerIdMaximo()
         {
@@ -37,7 +36,6 @@ namespace Checador
         void vaciar_instancia_mensaje(Object sender, EventArgs e)
         {
             mensaje = null;
-
         }
 
         //obtienes el Id Checador por Sucursal
@@ -756,7 +754,10 @@ namespace Checador
                     }
                     con.Close();                    
                 }
-                MessageBox.Show("Horas recalculadas con éxito!");
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Horas recalculadas con éxito!";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
             }
             catch (Exception ex)
             {
@@ -956,8 +957,10 @@ namespace Checador
                 comando.Parameters.AddWithValue("@fecha_salida", fecha_salida);
                 comando.ExecuteNonQuery();
                 conexion3.Close();
-
-                MessageBox.Show("Chequeo registrado con éxito");
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "Chequeo registrado con éxito";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
                 return true;
 
             }

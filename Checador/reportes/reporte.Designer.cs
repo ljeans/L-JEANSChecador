@@ -130,7 +130,7 @@
             // tabControlBase
             // 
             this.tabControlBase.Controls.Add(this.tabPage6);
-            this.tabControlBase.Location = new System.Drawing.Point(259, 68);
+            this.tabControlBase.Location = new System.Drawing.Point(259, 58);
             this.tabControlBase.Size = new System.Drawing.Size(1080, 670);
             this.tabControlBase.Controls.SetChildIndex(this.tabPage6, 0);
             this.tabControlBase.Controls.SetChildIndex(this.tabPage5, 0);
@@ -159,7 +159,7 @@
             this.tabPage2.Controls.Add(this.dtp_fecha1_retardo);
             this.tabPage2.Controls.Add(this.cbx_sucursal_retardo);
             this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Size = new System.Drawing.Size(1012, 644);
+            this.tabPage2.Size = new System.Drawing.Size(1072, 644);
             // 
             // tabPage3
             // 
@@ -170,7 +170,7 @@
             this.tabPage3.Controls.Add(this.dtp_asistencia1);
             this.tabPage3.Controls.Add(this.cbx_empleado);
             this.tabPage3.Controls.Add(this.label6);
-            this.tabPage3.Size = new System.Drawing.Size(1012, 644);
+            this.tabPage3.Size = new System.Drawing.Size(1072, 644);
             // 
             // tabPage4
             // 
@@ -181,7 +181,7 @@
             this.tabPage4.Controls.Add(this.dtp_empleado_retardo1);
             this.tabPage4.Controls.Add(this.cbx_empleado_retardo);
             this.tabPage4.Controls.Add(this.label8);
-            this.tabPage4.Size = new System.Drawing.Size(1012, 644);
+            this.tabPage4.Size = new System.Drawing.Size(1072, 644);
             // 
             // tabPage5
             // 
@@ -192,7 +192,7 @@
             this.tabPage5.Controls.Add(this.dtp_departamento2);
             this.tabPage5.Controls.Add(this.dtp_departamento1);
             this.tabPage5.Controls.Add(this.label10);
-            this.tabPage5.Size = new System.Drawing.Size(1012, 644);
+            this.tabPage5.Size = new System.Drawing.Size(1072, 644);
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
             // lbl_titulo
@@ -215,13 +215,14 @@
             // 
             // rb_buscar
             // 
+            this.rb_buscar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
             this.rb_buscar.FlatAppearance.BorderSize = 0;
             this.rb_buscar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.rb_buscar.Location = new System.Drawing.Point(1, 210);
             this.rb_buscar.Size = new System.Drawing.Size(250, 104);
-            this.rb_buscar.Text = "Asistencia";
+            this.rb_buscar.Text = "Registros por empleado";
             this.rb_buscar.CheckedChanged += new System.EventHandler(this.rb_buscar_CheckedChanged);
             // 
             // rb_modificar
@@ -232,7 +233,7 @@
             this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.rb_modificar.Location = new System.Drawing.Point(1, 105);
             this.rb_modificar.Size = new System.Drawing.Size(250, 104);
-            this.rb_modificar.Text = "Retardos";
+            this.rb_modificar.Text = "Retardos por sucursal";
             this.rb_modificar.CheckedChanged += new System.EventHandler(this.rb_modificar_CheckedChanged);
             // 
             // rb_registrar
@@ -242,7 +243,7 @@
             this.rb_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.Size = new System.Drawing.Size(250, 104);
-            this.rb_registrar.Text = "Por sucursal";
+            this.rb_registrar.Text = "Registros por sucursal";
             this.rb_registrar.CheckedChanged += new System.EventHandler(this.rb_registrar_CheckedChanged);
             // 
             // crystalReportViewer1
@@ -408,7 +409,7 @@
             this.crystalReportViewer2.ShowCloseButton = false;
             this.crystalReportViewer2.ShowParameterPanelButton = false;
             this.crystalReportViewer2.ShowRefreshButton = false;
-            this.crystalReportViewer2.Size = new System.Drawing.Size(1006, 590);
+            this.crystalReportViewer2.Size = new System.Drawing.Size(1066, 590);
             this.crystalReportViewer2.TabIndex = 27;
             this.crystalReportViewer2.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -423,7 +424,7 @@
             this.crystalReportViewer3.ShowCloseButton = false;
             this.crystalReportViewer3.ShowParameterPanelButton = false;
             this.crystalReportViewer3.ShowRefreshButton = false;
-            this.crystalReportViewer3.Size = new System.Drawing.Size(1006, 590);
+            this.crystalReportViewer3.Size = new System.Drawing.Size(1066, 590);
             this.crystalReportViewer3.TabIndex = 33;
             this.crystalReportViewer3.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -431,7 +432,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(350, 13);
+            this.label5.Location = new System.Drawing.Point(397, 13);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 24);
             this.label5.TabIndex = 32;
@@ -441,7 +442,7 @@
             // 
             this.dtp_asistencia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_asistencia2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_asistencia2.Location = new System.Drawing.Point(635, 10);
+            this.dtp_asistencia2.Location = new System.Drawing.Point(682, 10);
             this.dtp_asistencia2.Name = "dtp_asistencia2";
             this.dtp_asistencia2.Size = new System.Drawing.Size(175, 29);
             this.dtp_asistencia2.TabIndex = 31;
@@ -450,7 +451,7 @@
             // 
             this.dtp_asistencia1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_asistencia1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_asistencia1.Location = new System.Drawing.Point(435, 10);
+            this.dtp_asistencia1.Location = new System.Drawing.Point(482, 10);
             this.dtp_asistencia1.Name = "dtp_asistencia1";
             this.dtp_asistencia1.Size = new System.Drawing.Size(175, 29);
             this.dtp_asistencia1.TabIndex = 30;
@@ -460,11 +461,11 @@
             this.cbx_empleado.DataSource = this.vistaEmpleadosBindingSource;
             this.cbx_empleado.DisplayMember = "nombre_completo";
             this.cbx_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_empleado.FormattingEnabled = true;
-            this.cbx_empleado.Location = new System.Drawing.Point(110, 10);
+            this.cbx_empleado.Location = new System.Drawing.Point(110, 13);
             this.cbx_empleado.Name = "cbx_empleado";
-            this.cbx_empleado.Size = new System.Drawing.Size(200, 32);
+            this.cbx_empleado.Size = new System.Drawing.Size(275, 26);
             this.cbx_empleado.TabIndex = 29;
             this.cbx_empleado.ValueMember = "id_empleado";
             // 
@@ -496,7 +497,7 @@
             this.btn_asistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_asistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_asistencia.ForeColor = System.Drawing.Color.White;
-            this.btn_asistencia.Location = new System.Drawing.Point(858, 10);
+            this.btn_asistencia.Location = new System.Drawing.Point(892, 10);
             this.btn_asistencia.Name = "btn_asistencia";
             this.btn_asistencia.Size = new System.Drawing.Size(150, 32);
             this.btn_asistencia.TabIndex = 34;
@@ -522,7 +523,7 @@
             this.radioButton1.Size = new System.Drawing.Size(250, 104);
             this.radioButton1.TabIndex = 3;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Por Empleado";
+            this.radioButton1.Text = "Retardos por empleado";
             this.radioButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.radioButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.radioButton1.UseVisualStyleBackColor = false;
@@ -537,7 +538,7 @@
             this.btn_empleado_retardo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_empleado_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_empleado_retardo.ForeColor = System.Drawing.Color.White;
-            this.btn_empleado_retardo.Location = new System.Drawing.Point(858, 10);
+            this.btn_empleado_retardo.Location = new System.Drawing.Point(892, 10);
             this.btn_empleado_retardo.Name = "btn_empleado_retardo";
             this.btn_empleado_retardo.Size = new System.Drawing.Size(150, 32);
             this.btn_empleado_retardo.TabIndex = 41;
@@ -556,7 +557,7 @@
             this.crystalReportViewer4.ShowCloseButton = false;
             this.crystalReportViewer4.ShowParameterPanelButton = false;
             this.crystalReportViewer4.ShowRefreshButton = false;
-            this.crystalReportViewer4.Size = new System.Drawing.Size(1006, 590);
+            this.crystalReportViewer4.Size = new System.Drawing.Size(1066, 590);
             this.crystalReportViewer4.TabIndex = 40;
             this.crystalReportViewer4.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -564,7 +565,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(350, 13);
+            this.label7.Location = new System.Drawing.Point(397, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 24);
             this.label7.TabIndex = 39;
@@ -574,7 +575,7 @@
             // 
             this.dtp_empleado_retardo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_empleado_retardo2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_empleado_retardo2.Location = new System.Drawing.Point(635, 10);
+            this.dtp_empleado_retardo2.Location = new System.Drawing.Point(682, 10);
             this.dtp_empleado_retardo2.Name = "dtp_empleado_retardo2";
             this.dtp_empleado_retardo2.Size = new System.Drawing.Size(175, 29);
             this.dtp_empleado_retardo2.TabIndex = 38;
@@ -584,7 +585,7 @@
             // 
             this.dtp_empleado_retardo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_empleado_retardo1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_empleado_retardo1.Location = new System.Drawing.Point(435, 10);
+            this.dtp_empleado_retardo1.Location = new System.Drawing.Point(482, 10);
             this.dtp_empleado_retardo1.Name = "dtp_empleado_retardo1";
             this.dtp_empleado_retardo1.Size = new System.Drawing.Size(175, 29);
             this.dtp_empleado_retardo1.TabIndex = 37;
@@ -595,11 +596,11 @@
             this.cbx_empleado_retardo.DataSource = this.vistaEmpleadosBindingSource;
             this.cbx_empleado_retardo.DisplayMember = "nombre_completo";
             this.cbx_empleado_retardo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_empleado_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_empleado_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_empleado_retardo.FormattingEnabled = true;
-            this.cbx_empleado_retardo.Location = new System.Drawing.Point(110, 10);
+            this.cbx_empleado_retardo.Location = new System.Drawing.Point(110, 12);
             this.cbx_empleado_retardo.Name = "cbx_empleado_retardo";
-            this.cbx_empleado_retardo.Size = new System.Drawing.Size(200, 32);
+            this.cbx_empleado_retardo.Size = new System.Drawing.Size(275, 26);
             this.cbx_empleado_retardo.TabIndex = 36;
             this.cbx_empleado_retardo.ValueMember = "id_empleado";
             this.cbx_empleado_retardo.SelectedIndexChanged += new System.EventHandler(this.cbx_empleado_retardo_SelectedIndexChanged);
@@ -643,7 +644,7 @@
             this.crystalReportViewer5.ShowCloseButton = false;
             this.crystalReportViewer5.ShowParameterPanelButton = false;
             this.crystalReportViewer5.ShowRefreshButton = false;
-            this.crystalReportViewer5.Size = new System.Drawing.Size(1006, 590);
+            this.crystalReportViewer5.Size = new System.Drawing.Size(1066, 590);
             this.crystalReportViewer5.TabIndex = 47;
             this.crystalReportViewer5.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
@@ -724,9 +725,9 @@
             this.radioButton2.Size = new System.Drawing.Size(250, 104);
             this.radioButton2.TabIndex = 4;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Por Departamento";
+            this.radioButton2.Text = "Registros por departamento";
             this.radioButton2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.radioButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.radioButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.radioButton2.UseVisualStyleBackColor = false;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -763,7 +764,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1012, 644);
+            this.tabPage6.Size = new System.Drawing.Size(1072, 644);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -779,7 +780,7 @@
             this.crystalReportViewer6.ShowCloseButton = false;
             this.crystalReportViewer6.ShowParameterPanelButton = false;
             this.crystalReportViewer6.ShowRefreshButton = false;
-            this.crystalReportViewer6.Size = new System.Drawing.Size(1006, 590);
+            this.crystalReportViewer6.Size = new System.Drawing.Size(1066, 590);
             this.crystalReportViewer6.TabIndex = 48;
             this.crystalReportViewer6.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 

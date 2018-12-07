@@ -252,12 +252,14 @@
             // 
             // txt_empleado
             // 
-            this.txt_empleado.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_empleado.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_empleado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_empleado.Location = new System.Drawing.Point(240, 328);
             this.txt_empleado.Name = "txt_empleado";
-            this.txt_empleado.Size = new System.Drawing.Size(171, 22);
+            this.txt_empleado.Size = new System.Drawing.Size(171, 29);
             this.txt_empleado.TabIndex = 28;
+            this.txt_empleado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_empleado_KeyPress);
             // 
             // usuario
             // 

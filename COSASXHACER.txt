@@ -6,7 +6,5 @@
 		*Martes-Domingo
 - CAMBIAR EL CURSOR EN DAR DE BAJA EN TODOS LOS MODULOS
 - Verificar existencia de todas las clases en exception throw, checar si no afecta en otros componentes
-- Cambiar los mensajes por mensajes bonitos
-- RESOLUCION DE PANTALLA IMPORTANTE!!! MIRAR
 - Sincronizar eventos simultaneamente VERIFICAR QUE SIRVA
 8:30 - 13 y de 15 - 18 ANA KAREN PrimerApellido LUCERO de UNIDEL

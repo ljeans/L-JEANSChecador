@@ -221,10 +221,7 @@
             // 
             // btn_checador
             // 
-<<<<<<< HEAD
             this.btn_checador.AutoSize = true;
-=======
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.btn_checador.BackColor = System.Drawing.Color.Transparent;
             this.btn_checador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_checador.FlatAppearance.BorderSize = 0;
@@ -236,21 +233,14 @@
             this.btn_checador.Image = global::Checador.Properties.Resources.homo_gray;
             this.btn_checador.Location = new System.Drawing.Point(0, 0);
             this.btn_checador.Name = "btn_checador";
-<<<<<<< HEAD
             this.btn_checador.Size = new System.Drawing.Size(81, 81);
-=======
-            this.btn_checador.Size = new System.Drawing.Size(79, 79);
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.btn_checador.TabIndex = 20;
             this.btn_checador.UseVisualStyleBackColor = false;
             this.btn_checador.Click += new System.EventHandler(this.btn_checador_Click);
             // 
             // pictureBox2
             // 
-<<<<<<< HEAD
             this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-=======
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.pictureBox2.Image = global::Checador.Properties.Resources.logos_nuevos_1;
             this.pictureBox2.Location = new System.Drawing.Point(1147, 18);
             this.pictureBox2.Name = "pictureBox2";

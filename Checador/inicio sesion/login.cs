@@ -15,6 +15,7 @@ namespace Checador.inicio_sesion
     {
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
+        formularios_padres.mensaje_error frm_error = new formularios_padres.mensaje_error();
 
         public login()
         {
@@ -71,27 +72,33 @@ namespace Checador.inicio_sesion
         {
             try
             {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
                 usuario.usuario = txt_usuario.Text;
                 usuario.contraseña = txt_contraseña.Text;
                 if (usuario.Entrar())
                 {
-                    MessageBox.Show("Bienvenido(a): " + usuario.usuario);
                     usuario.obtener_rol(usuario.id_rol);
                     Program.rol = usuario.nombre_rol;
                     Program.id_empleado = usuario.id_empleado;
                     empleados.verificar_existencia(usuario.id_empleado);
                     sucursal.verificar_existencia(empleados.id_sucursal);
                     Program.sucursal = sucursal.nombre;
-                    MessageBox.Show(Program.sucursal);
                     Program.nombre_usuario = empleados.nombre + " " + empleados.apellido_pat;
-                    MessageBox.Show(Program.nombre_usuario);
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Bienvenido(a) a L-JEANS:";
+                    mensaje.lbl_info2.Text = empleados.nombre + " " + empleados.apellido_pat;
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
                     this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Usuario o contraseña incorrectos..");
                 }
-        
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+
             }
             catch (SqlException ex)
             {
@@ -118,14 +125,28 @@ namespace Checador.inicio_sesion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
-            
+
         }
 
         private void txt_contraseña_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txt_contraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btn_entrar.PerformClick();
+            }
         }
     }
 }

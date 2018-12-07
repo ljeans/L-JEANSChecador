@@ -76,6 +76,7 @@ C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.csproj.Resolv
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.cheacador.resources
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.empleados.empleados.resources
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.Mensajes.resources
+C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.mensaje_error.resources
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.mensaje_info.resources
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.formularios_padres.ProgressBar.resources
 C:\adrian_root\L-JEANS\L-JEANSChecador\Checador\obj\Debug\Checador.incidentes.incidentes.resources

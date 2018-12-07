@@ -29,17 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< HEAD
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-=======
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.label15 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -150,6 +143,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_dar_baja = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -157,6 +151,7 @@
             this.tabPage4.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             this.panel_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tolerancia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_diarias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_totales)).BeginInit();
@@ -176,6 +171,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // rb_4
@@ -208,11 +204,13 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(309, 67);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 70);
+            this.tabControlBase.Size = new System.Drawing.Size(1050, 650);
             this.tabControlBase.SelectedIndexChanged += new System.EventHandler(this.tabControlBase_SelectedIndexChanged);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.btn_modificar);
@@ -222,12 +220,14 @@
             this.tabPage1.Controls.Add(this.txt_id);
             this.tabPage1.Controls.Add(this.txt_nombre);
             this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Size = new System.Drawing.Size(1042, 624);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btn_ir_modificar);
             this.tabPage2.Controls.Add(this.label84);
             this.tabPage2.Controls.Add(this.txt_id_a_modificar);
+            this.tabPage2.Size = new System.Drawing.Size(1042, 624);
             // 
             // tabPage3
             // 
@@ -239,20 +239,21 @@
             this.tabPage3.Controls.Add(this.label42);
             this.tabPage3.Controls.Add(this.txt_idbuscar);
             this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage3.Size = new System.Drawing.Size(1042, 624);
             // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.groupBox3);
             this.tabPage4.Controls.Add(this.cbx_empleado);
             this.tabPage4.Controls.Add(this.label11);
+            this.tabPage4.Size = new System.Drawing.Size(1042, 624);
             // 
-            // panel_barra_sup
+            // tabPage5
             // 
-            this.panel_barra_sup.Size = new System.Drawing.Size(1362, 80);
+            this.tabPage5.Size = new System.Drawing.Size(1042, 624);
             // 
             // lbl_titulo
             // 
-            this.lbl_titulo.Location = new System.Drawing.Point(636, 23);
             this.lbl_titulo.Size = new System.Drawing.Size(139, 37);
             this.lbl_titulo.Text = "Horarios";
             // 
@@ -303,7 +304,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label15.Location = new System.Drawing.Point(179, 99);
+            this.label15.Location = new System.Drawing.Point(70, 94);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(99, 24);
             this.label15.TabIndex = 1087;
@@ -314,7 +315,7 @@
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_id.Enabled = false;
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id.Location = new System.Drawing.Point(299, 94);
+            this.txt_id.Location = new System.Drawing.Point(234, 89);
             this.txt_id.MaxLength = 32;
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(100, 29);
@@ -326,11 +327,12 @@
             // 
             this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(299, 134);
+            this.txt_nombre.Location = new System.Drawing.Point(234, 131);
             this.txt_nombre.MaxLength = 32;
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(248, 29);
             this.txt_nombre.TabIndex = 2;
+            this.txt_nombre.TextChanged += new System.EventHandler(this.txt_nombre_TextChanged);
             this.txt_nombre.Validating += new System.ComponentModel.CancelEventHandler(this.txt_nombre_Validating);
             // 
             // label2
@@ -339,7 +341,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.Location = new System.Drawing.Point(127, 139);
+            this.label2.Location = new System.Drawing.Point(70, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(151, 24);
             this.label2.TabIndex = 1084;
@@ -351,7 +353,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(30, 42);
+            this.label9.Location = new System.Drawing.Point(33, 40);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(126, 24);
             this.label9.TabIndex = 1085;
@@ -363,7 +365,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(365, 47);
+            this.label1.Location = new System.Drawing.Point(316, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 24);
             this.label1.TabIndex = 1092;
@@ -375,7 +377,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label3.Location = new System.Drawing.Point(28, 106);
+            this.label3.Location = new System.Drawing.Point(31, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 24);
             this.label3.TabIndex = 1090;
@@ -387,7 +389,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(591, 47);
+            this.label4.Location = new System.Drawing.Point(31, 98);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(243, 24);
             this.label4.TabIndex = 1096;
@@ -399,7 +401,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(274, 103);
+            this.label5.Location = new System.Drawing.Point(569, 40);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(201, 24);
             this.label5.TabIndex = 1094;
@@ -439,29 +441,32 @@
             this.dtp_hora_entrada.CustomFormat = "HH:mm";
             this.dtp_hora_entrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_hora_entrada.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_hora_entrada.Location = new System.Drawing.Point(175, 40);
+            this.dtp_hora_entrada.Location = new System.Drawing.Point(178, 40);
             this.dtp_hora_entrada.Name = "dtp_hora_entrada";
             this.dtp_hora_entrada.ShowUpDown = true;
             this.dtp_hora_entrada.Size = new System.Drawing.Size(85, 29);
             this.dtp_hora_entrada.TabIndex = 5;
             this.dtp_hora_entrada.Value = new System.DateTime(2018, 9, 17, 9, 0, 0, 0);
+            this.dtp_hora_entrada.ValueChanged += new System.EventHandler(this.dtp_hora_entrada_ValueChanged);
             // 
             // dtp_hora_salida
             // 
             this.dtp_hora_salida.CustomFormat = "HH:mm";
             this.dtp_hora_salida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_hora_salida.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_hora_salida.Location = new System.Drawing.Point(496, 40);
+            this.dtp_hora_salida.Location = new System.Drawing.Point(447, 40);
             this.dtp_hora_salida.Name = "dtp_hora_salida";
             this.dtp_hora_salida.ShowUpDown = true;
             this.dtp_hora_salida.Size = new System.Drawing.Size(85, 29);
             this.dtp_hora_salida.TabIndex = 6;
-            this.dtp_hora_salida.Value = new System.DateTime(2018, 9, 17, 18, 0, 0, 0);
+            this.dtp_hora_salida.Value = new System.DateTime(2018, 9, 17, 19, 0, 0, 0);
+            this.dtp_hora_salida.ValueChanged += new System.EventHandler(this.dtp_hora_salida_ValueChanged);
             // 
             // txt_tolerancia
             // 
+            this.txt_tolerancia.Enabled = false;
             this.txt_tolerancia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tolerancia.Location = new System.Drawing.Point(496, 100);
+            this.txt_tolerancia.Location = new System.Drawing.Point(791, 40);
             this.txt_tolerancia.Maximum = new decimal(new int[] {
             60,
             0,
@@ -528,18 +533,20 @@
             this.txt_id_a_modificar.Name = "txt_id_a_modificar";
             this.txt_id_a_modificar.Size = new System.Drawing.Size(200, 29);
             this.txt_id_a_modificar.TabIndex = 98;
+            this.txt_id_a_modificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_a_modificar_KeyPress);
             // 
             // txt_horas_diarias
             // 
+            this.txt_horas_diarias.Enabled = false;
             this.txt_horas_diarias.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_horas_diarias.Location = new System.Drawing.Point(175, 100);
+            this.txt_horas_diarias.Location = new System.Drawing.Point(295, 48);
             this.txt_horas_diarias.Maximum = new decimal(new int[] {
             24,
             0,
             0,
             0});
             this.txt_horas_diarias.Minimum = new decimal(new int[] {
-            8,
+            1,
             0,
             0,
             0});
@@ -551,18 +558,20 @@
             0,
             0,
             0});
+            this.txt_horas_diarias.ValueChanged += new System.EventHandler(this.txt_horas_diarias_ValueChanged);
             // 
             // txt_horas_totales
             // 
+            this.txt_horas_totales.Enabled = false;
             this.txt_horas_totales.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_horas_totales.Location = new System.Drawing.Point(855, 40);
+            this.txt_horas_totales.Location = new System.Drawing.Point(295, 98);
             this.txt_horas_totales.Maximum = new decimal(new int[] {
-            200,
+            289,
             0,
             0,
             0});
             this.txt_horas_totales.Minimum = new decimal(new int[] {
-            96,
+            14,
             0,
             0,
             0});
@@ -581,27 +590,12 @@
             this.dgv_horarios.AllowUserToDeleteRows = false;
             this.dgv_horarios.AllowUserToResizeColumns = false;
             this.dgv_horarios.AllowUserToResizeRows = false;
-<<<<<<< HEAD
-            dataGridViewCellStyle49.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dgv_horarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle49;
-=======
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_horarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.dgv_horarios.AutoGenerateColumns = false;
             this.dgv_horarios.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_horarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_horarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-<<<<<<< HEAD
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle50.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle50.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle50.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle50.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle50;
-=======
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -610,7 +604,6 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_horarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.dgv_horarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_horarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -624,16 +617,6 @@
             this.dataGridViewTextBoxColumn9,
             this.lunes});
             this.dgv_horarios.DataSource = this.vistaHorarioBindingSource;
-<<<<<<< HEAD
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle51.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle51.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_horarios.DefaultCellStyle = dataGridViewCellStyle51;
-=======
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -642,23 +625,12 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_horarios.DefaultCellStyle = dataGridViewCellStyle3;
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.dgv_horarios.EnableHeadersVisualStyles = false;
             this.dgv_horarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_horarios.Location = new System.Drawing.Point(21, 145);
             this.dgv_horarios.MultiSelect = false;
             this.dgv_horarios.Name = "dgv_horarios";
             this.dgv_horarios.ReadOnly = true;
-<<<<<<< HEAD
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle52.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle52.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle52.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle52.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle52.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_horarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle52;
-=======
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -667,7 +639,6 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_horarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.dgv_horarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_horarios.Size = new System.Drawing.Size(966, 390);
             this.dgv_horarios.TabIndex = 87;
@@ -785,6 +756,7 @@
             this.txt_idbuscar.Size = new System.Drawing.Size(248, 29);
             this.txt_idbuscar.TabIndex = 86;
             this.txt_idbuscar.TextChanged += new System.EventHandler(this.txt_idbuscar_TextChanged);
+            this.txt_idbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_idbuscar_KeyPress);
             // 
             // vista_HorarioTableAdapter
             // 
@@ -939,9 +911,9 @@
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(55, 70);
+            this.groupBox3.Location = new System.Drawing.Point(35, 70);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(900, 550);
+            this.groupBox3.Size = new System.Drawing.Size(950, 550);
             this.groupBox3.TabIndex = 102;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Asigna Horario";
@@ -951,7 +923,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(823, 28);
+            this.label27.Location = new System.Drawing.Point(825, 28);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(53, 20);
             this.label27.TabIndex = 147;
@@ -961,7 +933,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(652, 28);
+            this.label26.Location = new System.Drawing.Point(656, 28);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(118, 20);
             this.label26.TabIndex = 146;
@@ -971,7 +943,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(509, 28);
+            this.label25.Location = new System.Drawing.Point(514, 28);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(101, 20);
             this.label25.TabIndex = 145;
@@ -981,7 +953,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(418, 28);
+            this.label24.Location = new System.Drawing.Point(421, 28);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(66, 20);
             this.label24.TabIndex = 144;
@@ -1190,7 +1162,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(538, 62);
+            this.label22.Location = new System.Drawing.Point(540, 62);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(0, 24);
             this.label22.TabIndex = 122;
@@ -1198,7 +1170,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(814, 63);
+            this.label21.Location = new System.Drawing.Point(820, 63);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(0, 24);
             this.label21.TabIndex = 121;
@@ -1206,7 +1178,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(417, 61);
+            this.label20.Location = new System.Drawing.Point(420, 61);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(0, 24);
             this.label20.TabIndex = 120;
@@ -1447,24 +1419,26 @@
             this.dtp_hora_entrada_desc.CustomFormat = "HH:mm";
             this.dtp_hora_entrada_desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_hora_entrada_desc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_hora_entrada_desc.Location = new System.Drawing.Point(256, 88);
+            this.dtp_hora_entrada_desc.Location = new System.Drawing.Point(273, 98);
             this.dtp_hora_entrada_desc.Name = "dtp_hora_entrada_desc";
             this.dtp_hora_entrada_desc.ShowUpDown = true;
             this.dtp_hora_entrada_desc.Size = new System.Drawing.Size(85, 29);
             this.dtp_hora_entrada_desc.TabIndex = 8;
-            this.dtp_hora_entrada_desc.Value = new System.DateTime(2018, 10, 5, 13, 0, 0, 0);
+            this.dtp_hora_entrada_desc.Value = new System.DateTime(2018, 10, 5, 15, 0, 0, 0);
+            this.dtp_hora_entrada_desc.ValueChanged += new System.EventHandler(this.dtp_hora_entrada_desc_ValueChanged);
             // 
             // dtp_hora_salida_desc
             // 
             this.dtp_hora_salida_desc.CustomFormat = "HH:mm";
             this.dtp_hora_salida_desc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_hora_salida_desc.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_hora_salida_desc.Location = new System.Drawing.Point(256, 44);
+            this.dtp_hora_salida_desc.Location = new System.Drawing.Point(273, 48);
             this.dtp_hora_salida_desc.Name = "dtp_hora_salida_desc";
             this.dtp_hora_salida_desc.ShowUpDown = true;
             this.dtp_hora_salida_desc.Size = new System.Drawing.Size(85, 29);
             this.dtp_hora_salida_desc.TabIndex = 7;
             this.dtp_hora_salida_desc.Value = new System.DateTime(2018, 10, 5, 13, 0, 0, 0);
+            this.dtp_hora_salida_desc.ValueChanged += new System.EventHandler(this.dtp_hora_salida_desc_ValueChanged);
             // 
             // label7
             // 
@@ -1472,7 +1446,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(36, 48);
+            this.label7.Location = new System.Drawing.Point(32, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(201, 24);
             this.label7.TabIndex = 1099;
@@ -1487,9 +1461,9 @@
             this.groupBox2.Controls.Add(this.dtp_hora_entrada_desc);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(50, 436);
+            this.groupBox2.Location = new System.Drawing.Point(70, 302);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(400, 160);
+            this.groupBox2.Size = new System.Drawing.Size(420, 160);
             this.groupBox2.TabIndex = 1111;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "                          ";
@@ -1511,7 +1485,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(15, 93);
+            this.label6.Location = new System.Drawing.Point(32, 98);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(222, 24);
             this.label6.TabIndex = 1100;
@@ -1519,20 +1493,16 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txt_horas_totales);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.txt_horas_diarias);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txt_tolerancia);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.dtp_hora_salida);
             this.groupBox1.Controls.Add(this.dtp_hora_entrada);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(43, 180);
+            this.groupBox1.Location = new System.Drawing.Point(70, 180);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(950, 200);
+            this.groupBox1.Size = new System.Drawing.Size(900, 80);
             this.groupBox1.TabIndex = 1112;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Horario";
@@ -1558,6 +1528,20 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.txt_horas_totales);
+            this.groupBox4.Controls.Add(this.txt_horas_diarias);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(550, 302);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(420, 160);
+            this.groupBox4.TabIndex = 1113;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Horas a trabajar";
+            // 
             // horarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1578,6 +1562,7 @@
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             this.panel_menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_tolerancia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_diarias)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_horas_totales)).EndInit();
@@ -1600,6 +1585,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1732,5 +1719,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn lunes;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }

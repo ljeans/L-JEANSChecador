@@ -13,6 +13,8 @@ namespace Checador.incidentes
     {
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
+        formularios_padres.mensaje_error frm_error = new formularios_padres.mensaje_error();
+        validacion validar = new validacion();
 
         public incidentes()
         {
@@ -48,111 +50,140 @@ namespace Checador.incidentes
                     vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
                 }
 
-<<<<<<< HEAD
-            //*************   HACER FORMULARIO RESPONSIVO   *****************
-            double porcentaje_ancho = (Convert.ToDouble(Width) / 1362);
-            double porcentaje_alto = (Convert.ToDouble(Height) / 741);
+                //*************   HACER FORMULARIO RESPONSIVO   *****************
+                double porcentaje_ancho = (Convert.ToDouble(Width) / 1362);
+                double porcentaje_alto = (Convert.ToDouble(Height) / 741);
 
-            foreach (Control x in this.Controls)
-            {
-                if (x.HasChildren)
+                foreach (Control x in this.Controls)
                 {
-                    foreach (Control y in x.Controls)
+                    if (x.HasChildren)
                     {
-                        if (y.HasChildren)
+                        foreach (Control y in x.Controls)
                         {
-                            foreach (Control z in y.Controls)
+                            if (y.HasChildren)
                             {
-                                if (z.HasChildren)
+                                foreach (Control z in y.Controls)
                                 {
-                                    foreach (Control w in z.Controls)
+                                    if (z.HasChildren)
                                     {
-                                        if (w is TextBox | w is Label | w is Button | w is MaskedTextBox | w is DateTimePicker | w is ComboBox | w is RadioButton | w is PictureBox | w is GroupBox | w is DataGridView | w is NumericUpDown)
+                                        foreach (Control w in z.Controls)
                                         {
-                                            if ((w is Label & porcentaje_ancho <= 0.8) | (w is DateTimePicker & porcentaje_ancho <= 0.8) | (w is NumericUpDown & porcentaje_ancho <= 0.8) | (w is Button & porcentaje_ancho <= 0.8) | (w is ComboBox & porcentaje_ancho <= 0.8) | (w is RadioButton & porcentaje_ancho <= 0.8))
+                                            if (w is TextBox | w is Label | w is Button | w is MaskedTextBox | w is DateTimePicker | w is ComboBox | w is RadioButton | w is PictureBox | w is GroupBox | w is DataGridView | w is NumericUpDown)
                                             {
-                                                if (w is Label)
+                                                if ((w is Label & porcentaje_ancho <= 0.8) | (w is DateTimePicker & porcentaje_ancho <= 0.8) | (w is NumericUpDown & porcentaje_ancho <= 0.8) | (w is Button & porcentaje_ancho <= 0.8) | (w is ComboBox & porcentaje_ancho <= 0.8) | (w is RadioButton & porcentaje_ancho <= 0.8))
                                                 {
-                                                    w.Font = new Font("Microsoft Sans Serif", 10);
+                                                    if (w is Label)
+                                                    {
+                                                        w.Font = new Font("Microsoft Sans Serif", 10);
+                                                    }
+                                                    w.Font = new Font("Microsoft Sans Serif", 11);
                                                 }
-                                                w.Font = new Font("Microsoft Sans Serif", 11);
-                                            }
-                                            double posicionx = Convert.ToDouble(w.Location.X) * porcentaje_ancho;
-                                            double posiciony = Convert.ToDouble(w.Location.Y) * porcentaje_alto;
-                                            double ancho = w.Width * porcentaje_ancho;
-                                            double alto = w.Height * porcentaje_alto;
+                                                double posicionx = Convert.ToDouble(w.Location.X) * porcentaje_ancho;
+                                                double posiciony = Convert.ToDouble(w.Location.Y) * porcentaje_alto;
+                                                double ancho = w.Width * porcentaje_ancho;
+                                                double alto = w.Height * porcentaje_alto;
 
-                                            w.Left = Convert.ToInt32(posicionx);
-                                            w.Top = Convert.ToInt32(posiciony);
-                                            w.Width = Convert.ToInt32(ancho);
-                                            w.Height = Convert.ToInt32(alto);
+                                                w.Left = Convert.ToInt32(posicionx);
+                                                w.Top = Convert.ToInt32(posiciony);
+                                                w.Width = Convert.ToInt32(ancho);
+                                                w.Height = Convert.ToInt32(alto);
+                                            }
                                         }
                                     }
-                                }
-                                if (z is TextBox | z is Label | z is Button | z is MaskedTextBox | z is DateTimePicker | z is ComboBox | z is RadioButton | z is PictureBox | z is GroupBox | z is DataGridView)
-                                {
-
-                                    if ((z is Label & porcentaje_ancho <= 0.8) | (z is Button & porcentaje_ancho <= 0.8) | (z is ComboBox & porcentaje_ancho <= 0.8) | (z is RadioButton & porcentaje_ancho <= 0.8))
+                                    if (z is TextBox | z is Label | z is Button | z is MaskedTextBox | z is DateTimePicker | z is ComboBox | z is RadioButton | z is PictureBox | z is GroupBox | z is DataGridView)
                                     {
-                                        z.Font = new Font("Microsoft Sans Serif", 11);
+
+                                        if ((z is Label & porcentaje_ancho <= 0.8) | (z is Button & porcentaje_ancho <= 0.8) | (z is ComboBox & porcentaje_ancho <= 0.8) | (z is RadioButton & porcentaje_ancho <= 0.8))
+                                        {
+                                            z.Font = new Font("Microsoft Sans Serif", 11);
+                                        }
+
+                                        double posicionx = Convert.ToDouble(z.Location.X) * porcentaje_ancho;
+                                        double posiciony = Convert.ToDouble(z.Location.Y) * porcentaje_alto;
+                                        double ancho = z.Width * porcentaje_ancho;
+                                        double alto = z.Height * porcentaje_alto;
+
+                                        z.Left = Convert.ToInt32(posicionx);
+                                        z.Top = Convert.ToInt32(posiciony);
+                                        z.Width = Convert.ToInt32(ancho);
+                                        z.Height = Convert.ToInt32(alto);
                                     }
-
-                                    double posicionx = Convert.ToDouble(z.Location.X) * porcentaje_ancho;
-                                    double posiciony = Convert.ToDouble(z.Location.Y) * porcentaje_alto;
-                                    double ancho = z.Width * porcentaje_ancho;
-                                    double alto = z.Height * porcentaje_alto;
-
-                                    z.Left = Convert.ToInt32(posicionx);
-                                    z.Top = Convert.ToInt32(posiciony);
-                                    z.Width = Convert.ToInt32(ancho);
-                                    z.Height = Convert.ToInt32(alto);
                                 }
                             }
-                        }
-                        if (y is TextBox | y is Label | y is Button | y is MaskedTextBox | y is DateTimePicker | y is ComboBox | y is RadioButton | y is Panel | y is TabControl)
-                        {
-                            if ((y is Button & porcentaje_ancho <= 0.8) | (y is RadioButton & porcentaje_ancho <= 0.8))
+                            if (y is TextBox | y is Label | y is Button | y is MaskedTextBox | y is DateTimePicker | y is ComboBox | y is RadioButton | y is Panel | y is TabControl)
                             {
-                                y.Font = new Font("Microsoft Sans Serif", 12);
+                                if ((y is Button & porcentaje_ancho <= 0.8) | (y is RadioButton & porcentaje_ancho <= 0.8))
+                                {
+                                    y.Font = new Font("Microsoft Sans Serif", 12);
+                                }
+
+                                double posicionx = Convert.ToDouble(y.Location.X) * porcentaje_ancho;
+                                double posiciony = Convert.ToDouble(y.Location.Y) * porcentaje_alto;
+                                double ancho = y.Width * porcentaje_ancho;
+                                double alto = y.Height * porcentaje_alto;
+
+                                y.Left = Convert.ToInt32(posicionx);
+                                y.Top = Convert.ToInt32(posiciony);
+                                y.Width = Convert.ToInt32(ancho);
+                                y.Height = Convert.ToInt32(alto);
                             }
-
-                            double posicionx = Convert.ToDouble(y.Location.X) * porcentaje_ancho;
-                            double posiciony = Convert.ToDouble(y.Location.Y) * porcentaje_alto;
-                            double ancho = y.Width * porcentaje_ancho;
-                            double alto = y.Height * porcentaje_alto;
-
-                            y.Left = Convert.ToInt32(posicionx);
-                            y.Top = Convert.ToInt32(posiciony);
-                            y.Width = Convert.ToInt32(ancho);
-                            y.Height = Convert.ToInt32(alto);
                         }
                     }
-                }
-                if (x is TextBox | x is Label | x is Button | x is MaskedTextBox | x is DateTimePicker | x is ComboBox | x is RadioButton | x is Panel | x is TabControl)
-                {
-                    double posicionx = Convert.ToDouble(x.Location.X) * porcentaje_ancho;
-                    double posiciony = Convert.ToDouble(x.Location.Y) * porcentaje_alto;
-                    double ancho = x.Width * porcentaje_ancho;
-                    double alto = x.Height * porcentaje_alto;
+                    if (x is TextBox | x is Label | x is Button | x is MaskedTextBox | x is DateTimePicker | x is ComboBox | x is RadioButton | x is Panel | x is TabControl)
+                    {
+                        double posicionx = Convert.ToDouble(x.Location.X) * porcentaje_ancho;
+                        double posiciony = Convert.ToDouble(x.Location.Y) * porcentaje_alto;
+                        double ancho = x.Width * porcentaje_ancho;
+                        double alto = x.Height * porcentaje_alto;
 
-                    x.Left = Convert.ToInt32(posicionx);
-                    x.Top = Convert.ToInt32(posiciony);
-                    x.Width = Convert.ToInt32(ancho);
-                    x.Height = Convert.ToInt32(alto);
+                        x.Left = Convert.ToInt32(posicionx);
+                        x.Top = Convert.ToInt32(posiciony);
+                        x.Width = Convert.ToInt32(ancho);
+                        x.Height = Convert.ToInt32(alto);
+                    }
                 }
-            }
-            //********************************************************************************************
+                //********************************************************************************************
 
-=======
+                DateTime fecha_actual = DateTime.Now;
                 //FILTRAR COMBOBOX DE EMPLEADOS EN REGISTRAR CHEQUEO DEPENDIENDO LA SUCURSAL
                 if (Program.rol != "ENCARGADA DE TIENDA")
                 {
                     this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
-                    vistaregistrosBindingSource.Filter = "";
+                    //FILTRAR DATAGRID POR MES EN REGISTRAR CHEQUEO
+                    if (fecha_actual.Day >= 11 & fecha_actual.Day <= 25)
+                    {
+                        vistaregistrosBindingSource.Filter = "(CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-11', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-25', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-11', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-25', 'System.DateTime'))";
+                    }
+                    else
+                    {
+                        if (fecha_actual.Day < 10)
+                        {
+                            vistaregistrosBindingSource.Filter = "(CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime'))";
+                        }
+                        else
+                        {
+                            vistaregistrosBindingSource.Filter = "(CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime'))";
+                        }
+                    }
                 }
                 else
                 {
-                    vistaregistrosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                    //FILTRAR DATAGRID POR MES EN REGISTRAR CHEQUEO
+                    if (fecha_actual.Day >= 11 & fecha_actual.Day <= 25)
+                    {
+                        vistaregistrosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-11', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-25', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-11', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-25', 'System.DateTime')))";
+                    }
+                    else
+                    {
+                        if (fecha_actual.Day < 10)
+                        {
+                            vistaregistrosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')))";
+                        }
+                        else
+                        {
+                            vistaregistrosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')))";
+                        }
+                    }
                 }
 
                 //FLITRAR CONSULTA HORARIO DEPENDIENDO EL ROL
@@ -168,9 +199,14 @@ namespace Checador.incidentes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -256,7 +292,49 @@ namespace Checador.incidentes
 
         private void txt_buscar_TextChanged(object sender, EventArgs e)
         {
+            DateTime fecha_actual = DateTime.Now;
+            //FILTRAR COMBOBOX DE EMPLEADOS EN REGISTRAR CHEQUEO DEPENDIENDO LA SUCURSAL
             if (Program.rol != "ENCARGADA DE TIENDA")
+            {
+                this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
+                //FILTRAR DATAGRID POR MES EN REGISTRAR CHEQUEO
+                if (fecha_actual.Day >= 11 & fecha_actual.Day <= 25)
+                {
+                    vistaregistrosBindingSource.Filter = "[nombre_completo] LIKE '*" + txt_buscar.Text + "*' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-11', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-25', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-11', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-25', 'System.DateTime')))";
+                }
+                else
+                {
+                    if (fecha_actual.Day < 10)
+                    {
+                        vistaregistrosBindingSource.Filter = "[nombre_completo] LIKE '*" + txt_buscar.Text + "*' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')))";
+                    }
+                    else
+                    {
+                        vistaregistrosBindingSource.Filter = "[nombre_completo] LIKE '*" + txt_buscar.Text + "*' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')))";
+                    }
+                }
+            }
+            else
+            {
+                //FILTRAR DATAGRID POR MES EN REGISTRAR CHEQUEO
+                if (fecha_actual.Day >= 11 & fecha_actual.Day <= 25)
+                {
+                    vistaregistrosBindingSource.Filter = "[nombre_completo] LIKE '*" + txt_buscar.Text + "*' and sucursal ='" + Program.sucursal + "' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-11', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-25', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-11', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-25', 'System.DateTime')))";
+                }
+                else
+                {
+                    if (fecha_actual.Day < 10)
+                    {
+                        vistaregistrosBindingSource.Filter = "[nombre_completo] LIKE '*" + txt_buscar.Text + "*' and sucursal ='" + Program.sucursal + "' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')))";
+                    }
+                    else
+                    {
+                        vistaregistrosBindingSource.Filter = "[nombre_completo] LIKE '*" + txt_buscar.Text + "*' and sucursal ='" + Program.sucursal + "' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')))";
+                    }
+                }
+            }
+
+            /*if (Program.rol != "ENCARGADA DE TIENDA")
             {
                 if (txt_buscar.Text == "")
                 {
@@ -279,7 +357,7 @@ namespace Checador.incidentes
                 {
                     vistaregistrosBindingSource.Filter = "[nombre_completo] LIKE '*" + txt_buscar.Text + "*' and Sucursal ='" + Program.sucursal + "'";
                 }
-            }
+            }*/
         }
         //////////////////////////////////////////////////////////////////////
 
@@ -366,7 +444,13 @@ namespace Checador.incidentes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -473,7 +557,13 @@ namespace Checador.incidentes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -481,6 +571,12 @@ namespace Checador.incidentes
         {
             mensaje = null;
 
+        }
+
+        private void txt_idbuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
         }
     }
 }

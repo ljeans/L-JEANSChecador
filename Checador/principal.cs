@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Checador
 {
     public partial class principal : Form
     {
-        
         empleados.empleados modulo_empleados = new empleados.empleados();
         Checador.cheacador modulo_checador = new Checador.cheacador();
         sucursales modulo_sucursal = new sucursales();
@@ -21,7 +21,9 @@ namespace Checador
         inicio_sesion.login login = new inicio_sesion.login();
         incidentes.incidentes modulo_incidente = new incidentes.incidentes();
         inicio_sesion.usuario crearusuario = new inicio_sesion.usuario();
-
+        formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+        formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
+        formularios_padres.mensaje_error frm_error = new formularios_padres.mensaje_error();
 
         //VARIABLE PARA CARGAR LOS CHECADORES
         DataTable dtChecadores = null;
@@ -31,6 +33,7 @@ namespace Checador
 
         private void Desbloquear_Principal(object sender, EventArgs e)
         {
+            this.Activate();
             lbl_usuario.Text = Program.nombre_usuario;
             if (Program.rol== "ADMINISTRADOR")
             {
@@ -57,10 +60,7 @@ namespace Checador
                 btn_checador.Enabled = true;
                 btn_sucursal.Enabled = false;
                 btn_empleados.Enabled = false;
-<<<<<<< HEAD
                 btn_horarios.Enabled = true;
-=======
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
                  btn_reportes.Enabled = true;
                 btn_incidente.Enabled = true;
                 //cerrar
@@ -126,129 +126,162 @@ namespace Checador
             InitializeComponent();
         }
 
+        void vaciar_instancia_mensaje(Object sender, EventArgs e)
+        {
+            mensaje = null;
+        }
+
         private void principal_Load(object sender, EventArgs e)
         {
+            try
+            {
+                //************ACOMODAR FORMULARIO************
 
-            string ipChecador = "20.20.0.15";
-            int id_checador = 1;
-            int puerto = 4370;
-
-            //************ACOMODAR FORMULARIO************
-
-            double porcentaje_ancho = (Convert.ToDouble(Width) / 1370);
-            double porcentaje_alto = (Convert.ToDouble(Height) / 766);
+                double porcentaje_ancho = (Convert.ToDouble(Width) / 1370);
+                double porcentaje_alto = (Convert.ToDouble(Height) / 766);
 
 
-            double proporcion_barrar_superior = Convert.ToDouble(Height) / Convert.ToDouble(panel_barra_superior.Height);
-            double proporcion_menu = Convert.ToDouble(Height) / Convert.ToDouble(Height);
-            panel_barra_superior.Height = Convert.ToInt32(Math.Round(Height / proporcion_barrar_superior, 0));
+                double proporcion_barrar_superior = Convert.ToDouble(Height) / Convert.ToDouble(panel_barra_superior.Height);
+                double proporcion_menu = Convert.ToDouble(Height) / Convert.ToDouble(Height);
+                panel_barra_superior.Height = Convert.ToInt32(Math.Round(Height / proporcion_barrar_superior, 0));
 
-            btn_minimizar.Top = 0;
-            button2.Top = 0;
-            button2.Left = this.Width - 41;
-            btn_minimizar.Left = this.Width - 83;
-            btn_iniciar_sesion.Left = Width - 246;
-            btn_cerrar_sesion.Left = Width - 261;
-            btn_iniciar_sesion.Top = 18;
-            btn_cerrar_sesion.Top = 18;
+                btn_minimizar.Top = 0;
+                button2.Top = 0;
+                button2.Left = this.Width - 41;
+                btn_minimizar.Left = this.Width - 83;
+                btn_iniciar_sesion.Left = Width - 246;
+                btn_cerrar_sesion.Left = Width - 261;
+                btn_iniciar_sesion.Top = 18;
+                btn_cerrar_sesion.Top = 18;
 
-            double posicionx = Convert.ToDouble(btn_checador.Location.X) * porcentaje_ancho;
-            double posiciony = Convert.ToDouble(btn_checador.Location.Y) * porcentaje_alto;
-            double ancho = btn_checador.Width * porcentaje_ancho;
-            double alto = btn_checador.Height * porcentaje_alto;
+                double posicionx = Convert.ToDouble(btn_checador.Location.X) * porcentaje_ancho;
+                double posiciony = Convert.ToDouble(btn_checador.Location.Y) * porcentaje_alto;
+                double ancho = btn_checador.Width * porcentaje_ancho;
+                double alto = btn_checador.Height * porcentaje_alto;
 
-            btn_checador.Left = Convert.ToInt32(posicionx);
-            btn_checador.Top = Convert.ToInt32(posiciony);
-            btn_checador.Width = Convert.ToInt32(ancho);
-            btn_checador.Height = Convert.ToInt32(alto);
+                btn_checador.Left = Convert.ToInt32(posicionx);
+                btn_checador.Top = Convert.ToInt32(posiciony);
 
-             posicionx = Convert.ToDouble(btn_sucursal.Location.X) * porcentaje_ancho;
-             posiciony = Convert.ToDouble(btn_sucursal.Location.Y) * porcentaje_alto;
-             btn_sucursal.Left = Convert.ToInt32(posicionx);
-             btn_sucursal.Top = Convert.ToInt32(posiciony);
+                posicionx = Convert.ToDouble(btn_sucursal.Location.X) * porcentaje_ancho;
+                posiciony = Convert.ToDouble(btn_sucursal.Location.Y) * porcentaje_alto;
+                btn_sucursal.Left = Convert.ToInt32(posicionx);
+                btn_sucursal.Top = Convert.ToInt32(posiciony);
 
-            posicionx = Convert.ToDouble(btn_empleados.Location.X) * porcentaje_ancho;
-            posiciony = Convert.ToDouble(btn_empleados.Location.Y) * porcentaje_alto;
-            btn_empleados.Left = Convert.ToInt32(posicionx);
-            btn_empleados.Top = Convert.ToInt32(posiciony);
-           
-
-            posicionx = 193 * porcentaje_ancho;
-            posiciony = 437 * porcentaje_alto;
-            btn_horarios.Left = Convert.ToInt32(posicionx);
-            btn_horarios.Top = Convert.ToInt32(posiciony);
-           
-
-            posicionx = 585 * porcentaje_ancho;
-            posiciony = 437 * porcentaje_alto;
-            btn_reportes.Left = Convert.ToInt32(posicionx);
-            btn_reportes.Top = Convert.ToInt32(posiciony);
-        
-
-            posicionx = 978 * porcentaje_ancho;
-            posiciony = 437 * porcentaje_alto;
-            btn_incidente.Left = Convert.ToInt32(posicionx);
-            btn_incidente.Top = Convert.ToInt32(posiciony);
-         
-           
-
-            //*********************************************
+                posicionx = Convert.ToDouble(btn_empleados.Location.X) * porcentaje_ancho;
+                posiciony = Convert.ToDouble(btn_empleados.Location.Y) * porcentaje_alto;
+                btn_empleados.Left = Convert.ToInt32(posicionx);
+                btn_empleados.Top = Convert.ToInt32(posiciony);
 
 
-            //OBTIENE TODOS LOS CHECADORES ACTIVOS Y LOS CONECTA
-            dtChecadores = Clase_Checador.Obtener_Checadores_Activos();
-            //DataRow row = dtChecadores.Rows[0];
-            //MessageBox.Show(Convert.ToString(row["ip"]));
+                posicionx = 193 * porcentaje_ancho;
+                posiciony = 437 * porcentaje_alto;
+                btn_horarios.Left = Convert.ToInt32(posicionx);
+                btn_horarios.Top = Convert.ToInt32(posiciony);
 
-            /* for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
-             {
-                 DataRow row = dtChecadores.Rows[pos];
-                 ipChecador = Convert.ToString(row["ip"]);
-                 id_checador = Convert.ToInt32(row["id_checador"]);
-                 puerto = Convert.ToInt32(row["puerto"]);
 
-                 try
+                posicionx = 585 * porcentaje_ancho;
+                posiciony = 437 * porcentaje_alto;
+                btn_reportes.Left = Convert.ToInt32(posicionx);
+                btn_reportes.Top = Convert.ToInt32(posiciony);
+
+
+                posicionx = 978 * porcentaje_ancho;
+                posiciony = 437 * porcentaje_alto;
+                btn_incidente.Left = Convert.ToInt32(posicionx);
+                btn_incidente.Top = Convert.ToInt32(posiciony);
+
+
+
+                //*********************************************
+
+
+                //OBTIENE TODOS LOS CHECADORES ACTIVOS Y LOS CONECTA
+                dtChecadores = Clase_Checador.Obtener_Checadores_Activos();
+                //DataRow row = dtChecadores.Rows[0];
+                //MessageBox.Show(Convert.ToString(row["ip"]));
+
+                /* for (int pos = 0; pos < dtChecadores.Rows.Count; pos++)
                  {
-                     zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
-                     //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
-                     //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
-                     bool bConn = Checador.Connect_Net(ipChecador, puerto);
+                     DataRow row = dtChecadores.Rows[pos];
+                     ipChecador = Convert.ToString(row["ip"]);
+                     id_checador = Convert.ToInt32(row["id_checador"]);
+                     puerto = Convert.ToInt32(row["puerto"]);
 
-                     //
-                     if (bConn == true)
+                     try
                      {
-                         //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
-                         Checador.EnableDevice(id_checador, true);
-                         MessageBox.Show("Dispositivo conectado + ID: " + id_checador);
+                         zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
+                         //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
+                         //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
+                         bool bConn = Checador.Connect_Net(ipChecador, puerto);
 
-                         //FUNCION PARA REGISTRAR TODOS LOS EVENTOS DEL CHECADOR EN TIEMPO REAL
-                         if (Checador.RegEvent(id_checador, 65535))
+                         //
+                         if (bConn == true)
                          {
-                             //Checador.OnEnrollFingerEx += new zkemkeeper._IZKEMEvents_OnEnrollFingerExEventHandler(Checador_OnEnroll);
-                             Checador.OnAttTransactionEx += new zkemkeeper._IZKEMEvents_OnAttTransactionExEventHandler(Checador_OnAttTransactionEx);
-                             Checador.OnNewUser += new zkemkeeper._IZKEMEvents_OnNewUserEventHandler(Checador_OnNewUser);
-                             //Checador.OnFinger += new zkemkeeper._IZKEMEvents_OnFingerEventHandler(Checador_OnFinger);
+                             //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
+                             Checador.EnableDevice(id_checador, true);
+                             MessageBox.Show("Dispositivo conectado + ID: " + id_checador);
+
+                             //FUNCION PARA REGISTRAR TODOS LOS EVENTOS DEL CHECADOR EN TIEMPO REAL
+                             if (Checador.RegEvent(id_checador, 65535))
+                             {
+                                 //Checador.OnEnrollFingerEx += new zkemkeeper._IZKEMEvents_OnEnrollFingerExEventHandler(Checador_OnEnroll);
+                                 Checador.OnAttTransactionEx += new zkemkeeper._IZKEMEvents_OnAttTransactionExEventHandler(Checador_OnAttTransactionEx);
+                                 Checador.OnNewUser += new zkemkeeper._IZKEMEvents_OnNewUserEventHandler(Checador_OnNewUser);
+                                 //Checador.OnFinger += new zkemkeeper._IZKEMEvents_OnFingerEventHandler(Checador_OnFinger);
+                             }
                          }
+                         else
+                         {
+                             MessageBox.Show("Dispositivo no conectado");
+                         }
+
                      }
-                     else
+                     catch (Exception ex)
                      {
-                         MessageBox.Show("Dispositivo no conectado");
+                         MessageBox.Show(ex.ToString());
                      }
-
-                 }
-                 catch (Exception ex)
-                 {
-                     MessageBox.Show(ex.ToString());
-                 }
-             }*/
-            Desbloquear_inicio(sender, e);
-            Enabled = false;
-            login = new inicio_sesion.login();
-            login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            login.Show();
-            btn_cerrar.Visible = true;
-            lbl_usuario.Text = Program.nombre_usuario;
-
+                 }*/
+                Desbloquear_inicio(sender, e);
+                Enabled = false;
+                login = new inicio_sesion.login();
+                login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                login.Show();
+                btn_cerrar.Visible = true;
+                lbl_usuario.Text = Program.nombre_usuario;
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }
 
 
@@ -287,91 +320,238 @@ namespace Checador
         }
         private void btn_reportes_Click(object sender, EventArgs e)
         {
-            Enabled = false;
-            modulo_reportes = new reportes.reporte();
-            modulo_reportes.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            modulo_reportes.Show();
+            try
+            {
+                Enabled = false;
+                modulo_reportes = new reportes.reporte();
+                modulo_reportes.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                modulo_reportes.Show();
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }
 
         private void btn_horarios_Click(object sender, EventArgs e)
         {
-            Enabled = false;
-            modulo_horarios = new horarios();
-            modulo_horarios.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            modulo_horarios.Show();
-        }
+            try
+            {
+                Enabled = false;
+                modulo_horarios = new horarios();
+                modulo_horarios.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                modulo_horarios.Show();
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
+}
 
         private void btn_checador_Click(object sender, EventArgs e)
         {
-            Enabled = false;
-            modulo_checador = new Checador.cheacador();
-            modulo_checador.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            modulo_checador.Show();
+            try { 
+                Enabled = false;
+                modulo_checador = new Checador.cheacador();
+                modulo_checador.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                modulo_checador.Show();
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }
 
         private void btn_sucursal_Click(object sender, EventArgs e)
         {
-            Enabled = false;
-            modulo_sucursal = new sucursales();
-            modulo_sucursal.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            modulo_sucursal.Show();
+            try
+            { 
+                Enabled = false;
+                modulo_sucursal = new sucursales();
+                modulo_sucursal.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                modulo_sucursal.Show();
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }
 
         private void btn_empleados_Click(object sender, EventArgs e)
         {
-            Enabled = false;
-            modulo_empleados = new empleados.empleados();
-            modulo_empleados.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            modulo_empleados.Show();
+            try
+            {
+                Enabled = false;
+                modulo_empleados = new empleados.empleados();
+                modulo_empleados.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                modulo_empleados.Show();
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Enabled = false;
-            modulo_empleados = new empleados.empleados();
-            modulo_empleados.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            modulo_empleados.Show();
+            try
+            {
+                Enabled = false;
+                modulo_empleados = new empleados.empleados();
+                modulo_empleados.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                modulo_empleados.Show();
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //MINIMIZAR EL PROGRAMA
-            this.WindowState = FormWindowState.Minimized;
+            try
+            {
+                //MINIMIZAR EL PROGRAMA
+                this.WindowState = FormWindowState.Minimized;
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-           
-            login = new inicio_sesion.login();
-            login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            login.Show();
+            try
+            {
+                login = new inicio_sesion.login();
+                login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                login.Show();
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }
 
         private void btn_incidente_Click(object sender, EventArgs e)
         {
-            Enabled = false;
-            modulo_incidente = new incidentes.incidentes();
-            modulo_incidente.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            modulo_incidente.Show();
+            try
+            {
+                Enabled = false;
+                modulo_incidente = new incidentes.incidentes();
+                modulo_incidente.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                modulo_incidente.Show();
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Enabled = false;
-            crearusuario = new inicio_sesion.usuario();
-            crearusuario.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-            crearusuario.Show();
+            try
+            {
+                Enabled = false;
+                crearusuario = new inicio_sesion.usuario();
+                crearusuario.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                crearusuario.Show();
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }
 
         private void btn_cerrar_Click(object sender, EventArgs e)
         {
-            Desbloquear_inicio(sender, e);
-            Program.nombre_usuario = "";
-            Program.rol = "";
-            Program.id_empleado = 0;
-            Program.id_sucursal = 0;
-            lbl_usuario.Text = "";
-            btn_iniciar.Visible = true;
+            //CERRAR SESIÓN
+            try
+            {
+                Desbloquear_inicio(sender, e);
+                Program.nombre_usuario = "";
+                Program.rol = "";
+                Program.id_empleado = 0;
+                Program.id_sucursal = 0;
+                lbl_usuario.Text = "";
+                btn_iniciar.Visible = true;
+
+                //LLAMAR INICIAR SESION AL MOMENTO DE CERRAR SESION
+                login = new inicio_sesion.login();
+                login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                login.Show();
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }
 
         private void Checador_OnFinger()

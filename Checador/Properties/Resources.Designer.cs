@@ -119,10 +119,7 @@ namespace Checador.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-<<<<<<< HEAD
-=======
-        
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
+
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>

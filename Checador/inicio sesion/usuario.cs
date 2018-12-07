@@ -19,7 +19,9 @@ namespace Checador.inicio_sesion
         }
 
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
+        formularios_padres.mensaje_error frm_error = new formularios_padres.mensaje_error();
         ClaseUsuario usuarios = new ClaseUsuario();
+        validacion validar = new validacion();
 
         private void usuario_Load(object sender, EventArgs e)
         {
@@ -33,7 +35,13 @@ namespace Checador.inicio_sesion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -87,7 +95,13 @@ namespace Checador.inicio_sesion
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -150,6 +164,11 @@ namespace Checador.inicio_sesion
         private void pictureBox2_MouseLeave(object sender, EventArgs e)
         {
             ocultar_pass();
+        }
+
+        private void txt_empleado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
         }
     }
 }

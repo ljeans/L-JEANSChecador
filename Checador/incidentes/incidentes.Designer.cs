@@ -29,10 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< HEAD
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(incidentes));
-=======
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -121,7 +118,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(314, 64);
+            this.tabControlBase.Location = new System.Drawing.Point(314, 58);
             this.tabControlBase.Size = new System.Drawing.Size(1030, 650);
             // 
             // tabPage1
@@ -226,7 +223,7 @@
             this.dgv_empleados_recalcular.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_empleados_recalcular.EnableHeadersVisualStyles = false;
             this.dgv_empleados_recalcular.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dgv_empleados_recalcular.Location = new System.Drawing.Point(55, 105);
+            this.dgv_empleados_recalcular.Location = new System.Drawing.Point(24, 105);
             this.dgv_empleados_recalcular.MultiSelect = false;
             this.dgv_empleados_recalcular.Name = "dgv_empleados_recalcular";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -238,7 +235,7 @@
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_empleados_recalcular.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_empleados_recalcular.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgv_empleados_recalcular.Size = new System.Drawing.Size(420, 480);
+            this.dgv_empleados_recalcular.Size = new System.Drawing.Size(500, 480);
             this.dgv_empleados_recalcular.TabIndex = 0;
             this.dgv_empleados_recalcular.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -291,7 +288,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dtp_fechaInicial);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(516, 60);
+            this.groupBox1.Location = new System.Drawing.Point(580, 66);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(420, 540);
             this.groupBox1.TabIndex = 1;
@@ -395,7 +392,7 @@
             this.label42.AutoSize = true;
             this.label42.BackColor = System.Drawing.Color.Transparent;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(51, 60);
+            this.label42.Location = new System.Drawing.Point(27, 60);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(110, 24);
             this.label42.TabIndex = 77;
@@ -406,7 +403,7 @@
             this.label43.AutoSize = true;
             this.label43.BackColor = System.Drawing.Color.Transparent;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(129, 29);
+            this.label43.Location = new System.Drawing.Point(105, 29);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(32, 24);
             this.label43.TabIndex = 78;
@@ -421,6 +418,7 @@
             this.txt_idbuscar.Size = new System.Drawing.Size(248, 29);
             this.txt_idbuscar.TabIndex = 75;
             this.txt_idbuscar.TextChanged += new System.EventHandler(this.txt_idbuscar_TextChanged);
+            this.txt_idbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_idbuscar_KeyPress);
             // 
             // txt_nombrebuscar
             // 
@@ -455,6 +453,7 @@
             this.dgv_rellenar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_rellenar.Location = new System.Drawing.Point(75, 146);
             this.dgv_rellenar.Name = "dgv_rellenar";
+            this.dgv_rellenar.ReadOnly = true;
             this.dgv_rellenar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_rellenar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_rellenar.Size = new System.Drawing.Size(900, 400);
@@ -465,6 +464,7 @@
             this.idempleadoDataGridViewTextBoxColumn2.DataPropertyName = "id_empleado";
             this.idempleadoDataGridViewTextBoxColumn2.HeaderText = "ID Empleado";
             this.idempleadoDataGridViewTextBoxColumn2.Name = "idempleadoDataGridViewTextBoxColumn2";
+            this.idempleadoDataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // nombrecompletoDataGridViewTextBoxColumn1
             // 
@@ -481,6 +481,7 @@
             this.idchecadorDataGridViewTextBoxColumn.DataPropertyName = "id_checador";
             this.idchecadorDataGridViewTextBoxColumn.HeaderText = "ID Checador";
             this.idchecadorDataGridViewTextBoxColumn.Name = "idchecadorDataGridViewTextBoxColumn";
+            this.idchecadorDataGridViewTextBoxColumn.ReadOnly = true;
             this.idchecadorDataGridViewTextBoxColumn.Width = 112;
             // 
             // sucursalDataGridViewTextBoxColumn1
@@ -489,6 +490,7 @@
             this.sucursalDataGridViewTextBoxColumn1.DataPropertyName = "Sucursal";
             this.sucursalDataGridViewTextBoxColumn1.HeaderText = "Sucursal";
             this.sucursalDataGridViewTextBoxColumn1.Name = "sucursalDataGridViewTextBoxColumn1";
+            this.sucursalDataGridViewTextBoxColumn1.ReadOnly = true;
             this.sucursalDataGridViewTextBoxColumn1.Width = 94;
             // 
             // fechaentradaDataGridViewTextBoxColumn
@@ -497,6 +499,7 @@
             this.fechaentradaDataGridViewTextBoxColumn.DataPropertyName = "fecha_entrada";
             this.fechaentradaDataGridViewTextBoxColumn.HeaderText = "Fecha de entrada";
             this.fechaentradaDataGridViewTextBoxColumn.Name = "fechaentradaDataGridViewTextBoxColumn";
+            this.fechaentradaDataGridViewTextBoxColumn.ReadOnly = true;
             this.fechaentradaDataGridViewTextBoxColumn.Width = 144;
             // 
             // fechasalidaDataGridViewTextBoxColumn
@@ -505,6 +508,7 @@
             this.fechasalidaDataGridViewTextBoxColumn.DataPropertyName = "fecha_salida";
             this.fechasalidaDataGridViewTextBoxColumn.HeaderText = "Fecha de salida";
             this.fechasalidaDataGridViewTextBoxColumn.Name = "fechasalidaDataGridViewTextBoxColumn";
+            this.fechasalidaDataGridViewTextBoxColumn.ReadOnly = true;
             this.fechasalidaDataGridViewTextBoxColumn.Width = 131;
             // 
             // vistaregistrosBindingSource
@@ -559,7 +563,7 @@
             this.btn_llenar_null.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_llenar_null.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_llenar_null.ForeColor = System.Drawing.Color.White;
-            this.btn_llenar_null.Location = new System.Drawing.Point(185, 33);
+            this.btn_llenar_null.Location = new System.Drawing.Point(182, 33);
             this.btn_llenar_null.Name = "btn_llenar_null";
             this.btn_llenar_null.Size = new System.Drawing.Size(200, 35);
             this.btn_llenar_null.TabIndex = 105;
@@ -572,10 +576,10 @@
             this.dtp_hora.CustomFormat = "HH:mm";
             this.dtp_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_hora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp_hora.Location = new System.Drawing.Point(71, 35);
+            this.dtp_hora.Location = new System.Drawing.Point(64, 35);
             this.dtp_hora.Name = "dtp_hora";
             this.dtp_hora.ShowUpDown = true;
-            this.dtp_hora.Size = new System.Drawing.Size(75, 29);
+            this.dtp_hora.Size = new System.Drawing.Size(85, 29);
             this.dtp_hora.TabIndex = 107;
             this.dtp_hora.Value = new System.DateTime(2018, 9, 17, 9, 0, 0, 0);
             // 

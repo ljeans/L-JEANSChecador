@@ -16,6 +16,9 @@ namespace Checador
         ClaseAsignar_Horario AsignarHorario = new ClaseAsignar_Horario();
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
+        formularios_padres.mensaje_error frm_error = new formularios_padres.mensaje_error();
+        double horas_descanso, horas_diarias;
+        validacion validar = new validacion();
 
         public bool respuesta = false;
 
@@ -77,10 +80,10 @@ namespace Checador
             txt_nombre.Text = "";
             txt_horas_diarias.Text = "8";
             txt_horas_totales.Text = "96";
-            dtp_hora_entrada.Text = "";
-            dtp_hora_entrada_desc.Text = "";
-            dtp_hora_salida.Text = "";
-            dtp_hora_salida_desc.Text = "";
+            dtp_hora_entrada.Text = "09:00";
+            dtp_hora_entrada_desc.Text = "15:00";
+            dtp_hora_salida.Text = "19:00";
+            dtp_hora_salida_desc.Text = "13:00";
             txt_tolerancia.Text = "10";
             
             cargarID();
@@ -141,7 +144,11 @@ namespace Checador
             {
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
-                MessageBox.Show(ex.ToString());
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -198,9 +205,13 @@ namespace Checador
             {
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
-                MessageBox.Show(ex.ToString());
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
-    }
+        }
 
         private void rb_modificar_CheckedChanged(object sender, EventArgs e)
         {
@@ -224,7 +235,13 @@ namespace Checador
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -306,7 +323,13 @@ namespace Checador
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -335,110 +358,100 @@ namespace Checador
                 cbx_sabado_SelectedIndexChanged(cbx_sabado, EventArgs.Empty);
                 cbx_domingo_SelectedIndexChanged(cbx_domingo, EventArgs.Empty);
 
+                //*************   HACER FORMULARIO RESPONSIVO   *****************
+                double porcentaje_ancho = (Convert.ToDouble(Width) / 1362);
+                double porcentaje_alto = (Convert.ToDouble(Height) / 741);
 
-
-<<<<<<< HEAD
-            //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
-            CheckForIllegalCrossThreadCalls = false;
-            Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
-            hilo_secundario.IsBackground = true;
-            hilo_secundario.Start();
-            txt_nombre.Focus();
-
-            //*************   HACER FORMULARIO RESPONSIVO   *****************
-            double porcentaje_ancho = (Convert.ToDouble(Width) / 1362);
-            double porcentaje_alto = (Convert.ToDouble(Height) / 741);
-
-            foreach (Control x in this.Controls)
-            {
-                if (x.HasChildren)
+                foreach (Control x in this.Controls)
                 {
-                    foreach (Control y in x.Controls)
+                    if (x.HasChildren)
                     {
-                        if (y.HasChildren)
+                        foreach (Control y in x.Controls)
                         {
-                            foreach (Control z in y.Controls)
+                            if (y.HasChildren)
                             {
-                                if (z.HasChildren)
+                                foreach (Control z in y.Controls)
                                 {
-                                    foreach (Control w in z.Controls)
+                                    if (z.HasChildren)
                                     {
-                                        if (w is TextBox | w is Label | w is Button | w is MaskedTextBox | w is DateTimePicker | w is ComboBox | w is RadioButton | w is PictureBox | w is GroupBox | w is DataGridView | w is NumericUpDown)
+                                        foreach (Control w in z.Controls)
                                         {
-                                            if ((w is Label & porcentaje_ancho <= 0.8) | (w is DateTimePicker & porcentaje_ancho <= 0.8) | (w is NumericUpDown & porcentaje_ancho <= 0.8) | (w is Button & porcentaje_ancho <= 0.8) | (w is ComboBox & porcentaje_ancho <= 0.8) | (w is RadioButton & porcentaje_ancho <= 0.8))
+                                            if (w is TextBox | w is Label | w is Button | w is MaskedTextBox | w is DateTimePicker | w is ComboBox | w is RadioButton | w is PictureBox | w is GroupBox | w is DataGridView | w is NumericUpDown)
                                             {
-                                                if (w is Label)
+                                                if ((w is Label & porcentaje_ancho <= 0.8) | (w is DateTimePicker & porcentaje_ancho <= 0.8) | (w is NumericUpDown & porcentaje_ancho <= 0.8) | (w is Button & porcentaje_ancho <= 0.8) | (w is ComboBox & porcentaje_ancho <= 0.8) | (w is RadioButton & porcentaje_ancho <= 0.8))
                                                 {
-                                                    w.Font = new Font("Microsoft Sans Serif", 10);
+                                                    if (w is Label)
+                                                    {
+                                                        w.Font = new Font("Microsoft Sans Serif", 10);
+                                                    }
+                                                    w.Font = new Font("Microsoft Sans Serif", 11);
                                                 }
-                                                w.Font = new Font("Microsoft Sans Serif", 11);
-                                            }
-                                            double posicionx = Convert.ToDouble(w.Location.X) * porcentaje_ancho;
-                                            double posiciony = Convert.ToDouble(w.Location.Y) * porcentaje_alto;
-                                            double ancho = w.Width * porcentaje_ancho;
-                                            double alto = w.Height * porcentaje_alto;
+                                                double posicionx = Convert.ToDouble(w.Location.X) * porcentaje_ancho;
+                                                double posiciony = Convert.ToDouble(w.Location.Y) * porcentaje_alto;
+                                                double ancho = w.Width * porcentaje_ancho;
+                                                double alto = w.Height * porcentaje_alto;
 
-                                            w.Left = Convert.ToInt32(posicionx);
-                                            w.Top = Convert.ToInt32(posiciony);
-                                            w.Width = Convert.ToInt32(ancho);
-                                            w.Height = Convert.ToInt32(alto);
+                                                w.Left = Convert.ToInt32(posicionx);
+                                                w.Top = Convert.ToInt32(posiciony);
+                                                w.Width = Convert.ToInt32(ancho);
+                                                w.Height = Convert.ToInt32(alto);
+                                            }
                                         }
                                     }
-                                }
-                                if (z is TextBox | z is Label | z is Button | z is MaskedTextBox | z is DateTimePicker | z is ComboBox | z is RadioButton | z is PictureBox | z is GroupBox | z is DataGridView)
-                                {
-
-                                    if ((z is Label & porcentaje_ancho <= 0.8) | (z is Button & porcentaje_ancho <= 0.8) | (z is ComboBox & porcentaje_ancho <= 0.8) | (z is RadioButton & porcentaje_ancho <= 0.8))
+                                    if (z is TextBox | z is Label | z is Button | z is MaskedTextBox | z is DateTimePicker | z is ComboBox | z is RadioButton | z is PictureBox | z is GroupBox | z is DataGridView)
                                     {
-                                        z.Font = new Font("Microsoft Sans Serif", 11);
+
+                                        if ((z is Label & porcentaje_ancho <= 0.8) | (z is Button & porcentaje_ancho <= 0.8) | (z is ComboBox & porcentaje_ancho <= 0.8) | (z is RadioButton & porcentaje_ancho <= 0.8))
+                                        {
+                                            z.Font = new Font("Microsoft Sans Serif", 11);
+                                        }
+
+                                        double posicionx = Convert.ToDouble(z.Location.X) * porcentaje_ancho;
+                                        double posiciony = Convert.ToDouble(z.Location.Y) * porcentaje_alto;
+                                        double ancho = z.Width * porcentaje_ancho;
+                                        double alto = z.Height * porcentaje_alto;
+
+                                        z.Left = Convert.ToInt32(posicionx);
+                                        z.Top = Convert.ToInt32(posiciony);
+                                        z.Width = Convert.ToInt32(ancho);
+                                        z.Height = Convert.ToInt32(alto);
                                     }
-
-                                    double posicionx = Convert.ToDouble(z.Location.X) * porcentaje_ancho;
-                                    double posiciony = Convert.ToDouble(z.Location.Y) * porcentaje_alto;
-                                    double ancho = z.Width * porcentaje_ancho;
-                                    double alto = z.Height * porcentaje_alto;
-
-                                    z.Left = Convert.ToInt32(posicionx);
-                                    z.Top = Convert.ToInt32(posiciony);
-                                    z.Width = Convert.ToInt32(ancho);
-                                    z.Height = Convert.ToInt32(alto);
                                 }
                             }
-                        }
-                        if (y is TextBox | y is Label | y is Button | y is MaskedTextBox | y is DateTimePicker | y is ComboBox | y is RadioButton | y is Panel | y is TabControl)
-                        {
-                            if ((y is Button & porcentaje_ancho <= 0.8) | (y is RadioButton & porcentaje_ancho <= 0.8))
+                            if (y is TextBox | y is Label | y is Button | y is MaskedTextBox | y is DateTimePicker | y is ComboBox | y is RadioButton | y is Panel | y is TabControl)
                             {
-                                y.Font = new Font("Microsoft Sans Serif", 12);
+                                if ((y is Button & porcentaje_ancho <= 0.8) | (y is RadioButton & porcentaje_ancho <= 0.8))
+                                {
+                                    y.Font = new Font("Microsoft Sans Serif", 12);
+                                }
+
+                                double posicionx = Convert.ToDouble(y.Location.X) * porcentaje_ancho;
+                                double posiciony = Convert.ToDouble(y.Location.Y) * porcentaje_alto;
+                                double ancho = y.Width * porcentaje_ancho;
+                                double alto = y.Height * porcentaje_alto;
+
+                                y.Left = Convert.ToInt32(posicionx);
+                                y.Top = Convert.ToInt32(posiciony);
+                                y.Width = Convert.ToInt32(ancho);
+                                y.Height = Convert.ToInt32(alto);
                             }
-
-                            double posicionx = Convert.ToDouble(y.Location.X) * porcentaje_ancho;
-                            double posiciony = Convert.ToDouble(y.Location.Y) * porcentaje_alto;
-                            double ancho = y.Width * porcentaje_ancho;
-                            double alto = y.Height * porcentaje_alto;
-
-                            y.Left = Convert.ToInt32(posicionx);
-                            y.Top = Convert.ToInt32(posiciony);
-                            y.Width = Convert.ToInt32(ancho);
-                            y.Height = Convert.ToInt32(alto);
                         }
                     }
-                }
-                if (x is TextBox | x is Label | x is Button | x is MaskedTextBox | x is DateTimePicker | x is ComboBox | x is RadioButton | x is Panel | x is TabControl)
-                {
-                    double posicionx = Convert.ToDouble(x.Location.X) * porcentaje_ancho;
-                    double posiciony = Convert.ToDouble(x.Location.Y) * porcentaje_alto;
-                    double ancho = x.Width * porcentaje_ancho;
-                    double alto = x.Height * porcentaje_alto;
+                    if (x is TextBox | x is Label | x is Button | x is MaskedTextBox | x is DateTimePicker | x is ComboBox | x is RadioButton | x is Panel | x is TabControl)
+                    {
+                        double posicionx = Convert.ToDouble(x.Location.X) * porcentaje_ancho;
+                        double posiciony = Convert.ToDouble(x.Location.Y) * porcentaje_alto;
+                        double ancho = x.Width * porcentaje_ancho;
+                        double alto = x.Height * porcentaje_alto;
 
-                    x.Left = Convert.ToInt32(posicionx);
-                    x.Top = Convert.ToInt32(posiciony);
-                    x.Width = Convert.ToInt32(ancho);
-                    x.Height = Convert.ToInt32(alto);
+                        x.Left = Convert.ToInt32(posicionx);
+                        x.Top = Convert.ToInt32(posiciony);
+                        x.Width = Convert.ToInt32(ancho);
+                        x.Height = Convert.ToInt32(alto);
+                    }
                 }
-            }
             //********************************************************************************************
-=======
+                
                 //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
                 CheckForIllegalCrossThreadCalls = false;
                 Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
@@ -473,6 +486,9 @@ namespace Checador
                 {
                     vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
                 }
+
+                //DESACTIVAR LOS DESCANSOS AL INICIAR
+                cb_descanso.Checked = false;
             }
             catch (SqlException ex)
             {
@@ -499,9 +515,14 @@ namespace Checador
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
         }
 
         ///REGISTRAR///////////////////////////////////////////////////////////////////////////////////
@@ -597,7 +618,11 @@ namespace Checador
             {
                 //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
-                MessageBox.Show(ex.ToString());
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -613,22 +638,70 @@ namespace Checador
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
         private void cb_descanso_CheckedChanged(object sender, EventArgs e)
         {
-            if (cb_descanso.Checked == true)
+            //FUNCION PARA CALCULAR HORAS TRABAJADAS CUANDO SE HABILITEN O NO LAS HORAS DE DESCANSO
+            try
             {
-                dtp_hora_entrada_desc.Enabled = true;
-                dtp_hora_salida_desc.Enabled = true;
-              
+                DateTime hora_e = Convert.ToDateTime(dtp_hora_entrada.Text);
+                DateTime hora_s = Convert.ToDateTime(dtp_hora_salida.Text);
+                if (cb_descanso.Checked == true)
+                {
+                    dtp_hora_entrada_desc.Enabled = true;
+                    dtp_hora_salida_desc.Enabled = true;
+                    DateTime salida_eat = Convert.ToDateTime(dtp_hora_salida_desc.Text);
+                    DateTime regreso_eat = Convert.ToDateTime(dtp_hora_entrada_desc.Text);
+
+                    TimeSpan salida_comer = new TimeSpan(salida_eat.Hour, salida_eat.Minute, salida_eat.Second);
+                    TimeSpan regreso_comer = new TimeSpan(regreso_eat.Hour, regreso_eat.Minute, regreso_eat.Second);
+                    horas_descanso = regreso_comer.TotalMinutes - salida_comer.TotalMinutes;
+                    TimeSpan entrada = new TimeSpan(hora_e.Hour, hora_e.Minute, hora_e.Second);
+                    TimeSpan salida = new TimeSpan(hora_s.Hour, hora_s.Minute, hora_s.Second);
+                    horas_diarias = salida.TotalMinutes - entrada.TotalMinutes;
+                    txt_horas_diarias.Value = Math.Truncate((Convert.ToDecimal(horas_diarias) - Convert.ToDecimal(horas_descanso)) / 60);
+
+
+                }
+                else if (cb_descanso.Checked == false)
+                {
+                    dtp_hora_entrada_desc.Enabled = false;
+                    dtp_hora_salida_desc.Enabled = false;
+
+                    TimeSpan entrada = new TimeSpan(hora_e.Hour, hora_e.Minute, hora_e.Second);
+                    TimeSpan salida = new TimeSpan(hora_s.Hour, hora_s.Minute, hora_s.Second);
+                    horas_diarias = salida.TotalMinutes - entrada.TotalMinutes;
+                    txt_horas_diarias.Value = Math.Truncate(Convert.ToDecimal(horas_diarias) / 60);
+                }
             }
-            else if (cb_descanso.Checked == false)
+            catch (Exception ex)
             {
-                dtp_hora_entrada_desc.Enabled = false;
-                dtp_hora_salida_desc.Enabled = false;
+                int code = ex.HResult;
+                if (code == -2146233086)
+                {
+                    frm_error = new formularios_padres.mensaje_error();
+                    frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                    frm_error.txt_error.Text = ("Las horas trabajadas no pueden ser iguales o menores a 0. Verifique las horas ingresadas anteriormente y seleccione un horario válido.");
+                    frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    frm_error.ShowDialog();
+                }
+                else
+                {
+                    frm_error = new formularios_padres.mensaje_error();
+                    frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                    frm_error.txt_error.Text = (code + " " + ex.Message.ToString());
+                    frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    frm_error.ShowDialog();
+                }
             }
         }
 
@@ -966,7 +1039,13 @@ namespace Checador
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -1022,7 +1101,7 @@ namespace Checador
             }
             catch (Exception ex)
             {
-                //MessageBox.Show(ex.Message.ToString());
+                
             }
         }
 
@@ -1044,9 +1123,13 @@ namespace Checador
             }
             catch (Exception ex)
             {
-                // CAMBIAR EL CURSOR
+                //CAMBIAR EL CURSOR
                 this.UseWaitCursor = false;
-                MessageBox.Show(ex.ToString());
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -1077,7 +1160,13 @@ namespace Checador
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -1121,7 +1210,13 @@ namespace Checador
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -1150,6 +1245,243 @@ namespace Checador
             else
             {
                 errorProvider1.SetError(txt_nombre, null);
+            }
+        }
+
+        private void txt_nombre_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_nombre.Text))
+            {
+
+                errorProvider1.SetError(txt_nombre, "No ha ingresado el nombre del horario.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_nombre, null);
+               
+            }
+        }
+
+        private void dtp_hora_salida_ValueChanged(object sender, EventArgs e)
+        {
+            //CALCULAR HORAS AUTOMATICAMENTE DEPENDIENDO DE LAS HORAS ESTABLECIDAD DE ENTRADA-SALIDA Y DESCANSOS
+            try
+            {
+                DateTime hora_e = Convert.ToDateTime(dtp_hora_entrada.Text);
+                DateTime hora_s = Convert.ToDateTime(dtp_hora_salida.Text);
+                horas_descanso = 0;
+                if (cb_descanso.Checked == true)
+                {
+                    DateTime salida_eat = Convert.ToDateTime(dtp_hora_salida_desc.Text);
+                    DateTime regreso_eat = Convert.ToDateTime(dtp_hora_entrada_desc.Text);
+                    TimeSpan salida_comer = new TimeSpan(salida_eat.Hour, salida_eat.Minute, salida_eat.Second);
+                    TimeSpan regreso_comer = new TimeSpan(regreso_eat.Hour, regreso_eat.Minute, regreso_eat.Second);
+                    horas_descanso = regreso_comer.TotalMinutes - salida_comer.TotalMinutes;
+
+                }
+                TimeSpan entrada = new TimeSpan(hora_e.Hour, hora_e.Minute, hora_e.Second);
+                TimeSpan salida = new TimeSpan(hora_s.Hour, hora_s.Minute, hora_s.Second);
+                horas_diarias = salida.TotalMinutes - entrada.TotalMinutes;
+                txt_horas_diarias.Value = Math.Truncate((Convert.ToDecimal(horas_diarias) - Convert.ToDecimal(horas_descanso)) / 60);
+
+            }
+            catch (Exception ex)
+            {
+                int code = ex.HResult;
+                if (code == -2146233086)
+                {
+                    frm_error = new formularios_padres.mensaje_error();
+                    frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                    frm_error.txt_error.Text = ("Las horas trabajadas no pueden ser iguales o menores a 0. Verifique las horas ingresadas anteriormente y seleccione un horario válido.");
+                    frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    frm_error.ShowDialog();
+                }
+                else
+                {
+                    frm_error = new formularios_padres.mensaje_error();
+                    frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                    frm_error.txt_error.Text = (code + " " + ex.Message.ToString());
+                    frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    frm_error.ShowDialog();
+                }
+            }
+        }
+
+        private void dtp_hora_salida_desc_ValueChanged(object sender, EventArgs e)
+        {
+            //CALCULAR HORAS AUTOMATICAMENTE DEPENDIENDO DE LAS HORAS ESTABLECIDAD DE ENTRADA-SALIDA Y DESCANSOS
+            try
+            {
+                DateTime hora_e = Convert.ToDateTime(dtp_hora_entrada.Text);
+                DateTime hora_s = Convert.ToDateTime(dtp_hora_salida.Text);
+                DateTime salida_eat = Convert.ToDateTime(dtp_hora_salida_desc.Text);
+                DateTime regreso_eat = Convert.ToDateTime(dtp_hora_entrada_desc.Text);
+
+                TimeSpan entrada = new TimeSpan(hora_e.Hour, hora_e.Minute, hora_e.Second);
+                TimeSpan salida = new TimeSpan(hora_s.Hour, hora_s.Minute, hora_s.Second);
+                horas_diarias = salida.TotalMinutes - entrada.TotalMinutes;
+
+                TimeSpan salida_comer = new TimeSpan(salida_eat.Hour, salida_eat.Minute, salida_eat.Second);
+                TimeSpan regreso_comer = new TimeSpan(regreso_eat.Hour, regreso_eat.Minute, regreso_eat.Second);
+                horas_descanso = regreso_comer.TotalMinutes - salida_comer.TotalMinutes;
+
+                txt_horas_diarias.Value = Math.Truncate((Convert.ToDecimal(horas_diarias) - Convert.ToDecimal(horas_descanso)) / 60);
+
+            }
+            catch (Exception ex)
+            {
+                int code = ex.HResult;
+                if (code == -2146233086)
+                {
+                    frm_error = new formularios_padres.mensaje_error();
+                    frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                    frm_error.txt_error.Text = ("Las horas trabajadas no pueden ser iguales o menores a 0. Verifique las horas ingresadas anteriormente y seleccione un horario válido.");
+                    frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    frm_error.ShowDialog();
+                }
+                else
+                {
+                    frm_error = new formularios_padres.mensaje_error();
+                    frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                    frm_error.txt_error.Text = (code + " " + ex.Message.ToString());
+                    frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    frm_error.ShowDialog();
+                }
+            }
+        }
+
+        private void dtp_hora_entrada_desc_ValueChanged(object sender, EventArgs e)
+        {
+            //CALCULAR HORAS AUTOMATICAMENTE DEPENDIENDO DE LAS HORAS ESTABLECIDAD DE ENTRADA-SALIDA Y DESCANSOS
+            try
+            {
+                DateTime hora_e = Convert.ToDateTime(dtp_hora_entrada.Text);
+                DateTime hora_s = Convert.ToDateTime(dtp_hora_salida.Text);
+                DateTime salida_eat = Convert.ToDateTime(dtp_hora_salida_desc.Text);
+                DateTime regreso_eat = Convert.ToDateTime(dtp_hora_entrada_desc.Text);
+
+                TimeSpan entrada = new TimeSpan(hora_e.Hour, hora_e.Minute, hora_e.Second);
+                TimeSpan salida = new TimeSpan(hora_s.Hour, hora_s.Minute, hora_s.Second);
+                horas_diarias = salida.TotalMinutes - entrada.TotalMinutes;
+
+                TimeSpan salida_comer = new TimeSpan(salida_eat.Hour, salida_eat.Minute, salida_eat.Second);
+                TimeSpan regreso_comer = new TimeSpan(regreso_eat.Hour, regreso_eat.Minute, regreso_eat.Second);
+                horas_descanso = regreso_comer.TotalMinutes - salida_comer.TotalMinutes;
+
+                txt_horas_diarias.Value = Math.Truncate((Convert.ToDecimal(horas_diarias) - Convert.ToDecimal(horas_descanso)) / 60);
+
+            }
+            catch (Exception ex)
+            {
+                int code = ex.HResult;
+                if (code == -2146233086)
+                {
+                    frm_error = new formularios_padres.mensaje_error();
+                    frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                    frm_error.txt_error.Text = ("Las horas trabajadas no pueden ser iguales o menores a 0. Verifique las horas ingresadas anteriormente y seleccione un horario válido.");
+                    frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    frm_error.ShowDialog();
+                }
+                else
+                {
+                    frm_error = new formularios_padres.mensaje_error();
+                    frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                    frm_error.txt_error.Text = (code + " " + ex.Message.ToString());
+                    frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    frm_error.ShowDialog();
+                }
+            }
+        }
+
+        private void txt_horas_diarias_ValueChanged(object sender, EventArgs e)
+        {
+            //CAMBIAR HORAS QUINCENALES CUANDO SE CAMBIEN LAS HORAS DIARIAS
+            try
+            {
+                int horas_diarias = Convert.ToInt32(txt_horas_diarias.Value);
+                txt_horas_totales.Value = horas_diarias * 12;
+            }
+            catch (Exception ex)
+            {
+                int code = ex.HResult;
+                if (code == -2146233086)
+                {
+                    frm_error = new formularios_padres.mensaje_error();
+                    frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                    frm_error.txt_error.Text = ("Las horas trabajadas no pueden ser iguales o menores a 0. Verifique las horas ingresadas anteriormente y seleccione un horario válido.");
+                    frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    frm_error.ShowDialog();
+                }
+                else
+                {
+                    frm_error = new formularios_padres.mensaje_error();
+                    frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                    frm_error.txt_error.Text = (code + " " + ex.Message.ToString());
+                    frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    frm_error.ShowDialog();
+                }
+            }
+        }
+
+        private void txt_id_a_modificar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //EJECUTAR MODIFICAR CON ENTER
+            if (e.KeyChar == 13)
+            {
+                btn_ir_modificar.PerformClick();
+            }
+            validar.solonumeros(e);
+        }
+
+        private void txt_idbuscar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            validar.solonumeros(e);
+            validar.sinespacios(e);
+        }
+
+        private void dtp_hora_entrada_ValueChanged(object sender, EventArgs e)
+        {
+            //CALCULAR HORAS AUTOMATICAMENTE DEPENDIENDO DE LAS HORAS ESTABLECIDAD DE ENTRADA-SALIDA Y DESCANSOS
+            try
+            {
+                DateTime hora_e = Convert.ToDateTime(dtp_hora_entrada.Text);
+                DateTime hora_s = Convert.ToDateTime(dtp_hora_salida.Text);
+                horas_descanso = 0;
+                if (cb_descanso.Checked == true)
+                {
+                    DateTime salida_eat = Convert.ToDateTime(dtp_hora_salida_desc.Text);
+                    DateTime regreso_eat = Convert.ToDateTime(dtp_hora_entrada_desc.Text);
+                    TimeSpan salida_comer = new TimeSpan(salida_eat.Hour, salida_eat.Minute, salida_eat.Second);
+                    TimeSpan regreso_comer = new TimeSpan(regreso_eat.Hour, regreso_eat.Minute, regreso_eat.Second);
+                    horas_descanso = regreso_comer.TotalMinutes - salida_comer.TotalMinutes;
+
+                }
+                TimeSpan entrada = new TimeSpan(hora_e.Hour, hora_e.Minute, hora_e.Second);
+                TimeSpan salida = new TimeSpan(hora_s.Hour, hora_s.Minute, hora_s.Second);
+                horas_diarias = salida.TotalMinutes - entrada.TotalMinutes;
+                txt_horas_diarias.Value = Math.Truncate((Convert.ToDecimal(horas_diarias) - Convert.ToDecimal(horas_descanso)) / 60);
+
+            }
+            catch (Exception ex)
+            {
+                int code = ex.HResult;
+                if (code == -2146233086)
+                {
+                    frm_error = new formularios_padres.mensaje_error();
+                    frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                    frm_error.txt_error.Text = ("Las horas trabajadas no pueden ser iguales o menores a 0. Verifique las horas ingresadas anteriormente y seleccione un horario válido.");
+                    frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    frm_error.ShowDialog();
+                }
+                else
+                {
+                    frm_error = new formularios_padres.mensaje_error();
+                    frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                    frm_error.txt_error.Text = (code + " " + ex.Message.ToString());
+                    frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    frm_error.ShowDialog();
+                }
             }
         }
     }

@@ -22,6 +22,7 @@ namespace Checador.reportes
 
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
+        formularios_padres.mensaje_error frm_error = new formularios_padres.mensaje_error();
 
         public reporte()
         {
@@ -46,121 +47,180 @@ namespace Checador.reportes
                 this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
                 // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.sucursal' Puede moverla o quitarla según sea necesario.
                 this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
+                CheckForIllegalCrossThreadCalls = false;
 
-<<<<<<< HEAD
-            CheckForIllegalCrossThreadCalls = false;
+                //*************   HACER FORMULARIO RESPONSIVO   *****************
+                double porcentaje_ancho = (Convert.ToDouble(Width) / 1362);
+                double porcentaje_alto = (Convert.ToDouble(Height) / 741);
 
-            //*************   HACER FORMULARIO RESPONSIVO   *****************
-            double porcentaje_ancho = (Convert.ToDouble(Width) / 1362);
-            double porcentaje_alto = (Convert.ToDouble(Height) / 741);
-
-            foreach (Control x in this.Controls)
-            {
-                if (x.HasChildren)
+                foreach (Control x in this.Controls)
                 {
-                    foreach (Control y in x.Controls)
+                    if (x.HasChildren)
                     {
-                        if (y.HasChildren)
+                        foreach (Control y in x.Controls)
                         {
-                            foreach (Control z in y.Controls)
+                            if (y.HasChildren)
                             {
-                                if (z.HasChildren)
+                                foreach (Control z in y.Controls)
                                 {
-                                    foreach (Control w in z.Controls)
+                                    if (z.HasChildren)
                                     {
-                                        if (w is TextBox | w is Label | w is Button | w is MaskedTextBox | w is DateTimePicker | w is ComboBox | w is RadioButton | w is PictureBox | w is GroupBox | w is DataGridView | w is NumericUpDown)
+                                        foreach (Control w in z.Controls)
                                         {
-                                            if ((w is Label & porcentaje_ancho <= 0.8) | (w is DateTimePicker & porcentaje_ancho <= 0.8) | (w is NumericUpDown & porcentaje_ancho <= 0.8) | (w is Button & porcentaje_ancho <= 0.8) | (w is ComboBox & porcentaje_ancho <= 0.8) | (w is RadioButton & porcentaje_ancho <= 0.8))
+                                            if (w is TextBox | w is Label | w is Button | w is MaskedTextBox | w is DateTimePicker | w is ComboBox | w is RadioButton | w is PictureBox | w is GroupBox | w is DataGridView | w is NumericUpDown)
                                             {
-                                                if (w is Label)
+                                                if ((w is Label & porcentaje_ancho <= 0.8) | (w is DateTimePicker & porcentaje_ancho <= 0.8) | (w is NumericUpDown & porcentaje_ancho <= 0.8) | (w is Button & porcentaje_ancho <= 0.8) | (w is ComboBox & porcentaje_ancho <= 0.8) | (w is RadioButton & porcentaje_ancho <= 0.8))
                                                 {
-                                                    w.Font = new Font("Microsoft Sans Serif", 10);
+                                                    if (w is Label)
+                                                    {
+                                                        w.Font = new Font("Microsoft Sans Serif", 10);
+                                                    }
+                                                    w.Font = new Font("Microsoft Sans Serif", 11);
                                                 }
-                                                w.Font = new Font("Microsoft Sans Serif", 11);
-                                            }
-                                            double posicionx = Convert.ToDouble(w.Location.X) * porcentaje_ancho;
-                                            double posiciony = Convert.ToDouble(w.Location.Y) * porcentaje_alto;
-                                            double ancho = w.Width * porcentaje_ancho;
-                                            double alto = w.Height * porcentaje_alto;
+                                                double posicionx = Convert.ToDouble(w.Location.X) * porcentaje_ancho;
+                                                double posiciony = Convert.ToDouble(w.Location.Y) * porcentaje_alto;
+                                                double ancho = w.Width * porcentaje_ancho;
+                                                double alto = w.Height * porcentaje_alto;
 
-                                            w.Left = Convert.ToInt32(posicionx);
-                                            w.Top = Convert.ToInt32(posiciony);
-                                            w.Width = Convert.ToInt32(ancho);
-                                            w.Height = Convert.ToInt32(alto);
+                                                w.Left = Convert.ToInt32(posicionx);
+                                                w.Top = Convert.ToInt32(posiciony);
+                                                w.Width = Convert.ToInt32(ancho);
+                                                w.Height = Convert.ToInt32(alto);
+                                            }
                                         }
                                     }
-                                }
-                                if (z is TextBox | z is Label | z is Button | z is MaskedTextBox | z is DateTimePicker | z is ComboBox | z is RadioButton | z is PictureBox | z is GroupBox | z is DataGridView)
-                                {
-
-                                    if ((z is Label & porcentaje_ancho <= 0.8) | (z is Button & porcentaje_ancho <= 0.8) | (z is ComboBox & porcentaje_ancho <= 0.8) | (z is RadioButton & porcentaje_ancho <= 0.8))
+                                    if (z is TextBox | z is Label | z is Button | z is MaskedTextBox | z is DateTimePicker | z is ComboBox | z is RadioButton | z is PictureBox | z is GroupBox | z is DataGridView)
                                     {
-                                        z.Font = new Font("Microsoft Sans Serif", 11);
+
+                                        if ((z is Label & porcentaje_ancho <= 0.8) | (z is Button & porcentaje_ancho <= 0.8) | (z is ComboBox & porcentaje_ancho <= 0.8) | (z is RadioButton & porcentaje_ancho <= 0.8))
+                                        {
+                                            z.Font = new Font("Microsoft Sans Serif", 11);
+                                        }
+
+                                        double posicionx = Convert.ToDouble(z.Location.X) * porcentaje_ancho;
+                                        double posiciony = Convert.ToDouble(z.Location.Y) * porcentaje_alto;
+                                        double ancho = z.Width * porcentaje_ancho;
+                                        double alto = z.Height * porcentaje_alto;
+
+                                        z.Left = Convert.ToInt32(posicionx);
+                                        z.Top = Convert.ToInt32(posiciony);
+                                        z.Width = Convert.ToInt32(ancho);
+                                        z.Height = Convert.ToInt32(alto);
                                     }
-
-                                    double posicionx = Convert.ToDouble(z.Location.X) * porcentaje_ancho;
-                                    double posiciony = Convert.ToDouble(z.Location.Y) * porcentaje_alto;
-                                    double ancho = z.Width * porcentaje_ancho;
-                                    double alto = z.Height * porcentaje_alto;
-
-                                    z.Left = Convert.ToInt32(posicionx);
-                                    z.Top = Convert.ToInt32(posiciony);
-                                    z.Width = Convert.ToInt32(ancho);
-                                    z.Height = Convert.ToInt32(alto);
                                 }
                             }
-                        }
-                        if (y is TextBox | y is Label | y is Button | y is MaskedTextBox | y is DateTimePicker | y is ComboBox | y is RadioButton | y is Panel | y is TabControl)
-                        {
-                            if ((y is Button & porcentaje_ancho <= 0.8) | (y is RadioButton & porcentaje_ancho <= 0.8))
+                            if (y is TextBox | y is Label | y is Button | y is MaskedTextBox | y is DateTimePicker | y is ComboBox | y is RadioButton | y is Panel | y is TabControl)
                             {
-                                y.Font = new Font("Microsoft Sans Serif", 12);
+                                if ((y is Button & porcentaje_ancho <= 0.8) | (y is RadioButton & porcentaje_ancho <= 0.8))
+                                {
+                                    y.Font = new Font("Microsoft Sans Serif", 12);
+                                }
+
+                                double posicionx = Convert.ToDouble(y.Location.X) * porcentaje_ancho;
+                                double posiciony = Convert.ToDouble(y.Location.Y) * porcentaje_alto;
+                                double ancho = y.Width * porcentaje_ancho;
+                                double alto = y.Height * porcentaje_alto;
+
+                                y.Left = Convert.ToInt32(posicionx);
+                                y.Top = Convert.ToInt32(posiciony);
+                                y.Width = Convert.ToInt32(ancho);
+                                y.Height = Convert.ToInt32(alto);
                             }
-
-                            double posicionx = Convert.ToDouble(y.Location.X) * porcentaje_ancho;
-                            double posiciony = Convert.ToDouble(y.Location.Y) * porcentaje_alto;
-                            double ancho = y.Width * porcentaje_ancho;
-                            double alto = y.Height * porcentaje_alto;
-
-                            y.Left = Convert.ToInt32(posicionx);
-                            y.Top = Convert.ToInt32(posiciony);
-                            y.Width = Convert.ToInt32(ancho);
-                            y.Height = Convert.ToInt32(alto);
                         }
                     }
+                    if (x is TextBox | x is Label | x is Button | x is MaskedTextBox | x is DateTimePicker | x is ComboBox | x is RadioButton | x is Panel | x is TabControl)
+                    {
+                        double posicionx = Convert.ToDouble(x.Location.X) * porcentaje_ancho;
+                        double posiciony = Convert.ToDouble(x.Location.Y) * porcentaje_alto;
+                        double ancho = x.Width * porcentaje_ancho;
+                        double alto = x.Height * porcentaje_alto;
+
+                        x.Left = Convert.ToInt32(posicionx);
+                        x.Top = Convert.ToInt32(posiciony);
+                        x.Width = Convert.ToInt32(ancho);
+                        x.Height = Convert.ToInt32(alto);
+                    }
                 }
-                if (x is TextBox | x is Label | x is Button | x is MaskedTextBox | x is DateTimePicker | x is ComboBox | x is RadioButton | x is Panel | x is TabControl)
+                //********************************************************************************************
+
+                //FILTRAR COMBOBOX DE EMPLEADOS EN REPORTES DEPENDIENDO EL ROL
+                if (Program.rol != "ENCARGADA DE TIENDA")
                 {
-                    double posicionx = Convert.ToDouble(x.Location.X) * porcentaje_ancho;
-                    double posiciony = Convert.ToDouble(x.Location.Y) * porcentaje_alto;
-                    double ancho = x.Width * porcentaje_ancho;
-                    double alto = x.Height * porcentaje_alto;
-
-                    x.Left = Convert.ToInt32(posicionx);
-                    x.Top = Convert.ToInt32(posiciony);
-                    x.Width = Convert.ToInt32(ancho);
-                    x.Height = Convert.ToInt32(alto);
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                    vistaEmpleadosBindingSource.Filter = "";
                 }
-            }
-            //********************************************************************************************
+                else
+                {
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                }
 
-=======
-                CheckForIllegalCrossThreadCalls = false;
+                //FILTRAR COMBOBOX DE SUCURSAL EN REPORTES DEPENDIENDO DE LA SUCURSAL DE LA ENCARGADA DE TIENDA
+                if (Program.rol != "ENCARGADA DE TIENDA")
+                {
+                    this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
+                    sucursalBindingSource.Filter = "";
+                    sucursalBindingSource1.Filter = "";
+                }
+                else
+                {
+                    sucursalBindingSource.Filter = "nombre ='" + Program.sucursal + "'";
+                    sucursalBindingSource1.Filter = "nombre ='" + Program.sucursal + "'";
+                }
+
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
-           
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
         }
 
         private void btn_gnerar_Click(object sender, EventArgs e)
         {
-            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-            Thread hilo_secundario = new Thread(new ThreadStart(this.Por_Sucursal));
-            hilo_secundario.IsBackground = true;
-            hilo_secundario.Start();
+            if (Convert.ToDateTime(dtp_fecha1.Value.ToString("yyyy-MM-dd 00:00:00")) > Convert.ToDateTime(dtp_fecha2.Value.ToString("yyyy-MM-dd 00:00:00")))
+            {
+                
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "La fecha inicial es menor que la fecha final.";
+                mensaje.lbl_info2.Text = "Verifique las fechas.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.ShowDialog();
+            }
+            else
+            {
+                //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+                Thread hilo_secundario = new Thread(new ThreadStart(this.Por_Sucursal));
+                hilo_secundario.IsBackground = true;
+                hilo_secundario.Start();
+            }
         }
 
         public void Por_Sucursal()
@@ -245,7 +305,13 @@ namespace Checador.reportes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -256,10 +322,22 @@ namespace Checador.reportes
 
         private void btn_retardo_Click(object sender, EventArgs e)
         {
-            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-            Thread hilo_secundario = new Thread(new ThreadStart(this.Por_Retardos));
-            hilo_secundario.IsBackground = true;
-            hilo_secundario.Start();
+            if (Convert.ToDateTime(dtp_fecha1_retardo.Value.ToString("yyyy-MM-dd 00:00:00")) > Convert.ToDateTime(dtp_fecha2_retardo.Value.ToString("yyyy-MM-dd 00:00:00")))
+            {
+
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "La fecha inicial es menor que la fecha final.";
+                mensaje.lbl_info2.Text = "Verifique las fechas.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.ShowDialog();
+            }
+            else
+            {
+                //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+                Thread hilo_secundario = new Thread(new ThreadStart(this.Por_Retardos));
+                hilo_secundario.IsBackground = true;
+                hilo_secundario.Start();
+            }
         }
 
         public void Por_Retardos()
@@ -344,7 +422,13 @@ namespace Checador.reportes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -355,10 +439,21 @@ namespace Checador.reportes
 
         private void btn_asistencia_Click(object sender, EventArgs e)
         {
-            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-            Thread hilo_secundario = new Thread(new ThreadStart(this.Por_Asistencia));
-            hilo_secundario.IsBackground = true;
-            hilo_secundario.Start();
+            if (Convert.ToDateTime(dtp_asistencia1.Value.ToString("yyyy-MM-dd 00:00:00")) > Convert.ToDateTime(dtp_asistencia2.Value.ToString("yyyy-MM-dd 00:00:00")))
+            {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "La fecha inicial es menor que la fecha final.";
+                mensaje.lbl_info2.Text = "Verifique las fechas.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.ShowDialog();
+            }
+            else
+            {
+                //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+                Thread hilo_secundario = new Thread(new ThreadStart(this.Por_Asistencia));
+                hilo_secundario.IsBackground = true;
+                hilo_secundario.Start();
+            }
         }
 
         public void Por_Asistencia()
@@ -442,16 +537,33 @@ namespace Checador.reportes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
         private void btn_empleado_retardo_Click(object sender, EventArgs e)
         {
-            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-            Thread hilo_secundario = new Thread(new ThreadStart(this.Retardo_Empleado));
-            hilo_secundario.IsBackground = true;
-            hilo_secundario.Start();
+            if (Convert.ToDateTime(dtp_empleado_retardo1.Value.ToString("yyyy-MM-dd 00:00:00")) > Convert.ToDateTime(dtp_empleado_retardo2.Value.ToString("yyyy-MM-dd 00:00:00")))
+            {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "La fecha inicial es menor que la fecha final.";
+                mensaje.lbl_info2.Text = "Verifique las fechas.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.ShowDialog();
+            }
+            else
+            {
+                //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+                Thread hilo_secundario = new Thread(new ThreadStart(this.Retardo_Empleado));
+                hilo_secundario.IsBackground = true;
+                hilo_secundario.Start();
+            }
         }
 
         public void Retardo_Empleado()
@@ -535,7 +647,13 @@ namespace Checador.reportes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -581,10 +699,21 @@ namespace Checador.reportes
 
         private void btn_departamento_Click(object sender, EventArgs e)
         {
-            //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
-            Thread hilo_secundario = new Thread(new ThreadStart(this.Por_Departamento));
-            hilo_secundario.IsBackground = true;
-            hilo_secundario.Start();
+            if (Convert.ToDateTime(dtp_departamento1.Value.ToString("yyyy-MM-dd 00:00:00")) > Convert.ToDateTime(dtp_departamento1.Value.ToString("yyyy-MM-dd 00:00:00")))
+            {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "La fecha inicial es menor que la fecha final.";
+                mensaje.lbl_info2.Text = "Verifique las fechas.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.ShowDialog();
+            }
+            else
+            {
+                //SE CREA UN HILO, SE CARGA CON EL METODO Y SE EJECUTA
+                Thread hilo_secundario = new Thread(new ThreadStart(this.Por_Departamento));
+                hilo_secundario.IsBackground = true;
+                hilo_secundario.Start();
+            }
         }
 
         public void Por_Departamento()
@@ -668,7 +797,13 @@ namespace Checador.reportes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 
@@ -742,7 +877,13 @@ namespace Checador.reportes
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
             }
         }
 

@@ -29,19 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-<<<<<<< HEAD
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(empleados));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-=======
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(empleados));
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.txt_rfc = new System.Windows.Forms.MaskedTextBox();
             this.txt_nss = new System.Windows.Forms.TextBox();
             this.txt_puesto = new System.Windows.Forms.TextBox();
@@ -102,17 +94,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.cbx_sucursal = new System.Windows.Forms.ComboBox();
             this.sucursalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet_Checador1 = new Checador.DataSet_Checador();
-            this.txt_contra = new System.Windows.Forms.TextBox();
-            this.cbx_privilegio = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.dtp_fec_alt = new System.Windows.Forms.DateTimePicker();
@@ -193,6 +181,11 @@
             this.txt_departamento = new System.Windows.Forms.TextBox();
             this.label85 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbx_privilegio = new System.Windows.Forms.ComboBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.txt_contra = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -201,6 +194,7 @@
             this.tabPage5.SuspendLayout();
             this.panel_barra_sup.SuspendLayout();
             this.panel_menu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).BeginInit();
@@ -212,6 +206,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.horariosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // rb_4
@@ -244,18 +239,13 @@
             // 
             // tabControlBase
             // 
-<<<<<<< HEAD
-            this.tabControlBase.Location = new System.Drawing.Point(310, 70);
-=======
-            this.tabControlBase.Location = new System.Drawing.Point(310, 68);
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
+            this.tabControlBase.Location = new System.Drawing.Point(310, 58);
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.txt_departamento);
             this.tabPage1.Controls.Add(this.label85);
-            this.tabPage1.Controls.Add(this.cbx_privilegio);
-            this.tabPage1.Controls.Add(this.label26);
             this.tabPage1.Controls.Add(this.txt_domicilio_municipio);
             this.tabPage1.Controls.Add(this.label33);
             this.tabPage1.Controls.Add(this.txt_domicilio_cp);
@@ -282,19 +272,16 @@
             this.tabPage1.Controls.Add(this.btn_siguiente);
             this.tabPage1.Controls.Add(this.txt_id);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.txt_contra);
             this.tabPage1.Controls.Add(this.cbx_sucursal);
             this.tabPage1.Controls.Add(this.label29);
             this.tabPage1.Controls.Add(this.txt_nombre);
             this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.txt_apellido_materno);
             this.tabPage1.Controls.Add(this.txt_apellido_paterno);
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // tabPage2
             // 
@@ -587,18 +574,12 @@
             this.dgv_empleadobuscar.AllowUserToDeleteRows = false;
             this.dgv_empleadobuscar.AllowUserToResizeColumns = false;
             this.dgv_empleadobuscar.AllowUserToResizeRows = false;
-<<<<<<< HEAD
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-=======
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            this.dgv_empleadobuscar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.dgv_empleadobuscar.AutoGenerateColumns = false;
             this.dgv_empleadobuscar.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgv_empleadobuscar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_empleadobuscar.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-<<<<<<< HEAD
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -607,16 +588,6 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_empleadobuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-=======
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_empleadobuscar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.dgv_empleadobuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_empleadobuscar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
@@ -651,7 +622,6 @@
             this.dataGridViewTextBoxColumn36,
             this.dataGridViewTextBoxColumn37});
             this.dgv_empleadobuscar.DataSource = this.vistaEmpleadosBindingSource;
-<<<<<<< HEAD
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -660,23 +630,12 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_empleadobuscar.DefaultCellStyle = dataGridViewCellStyle7;
-=======
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_empleadobuscar.DefaultCellStyle = dataGridViewCellStyle3;
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.dgv_empleadobuscar.EnableHeadersVisualStyles = false;
             this.dgv_empleadobuscar.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             this.dgv_empleadobuscar.Location = new System.Drawing.Point(30, 101);
             this.dgv_empleadobuscar.MultiSelect = false;
             this.dgv_empleadobuscar.Name = "dgv_empleadobuscar";
             this.dgv_empleadobuscar.ReadOnly = true;
-<<<<<<< HEAD
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -685,16 +644,6 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_empleadobuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-=======
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_empleadobuscar.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.dgv_empleadobuscar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_empleadobuscar.Size = new System.Drawing.Size(966, 407);
             this.dgv_empleadobuscar.TabIndex = 45;
@@ -1019,6 +968,7 @@
             this.txt_idbuscar.Size = new System.Drawing.Size(248, 29);
             this.txt_idbuscar.TabIndex = 43;
             this.txt_idbuscar.TextChanged += new System.EventHandler(this.txt_idbuscar_TextChanged);
+            this.txt_idbuscar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_idbuscar_KeyPress);
             // 
             // txt_nombrebuscar
             // 
@@ -1126,17 +1076,6 @@
             this.label6.TabIndex = 1038;
             this.label6.Text = "Fecha de Alta:";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(495, 156);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 24);
-            this.label5.TabIndex = 1036;
-            this.label5.Text = "Contraseña:";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1159,16 +1098,6 @@
             this.label17.Size = new System.Drawing.Size(149, 24);
             this.label17.TabIndex = 1045;
             this.label17.Text = "Datos Generales";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(515, 206);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(91, 24);
-            this.label26.TabIndex = 1046;
-            this.label26.Text = "Privilegio:";
             // 
             // txt_nombre
             // 
@@ -1214,29 +1143,6 @@
             // 
             this.dataSet_Checador1.DataSetName = "DataSet_Checador";
             this.dataSet_Checador1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // txt_contra
-            // 
-            this.txt_contra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_contra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_contra.Location = new System.Drawing.Point(617, 149);
-            this.txt_contra.MaxLength = 11;
-            this.txt_contra.Name = "txt_contra";
-            this.txt_contra.Size = new System.Drawing.Size(248, 29);
-            this.txt_contra.TabIndex = 8;
-            // 
-            // cbx_privilegio
-            // 
-            this.cbx_privilegio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_privilegio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.cbx_privilegio.FormattingEnabled = true;
-            this.cbx_privilegio.Items.AddRange(new object[] {
-            "Usuario",
-            "Adminisrtrador"});
-            this.cbx_privilegio.Location = new System.Drawing.Point(616, 198);
-            this.cbx_privilegio.Name = "cbx_privilegio";
-            this.cbx_privilegio.Size = new System.Drawing.Size(248, 32);
-            this.cbx_privilegio.TabIndex = 9;
             // 
             // label1
             // 
@@ -1285,7 +1191,7 @@
             this.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_id.Location = new System.Drawing.Point(188, 65);
-            this.txt_id.MaxLength = 32;
+            this.txt_id.MaxLength = 10;
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(248, 29);
             this.txt_id.TabIndex = 0;
@@ -1298,9 +1204,9 @@
             this.groupBox4.Controls.Add(this.rb_mod_inactivo);
             this.groupBox4.Controls.Add(this.rb_mod_activo);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(519, 251);
+            this.groupBox4.Location = new System.Drawing.Point(473, 262);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(345, 75);
+            this.groupBox4.Size = new System.Drawing.Size(392, 60);
             this.groupBox4.TabIndex = 1065;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Estatus:";
@@ -1308,7 +1214,7 @@
             // rb_mod_inactivo
             // 
             this.rb_mod_inactivo.AutoSize = true;
-            this.rb_mod_inactivo.Location = new System.Drawing.Point(180, 28);
+            this.rb_mod_inactivo.Location = new System.Drawing.Point(242, 24);
             this.rb_mod_inactivo.Name = "rb_mod_inactivo";
             this.rb_mod_inactivo.Size = new System.Drawing.Size(91, 28);
             this.rb_mod_inactivo.TabIndex = 11;
@@ -1319,7 +1225,7 @@
             // rb_mod_activo
             // 
             this.rb_mod_activo.AutoSize = true;
-            this.rb_mod_activo.Location = new System.Drawing.Point(22, 28);
+            this.rb_mod_activo.Location = new System.Drawing.Point(51, 25);
             this.rb_mod_activo.Name = "rb_mod_activo";
             this.rb_mod_activo.Size = new System.Drawing.Size(79, 28);
             this.rb_mod_activo.TabIndex = 10;
@@ -1942,6 +1848,7 @@
             this.txt_id_a_modificar.Name = "txt_id_a_modificar";
             this.txt_id_a_modificar.Size = new System.Drawing.Size(200, 29);
             this.txt_id_a_modificar.TabIndex = 50;
+            this.txt_id_a_modificar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_id_a_modificar_KeyPress);
             // 
             // btn_cancelar
             // 
@@ -1970,15 +1877,11 @@
             this.btn_modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_modificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_modificar.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.btn_modificar.Location = new System.Drawing.Point(710, 529);
-=======
             this.btn_modificar.Location = new System.Drawing.Point(709, 531);
->>>>>>> dd17f2229b68e772f8ae207c964dafd87e3af09f
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(250, 70);
             this.btn_modificar.TabIndex = 42;
-            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.Text = "Actualizar";
             this.btn_modificar.UseVisualStyleBackColor = false;
             this.btn_modificar.Visible = false;
             this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click_3);
@@ -2096,6 +1999,64 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cbx_privilegio);
+            this.groupBox1.Controls.Add(this.label26);
+            this.groupBox1.Controls.Add(this.txt_contra);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(473, 148);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(392, 110);
+            this.groupBox1.TabIndex = 1146;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Checador";
+            // 
+            // cbx_privilegio
+            // 
+            this.cbx_privilegio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_privilegio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.cbx_privilegio.FormattingEnabled = true;
+            this.cbx_privilegio.Items.AddRange(new object[] {
+            "Usuario",
+            "Adminisrtrador"});
+            this.cbx_privilegio.Location = new System.Drawing.Point(140, 64);
+            this.cbx_privilegio.Name = "cbx_privilegio";
+            this.cbx_privilegio.Size = new System.Drawing.Size(248, 32);
+            this.cbx_privilegio.TabIndex = 1048;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(39, 72);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(91, 24);
+            this.label26.TabIndex = 1050;
+            this.label26.Text = "Privilegio:";
+            // 
+            // txt_contra
+            // 
+            this.txt_contra.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_contra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_contra.Location = new System.Drawing.Point(141, 20);
+            this.txt_contra.MaxLength = 11;
+            this.txt_contra.Name = "txt_contra";
+            this.txt_contra.Size = new System.Drawing.Size(248, 29);
+            this.txt_contra.TabIndex = 1047;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(19, 27);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 24);
+            this.label5.TabIndex = 1049;
+            this.label5.Text = "Contraseña:";
+            // 
             // empleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2118,6 +2079,7 @@
             this.panel_barra_sup.ResumeLayout(false);
             this.panel_barra_sup.PerformLayout();
             this.panel_menu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_empleadobuscar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vistaEmpleadosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet_Checador)).EndInit();
@@ -2130,6 +2092,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.horariosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2164,15 +2128,11 @@
         private System.Windows.Forms.Button btn_siguiente;
         private System.Windows.Forms.TextBox txt_id;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbx_privilegio;
-        private System.Windows.Forms.TextBox txt_contra;
         private System.Windows.Forms.ComboBox cbx_sucursal;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txt_nombre;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -2319,5 +2279,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox cbx_privilegio;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox txt_contra;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -73,6 +73,7 @@
             resources.ApplyResources(this.txt_contraseña, "txt_contraseña");
             this.txt_contraseña.Name = "txt_contraseña";
             this.txt_contraseña.TextChanged += new System.EventHandler(this.txt_contraseña_TextChanged);
+            this.txt_contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_contraseña_KeyPress);
             // 
             // label1
             // 
