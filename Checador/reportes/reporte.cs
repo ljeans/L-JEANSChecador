@@ -147,24 +147,28 @@ namespace Checador.reportes
                 if (Program.rol != "ENCARGADA DE TIENDA")
                 {
                     this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
-                    vistaEmpleadosBindingSource.Filter = "";
+                    //FILTRAR POR EMPLEADOS ACTIVOS
+                    vistaEmpleadosBindingSource.Filter = "estatus='A'";
                 }
                 else
                 {
-                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                    //FILTRAR POR EMPLEADOS ACTIVOS
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and estatus = 'A'";
                 }
 
                 //FILTRAR COMBOBOX DE SUCURSAL EN REPORTES DEPENDIENDO DE LA SUCURSAL DE LA ENCARGADA DE TIENDA
                 if (Program.rol != "ENCARGADA DE TIENDA")
                 {
                     this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
-                    sucursalBindingSource.Filter = "";
-                    sucursalBindingSource1.Filter = "";
+                    //FILTRAR POR SUCURSALES ACTIVAS
+                    sucursalBindingSource.Filter = "estatus='A'";
+                    sucursalBindingSource1.Filter = "estatus='A'";
                 }
                 else
                 {
-                    sucursalBindingSource.Filter = "nombre ='" + Program.sucursal + "'";
-                    sucursalBindingSource1.Filter = "nombre ='" + Program.sucursal + "'";
+                    //FILTRAR POR SUCURSALES ACTIVAS
+                    sucursalBindingSource.Filter = "nombre ='" + Program.sucursal + "' and estatus='A'";
+                    sucursalBindingSource1.Filter = "nombre ='" + Program.sucursal + "' and estatus='A'";
                 }
 
             }
@@ -207,7 +211,6 @@ namespace Checador.reportes
         {
             if (Convert.ToDateTime(dtp_fecha1.Value.ToString("yyyy-MM-dd 00:00:00")) > Convert.ToDateTime(dtp_fecha2.Value.ToString("yyyy-MM-dd 00:00:00")))
             {
-                
                 mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "La fecha inicial es menor que la fecha final.";
                 mensaje.lbl_info2.Text = "Verifique las fechas.";
@@ -370,7 +373,7 @@ namespace Checador.reportes
                 crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
 
                 //parametros fechas
-                crParameterDiscreteValue.Value = dtp_fecha1_retardo.Value.ToString("yyyy-MM-dd"); ;
+                crParameterDiscreteValue.Value = dtp_fecha1_retardo.Value.ToString("yyyy-MM-dd 00:00:00"); ;
                 parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
                 crParameterFieldDefinition = parameterFieldDefinitions["fecha1"];
                 crParameterValue = crParameterFieldDefinition.CurrentValues;
@@ -379,7 +382,7 @@ namespace Checador.reportes
                 crParameterValue.Add(crParameterDiscreteValue);
                 crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
 
-                crParameterDiscreteValue.Value = dtp_fecha2_retardo.Value.ToString("yyyy-MM-dd"); ;
+                crParameterDiscreteValue.Value = dtp_fecha2_retardo.Value.ToString("yyyy-MM-dd 23:59:59"); ;
                 parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
                 crParameterFieldDefinition = parameterFieldDefinitions["fecha2"];
                 crParameterValue = crParameterFieldDefinition.CurrentValues;
@@ -486,7 +489,7 @@ namespace Checador.reportes
                 crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
 
                 //parametros fechas
-                crParameterDiscreteValue.Value = dtp_asistencia1.Value.ToString("yyyy-MM-dd"); ;
+                crParameterDiscreteValue.Value = dtp_asistencia1.Value.ToString("yyyy-MM-dd 00:00:00"); ;
                 parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
                 crParameterFieldDefinition = parameterFieldDefinitions["fecha1"];
                 crParameterValue = crParameterFieldDefinition.CurrentValues;
@@ -495,7 +498,7 @@ namespace Checador.reportes
                 crParameterValue.Add(crParameterDiscreteValue);
                 crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
 
-                crParameterDiscreteValue.Value = dtp_asistencia2.Value.ToString("yyyy-MM-dd"); ;
+                crParameterDiscreteValue.Value = dtp_asistencia2.Value.ToString("yyyy-MM-dd 23:59:59"); ;
                 parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
                 crParameterFieldDefinition = parameterFieldDefinitions["fecha2"];
                 crParameterValue = crParameterFieldDefinition.CurrentValues;
@@ -596,7 +599,7 @@ namespace Checador.reportes
                 crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
 
                 //parametros fechas
-                crParameterDiscreteValue.Value = dtp_empleado_retardo1.Value.ToString("yyyy-MM-dd"); ;
+                crParameterDiscreteValue.Value = dtp_empleado_retardo1.Value.ToString("yyyy-MM-dd 00:00:00"); ;
                 parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
                 crParameterFieldDefinition = parameterFieldDefinitions["fecha1"];
                 crParameterValue = crParameterFieldDefinition.CurrentValues;
@@ -605,7 +608,7 @@ namespace Checador.reportes
                 crParameterValue.Add(crParameterDiscreteValue);
                 crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
 
-                crParameterDiscreteValue.Value = dtp_empleado_retardo2.Value.ToString("yyyy-MM-dd"); ;
+                crParameterDiscreteValue.Value = dtp_empleado_retardo2.Value.ToString("yyyy-MM-dd 23:59:59"); ;
                 parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
                 crParameterFieldDefinition = parameterFieldDefinitions["fecha2"];
                 crParameterValue = crParameterFieldDefinition.CurrentValues;
@@ -746,7 +749,7 @@ namespace Checador.reportes
                 crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
 
                 //parametros fechas
-                crParameterDiscreteValue.Value = dtp_departamento1.Value.ToString("yyyy-MM-dd"); ;
+                crParameterDiscreteValue.Value = dtp_departamento1.Value.ToString("yyyy-MM-dd 00:00:00"); ;
                 parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
                 crParameterFieldDefinition = parameterFieldDefinitions["fecha1"];
                 crParameterValue = crParameterFieldDefinition.CurrentValues;
@@ -755,7 +758,7 @@ namespace Checador.reportes
                 crParameterValue.Add(crParameterDiscreteValue);
                 crParameterFieldDefinition.ApplyCurrentValues(crParameterValue);
 
-                crParameterDiscreteValue.Value = dtp_departamento2.Value.ToString("yyyy-MM-dd"); ;
+                crParameterDiscreteValue.Value = dtp_departamento2.Value.ToString("yyyy-MM-dd 23:59:59"); ;
                 parameterFieldDefinitions = crystalrpt.DataDefinition.ParameterFields;
                 crParameterFieldDefinition = parameterFieldDefinitions["fecha2"];
                 crParameterValue = crParameterFieldDefinition.CurrentValues;

@@ -150,19 +150,34 @@ namespace Checador.incidentes
                 {
                     this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
                     //FILTRAR DATAGRID POR MES EN REGISTRAR CHEQUEO
+
                     if (fecha_actual.Day >= 11 & fecha_actual.Day <= 25)
                     {
                         vistaregistrosBindingSource.Filter = "(CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-11', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-25', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-11', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-25', 'System.DateTime'))";
                     }
                     else
                     {
-                        if (fecha_actual.Day < 10)
+                        if (fecha_actual.AddMonths(-1).Month == 12)
                         {
-                            vistaregistrosBindingSource.Filter = "(CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime'))";
+                            if (fecha_actual.Day < 10)
+                            {
+                                vistaregistrosBindingSource.Filter = "(CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.AddYears(-1).Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.AddYears(-1).Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime'))";
+                            }
+                            else
+                            {
+                                vistaregistrosBindingSource.Filter = "(CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.AddYears(-1).Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.AddYears(-1).Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime'))";
+                            }
                         }
                         else
                         {
-                            vistaregistrosBindingSource.Filter = "(CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime'))";
+                            if (fecha_actual.Day < 10)
+                            {
+                                vistaregistrosBindingSource.Filter = "(CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime'))";
+                            }
+                            else
+                            {
+                                vistaregistrosBindingSource.Filter = "(CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime'))";
+                            }
                         }
                     }
                 }
@@ -175,13 +190,27 @@ namespace Checador.incidentes
                     }
                     else
                     {
-                        if (fecha_actual.Day < 10)
+                        if (fecha_actual.AddMonths(-1).Month == 12)
                         {
-                            vistaregistrosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')))";
+                            if (fecha_actual.Day < 10)
+                            {
+                                vistaregistrosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.AddYears(-1).Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.AddYears(-1).Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')))";
+                            }
+                            else
+                            {
+                                vistaregistrosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.AddYears(-1).Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.AddYears(-1).Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')))";
+                            }
                         }
                         else
                         {
-                            vistaregistrosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')))";
+                            if (fecha_actual.Day < 10)
+                            {
+                                vistaregistrosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(-1).Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-09', 'System.DateTime')))";
+                            }
+                            else
+                            {
+                                vistaregistrosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and ((CONVERT([fecha_entrada], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_entrada], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')) or (CONVERT([fecha_salida], 'System.DateTime') >= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.Month + "-26', 'System.DateTime') and CONVERT([fecha_salida], 'System.DateTime') <= CONVERT('" + fecha_actual.Year + "-" + fecha_actual.AddMonths(1).Month + "-09', 'System.DateTime')))";
+                            }
                         }
                     }
                 }

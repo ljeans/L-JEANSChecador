@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net.NetworkInformation;
 
 namespace Checador
 {
@@ -305,8 +306,6 @@ namespace Checador
         {
             try
             {
-                //CAMBIAR EL CURSOR
-              
                 Clase_Checador.estatus = "A";
                 Clase_Checador.id = Convert.ToInt32(txt_id.Text);
                 Clase_Checador.id_sucursal = Convert.ToInt32(cbx_sucursal.SelectedValue.ToString());
@@ -338,6 +337,7 @@ namespace Checador
                 }
                 else
                 {
+                    //CAMBIAR EL CURSOR
                     this.UseWaitCursor = true;
                     if (Clase_Checador.guardarChecador())
                     {
@@ -422,6 +422,8 @@ namespace Checador
                 this.vista_ChecadorTableAdapter.Fill(this.dataSet_Checador.Vista_Checador);
                 // TODO: This line of code loads data into the 'dataSet_Checador.sucursal' table. You can move, or remove it, as needed.
                 this.sucursalTableAdapter.Fill(this.dataSet_Checador.sucursal);
+                //FILTRAR POR SUCURSALES ACTIVAS EL COMBOBOX
+                sucursalBindingSource.Filter = "estatus='A'";
 
                 //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
                 CheckForIllegalCrossThreadCalls = false;
@@ -545,6 +547,21 @@ namespace Checador
                     btn_b_modificar.Enabled = false;
                     btn_dar_baja.Enabled = false;
                     rb_buscar.Checked = true;
+                }
+                else if(Program.rol == "ENCARGADA DE TIENDA")
+                {
+                    vistaChecadorBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                    rb_registrar.Enabled = false;
+                    rb_modificar.Enabled = false;
+                    btn_borrar_usuarios.Enabled = false;
+                    btn_borrar_eventos.Enabled = false;
+                    btn_fecha_manual.Enabled = false;
+                    dtp_fecha.Enabled = false;
+                    dtp_hora.Enabled = false;
+                    btn_b_modificar.Enabled = false;
+                    btn_dar_baja.Enabled = false;
+                    rb_buscar.Checked = true;
+                    btn_scr_fecha.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -670,18 +687,38 @@ namespace Checador
             }
         }
 
+        //ESTO ESTA MODIFICADO PARA MANDARLO A LA LAP DE MIRSA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         public void Conectar_Checador(int ID, string IP, int Puerto)
         {
             try
             {
-                //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
-                //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
-                bConn = Checador.Connect_Net(IP, Puerto);
-
-                if (bConn == true)
+                //Codigo para hacer el ping
+                Ping HacerPing = new Ping();
+                int iTiempoEspera = 5000;
+                PingReply RespuestaPing;
+                string sDireccion = IP;
+                RespuestaPing = HacerPing.Send(sDireccion, iTiempoEspera);
+                if (RespuestaPing.Status == IPStatus.Success)
                 {
-                    //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
-                    Checador.EnableDevice(ID, true);
+                    IP = RespuestaPing.Address.ToString();
+
+                    //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
+                    //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
+                    bConn = Checador.Connect_Net(IP, Puerto);
+
+                    if (bConn == true)
+                    {
+                        //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
+                        Checador.EnableDevice(ID, true);
+                    }
+                    else
+                    {
+                        //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
+                        mensaje = new formularios_padres.mensaje_info();
+                        mensaje.lbl_info.Text = "Dispositivo no conectado";
+                        mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                        mensaje.Show();
+                    }
                 }
                 else
                 {
@@ -690,9 +727,7 @@ namespace Checador
                     mensaje.lbl_info.Text = "Dispositivo no conectado";
                     mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                     mensaje.Show();
-
                 }
-
             }
             catch (Exception ex)
             {
@@ -705,6 +740,7 @@ namespace Checador
                 frm_error.ShowDialog();
             }
         }
+        //**********************************************************************************************
 
         private void btn_fecha_manual_Click(object sender, EventArgs e)
         {
@@ -817,7 +853,7 @@ namespace Checador
                             if (bConn)
                             {
                                 string id = string.Empty;
-                                int verifyMode = 0, inOutMode = 0, workCode = 0, id_horario;
+                                int verifyMode = 0, inOutMode = 0, workCode = 0;
                                 int Year = 0, Month = 0, Day = 0, Hour = 0, Minute = 0, Second = 0;
                                 DateTime fecha_max;
                                 ClaseSucursal Sucursal = new ClaseSucursal();
@@ -838,7 +874,7 @@ namespace Checador
                                             //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
                                             Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
                                             //Empleado.obtenerIdHorario(Convert.ToInt32(id));
-                                            
+
                                             AsignarHorario.verificar_existencia(Convert.ToInt32(id));
                                             DateTime dia = new DateTime(Year, Month, Day);
 
@@ -846,7 +882,7 @@ namespace Checador
                                             {
                                                 Horario.verificar_existencia(AsignarHorario.lunes);
                                             }
-                                            else if(dia.DayOfWeek.ToString() == "Tuesday")
+                                            else if (dia.DayOfWeek.ToString() == "Tuesday")
                                             {
                                                 Horario.verificar_existencia(AsignarHorario.martes);
                                             }
@@ -874,8 +910,9 @@ namespace Checador
                                             //Horario.verificar_existencia(Empleado.id_horario);
                                             Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
 
-                                            //Agregar fila en DataGrid de datos sincronizados
-                                            agregarFila(Convert.ToString(row.Cells[1].Value), Sucursal.id.ToString(), Convert.ToString(id), Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString(), inOutMode);
+                                            //OBTENER EL NOMBRE DEL EMPLEADO PARA MOSTRARLO EN EL DATAGRID
+                                            Empleado.verificar_existencia(Convert.ToInt32(id));
+                                            agregarFila(Convert.ToString(row.Cells[1].Value), Sucursal.id.ToString(), Convert.ToString(id), Empleado.nombre + " " + Empleado.apellido_pat + " " + Empleado.apellido_mat, Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString(), inOutMode);
                                         }
                                         else if (fecha_max == Convert.ToDateTime("1995-12-12 00:00:00"))
                                         {
@@ -884,7 +921,10 @@ namespace Checador
                                             Empleado.obtenerIdHorario(Convert.ToInt32(id));
                                             Horario.verificar_existencia(Empleado.id_horario);
                                             Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
-                                            agregarFila(Convert.ToString(row.Cells[1].Value), Sucursal.id.ToString(), Convert.ToString(id), Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString(), inOutMode);
+                                            //OBTENER EL NOMBRE DEL EMPLEADO PARA MOSTRARLO EN EL DATAGRID
+                                            Empleado.verificar_existencia(Convert.ToInt32(id));
+                                            //Agregar fila en DataGrid de datos sincronizados
+                                            agregarFila(Convert.ToString(row.Cells[1].Value), Sucursal.id.ToString(), Convert.ToString(id), Empleado.nombre + " " + Empleado.apellido_pat +" "+ Empleado.apellido_mat,Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString(), inOutMode);
                                         }
                                     }
                                     sincronizar = true;
@@ -957,7 +997,7 @@ namespace Checador
         }
 
         //Funcion para agregar filas al DATAGRID de eventos sincronizados
-        private void agregarFila(string id_checador, string id_sucursal, string id_empleado, string fecha_evento, int tipo_evento)
+        private void agregarFila(string id_checador, string id_sucursal, string id_empleado, string nombre_empleado, string fecha_evento, int tipo_evento)
         {
             try
             {
@@ -965,15 +1005,16 @@ namespace Checador
                 fila.CreateCells(dgv_eventos_sincronizados);
                 fila.Cells[0].Value = id_checador;
                 fila.Cells[1].Value = id_empleado;
-                fila.Cells[2].Value = id_sucursal;
-                fila.Cells[3].Value = fecha_evento;
+                fila.Cells[2].Value = nombre_empleado;
+                fila.Cells[3].Value = id_sucursal;
+                fila.Cells[4].Value = fecha_evento;
                 if (tipo_evento == 0)
                 {
-                    fila.Cells[4].Value = "ENTRADA";
+                    fila.Cells[5].Value = "ENTRADA";
                 }
                 else if (tipo_evento == 1)
                 {
-                    fila.Cells[4].Value = "SALIDA";
+                    fila.Cells[5].Value = "SALIDA";
                 }
 
                 //CONDICION PARA INVOCAR EL DATAGRID DESDE OTRO HILO
@@ -1045,7 +1086,7 @@ namespace Checador
                 if (respuesta == true)
                 {
                     //PARA PROGRESS BAR
-                    using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(borrar_eventos))
+                    using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(borrar_usuarios))
                     {
                         frm.lbl_mensaje.Text = "Borrando usuarios..";
                         frm.ShowDialog(this);
@@ -1132,7 +1173,7 @@ namespace Checador
             confirmacion = new formularios_padres.Mensajes();
             confirmacion.lbl_mensaje.Text = "¿Esta seguro que desea borrar todos los";
             confirmacion.lbl_mensaje2.Text = "usuarios de este checador?";
-            confirmacion.FormClosed += new FormClosedEventHandler(responder2);
+            confirmacion.FormClosed += new FormClosedEventHandler(responder3);
             confirmacion.Show();
             Enabled = false;
 
@@ -1315,7 +1356,6 @@ namespace Checador
 
         private void txt_ip_KeyPress(object sender, KeyPressEventArgs e)
         {
-            validar.soloimportes(e);
         }
 
         //FUNCION PARA CUANDO DEJE EL CAMPO DE TEXTO ID BUSQUE SI EXISTE EL CHECADOR
@@ -1544,16 +1584,22 @@ namespace Checador
 
         private void txt_id_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrEmpty(txt_id.Text))
+            //PARA LA COMPU DE MIRSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaa
+            try
             {
-
-                errorProvider1.SetError(txt_id, "No ha ingresado el ID del checador.");
-
+                if (string.IsNullOrEmpty(txt_id.Text))
+                {
+                    errorProvider1.SetError(txt_id, "No ha ingresado el ID del checador.");
+                }
+                else
+                {
+                    errorProvider1.SetError(txt_id, null);
+                    contador = contador + 1;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                errorProvider1.SetError(txt_id, null);
-                contador = contador + 1;
+                MessageBox.Show(ex.ToString()); 
             }
         }
 
@@ -1578,22 +1624,6 @@ namespace Checador
             {
 
                 errorProvider1.SetError(txt_id, "No ha ingresado el puerto del checador.");
-
-            }
-            else
-            {
-                errorProvider1.SetError(txt_id, null);
-                contador = contador + 1;
-            }
-        }
-
-        private void txt_id_TextChanged(object sender, EventArgs e)
-        {
-
-            if (string.IsNullOrEmpty(txt_id.Text))
-            {
-
-                errorProvider1.SetError(txt_id, "No ha ingresado el ID del checador");
 
             }
             else

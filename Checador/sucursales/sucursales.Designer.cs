@@ -233,7 +233,7 @@
             this.txt_domicilio_municipio.Name = "txt_domicilio_municipio";
             this.txt_domicilio_municipio.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_municipio.TabIndex = 11;
-            this.txt_domicilio_municipio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_municipio_KeyPress);
+            this.txt_domicilio_municipio.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_municipio_Validating);
             // 
             // label33
             // 
@@ -255,7 +255,6 @@
             this.txt_domicilio_cp.Name = "txt_domicilio_cp";
             this.txt_domicilio_cp.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_cp.TabIndex = 9;
-            this.txt_domicilio_cp.TextChanged += new System.EventHandler(this.txt_domicilio_cp_TextChanged);
             this.txt_domicilio_cp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_cp_KeyPress);
             this.txt_domicilio_cp.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_cp_Validating);
             // 
@@ -268,8 +267,9 @@
             this.txt_domicilio_pais.Name = "txt_domicilio_pais";
             this.txt_domicilio_pais.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_pais.TabIndex = 13;
-            this.txt_domicilio_pais.TextChanged += new System.EventHandler(this.txt_domicilio_pais_TextChanged);
+            this.txt_domicilio_pais.TextChanged += new System.EventHandler(this.txt_id_TextChanged);
             this.txt_domicilio_pais.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_pais_KeyPress);
+            this.txt_domicilio_pais.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_pais_Validating);
             // 
             // txt_domicilio_estado
             // 
@@ -280,7 +280,7 @@
             this.txt_domicilio_estado.Name = "txt_domicilio_estado";
             this.txt_domicilio_estado.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_estado.TabIndex = 12;
-            this.txt_domicilio_estado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_estado_KeyPress);
+            this.txt_domicilio_estado.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_estado_Validating);
             // 
             // label25
             // 
@@ -313,7 +313,6 @@
             this.txt_domicilio_colonia.Name = "txt_domicilio_colonia";
             this.txt_domicilio_colonia.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_colonia.TabIndex = 8;
-            this.txt_domicilio_colonia.TextChanged += new System.EventHandler(this.txt_domicilio_colonia_TextChanged);
             this.txt_domicilio_colonia.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_colonia_Validating);
             // 
             // label19
@@ -337,7 +336,6 @@
             this.txt_domicilio_num_int.Name = "txt_domicilio_num_int";
             this.txt_domicilio_num_int.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_num_int.TabIndex = 7;
-            this.txt_domicilio_num_int.TextChanged += new System.EventHandler(this.txt_domicilio_num_int_TextChanged);
             this.txt_domicilio_num_int.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_num_int_KeyPress);
             this.txt_domicilio_num_int.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_num_int_Validating);
             // 
@@ -350,7 +348,6 @@
             this.txt_domicilio_calle.Name = "txt_domicilio_calle";
             this.txt_domicilio_calle.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_calle.TabIndex = 5;
-            this.txt_domicilio_calle.TextChanged += new System.EventHandler(this.txt_domicilio_calle_TextChanged);
             this.txt_domicilio_calle.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_calle_Validating);
             // 
             // label16
@@ -502,7 +499,7 @@
             this.txt_domicilio_pob.Name = "txt_domicilio_pob";
             this.txt_domicilio_pob.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_pob.TabIndex = 10;
-            this.txt_domicilio_pob.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_pob_KeyPress);
+            this.txt_domicilio_pob.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_pob_Validating);
             // 
             // label18
             // 
@@ -716,7 +713,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Estatus:";
             this.groupBox4.Visible = false;
-            this.groupBox4.Enter += new System.EventHandler(this.groupBox4_Enter);
             // 
             // rb_mod_inactivo
             // 
@@ -749,7 +745,6 @@
             this.txt_domicilio_num_ext.Name = "txt_domicilio_num_ext";
             this.txt_domicilio_num_ext.Size = new System.Drawing.Size(218, 29);
             this.txt_domicilio_num_ext.TabIndex = 6;
-            this.txt_domicilio_num_ext.TextChanged += new System.EventHandler(this.txt_domicilio_num_ext_TextChanged);
             this.txt_domicilio_num_ext.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_domicilio_num_ext_KeyPress);
             this.txt_domicilio_num_ext.Validating += new System.ComponentModel.CancelEventHandler(this.txt_domicilio_num_ext_Validating);
             // 

@@ -106,7 +106,7 @@ namespace Checador
         }
 
         //FUNCION PARA ACTUALIZAR LOS DATOS DE UN HORARIO
-        public void Modificar_Horario()
+        public void Modificar_Horario(bool flag)
         {
             try
             {
@@ -128,8 +128,16 @@ namespace Checador
                 comand.Parameters.AddWithValue("@domingo", 0);
                 comand.Parameters.AddWithValue("@horas_diarias", horas_diarias);
                 comand.Parameters.AddWithValue("@horas_totales_quincenales", horas_totales_quincenales);
-                comand.Parameters.AddWithValue("@hora_salida_descanso", hora_salida_descanso);
-                comand.Parameters.AddWithValue("@hora_entrada_descanso", hora_entrada_descanso);
+                if (flag)
+                {
+                    comand.Parameters.AddWithValue("@hora_salida_descanso", hora_salida_descanso);
+                    comand.Parameters.AddWithValue("@hora_entrada_descanso", hora_entrada_descanso);
+                }
+                else
+                {
+                    comand.Parameters.AddWithValue("@hora_salida_descanso", DBNull.Value);
+                    comand.Parameters.AddWithValue("@hora_entrada_descanso", DBNull.Value);
+                }
                 comand.Parameters.AddWithValue("@tolerancia", tolerancia);
                 comand.ExecuteNonQuery();
                 conexion.Close();

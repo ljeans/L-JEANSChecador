@@ -360,7 +360,10 @@ namespace Checador
                     //CAMBIAR EL CURSOR
                     this.UseWaitCursor = false;
                 }
-                   
+                //PARA LA COMPU DE MIRSA*************************************************+++
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                //**************************************************************************
             }
             catch (SqlException ex)
             {
@@ -708,17 +711,6 @@ namespace Checador
         private void txt_domicilio_pais_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.sololetras(e);
-            if (string.IsNullOrEmpty(txt_domicilio_pais.Text))
-            {
-
-                errorProvider1.SetError(txt_domicilio_pais, "No ha ingresado el nombre de la sucursal.");
-
-            }
-            else
-            {
-                errorProvider1.SetError(txt_domicilio_pais, null);
-                contador = contador + 1;
-            }
         }
 
         private void txt_nombre_Validating(object sender, CancelEventArgs e)
@@ -788,7 +780,7 @@ namespace Checador
                 mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "No puede ingresar un num. interior si ";
                 mensaje.lbl_info2.Text = "no existe un num. exterior.";
-                mensaje.FormClosed += new FormClosedEventHandler(responder);
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 mensaje.Show();
                 Enabled = false;
                 txt_domicilio_num_ext.Focus();
@@ -810,57 +802,9 @@ namespace Checador
             }
         }
 
-        private void txt_domicilio_pob_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txt_domicilio_pob.Text))
-            {
-
-                errorProvider1.SetError(txt_domicilio_pob, "No ha ingresado la poblacion donde se ecuentra la sucursal.");
-
-            }
-            else
-            {
-                errorProvider1.SetError(txt_domicilio_pob, null);
-                contador = contador + 1;
-            }
-        }
-
-        private void txt_domicilio_municipio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (string.IsNullOrEmpty(txt_domicilio_municipio.Text))
-            {
-
-                errorProvider1.SetError(txt_domicilio_municipio, "No ha ingresado el municipio donde se ecuentra la sucursal.");
-
-            }
-            else
-            {
-                errorProvider1.SetError(txt_domicilio_municipio, null);
-                contador = contador + 1;
-            }
-
-        }
-
-        private void txt_domicilio_estado_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-            if(string.IsNullOrEmpty(txt_domicilio_estado.Text))
-            {
-
-                errorProvider1.SetError(txt_domicilio_estado, "No ha ingresado el estado donde se ecuentra la sucursal.");
-
-            }
-            else
-            {
-                errorProvider1.SetError(txt_domicilio_estado, null);
-                contador = contador + 1;
-            }
-        }
-
         private void txt_id_Validating(object sender, CancelEventArgs e)
         {
             errorProvider1.Clear();
-            
         }
         //////////////////////////////////////////////////////////////////
 
@@ -908,41 +852,6 @@ namespace Checador
             }
         }
 
-        private void txt_domicilio_calle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_domicilio_num_ext_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_domicilio_num_int_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_domicilio_colonia_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_domicilio_cp_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_domicilio_pais_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox4_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void txt_id_Validated(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txt_id.Text))
@@ -973,6 +882,68 @@ namespace Checador
             validar.solonumeros(e);
             validar.sinespacios(e);
         }
+
+        //PARA LA COMPU DE MIRSA***************************************************************
+        private void txt_domicilio_pob_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_domicilio_pob.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_pob, "No ha ingresado la poblacion donde se ecuentra la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_pob, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_domicilio_municipio_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_domicilio_municipio.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_municipio, "No ha ingresado el municipio donde se ecuentra la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_municipio, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_domicilio_estado_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_domicilio_estado.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_estado, "No ha ingresado el estado donde se ecuentra la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_estado, null);
+                contador = contador + 1;
+            }
+        }
+
+        private void txt_domicilio_pais_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_domicilio_pais.Text))
+            {
+
+                errorProvider1.SetError(txt_domicilio_pais, "No ha ingresado el nombre de la sucursal.");
+
+            }
+            else
+            {
+                errorProvider1.SetError(txt_domicilio_pais, null);
+                contador = contador + 1;
+            }
+        }
+        //*************************************************************************************************
 
         public void verificarExistencia()
         {

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net.NetworkInformation;
 
 //LIBRERIA PARA HILOS
 using System.Threading;
@@ -50,6 +51,8 @@ namespace Checador.empleados
                 this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
                 // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador1.sucursal' Puede moverla o quitarla según sea necesario.
                 this.sucursalTableAdapter.Fill(this.dataSet_Checador1.sucursal);
+                //FILTRAR POR SUCURSALES ACTIVAS EL COMBOBOX
+                sucursalBindingSource.Filter = "estatus='A'";
 
                 //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
                 CheckForIllegalCrossThreadCalls = false;
@@ -57,7 +60,6 @@ namespace Checador.empleados
                 Thread hilo_secundario = new Thread(new ThreadStart(this.cargarID));
                 hilo_secundario.IsBackground = true;
                 hilo_secundario.Start();
-                //cargarID();
                 groupBox4.Visible = false;
                 groupBox4.Enabled = false;
                 cbx_privilegio.SelectedIndex = 0;
@@ -82,11 +84,11 @@ namespace Checador.empleados
                                         {
                                             if (w is TextBox | w is Label | w is Button | w is MaskedTextBox | w is DateTimePicker | w is ComboBox | w is RadioButton | w is PictureBox | w is GroupBox)
                                             {
-                                                if (w is Label)
+                                                if (w is Label & porcentaje_ancho <= 0.8)
                                                 {
-                                                    w.Font = new Font("Microsoft Sans Serif", 10);
+                                                    w.Font = new Font("Microsoft Sans Serif", 11);
                                                 }
-                                                w.Font = new Font("Microsoft Sans Serif", 11);
+                                           
                                                 double posicionx = Convert.ToDouble(w.Location.X) * porcentaje_ancho;
                                                 double posiciony = Convert.ToDouble(w.Location.Y) * porcentaje_alto;
                                                 double ancho = w.Width * porcentaje_ancho;
@@ -171,6 +173,11 @@ namespace Checador.empleados
             try
             {
                 txt_id.Text = (Empleado.obtenerIdMaximo() + 1).ToString();
+                //CONDICION PARA INVOCAR EL DATAGRID DESDE OTRO HILO
+                if (InvokeRequired)
+                {
+                    Invoke(new Action(() => txt_id.Focus()));
+                }
             }
             catch (SqlException ex)
             {
@@ -378,6 +385,8 @@ namespace Checador.empleados
                     confirmacion2.FormClosed += new FormClosedEventHandler(reg_huella);
                     confirmacion2.ShowDialog();
                 }
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
             }
             catch (SqlException ex)
             {
@@ -477,9 +486,59 @@ namespace Checador.empleados
             }
         }
 
+        //ESTO ESTA MODIFICADO PARA MANDARLO A LA LAP DE MIRSA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         public void Conectar_Checador()
         {
             try
+            {
+                //Codigo para hacer el ping
+                Ping HacerPing = new Ping();
+                int iTiempoEspera = 5000;
+                PingReply RespuestaPing;
+                string sDireccion = clase_checador.ip;
+                RespuestaPing = HacerPing.Send(sDireccion, iTiempoEspera);
+                if (RespuestaPing.Status == IPStatus.Success)
+                {
+                    clase_checador.ip = RespuestaPing.Address.ToString();
+                    //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
+                    //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
+                    bConn = Checador.Connect_Net(clase_checador.ip, Convert.ToInt32(clase_checador.puerto));
+
+                    if (bConn == true)
+                    {
+                        //SE ACTIVA EL DISPOSITIVO. PARAMETRO EL NUM. DE MAQUINA Y UNA BANDERA
+                        Checador.EnableDevice(clase_checador.id, true);
+                    }
+                    else
+                    {
+                        //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
+                        mensaje = new formularios_padres.mensaje_info();
+                        mensaje.lbl_info.Text = "Dispositivo no conectado";
+                        mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                        mensaje.Show();
+                    }
+                }
+                else
+                {
+                    //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Dispositivo no conectado";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
+
+            /*try
             {
                 //SE CREA UNA VARIABLE CON EL METODO CONECTAR DEL OBJETO CHECADOR.
                 //SE ENVIAN COMO PARAMETROS LA IP DEL CHECADOR Y EL PUERTO
@@ -501,8 +560,9 @@ namespace Checador.empleados
                 frm_error.txt_error.Text = (ex.Message.ToString());
                 frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 frm_error.ShowDialog();
-            }
+            }*/
         }
+        ///********************************************************************************************
 
         //************************************************************************************************************
         //FUNCION PARA LIMPIAR LOS COMPONENTES DEL FORMULARIO DESPUES DE HACER UN REGISTRO
@@ -543,6 +603,7 @@ namespace Checador.empleados
             txt_tipo_contrato.Text = "";
             txt_tipo_salario.Text = "";
             cargarID();
+            txt_id.Focus();
             //Deshabilitar_Componentes();
         }
 
@@ -1529,7 +1590,8 @@ namespace Checador.empleados
 
             if (respuesta == true)
             {
-                tabControlBase.SelectedTab = tabPage5;
+                tabControlBase.SelectedTab = tabPage1;
+                Limpiar();
             }
         }
 

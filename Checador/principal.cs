@@ -73,7 +73,7 @@ namespace Checador
             else if(Program.rol == "ENCARGADA DE TIENDA")
             {
                 Enabled = true;
-                btn_checador.Enabled = false;
+                btn_checador.Enabled = true;
                 btn_sucursal.Enabled = false;
                 btn_empleados.Enabled = false;
                 btn_horarios.Enabled = true;

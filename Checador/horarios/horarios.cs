@@ -21,6 +21,7 @@ namespace Checador
         validacion validar = new validacion();
 
         public bool respuesta = false;
+        public bool descansoFlag;
 
         public horarios()
         {
@@ -101,7 +102,7 @@ namespace Checador
 
                 if (respuesta == true)
                 {
-                    Horario.Modificar_Horario();
+                    Horario.Modificar_Horario(descansoFlag);
                     //FUNCION PAR RECARGAR EL DATAGRID
                     // TODO: This line of code loads data into the 'dataSet_Checador.Vista_Horario' table. You can move, or remove it, as needed.
                     this.vista_HorarioTableAdapter.Fill(this.dataSet_Checador.Vista_Horario);
@@ -155,6 +156,7 @@ namespace Checador
         // MODIFICAR///////////////////////////////////////////////////////////////////////////////////
         private void btn_modificar_Click(object sender, EventArgs e)
         {
+            descansoFlag = false;
             try
             {
                 //CAMBIAR EL CURSOR
@@ -163,8 +165,17 @@ namespace Checador
                 Horario.horario = txt_nombre.Text;
                 Horario.horas_diarias = Convert.ToInt32(txt_horas_diarias.Text);
                 Horario.horas_totales_quincenales = Convert.ToInt32(txt_horas_totales.Text);
-                Horario.hora_entrada_descanso = dtp_hora_entrada_desc.Value.TimeOfDay;
-                Horario.hora_salida_descanso = dtp_hora_salida_desc.Value.TimeOfDay;
+
+                if (cb_descanso.Checked == true)
+                {
+                    descansoFlag = true;
+                    Horario.hora_entrada_descanso = dtp_hora_entrada_desc.Value.TimeOfDay;  //izi
+                    Horario.hora_salida_descanso = dtp_hora_salida_desc.Value.TimeOfDay;    //pizi
+                }
+                else
+                {
+                    descansoFlag = false;
+                }
                 Horario.hr_entrada = dtp_hora_entrada.Value.TimeOfDay;
                 Horario.hr_salida = dtp_hora_salida.Value.TimeOfDay;
                 Horario.tolerancia = Convert.ToInt32(txt_tolerancia.Text);
@@ -479,12 +490,13 @@ namespace Checador
                 //FILTRAR COMBOBOX DE EMPLEADOS EN ASIGNAR HORARIO DEPENDIENDO EL ROL
                 if (Program.rol != "ENCARGADA DE TIENDA")
                 {
+                    //FILTAR LOS EMPLEADOS POR EL ESTATUS, MOSTAR SOLO LOS ACTIVOS
                     this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
-                    vistaEmpleadosBindingSource.Filter = "";
+                    vistaEmpleadosBindingSource.Filter = "estatus='A'";
                 }
                 else
                 {
-                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and estatus = 'A'";
                 }
 
                 //DESACTIVAR LOS DESCANSOS AL INICIAR
@@ -536,7 +548,7 @@ namespace Checador
 
         public void Registrar()
         {
-            bool descansoFlag = false;
+            descansoFlag = false;
             try
             {
                 //CAMBIAR EL CURSOR
@@ -769,6 +781,7 @@ namespace Checador
 
         private void rb_asignar_horarios_CheckedChanged(object sender, EventArgs e)
         {
+            cargarHorarioEmpleado();
             tabControlBase.SelectedTab = tabPage4;
         }
 
@@ -777,23 +790,32 @@ namespace Checador
             try
             {
                 Horario.verificar_horario(cbx_lunes.SelectedValue.ToString());
-                label20.Text = Horario.hr_entrada.ToString();
-                label21.Text = Horario.hr_salida.ToString();
-                if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                if (Horario.hr_entrada != new TimeSpan(00, 01, 00))
                 {
+                    label20.Text = Horario.hr_entrada.ToString();
+                    label21.Text = Horario.hr_salida.ToString();
+                    if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                    {
+                        label22.Text = "-";
+                    }
+                    else
+                    {
+                        label22.Text = Horario.hora_salida_descanso.ToString();
+                    }
+                    if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                    {
+                        label23.Text = "-";
+                    }
+                    else
+                    {
+                        label23.Text = Horario.hora_entrada_descanso.ToString();
+                    }
+                }else
+                {
+                    label20.Text = "-";
+                    label21.Text = "-";
                     label22.Text = "-";
-                }
-                else
-                {
-                    label22.Text = Horario.hora_salida_descanso.ToString();
-                }
-                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
-                {
                     label23.Text = "-";
-                }
-                else
-                {
-                    label23.Text = Horario.hora_entrada_descanso.ToString();
                 }
             }
             catch (Exception)
@@ -807,23 +829,33 @@ namespace Checador
             try
             {
                 Horario.verificar_horario(cbx_martes.SelectedValue.ToString());
-                lbl_martes_1.Text = Horario.hr_entrada.ToString();
-                lbl_martes_4.Text = Horario.hr_salida.ToString();
-                if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                if (Horario.hr_entrada != new TimeSpan(00, 01, 00))
                 {
+                    lbl_martes_1.Text = Horario.hr_entrada.ToString();
+                    lbl_martes_4.Text = Horario.hr_salida.ToString();
+                    if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                    {
+                        lbl_martes_2.Text = "-";
+                    }
+                    else
+                    {
+                        lbl_martes_2.Text = Horario.hora_salida_descanso.ToString();
+                    }
+                    if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                    {
+                        lbl_martes_3.Text = "-";
+                    }
+                    else
+                    {
+                        lbl_martes_3.Text = Horario.hora_entrada_descanso.ToString();
+                    }
+                }
+                else
+                {
+                    lbl_martes_1.Text = "-";
                     lbl_martes_2.Text = "-";
-                }
-                else
-                {
-                    lbl_martes_2.Text = Horario.hora_salida_descanso.ToString();
-                }
-                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
-                {
                     lbl_martes_3.Text = "-";
-                }
-                else
-                {
-                    lbl_martes_3.Text = Horario.hora_entrada_descanso.ToString();
+                    lbl_martes_4.Text = "-";
                 }
             }
             catch (Exception)
@@ -839,23 +871,33 @@ namespace Checador
             try
             {
                 Horario.verificar_horario(cbx_miercoles.SelectedValue.ToString());
-                lbl_miercoles_1.Text = Horario.hr_entrada.ToString();
-                lbl_miercoles_4.Text = Horario.hr_salida.ToString();
-                if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                if (Horario.hr_entrada != new TimeSpan(00, 01, 00))
                 {
+                    lbl_miercoles_1.Text = Horario.hr_entrada.ToString();
+                    lbl_miercoles_4.Text = Horario.hr_salida.ToString();
+                    if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                    {
+                        lbl_miercoles_2.Text = "-";
+                    }
+                    else
+                    {
+                        lbl_miercoles_2.Text = Horario.hora_salida_descanso.ToString();
+                    }
+                    if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                    {
+                        lbl_miercoles_3.Text = "-";
+                    }
+                    else
+                    {
+                        lbl_miercoles_3.Text = Horario.hora_entrada_descanso.ToString();
+                    }
+                }
+                else
+                {
+                    lbl_miercoles_1.Text = "-";
                     lbl_miercoles_2.Text = "-";
-                }
-                else
-                {
-                    lbl_miercoles_2.Text = Horario.hora_salida_descanso.ToString();
-                }
-                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
-                {
                     lbl_miercoles_3.Text = "-";
-                }
-                else
-                {
-                    lbl_miercoles_3.Text = Horario.hora_entrada_descanso.ToString();
+                    lbl_miercoles_4.Text = "-";
                 }
             }
             catch (Exception)
@@ -875,23 +917,33 @@ namespace Checador
             try
             {
                 Horario.verificar_horario(cbx_jueves.SelectedValue.ToString());
-                lbl_jueves_1.Text = Horario.hr_entrada.ToString();
-                lbl_jueves_4.Text = Horario.hr_salida.ToString();
-                if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                if (Horario.hr_entrada != new TimeSpan(00, 01, 00))
                 {
+                    lbl_jueves_1.Text = Horario.hr_entrada.ToString();
+                    lbl_jueves_4.Text = Horario.hr_salida.ToString();
+                    if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                    {
+                        lbl_jueves_2.Text = "-";
+                    }
+                    else
+                    {
+                        lbl_jueves_2.Text = Horario.hora_salida_descanso.ToString();
+                    }
+                    if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                    {
+                        lbl_jueves_3.Text = "-";
+                    }
+                    else
+                    {
+                        lbl_jueves_3.Text = Horario.hora_entrada_descanso.ToString();
+                    }
+                }
+                else
+                {
+                    lbl_jueves_1.Text = "-";
                     lbl_jueves_2.Text = "-";
-                }
-                else
-                {
-                    lbl_jueves_2.Text = Horario.hora_salida_descanso.ToString();
-                }
-                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
-                {
                     lbl_jueves_3.Text = "-";
-                }
-                else
-                {
-                    lbl_jueves_3.Text = Horario.hora_entrada_descanso.ToString();
+                    lbl_jueves_4.Text = "-";
                 }
             }
             catch (Exception)
@@ -906,23 +958,33 @@ namespace Checador
             try
             {
                 Horario.verificar_horario(cbx_viernes.SelectedValue.ToString());
-                lbl_viernes_1.Text = Horario.hr_entrada.ToString();
-                lbl_viernes_4.Text = Horario.hr_salida.ToString();
-                if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                if (Horario.hr_entrada != new TimeSpan(00, 01, 00))
                 {
+                    lbl_viernes_1.Text = Horario.hr_entrada.ToString();
+                    lbl_viernes_4.Text = Horario.hr_salida.ToString();
+                    if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                    {
+                        lbl_viernes_2.Text = "-";
+                    }
+                    else
+                    {
+                        lbl_viernes_2.Text = Horario.hora_salida_descanso.ToString();
+                    }
+                    if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                    {
+                        lbl_viernes_3.Text = "-";
+                    }
+                    else
+                    {
+                        lbl_viernes_3.Text = Horario.hora_entrada_descanso.ToString();
+                    }
+                }
+                else
+                {
+                    lbl_viernes_1.Text = "-";
                     lbl_viernes_2.Text = "-";
-                }
-                else
-                {
-                    lbl_viernes_2.Text = Horario.hora_salida_descanso.ToString();
-                }
-                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
-                {
                     lbl_viernes_3.Text = "-";
-                }
-                else
-                {
-                    lbl_viernes_3.Text = Horario.hora_entrada_descanso.ToString();
+                    lbl_viernes_4.Text = "-";
                 }
 
             }
@@ -938,23 +1000,33 @@ namespace Checador
             try
             {
                 Horario.verificar_horario(cbx_sabado.SelectedValue.ToString());
-                lbl_sabado_1.Text = Horario.hr_entrada.ToString();
-                lbl_sabado_4.Text = Horario.hr_salida.ToString();
-                if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                if (Horario.hr_entrada != new TimeSpan(00, 01, 00))
                 {
+                    lbl_sabado_1.Text = Horario.hr_entrada.ToString();
+                    lbl_sabado_4.Text = Horario.hr_salida.ToString();
+                    if (Horario.hora_salida_descanso.ToString() == "00:00:00")
+                    {
+                        lbl_sabado_2.Text = "-";
+                    }
+                    else
+                    {
+                        lbl_sabado_2.Text = Horario.hora_salida_descanso.ToString();
+                    }
+                    if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                    {
+                        lbl_sabado_3.Text = "-";
+                    }
+                    else
+                    {
+                        lbl_sabado_3.Text = Horario.hora_entrada_descanso.ToString();
+                    }
+                }
+                else
+                {
+                    lbl_sabado_1.Text = "-";
                     lbl_sabado_2.Text = "-";
-                }
-                else
-                {
-                    lbl_sabado_2.Text = Horario.hora_salida_descanso.ToString();
-                }
-                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
-                {
                     lbl_sabado_3.Text = "-";
-                }
-                else
-                {
-                    lbl_sabado_3.Text = Horario.hora_entrada_descanso.ToString();
+                    lbl_sabado_4.Text = "-";
                 }
             }
             catch (Exception)
@@ -969,26 +1041,35 @@ namespace Checador
             try
             {
                 Horario.verificar_horario(cbx_domingo.SelectedValue.ToString());
-                lbl_domingo_1.Text = Horario.hr_entrada.ToString();
-                lbl_domingo_4.Text = Horario.hr_salida.ToString();
-               
-                if(Horario.hora_salida_descanso.ToString()== "00:00:00")
+                if (Horario.hr_entrada != new TimeSpan(00,01,00))
                 {
+                    lbl_domingo_1.Text = Horario.hr_entrada.ToString();
+                    lbl_domingo_4.Text = Horario.hr_salida.ToString();
+               
+                    if(Horario.hora_salida_descanso.ToString()== "00:00:00")
+                    {
+                        lbl_domingo_2.Text = "-";
+                    }
+                    else
+                    {
+                        lbl_domingo_2.Text = Horario.hora_salida_descanso.ToString();
+                    }
+                    if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
+                    {
+                        lbl_domingo_3.Text = "-";
+                    }
+                    else
+                    {
+                        lbl_domingo_3.Text = Horario.hora_entrada_descanso.ToString();
+                    }
+                }
+                else
+                {
+                    lbl_domingo_1.Text = "-";
                     lbl_domingo_2.Text = "-";
-                }
-                else
-                {
-                    lbl_domingo_2.Text = Horario.hora_salida_descanso.ToString();
-                }
-                if (Horario.hora_entrada_descanso.ToString() == "00:00:00")
-                {
                     lbl_domingo_3.Text = "-";
+                    lbl_domingo_4.Text = "-";
                 }
-                else
-                {
-                    lbl_domingo_3.Text = Horario.hora_entrada_descanso.ToString();
-                }
-               
             }
             catch (Exception)
             {
@@ -1050,7 +1131,7 @@ namespace Checador
         }
 
         //FUNCION PARA VERIFICAR SI UN EMPLEADO YA TIENE UN HORARIO ASIGNADO Y CARGARLO EN LOS COMBOBOX
-        private void cbx_empleado_SelectedIndexChanged(object sender, EventArgs e)
+        private void cargarHorarioEmpleado()
         {
             try
             {
@@ -1067,13 +1148,13 @@ namespace Checador
                 }
                 else
                 {
-                    cbx_lunes.SelectedValue = 1;
-                    cbx_martes.SelectedValue = 1;
-                    cbx_miercoles.SelectedValue = 1;
-                    cbx_jueves.SelectedValue = 1;
-                    cbx_viernes.SelectedValue = 1;
-                    cbx_sabado.SelectedValue = 1;
-                    cbx_domingo.SelectedValue = 1;
+                    cbx_lunes.SelectedValue = 0;
+                    cbx_martes.SelectedValue = 0;
+                    cbx_miercoles.SelectedValue = 0;
+                    cbx_jueves.SelectedValue = 0;
+                    cbx_viernes.SelectedValue = 0;
+                    cbx_sabado.SelectedValue = 0;
+                    cbx_domingo.SelectedValue = 0;
                 }
             }
             catch (SqlException ex)
@@ -1101,8 +1182,13 @@ namespace Checador
             }
             catch (Exception ex)
             {
-                
+
             }
+        }
+
+        private void cbx_empleado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarHorarioEmpleado();
         }
 
         //FUNCION PARA CARGAR LOS DATOS DESDE LA PESTAÑA CONSULTAR PARA MODIFICAR

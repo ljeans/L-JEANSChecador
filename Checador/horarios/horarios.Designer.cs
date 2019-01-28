@@ -204,7 +204,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(309, 70);
+            this.tabControlBase.Location = new System.Drawing.Point(309, 57);
             this.tabControlBase.Size = new System.Drawing.Size(1050, 650);
             this.tabControlBase.SelectedIndexChanged += new System.EventHandler(this.tabControlBase_SelectedIndexChanged);
             // 
@@ -943,7 +943,7 @@
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(514, 28);
+            this.label25.Location = new System.Drawing.Point(515, 28);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(101, 20);
             this.label25.TabIndex = 145;
@@ -1192,7 +1192,7 @@
             this.btn_siguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_siguiente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_siguiente.ForeColor = System.Drawing.Color.White;
-            this.btn_siguiente.Location = new System.Drawing.Point(311, 465);
+            this.btn_siguiente.Location = new System.Drawing.Point(394, 465);
             this.btn_siguiente.Name = "btn_siguiente";
             this.btn_siguiente.Size = new System.Drawing.Size(250, 70);
             this.btn_siguiente.TabIndex = 119;
