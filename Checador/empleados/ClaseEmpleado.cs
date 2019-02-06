@@ -433,7 +433,64 @@ namespace Checador
         //FUNCION PARA REGISTRAR EMPLEADO_SUCURSAL
         public void guardarEmpleado_Sucursal()
         {
-            guardarsuc = DateTime.Now;
+            Conexion conexion2 = new Conexion();
+            using (SqlConnection con2 = new SqlConnection(conexion2.cadenaConexion))//utilizamos la clase conexion
+            {
+                string select = "SELECT id_sucursal FROM empleado_sucursal WHERE id_empleado=@id";//Consulta
+                SqlCommand comando = new SqlCommand(select, con2);//Nuevo objeto sqlcommand
+                comando.Parameters.AddWithValue("@id", id);//Agregamos parametros a la consulta
+                con2.Open();//abre la conexion
+                SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
+                guardarsuc = DateTime.Now;
+                if (lector.HasRows)//Revisa si hay resultados
+                {
+                    try
+                    {
+                        //Registrar SUCURSAL
+                        string consulta = "UPDATE empleado_sucursal SET id_sucursal=@id_sucursal, fecha_entrada=@fecha_entrada Where id_empleado=@id and fecha_salida is Null;";
+                        Conexion con = new Conexion();
+                        SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+                        conexion.Open();
+                        SqlCommand comand = new SqlCommand(consulta, conexion);
+                        comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                        comand.Parameters.AddWithValue("@fecha_entrada", guardarsuc);
+                        comand.Parameters.AddWithValue("@id", id);
+                        comand.ExecuteNonQuery();
+                        conexion.Close();
+
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.ToString());
+                        //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                    }
+                }
+                else
+                {
+                    try
+                    {
+                        //Registrar SUCURSAL
+                        string consulta = "INSERT INTO empleado_sucursal VALUES (@id_empleado,@id_sucursal, @fecha_entrada,@fecha_salida)";
+                        Conexion con = new Conexion();
+                        SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+                        conexion.Open();
+                        SqlCommand comand = new SqlCommand(consulta, conexion);
+                        comand.Parameters.AddWithValue("@id_empleado", id);
+                        comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                        comand.Parameters.AddWithValue("@fecha_entrada", guardarsuc);
+                        comand.Parameters.AddWithValue("@fecha_salida", DBNull.Value);
+                        comand.ExecuteNonQuery();
+                        conexion.Close();
+
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.ToString());
+                        //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
+                    }
+                }
+            }
+            /*guardarsuc = DateTime.Now;
             try
             {
                 //Registrar SUCURSAL
@@ -474,9 +531,7 @@ namespace Checador
             {
                 MessageBox.Show(e.ToString());
                 //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
-            }
-
-
+            }*/
         }
     }
 }

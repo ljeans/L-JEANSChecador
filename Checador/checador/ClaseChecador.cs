@@ -433,7 +433,7 @@ namespace Checador
                         {
                             con.Close();
                             //GUARDAR NUEVO EVENTO CON PURA SALIDA
-                            string consulta = "INSERT INTO registros WITH (TABLOCK) VALUES (@id_checador,@id_empleado,@id_sucursal,@fecha_entrada, @fecha_salida, @horas_trabajadas, @retardos,@total_min_retardo)";
+                            string consulta = "INSERT INTO registros VALUES (@id_checador,@id_empleado,@id_sucursal,@fecha_entrada, @fecha_salida, @horas_trabajadas, @retardos,@total_min_retardo)";
                             Conexion con2 = new Conexion();
                             SqlConnection conexion2 = new SqlConnection(con2.cadenaConexion);
                             conexion2.Open();
@@ -543,7 +543,7 @@ namespace Checador
                             }
                             else
                             {
-                                horas_trabajadas = Convert.ToInt32(hr_salida.TotalMinutes - hr_entrada.TotalMinutes);
+                                horas_trabajadas = Convert.ToInt32((hr_salida.TotalMinutes - tolerancia) - (hr_entrada.TotalMinutes + tolerancia));
                             }
 
                             con.Close();
@@ -564,6 +564,26 @@ namespace Checador
                             comand.ExecuteNonQuery();
                             conexion2.Close();
                         }
+                    }
+                    else
+                    {
+                        con.Close();
+                        //GUARDAR NUEVO EVENTO CON PURA SALIDA
+                        string consulta = "INSERT INTO registros VALUES (@id_checador,@id_empleado,@id_sucursal,@fecha_entrada, @fecha_salida, @horas_trabajadas, @retardos,@total_min_retardo)";
+                        Conexion con2 = new Conexion();
+                        SqlConnection conexion2 = new SqlConnection(con2.cadenaConexion);
+                        conexion2.Open();
+                        SqlCommand comand = new SqlCommand(consulta, conexion2);
+                        comand.Parameters.AddWithValue("@id_checador", id_checador);//Agregamos parametros a la consulta
+                        comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+                        comand.Parameters.AddWithValue("@id_sucursal", id_sucursal);
+                        comand.Parameters.AddWithValue("@fecha_entrada", DBNull.Value);
+                        comand.Parameters.AddWithValue("@fecha_salida", fecha_evento);
+                        comand.Parameters.AddWithValue("@horas_trabajadas", 0);
+                        comand.Parameters.AddWithValue("@retardos", DBNull.Value);
+                        comand.Parameters.AddWithValue("@total_min_retardo", DBNull.Value);
+                        comand.ExecuteNonQuery();
+                        conexion2.Close();
                     }
                 }
 

@@ -216,7 +216,13 @@
       <DependentUpon>Empleados-Checador.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="reportes\Sucursal-Empleados1.cs">
+    <Compile Include="reportes\Sucursal-Empleados_viejo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sucursal-Empleados_viejo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reportes\Sucursal-Empleados.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Sucursal-Empleados.rpt</DependentUpon>
@@ -301,9 +307,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Empleados-Checador.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="reportes\Sucursal-Empleados_viejo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Sucursal-Empleados_viejo.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="reportes\Sucursal-Empleados.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Sucursal-Empleados1.cs</LastGenOutput>
+      <LastGenOutput>Sucursal-Empleados.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="sucursales\sucursales.resx">
       <DependentUpon>sucursales.cs</DependentUpon>

@@ -607,6 +607,13 @@ namespace Checador
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 mensaje.Show();
             }
+            else
+            {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "ERROR: Checador no conectado.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+            }
         }
 
         //FUNCION PARA RECORRER TODAS LAS FILAS DEL DATAGRID Y SABER CUALES ESTÁN MARCADAS
@@ -714,19 +721,19 @@ namespace Checador
                     else
                     {
                         //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
-                        mensaje = new formularios_padres.mensaje_info();
+                        /*mensaje = new formularios_padres.mensaje_info();
                         mensaje.lbl_info.Text = "Dispositivo no conectado";
                         mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                        mensaje.Show();
+                        mensaje.Show();*/
                     }
                 }
                 else
                 {
                     //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
-                    mensaje = new formularios_padres.mensaje_info();
+                    /*mensaje = new formularios_padres.mensaje_info();
                     mensaje.lbl_info.Text = "Dispositivo no conectado";
                     mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                    mensaje.Show();
+                    mensaje.Show();*/
                 }
             }
             catch (Exception ex)
@@ -754,6 +761,13 @@ namespace Checador
             {
                 mensaje = new formularios_padres.mensaje_info();
                 mensaje.lbl_info.Text = "Fecha Y hora sincronizada.";
+                mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                mensaje.Show();
+            }
+            else
+            {
+                mensaje = new formularios_padres.mensaje_info();
+                mensaje.lbl_info.Text = "ERROR: Checador no conectado.";
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 mensaje.Show();
             }
@@ -819,6 +833,13 @@ namespace Checador
                     mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                     mensaje.Show();
                 }
+                else
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "ERROR: Checador no conectado.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.Show();
+                }
             }
             catch (Exception ex)
             {
@@ -858,8 +879,6 @@ namespace Checador
                                 DateTime fecha_max;
                                 ClaseSucursal Sucursal = new ClaseSucursal();
                                 ClaseEmpleado Empleado = new ClaseEmpleado();
-                                ClaseHorario Horario = new ClaseHorario();
-                                ClaseAsignar_Horario AsignarHorario = new ClaseAsignar_Horario();
 
                                 if (Checador.ReadGeneralLogData(Convert.ToInt32(row.Cells[1].Value)))//read all the attendance records to the memory
                                 {
@@ -868,7 +887,8 @@ namespace Checador
                                                out inOutMode, out Year, out Month, out Day, out Hour, out Minute, out Second, ref workCode))//get records from the memory
                                     {
                                         //VALIDACION PARA SABER DESDE DONDE VAMOS A JALAR LOS EVENTOS DEL CHECADOR [SE BORRARA DESPUES!!]
-
+                                        ClaseHorario Horario = new ClaseHorario();
+                                        ClaseAsignar_Horario AsignarHorario = new ClaseAsignar_Horario();
                                         if (fecha_max < Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()))
                                         {
                                             //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
@@ -1054,6 +1074,13 @@ namespace Checador
                     {
                         mensaje = new formularios_padres.mensaje_info();
                         mensaje.lbl_info.Text = "Los eventos han sido borrados.";
+                        mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                        mensaje.Show();
+                    }
+                    else
+                    {
+                        mensaje = new formularios_padres.mensaje_info();
+                        mensaje.lbl_info.Text = "ERROR: Checador no conectado.";
                         mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                         mensaje.Show();
                     }

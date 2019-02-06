@@ -10,6 +10,8 @@ namespace Checador
 {
     class Conexion
     {
+        //PARA ESTE SE COPIA TODO; ESTE ES EL WENO; RESPALDO DONDE ESTA EL ESTABLE
         public string cadenaConexion = "Data Source = 20.20.1.126,1433; Initial Catalog =sistema_checador; user= SA; password=123456;";
+        //public string cadenaConexion = "Data Source = DESKTOP-JBSAC7M,1433; Initial Catalog =sistema_checador; user= SA; password=123456;";
     }
 }
