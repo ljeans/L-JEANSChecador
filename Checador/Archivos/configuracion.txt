@@ -1,0 +1,1 @@
+Data Source=20.20.1.126;Initial Catalog=sistema_checador;Persist Security Info=True;User ID=SA;Password=123456;

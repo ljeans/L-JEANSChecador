@@ -204,7 +204,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(412, 72);
+            this.tabControlBase.Location = new System.Drawing.Point(412, 71);
             this.tabControlBase.Margin = new System.Windows.Forms.Padding(5);
             this.tabControlBase.Size = new System.Drawing.Size(1400, 800);
             this.tabControlBase.SelectedIndexChanged += new System.EventHandler(this.tabControlBase_SelectedIndexChanged);
@@ -268,6 +268,10 @@
             this.tabPage5.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage5.Size = new System.Drawing.Size(1392, 771);
             // 
+            // panel_barra_sup
+            // 
+            this.panel_barra_sup.Margin = new System.Windows.Forms.Padding(5);
+            // 
             // lbl_titulo
             // 
             this.lbl_titulo.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -277,6 +281,7 @@
             // panel_menu
             // 
             this.panel_menu.Controls.Add(this.rb_asignar_horarios);
+            this.panel_menu.Margin = new System.Windows.Forms.Padding(5);
             this.panel_menu.Controls.SetChildIndex(this.rb_registrar, 0);
             this.panel_menu.Controls.SetChildIndex(this.rb_modificar, 0);
             this.panel_menu.Controls.SetChildIndex(this.rb_buscar, 0);
@@ -316,6 +321,10 @@
             this.rb_registrar.Image = global::Checador.Properties.Resources.horarios_registrar2;
             this.rb_registrar.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             this.rb_registrar.CheckedChanged += new System.EventHandler(this.rb_registrar_CheckedChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(5);
             // 
             // label15
             // 

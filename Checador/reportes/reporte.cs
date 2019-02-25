@@ -894,5 +894,11 @@ namespace Checador.reportes
         {
             tabControlBase.SelectedTab = tabPage6;
         }
+
+        //FUNCION PARA CREAR ARCHIVO CON LOS DATOS
+        private void btn_crearArchivo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

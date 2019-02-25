@@ -18,6 +18,7 @@ namespace Checador.empleados
         //SE CREA LA INSTANCIA AL OBJETO DE LA CLASE EMPLEADO
         ClaseEmpleado Empleado = new ClaseEmpleado();
         ClaseHorario horario = new ClaseHorario();
+        ClaseDepartamento departamento = new ClaseDepartamento();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
         formularios_padres.Mensajes confirmacion2 = new formularios_padres.Mensajes();
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
@@ -28,6 +29,9 @@ namespace Checador.empleados
 
         //VARIABLE DE CONEXION DEL CHECADOR
         bool bConn;
+
+        //VARIABLE PARA SABER SI HIZO REGISTRO O MODIFICACION DE LA HUELLA DEL EMPLEADO PARA EL LOG DE HUELLAS
+        string tipo_evento;
 
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
@@ -51,6 +55,9 @@ namespace Checador.empleados
                 this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
                 // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador1.sucursal' Puede moverla o quitarla según sea necesario.
                 this.sucursalTableAdapter.Fill(this.dataSet_Checador1.sucursal);
+                // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Departamento' Puede moverla o quitarla según sea necesario.
+                this.vista_DepartamentoTableAdapter.Fill(this.dataSet_Checador.Vista_Departamento);
+
                 //FILTRAR POR SUCURSALES ACTIVAS EL COMBOBOX
                 sucursalBindingSource.Filter = "estatus='A'";
 
@@ -63,11 +70,28 @@ namespace Checador.empleados
                 groupBox4.Visible = false;
                 groupBox4.Enabled = false;
                 cbx_privilegio.SelectedIndex = 0;
+                btn_registrar_dep.Visible = true;
+                btn_actualizar_dep.Visible = false;
 
                 //*************   HACER FORMULARIO RESPONSIVO   *****************
                 double porcentaje_ancho = (Convert.ToDouble(Width) / 1362);
                 double porcentaje_alto = (Convert.ToDouble(Height) / 741);
 
+                if (Program.rol == "SUPERVISOR DE PERSONAL")
+                {
+                    rb_registrar.Enabled = false;
+                    rb_modificar.Enabled = false;
+                    rb_departamento.Enabled = false;
+                    rb_buscar.Checked = true;
+                }
+                else if (Program.rol == "ENCARGADA DE TIENDA")
+                {
+                    rb_registrar.Enabled = false;
+                    rb_modificar.Enabled = false;
+                    rb_departamento.Enabled = false;
+                    rb_buscar.Checked = true;
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and estatus = 'A'";
+                }
                 foreach (Control x in this.Controls)
                 {
                     if (x.HasChildren)
@@ -273,7 +297,7 @@ namespace Checador.empleados
                 Empleado.colonia = txt_domicilio_colonia.Text.ToUpper();
                 Empleado.cuenta_bancaria = txt_cuenta.Text.ToUpper();
                 Empleado.CURP = txt_curp.Text.ToUpper();
-                Empleado.departamento = txt_departamento.Text.ToUpper();
+                Empleado.departamento = cbx_departamento.SelectedValue.ToString();
                 Empleado.dias_aguinaldo = Convert.ToInt32(txt_dias_aguinaldo.Text);
                 Empleado.dias_vacaciones = Convert.ToInt32(txt_dias_vacaciones.Text);
                 Empleado.email = txt_email.Text;
@@ -342,16 +366,6 @@ namespace Checador.empleados
                     mensaje.ShowDialog();
                     tabControlBase.SelectedTab = tabPage1;
                     txt_apellido_paterno.Focus();
-                }
-                else if (Empleado.departamento == "")
-                {
-                    mensaje = new formularios_padres.mensaje_info();
-                    mensaje.lbl_info.Text = "No ha iasignado departamento al.";
-                    mensaje.lbl_info2.Text = "empleado.";
-                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
-                    mensaje.ShowDialog();
-                    tabControlBase.SelectedTab = tabPage1;
-                    txt_departamento.Focus();
                 }
                 else if (Empleado.id_sucursal.ToString() == "")
                 {
@@ -574,7 +588,6 @@ namespace Checador.empleados
             txt_contra.Text = "";
             txt_cuenta.Text = "";
             txt_curp.Text = "";
-            txt_departamento.Text = "";
             txt_despensa.Text = "";
             txt_dias_aguinaldo.Text = "0";
             txt_dias_vacaciones.Text = "0";
@@ -726,69 +739,81 @@ namespace Checador.empleados
                     Empleado.id = Convert.ToInt32(txt_id_a_modificar.Text);
                     if (Empleado.verificar_existencia(Empleado.id))
                     {
-                        tabControlBase.SelectedTab = tabPage1;
-                        txt_curp.Focus();
-                        btn_modificar.Enabled = true;
-                        btn_modificar.Visible = true;
-                        btn_registrar.Visible = false;
-                        btn_registrar.Enabled = false;
-                        txt_id.Text = Empleado.id.ToString();
-                        txt_nombre.Text = Empleado.nombre;
-                        txt_apellido_materno.Text = Empleado.apellido_mat;
-                        txt_apellido_paterno.Text = Empleado.apellido_pat;
-                        txt_banco.Text = Empleado.banco;
-                        txt_contra.Text = Empleado.password;
-                        txt_cuenta.Text = Empleado.cuenta_bancaria;
-                        txt_curp.Text = Empleado.CURP;
-                        txt_departamento.Text = Empleado.departamento;
-                        txt_despensa.Text = Empleado.tarjeta_despensa;
-                        txt_dias_aguinaldo.Text = Empleado.dias_aguinaldo.ToString();
-                        txt_dias_vacaciones.Text = Empleado.dias_vacaciones.ToString();
-                        txt_domicilio_calle.Text = Empleado.calle;
-                        txt_domicilio_colonia.Text = Empleado.colonia;
-                        txt_domicilio_cp.Text = Empleado.codigo_postal;
-                        txt_domicilio_estado.Text = Empleado.estado;
-                        txt_domicilio_municipio.Text = Empleado.municipio;
-                        txt_domicilio_num_ext.Text = Empleado.num_ext;
-                        txt_domicilio_num_int.Text = Empleado.num_int;
-                        txt_domicilio_municipio.Text = Empleado.municipio;
-                        txt_domicilio_pais.Text = Empleado.pais;
-                        txt_domicilio_pob.Text = Empleado.poblacion;
-                        txt_edenred.Text = Empleado.clave_edenred;
-                        txt_email.Text = Empleado.email;
-                        txt_nombre.Text = Empleado.nombre;
-                        txt_nss.Text = Empleado.NSS;
-                        txt_observaciones.Text = Empleado.observaciones;
-                        txt_periodicidad_pago.Text = Empleado.periodicidad_pago;
-                        txt_puesto.Text = Empleado.puesto;
-                        txt_rfc.Text = Empleado.RFC;
-                        txt_riesgo_puesto.Text = Empleado.riesgo_puesto;
-                        txt_sueldo_diario.Text = Empleado.sueldo_diario.ToString();
-                        txt_sueldo_integrado.Text = Empleado.sueldo_diario_integrado.ToString();
-                        txt_sueldo_quincenal.Text = Empleado.sueldo_base_quincenal.ToString();
-                        txt_telefono.Text = Empleado.telefono.ToString();
-                        txt_tipo_contrato.Text = Empleado.tipo_contrato;
-                        txt_tipo_salario.Text = Empleado.tipo_salario;
-                        dtp_fec_alt.Text = Empleado.fecha_alta.ToString();
-                        cbx_sucursal.SelectedValue = Empleado.id_sucursal;
-                        sucurzal = Empleado.id_sucursal;
-
-                        if (Empleado.id_privilegio == 0)
+                        if (Program.rol == "ENCARGADA DE TIENDA")
                         {
-                            cbx_privilegio.SelectedIndex = 0;
-                        }
-                        else if (Empleado.id_privilegio == 3)
-                        {
-                            cbx_privilegio.SelectedIndex = 1;
-                        }
-
-                        if (Empleado.estatus == "A")
-                        {
-                            rb_mod_activo.Checked = true;
+                            tabControlBase.SelectedTab = tabPage3;
+                            cbx_huella.SelectedIndex = 6;
+                            tipo_evento = "Modificacion";
+                            //SE OBTIENEN LOS DATOS DEL CHECADOR
+                            clase_checador.getChecador_Sucursal(Empleado.id_sucursal);
+                            Conectar_Checador();
                         }
                         else
                         {
-                            rb_mod_inactivo.Checked = true;
+                            tabControlBase.SelectedTab = tabPage1;
+                            txt_curp.Focus();
+                            btn_modificar.Enabled = true;
+                            btn_modificar.Visible = true;
+                            btn_registrar.Visible = false;
+                            btn_registrar.Enabled = false;
+                            txt_id.Text = Empleado.id.ToString();
+                            txt_nombre.Text = Empleado.nombre;
+                            txt_apellido_materno.Text = Empleado.apellido_mat;
+                            txt_apellido_paterno.Text = Empleado.apellido_pat;
+                            txt_banco.Text = Empleado.banco;
+                            txt_contra.Text = Empleado.password;
+                            txt_cuenta.Text = Empleado.cuenta_bancaria;
+                            txt_curp.Text = Empleado.CURP;
+                            txt_despensa.Text = Empleado.tarjeta_despensa;
+                            txt_dias_aguinaldo.Text = Empleado.dias_aguinaldo.ToString();
+                            txt_dias_vacaciones.Text = Empleado.dias_vacaciones.ToString();
+                            txt_domicilio_calle.Text = Empleado.calle;
+                            txt_domicilio_colonia.Text = Empleado.colonia;
+                            txt_domicilio_cp.Text = Empleado.codigo_postal;
+                            txt_domicilio_estado.Text = Empleado.estado;
+                            txt_domicilio_municipio.Text = Empleado.municipio;
+                            txt_domicilio_num_ext.Text = Empleado.num_ext;
+                            txt_domicilio_num_int.Text = Empleado.num_int;
+                            txt_domicilio_municipio.Text = Empleado.municipio;
+                            txt_domicilio_pais.Text = Empleado.pais;
+                            txt_domicilio_pob.Text = Empleado.poblacion;
+                            txt_edenred.Text = Empleado.clave_edenred;
+                            txt_email.Text = Empleado.email;
+                            txt_nombre.Text = Empleado.nombre;
+                            txt_nss.Text = Empleado.NSS;
+                            txt_observaciones.Text = Empleado.observaciones;
+                            txt_periodicidad_pago.Text = Empleado.periodicidad_pago;
+                            txt_puesto.Text = Empleado.puesto;
+                            txt_rfc.Text = Empleado.RFC;
+                            txt_riesgo_puesto.Text = Empleado.riesgo_puesto;
+                            txt_sueldo_diario.Text = Empleado.sueldo_diario.ToString();
+                            txt_sueldo_integrado.Text = Empleado.sueldo_diario_integrado.ToString();
+                            txt_sueldo_quincenal.Text = Empleado.sueldo_base_quincenal.ToString();
+                            txt_telefono.Text = Empleado.telefono.ToString();
+                            txt_tipo_contrato.Text = Empleado.tipo_contrato;
+                            txt_tipo_salario.Text = Empleado.tipo_salario;
+                            dtp_fec_alt.Text = Empleado.fecha_alta.ToString();
+                            cbx_sucursal.SelectedValue = Empleado.id_sucursal;
+                            cbx_departamento.SelectedValue = Empleado.departamento;
+                            sucurzal = Empleado.id_sucursal;
+
+                            if (Empleado.id_privilegio == 0)
+                            {
+                                cbx_privilegio.SelectedIndex = 0;
+                            }
+                            else if (Empleado.id_privilegio == 3)
+                            {
+                                cbx_privilegio.SelectedIndex = 1;
+                            }
+
+                            if (Empleado.estatus == "A")
+                            {
+                                rb_mod_activo.Checked = true;
+                            }
+                            else
+                            {
+                                rb_mod_inactivo.Checked = true;
+                            }
                         }
                     }
                     else
@@ -853,6 +878,7 @@ namespace Checador.empleados
                 if (verificador == 1)
                 {
                     pic_huella_mod.Image = Image.FromFile("..\\..\\Resources\\huellaregistred.png");
+                    Empleado.registrarLogHuella(Program.id_empleado, DateTime.Now, tipo_evento,Empleado.id);
                 }
             }
             catch (Exception ex)
@@ -867,14 +893,7 @@ namespace Checador.empleados
             }
         }
 
-        private void btn_modificar_Click_2(object sender, EventArgs e)
-        {
-            if(MessageBox.Show("Desea cambiar huella al empleado?", "cambiar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                tabControlBase.SelectedTab = tabPage3;
-                cbx_huella.SelectedIndex = 6;
-            }
-        }
+        
         //****************** NECESARIOS PARA MOSTRAR MENSAJES *****************
         private void responder(object sender, EventArgs e)
         {
@@ -976,6 +995,7 @@ namespace Checador.empleados
                 {
                     tabControlBase.SelectedTab = tabPage3;
                     cbx_huella.SelectedIndex = 6;
+                    tipo_evento = "Registro";
                 }
                 else
                 {
@@ -1037,6 +1057,7 @@ namespace Checador.empleados
                 {
                     tabControlBase.SelectedTab = tabPage3;
                     cbx_huella.SelectedIndex = 6;
+                    tipo_evento = "Modificacion";
                 }
                 else
                 {
@@ -1083,7 +1104,7 @@ namespace Checador.empleados
                 Empleado.colonia = txt_domicilio_colonia.Text;
                 Empleado.cuenta_bancaria = txt_cuenta.Text;
                 Empleado.CURP = txt_curp.Text;
-                Empleado.departamento = txt_departamento.Text;
+                Empleado.departamento = cbx_departamento.SelectedValue.ToString();
                 Empleado.dias_aguinaldo = Convert.ToInt32(txt_dias_aguinaldo.Text);
                 Empleado.dias_vacaciones = Convert.ToInt32(txt_dias_vacaciones.Text);
                 Empleado.email = txt_email.Text;
@@ -1250,11 +1271,9 @@ namespace Checador.empleados
                 mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
                 mensaje.Show();
                 Limpiar();
-                tabControlBase.SelectedTab = tabPage1;
+                tabControlBase.SelectedTab = tabPage4;
                 btn_registrar.Visible = true;
                 btn_modificar.Visible = false;
-                rb_registrar.Checked = true;
-                txt_id.Focus();
             }
             catch (Exception ex)
             {
@@ -1345,11 +1364,6 @@ namespace Checador.empleados
         }
 
         private void txt_apellido_materno_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            validar.sololetras(e);
-        }
-
-        private void txt_departamento_KeyPress(object sender, KeyPressEventArgs e)
         {
             validar.sololetras(e);
         }
@@ -1609,6 +1623,375 @@ namespace Checador.empleados
         {
             validar.solonumeros(e);
             validar.sinespacios(e);
+        }
+
+        private void mod_departamento(object sender, EventArgs e)
+        {
+            try
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
+                Enabled = true;
+                respuesta = confirmacion.respuesta;
+
+                if (respuesta == true)
+                {
+                    departamento.Modificar_Departamento();
+                    //CAMBIAR LOS BOTONES
+                    btn_actualizar_dep.Visible = false;
+                    btn_registrar_dep.Visible = true;
+                    txt_id_dep.Enabled = true;
+                    // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Departamento' Puede moverla o quitarla según sea necesario.
+                    this.vista_DepartamentoTableAdapter.Fill(this.dataSet_Checador.Vista_Departamento);
+                    Limpiar_datos_departamento();
+                }
+                confirmacion = null;
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
+        }
+
+        private void btn_modificar_dep_Click(object sender, EventArgs e)
+        {
+            //MODIFICAR DEPARTAMENTO
+            try
+            {
+                //CAMBIAR LOS BOTONES
+                btn_registrar_dep.Visible = false;
+                btn_actualizar_dep.Visible = true;
+                txt_id_dep.Enabled = false;
+
+                var row = dgv_departamento.CurrentRow;
+                //CARGAR LOS DATOS A LOS TEXTBOX
+                departamento.id = Convert.ToString(row.Cells[0].Value);
+                departamento.nombre = Convert.ToString(row.Cells[1].Value);
+                departamento.locacion = Convert.ToString(row.Cells[2].Value);
+
+                txt_id_dep.Text = departamento.id.ToString();
+                txt_nom_dep.Text = departamento.nombre;
+                txt_locacion_dep.Text = departamento.locacion;
+                txt_nom_dep.Focus();
+
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
+        }
+
+        private void btn_editar_dep_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = true;
+                departamento.id = txt_id_dep.Text;
+                departamento.nombre = txt_nom_dep.Text;
+                departamento.locacion = txt_locacion_dep.Text;
+
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                confirmacion = new formularios_padres.Mensajes();
+                confirmacion.lbl_mensaje.Text = "¿Desea modificar el departamento?";
+                confirmacion.FormClosed += new FormClosedEventHandler(mod_departamento);
+                confirmacion.ShowDialog();
+                //Enabled = false;
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
+        }
+
+        private void rb_departamento_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage6;
+            btn_registrar_dep.Visible = true;
+            btn_actualizar_dep.Visible = false;
+        }
+
+        //Limpar los campos despues de registrado un departamento
+        private void Limpiar_datos_departamento()
+        {
+            txt_id_dep.Text = "";
+            txt_locacion_dep.Text = "";
+            txt_nom_dep.Text = "";
+            txt_id_dep.Focus();
+        }
+
+        private void btn_registrar_dep_Click(object sender, EventArgs e)
+        {
+            //REGISTRAR DEPARTAMENTO NUEVO
+            try
+            {
+                departamento.id = txt_id_dep.Text;
+                departamento.nombre = txt_nom_dep.Text;
+                departamento.locacion = txt_locacion_dep.Text;
+
+                if (departamento.id.ToString() == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado el ID del departamento";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_id_dep.Focus();
+                }
+                else if (departamento.nombre == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado el nombre del departamento";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_nom_dep.Focus();
+                }
+                else if (departamento.locacion == "")
+                {
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "No ha ingresado la locacion del departamento";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                    txt_locacion_dep.Focus();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = true;
+                    if (!departamento.verificar_departamento(departamento.id))
+                    {
+                        departamento.guardarDepartamento();
+                        //FUNCION PAR RECARGAR EL DATAGRID
+                        // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Departamento' Puede moverla o quitarla según sea necesario.
+                        this.vista_DepartamentoTableAdapter.Fill(this.dataSet_Checador.Vista_Departamento);
+                    }
+
+                    Limpiar_datos_departamento();
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
+        }
+
+        //FUNCION PARA ELIMINAR UN DEPARTAMENTO PERMANENTEMENTE DE LA BD
+        private void btn_eliminar_dep_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                confirmacion = new formularios_padres.Mensajes();
+                confirmacion.lbl_mensaje.Text = "¿Desea eliminar el departamento?";
+                confirmacion.FormClosed += new FormClosedEventHandler(eliminar_departamento);
+                confirmacion.Show();
+                Enabled = false;
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
+        }
+
+        //ACCIONES REFERENTES A LA CONFIRMACION DEL DIALOGO DE ELIMINAR
+        public void eliminar_departamento(object sender, EventArgs e)
+        {
+            try
+            {
+                Enabled = true;
+                respuesta = confirmacion.respuesta;
+                if (respuesta)
+                {
+                    var row = dgv_departamento.CurrentRow;
+                    departamento.id = Convert.ToString(row.Cells[0].Value);
+                    departamento.eliminarDepartamento();
+                    //FUNCION PAR RECARGAR EL DATAGRID
+                    // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_Departamento' Puede moverla o quitarla según sea necesario.
+                    this.vista_DepartamentoTableAdapter.Fill(this.dataSet_Checador.Vista_Departamento);
+
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
         }
 
         //**************************  AQUI TERMINA LA VALIDACION DE LOS CAMPOS    *******************************

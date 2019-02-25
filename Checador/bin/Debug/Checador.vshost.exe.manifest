@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Checador.exe" size="41415680">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Checador.exe" size="41504256">
       <assemblyIdentity name="Checador" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Rrxgfum6lhsr1k6vmKQxbm45+2qIiB3ME2Bf8krOY/0=</dsig:DigestValue>
+        <dsig:DigestValue>CU8WcbUmB/guNCzAoHb0ROGYZuOZq7mZhWVp9VqXdno=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -286,13 +286,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Checador.exe.config" size="564">
+  <file name="Checador.exe.config" size="565">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>zFlVBjv8OHIkU8GQtTcoINNygelTzi++9/0Z8VShtVc=</dsig:DigestValue>
+      <dsig:DigestValue>H56PSlG/HyfF/YibFVXT/ogB+Lz5e73sE6ydr74nXpk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\huellaregistred.png" size="40368">

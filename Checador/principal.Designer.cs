@@ -47,6 +47,7 @@
             this.btn_sucursal = new System.Windows.Forms.Button();
             this.btn_checador = new System.Windows.Forms.Button();
             this.btn_horarios = new System.Windows.Forms.Button();
+            this.btn_configuracion = new System.Windows.Forms.Button();
             this.panel_barra_superior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,9 +62,10 @@
             this.btn_iniciar_sesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_iniciar_sesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_iniciar_sesion.ForeColor = System.Drawing.Color.White;
-            this.btn_iniciar_sesion.Location = new System.Drawing.Point(1024, 34);
+            this.btn_iniciar_sesion.Location = new System.Drawing.Point(1280, 42);
+            this.btn_iniciar_sesion.Margin = new System.Windows.Forms.Padding(4);
             this.btn_iniciar_sesion.Name = "btn_iniciar_sesion";
-            this.btn_iniciar_sesion.Size = new System.Drawing.Size(136, 28);
+            this.btn_iniciar_sesion.Size = new System.Drawing.Size(170, 35);
             this.btn_iniciar_sesion.TabIndex = 11;
             this.btn_iniciar_sesion.Text = "Iniciar Sesión";
             this.btn_iniciar_sesion.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -79,9 +81,10 @@
             this.btn_cerrar_sesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cerrar_sesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar_sesion.ForeColor = System.Drawing.Color.White;
-            this.btn_cerrar_sesion.Location = new System.Drawing.Point(820, 31);
+            this.btn_cerrar_sesion.Location = new System.Drawing.Point(1025, 39);
+            this.btn_cerrar_sesion.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cerrar_sesion.Name = "btn_cerrar_sesion";
-            this.btn_cerrar_sesion.Size = new System.Drawing.Size(151, 28);
+            this.btn_cerrar_sesion.Size = new System.Drawing.Size(189, 35);
             this.btn_cerrar_sesion.TabIndex = 12;
             this.btn_cerrar_sesion.Text = "Cerrar Sesión";
             this.btn_cerrar_sesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -100,8 +103,9 @@
             this.panel_barra_superior.Controls.Add(this.lbl_titulo);
             this.panel_barra_superior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_barra_superior.Location = new System.Drawing.Point(0, 0);
+            this.panel_barra_superior.Margin = new System.Windows.Forms.Padding(4);
             this.panel_barra_superior.Name = "panel_barra_superior";
-            this.panel_barra_superior.Size = new System.Drawing.Size(1370, 80);
+            this.panel_barra_superior.Size = new System.Drawing.Size(1712, 100);
             this.panel_barra_superior.TabIndex = 15;
             // 
             // label1
@@ -110,9 +114,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(801, 13);
+            this.label1.Location = new System.Drawing.Point(1001, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 20);
+            this.label1.Size = new System.Drawing.Size(106, 25);
             this.label1.TabIndex = 18;
             this.label1.Text = "Empleado:";
             // 
@@ -122,17 +127,19 @@
             this.lbl_usuario.AutoSize = true;
             this.lbl_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_usuario.ForeColor = System.Drawing.Color.White;
-            this.lbl_usuario.Location = new System.Drawing.Point(886, 13);
+            this.lbl_usuario.Location = new System.Drawing.Point(1108, 16);
+            this.lbl_usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_usuario.Name = "lbl_usuario";
-            this.lbl_usuario.Size = new System.Drawing.Size(0, 20);
+            this.lbl_usuario.Size = new System.Drawing.Size(0, 25);
             this.lbl_usuario.TabIndex = 17;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Checador.Properties.Resources.logos_nuevos;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(111, 76);
+            this.pictureBox1.Size = new System.Drawing.Size(139, 95);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
@@ -149,9 +156,10 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1329, 0);
+            this.button2.Location = new System.Drawing.Point(1654, 0);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(41, 80);
+            this.button2.Size = new System.Drawing.Size(59, 100);
             this.button2.TabIndex = 10;
             this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = false;
@@ -170,9 +178,10 @@
             this.btn_iniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_iniciar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_iniciar.ForeColor = System.Drawing.Color.White;
-            this.btn_iniciar.Location = new System.Drawing.Point(1140, 50);
+            this.btn_iniciar.Location = new System.Drawing.Point(1421, 62);
+            this.btn_iniciar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_iniciar.Name = "btn_iniciar";
-            this.btn_iniciar.Size = new System.Drawing.Size(136, 30);
+            this.btn_iniciar.Size = new System.Drawing.Size(174, 44);
             this.btn_iniciar.TabIndex = 1;
             this.btn_iniciar.Text = "Iniciar Sesión";
             this.btn_iniciar.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -192,9 +201,10 @@
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar.ForeColor = System.Drawing.Color.White;
-            this.btn_cerrar.Location = new System.Drawing.Point(1125, 50);
+            this.btn_cerrar.Location = new System.Drawing.Point(1406, 62);
+            this.btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cerrar.Name = "btn_cerrar";
-            this.btn_cerrar.Size = new System.Drawing.Size(151, 28);
+            this.btn_cerrar.Size = new System.Drawing.Size(189, 42);
             this.btn_cerrar.TabIndex = 1;
             this.btn_cerrar.Text = "Cerrar Sesión";
             this.btn_cerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -214,9 +224,10 @@
             this.btn_minimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_minimizar.ForeColor = System.Drawing.Color.White;
             this.btn_minimizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_minimizar.Location = new System.Drawing.Point(1282, 0);
+            this.btn_minimizar.Location = new System.Drawing.Point(1594, 0);
+            this.btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_minimizar.Name = "btn_minimizar";
-            this.btn_minimizar.Size = new System.Drawing.Size(42, 80);
+            this.btn_minimizar.Size = new System.Drawing.Size(61, 100);
             this.btn_minimizar.TabIndex = 9;
             this.btn_minimizar.Text = "_";
             this.btn_minimizar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -228,9 +239,10 @@
             this.lbl_titulo.AutoSize = true;
             this.lbl_titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_titulo.ForeColor = System.Drawing.Color.White;
-            this.lbl_titulo.Location = new System.Drawing.Point(154, 20);
+            this.lbl_titulo.Location = new System.Drawing.Point(192, 25);
+            this.lbl_titulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(280, 37);
+            this.lbl_titulo.Size = new System.Drawing.Size(349, 46);
             this.lbl_titulo.TabIndex = 5;
             this.lbl_titulo.Text = "Sistema Checador";
             // 
@@ -243,9 +255,10 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = global::Checador.Properties.Resources.add;
-            this.button1.Location = new System.Drawing.Point(12, 660);
+            this.button1.Location = new System.Drawing.Point(13, 850);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 100);
+            this.button1.Size = new System.Drawing.Size(120, 120);
             this.button1.TabIndex = 23;
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = false;
@@ -263,9 +276,10 @@
             this.btn_incidente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_incidente.ForeColor = System.Drawing.Color.Black;
             this.btn_incidente.Image = global::Checador.Properties.Resources.tienda;
-            this.btn_incidente.Location = new System.Drawing.Point(965, 431);
+            this.btn_incidente.Location = new System.Drawing.Point(1206, 539);
+            this.btn_incidente.Margin = new System.Windows.Forms.Padding(4);
             this.btn_incidente.Name = "btn_incidente";
-            this.btn_incidente.Size = new System.Drawing.Size(206, 206);
+            this.btn_incidente.Size = new System.Drawing.Size(258, 258);
             this.btn_incidente.TabIndex = 22;
             this.btn_incidente.Text = "Tienda";
             this.btn_incidente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -283,9 +297,10 @@
             this.btn_reportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_reportes.ForeColor = System.Drawing.Color.Black;
             this.btn_reportes.Image = global::Checador.Properties.Resources.reportes;
-            this.btn_reportes.Location = new System.Drawing.Point(585, 431);
+            this.btn_reportes.Location = new System.Drawing.Point(731, 539);
+            this.btn_reportes.Margin = new System.Windows.Forms.Padding(4);
             this.btn_reportes.Name = "btn_reportes";
-            this.btn_reportes.Size = new System.Drawing.Size(206, 206);
+            this.btn_reportes.Size = new System.Drawing.Size(258, 258);
             this.btn_reportes.TabIndex = 21;
             this.btn_reportes.Text = "Reportes";
             this.btn_reportes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -303,9 +318,10 @@
             this.btn_empleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_empleados.ForeColor = System.Drawing.Color.Black;
             this.btn_empleados.Image = global::Checador.Properties.Resources.Empleados;
-            this.btn_empleados.Location = new System.Drawing.Point(965, 135);
+            this.btn_empleados.Location = new System.Drawing.Point(1206, 169);
+            this.btn_empleados.Margin = new System.Windows.Forms.Padding(4);
             this.btn_empleados.Name = "btn_empleados";
-            this.btn_empleados.Size = new System.Drawing.Size(206, 206);
+            this.btn_empleados.Size = new System.Drawing.Size(258, 258);
             this.btn_empleados.TabIndex = 20;
             this.btn_empleados.Text = "Empleados";
             this.btn_empleados.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -323,9 +339,10 @@
             this.btn_sucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_sucursal.ForeColor = System.Drawing.Color.Black;
             this.btn_sucursal.Image = global::Checador.Properties.Resources.sucursales;
-            this.btn_sucursal.Location = new System.Drawing.Point(585, 152);
+            this.btn_sucursal.Location = new System.Drawing.Point(731, 190);
+            this.btn_sucursal.Margin = new System.Windows.Forms.Padding(4);
             this.btn_sucursal.Name = "btn_sucursal";
-            this.btn_sucursal.Size = new System.Drawing.Size(206, 206);
+            this.btn_sucursal.Size = new System.Drawing.Size(258, 258);
             this.btn_sucursal.TabIndex = 17;
             this.btn_sucursal.Text = "Sucursales";
             this.btn_sucursal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -343,9 +360,10 @@
             this.btn_checador.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_checador.ForeColor = System.Drawing.Color.Black;
             this.btn_checador.Image = global::Checador.Properties.Resources.checador;
-            this.btn_checador.Location = new System.Drawing.Point(193, 152);
+            this.btn_checador.Location = new System.Drawing.Point(241, 190);
+            this.btn_checador.Margin = new System.Windows.Forms.Padding(4);
             this.btn_checador.Name = "btn_checador";
-            this.btn_checador.Size = new System.Drawing.Size(206, 206);
+            this.btn_checador.Size = new System.Drawing.Size(258, 258);
             this.btn_checador.TabIndex = 19;
             this.btn_checador.Text = "Checador    ";
             this.btn_checador.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -363,22 +381,42 @@
             this.btn_horarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_horarios.ForeColor = System.Drawing.Color.Black;
             this.btn_horarios.Image = global::Checador.Properties.Resources.horarios;
-            this.btn_horarios.Location = new System.Drawing.Point(193, 431);
+            this.btn_horarios.Location = new System.Drawing.Point(241, 539);
+            this.btn_horarios.Margin = new System.Windows.Forms.Padding(4);
             this.btn_horarios.Name = "btn_horarios";
-            this.btn_horarios.Size = new System.Drawing.Size(206, 206);
+            this.btn_horarios.Size = new System.Drawing.Size(258, 258);
             this.btn_horarios.TabIndex = 18;
             this.btn_horarios.Text = "Horarios";
             this.btn_horarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_horarios.UseVisualStyleBackColor = false;
             this.btn_horarios.Click += new System.EventHandler(this.btn_horarios_Click);
             // 
+            // btn_configuracion
+            // 
+            this.btn_configuracion.BackColor = System.Drawing.Color.Transparent;
+            this.btn_configuracion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_configuracion.FlatAppearance.BorderSize = 0;
+            this.btn_configuracion.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btn_configuracion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(235)))), ((int)(((byte)(235)))));
+            this.btn_configuracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_configuracion.Image = global::Checador.Properties.Resources.conf;
+            this.btn_configuracion.Location = new System.Drawing.Point(15, 722);
+            this.btn_configuracion.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_configuracion.Name = "btn_configuracion";
+            this.btn_configuracion.Size = new System.Drawing.Size(120, 120);
+            this.btn_configuracion.TabIndex = 24;
+            this.btn_configuracion.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_configuracion.UseVisualStyleBackColor = false;
+            this.btn_configuracion.Click += new System.EventHandler(this.btn_configuracion_Click);
+            // 
             // principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.GhostWhite;
-            this.ClientSize = new System.Drawing.Size(1370, 772);
+            this.ClientSize = new System.Drawing.Size(1712, 912);
+            this.Controls.Add(this.btn_configuracion);
             this.Controls.Add(this.btn_checador);
             this.Controls.Add(this.btn_sucursal);
             this.Controls.Add(this.button1);
@@ -391,8 +429,9 @@
             this.Controls.Add(this.btn_cerrar_sesion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1370, 772);
-            this.MinimumSize = new System.Drawing.Size(1022, 726);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximumSize = new System.Drawing.Size(1712, 965);
+            this.MinimumSize = new System.Drawing.Size(1278, 908);
             this.Name = "principal";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "principal";
@@ -424,6 +463,7 @@
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.Label lbl_usuario;
         public System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_configuracion;
     }
 }
 

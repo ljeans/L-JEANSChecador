@@ -61,11 +61,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Web" />
@@ -88,6 +89,12 @@
       <DependentUpon>cheacador.cs</DependentUpon>
     </Compile>
     <Compile Include="checador\ClaseChecador.cs" />
+    <Compile Include="configuracion\configuracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="configuracion\configuracion.Designer.cs">
+      <DependentUpon>configuracion.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataSet_Checador.cs">
       <DependentUpon>DataSet_Checador.xsd</DependentUpon>
     </Compile>
@@ -96,6 +103,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_Checador.xsd</DependentUpon>
     </Compile>
+    <Compile Include="empleados\ClaseDepartamento.cs" />
     <Compile Include="empleados\ClaseEmpleado.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="empleados\empleados.cs">
@@ -239,6 +247,9 @@
     <EmbeddedResource Include="checador\cheacador.resx">
       <DependentUpon>cheacador.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="configuracion\configuracion.resx">
+      <DependentUpon>configuracion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="empleados\empleados.resx">
       <DependentUpon>empleados.cs</DependentUpon>
@@ -480,6 +491,7 @@
     <None Include="Resources\huella9.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\huellas_log.png" />
     <None Include="Resources\tienda_chequeos.png" />
     <None Include="Resources\tienda.png" />
     <None Include="Resources\tiendas.png" />
@@ -506,6 +518,9 @@
     <None Include="Resources\checador_registrar.png" />
     <None Include="Resources\checador_buscar.png" />
     <None Include="Resources\calcular_horas.png" />
+    <None Include="Resources\conf.png" />
+    <None Include="Resources\archivo.png" />
+    <None Include="Resources\departamento.png" />
     <Content Include="Resources\huellaregistred.png" />
   </ItemGroup>
   <ItemGroup>
@@ -523,6 +538,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

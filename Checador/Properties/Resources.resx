@@ -118,190 +118,202 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="checador_registrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checador_registrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="huella0" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\huella0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="iniciar_sesion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iniciar_sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="huella8" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\huella8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logos nuevos 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logos nuevos 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logos nuevos 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logos nuevos 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sucursal_registrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sucursal_registrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sucursales" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sucursales.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="huella7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\huella7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="back_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logos nuevos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logos nuevos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="iniciar_sesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iniciar_sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="huella6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\huella6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cerrar_sesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cerrar_sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="huella" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\huella.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="huella4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\huella4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ayuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ayuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ver_pass1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ver_pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="horarios_registrar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\horarios_registrar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="loading-bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loading-bar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ocultar_pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ocultar_pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="homo_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\homo_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="back_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="huella1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\huella1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tienda_chequeos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tienda_chequeos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="checador" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="empleados_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\empleados_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="reportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\reportes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logos nuevos 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logos nuevos 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tienda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tienda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="close_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="horarios_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\horarios_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="tiendas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\tiendas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="crearusuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\crearusuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="conf_user_st" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\conf_user_st.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="huella5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\huella5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="horarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\horarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="empleados_buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\empleados_buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="back_gray_center" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\back_gray_center.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="calendar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\calendar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Empleados" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Empleados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sucursal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sucursal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="horarios_buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\horarios_buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="huella4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huella4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondo_panel_vert" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo_panel_vert.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sucursal_buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sucursal_buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="checador_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checador_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="huella3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\huella3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="horarios_registrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\horarios_registrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Repertes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Repertes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="checador_registrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checador_registrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="empleados_registros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\empleados_registros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="huella" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huella.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="empleados_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\empleados_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iniciar_sesion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iniciar_sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huella3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huella3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="archivo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\archivo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ver_pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ver_pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sombra_boton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sombra_boton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logos nuevos 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logos nuevos 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="checador_buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\checador_buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="empleados_buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\empleados_buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="minimize_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minimize_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="huella2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\huella2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="conf" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logos nuevos 31" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logos nuevos 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sucursal_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sucursal_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="loading-bar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading-bar.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="horarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\horarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tienda_chequeos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tienda_chequeos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checador_buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checador_buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huella0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huella0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sucursal_registrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sucursal_registrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calcular_horas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calcular_horas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="departamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\departamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cerrar_sesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cerrar_sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ayuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ayuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ocultar_pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ocultar_pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sucursales" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sucursales.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checador" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logos nuevos 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logos nuevos 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logos nuevos 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logos nuevos 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minimize_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checador_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\checador_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minimizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huella8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huella8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huella5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huella5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huella6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huella6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="horarios_buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\horarios_buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="crearusuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crearusuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="iniciar_sesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iniciar_sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tiendas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tiendas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="close_gray" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_gray.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sucursal_buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sucursal_buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Empleados" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Empleados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="horarios_registrar2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\horarios_registrar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reportes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="horarios_registrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\horarios_registrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="horarios_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\horarios_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tienda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tienda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\remove.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="huella9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\huella9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calcular_horas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\calcular_horas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="conf_user_st" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\conf_user_st.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="back_gray_center" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\back_gray_center.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huella7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huella7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Repertes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Repertes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ver_pass1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ver_pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="login" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\login.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sucursal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sucursal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huella1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huella1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sombra_boton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sombra_boton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huella2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huella2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sucursal_modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sucursal_modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="huellas_log" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\huellas_log.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

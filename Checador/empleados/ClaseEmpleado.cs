@@ -430,6 +430,30 @@ namespace Checador
             }
         }
 
+        //INSERTAR EL REGISTRO O MODIFICACION DE LA HUELLA DE LA ENCARGADA EN EL LOG
+        public void registrarLogHuella(int id_empleado, DateTime fecha, string evento, int id_empleado_afectado)
+        {
+            try
+            {
+                //Registrar HORARIO
+                string consulta = "INSERT INTO huellas_log VALUES (@id_empleado ,@fecha, @evento, @id_empleado_afectado)";
+                Conexion con = new Conexion();
+                SqlConnection conexion = new SqlConnection(con.cadenaConexion);
+                conexion.Open();
+                SqlCommand comand = new SqlCommand(consulta, conexion);
+                comand.Parameters.AddWithValue("@id_empleado", id_empleado);
+                comand.Parameters.AddWithValue("@fecha", fecha);
+                comand.Parameters.AddWithValue("@evento", evento);
+                comand.Parameters.AddWithValue("@id_empleado_afectado", id_empleado_afectado);
+                comand.ExecuteNonQuery();
+                conexion.Close();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
         //FUNCION PARA REGISTRAR EMPLEADO_SUCURSAL
         public void guardarEmpleado_Sucursal()
         {
@@ -533,5 +557,6 @@ namespace Checador
                 //MessageBox.Show("Upss.. Ocurrió un error, por favor vuelva a intentarlo.");
             }*/
         }
+
     }
 }

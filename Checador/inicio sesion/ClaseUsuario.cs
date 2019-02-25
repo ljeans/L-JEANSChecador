@@ -61,7 +61,8 @@ namespace Checador.inicio_sesion
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                throw;
+                //MessageBox.Show("Error especifico en la red. No se pudo establecer conexión con el servidor");
                 return false;
             }
 

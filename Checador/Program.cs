@@ -12,6 +12,7 @@ namespace Checador
         public static string rol;
         public static string nombre_usuario, sucursal;
         public static int id_empleado, id_sucursal;
+        public static string cadena_conexion;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

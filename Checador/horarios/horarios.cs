@@ -478,13 +478,13 @@ namespace Checador
                 }
                 else
                 {
-                    vistaHorarioBindingSource.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
-                    vistaHorarioBindingSource1.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
-                    vistaHorarioBindingSource2.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
-                    vistaHorarioBindingSource3.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
-                    vistaHorarioBindingSource4.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
-                    vistaHorarioBindingSource5.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
-                    vistaHorarioBindingSource6.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0";
+                    vistaHorarioBindingSource.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0 or [id_horario] = 1";
+                    vistaHorarioBindingSource1.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0 or [id_horario] = 1";
+                    vistaHorarioBindingSource2.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0 or [id_horario] = 1";
+                    vistaHorarioBindingSource3.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0 or [id_horario] = 1";
+                    vistaHorarioBindingSource4.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0 or [id_horario] = 1";
+                    vistaHorarioBindingSource5.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0 or [id_horario] = 1";
+                    vistaHorarioBindingSource6.Filter = "lunes ='" + Program.id_empleado + "' or [id_horario] = 0 or [id_horario] = 1";
                 }
 
                 //FILTRAR COMBOBOX DE EMPLEADOS EN ASIGNAR HORARIO DEPENDIENDO EL ROL

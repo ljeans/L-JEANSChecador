@@ -8,6 +8,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Net.NetworkInformation;
+using System.IO;
 
 namespace Checador
 {
@@ -22,6 +23,9 @@ namespace Checador
         public bool respuesta = false;
         public bool sincronizar = false;
         int contador;
+
+        //VARIABLE GLOBAL DE NOMBRE DE ARCHIVO PARA NOMINA
+        string FileName;
 
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
         public zkemkeeper.CZKEM Checador = new zkemkeeper.CZKEM();
@@ -425,6 +429,14 @@ namespace Checador
                 //FILTRAR POR SUCURSALES ACTIVAS EL COMBOBOX
                 sucursalBindingSource.Filter = "estatus='A'";
 
+                // TODO: esta línea de código carga datos en la tabla 'dataSet_Checador.Vista_HuellaLog' Puede moverla o quitarla según sea necesario.
+                this.vista_HuellaLogTableAdapter.Fill(this.dataSet_Checador.Vista_HuellaLog);
+
+                //FILTRAR EL HISTORIAL DE HUELLAS EN LOS ULTIMOS 30 DIAS
+                DateTime fechaActual = DateTime.Now;
+                fechaActual = fechaActual.AddDays(-30);
+                this.vistaHuellaLogBindingSource.Filter = "(CONVERT([fecha], 'System.DateTime') >= CONVERT('" + fechaActual.Year + "-" + fechaActual.Month + "-" + fechaActual.Day + "', 'System.DateTime'))"; 
+
                 //INSTRUCCION PARA QUE NO HAYA PROBLEMAS CON LOS HILOS
                 CheckForIllegalCrossThreadCalls = false;
 
@@ -547,6 +559,8 @@ namespace Checador
                     btn_b_modificar.Enabled = false;
                     btn_dar_baja.Enabled = false;
                     rb_buscar.Checked = true;
+                    rb_historial.Enabled = true;
+                    radioButton1.Enabled = false;
                 }
                 else if(Program.rol == "ENCARGADA DE TIENDA")
                 {
@@ -562,6 +576,8 @@ namespace Checador
                     btn_dar_baja.Enabled = false;
                     rb_buscar.Checked = true;
                     btn_scr_fecha.Enabled = false;
+                    radioButton1.Enabled = false;
+                    rb_historial.Enabled = false;
                 }
             }
             catch (Exception ex)
@@ -873,6 +889,10 @@ namespace Checador
                             Conectar_Checador(Convert.ToInt32(row.Cells[1].Value), row.Cells[3].Value.ToString(), Convert.ToInt32(row.Cells[4].Value));
                             if (bConn)
                             {
+                                //LISTA PARA OBTENER LOS EMPLEADOS A LOS QUE SE LE APLICO LA SINCRONIZACION DE EVENTOS
+                                List<int> id_empleados_eventos = new List<int>();
+                                DateTime fecha_final = new DateTime();
+
                                 string id = string.Empty;
                                 int verifyMode = 0, inOutMode = 0, workCode = 0;
                                 int Year = 0, Month = 0, Day = 0, Hour = 0, Minute = 0, Second = 0;
@@ -882,15 +902,26 @@ namespace Checador
 
                                 if (Checador.ReadGeneralLogData(Convert.ToInt32(row.Cells[1].Value)))//read all the attendance records to the memory
                                 {
+                                    ClaseAsignar_Horario AsignarHorario = new ClaseAsignar_Horario();
                                     fecha_max = Clase_Checador.verificarEvento(Convert.ToInt32(row.Cells[1].Value));
                                     while (Checador.SSR_GetGeneralLogData(Convert.ToInt32(row.Cells[1].Value), out id, out verifyMode,
                                                out inOutMode, out Year, out Month, out Day, out Hour, out Minute, out Second, ref workCode))//get records from the memory
                                     {
+
                                         //VALIDACION PARA SABER DESDE DONDE VAMOS A JALAR LOS EVENTOS DEL CHECADOR [SE BORRARA DESPUES!!]
                                         ClaseHorario Horario = new ClaseHorario();
-                                        ClaseAsignar_Horario AsignarHorario = new ClaseAsignar_Horario();
+                                        //ClaseAsignar_Horario AsignarHorario = new ClaseAsignar_Horario();
                                         if (fecha_max < Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()))
                                         {
+                                            //AGREGAR LOS EMPLEADOS A LOS QUE SE LE APLICO LA SINCRONIZACION PARA PODER AGREGARLES LOS DESCANSOS
+                                            if (!id_empleados_eventos.Contains(Convert.ToInt32(id)))
+                                            {
+                                                id_empleados_eventos.Add(Convert.ToInt32(id));
+                                            }
+
+                                            //SACAR LA ULTIMA FECHA DE LA SINCRONIZACION
+                                            fecha_final = Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString());
+
                                             //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
                                             Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
                                             //Empleado.obtenerIdHorario(Convert.ToInt32(id));
@@ -901,34 +932,41 @@ namespace Checador
                                             if (dia.DayOfWeek.ToString() == "Monday")
                                             {
                                                 Horario.verificar_existencia(AsignarHorario.lunes);
+                                                Horario.id = AsignarHorario.lunes;
                                             }
                                             else if (dia.DayOfWeek.ToString() == "Tuesday")
                                             {
                                                 Horario.verificar_existencia(AsignarHorario.martes);
+                                                Horario.id = AsignarHorario.martes;
                                             }
                                             else if (dia.DayOfWeek.ToString() == "Wednesday")
                                             {
                                                 Horario.verificar_existencia(AsignarHorario.miercoles);
+                                                Horario.id = AsignarHorario.miercoles;
                                             }
                                             else if (dia.DayOfWeek.ToString() == "Thursday")
                                             {
                                                 Horario.verificar_existencia(AsignarHorario.jueves);
+                                                Horario.id = AsignarHorario.jueves;
                                             }
                                             else if (dia.DayOfWeek.ToString() == "Friday")
                                             {
                                                 Horario.verificar_existencia(AsignarHorario.viernes);
+                                                Horario.id = AsignarHorario.viernes;
                                             }
                                             else if (dia.DayOfWeek.ToString() == "Saturday")
                                             {
                                                 Horario.verificar_existencia(AsignarHorario.sabado);
+                                                Horario.id = AsignarHorario.sabado;
                                             }
                                             else if (dia.DayOfWeek.ToString() == "Sunday")
                                             {
                                                 Horario.verificar_existencia(AsignarHorario.domingo);
+                                                Horario.id = AsignarHorario.domingo;
                                             }
-
+                                            
                                             //Horario.verificar_existencia(Empleado.id_horario);
-                                            Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
+                                            Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.id);
 
                                             //OBTENER EL NOMBRE DEL EMPLEADO PARA MOSTRARLO EN EL DATAGRID
                                             Empleado.verificar_existencia(Convert.ToInt32(id));
@@ -940,15 +978,121 @@ namespace Checador
                                             Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
                                             Empleado.obtenerIdHorario(Convert.ToInt32(id));
                                             Horario.verificar_existencia(Empleado.id_horario);
-                                            Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.horario);
+                                            Clase_Checador.guardarEvento(Convert.ToInt32(row.Cells[1].Value), Convert.ToInt32(id), Sucursal.id, Convert.ToDateTime(Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString()), Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, inOutMode, Horario.id);
                                             //OBTENER EL NOMBRE DEL EMPLEADO PARA MOSTRARLO EN EL DATAGRID
                                             Empleado.verificar_existencia(Convert.ToInt32(id));
                                             //Agregar fila en DataGrid de datos sincronizados
                                             agregarFila(Convert.ToString(row.Cells[1].Value), Sucursal.id.ToString(), Convert.ToString(id), Empleado.nombre + " " + Empleado.apellido_pat +" "+ Empleado.apellido_mat,Year.ToString() + "-" + Month.ToString() + "-" + Day.ToString() + "  " + Hour.ToString() + ":" + Minute.ToString() + ":" + Second.ToString(), inOutMode);
                                         }
                                     }
-                                    sincronizar = true;
 
+                                    //CICLO PARA CADA UNO DE LOS EMPLEADOS OBTENIDOS DE LOS EVENTOS
+                                    foreach (var id_empleado in id_empleados_eventos)
+                                    {
+                                        int id_horario = -1;
+                                        //OBTENER DESCANSOS DE LOS HORARIOS E INSERTAR EVENTOS
+                                        //OBTENER LA PLANEACION SEMANAL DE HORARIOS DEL EMPLEADO Y VALIDACION PARA QUE EXISTA
+                                        if (AsignarHorario.verificar_existencia(id_empleado))
+                                        {
+                                            DateTime fecha_inicial = fecha_max.AddDays(1.0);
+                                            for (DateTime fecha = new DateTime(fecha_inicial.Year, fecha_inicial.Month, fecha_inicial.Day); fecha <= fecha_final; fecha = fecha.AddDays(1.0))
+                                            {
+                                                id_horario = -1;
+                                                //SACAR LOS DESCANSOS, VACACIONES Y FALTAS
+                                                if (fecha.DayOfWeek.ToString() == "Monday")
+                                                {
+                                                    if (AsignarHorario.lunes == 0)
+                                                    {
+                                                        id_horario = 0;
+                                                    }
+                                                    else if (AsignarHorario.lunes == 1)
+                                                    {
+                                                        id_horario = 1;
+                                                    }
+                                                }
+                                                else if (fecha.DayOfWeek.ToString() == "Tuesday")
+                                                {
+                                                    if (AsignarHorario.martes == 0)
+                                                    {
+                                                        id_horario = 0;
+                                                    }
+                                                    else if (AsignarHorario.martes == 1)
+                                                    {
+                                                        id_horario = 1;
+                                                    }
+                                                }
+                                                else if (fecha.DayOfWeek.ToString() == "Wednesday")
+                                                {
+                                                    if (AsignarHorario.miercoles == 0)
+                                                    {
+                                                        id_horario = 0;
+                                                    }
+                                                    else if (AsignarHorario.miercoles == 1)
+                                                    {
+                                                        id_horario = 1;
+                                                    }
+                                                }
+                                                else if (fecha.DayOfWeek.ToString() == "Thursday")
+                                                {
+                                                    if (AsignarHorario.jueves == 0)
+                                                    {
+                                                        id_horario = 0;
+                                                    }
+                                                    else if (AsignarHorario.jueves == 1)
+                                                    {
+                                                        id_horario = 1;
+                                                    }
+                                                }
+                                                else if (fecha.DayOfWeek.ToString() == "Friday")
+                                                {
+                                                    if (AsignarHorario.viernes == 0)
+                                                    {
+                                                        id_horario = 0;
+                                                    }
+                                                    else if (AsignarHorario.viernes == 1)
+                                                    {
+                                                        id_horario = 1;
+                                                    }
+                                                }
+                                                else if (fecha.DayOfWeek.ToString() == "Saturday")
+                                                {
+                                                    if (AsignarHorario.sabado == 0)
+                                                    {
+                                                        id_horario = 0;
+                                                    }
+                                                    else if (AsignarHorario.sabado == 1)
+                                                    {
+                                                        id_horario = 1;
+                                                    }
+                                                }
+                                                else if (fecha.DayOfWeek.ToString() == "Sunday")
+                                                {
+                                                    if (AsignarHorario.domingo == 0)
+                                                    {
+                                                        id_horario = 0;
+                                                    }
+                                                    else if (AsignarHorario.domingo == 1)
+                                                    {
+                                                        id_horario = 1;
+                                                    }
+                                                }
+
+                                                if (id_horario == 0 || id_horario == 1)
+                                                {
+                                                    //SUMARLE LAS HORAS TRABAJADAS DE LOS DESCANSOS Y VACACIONES
+                                                    Sucursal.obtenerIdSucursal(row.Cells[2].Value.ToString());
+                                                    //GUARDAR EL DESCANSO O VACACIONES
+                                                    Clase_Checador.guardarDescanso(Convert.ToInt32(row.Cells[1].Value), id_empleado, Sucursal.id, id_horario, fecha, fecha.AddDays(1.0));
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            //CODIGO PARA CUANDO EL EMPLEADO NO TENGA ASIGNADO UN HORARIO
+                                            //MessageBox.Show("Empleado sin horario asignado");
+                                        }
+                                    }
+                                    sincronizar = true;
                                 }
                                 else
                                 {
@@ -1674,6 +1818,160 @@ namespace Checador
         {
             validar.solonumeros(e);
             validar.sinespacios(e);
+        }
+
+        private void tabPage5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage5;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FileName = "";
+                if (Convert.ToDateTime(dtp_fecha_inicial.Value.ToString("yyyy-MM-dd 00:00:00")) > Convert.ToDateTime(dtp_fecha_final.Value.ToString("yyyy-MM-dd 00:00:00")))
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "La fecha inicial es menor que la fecha final.";
+                    mensaje.lbl_info2.Text = "Verifique las fechas.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    DateTime fecha_inicial, fecha_final;
+                    fecha_inicial = new DateTime(dtp_fecha_inicial.Value.Year, dtp_fecha_inicial.Value.Month, dtp_fecha_inicial.Value.Day);
+                    fecha_final = new DateTime(dtp_fecha_final.Value.Year, dtp_fecha_final.Value.Month, dtp_fecha_final.Value.Day);
+
+                    SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+                    saveFileDialog1.FileName = "Resumen(" + fecha_inicial.ToString("dd-MM-yyyy") + "_" + fecha_final.ToString("dd-MM-yyyy") + ").txt";
+                    saveFileDialog1.Filter = "txt files (*.txt)|*.txt";
+                    saveFileDialog1.FilterIndex = 2;
+                    saveFileDialog1.RestoreDirectory = true;
+
+                    if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                    {
+                        FileName = saveFileDialog1.FileName;
+
+                        //PARA PROGRESS BAR
+                        using (formularios_padres.ProgressBar frm = new formularios_padres.ProgressBar(guardarResumen))
+                        {
+                            frm.lbl_mensaje.Text = "Creando archivo..";
+                            frm.ShowDialog(this);
+                        }
+                        if (sincronizar == true)
+                        {
+                            mensaje = new formularios_padres.mensaje_info();
+                            mensaje.lbl_info.Text = "Archivo creado con éxito.";
+                            mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                            mensaje.Show();
+                        }
+
+                        //CAMBIAR EL CURSOR
+                        //this.UseWaitCursor = true;
+
+                        //Clase_Checador.guardarResumen(fecha_inicial, fecha_final, saveFileDialog1.FileName);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
+        }
+
+        private void guardarResumen()
+        {
+            try
+            {
+                //VARIABLE PARA SABER QUE TODO SALIO BIEN
+                sincronizar = false;
+
+                DateTime fecha_inicial, fecha_final;
+                fecha_inicial = new DateTime(dtp_fecha_inicial.Value.Year, dtp_fecha_inicial.Value.Month, dtp_fecha_inicial.Value.Day);
+                fecha_final = new DateTime(dtp_fecha_final.Value.Year, dtp_fecha_final.Value.Month, dtp_fecha_final.Value.Day);
+
+                Clase_Checador.guardarResumen(fecha_inicial, fecha_final, FileName);
+
+                sincronizar = true;
+            }
+            catch (SqlException ex)
+            {
+                if (ex.Number == 121 || ex.Number == 1232)
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error al conectarse a la base de datos.";
+                    mensaje.lbl_info2.Text = "Verifique la conexión.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+                else
+                {
+                    //CAMBIAR EL CURSOR
+                    this.UseWaitCursor = false;
+                    mensaje = new formularios_padres.mensaje_info();
+                    mensaje.lbl_info.Text = "Error referente a la base de datos";
+                    mensaje.lbl_info2.Text = "Verifique los datos ingresados.";
+                    mensaje.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                    mensaje.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
+
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            tabControlBase.SelectedTab = tabPage6;
         }
     }
 }

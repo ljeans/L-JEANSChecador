@@ -429,6 +429,47 @@ SELECT id_rol, nombre FROM rol WHERE (id_rol = @id_rol)</CommandText>
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Vista_DepartamentoTableAdapter" GeneratorDataComponentClassName="Vista_DepartamentoTableAdapter" Name="Vista_Departamento" UserDataComponentName="Vista_DepartamentoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sistema_checadorConnectionString (Settings)" DbObjectName="sistema_checador.dbo.Vista_Departamento" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Vista_Departamento.*
+FROM     Vista_Departamento</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="locacion" DataSetColumn="locacion" />
+              <Mapping SourceColumn="id_departamento" DataSetColumn="id_departamento" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Vista_HuellaLogTableAdapter" GeneratorDataComponentClassName="Vista_HuellaLogTableAdapter" Name="Vista_HuellaLog" UserDataComponentName="Vista_HuellaLogTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="sistema_checadorConnectionString (Settings)" DbObjectName="sistema_checador.dbo.Vista_HuellaLog" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Vista_HuellaLog.*
+FROM     Vista_HuellaLog</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_empleado" DataSetColumn="id_empleado" />
+              <Mapping SourceColumn="sucursal" DataSetColumn="sucursal" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="evento" DataSetColumn="evento" />
+              <Mapping SourceColumn="empleado_afectado" DataSetColumn="empleado_afectado" />
+              <Mapping SourceColumn="nombre_completo" DataSetColumn="nombre_completo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -437,7 +478,7 @@ SELECT id_rol, nombre FROM rol WHERE (id_rol = @id_rol)</CommandText>
   <xs:element name="DataSet_Checador" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet_Checador" msprop:Generator_UserDSName="DataSet_Checador">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="sucursal" msprop:Generator_TableClassName="sucursalDataTable" msprop:Generator_TableVarName="tablesucursal" msprop:Generator_TablePropName="sucursal" msprop:Generator_RowDeletingName="sucursalRowDeleting" msprop:Generator_RowChangingName="sucursalRowChanging" msprop:Generator_RowEvHandlerName="sucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="sucursalRowDeleted" msprop:Generator_UserTableName="sucursal" msprop:Generator_RowChangedName="sucursalRowChanged" msprop:Generator_RowEvArgName="sucursalRowChangeEvent" msprop:Generator_RowClassName="sucursalRow">
+        <xs:element name="sucursal" msprop:Generator_TableClassName="sucursalDataTable" msprop:Generator_TableVarName="tablesucursal" msprop:Generator_RowChangedName="sucursalRowChanged" msprop:Generator_TablePropName="sucursal" msprop:Generator_RowDeletingName="sucursalRowDeleting" msprop:Generator_RowChangingName="sucursalRowChanging" msprop:Generator_RowEvHandlerName="sucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="sucursalRowDeleted" msprop:Generator_RowClassName="sucursalRow" msprop:Generator_UserTableName="sucursal" msprop:Generator_RowEvArgName="sucursalRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_sucursal" msprop:Generator_ColumnVarNameInTable="columnid_sucursal" msprop:Generator_ColumnPropNameInRow="id_sucursal" msprop:Generator_ColumnPropNameInTable="id_sucursalColumn" msprop:Generator_UserColumnName="id_sucursal" type="xs:int" />
@@ -528,7 +569,7 @@ SELECT id_rol, nombre FROM rol WHERE (id_rol = @id_rol)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vista_Checador" msprop:Generator_TableClassName="Vista_ChecadorDataTable" msprop:Generator_TableVarName="tableVista_Checador" msprop:Generator_TablePropName="Vista_Checador" msprop:Generator_RowDeletingName="Vista_ChecadorRowDeleting" msprop:Generator_RowChangingName="Vista_ChecadorRowChanging" msprop:Generator_RowEvHandlerName="Vista_ChecadorRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_ChecadorRowDeleted" msprop:Generator_UserTableName="Vista_Checador" msprop:Generator_RowChangedName="Vista_ChecadorRowChanged" msprop:Generator_RowEvArgName="Vista_ChecadorRowChangeEvent" msprop:Generator_RowClassName="Vista_ChecadorRow">
+        <xs:element name="Vista_Checador" msprop:Generator_TableClassName="Vista_ChecadorDataTable" msprop:Generator_TableVarName="tableVista_Checador" msprop:Generator_RowChangedName="Vista_ChecadorRowChanged" msprop:Generator_TablePropName="Vista_Checador" msprop:Generator_RowDeletingName="Vista_ChecadorRowDeleting" msprop:Generator_RowChangingName="Vista_ChecadorRowChanging" msprop:Generator_RowEvHandlerName="Vista_ChecadorRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_ChecadorRowDeleted" msprop:Generator_RowClassName="Vista_ChecadorRow" msprop:Generator_UserTableName="Vista_Checador" msprop:Generator_RowEvArgName="Vista_ChecadorRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_checador" msprop:Generator_ColumnVarNameInTable="columnid_checador" msprop:Generator_ColumnPropNameInRow="id_checador" msprop:Generator_ColumnPropNameInTable="id_checadorColumn" msprop:Generator_UserColumnName="id_checador" type="xs:int" />
@@ -563,7 +604,7 @@ SELECT id_rol, nombre FROM rol WHERE (id_rol = @id_rol)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vista_Empleados" msprop:Generator_TableClassName="Vista_EmpleadosDataTable" msprop:Generator_TableVarName="tableVista_Empleados" msprop:Generator_TablePropName="Vista_Empleados" msprop:Generator_RowDeletingName="Vista_EmpleadosRowDeleting" msprop:Generator_RowChangingName="Vista_EmpleadosRowChanging" msprop:Generator_RowEvHandlerName="Vista_EmpleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_EmpleadosRowDeleted" msprop:Generator_UserTableName="Vista_Empleados" msprop:Generator_RowChangedName="Vista_EmpleadosRowChanged" msprop:Generator_RowEvArgName="Vista_EmpleadosRowChangeEvent" msprop:Generator_RowClassName="Vista_EmpleadosRow">
+        <xs:element name="Vista_Empleados" msprop:Generator_TableClassName="Vista_EmpleadosDataTable" msprop:Generator_TableVarName="tableVista_Empleados" msprop:Generator_RowChangedName="Vista_EmpleadosRowChanged" msprop:Generator_TablePropName="Vista_Empleados" msprop:Generator_RowDeletingName="Vista_EmpleadosRowDeleting" msprop:Generator_RowChangingName="Vista_EmpleadosRowChanging" msprop:Generator_RowEvHandlerName="Vista_EmpleadosRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_EmpleadosRowDeleted" msprop:Generator_RowClassName="Vista_EmpleadosRow" msprop:Generator_UserTableName="Vista_Empleados" msprop:Generator_RowEvArgName="Vista_EmpleadosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_empleado" msprop:Generator_ColumnVarNameInTable="columnid_empleado" msprop:Generator_ColumnPropNameInRow="id_empleado" msprop:Generator_ColumnPropNameInTable="id_empleadoColumn" msprop:Generator_UserColumnName="id_empleado" type="xs:int" />
@@ -746,7 +787,7 @@ SELECT id_rol, nombre FROM rol WHERE (id_rol = @id_rol)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vista_Horario" msprop:Generator_TableClassName="Vista_HorarioDataTable" msprop:Generator_TableVarName="tableVista_Horario" msprop:Generator_TablePropName="Vista_Horario" msprop:Generator_RowDeletingName="Vista_HorarioRowDeleting" msprop:Generator_RowChangingName="Vista_HorarioRowChanging" msprop:Generator_RowEvHandlerName="Vista_HorarioRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_HorarioRowDeleted" msprop:Generator_UserTableName="Vista_Horario" msprop:Generator_RowChangedName="Vista_HorarioRowChanged" msprop:Generator_RowEvArgName="Vista_HorarioRowChangeEvent" msprop:Generator_RowClassName="Vista_HorarioRow">
+        <xs:element name="Vista_Horario" msprop:Generator_TableClassName="Vista_HorarioDataTable" msprop:Generator_TableVarName="tableVista_Horario" msprop:Generator_RowChangedName="Vista_HorarioRowChanged" msprop:Generator_TablePropName="Vista_Horario" msprop:Generator_RowDeletingName="Vista_HorarioRowDeleting" msprop:Generator_RowChangingName="Vista_HorarioRowChanging" msprop:Generator_RowEvHandlerName="Vista_HorarioRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_HorarioRowDeleted" msprop:Generator_RowClassName="Vista_HorarioRow" msprop:Generator_UserTableName="Vista_Horario" msprop:Generator_RowEvArgName="Vista_HorarioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_horario" msprop:Generator_ColumnVarNameInTable="columnid_horario" msprop:Generator_ColumnPropNameInRow="id_horario" msprop:Generator_ColumnPropNameInTable="id_horarioColumn" msprop:Generator_UserColumnName="id_horario" type="xs:int" />
@@ -774,7 +815,7 @@ SELECT id_rol, nombre FROM rol WHERE (id_rol = @id_rol)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="horarios" msprop:Generator_TableClassName="horariosDataTable" msprop:Generator_TableVarName="tablehorarios" msprop:Generator_RowChangedName="horariosRowChanged" msprop:Generator_TablePropName="horarios" msprop:Generator_RowDeletingName="horariosRowDeleting" msprop:Generator_RowChangingName="horariosRowChanging" msprop:Generator_RowEvHandlerName="horariosRowChangeEventHandler" msprop:Generator_RowDeletedName="horariosRowDeleted" msprop:Generator_RowClassName="horariosRow" msprop:Generator_UserTableName="horarios" msprop:Generator_RowEvArgName="horariosRowChangeEvent">
+        <xs:element name="horarios" msprop:Generator_TableClassName="horariosDataTable" msprop:Generator_TableVarName="tablehorarios" msprop:Generator_TablePropName="horarios" msprop:Generator_RowDeletingName="horariosRowDeleting" msprop:Generator_RowChangingName="horariosRowChanging" msprop:Generator_RowEvHandlerName="horariosRowChangeEventHandler" msprop:Generator_RowDeletedName="horariosRowDeleted" msprop:Generator_UserTableName="horarios" msprop:Generator_RowChangedName="horariosRowChanged" msprop:Generator_RowEvArgName="horariosRowChangeEvent" msprop:Generator_RowClassName="horariosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_horario" msprop:Generator_ColumnVarNameInTable="columnid_horario" msprop:Generator_ColumnPropNameInRow="id_horario" msprop:Generator_ColumnPropNameInTable="id_horarioColumn" msprop:Generator_UserColumnName="id_horario" type="xs:int" />
@@ -802,7 +843,7 @@ SELECT id_rol, nombre FROM rol WHERE (id_rol = @id_rol)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vista_Sucursal" msprop:Generator_TableClassName="Vista_SucursalDataTable" msprop:Generator_TableVarName="tableVista_Sucursal" msprop:Generator_RowChangedName="Vista_SucursalRowChanged" msprop:Generator_TablePropName="Vista_Sucursal" msprop:Generator_RowDeletingName="Vista_SucursalRowDeleting" msprop:Generator_RowChangingName="Vista_SucursalRowChanging" msprop:Generator_RowEvHandlerName="Vista_SucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_SucursalRowDeleted" msprop:Generator_RowClassName="Vista_SucursalRow" msprop:Generator_UserTableName="Vista_Sucursal" msprop:Generator_RowEvArgName="Vista_SucursalRowChangeEvent">
+        <xs:element name="Vista_Sucursal" msprop:Generator_TableClassName="Vista_SucursalDataTable" msprop:Generator_TableVarName="tableVista_Sucursal" msprop:Generator_TablePropName="Vista_Sucursal" msprop:Generator_RowDeletingName="Vista_SucursalRowDeleting" msprop:Generator_RowChangingName="Vista_SucursalRowChanging" msprop:Generator_RowEvHandlerName="Vista_SucursalRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_SucursalRowDeleted" msprop:Generator_UserTableName="Vista_Sucursal" msprop:Generator_RowChangedName="Vista_SucursalRowChanged" msprop:Generator_RowEvArgName="Vista_SucursalRowChangeEvent" msprop:Generator_RowClassName="Vista_SucursalRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_sucursal" msprop:Generator_ColumnVarNameInTable="columnid_sucursal" msprop:Generator_ColumnPropNameInRow="id_sucursal" msprop:Generator_ColumnPropNameInTable="id_sucursalColumn" msprop:Generator_UserColumnName="id_sucursal" type="xs:int" />
@@ -851,7 +892,7 @@ SELECT id_rol, nombre FROM rol WHERE (id_rol = @id_rol)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vista_registros" msprop:Generator_TableClassName="vista_registrosDataTable" msprop:Generator_TableVarName="tablevista_registros" msprop:Generator_RowChangedName="vista_registrosRowChanged" msprop:Generator_TablePropName="vista_registros" msprop:Generator_RowDeletingName="vista_registrosRowDeleting" msprop:Generator_RowChangingName="vista_registrosRowChanging" msprop:Generator_RowEvHandlerName="vista_registrosRowChangeEventHandler" msprop:Generator_RowDeletedName="vista_registrosRowDeleted" msprop:Generator_RowClassName="vista_registrosRow" msprop:Generator_UserTableName="vista_registros" msprop:Generator_RowEvArgName="vista_registrosRowChangeEvent">
+        <xs:element name="vista_registros" msprop:Generator_TableClassName="vista_registrosDataTable" msprop:Generator_TableVarName="tablevista_registros" msprop:Generator_TablePropName="vista_registros" msprop:Generator_RowDeletingName="vista_registrosRowDeleting" msprop:Generator_RowChangingName="vista_registrosRowChanging" msprop:Generator_RowEvHandlerName="vista_registrosRowChangeEventHandler" msprop:Generator_RowDeletedName="vista_registrosRowDeleted" msprop:Generator_UserTableName="vista_registros" msprop:Generator_RowChangedName="vista_registrosRowChanged" msprop:Generator_RowEvArgName="vista_registrosRowChangeEvent" msprop:Generator_RowClassName="vista_registrosRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_empleado" msprop:Generator_ColumnVarNameInTable="columnid_empleado" msprop:Generator_ColumnPropNameInRow="id_empleado" msprop:Generator_ColumnPropNameInTable="id_empleadoColumn" msprop:Generator_UserColumnName="id_empleado" type="xs:int" />
@@ -875,7 +916,7 @@ SELECT id_rol, nombre FROM rol WHERE (id_rol = @id_rol)</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="rol" msprop:Generator_TableClassName="rolDataTable" msprop:Generator_TableVarName="tablerol" msprop:Generator_TablePropName="rol" msprop:Generator_RowDeletingName="rolRowDeleting" msprop:Generator_RowChangingName="rolRowChanging" msprop:Generator_RowEvHandlerName="rolRowChangeEventHandler" msprop:Generator_RowDeletedName="rolRowDeleted" msprop:Generator_UserTableName="rol" msprop:Generator_RowChangedName="rolRowChanged" msprop:Generator_RowEvArgName="rolRowChangeEvent" msprop:Generator_RowClassName="rolRow">
+        <xs:element name="rol" msprop:Generator_TableClassName="rolDataTable" msprop:Generator_TableVarName="tablerol" msprop:Generator_RowChangedName="rolRowChanged" msprop:Generator_TablePropName="rol" msprop:Generator_RowDeletingName="rolRowDeleting" msprop:Generator_RowChangingName="rolRowChanging" msprop:Generator_RowEvHandlerName="rolRowChangeEventHandler" msprop:Generator_RowDeletedName="rolRowDeleted" msprop:Generator_RowClassName="rolRow" msprop:Generator_UserTableName="rol" msprop:Generator_RowEvArgName="rolRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_rol" msprop:Generator_ColumnVarNameInTable="columnid_rol" msprop:Generator_ColumnPropNameInRow="id_rol" msprop:Generator_ColumnPropNameInTable="id_rolColumn" msprop:Generator_UserColumnName="id_rol" type="xs:int" />
@@ -883,6 +924,57 @@ SELECT id_rol, nombre FROM rol WHERE (id_rol = @id_rol)</CommandText>
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Vista_Departamento" msprop:Generator_TableClassName="Vista_DepartamentoDataTable" msprop:Generator_TableVarName="tableVista_Departamento" msprop:Generator_TablePropName="Vista_Departamento" msprop:Generator_RowDeletingName="Vista_DepartamentoRowDeleting" msprop:Generator_RowChangingName="Vista_DepartamentoRowChanging" msprop:Generator_RowEvHandlerName="Vista_DepartamentoRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_DepartamentoRowDeleted" msprop:Generator_UserTableName="Vista_Departamento" msprop:Generator_RowChangedName="Vista_DepartamentoRowChanged" msprop:Generator_RowEvArgName="Vista_DepartamentoRowChangeEvent" msprop:Generator_RowClassName="Vista_DepartamentoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="locacion" msprop:Generator_ColumnVarNameInTable="columnlocacion" msprop:Generator_ColumnPropNameInRow="locacion" msprop:Generator_ColumnPropNameInTable="locacionColumn" msprop:Generator_UserColumnName="locacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_departamento" msprop:Generator_ColumnVarNameInTable="columnid_departamento" msprop:Generator_ColumnPropNameInRow="id_departamento" msprop:Generator_ColumnPropNameInTable="id_departamentoColumn" msprop:Generator_UserColumnName="id_departamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Vista_HuellaLog" msprop:Generator_TableClassName="Vista_HuellaLogDataTable" msprop:Generator_TableVarName="tableVista_HuellaLog" msprop:Generator_TablePropName="Vista_HuellaLog" msprop:Generator_RowDeletingName="Vista_HuellaLogRowDeleting" msprop:Generator_RowChangingName="Vista_HuellaLogRowChanging" msprop:Generator_RowEvHandlerName="Vista_HuellaLogRowChangeEventHandler" msprop:Generator_RowDeletedName="Vista_HuellaLogRowDeleted" msprop:Generator_UserTableName="Vista_HuellaLog" msprop:Generator_RowChangedName="Vista_HuellaLogRowChanged" msprop:Generator_RowEvArgName="Vista_HuellaLogRowChangeEvent" msprop:Generator_RowClassName="Vista_HuellaLogRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_empleado" msprop:Generator_ColumnVarNameInTable="columnid_empleado" msprop:Generator_ColumnPropNameInRow="id_empleado" msprop:Generator_ColumnPropNameInTable="id_empleadoColumn" msprop:Generator_UserColumnName="id_empleado" type="xs:int" />
+              <xs:element name="sucursal" msprop:Generator_ColumnVarNameInTable="columnsucursal" msprop:Generator_ColumnPropNameInRow="sucursal" msprop:Generator_ColumnPropNameInTable="sucursalColumn" msprop:Generator_UserColumnName="sucursal" type="xs:int" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" />
+              <xs:element name="evento" msprop:Generator_ColumnVarNameInTable="columnevento" msprop:Generator_ColumnPropNameInRow="evento" msprop:Generator_ColumnPropNameInTable="eventoColumn" msprop:Generator_UserColumnName="evento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="empleado_afectado" msprop:Generator_ColumnVarNameInTable="columnempleado_afectado" msprop:Generator_ColumnPropNameInRow="empleado_afectado" msprop:Generator_ColumnPropNameInTable="empleado_afectadoColumn" msprop:Generator_UserColumnName="empleado_afectado" type="xs:int" />
+              <xs:element name="nombre_completo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnombre_completo" msprop:Generator_ColumnPropNameInRow="nombre_completo" msprop:Generator_ColumnPropNameInTable="nombre_completoColumn" msprop:Generator_UserColumnName="nombre_completo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="122" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -918,6 +1010,10 @@ SELECT id_rol, nombre FROM rol WHERE (id_rol = @id_rol)</CommandText>
     <xs:unique name="rol_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:rol" />
       <xs:field xpath="mstns:id_rol" />
+    </xs:unique>
+    <xs:unique name="Vista_Departamento_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Vista_Departamento" />
+      <xs:field xpath="mstns:id_departamento" />
     </xs:unique>
   </xs:element>
 </xs:schema>

@@ -413,7 +413,7 @@ namespace Checador.incidentes
                     Clase_Checador.obtenerIdChecador(Sucursal.id);
 
                     //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
-                    AsignarHorario.verificar_existencia(Convert.ToInt32(row.Cells[0].Value.ToString())); //SE MANDA EL ID DEL EMPLEADO COMO PARAMETRO
+                    /*AsignarHorario.verificar_existencia(Convert.ToInt32(row.Cells[0].Value.ToString())); //SE MANDA EL ID DEL EMPLEADO COMO PARAMETRO
                     DateTime dia = new DateTime(fecha_evento.Year, fecha_evento.Month, fecha_evento.Day);
 
                     if (dia.DayOfWeek.ToString() == "Monday")
@@ -443,7 +443,9 @@ namespace Checador.incidentes
                     else if (dia.DayOfWeek.ToString() == "Sunday")
                     {
                         Horario.verificar_existencia(AsignarHorario.domingo);
-                    }
+                    }*/
+                    
+                    Horario.verificar_existencia(Convert.ToInt32(cbx_horario.SelectedValue));
 
                     Clase_Checador.Recalcular_HorasTrabajadas(Clase_Checador.id, Convert.ToInt32(row.Cells[0].Value), Sucursal.id, fecha_evento, Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, Horario.horario);
                 }
@@ -554,7 +556,7 @@ namespace Checador.incidentes
                     Horario.verificar_existencia(AsignarHorario.domingo);
                 }
 
-                if (Clase_Checador.RegistrarChequeo(Clase_Checador.id, Convert.ToInt32(row.Cells[0].Value), Sucursal.id, fecha_evento, fecha_referencia, Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, tipo_evento, Horario.horario))
+                if (Clase_Checador.RegistrarChequeo(Clase_Checador.id, Convert.ToInt32(row.Cells[0].Value), Sucursal.id, fecha_evento, fecha_referencia, Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, tipo_evento, Horario.id))
                 {
                     //FUNCION PAR RECARGAR EL DATAGRID
                     // TODO: This line of code loads data into the 'dataSet_Checador1.vista_registros' table. You can move, or remove it, as needed.

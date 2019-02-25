@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
+using System.IO;
 
 namespace Checador
 {
@@ -19,11 +21,13 @@ namespace Checador
         horarios modulo_horarios = new horarios();
         reportes.reporte modulo_reportes = new reportes.reporte();
         inicio_sesion.login login = new inicio_sesion.login();
+        configuracion.configuracion configuracion = new Checador.configuracion.configuracion();
         incidentes.incidentes modulo_incidente = new incidentes.incidentes();
         inicio_sesion.usuario crearusuario = new inicio_sesion.usuario();
         formularios_padres.mensaje_info mensaje = new formularios_padres.mensaje_info();
         formularios_padres.Mensajes confirmacion = new formularios_padres.Mensajes();
         formularios_padres.mensaje_error frm_error = new formularios_padres.mensaje_error();
+        configuracion.configuracion conf = new configuracion.configuracion();
 
         //VARIABLE PARA CARGAR LOS CHECADORES
         DataTable dtChecadores = null;
@@ -59,7 +63,7 @@ namespace Checador
                 Enabled = true;
                 btn_checador.Enabled = true;
                 btn_sucursal.Enabled = false;
-                btn_empleados.Enabled = false;
+                btn_empleados.Enabled = true;
                 btn_horarios.Enabled = true;
                  btn_reportes.Enabled = true;
                 btn_incidente.Enabled = true;
@@ -79,6 +83,7 @@ namespace Checador
                 btn_horarios.Enabled = true;
                 btn_reportes.Enabled = true;
                 btn_incidente.Enabled = true;
+                btn_empleados.Enabled = true;
                 //cerrar
                 button2.Enabled = true;
                 //minimizar
@@ -110,7 +115,7 @@ namespace Checador
             button2.Enabled = true;
             //minimizar
             btn_minimizar.Enabled = true;
-           
+
         }
 
         //OBJETO DE LA CLASSE CKEM (SDK) PARA PODER ACCEDER A METODOS Y ATRIBUTOS
@@ -135,6 +140,32 @@ namespace Checador
         {
             try
             {
+                //VERIFICAR SI EL ARCHIVO EXISTE
+                if (System.IO.File.Exists(@"..\\..\\Archivos\\configuracion.txt"))
+                {
+                    Desbloquear_inicio(sender, e);
+                    //LEER EL ARCHIVO DE CONFIGURACION
+                    string cadena_conexion = File.ReadAllLines(@"..\\..\\Archivos\\configuracion.txt")[0];
+                    Program.cadena_conexion = cadena_conexion;
+
+                    //CAMBIAR LA CADENA DE CONEXION SEGUN LA CONFIGURACION DE LA RED
+                    var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                    var connectionStringsSection = (ConnectionStringsSection)config.GetSection("connectionStrings");
+                    connectionStringsSection.ConnectionStrings["Checador.Properties.Settings.sistema_checadorConnectionString"].ConnectionString = cadena_conexion;
+                    config.Save();
+                    ConfigurationManager.RefreshSection("connectionStrings");
+
+                    Enabled = false;
+                    abrirLogin(sender, e);
+                }
+                else
+                {
+                    Desbloquear_inicio(sender, e);
+                    configuracion = new configuracion.configuracion();
+                    configuracion.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                    configuracion.Show();
+                }
+                
                 //************ACOMODAR FORMULARIO************
 
                 double porcentaje_ancho = (Convert.ToDouble(Width) / 1370);
@@ -196,7 +227,7 @@ namespace Checador
 
 
                 //OBTIENE TODOS LOS CHECADORES ACTIVOS Y LOS CONECTA
-                dtChecadores = Clase_Checador.Obtener_Checadores_Activos();
+                //dtChecadores = Clase_Checador.Obtener_Checadores_Activos();
                 //DataRow row = dtChecadores.Rows[0];
                 //MessageBox.Show(Convert.ToString(row["ip"]));
 
@@ -241,11 +272,10 @@ namespace Checador
                          MessageBox.Show(ex.ToString());
                      }
                  }*/
-                Desbloquear_inicio(sender, e);
-                Enabled = false;
-                login = new inicio_sesion.login();
+                
+                /*login = new inicio_sesion.login();
                 login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
-                login.Show();
+                login.Show();*/
                 btn_cerrar.Visible = true;
                 lbl_usuario.Text = Program.nombre_usuario;
             }
@@ -284,6 +314,19 @@ namespace Checador
             }
         }
 
+        private void abrirLogin(object sender, EventArgs e)
+        {
+            try
+            {
+                login = new inicio_sesion.login();
+                login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                login.Show();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
         //FUNCION QUE SE EJECUTA EN EL EVENTO DE TRANSACCION. CACHA LOS PARAMETROS QUE ESTAN EN LOS ARGUMENTOS
         private void Checador_OnAttTransactionEx(string EnrollNumber, int IsInValid, int AttState, int VerifyMethod, int Year, int Month, int Day, int Hour, int Minute, int Second, int WorkCode)
@@ -541,6 +584,27 @@ namespace Checador
                 login = new inicio_sesion.login();
                 login.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
                 login.Show();
+            }
+            catch (Exception ex)
+            {
+                //CAMBIAR EL CURSOR
+                this.UseWaitCursor = false;
+                frm_error = new formularios_padres.mensaje_error();
+                frm_error.lbl_info.Text = "Upps.. Ocurrió un error";
+                frm_error.txt_error.Text = (ex.Message.ToString());
+                frm_error.FormClosed += new FormClosedEventHandler(vaciar_instancia_mensaje);
+                frm_error.ShowDialog();
+            }
+        }
+
+        private void btn_configuracion_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Enabled = false;
+                conf = new configuracion.configuracion();
+                conf.FormClosed += new FormClosedEventHandler(Desbloquear_Principal);
+                conf.Show();
             }
             catch (Exception ex)
             {

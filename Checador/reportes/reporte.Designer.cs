@@ -49,7 +49,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dtp_asistencia2 = new System.Windows.Forms.DateTimePicker();
             this.dtp_asistencia1 = new System.Windows.Forms.DateTimePicker();
-            this.cbx_empleado = new System.Windows.Forms.ComboBox();
             this.vistaEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.vista_EmpleadosTableAdapter = new Checador.DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter();
@@ -78,6 +77,7 @@
             this.cbx_sucursal_checando = new System.Windows.Forms.ComboBox();
             this.sucursalBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
+            this.cbx_empleado = new System.Windows.Forms.ComboBox();
             this.tabControlBase.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -101,7 +101,7 @@
             this.rb_4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_4.Location = new System.Drawing.Point(0, 480);
-            this.rb_4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rb_4.Margin = new System.Windows.Forms.Padding(5);
             this.rb_4.Size = new System.Drawing.Size(333, 128);
             // 
             // rb_3
@@ -110,7 +110,7 @@
             this.rb_3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.rb_3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rb_3.Margin = new System.Windows.Forms.Padding(5);
             this.rb_3.Size = new System.Drawing.Size(333, 128);
             // 
             // rb_2
@@ -119,7 +119,7 @@
             this.rb_2.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.rb_2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rb_2.Margin = new System.Windows.Forms.Padding(5);
             this.rb_2.Size = new System.Drawing.Size(333, 128);
             // 
             // rb_1
@@ -128,14 +128,14 @@
             this.rb_1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkBlue;
             this.rb_1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
-            this.rb_1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rb_1.Margin = new System.Windows.Forms.Padding(5);
             this.rb_1.Size = new System.Drawing.Size(333, 128);
             // 
             // tabControlBase
             // 
             this.tabControlBase.Controls.Add(this.tabPage6);
             this.tabControlBase.Location = new System.Drawing.Point(345, 72);
-            this.tabControlBase.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabControlBase.Margin = new System.Windows.Forms.Padding(5);
             this.tabControlBase.Size = new System.Drawing.Size(1440, 825);
             this.tabControlBase.Controls.SetChildIndex(this.tabPage6, 0);
             this.tabControlBase.Controls.SetChildIndex(this.tabPage5, 0);
@@ -154,8 +154,8 @@
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.crystalReportViewer1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(5);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage1.Size = new System.Drawing.Size(1432, 796);
             // 
             // tabPage2
@@ -168,22 +168,22 @@
             this.tabPage2.Controls.Add(this.cbx_sucursal_retardo);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(5);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage2.Size = new System.Drawing.Size(1432, 796);
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.cbx_empleado);
             this.tabPage3.Controls.Add(this.btn_asistencia);
             this.tabPage3.Controls.Add(this.crystalReportViewer3);
             this.tabPage3.Controls.Add(this.label5);
             this.tabPage3.Controls.Add(this.dtp_asistencia2);
             this.tabPage3.Controls.Add(this.dtp_asistencia1);
-            this.tabPage3.Controls.Add(this.cbx_empleado);
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(5);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage3.Size = new System.Drawing.Size(1432, 796);
             // 
             // tabPage4
@@ -196,8 +196,8 @@
             this.tabPage4.Controls.Add(this.cbx_empleado_retardo);
             this.tabPage4.Controls.Add(this.label8);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(5);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage4.Size = new System.Drawing.Size(1432, 796);
             // 
             // tabPage5
@@ -210,8 +210,8 @@
             this.tabPage5.Controls.Add(this.dtp_departamento1);
             this.tabPage5.Controls.Add(this.label10);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(5);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(5);
             this.tabPage5.Size = new System.Drawing.Size(1432, 796);
             this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
@@ -226,7 +226,7 @@
             this.panel_menu.Controls.Add(this.radioButton3);
             this.panel_menu.Controls.Add(this.radioButton2);
             this.panel_menu.Controls.Add(this.radioButton1);
-            this.panel_menu.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel_menu.Margin = new System.Windows.Forms.Padding(5);
             this.panel_menu.Size = new System.Drawing.Size(333, 814);
             this.panel_menu.Controls.SetChildIndex(this.rb_registrar, 0);
             this.panel_menu.Controls.SetChildIndex(this.rb_modificar, 0);
@@ -243,7 +243,7 @@
             this.rb_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.rb_buscar.Location = new System.Drawing.Point(1, 258);
-            this.rb_buscar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rb_buscar.Margin = new System.Windows.Forms.Padding(5);
             this.rb_buscar.Size = new System.Drawing.Size(333, 128);
             this.rb_buscar.Text = "Registros por empleado";
             this.rb_buscar.CheckedChanged += new System.EventHandler(this.rb_buscar_CheckedChanged);
@@ -255,7 +255,7 @@
             this.rb_modificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkBlue;
             this.rb_modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.rb_modificar.Location = new System.Drawing.Point(1, 129);
-            this.rb_modificar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rb_modificar.Margin = new System.Windows.Forms.Padding(5);
             this.rb_modificar.Size = new System.Drawing.Size(333, 128);
             this.rb_modificar.Text = "Retardos por sucursal";
             this.rb_modificar.CheckedChanged += new System.EventHandler(this.rb_modificar_CheckedChanged);
@@ -266,7 +266,7 @@
             this.rb_registrar.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(0)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
             this.rb_registrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(32)))), ((int)(((byte)(105)))));
-            this.rb_registrar.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.rb_registrar.Margin = new System.Windows.Forms.Padding(5);
             this.rb_registrar.Size = new System.Drawing.Size(333, 128);
             this.rb_registrar.Text = "Registros por sucursal";
             this.rb_registrar.CheckedChanged += new System.EventHandler(this.rb_registrar_CheckedChanged);
@@ -278,7 +278,7 @@
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.crystalReportViewer1.Location = new System.Drawing.Point(5, 65);
-            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.crystalReportViewer1.Margin = new System.Windows.Forms.Padding(4);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.ShowCloseButton = false;
             this.crystalReportViewer1.ShowParameterPanelButton = false;
@@ -317,7 +317,7 @@
             this.dtp_fecha1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_fecha1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_fecha1.Location = new System.Drawing.Point(580, 12);
-            this.dtp_fecha1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_fecha1.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_fecha1.Name = "dtp_fecha1";
             this.dtp_fecha1.Size = new System.Drawing.Size(232, 34);
             this.dtp_fecha1.TabIndex = 4;
@@ -327,7 +327,7 @@
             this.dtp_fecha2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_fecha2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_fecha2.Location = new System.Drawing.Point(847, 12);
-            this.dtp_fecha2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_fecha2.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_fecha2.Name = "dtp_fecha2";
             this.dtp_fecha2.Size = new System.Drawing.Size(232, 34);
             this.dtp_fecha2.TabIndex = 5;
@@ -342,7 +342,7 @@
             this.btn_gnerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_gnerar.ForeColor = System.Drawing.Color.White;
             this.btn_gnerar.Location = new System.Drawing.Point(1144, 12);
-            this.btn_gnerar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_gnerar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_gnerar.Name = "btn_gnerar";
             this.btn_gnerar.Size = new System.Drawing.Size(200, 39);
             this.btn_gnerar.TabIndex = 19;
@@ -382,7 +382,7 @@
             this.btn_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_retardo.ForeColor = System.Drawing.Color.White;
             this.btn_retardo.Location = new System.Drawing.Point(1144, 12);
-            this.btn_retardo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_retardo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_retardo.Name = "btn_retardo";
             this.btn_retardo.Size = new System.Drawing.Size(200, 39);
             this.btn_retardo.TabIndex = 25;
@@ -395,7 +395,7 @@
             this.dtp_fecha2_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_fecha2_retardo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_fecha2_retardo.Location = new System.Drawing.Point(847, 12);
-            this.dtp_fecha2_retardo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_fecha2_retardo.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_fecha2_retardo.Name = "dtp_fecha2_retardo";
             this.dtp_fecha2_retardo.Size = new System.Drawing.Size(232, 34);
             this.dtp_fecha2_retardo.TabIndex = 24;
@@ -405,7 +405,7 @@
             this.dtp_fecha1_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_fecha1_retardo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_fecha1_retardo.Location = new System.Drawing.Point(580, 12);
-            this.dtp_fecha1_retardo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_fecha1_retardo.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_fecha1_retardo.Name = "dtp_fecha1_retardo";
             this.dtp_fecha1_retardo.Size = new System.Drawing.Size(232, 34);
             this.dtp_fecha1_retardo.TabIndex = 23;
@@ -418,7 +418,7 @@
             this.cbx_sucursal_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_sucursal_retardo.FormattingEnabled = true;
             this.cbx_sucursal_retardo.Location = new System.Drawing.Point(147, 12);
-            this.cbx_sucursal_retardo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbx_sucursal_retardo.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_sucursal_retardo.Name = "cbx_sucursal_retardo";
             this.cbx_sucursal_retardo.Size = new System.Drawing.Size(265, 37);
             this.cbx_sucursal_retardo.TabIndex = 22;
@@ -442,7 +442,7 @@
             this.crystalReportViewer2.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.crystalReportViewer2.Location = new System.Drawing.Point(5, 65);
-            this.crystalReportViewer2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.crystalReportViewer2.Margin = new System.Windows.Forms.Padding(4);
             this.crystalReportViewer2.Name = "crystalReportViewer2";
             this.crystalReportViewer2.ShowCloseButton = false;
             this.crystalReportViewer2.ShowParameterPanelButton = false;
@@ -458,7 +458,7 @@
             this.crystalReportViewer3.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.crystalReportViewer3.Location = new System.Drawing.Point(5, 65);
-            this.crystalReportViewer3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.crystalReportViewer3.Margin = new System.Windows.Forms.Padding(4);
             this.crystalReportViewer3.Name = "crystalReportViewer3";
             this.crystalReportViewer3.ShowCloseButton = false;
             this.crystalReportViewer3.ShowParameterPanelButton = false;
@@ -483,7 +483,7 @@
             this.dtp_asistencia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_asistencia2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_asistencia2.Location = new System.Drawing.Point(909, 12);
-            this.dtp_asistencia2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_asistencia2.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_asistencia2.Name = "dtp_asistencia2";
             this.dtp_asistencia2.Size = new System.Drawing.Size(232, 34);
             this.dtp_asistencia2.TabIndex = 31;
@@ -493,24 +493,10 @@
             this.dtp_asistencia1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_asistencia1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_asistencia1.Location = new System.Drawing.Point(643, 12);
-            this.dtp_asistencia1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_asistencia1.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_asistencia1.Name = "dtp_asistencia1";
             this.dtp_asistencia1.Size = new System.Drawing.Size(232, 34);
             this.dtp_asistencia1.TabIndex = 30;
-            // 
-            // cbx_empleado
-            // 
-            this.cbx_empleado.DataSource = this.vistaEmpleadosBindingSource;
-            this.cbx_empleado.DisplayMember = "nombre_completo";
-            this.cbx_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_empleado.FormattingEnabled = true;
-            this.cbx_empleado.Location = new System.Drawing.Point(147, 16);
-            this.cbx_empleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cbx_empleado.Name = "cbx_empleado";
-            this.cbx_empleado.Size = new System.Drawing.Size(365, 32);
-            this.cbx_empleado.TabIndex = 29;
-            this.cbx_empleado.ValueMember = "id_empleado";
             // 
             // vistaEmpleadosBindingSource
             // 
@@ -542,7 +528,7 @@
             this.btn_asistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_asistencia.ForeColor = System.Drawing.Color.White;
             this.btn_asistencia.Location = new System.Drawing.Point(1189, 12);
-            this.btn_asistencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_asistencia.Margin = new System.Windows.Forms.Padding(4);
             this.btn_asistencia.Name = "btn_asistencia";
             this.btn_asistencia.Size = new System.Drawing.Size(200, 39);
             this.btn_asistencia.TabIndex = 34;
@@ -564,7 +550,7 @@
             this.radioButton1.ForeColor = System.Drawing.Color.White;
             this.radioButton1.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.radioButton1.Location = new System.Drawing.Point(1, 388);
-            this.radioButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton1.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(333, 128);
             this.radioButton1.TabIndex = 3;
@@ -585,7 +571,7 @@
             this.btn_empleado_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_empleado_retardo.ForeColor = System.Drawing.Color.White;
             this.btn_empleado_retardo.Location = new System.Drawing.Point(1189, 12);
-            this.btn_empleado_retardo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_empleado_retardo.Margin = new System.Windows.Forms.Padding(4);
             this.btn_empleado_retardo.Name = "btn_empleado_retardo";
             this.btn_empleado_retardo.Size = new System.Drawing.Size(200, 39);
             this.btn_empleado_retardo.TabIndex = 41;
@@ -600,7 +586,7 @@
             this.crystalReportViewer4.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.crystalReportViewer4.Location = new System.Drawing.Point(5, 65);
-            this.crystalReportViewer4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.crystalReportViewer4.Margin = new System.Windows.Forms.Padding(4);
             this.crystalReportViewer4.Name = "crystalReportViewer4";
             this.crystalReportViewer4.ShowCloseButton = false;
             this.crystalReportViewer4.ShowParameterPanelButton = false;
@@ -625,7 +611,7 @@
             this.dtp_empleado_retardo2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_empleado_retardo2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_empleado_retardo2.Location = new System.Drawing.Point(909, 12);
-            this.dtp_empleado_retardo2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_empleado_retardo2.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_empleado_retardo2.Name = "dtp_empleado_retardo2";
             this.dtp_empleado_retardo2.Size = new System.Drawing.Size(232, 34);
             this.dtp_empleado_retardo2.TabIndex = 38;
@@ -636,7 +622,7 @@
             this.dtp_empleado_retardo1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_empleado_retardo1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_empleado_retardo1.Location = new System.Drawing.Point(643, 12);
-            this.dtp_empleado_retardo1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_empleado_retardo1.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_empleado_retardo1.Name = "dtp_empleado_retardo1";
             this.dtp_empleado_retardo1.Size = new System.Drawing.Size(232, 34);
             this.dtp_empleado_retardo1.TabIndex = 37;
@@ -650,7 +636,7 @@
             this.cbx_empleado_retardo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_empleado_retardo.FormattingEnabled = true;
             this.cbx_empleado_retardo.Location = new System.Drawing.Point(147, 15);
-            this.cbx_empleado_retardo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbx_empleado_retardo.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_empleado_retardo.Name = "cbx_empleado_retardo";
             this.cbx_empleado_retardo.Size = new System.Drawing.Size(365, 32);
             this.cbx_empleado_retardo.TabIndex = 36;
@@ -679,7 +665,7 @@
             this.btn_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_departamento.ForeColor = System.Drawing.Color.White;
             this.btn_departamento.Location = new System.Drawing.Point(1144, 10);
-            this.btn_departamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_departamento.Margin = new System.Windows.Forms.Padding(4);
             this.btn_departamento.Name = "btn_departamento";
             this.btn_departamento.Size = new System.Drawing.Size(200, 39);
             this.btn_departamento.TabIndex = 48;
@@ -694,7 +680,7 @@
             this.crystalReportViewer5.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.crystalReportViewer5.Location = new System.Drawing.Point(5, 65);
-            this.crystalReportViewer5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.crystalReportViewer5.Margin = new System.Windows.Forms.Padding(4);
             this.crystalReportViewer5.Name = "crystalReportViewer5";
             this.crystalReportViewer5.ShowCloseButton = false;
             this.crystalReportViewer5.ShowParameterPanelButton = false;
@@ -719,7 +705,7 @@
             this.dtp_departamento2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_departamento2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_departamento2.Location = new System.Drawing.Point(880, 12);
-            this.dtp_departamento2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_departamento2.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_departamento2.Name = "dtp_departamento2";
             this.dtp_departamento2.Size = new System.Drawing.Size(232, 34);
             this.dtp_departamento2.TabIndex = 45;
@@ -729,7 +715,7 @@
             this.dtp_departamento1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp_departamento1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtp_departamento1.Location = new System.Drawing.Point(617, 12);
-            this.dtp_departamento1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtp_departamento1.Margin = new System.Windows.Forms.Padding(4);
             this.dtp_departamento1.Name = "dtp_departamento1";
             this.dtp_departamento1.Size = new System.Drawing.Size(232, 34);
             this.dtp_departamento1.TabIndex = 44;
@@ -753,7 +739,7 @@
             this.cbx_sucursal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_sucursal.FormattingEnabled = true;
             this.cbx_sucursal.Location = new System.Drawing.Point(147, 12);
-            this.cbx_sucursal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbx_sucursal.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_sucursal.Name = "cbx_sucursal";
             this.cbx_sucursal.Size = new System.Drawing.Size(265, 37);
             this.cbx_sucursal.TabIndex = 2;
@@ -763,7 +749,7 @@
             // 
             this.txt_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_departamento.Location = new System.Drawing.Point(200, 12);
-            this.txt_departamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txt_departamento.Margin = new System.Windows.Forms.Padding(4);
             this.txt_departamento.Name = "txt_departamento";
             this.txt_departamento.Size = new System.Drawing.Size(265, 34);
             this.txt_departamento.TabIndex = 49;
@@ -782,7 +768,7 @@
             this.radioButton2.ForeColor = System.Drawing.Color.White;
             this.radioButton2.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.radioButton2.Location = new System.Drawing.Point(1, 517);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(333, 128);
             this.radioButton2.TabIndex = 4;
@@ -807,7 +793,7 @@
             this.radioButton3.ForeColor = System.Drawing.Color.White;
             this.radioButton3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.radioButton3.Location = new System.Drawing.Point(1, 646);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(333, 128);
             this.radioButton3.TabIndex = 5;
@@ -825,9 +811,9 @@
             this.tabPage6.Controls.Add(this.cbx_sucursal_checando);
             this.tabPage6.Controls.Add(this.label11);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
-            this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage6.Size = new System.Drawing.Size(1432, 796);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "tabPage6";
@@ -840,7 +826,7 @@
             this.crystalReportViewer6.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.crystalReportViewer6.Location = new System.Drawing.Point(4, 66);
-            this.crystalReportViewer6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.crystalReportViewer6.Margin = new System.Windows.Forms.Padding(4);
             this.crystalReportViewer6.Name = "crystalReportViewer6";
             this.crystalReportViewer6.ShowCloseButton = false;
             this.crystalReportViewer6.ShowParameterPanelButton = false;
@@ -859,7 +845,7 @@
             this.btn_empleados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_empleados.ForeColor = System.Drawing.Color.White;
             this.btn_empleados.Location = new System.Drawing.Point(1141, 7);
-            this.btn_empleados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_empleados.Margin = new System.Windows.Forms.Padding(4);
             this.btn_empleados.Name = "btn_empleados";
             this.btn_empleados.Size = new System.Drawing.Size(200, 39);
             this.btn_empleados.TabIndex = 28;
@@ -875,7 +861,7 @@
             this.cbx_sucursal_checando.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbx_sucursal_checando.FormattingEnabled = true;
             this.cbx_sucursal_checando.Location = new System.Drawing.Point(144, 7);
-            this.cbx_sucursal_checando.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbx_sucursal_checando.Margin = new System.Windows.Forms.Padding(4);
             this.cbx_sucursal_checando.Name = "cbx_sucursal_checando";
             this.cbx_sucursal_checando.Size = new System.Drawing.Size(265, 37);
             this.cbx_sucursal_checando.TabIndex = 27;
@@ -897,12 +883,26 @@
             this.label11.TabIndex = 26;
             this.label11.Text = "Sucursal:";
             // 
+            // cbx_empleado
+            // 
+            this.cbx_empleado.DataSource = this.vistaEmpleadosBindingSource;
+            this.cbx_empleado.DisplayMember = "nombre_completo";
+            this.cbx_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_empleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_empleado.FormattingEnabled = true;
+            this.cbx_empleado.Location = new System.Drawing.Point(147, 15);
+            this.cbx_empleado.Margin = new System.Windows.Forms.Padding(4);
+            this.cbx_empleado.Name = "cbx_empleado";
+            this.cbx_empleado.Size = new System.Drawing.Size(365, 32);
+            this.cbx_empleado.TabIndex = 37;
+            this.cbx_empleado.ValueMember = "id_empleado";
+            // 
             // reporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.ClientSize = new System.Drawing.Size(1816, 912);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "reporte";
             this.TopMost = false;
             this.Load += new System.EventHandler(this.reporte_Load);
@@ -953,7 +953,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtp_asistencia2;
         private System.Windows.Forms.DateTimePicker dtp_asistencia1;
-        private System.Windows.Forms.ComboBox cbx_empleado;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.BindingSource vistaEmpleadosBindingSource;
         private DataSet_ChecadorTableAdapters.Vista_EmpleadosTableAdapter vista_EmpleadosTableAdapter;
@@ -982,5 +981,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.BindingSource sucursalBindingSource1;
+        private System.Windows.Forms.ComboBox cbx_empleado;
     }
 }
