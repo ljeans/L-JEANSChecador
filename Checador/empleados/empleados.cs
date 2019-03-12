@@ -90,6 +90,7 @@ namespace Checador.empleados
                     rb_modificar.Enabled = false;
                     rb_departamento.Enabled = false;
                     rb_buscar.Checked = true;
+                    btn_dar_baja.Visible = false;
                     vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and estatus = 'A'";
                 }
                 foreach (Control x in this.Controls)
@@ -1290,27 +1291,57 @@ namespace Checador.empleados
 ////////////////FILTRAR EL BUSCAR//////////////////////////
         private void txt_idbuscar_TextChanged(object sender, EventArgs e)
         {
-            if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text=="")
+            if (Program.rol != "ENCARGADA DE TIENDA")
             {
-                this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
-                vistaEmpleadosBindingSource.Filter = "";
+                if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+                {
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                    vistaEmpleadosBindingSource.Filter = "";
+                }
+                else
+                {
+                    vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*'";
+                }
             }
             else
             {
-                vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*"+ txt_nombrebuscar.Text +"*'";
+                if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+                {
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and estatus = 'A'";
+                }
+                else
+                {
+                    vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*' and sucursal ='" + Program.sucursal + "' and estatus = 'A'";
+                }
             }
         }
 
         private void txt_nombrebuscar_TextChanged(object sender, EventArgs e)
         {
-            if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+            if (Program.rol != "ENCARGADA DE TIENDA")
             {
-                this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
-                vistaEmpleadosBindingSource.Filter = "";
+                if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+                {
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                    vistaEmpleadosBindingSource.Filter = "";
+                }
+                else
+                {
+                    vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*'";
+                }
             }
             else
             {
-                vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*'";
+                if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
+                {
+                    this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and estatus = 'A'";
+                }
+                else
+                {
+                    vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*' and sucursal ='" + Program.sucursal + "' and estatus = 'A'";
+                }
             }
         }
 

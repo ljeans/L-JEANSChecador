@@ -141,5 +141,42 @@ namespace Checador
                 return false;
             }
         }
+
+
+        public bool verificarHorario_Evento(int id_empleado, DateTime fecha_referencia)//Funcion que hace el select retorna false si no hay resultados
+        {
+            try
+            {
+                Conexion conexion = new Conexion();
+                using (SqlConnection con = new SqlConnection(conexion.cadenaConexion))//utilizamos la clase conexion
+                {
+                    string select = "SELECT id_horario FROM registros WHERE id_empleado=@id_empleado and (fecha_entrada=@fecha_referencia or fecha_salida=@fecha_referencia)";//Consulta
+                    SqlCommand comando = new SqlCommand(select, con);//Nuevo objeto sqlcommand
+                    comando.Parameters.AddWithValue("@id_empleado", id_empleado);//Agregamos parametros a la consulta
+                    comando.Parameters.AddWithValue("@fecha_referencia", fecha_referencia);
+                    con.Open();//abre la conexion
+                    SqlDataReader lector = comando.ExecuteReader();//Ejecuta el comadno
+                    if (lector.HasRows)//Revisa si hay resultados
+                    {
+                        lector.Read();//Lee una linea de los resultados
+                        //get ordinal regresa el indice de la fila
+                        //el Nombre especificado en el parametro
+                        lunes = lector.GetInt32(lector.GetOrdinal("id_horario"));
+                        con.Close();
+                        return true;
+                    }
+                    else
+                    {
+                        con.Close();
+                        return false;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                return false;
+            }
+        }
     }
 }

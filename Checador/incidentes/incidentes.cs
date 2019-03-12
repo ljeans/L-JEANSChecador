@@ -47,7 +47,7 @@ namespace Checador.incidentes
                 }
                 else
                 {
-                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and estatus = 'A'";
                 }
 
                 //*************   HACER FORMULARIO RESPONSIVO   *****************
@@ -263,11 +263,11 @@ namespace Checador.incidentes
                 if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
                 {
                     this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
-                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and estatus = 'A'";
                 }
                 else
                 {
-                    vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*' and sucursal ='" + Program.sucursal + "'";
+                    vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*' and sucursal ='" + Program.sucursal + "' and estatus = 'A'";
                 }
             }
         }
@@ -291,11 +291,11 @@ namespace Checador.incidentes
                 if (txt_idbuscar.Text == "" && txt_nombrebuscar.Text == "")
                 {
                     this.vista_EmpleadosTableAdapter.Fill(this.dataSet_Checador.Vista_Empleados);
-                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "'";
+                    vistaEmpleadosBindingSource.Filter = "sucursal ='" + Program.sucursal + "' and estatus = 'A'";
                 }
                 else
                 {
-                    vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*' and sucursal ='" + Program.sucursal + "'";
+                    vistaEmpleadosBindingSource.Filter = "CONVERT([id_empleado], 'System.String') LIKE " + "'" + txt_idbuscar.Text + "*' and [nombre_completo] LIKE '*" + txt_nombrebuscar.Text + "*' and sucursal ='" + Program.sucursal + "' and estatus = 'A'";
                 }
             }
         }
@@ -362,31 +362,6 @@ namespace Checador.incidentes
                     }
                 }
             }
-
-            /*if (Program.rol != "ENCARGADA DE TIENDA")
-            {
-                if (txt_buscar.Text == "")
-                {
-                    this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
-                    vistaregistrosBindingSource.Filter = "";
-                }
-                else
-                {
-                    vistaregistrosBindingSource.Filter = "[nombre_completo] LIKE '*" + txt_buscar.Text + "*'";
-                }
-            }
-            else
-            {
-                if (txt_buscar.Text == "")
-                {
-                    this.vista_registrosTableAdapter.Fill(this.dataSet_Checador.vista_registros);
-                    vistaregistrosBindingSource.Filter = "Sucursal ='" + Program.sucursal + "'";
-                }
-                else
-                {
-                    vistaregistrosBindingSource.Filter = "[nombre_completo] LIKE '*" + txt_buscar.Text + "*' and Sucursal ='" + Program.sucursal + "'";
-                }
-            }*/
         }
         //////////////////////////////////////////////////////////////////////
 
@@ -411,39 +386,6 @@ namespace Checador.incidentes
 
                     //OBTENER ID CHECADOR
                     Clase_Checador.obtenerIdChecador(Sucursal.id);
-
-                    //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
-                    /*AsignarHorario.verificar_existencia(Convert.ToInt32(row.Cells[0].Value.ToString())); //SE MANDA EL ID DEL EMPLEADO COMO PARAMETRO
-                    DateTime dia = new DateTime(fecha_evento.Year, fecha_evento.Month, fecha_evento.Day);
-
-                    if (dia.DayOfWeek.ToString() == "Monday")
-                    {
-                        Horario.verificar_existencia(AsignarHorario.lunes);
-                    }
-                    else if (dia.DayOfWeek.ToString() == "Tuesday")
-                    {
-                        Horario.verificar_existencia(AsignarHorario.martes);
-                    }
-                    else if (dia.DayOfWeek.ToString() == "Wednesday")
-                    {
-                        Horario.verificar_existencia(AsignarHorario.miercoles);
-                    }
-                    else if (dia.DayOfWeek.ToString() == "Thursday")
-                    {
-                        Horario.verificar_existencia(AsignarHorario.jueves);
-                    }
-                    else if (dia.DayOfWeek.ToString() == "Friday")
-                    {
-                        Horario.verificar_existencia(AsignarHorario.viernes);
-                    }
-                    else if (dia.DayOfWeek.ToString() == "Saturday")
-                    {
-                        Horario.verificar_existencia(AsignarHorario.sabado);
-                    }
-                    else if (dia.DayOfWeek.ToString() == "Sunday")
-                    {
-                        Horario.verificar_existencia(AsignarHorario.domingo);
-                    }*/
                     
                     Horario.verificar_existencia(Convert.ToInt32(cbx_horario.SelectedValue));
 
@@ -523,38 +465,11 @@ namespace Checador.incidentes
                 //OBTENER ID CHECADOR
                 Clase_Checador.obtenerIdChecador(Sucursal.id);
 
-                //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE A UN EMPLEADO
-                AsignarHorario.verificar_existencia(Convert.ToInt32(row.Cells[0].Value.ToString())); //SE MANDA EL ID DEL EMPLEADO COMO PARAMETRO
-                DateTime dia = new DateTime(fecha_evento.Year, fecha_evento.Month, fecha_evento.Day);
+                //CARGAR LOS DATOS DEL HORARIO PERTENECIENTE SEGUN EL EVENTO DE REFERENCIA
+                AsignarHorario.verificarHorario_Evento(Convert.ToInt32(row.Cells[0].Value.ToString()), fecha_referencia); //SE MANDA EL ID DEL EMPLEADO COMO PARAMETRO
 
-                if (dia.DayOfWeek.ToString() == "Monday")
-                {
-                    Horario.verificar_existencia(AsignarHorario.lunes);
-                }
-                else if (dia.DayOfWeek.ToString() == "Tuesday")
-                {
-                    Horario.verificar_existencia(AsignarHorario.martes);
-                }
-                else if (dia.DayOfWeek.ToString() == "Wednesday")
-                {
-                    Horario.verificar_existencia(AsignarHorario.miercoles);
-                }
-                else if (dia.DayOfWeek.ToString() == "Thursday")
-                {
-                    Horario.verificar_existencia(AsignarHorario.jueves);
-                }
-                else if (dia.DayOfWeek.ToString() == "Friday")
-                {
-                    Horario.verificar_existencia(AsignarHorario.viernes);
-                }
-                else if (dia.DayOfWeek.ToString() == "Saturday")
-                {
-                    Horario.verificar_existencia(AsignarHorario.sabado);
-                }
-                else if (dia.DayOfWeek.ToString() == "Sunday")
-                {
-                    Horario.verificar_existencia(AsignarHorario.domingo);
-                }
+                //EN HORARIO.LUNES SE GUARDA EL ID DEL HORARIO DEL DIA
+                Horario.verificar_existencia(AsignarHorario.lunes);
 
                 if (Clase_Checador.RegistrarChequeo(Clase_Checador.id, Convert.ToInt32(row.Cells[0].Value), Sucursal.id, fecha_evento, fecha_referencia, Horario.hr_entrada, Horario.hr_salida, Horario.hora_entrada_descanso, Horario.hora_salida_descanso, Horario.tolerancia, tipo_evento, Horario.id))
                 {

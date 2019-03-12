@@ -268,7 +268,7 @@
             // tabControlBase
             // 
             this.tabControlBase.Controls.Add(this.tabPage6);
-            this.tabControlBase.Location = new System.Drawing.Point(413, 71);
+            this.tabControlBase.Location = new System.Drawing.Point(413, 72);
             this.tabControlBase.Margin = new System.Windows.Forms.Padding(5);
             this.tabControlBase.Controls.SetChildIndex(this.tabPage6, 0);
             this.tabControlBase.Controls.SetChildIndex(this.tabPage5, 0);
@@ -2521,9 +2521,10 @@
             // 
             // cbx_departamento
             // 
+            this.cbx_departamento.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbx_departamento.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbx_departamento.DataSource = this.vistaDepartamentoBindingSource;
             this.cbx_departamento.DisplayMember = "nombre";
-            this.cbx_departamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbx_departamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.cbx_departamento.FormattingEnabled = true;
             this.cbx_departamento.Location = new System.Drawing.Point(821, 79);

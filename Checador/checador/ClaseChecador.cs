@@ -641,8 +641,8 @@ namespace Checador
                 Conexion conexion = new Conexion();
                 SqlConnection con = new SqlConnection(conexion.cadenaConexion);
 
-                //VERIFICAR SI TIENE CHEQUEO EL DIA QUE TIENE DESCANSO/VACACIONES
-                string select2 = "SELECT * FROM registros WHERE id_empleado=@id and (fecha_entrada>@fecha_inicial or fecha_salida>@fecha_inicial) and (fecha_entrada<@fecha_final or fecha_salida<@fecha_final)";//Consulta
+                //VERIFICAR SI TIENE CHEQUEO O DESCANSO EL DIA QUE TIENE DESCANSO/VACACIONES
+                string select2 = "SELECT * FROM registros WHERE id_empleado=@id and (fecha_entrada>=@fecha_inicial or fecha_salida>=@fecha_inicial) and (fecha_entrada<=@fecha_final or fecha_salida<=@fecha_final)";//Consulta
                 SqlCommand comando2 = new SqlCommand(select2, con);//Nuevo objeto sqlcommand
                 comando2.Parameters.AddWithValue("@id", id_empleado);//Agregamos parametros a la consulta
                 comando2.Parameters.AddWithValue("@fecha_inicial", fecha_inicial);
@@ -1374,11 +1374,6 @@ namespace Checador
                                 dias_trabajados = Math.Ceiling(dias_trabajados);
                             }
 
-                            if (dias_trabajados > dias_maximos.Days)
-                            {
-                                dias_trabajados = dias_maximos.Days;
-                            }
-
                             for (DateTime fecha = fecha_inicial; fecha <= fecha_final; fecha = fecha.AddDays(1.0))
                             {
                                 SqlConnection con3 = new SqlConnection(conexion.cadenaConexion);
@@ -1398,9 +1393,19 @@ namespace Checador
                                 con3.Close();
                             }
 
-                            //MessageBox.Show("Empleado: " + id_empleado + " - Horas trabajadas: " + horas_trabajadas + " - Domingos: " + domingos +" - fatlas: " + faltas);
+                            //SACAR LOS DIAS MAXIMOS QUE PUEDEN TRABAJAR
+                            if (dias_trabajados > (dias_maximos.Days-faltas))
+                            {
+                                dias_trabajados = (dias_maximos.Days - faltas);
+                            }
 
-                            
+                            //VERIFICAR SI DIAS TRABAJADOS JUNTO CON FALTAS SON MAYORES A LOS DIAS MAXIMOS (POSIBLES)
+                            /*f ((dias_trabajados + faltas) > dias_maximos.Days)
+                            {
+                                //SE LE RESTAN LAS FALTAS A LOS DIAS TRABAJADOS
+                                dias_trabajados = dias_trabajados - faltas;
+                            }*/
+
                             //GUARDAR EL ARCHIVO
                             if (!File.Exists(path))
                             {

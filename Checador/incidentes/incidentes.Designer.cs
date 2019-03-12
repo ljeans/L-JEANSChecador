@@ -118,7 +118,7 @@
             // 
             // tabControlBase
             // 
-            this.tabControlBase.Location = new System.Drawing.Point(419, 71);
+            this.tabControlBase.Location = new System.Drawing.Point(419, 72);
             this.tabControlBase.Margin = new System.Windows.Forms.Padding(5);
             this.tabControlBase.Size = new System.Drawing.Size(1373, 800);
             // 
@@ -182,6 +182,7 @@
             this.rb_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Blue;
             this.rb_buscar.Location = new System.Drawing.Point(0, 128);
             this.rb_buscar.Margin = new System.Windows.Forms.Padding(5);
+            this.rb_buscar.Text = "Registrar chequeo";
             this.rb_buscar.Visible = false;
             // 
             // rb_modificar
@@ -316,7 +317,7 @@
             this.groupBox1.Size = new System.Drawing.Size(560, 665);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Fechas A Recalcular";
+            this.groupBox1.Text = "Fechas a Recalcular";
             // 
             // btn_recalcular
             // 

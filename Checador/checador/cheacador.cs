@@ -745,6 +745,7 @@ namespace Checador
                 }
                 else
                 {
+                    bConn = false;
                     //ATENCION CAMBIAR ESTE MENSAJE A LA CONSOLA PARA MAYOR COMODIDAD
                     /*mensaje = new formularios_padres.mensaje_info();
                     mensaje.lbl_info.Text = "Dispositivo no conectado";
